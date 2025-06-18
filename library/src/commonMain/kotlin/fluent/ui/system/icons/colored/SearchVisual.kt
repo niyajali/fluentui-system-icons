@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,28 +34,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.SearchVisual: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.SearchVisual: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.SearchVisual",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.015f to Color(0xFF3DCBFF),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(1.21f, 0.325f),
-                end = Offset(16.893f, 25.659f)
+                end = Offset(16.893f, 25.659f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(4.5f, 4f)
             curveTo(4.224f, 4f, 4f, 4.224f, 4f, 4.5f)
@@ -110,11 +110,11 @@ public val FluentUi.Colored.SearchVisual: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 center = Offset(8.984f, 8.438f),
-                radius = 7.357f
-            )
+                radius = 7.357f,
+            ),
         ) {
             moveTo(12f, 15f)
             curveTo(13.657f, 15f, 15f, 13.657f, 15f, 12f)
@@ -136,6 +136,6 @@ public val FluentUi.Colored.SearchVisual: ImageVector by lazy(LazyThreadSafetyMo
 @Composable
 private fun SearchVisualPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.SearchVisual, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.SearchVisual, contentDescription = null)
     }
 }

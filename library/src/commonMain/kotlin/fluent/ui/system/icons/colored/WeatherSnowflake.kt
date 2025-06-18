@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,28 +33,28 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.WeatherSnowflake: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.WeatherSnowflake: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.WeatherSnowflake",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF4894FE),
                     0.495f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF29C3FF)
+                    1f to Color(0xFF29C3FF),
                 ),
                 start = Offset(17f, 18.25f),
-                end = Offset(7.625f, 3.875f)
-            )
+                end = Offset(7.625f, 3.875f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(12.552f, 2f, 13f, 2.448f, 13f, 3f)
@@ -119,11 +119,11 @@ public val FluentUi.Colored.WeatherSnowflake: ImageVector by lazy(LazyThreadSafe
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.379f to Color(0x00FF6CE8),
-                    1f to Color(0xB2FF6CE8)
+                    1f to Color(0xB2FF6CE8),
                 ),
                 start = Offset(6.839f, 2.806f),
-                end = Offset(22.114f, 22.683f)
-            )
+                end = Offset(22.114f, 22.683f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(12.552f, 2f, 13f, 2.448f, 13f, 3f)
@@ -191,6 +191,6 @@ public val FluentUi.Colored.WeatherSnowflake: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun WeatherSnowflakePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.WeatherSnowflake, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.WeatherSnowflake, contentDescription = null)
     }
 }

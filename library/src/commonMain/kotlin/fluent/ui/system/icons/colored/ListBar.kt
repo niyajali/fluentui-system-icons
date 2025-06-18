@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ListBar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ListBar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ListBar",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(5.475f, 0.429f),
-                end = Offset(20.939f, 19.98f)
-            )
+                end = Offset(20.939f, 19.98f),
+            ),
         ) {
             moveTo(8f, 21f)
             horizontalLineTo(19f)
@@ -87,11 +87,11 @@ public val FluentUi.Colored.ListBar: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(4.189f, 5.393f),
-                end = Offset(11.747f, 8.745f)
-            )
+                end = Offset(11.747f, 8.745f),
+            ),
         ) {
             moveTo(8f, 9.5f)
             verticalLineTo(14.5f)
@@ -125,6 +125,6 @@ public val FluentUi.Colored.ListBar: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun ListBarPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ListBar, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ListBar, contentDescription = null)
     }
 }

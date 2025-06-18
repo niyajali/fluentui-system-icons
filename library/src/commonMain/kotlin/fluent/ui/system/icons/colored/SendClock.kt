@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,27 +34,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.SendClock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.SendClock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.SendClock",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0094F0),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 center = Offset(1.494f, 12f),
-                radius = 8.006f
-            )
+                radius = 8.006f,
+            ),
         ) {
             moveTo(5.57f, 12f)
             lineTo(4.446f, 9f)
@@ -68,11 +68,11 @@ public val FluentUi.Colored.SendClock: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF3BD5FF),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(2.246f, -5.676f),
-                end = Offset(18.952f, 16.518f)
-            )
+                end = Offset(18.952f, 16.518f),
+            ),
         ) {
             moveTo(12.815f, 12.197f)
             lineTo(5.283f, 13.453f)
@@ -94,11 +94,11 @@ public val FluentUi.Colored.SendClock: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0x00DCF8FF),
-                    0.769f to Color(0xB2FF6CE8)
+                    0.769f to Color(0xB2FF6CE8),
                 ),
                 start = Offset(11.997f, 7.505f),
-                end = Offset(17.07f, 21.229f)
-            )
+                end = Offset(17.07f, 21.229f),
+            ),
         ) {
             moveTo(12.815f, 12.197f)
             lineTo(5.283f, 13.453f)
@@ -120,12 +120,12 @@ public val FluentUi.Colored.SendClock: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.711f to Color(0xFF1B44B1),
-                    1f to Color(0x001B44B1)
+                    1f to Color(0x001B44B1),
                 ),
                 center = Offset(17.5f, 20.5f),
-                radius = 9.552f
+                radius = 9.552f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(12.815f, 12.197f)
             lineTo(5.283f, 13.453f)
@@ -147,11 +147,11 @@ public val FluentUi.Colored.SendClock: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF43E5CA),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(13.833f, 11.389f),
-                end = Offset(19.333f, 23.611f)
-            )
+                end = Offset(19.333f, 23.611f),
+            ),
         ) {
             moveTo(17.5f, 12f)
             curveTo(20.538f, 12f, 23f, 14.462f, 23f, 17.5f)
@@ -164,12 +164,12 @@ public val FluentUi.Colored.SendClock: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFD1D1FF)
+                    1f to Color(0xFFD1D1FF),
                 ),
                 start = Offset(17.306f, 14.612f),
-                end = Offset(16.398f, 17.88f)
+                end = Offset(16.398f, 17.88f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(17.5f, 14f)
             curveTo(17.776f, 14f, 18f, 14.224f, 18f, 14.5f)
@@ -190,6 +190,6 @@ public val FluentUi.Colored.SendClock: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun SendClockPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.SendClock, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.SendClock, contentDescription = null)
     }
 }

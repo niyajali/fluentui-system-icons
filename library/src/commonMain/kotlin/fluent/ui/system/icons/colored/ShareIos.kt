@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ShareIos: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ShareIos: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ShareIos",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.283f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0078D4)
+                    1f to Color(0xFF0078D4),
                 ),
                 center = Offset(0.906f, -3.246f),
-                radius = 32.414f
-            )
+                radius = 32.414f,
+            ),
         ) {
             moveTo(12.707f, 2.293f)
             curveTo(12.317f, 1.902f, 11.683f, 1.902f, 11.293f, 2.293f)
@@ -94,6 +94,6 @@ public val FluentUi.Colored.ShareIos: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun ShareIosPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ShareIos, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ShareIos, contentDescription = null)
     }
 }

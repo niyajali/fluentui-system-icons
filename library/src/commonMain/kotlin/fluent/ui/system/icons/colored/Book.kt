@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Book: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Book: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Book",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF9DEAFF),
-                    0.716f to Color(0xFF58AAFE)
+                    0.716f to Color(0xFF58AAFE),
                 ),
                 start = Offset(12.174f, 20.4f),
-                end = Offset(12.174f, 18f)
-            )
+                end = Offset(12.174f, 18f),
+            ),
         ) {
             moveTo(5f, 19f)
             horizontalLineTo(20.281f)
@@ -68,11 +68,11 @@ public val FluentUi.Colored.Book: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF20AC9D),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(9.693f, 5.742f),
-                end = Offset(12.681f, 27.308f)
-            )
+                end = Offset(12.681f, 27.308f),
+            ),
         ) {
             moveTo(4f, 4.5f)
             curveTo(4f, 3.119f, 5.119f, 2f, 6.5f, 2f)
@@ -94,11 +94,11 @@ public val FluentUi.Colored.Book: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF9FF0F9),
-                    1f to Color(0xFF6CE0FF)
+                    1f to Color(0xFF6CE0FF),
                 ),
                 start = Offset(10.449f, 4.314f),
-                end = Offset(15.053f, 11.478f)
-            )
+                end = Offset(15.053f, 11.478f),
+            ),
         ) {
             moveTo(7f, 6f)
             curveTo(7f, 5.448f, 7.448f, 5f, 8f, 5f)
@@ -118,6 +118,6 @@ public val FluentUi.Colored.Book: ImageVector by lazy(LazyThreadSafetyMode.NONE)
 @Composable
 private fun BookPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Book, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Book, contentDescription = null)
     }
 }

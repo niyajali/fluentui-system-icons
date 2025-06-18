@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Document: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Document: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Document",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF6CE0FF),
-                    1f to Color(0xFF4894FE)
+                    1f to Color(0xFF4894FE),
                 ),
                 start = Offset(15.2f, 2f),
-                end = Offset(16.822f, 18.87f)
-            )
+                end = Offset(16.822f, 18.87f),
+            ),
         ) {
             moveTo(6f, 22f)
             horizontalLineTo(18f)
@@ -71,12 +71,12 @@ public val FluentUi.Colored.Document: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.362f to Color(0xFF4A43CB),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(20.667f, 2.625f),
-                radius = 12.562f
+                radius = 12.562f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(6f, 22f)
             horizontalLineTo(18f)
@@ -94,11 +94,11 @@ public val FluentUi.Colored.Document: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF9FF0F9),
-                    1f to Color(0xFFB3E0FF)
+                    1f to Color(0xFFB3E0FF),
                 ),
                 start = Offset(16.488f, 4.917f),
-                end = Offset(14.738f, 7.833f)
-            )
+                end = Offset(14.738f, 7.833f),
+            ),
         ) {
             moveTo(13f, 7.5f)
             verticalLineTo(2f)
@@ -114,6 +114,6 @@ public val FluentUi.Colored.Document: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun DocumentPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Document, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Document, contentDescription = null)
     }
 }

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,27 +34,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PeopleChat: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PeopleChat: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PeopleChat",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFFBD96FF),
-                    1f to Color(0xFF9C6CFE)
+                    1f to Color(0xFF9C6CFE),
                 ),
                 start = Offset(4.854f, 13.931f),
-                end = Offset(7.41f, 20.927f)
-            )
+                end = Offset(7.41f, 20.927f),
+            ),
         ) {
             moveTo(4.25f, 13f)
             curveTo(3.007f, 13f, 2f, 14.007f, 2f, 15.25f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.PeopleChat: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(8f, 12.167f),
-                end = Offset(11.607f, 23.721f)
-            )
+                end = Offset(11.607f, 23.721f),
+            ),
         ) {
             moveTo(4.25f, 13f)
             curveTo(3.007f, 13f, 2f, 14.007f, 2f, 15.25f)
@@ -91,12 +91,12 @@ public val FluentUi.Colored.PeopleChat: ImageVector by lazy(LazyThreadSafetyMode
                 colorStops = arrayOf(
                     0f to Color(0xFF30116E),
                     0.268f to Color(0xCE30116E),
-                    1f to Color(0x0030116E)
+                    1f to Color(0x0030116E),
                 ),
                 center = Offset(15.2f, 17.375f),
-                radius = 5.589f
+                radius = 5.589f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(4.25f, 13f)
             curveTo(3.007f, 13f, 2f, 14.007f, 2f, 15.25f)
@@ -112,11 +112,11 @@ public val FluentUi.Colored.PeopleChat: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(15.427f, 5.798f),
-                end = Offset(18.485f, 10.68f)
-            )
+                end = Offset(18.485f, 10.68f),
+            ),
         ) {
             moveTo(17f, 11f)
             curveTo(18.657f, 11f, 20f, 9.657f, 20f, 8f)
@@ -129,11 +129,11 @@ public val FluentUi.Colored.PeopleChat: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFFBD96FF),
-                    1f to Color(0xFF9C6CFE)
+                    1f to Color(0xFF9C6CFE),
                 ),
                 start = Offset(5.902f, 4.063f),
-                end = Offset(9.98f, 10.574f)
-            )
+                end = Offset(9.98f, 10.574f),
+            ),
         ) {
             moveTo(8f, 11f)
             curveTo(10.209f, 11f, 12f, 9.209f, 12f, 7f)
@@ -146,11 +146,11 @@ public val FluentUi.Colored.PeopleChat: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFFCC23D1)
+                    1f to Color(0xFFCC23D1),
                 ),
                 start = Offset(12.393f, 14.063f),
-                end = Offset(21.998f, 30.439f)
-            )
+                end = Offset(21.998f, 30.439f),
+            ),
         ) {
             moveTo(17.501f, 23.002f)
             curveTo(20.539f, 23.002f, 23.002f, 20.539f, 23.002f, 17.501f)
@@ -185,11 +185,11 @@ public val FluentUi.Colored.PeopleChat: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFCCEAFF)
+                    1f to Color(0xFFCCEAFF),
                 ),
                 start = Offset(15.438f, 16.054f),
-                end = Offset(15.742f, 19.319f)
-            )
+                end = Offset(15.742f, 19.319f),
+            ),
         ) {
             moveTo(15.501f, 17.001f)
             curveTo(15.225f, 17.001f, 15.001f, 16.777f, 15.001f, 16.501f)
@@ -215,6 +215,6 @@ public val FluentUi.Colored.PeopleChat: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun PeopleChatPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PeopleChat, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PeopleChat, contentDescription = null)
     }
 }

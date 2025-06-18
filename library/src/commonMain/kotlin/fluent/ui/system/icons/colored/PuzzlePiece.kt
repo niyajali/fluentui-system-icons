@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PuzzlePiece: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PuzzlePiece: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PuzzlePiece",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF1EC8B0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(5.833f, 0.889f),
-                end = Offset(16.883f, 21.761f)
-            )
+                end = Offset(16.883f, 21.761f),
+            ),
         ) {
             moveTo(13f, 2f)
             curveTo(14.364f, 2f, 15.47f, 3.106f, 15.47f, 4.47f)
@@ -93,12 +93,12 @@ public val FluentUi.Colored.PuzzlePiece: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.533f to Color(0x00FF6CE8),
-                    1f to Color(0xFFFF6CE8)
+                    1f to Color(0xFFFF6CE8),
                 ),
                 start = Offset(14.131f, 4.456f),
-                end = Offset(18.725f, 23.861f)
+                end = Offset(18.725f, 23.861f),
             ),
-            fillAlpha = 0.7f
+            fillAlpha = 0.7f,
         ) {
             moveTo(13f, 2f)
             curveTo(14.364f, 2f, 15.47f, 3.106f, 15.47f, 4.47f)
@@ -141,6 +141,6 @@ public val FluentUi.Colored.PuzzlePiece: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun PuzzlePiecePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PuzzlePiece, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PuzzlePiece, contentDescription = null)
     }
 }

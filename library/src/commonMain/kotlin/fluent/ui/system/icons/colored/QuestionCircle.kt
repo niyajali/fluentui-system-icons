@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.QuestionCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.QuestionCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.QuestionCircle",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(2f, 2f),
-                end = Offset(22f, 22f)
-            )
+                end = Offset(22f, 22f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(17.523f, 2f, 22f, 6.478f, 22f, 12f)
@@ -66,11 +66,11 @@ public val FluentUi.Colored.QuestionCircle: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFCCEAFF)
+                    1f to Color(0xFFCCEAFF),
                 ),
                 start = Offset(9.731f, 6.939f),
-                end = Offset(13.007f, 17.744f)
-            )
+                end = Offset(13.007f, 17.744f),
+            ),
         ) {
             moveTo(12f, 15.5f)
             curveTo(11.448f, 15.5f, 11f, 15.948f, 11f, 16.5f)
@@ -103,6 +103,6 @@ public val FluentUi.Colored.QuestionCircle: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun QuestionCirclePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.QuestionCircle, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.QuestionCircle, contentDescription = null)
     }
 }

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Checkbox: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Checkbox: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Checkbox",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(3.643f, 6.375f),
-                end = Offset(16.065f, 19.281f)
-            )
+                end = Offset(16.065f, 19.281f),
+            ),
         ) {
             moveTo(6.25f, 3f)
             curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.Checkbox: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFFFFF),
-                    1f to Color(0xFFB3E0FF)
+                    1f to Color(0xFFB3E0FF),
                 ),
                 start = Offset(8.616f, 8.634f),
-                end = Offset(13.467f, 24.313f)
-            )
+                end = Offset(13.467f, 24.313f),
+            ),
         ) {
             moveTo(17.28f, 9.281f)
             lineTo(10.526f, 16.027f)
@@ -95,6 +95,6 @@ public val FluentUi.Colored.Checkbox: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun CheckboxPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Checkbox, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Checkbox, contentDescription = null)
     }
 }

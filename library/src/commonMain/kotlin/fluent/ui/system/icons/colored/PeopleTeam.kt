@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PeopleTeam",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF7A41DC),
-                    1f to Color(0xFF5B2AB5)
+                    1f to Color(0xFF5B2AB5),
                 ),
                 start = Offset(15.902f, 11.196f),
-                end = Offset(20.703f, 18.011f)
-            )
+                end = Offset(20.703f, 18.011f),
+            ),
         ) {
             moveTo(20.25f, 10f)
             curveTo(21.217f, 10f, 22f, 10.783f, 22f, 11.75f)
@@ -71,12 +71,12 @@ public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.433f to Color(0xFF3B148A),
-                    1f to Color(0x003B148A)
+                    1f to Color(0x003B148A),
                 ),
                 center = Offset(12.743f, 14.289f),
-                radius = 6.438f
+                radius = 6.438f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(20.25f, 10f)
             curveTo(21.217f, 10f, 22f, 10.783f, 22f, 11.75f)
@@ -94,11 +94,11 @@ public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(3.903f, 11.196f),
-                end = Offset(8.703f, 18.011f)
-            )
+                end = Offset(8.703f, 18.011f),
+            ),
         ) {
             moveTo(8.25f, 10f)
             curveTo(9.217f, 10f, 10f, 10.783f, 10f, 11.75f)
@@ -116,12 +116,12 @@ public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.433f to Color(0xFF3B148A),
-                    1f to Color(0x003B148A)
+                    1f to Color(0x003B148A),
                 ),
                 center = Offset(12.592f, 14.289f),
-                radius = 7.125f
+                radius = 7.125f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(8.25f, 10f)
             curveTo(9.217f, 10f, 10f, 10.783f, 10f, 11.75f)
@@ -139,11 +139,11 @@ public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFFBD96FF),
-                    1f to Color(0xFF9C6CFE)
+                    1f to Color(0xFF9C6CFE),
                 ),
                 start = Offset(9.643f, 11.462f),
-                end = Offset(15.657f, 19.322f)
-            )
+                end = Offset(15.657f, 19.322f),
+            ),
         ) {
             moveTo(14.754f, 10f)
             curveTo(15.72f, 10f, 16.504f, 10.783f, 16.504f, 11.75f)
@@ -159,11 +159,11 @@ public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(12.003f, 8.69f),
-                end = Offset(21.131f, 22.648f)
-            )
+                end = Offset(21.131f, 22.648f),
+            ),
         ) {
             moveTo(14.754f, 10f)
             curveTo(15.72f, 10f, 16.504f, 10.783f, 16.504f, 11.75f)
@@ -179,11 +179,11 @@ public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF7A41DC),
-                    1f to Color(0xFF5B2AB5)
+                    1f to Color(0xFF5B2AB5),
                 ),
                 start = Offset(17.189f, 4.665f),
-                end = Offset(19.737f, 8.734f)
-            )
+                end = Offset(19.737f, 8.734f),
+            ),
         ) {
             moveTo(18.5f, 4f)
             curveTo(19.881f, 4f, 21f, 5.119f, 21f, 6.5f)
@@ -196,11 +196,11 @@ public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(4.189f, 4.665f),
-                end = Offset(6.737f, 8.734f)
-            )
+                end = Offset(6.737f, 8.734f),
+            ),
         ) {
             moveTo(5.5f, 4f)
             curveTo(6.881f, 4f, 8f, 5.119f, 8f, 6.5f)
@@ -213,11 +213,11 @@ public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFFBD96FF),
-                    1f to Color(0xFF9C6CFE)
+                    1f to Color(0xFF9C6CFE),
                 ),
                 start = Offset(10.427f, 3.798f),
-                end = Offset(13.485f, 8.68f)
-            )
+                end = Offset(13.485f, 8.68f),
+            ),
         ) {
             moveTo(12f, 3f)
             curveTo(13.657f, 3f, 15f, 4.343f, 15f, 6f)
@@ -233,6 +233,6 @@ public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun PeopleTeamPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PeopleTeam, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PeopleTeam, contentDescription = null)
     }
 }

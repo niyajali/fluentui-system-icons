@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.LockClosed: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.LockClosed: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.LockClosed",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFC205),
-                    1f to Color(0xFFFB5937)
+                    1f to Color(0xFFFB5937),
                 ),
                 start = Offset(9.714f, 0.949f),
-                end = Offset(15.835f, 11.057f)
-            )
+                end = Offset(15.835f, 11.057f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(9.791f, 2f, 8f, 3.791f, 8f, 6f)
@@ -72,11 +72,11 @@ public val FluentUi.Colored.LockClosed: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF6F47),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(21.143f, 21.875f),
-                end = Offset(6.542f, 8.278f)
-            )
+                end = Offset(6.542f, 8.278f),
+            ),
         ) {
             moveTo(20f, 10.25f)
             curveTo(20f, 8.455f, 18.545f, 7f, 16.75f, 7f)
@@ -93,11 +93,11 @@ public val FluentUi.Colored.LockClosed: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF944600),
-                    1f to Color(0xFFCD8E02)
+                    1f to Color(0xFFCD8E02),
                 ),
                 center = Offset(12.75f, 15.5f),
-                radius = 5.46f
-            )
+                radius = 5.46f,
+            ),
         ) {
             moveTo(12f, 15.5f)
             curveTo(12.828f, 15.5f, 13.5f, 14.828f, 13.5f, 14f)
@@ -113,6 +113,6 @@ public val FluentUi.Colored.LockClosed: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun LockClosedPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.LockClosed, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.LockClosed, contentDescription = null)
     }
 }

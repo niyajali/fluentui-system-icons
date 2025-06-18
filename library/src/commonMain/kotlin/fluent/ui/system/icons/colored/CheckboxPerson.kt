@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.CheckboxPerson: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.CheckboxPerson: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.CheckboxPerson",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(3.643f, 6.375f),
-                end = Offset(16.065f, 19.281f)
-            )
+                end = Offset(16.065f, 19.281f),
+            ),
         ) {
             moveTo(6.25f, 3f)
             curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.CheckboxPerson: ImageVector by lazy(LazyThreadSafety
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF4A43CB),
-                    0.914f to Color(0x004A43CB)
+                    0.914f to Color(0x004A43CB),
                 ),
                 center = Offset(18.5f, 20.5f),
-                radius = 8f
-            )
+                radius = 8f,
+            ),
         ) {
             moveTo(6.25f, 3f)
             curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -91,11 +91,11 @@ public val FluentUi.Colored.CheckboxPerson: ImageVector by lazy(LazyThreadSafety
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF4A43CB),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(18.5f, 15.5f),
-                radius = 3.5f
-            )
+                radius = 3.5f,
+            ),
         ) {
             moveTo(6.25f, 3f)
             curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -112,11 +112,11 @@ public val FluentUi.Colored.CheckboxPerson: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFFFFF),
-                    1f to Color(0xFFB3E0FF)
+                    1f to Color(0xFFB3E0FF),
                 ),
                 start = Offset(8.616f, 8.634f),
-                end = Offset(13.467f, 24.313f)
-            )
+                end = Offset(13.467f, 24.313f),
+            ),
         ) {
             moveTo(17.28f, 9.281f)
             lineTo(10.526f, 16.027f)
@@ -134,11 +134,11 @@ public val FluentUi.Colored.CheckboxPerson: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFFBD96FF),
-                    1f to Color(0xFF9C6CFE)
+                    1f to Color(0xFF9C6CFE),
                 ),
                 start = Offset(16.14f, 18.665f),
-                end = Offset(17.898f, 23.718f)
-            )
+                end = Offset(17.898f, 23.718f),
+            ),
         ) {
             moveTo(23f, 19.875f)
             curveTo(23f, 21.431f, 21.714f, 23f, 18.5f, 23f)
@@ -154,11 +154,11 @@ public val FluentUi.Colored.CheckboxPerson: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(18.5f, 17.405f),
-                end = Offset(20.974f, 25.727f)
-            )
+                end = Offset(20.974f, 25.727f),
+            ),
         ) {
             moveTo(23f, 19.875f)
             curveTo(23f, 21.431f, 21.714f, 23f, 18.5f, 23f)
@@ -174,11 +174,11 @@ public val FluentUi.Colored.CheckboxPerson: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFFBD96FF),
-                    1f to Color(0xFF9C6CFE)
+                    1f to Color(0xFF9C6CFE),
                 ),
                 start = Offset(17.189f, 12.665f),
-                end = Offset(19.737f, 16.734f)
-            )
+                end = Offset(19.737f, 16.734f),
+            ),
         ) {
             moveTo(21f, 14.5f)
             curveTo(21f, 15.881f, 19.881f, 17f, 18.5f, 17f)
@@ -194,6 +194,6 @@ public val FluentUi.Colored.CheckboxPerson: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun CheckboxPersonPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.CheckboxPerson, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.CheckboxPerson, contentDescription = null)
     }
 }

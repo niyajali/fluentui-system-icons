@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.BookDatabase: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.BookDatabase: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.BookDatabase",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF9DEAFF),
-                    0.716f to Color(0xFF58AAFE)
+                    0.716f to Color(0xFF58AAFE),
                 ),
                 start = Offset(12.174f, 20.4f),
-                end = Offset(12.174f, 18f)
-            )
+                end = Offset(12.174f, 18f),
+            ),
         ) {
             moveTo(5f, 19f)
             horizontalLineTo(20.281f)
@@ -68,11 +68,11 @@ public val FluentUi.Colored.BookDatabase: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF20AC9D),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(9.693f, 5.742f),
-                end = Offset(12.681f, 27.308f)
-            )
+                end = Offset(12.681f, 27.308f),
+            ),
         ) {
             moveTo(4f, 4.5f)
             curveTo(4f, 3.119f, 5.119f, 2f, 6.5f, 2f)
@@ -94,11 +94,11 @@ public val FluentUi.Colored.BookDatabase: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF9FF0F9),
-                    1f to Color(0xFF6CE0FF)
+                    1f to Color(0xFF6CE0FF),
                 ),
                 start = Offset(10.449f, 4.314f),
-                end = Offset(15.053f, 11.478f)
-            )
+                end = Offset(15.053f, 11.478f),
+            ),
         ) {
             moveTo(7f, 6f)
             curveTo(7f, 5.448f, 7.448f, 5f, 8f, 5f)
@@ -115,12 +115,12 @@ public val FluentUi.Colored.BookDatabase: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF4A43CB),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(15.5f, 20.5f),
-                radius = 3.905f
+                radius = 3.905f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(4f, 4.5f)
             curveTo(4f, 3.119f, 5.119f, 2f, 6.5f, 2f)
@@ -138,12 +138,12 @@ public val FluentUi.Colored.BookDatabase: ImageVector by lazy(LazyThreadSafetyMo
                 colorStops = arrayOf(
                     0f to Color(0xFF171155),
                     0.328f to Color(0xFF171155),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(15f, 19.5f),
-                radius = 7.5f
+                radius = 7.5f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(4f, 4.5f)
             curveTo(4f, 3.119f, 5.119f, 2f, 6.5f, 2f)
@@ -160,11 +160,11 @@ public val FluentUi.Colored.BookDatabase: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF3BD5FF),
-                    1f to Color(0xFF4894FE)
+                    1f to Color(0xFF4894FE),
                 ),
                 start = Offset(15.361f, 12.575f),
-                end = Offset(21.193f, 22.072f)
-            )
+                end = Offset(21.193f, 22.072f),
+            ),
         ) {
             moveTo(19.5f, 15.896f)
             curveTo(20.029f, 15.822f, 20.534f, 15.708f, 21f, 15.559f)
@@ -184,11 +184,11 @@ public val FluentUi.Colored.BookDatabase: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF66C0FF),
-                    1f to Color(0xFFC8F3FF)
+                    1f to Color(0xFFC8F3FF),
                 ),
                 start = Offset(21.333f, 17.5f),
-                end = Offset(15.222f, 12f)
-            )
+                end = Offset(15.222f, 12f),
+            ),
         ) {
             moveTo(19.5f, 12.114f)
             curveTo(20.046f, 12.2f, 20.552f, 12.332f, 21f, 12.5f)
@@ -208,6 +208,6 @@ public val FluentUi.Colored.BookDatabase: ImageVector by lazy(LazyThreadSafetyMo
 @Composable
 private fun BookDatabasePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.BookDatabase, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.BookDatabase, contentDescription = null)
     }
 }

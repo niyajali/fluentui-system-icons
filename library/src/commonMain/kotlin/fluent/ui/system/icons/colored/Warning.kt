@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Warning: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Warning: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Warning",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFCD0F),
-                    1f to Color(0xFFFE8401)
+                    1f to Color(0xFFFE8401),
                 ),
                 start = Offset(5.125f, -0.393f),
-                end = Offset(16.719f, 23.477f)
-            )
+                end = Offset(16.719f, 23.477f),
+            ),
         ) {
             moveTo(10.03f, 3.659f)
             curveTo(10.886f, 2.111f, 13.111f, 2.111f, 13.967f, 3.659f)
@@ -68,11 +68,11 @@ public val FluentUi.Colored.Warning: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF4A4A4A),
-                    1f to Color(0xFF212121)
+                    1f to Color(0xFF212121),
                 ),
                 start = Offset(9.336f, 8.5f),
-                end = Offset(13.752f, 18.405f)
-            )
+                end = Offset(13.752f, 18.405f),
+            ),
         ) {
             moveTo(12.997f, 17.001f)
             curveTo(12.997f, 16.449f, 12.55f, 16.002f, 11.999f, 16.002f)
@@ -98,6 +98,6 @@ public val FluentUi.Colored.Warning: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun WarningPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Warning, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Warning, contentDescription = null)
     }
 }

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,27 +34,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PersonAvailable: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PersonAvailable: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PersonAvailable",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(5.809f, 15.063f),
-                end = Offset(8.394f, 23.319f)
-            )
+                end = Offset(8.394f, 23.319f),
+            ),
         ) {
             moveTo(15.755f, 14f)
             curveTo(16.997f, 14f, 18.003f, 15.007f, 18.003f, 16.249f)
@@ -72,11 +72,11 @@ public val FluentUi.Colored.PersonAvailable: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(10.004f, 13.047f),
-                end = Offset(13.624f, 26.573f)
-            )
+                end = Offset(13.624f, 26.573f),
+            ),
         ) {
             moveTo(15.755f, 14f)
             curveTo(16.997f, 14f, 18.003f, 15.007f, 18.003f, 16.249f)
@@ -94,12 +94,12 @@ public val FluentUi.Colored.PersonAvailable: ImageVector by lazy(LazyThreadSafet
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.493f to Color(0xFF30116E),
-                    0.912f to Color(0x0030116E)
+                    0.912f to Color(0x0030116E),
                 ),
                 center = Offset(17.5f, 18.5f),
-                radius = 8.5f
+                radius = 8.5f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(15.755f, 14f)
             curveTo(16.997f, 14f, 18.003f, 15.007f, 18.003f, 16.249f)
@@ -117,11 +117,11 @@ public val FluentUi.Colored.PersonAvailable: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(7.378f, 3.334f),
-                end = Offset(12.474f, 11.472f)
-            )
+                end = Offset(12.474f, 11.472f),
+            ),
         ) {
             moveTo(10f, 2.005f)
             curveTo(12.761f, 2.005f, 15f, 4.243f, 15f, 7.005f)
@@ -134,11 +134,11 @@ public val FluentUi.Colored.PersonAvailable: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF52D17C),
-                    1f to Color(0xFF22918B)
+                    1f to Color(0xFF22918B),
                 ),
                 start = Offset(12.393f, 14.063f),
-                end = Offset(19.984f, 21.95f)
-            )
+                end = Offset(19.984f, 21.95f),
+            ),
         ) {
             moveTo(17.5f, 12f)
             curveTo(20.538f, 12f, 23f, 14.462f, 23f, 17.5f)
@@ -151,12 +151,12 @@ public val FluentUi.Colored.PersonAvailable: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFFFFF),
-                    1f to Color(0xFFE3FFD9)
+                    1f to Color(0xFFE3FFD9),
                 ),
                 start = Offset(15.313f, 15.51f),
-                end = Offset(16.45f, 21.13f)
+                end = Offset(16.45f, 21.13f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(20.854f, 15.146f)
             curveTo(21.049f, 15.342f, 21.049f, 15.658f, 20.854f, 15.854f)
@@ -177,6 +177,6 @@ public val FluentUi.Colored.PersonAvailable: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun PersonAvailablePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PersonAvailable, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PersonAvailable, contentDescription = null)
     }
 }

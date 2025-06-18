@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -23,7 +23,6 @@
  */
 package fluent.ui.system.icons.filled
 
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
@@ -34,15 +33,16 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ArrowMinimizeVertical: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ArrowMinimizeVertical: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ArrowMinimizeVertical",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFF212121))) {
             moveTo(13.793f, 18.707f)
@@ -91,6 +91,6 @@ public val FluentUi.Filled.ArrowMinimizeVertical: ImageVector by lazy(LazyThread
 @Composable
 private fun ArrowMinimizeVerticalPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ArrowMinimizeVertical, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ArrowMinimizeVertical, contentDescription = null)
     }
 }

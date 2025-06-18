@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,17 +34,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.BuildingGovernment: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.BuildingGovernment: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.BuildingGovernment",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFF70777D))) {
             moveTo(11f, 4.5f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.BuildingGovernment: ImageVector by lazy(LazyThreadSa
                 colorStops = arrayOf(
                     0f to Color(0xFFFFC205),
                     0.735f to Color(0xFFFFA43D),
-                    1f to Color(0xFFE67505)
+                    1f to Color(0xFFE67505),
                 ),
                 start = Offset(12f, 6f),
-                end = Offset(12f, 13.5f)
-            )
+                end = Offset(12f, 13.5f),
+            ),
         ) {
             moveTo(5f, 13f)
             curveTo(5f, 9.134f, 8.134f, 6f, 12f, 6f)
@@ -89,11 +89,11 @@ public val FluentUi.Colored.BuildingGovernment: ImageVector by lazy(LazyThreadSa
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFD638),
-                    1f to Color(0x00FFD638)
+                    1f to Color(0x00FFD638),
                 ),
                 center = Offset(16.9f, 7.154f),
-                radius = 4.038f
-            )
+                radius = 4.038f,
+            ),
         ) {
             moveTo(5f, 13f)
             curveTo(5f, 9.134f, 8.134f, 6f, 12f, 6f)
@@ -107,11 +107,11 @@ public val FluentUi.Colored.BuildingGovernment: ImageVector by lazy(LazyThreadSa
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFAAB3BD),
-                    1f to Color(0xFF889096)
+                    1f to Color(0xFF889096),
                 ),
                 start = Offset(9.813f, 13f),
-                end = Offset(19.143f, 22.541f)
-            )
+                end = Offset(19.143f, 22.541f),
+            ),
         ) {
             moveTo(2f, 15.5f)
             curveTo(2f, 14.119f, 3.119f, 13f, 4.5f, 13f)
@@ -128,12 +128,12 @@ public val FluentUi.Colored.BuildingGovernment: ImageVector by lazy(LazyThreadSa
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFB357),
-                    1f to Color(0x00FFB357)
+                    1f to Color(0x00FFB357),
                 ),
                 center = Offset(20.75f, 13f),
-                radius = 5.181f
+                radius = 5.181f,
             ),
-            fillAlpha = 0.6f
+            fillAlpha = 0.6f,
         ) {
             moveTo(2f, 15.5f)
             curveTo(2f, 14.119f, 3.119f, 13f, 4.5f, 13f)
@@ -207,6 +207,6 @@ public val FluentUi.Colored.BuildingGovernment: ImageVector by lazy(LazyThreadSa
 @Composable
 private fun BuildingGovernmentPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.BuildingGovernment, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.BuildingGovernment, contentDescription = null)
     }
 }

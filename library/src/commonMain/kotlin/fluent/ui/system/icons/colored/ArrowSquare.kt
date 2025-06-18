@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ArrowSquare: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ArrowSquare: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ArrowSquare",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(3.643f, 6.375f),
-                end = Offset(17.786f, 17.625f)
-            )
+                end = Offset(17.786f, 17.625f),
+            ),
         ) {
             moveTo(6.25f, 3f)
             curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.ArrowSquare: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFFFFF),
-                    1f to Color(0xFFB3E0FF)
+                    1f to Color(0xFFB3E0FF),
                 ),
                 start = Offset(9.076f, 7.769f),
-                end = Offset(16.75f, 25.272f)
-            )
+                end = Offset(16.75f, 25.272f),
+            ),
         ) {
             moveTo(16.53f, 11.72f)
             lineTo(16.446f, 11.648f)
@@ -105,6 +105,6 @@ public val FluentUi.Colored.ArrowSquare: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun ArrowSquarePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ArrowSquare, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ArrowSquare, contentDescription = null)
     }
 }

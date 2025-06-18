@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,28 +34,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Briefcase: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Briefcase: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Briefcase",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0094F0),
-                    1f to Color(0xFF163697)
+                    1f to Color(0xFF163697),
                 ),
                 start = Offset(7.637f, 2.631f),
-                end = Offset(9.95f, 9.253f)
+                end = Offset(9.95f, 9.253f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(13.75f, 2f)
             curveTo(14.993f, 2f, 16f, 3.007f, 16f, 4.25f)
@@ -79,11 +79,11 @@ public val FluentUi.Colored.Briefcase: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFFCC23D1)
+                    1f to Color(0xFFCC23D1),
                 ),
                 start = Offset(3.643f, 12.688f),
-                end = Offset(8.505f, 29.266f)
-            )
+                end = Offset(8.505f, 29.266f),
+            ),
         ) {
             moveTo(3f, 11f)
             horizontalLineTo(21f)
@@ -98,11 +98,11 @@ public val FluentUi.Colored.Briefcase: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.337f to Color(0xFF194694),
-                    0.747f to Color(0x00367AF2)
+                    0.747f to Color(0x00367AF2),
                 ),
                 center = Offset(12f, 11f),
-                radius = 9f
-            )
+                radius = 9f,
+            ),
         ) {
             moveTo(3f, 11f)
             horizontalLineTo(21f)
@@ -118,11 +118,11 @@ public val FluentUi.Colored.Briefcase: ImageVector by lazy(LazyThreadSafetyMode.
                 colorStops = arrayOf(
                     0f to Color(0xFF80F1E6),
                     0.552f to Color(0xFF40C4F5),
-                    1f to Color(0xFF00A2FA)
+                    1f to Color(0xFF00A2FA),
                 ),
                 start = Offset(4.8f, 6.332f),
-                end = Offset(13.623f, 16.375f)
-            )
+                end = Offset(13.623f, 16.375f),
+            ),
         ) {
             moveTo(3f, 9.25f)
             curveTo(3f, 7.455f, 4.455f, 6f, 6.25f, 6f)
@@ -139,11 +139,11 @@ public val FluentUi.Colored.Briefcase: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB8F5FF),
-                    0.844f to Color(0xFF7CECFF)
+                    0.844f to Color(0xFF7CECFF),
                 ),
                 start = Offset(12f, 11f),
-                end = Offset(12f, 15f)
-            )
+                end = Offset(12f, 15f),
+            ),
         ) {
             moveTo(13f, 11f)
             horizontalLineTo(11f)
@@ -163,6 +163,6 @@ public val FluentUi.Colored.Briefcase: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun BriefcasePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Briefcase, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Briefcase, contentDescription = null)
     }
 }

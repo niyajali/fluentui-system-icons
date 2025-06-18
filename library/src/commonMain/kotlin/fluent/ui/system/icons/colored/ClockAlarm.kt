@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,27 +34,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ClockAlarm",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF6F47),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(22.21f, 9.37f),
-                end = Offset(15.208f, 3.641f)
-            )
+                end = Offset(15.208f, 3.641f),
+            ),
         ) {
             moveTo(20.097f, 9.407f)
             curveTo(21.239f, 8.702f, 22f, 7.44f, 22f, 6f)
@@ -67,11 +67,11 @@ public val FluentUi.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.644f to Color(0xFFFF6F47),
-                    0.942f to Color(0x00FF6F47)
+                    0.942f to Color(0x00FF6F47),
                 ),
                 center = Offset(12.6f, 11.6f),
-                radius = 11.031f
-            )
+                radius = 11.031f,
+            ),
         ) {
             moveTo(20.097f, 9.407f)
             curveTo(21.239f, 8.702f, 22f, 7.44f, 22f, 6f)
@@ -84,11 +84,11 @@ public val FluentUi.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF6F47),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(10.383f, 9.37f),
-                end = Offset(3.381f, 3.641f)
-            )
+                end = Offset(3.381f, 3.641f),
+            ),
         ) {
             moveTo(9.407f, 3.903f)
             curveTo(6.798f, 4.738f, 4.738f, 6.798f, 3.903f, 9.407f)
@@ -101,11 +101,11 @@ public val FluentUi.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.659f to Color(0xFFFF6F47),
-                    0.949f to Color(0x00FF6F47)
+                    0.949f to Color(0x00FF6F47),
                 ),
                 center = Offset(12.6f, 11.6f),
-                radius = 11.031f
-            )
+                radius = 11.031f,
+            ),
         ) {
             moveTo(9.407f, 3.903f)
             curveTo(6.798f, 4.738f, 4.738f, 6.798f, 3.903f, 9.407f)
@@ -118,11 +118,11 @@ public val FluentUi.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFCAD2D9),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(3f, 15.239f),
-                end = Offset(3.847f, 22.319f)
-            )
+                end = Offset(3.847f, 22.319f),
+            ),
         ) {
             moveTo(4.28f, 20.78f)
             lineTo(7.03f, 18.03f)
@@ -136,11 +136,11 @@ public val FluentUi.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFCAD2D9),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(3f, 15.239f),
-                end = Offset(3.847f, 22.319f)
-            )
+                end = Offset(3.847f, 22.319f),
+            ),
         ) {
             moveTo(20.78f, 19.72f)
             lineTo(18.03f, 16.97f)
@@ -154,11 +154,11 @@ public val FluentUi.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF1EC8B0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(6f, 2f),
-                end = Offset(15f, 22f)
-            )
+                end = Offset(15f, 22f),
+            ),
         ) {
             moveTo(21f, 12f)
             curveTo(21f, 16.971f, 16.971f, 21f, 12f, 21f)
@@ -171,11 +171,11 @@ public val FluentUi.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFDEDEFF)
+                    1f to Color(0xFFDEDEFF),
                 ),
                 start = Offset(6.783f, 2.87f),
-                end = Offset(16.565f, 23.739f)
-            )
+                end = Offset(16.565f, 23.739f),
+            ),
         ) {
             moveTo(19.5f, 12f)
             curveTo(19.5f, 16.142f, 16.142f, 19.5f, 12f, 19.5f)
@@ -188,12 +188,12 @@ public val FluentUi.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF1EC8B0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(12.6f, 7.133f),
-                end = Offset(15.429f, 11.849f)
+                end = Offset(15.429f, 11.849f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(11.25f, 7f)
             curveTo(11.664f, 7f, 12f, 7.336f, 12f, 7.75f)
@@ -214,6 +214,6 @@ public val FluentUi.Colored.ClockAlarm: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun ClockAlarmPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ClockAlarm, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ClockAlarm, contentDescription = null)
     }
 }

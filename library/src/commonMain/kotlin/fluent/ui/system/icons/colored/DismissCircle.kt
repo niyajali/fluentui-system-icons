@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.DismissCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.DismissCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.DismissCircle",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFF83F54),
-                    1f to Color(0xFFCA2134)
+                    1f to Color(0xFFCA2134),
                 ),
                 start = Offset(5.125f, 3.25f),
-                end = Offset(18.25f, 22.625f)
-            )
+                end = Offset(18.25f, 22.625f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(17.523f, 2f, 22f, 6.477f, 22f, 12f)
@@ -66,11 +66,11 @@ public val FluentUi.Colored.DismissCircle: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFFECBE6)
+                    1f to Color(0xFFFECBE6),
                 ),
                 start = Offset(8.685f, 12.332f),
-                end = Offset(12.591f, 16.392f)
-            )
+                end = Offset(12.591f, 16.392f),
+            ),
         ) {
             moveTo(15.53f, 8.47f)
             lineTo(15.446f, 8.397f)
@@ -114,6 +114,6 @@ public val FluentUi.Colored.DismissCircle: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun DismissCirclePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.DismissCircle, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.DismissCircle, contentDescription = null)
     }
 }

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,28 +34,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Camera: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Camera: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Camera",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFF08AF4),
                     0.535f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF4E44DB)
+                    1f to Color(0xFF4E44DB),
                 ),
                 center = Offset(-1.125f, 3.267f),
-                radius = 29.862f
-            )
+                radius = 29.862f,
+            ),
         ) {
             moveTo(2f, 8.25f)
             curveTo(2f, 6.455f, 3.455f, 5f, 5.25f, 5f)
@@ -78,12 +78,12 @@ public val FluentUi.Colored.Camera: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF312A9A),
-                    1f to Color(0x00312A9A)
+                    1f to Color(0x00312A9A),
                 ),
                 center = Offset(14.5f, 14.091f),
-                radius = 6.927f
+                radius = 6.927f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(2f, 8.25f)
             curveTo(2f, 6.455f, 3.455f, 5f, 5.25f, 5f)
@@ -106,12 +106,12 @@ public val FluentUi.Colored.Camera: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFFFFF),
-                    1f to Color(0xFFDECBFF)
+                    1f to Color(0xFFDECBFF),
                 ),
                 start = Offset(9.193f, 8f),
-                end = Offset(13.693f, 18.688f)
+                end = Offset(13.693f, 18.688f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(12f, 17f)
             curveTo(14.485f, 17f, 16.5f, 14.985f, 16.5f, 12.5f)
@@ -124,11 +124,11 @@ public val FluentUi.Colored.Camera: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.243f to Color(0xFF3BD5FF),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 center = Offset(8f, 8f),
-                radius = 8.515f
-            )
+                radius = 8.515f,
+            ),
         ) {
             moveTo(15f, 12.5f)
             curveTo(15f, 14.157f, 13.657f, 15.5f, 12f, 15.5f)
@@ -141,11 +141,11 @@ public val FluentUi.Colored.Camera: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFF08AF4),
-                    1f to Color(0xFFF462AB)
+                    1f to Color(0xFFF462AB),
                 ),
                 start = Offset(17f, 7.75f),
-                end = Offset(20f, 10f)
-            )
+                end = Offset(20f, 10f),
+            ),
         ) {
             moveTo(18.5f, 10f)
             curveTo(19.328f, 10f, 20f, 9.328f, 20f, 8.5f)
@@ -161,6 +161,6 @@ public val FluentUi.Colored.Camera: ImageVector by lazy(LazyThreadSafetyMode.NON
 @Composable
 private fun CameraPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Camera, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Camera, contentDescription = null)
     }
 }

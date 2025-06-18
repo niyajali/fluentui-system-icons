@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,17 +34,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Molecule",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFF212121))) {
             moveTo(6.584f, 12.876f)
@@ -58,11 +58,11 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB9C0C7),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(6.584f, 7.376f),
-                end = Offset(8.475f, 14.648f)
-            )
+                end = Offset(8.475f, 14.648f),
+            ),
         ) {
             moveTo(6.584f, 12.876f)
             lineTo(14.834f, 7.376f)
@@ -75,11 +75,11 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.628f to Color(0xFF70777D),
-                    1f to Color(0x0070777D)
+                    1f to Color(0x0070777D),
                 ),
                 center = Offset(16f, 7f),
-                radius = 6.801f
-            )
+                radius = 6.801f,
+            ),
         ) {
             moveTo(6.584f, 12.876f)
             lineTo(14.834f, 7.376f)
@@ -92,11 +92,11 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.563f to Color(0xFF70777D),
-                    1f to Color(0x0070777D)
+                    1f to Color(0x0070777D),
                 ),
                 center = Offset(6f, 14f),
-                radius = 5.408f
-            )
+                radius = 5.408f,
+            ),
         ) {
             moveTo(6.584f, 12.876f)
             lineTo(14.834f, 7.376f)
@@ -117,11 +117,11 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB9C0C7),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(5.665f, 13.329f),
-                end = Offset(7.119f, 20.323f)
-            )
+                end = Offset(7.119f, 20.323f),
+            ),
         ) {
             moveTo(15.665f, 19.671f)
             lineTo(5.665f, 14.671f)
@@ -134,11 +134,11 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.563f to Color(0xFF70777D),
-                    1f to Color(0x0070777D)
+                    1f to Color(0x0070777D),
                 ),
                 center = Offset(16f, 19f),
-                radius = 4.472f
-            )
+                radius = 4.472f,
+            ),
         ) {
             moveTo(15.665f, 19.671f)
             lineTo(5.665f, 14.671f)
@@ -151,11 +151,11 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.677f to Color(0xFF70777D),
-                    1f to Color(0x0070777D)
+                    1f to Color(0x0070777D),
                 ),
                 center = Offset(6f, 14f),
-                radius = 5.59f
-            )
+                radius = 5.59f,
+            ),
         ) {
             moveTo(15.665f, 19.671f)
             lineTo(5.665f, 14.671f)
@@ -168,11 +168,11 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF2BDABE),
-                    1f to Color(0xFF22918B)
+                    1f to Color(0xFF22918B),
                 ),
                 start = Offset(11.357f, 3.875f),
-                end = Offset(18.258f, 11.045f)
-            )
+                end = Offset(18.258f, 11.045f),
+            ),
         ) {
             moveTo(16f, 7f)
             moveToRelative(-5f, 0f)
@@ -183,11 +183,11 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFEC318F),
-                    1f to Color(0xFFB91D6B)
+                    1f to Color(0xFFB91D6B),
                 ),
                 start = Offset(2.286f, 11.5f),
-                end = Offset(7.807f, 17.236f)
-            )
+                end = Offset(7.807f, 17.236f),
+            ),
         ) {
             moveTo(6f, 14f)
             moveToRelative(-4f, 0f)
@@ -204,11 +204,11 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFCD0F),
-                    1f to Color(0xFFFE8401)
+                    1f to Color(0xFFFE8401),
                 ),
                 start = Offset(13.938f, 15.063f),
-                end = Offset(17.875f, 22.563f)
-            )
+                end = Offset(17.875f, 22.563f),
+            ),
         ) {
             moveTo(16f, 19f)
             moveToRelative(-3f, 0f)
@@ -222,6 +222,6 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun MoleculePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Molecule, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Molecule, contentDescription = null)
     }
 }

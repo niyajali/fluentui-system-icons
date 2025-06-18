@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,28 +33,28 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.CodeBlock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.CodeBlock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.CodeBlock",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.028f to Color(0xFFE67EEA),
                     0.438f to Color(0xFFAD64D7),
-                    1f to Color(0xFF794DC5)
+                    1f to Color(0xFF794DC5),
                 ),
                 start = Offset(7.389f, 3f),
-                end = Offset(17.26f, 21f)
-            )
+                end = Offset(17.26f, 21f),
+            ),
         ) {
             moveTo(3f, 6.25f)
             curveTo(3f, 4.455f, 4.455f, 3f, 6.25f, 3f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.CodeBlock: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFF9DCFA)
+                    1f to Color(0xFFF9DCFA),
                 ),
                 start = Offset(8.845f, 8.308f),
-                end = Offset(13.544f, 20.472f)
-            )
+                end = Offset(13.544f, 20.472f),
+            ),
         ) {
             moveTo(10.53f, 9.28f)
             lineTo(7.811f, 12f)
@@ -107,6 +107,6 @@ public val FluentUi.Colored.CodeBlock: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun CodeBlockPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.CodeBlock, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.CodeBlock, contentDescription = null)
     }
 }

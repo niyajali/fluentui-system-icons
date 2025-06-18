@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Send: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Send: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Send",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0094F0),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 center = Offset(1.494f, 12f),
-                radius = 8.006f
-            )
+                radius = 8.006f,
+            ),
         ) {
             moveTo(5.57f, 12f)
             lineTo(4.446f, 9f)
@@ -67,11 +67,11 @@ public val FluentUi.Colored.Send: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF3BD5FF),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(2.246f, -5.676f),
-                end = Offset(18.952f, 16.518f)
-            )
+                end = Offset(18.952f, 16.518f),
+            ),
         ) {
             moveTo(12.815f, 12.197f)
             lineTo(5.283f, 13.453f)
@@ -93,11 +93,11 @@ public val FluentUi.Colored.Send: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0x00DCF8FF),
-                    0.769f to Color(0xB2FF6CE8)
+                    0.769f to Color(0xB2FF6CE8),
                 ),
                 start = Offset(11.997f, 7.505f),
-                end = Offset(17.07f, 21.229f)
-            )
+                end = Offset(17.07f, 21.229f),
+            ),
         ) {
             moveTo(12.815f, 12.197f)
             lineTo(5.283f, 13.453f)
@@ -122,6 +122,6 @@ public val FluentUi.Colored.Send: ImageVector by lazy(LazyThreadSafetyMode.NONE)
 @Composable
 private fun SendPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Send, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Send, contentDescription = null)
     }
 }

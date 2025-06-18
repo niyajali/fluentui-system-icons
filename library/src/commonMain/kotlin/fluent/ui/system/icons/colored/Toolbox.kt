@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Toolbox: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Toolbox: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Toolbox",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB9C0C7),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(3.429f, 4.002f),
-                end = Offset(3.84f, 7.069f)
-            )
+                end = Offset(3.84f, 7.069f),
+            ),
         ) {
             moveTo(7f, 7.5f)
             verticalLineTo(6.252f)
@@ -74,11 +74,11 @@ public val FluentUi.Colored.Toolbox: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFFF97DBD),
-                    1f to Color(0xFFD7257D)
+                    1f to Color(0xFFD7257D),
                 ),
                 start = Offset(0.75f, 8.314f),
-                end = Offset(2.577f, 28.314f)
-            )
+                end = Offset(2.577f, 28.314f),
+            ),
         ) {
             moveTo(4.25f, 19.997f)
             curveTo(3.007f, 19.997f, 2f, 18.989f, 2f, 17.747f)
@@ -93,11 +93,11 @@ public val FluentUi.Colored.Toolbox: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFF97DBD),
-                    1f to Color(0xFFD7257D)
+                    1f to Color(0xFFD7257D),
                 ),
                 start = Offset(0.75f, 5.125f),
-                end = Offset(1.128f, 17.094f)
-            )
+                end = Offset(1.128f, 17.094f),
+            ),
         ) {
             moveTo(2f, 9.25f)
             curveTo(2f, 8.007f, 3.007f, 7f, 4.25f, 7f)
@@ -112,11 +112,11 @@ public val FluentUi.Colored.Toolbox: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFEFEFEF),
-                    1f to Color(0xFFDADADA)
+                    1f to Color(0xFFDADADA),
                 ),
                 start = Offset(2.571f, 10f),
-                end = Offset(3.327f, 14.331f)
-            )
+                end = Offset(3.327f, 14.331f),
+            ),
         ) {
             moveTo(16.75f, 10f)
             curveTo(17.164f, 10f, 17.5f, 10.336f, 17.5f, 10.75f)
@@ -131,11 +131,11 @@ public val FluentUi.Colored.Toolbox: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFEFEFEF),
-                    1f to Color(0xFFDADADA)
+                    1f to Color(0xFFDADADA),
                 ),
                 start = Offset(2.571f, 10f),
-                end = Offset(3.327f, 14.331f)
-            )
+                end = Offset(3.327f, 14.331f),
+            ),
         ) {
             moveTo(7.25f, 10f)
             curveTo(7.664f, 10f, 8f, 10.336f, 8f, 10.75f)
@@ -153,6 +153,6 @@ public val FluentUi.Colored.Toolbox: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun ToolboxPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Toolbox, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Toolbox, contentDescription = null)
     }
 }

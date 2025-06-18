@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PersonFeedback: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PersonFeedback: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PersonFeedback",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(4.854f, 15.931f),
-                end = Offset(7.41f, 22.928f)
-            )
+                end = Offset(7.41f, 22.928f),
+            ),
         ) {
             moveTo(8.001f, 22f)
             curveTo(5.941f, 22f, 4.361f, 21.44f, 3.301f, 20.33f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.PersonFeedback: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(8.001f, 14.167f),
-                end = Offset(11.608f, 25.721f)
-            )
+                end = Offset(11.608f, 25.721f),
+            ),
         ) {
             moveTo(8.001f, 22f)
             curveTo(5.941f, 22f, 4.361f, 21.44f, 3.301f, 20.33f)
@@ -93,11 +93,11 @@ public val FluentUi.Colored.PersonFeedback: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(6.165f, 7.431f),
-                end = Offset(9.732f, 13.127f)
-            )
+                end = Offset(9.732f, 13.127f),
+            ),
         ) {
             moveTo(8f, 13.5f)
             curveTo(6.07f, 13.5f, 4.5f, 11.93f, 4.5f, 10f)
@@ -111,11 +111,11 @@ public val FluentUi.Colored.PersonFeedback: ImageVector by lazy(LazyThreadSafety
                 colorStops = arrayOf(
                     0f to Color(0xFFFAB500),
                     0.535f to Color(0xFFFE8401),
-                    1f to Color(0xFFFB5937)
+                    1f to Color(0xFFFB5937),
                 ),
                 center = Offset(9.692f, -1.231f),
-                radius = 19.036f
-            )
+                radius = 19.036f,
+            ),
         ) {
             moveTo(14.77f, 12.4f)
             curveTo(14.92f, 12.47f, 15.09f, 12.5f, 15.25f, 12.5f)
@@ -140,6 +140,6 @@ public val FluentUi.Colored.PersonFeedback: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun PersonFeedbackPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PersonFeedback, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PersonFeedback, contentDescription = null)
     }
 }

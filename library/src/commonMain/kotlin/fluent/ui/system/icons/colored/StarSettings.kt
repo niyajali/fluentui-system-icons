@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.StarSettings: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.StarSettings: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.StarSettings",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF6F47),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(21.994f, 21.928f),
-                end = Offset(1.427f, 2.53f)
-            )
+                end = Offset(1.427f, 2.53f),
+            ),
         ) {
             moveTo(13.209f, 3.103f)
             curveTo(12.714f, 2.099f, 11.283f, 2.099f, 10.788f, 3.103f)
@@ -78,11 +78,11 @@ public val FluentUi.Colored.StarSettings: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.198f to Color(0x99EB4824),
-                    0.701f to Color(0x00EB4824)
+                    0.701f to Color(0x00EB4824),
                 ),
                 center = Offset(17.62f, 19.427f),
-                radius = 12.559f
-            )
+                radius = 12.559f,
+            ),
         ) {
             moveTo(13.209f, 3.103f)
             curveTo(12.714f, 2.099f, 11.283f, 2.099f, 10.788f, 3.103f)
@@ -107,12 +107,12 @@ public val FluentUi.Colored.StarSettings: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.589f to Color(0xFFB03111),
-                    1f to Color(0x00B03111)
+                    1f to Color(0x00B03111),
                 ),
                 center = Offset(17.621f, 17.552f),
-                radius = 7.498f
+                radius = 7.498f,
             ),
-            fillAlpha = 0.4f
+            fillAlpha = 0.4f,
         ) {
             moveTo(13.209f, 3.103f)
             curveTo(12.714f, 2.099f, 11.283f, 2.099f, 10.788f, 3.103f)
@@ -137,12 +137,12 @@ public val FluentUi.Colored.StarSettings: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.628f to Color(0xFFB03111),
-                    1f to Color(0x00B03111)
+                    1f to Color(0x00B03111),
                 ),
                 center = Offset(17.62f, 17.552f),
-                radius = 7.289f
+                radius = 7.289f,
             ),
-            fillAlpha = 0.4f
+            fillAlpha = 0.4f,
         ) {
             moveTo(13.209f, 3.103f)
             curveTo(12.714f, 2.099f, 11.283f, 2.099f, 10.788f, 3.103f)
@@ -167,12 +167,12 @@ public val FluentUi.Colored.StarSettings: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.671f to Color(0xFFB03111),
-                    0.972f to Color(0x00B03111)
+                    0.972f to Color(0x00B03111),
                 ),
                 center = Offset(17.621f, 17.552f),
-                radius = 7.614f
+                radius = 7.614f,
             ),
-            fillAlpha = 0.4f
+            fillAlpha = 0.4f,
         ) {
             moveTo(13.209f, 3.103f)
             curveTo(12.714f, 2.099f, 11.283f, 2.099f, 10.788f, 3.103f)
@@ -197,11 +197,11 @@ public val FluentUi.Colored.StarSettings: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF70777D),
-                    1f to Color(0xFFB9C0C7)
+                    1f to Color(0xFFB9C0C7),
                 ),
                 start = Offset(20.156f, 22.227f),
-                end = Offset(14.626f, 12.905f)
-            )
+                end = Offset(14.626f, 12.905f),
+            ),
         ) {
             moveTo(14.277f, 13.976f)
             curveTo(14.592f, 15.066f, 13.938f, 16.199f, 12.836f, 16.472f)
@@ -245,6 +245,6 @@ public val FluentUi.Colored.StarSettings: ImageVector by lazy(LazyThreadSafetyMo
 @Composable
 private fun StarSettingsPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.StarSettings, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.StarSettings, contentDescription = null)
     }
 }

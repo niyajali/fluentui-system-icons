@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Certificate: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Certificate: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Certificate",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(2.714f, 5.813f),
-                end = Offset(12.547f, 19.433f)
-            )
+                end = Offset(12.547f, 19.433f),
+            ),
         ) {
             moveTo(4.75f, 3f)
             curveTo(3.231f, 3f, 2f, 4.231f, 2f, 5.75f)
@@ -72,12 +72,12 @@ public val FluentUi.Colored.Certificate: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF9DEAFF),
-                    1f to Color(0xFFFFFFFF)
+                    1f to Color(0xFFFFFFFF),
                 ),
                 start = Offset(23.4f, 21.95f),
-                end = Offset(15.824f, 0.869f)
+                end = Offset(15.824f, 0.869f),
             ),
-            fillAlpha = 0.9f
+            fillAlpha = 0.9f,
         ) {
             moveTo(6.75f, 7f)
             curveTo(6.336f, 7f, 6f, 7.336f, 6f, 7.75f)
@@ -100,11 +100,11 @@ public val FluentUi.Colored.Certificate: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF163697),
-                    1f to Color(0xFF29C3FF)
+                    1f to Color(0xFF29C3FF),
                 ),
                 center = Offset(6f, 15.064f),
-                radius = 9.457f
-            )
+                radius = 9.457f,
+            ),
         ) {
             moveTo(9.001f, 16f)
             curveTo(8.165f, 16.628f, 7.126f, 17f, 6f, 17f)
@@ -123,11 +123,11 @@ public val FluentUi.Colored.Certificate: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.772f to Color(0xFFFFCD0F),
-                    0.991f to Color(0xFFE67505)
+                    0.991f to Color(0xFFE67505),
                 ),
                 center = Offset(-15.29f, -18.004f),
-                radius = 44.661f
-            )
+                radius = 44.661f,
+            ),
         ) {
             moveTo(6f, 10f)
             curveTo(3.79f, 10f, 1.999f, 11.791f, 1.999f, 14.001f)
@@ -143,6 +143,6 @@ public val FluentUi.Colored.Certificate: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun CertificatePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Certificate, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Certificate, contentDescription = null)
     }
 }

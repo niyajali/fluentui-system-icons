@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,28 +33,28 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Planet",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF8F77FF),
                     0.457f to Color(0xFF775BE3),
-                    0.656f to Color(0xFF6552D9)
+                    0.656f to Color(0xFF6552D9),
                 ),
                 center = Offset(19.667f, 22.25f),
-                radius = 19.13f
-            )
+                radius = 19.13f,
+            ),
         ) {
             moveTo(20.381f, 8.713f)
             curveTo(20.012f, 8.696f, 19.618f, 8.707f, 19.199f, 8.746f)
@@ -72,11 +72,11 @@ public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.241f to Color(0xFF6E30C8),
-                    1f to Color(0x006730C6)
+                    1f to Color(0x006730C6),
                 ),
                 center = Offset(23.364f, 14.125f),
-                radius = 4.239f
-            )
+                radius = 4.239f,
+            ),
         ) {
             moveTo(20.381f, 8.713f)
             curveTo(20.012f, 8.696f, 19.618f, 8.707f, 19.199f, 8.746f)
@@ -94,11 +94,11 @@ public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFF36284),
-                    1f to Color(0x00F36284)
+                    1f to Color(0x00F36284),
                 ),
                 center = Offset(16.534f, 26.4f),
-                radius = 8.61f
-            )
+                radius = 8.61f,
+            ),
         ) {
             moveTo(20.381f, 8.713f)
             curveTo(20.012f, 8.696f, 19.618f, 8.707f, 19.199f, 8.746f)
@@ -116,11 +116,11 @@ public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF7D40C8),
-                    1f to Color(0x007F45D2)
+                    1f to Color(0x007F45D2),
                 ),
                 center = Offset(24.868f, 8.706f),
-                radius = 16.605f
-            )
+                radius = 16.605f,
+            ),
         ) {
             moveTo(20.381f, 8.713f)
             curveTo(20.012f, 8.696f, 19.618f, 8.707f, 19.199f, 8.746f)
@@ -138,12 +138,12 @@ public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.265f to Color(0x000A26B5),
-                    0.581f to Color(0xFF051D92)
+                    0.581f to Color(0xFF051D92),
                 ),
                 center = Offset(13.584f, 20.282f),
-                radius = 18.03f
+                radius = 18.03f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(20.381f, 8.713f)
             curveTo(20.012f, 8.696f, 19.618f, 8.707f, 19.199f, 8.746f)
@@ -161,11 +161,11 @@ public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.195f to Color(0xFFE173E7),
-                    0.901f to Color(0x00E173E7)
+                    0.901f to Color(0x00E173E7),
                 ),
                 center = Offset(24.429f, 15.687f),
-                radius = 4.335f
-            )
+                radius = 4.335f,
+            ),
         ) {
             moveTo(20.381f, 8.713f)
             curveTo(20.012f, 8.696f, 19.618f, 8.707f, 19.199f, 8.746f)
@@ -183,11 +183,11 @@ public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF3DD3DC),
-                    1f to Color(0xFF4290F0)
+                    1f to Color(0xFF4290F0),
                 ),
                 center = Offset(5.897f, 3.75f),
-                radius = 18.79f
-            )
+                radius = 18.79f,
+            ),
         ) {
             moveTo(3.641f, 15.343f)
             lineTo(3.643f, 15.314f)
@@ -206,11 +206,11 @@ public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.285f to Color(0xFF3A80E1),
-                    1f to Color(0x00488AE5)
+                    1f to Color(0x00488AE5),
                 ),
                 center = Offset(0.002f, 9.875f),
-                radius = 6.473f
-            )
+                radius = 6.473f,
+            ),
         ) {
             moveTo(3.641f, 15.343f)
             lineTo(3.643f, 15.314f)
@@ -229,11 +229,11 @@ public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.232f to Color(0xFF3DD3DC),
-                    1f to Color(0x003DD3DC)
+                    1f to Color(0x003DD3DC),
                 ),
                 center = Offset(0.002f, 7.938f),
-                radius = 3.19f
-            )
+                radius = 3.19f,
+            ),
         ) {
             moveTo(3.641f, 15.343f)
             lineTo(3.643f, 15.314f)
@@ -252,11 +252,11 @@ public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.576f to Color(0x0026CFDB),
-                    1f to Color(0xFF19D9E7)
+                    1f to Color(0xFF19D9E7),
                 ),
                 center = Offset(5.513f, 3.55f),
-                radius = 12.57f
-            )
+                radius = 12.57f,
+            ),
         ) {
             moveTo(3.641f, 15.343f)
             lineTo(3.643f, 15.314f)
@@ -278,6 +278,6 @@ public val FluentUi.Colored.Planet: ImageVector by lazy(LazyThreadSafetyMode.NON
 @Composable
 private fun PlanetPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Planet, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Planet, contentDescription = null)
     }
 }

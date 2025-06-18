@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PaintBrush: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PaintBrush: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PaintBrush",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.085f to Color(0xFFFFCD0F),
-                    0.991f to Color(0xFFE67505)
+                    0.991f to Color(0xFFE67505),
                 ),
                 start = Offset(9.2f, -1.281f),
-                end = Offset(15.448f, 16.05f)
-            )
+                end = Offset(15.448f, 16.05f),
+            ),
         ) {
             moveTo(19f, 2.75f)
             curveTo(19f, 2.336f, 18.664f, 2f, 18.25f, 2f)
@@ -68,11 +68,11 @@ public val FluentUi.Colored.PaintBrush: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFFAC80FF),
-                    1f to Color(0xFF5750E2)
+                    1f to Color(0xFF5750E2),
                 ),
                 start = Offset(5f, 8.471f),
-                end = Offset(5.857f, 24.589f)
-            )
+                end = Offset(5.857f, 24.589f),
+            ),
         ) {
             moveTo(5f, 12f)
             verticalLineTo(14.252f)
@@ -92,11 +92,11 @@ public val FluentUi.Colored.PaintBrush: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF5750E2)
+                    1f to Color(0xFF5750E2),
                 ),
                 start = Offset(8.329f, 11.199f),
-                end = Offset(8.443f, 12.891f)
-            )
+                end = Offset(8.443f, 12.891f),
+            ),
         ) {
             moveTo(5f, 12f)
             curveTo(5f, 11.448f, 5.448f, 11f, 6f, 11f)
@@ -111,11 +111,11 @@ public val FluentUi.Colored.PaintBrush: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF921F),
-                    1f to Color(0xFFEB4824)
+                    1f to Color(0xFFEB4824),
                 ),
                 start = Offset(12.5f, 0.611f),
-                end = Offset(16.548f, 5.929f)
-            )
+                end = Offset(16.548f, 5.929f),
+            ),
         ) {
             moveTo(12.5f, 5.252f)
             verticalLineTo(2f)
@@ -129,11 +129,11 @@ public val FluentUi.Colored.PaintBrush: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF921F),
-                    1f to Color(0xFFEB4824)
+                    1f to Color(0xFFEB4824),
                 ),
                 start = Offset(12.5f, 0.611f),
-                end = Offset(16.548f, 5.929f)
-            )
+                end = Offset(16.548f, 5.929f),
+            ),
         ) {
             moveTo(15f, 6.251f)
             verticalLineTo(2f)
@@ -150,6 +150,6 @@ public val FluentUi.Colored.PaintBrush: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun PaintBrushPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PaintBrush, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PaintBrush, contentDescription = null)
     }
 }

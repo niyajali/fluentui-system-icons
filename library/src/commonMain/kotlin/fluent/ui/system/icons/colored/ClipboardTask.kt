@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ClipboardTask: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ClipboardTask: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ClipboardTask",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(4f, 5.8f),
-                end = Offset(18.146f, 23.483f)
-            )
+                end = Offset(18.146f, 23.483f),
+            ),
         ) {
             moveTo(4f, 6.25f)
             curveTo(4f, 5.007f, 5.007f, 4f, 6.25f, 4f)
@@ -70,12 +70,12 @@ public val FluentUi.Colored.ClipboardTask: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0A1852),
-                    0.9f to Color(0x000A1852)
+                    0.9f to Color(0x000A1852),
                 ),
                 center = Offset(12f, 3f),
-                radius = 6.169f
+                radius = 6.169f,
             ),
-            fillAlpha = 0.7f
+            fillAlpha = 0.7f,
         ) {
             moveTo(4f, 6.25f)
             curveTo(4f, 5.007f, 5.007f, 4f, 6.25f, 4f)
@@ -92,12 +92,12 @@ public val FluentUi.Colored.ClipboardTask: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0A1852),
-                    1f to Color(0x000A1852)
+                    1f to Color(0x000A1852),
                 ),
                 center = Offset(12f, 4.618f),
-                radius = 2.793f
+                radius = 2.793f,
             ),
-            fillAlpha = 0.4f
+            fillAlpha = 0.4f,
         ) {
             moveTo(4f, 6.25f)
             curveTo(4f, 5.007f, 5.007f, 4f, 6.25f, 4f)
@@ -114,11 +114,11 @@ public val FluentUi.Colored.ClipboardTask: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFE06B),
-                    1f to Color(0xFFFAB500)
+                    1f to Color(0xFFFAB500),
                 ),
                 start = Offset(12f, 2f),
-                end = Offset(12f, 6.5f)
-            )
+                end = Offset(12f, 6.5f),
+            ),
         ) {
             moveTo(8f, 4.25f)
             curveTo(8f, 5.493f, 9.007f, 6.5f, 10.25f, 6.5f)
@@ -133,12 +133,12 @@ public val FluentUi.Colored.ClipboardTask: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF9DEAFF),
-                    1f to Color(0xFFFFFFFF)
+                    1f to Color(0xFFFFFFFF),
                 ),
                 start = Offset(18f, 18.5f),
-                end = Offset(10.265f, 7.732f)
+                end = Offset(10.265f, 7.732f),
             ),
-            fillAlpha = 0.9f
+            fillAlpha = 0.9f,
         ) {
             moveTo(17.03f, 11.03f)
             curveTo(17.323f, 10.737f, 17.323f, 10.263f, 17.03f, 9.97f)
@@ -159,6 +159,6 @@ public val FluentUi.Colored.ClipboardTask: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun ClipboardTaskPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ClipboardTask, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ClipboardTask, contentDescription = null)
     }
 }

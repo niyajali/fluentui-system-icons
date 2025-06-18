@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Notebook: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Notebook: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Notebook",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFD373FC),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(18.5f, 0.501f),
-                end = Offset(27.052f, 20.789f)
-            )
+                end = Offset(27.052f, 20.789f),
+            ),
         ) {
             moveTo(18.5f, 15f)
             lineTo(20.25f, 15f)
@@ -96,11 +96,11 @@ public val FluentUi.Colored.Notebook: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFE587F2),
-                    1f to Color(0xFF816CDE)
+                    1f to Color(0xFF816CDE),
                 ),
                 start = Offset(2.125f, 2f),
-                end = Offset(1.006f, 24.381f)
-            )
+                end = Offset(1.006f, 24.381f),
+            ),
         ) {
             moveTo(16.749f, 2f)
             curveTo(17.992f, 2f, 18.999f, 3.007f, 18.999f, 4.25f)
@@ -117,12 +117,12 @@ public val FluentUi.Colored.Notebook: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.5f to Color(0x00DD3CE2),
-                    1f to Color(0xFFDD3CE2)
+                    1f to Color(0xFFDD3CE2),
                 ),
                 center = Offset(10.875f, 0.75f),
-                radius = 22.901f
+                radius = 22.901f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(16.749f, 2f)
             curveTo(17.992f, 2f, 18.999f, 3.007f, 18.999f, 4.25f)
@@ -139,11 +139,11 @@ public val FluentUi.Colored.Notebook: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDD3FF),
-                    1f to Color(0xFFF3D8FF)
+                    1f to Color(0xFFF3D8FF),
                 ),
                 start = Offset(8.687f, 5f),
-                end = Offset(17.134f, 10.128f)
-            )
+                end = Offset(17.134f, 10.128f),
+            ),
         ) {
             moveTo(15.249f, 5f)
             curveTo(15.663f, 5f, 15.999f, 5.336f, 15.999f, 5.75f)
@@ -163,6 +163,6 @@ public val FluentUi.Colored.Notebook: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun NotebookPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Notebook, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Notebook, contentDescription = null)
     }
 }

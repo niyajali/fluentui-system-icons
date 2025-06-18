@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.RibbonStar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.RibbonStar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.RibbonStar",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF163697),
-                    1f to Color(0xFF29C3FF)
+                    1f to Color(0xFF29C3FF),
                 ),
                 center = Offset(12.001f, 11.879f),
-                radius = 13.794f
-            )
+                radius = 13.794f,
+            ),
         ) {
             moveTo(17.002f, 13.244f)
             lineTo(17.001f, 21.245f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.RibbonStar: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.772f to Color(0xFFFFCD0F),
-                    0.991f to Color(0xFFE67505)
+                    0.991f to Color(0xFFE67505),
                 ),
                 center = Offset(-25.25f, -47f),
-                radius = 78.145f
-            )
+                radius = 78.145f,
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(15.866f, 2f, 19f, 5.134f, 19f, 9f)
@@ -87,11 +87,11 @@ public val FluentUi.Colored.RibbonStar: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB03111),
-                    1f to Color(0xFFE67505)
+                    1f to Color(0xFFE67505),
                 ),
                 center = Offset(13.702f, 12f),
-                radius = 11.873f
-            )
+                radius = 11.873f,
+            ),
         ) {
             moveTo(12.229f, 5.642f)
             lineTo(13.141f, 7.495f)
@@ -118,6 +118,6 @@ public val FluentUi.Colored.RibbonStar: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun RibbonStarPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.RibbonStar, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.RibbonStar, contentDescription = null)
     }
 }

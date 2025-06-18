@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,17 +34,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.CommentMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.CommentMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.CommentMultiple",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFFCD3E1D))) {
             moveTo(4.5f, 6.75f)
@@ -63,11 +63,11 @@ public val FluentUi.Colored.CommentMultiple: ImageVector by lazy(LazyThreadSafet
                 colorStops = arrayOf(
                     0f to Color(0xFFFAB500),
                     0.535f to Color(0xFFFE8401),
-                    1f to Color(0xFFFB5937)
+                    1f to Color(0xFFFB5937),
                 ),
                 center = Offset(-1.923f, 1.076f),
-                radius = 30.387f
-            )
+                radius = 30.387f,
+            ),
         ) {
             moveTo(2f, 9.25f)
             curveTo(2f, 7.455f, 3.455f, 6f, 5.25f, 6f)
@@ -90,6 +90,6 @@ public val FluentUi.Colored.CommentMultiple: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun CommentMultiplePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.CommentMultiple, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.CommentMultiple, contentDescription = null)
     }
 }

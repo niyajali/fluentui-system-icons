@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.DataPie: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.DataPie: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.DataPie",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF6D37CD),
-                    0.641f to Color(0xFFEA71EF)
+                    0.641f to Color(0xFFEA71EF),
                 ),
                 start = Offset(19.966f, 22f),
-                end = Offset(-8.78f, -6.746f)
-            )
+                end = Offset(-8.78f, -6.746f),
+            ),
         ) {
             moveTo(11f, 4.784f)
             curveTo(11f, 4.573f, 10.911f, 4.372f, 10.756f, 4.23f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.DataPie: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFE23CB4),
-                    1f to Color(0xFFEA71EF)
+                    1f to Color(0xFFEA71EF),
                 ),
                 start = Offset(21.205f, 9.759f),
-                end = Offset(14.399f, 2.004f)
-            )
+                end = Offset(14.399f, 2.004f),
+            ),
         ) {
             moveTo(12.728f, 2.216f)
             curveTo(12.873f, 2.074f, 13.07f, 1.998f, 13.272f, 2.004f)
@@ -95,6 +95,6 @@ public val FluentUi.Colored.DataPie: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun DataPiePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.DataPie, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.DataPie, contentDescription = null)
     }
 }

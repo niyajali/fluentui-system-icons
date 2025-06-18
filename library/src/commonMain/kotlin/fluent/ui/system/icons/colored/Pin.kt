@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,28 +34,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Pin: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Pin: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Pin",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.449f to Color(0xFF7B7BFF),
-                    1f to Color(0xFF102784)
+                    1f to Color(0xFF102784),
                 ),
                 start = Offset(4.633f, 19.367f),
-                end = Offset(9.496f, 15.648f)
+                end = Offset(9.496f, 15.648f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(9.53f, 15.53f)
             lineTo(4.28f, 20.78f)
@@ -69,11 +69,11 @@ public val FluentUi.Colored.Pin: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF43E5CA),
-                    1f to Color(0xFF1384B1)
+                    1f to Color(0xFF1384B1),
                 ),
                 start = Offset(4.608f, 5.483f),
-                end = Offset(16.965f, 18.322f)
-            )
+                end = Offset(16.965f, 18.322f),
+            ),
         ) {
             moveTo(21.068f, 7.758f)
             lineTo(16.243f, 2.932f)
@@ -94,12 +94,12 @@ public val FluentUi.Colored.Pin: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFE362F8),
-                    1f to Color(0x009966FF)
+                    1f to Color(0x009966FF),
                 ),
                 center = Offset(17.796f, 16.496f),
-                radius = 7.959f
+                radius = 7.959f,
             ),
-            fillAlpha = 0.8f
+            fillAlpha = 0.8f,
         ) {
             moveTo(21.068f, 7.758f)
             lineTo(16.243f, 2.932f)
@@ -123,6 +123,6 @@ public val FluentUi.Colored.Pin: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
 @Composable
 private fun PinPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Pin, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Pin, contentDescription = null)
     }
 }

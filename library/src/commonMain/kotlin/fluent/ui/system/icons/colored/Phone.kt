@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,28 +33,28 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Phone: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Phone: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Phone",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFCB7DF8),
                     0.412f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF4E44DB)
+                    1f to Color(0xFF4E44DB),
                 ),
                 center = Offset(6f, 1.375f),
-                radius = 25.437f
-            )
+                radius = 25.437f,
+            ),
         ) {
             moveTo(15.75f, 2f)
             curveTo(16.993f, 2f, 18f, 3.007f, 18f, 4.25f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.Phone: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFDECBFF),
-                    1f to Color(0xFFD1D1FF)
+                    1f to Color(0xFFD1D1FF),
                 ),
                 center = Offset(9.375f, 18.1f),
-                radius = 7.384f
-            )
+                radius = 7.384f,
+            ),
         ) {
             moveTo(13.25f, 18f)
             horizontalLineTo(10.75f)
@@ -93,6 +93,6 @@ public val FluentUi.Colored.Phone: ImageVector by lazy(LazyThreadSafetyMode.NONE
 @Composable
 private fun PhonePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Phone, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Phone, contentDescription = null)
     }
 }

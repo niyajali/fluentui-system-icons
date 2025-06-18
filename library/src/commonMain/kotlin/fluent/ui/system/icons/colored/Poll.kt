@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Poll: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Poll: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Poll",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF6D37CD),
-                    1f to Color(0xFFEA71EF)
+                    1f to Color(0xFFEA71EF),
                 ),
                 start = Offset(14.045f, 18.335f),
-                end = Offset(10.882f, 1.834f)
-            )
+                end = Offset(10.882f, 1.834f),
+            ),
         ) {
             moveTo(11.752f, 2f)
             curveTo(13.272f, 2f, 14.504f, 3.232f, 14.504f, 4.752f)
@@ -68,11 +68,11 @@ public val FluentUi.Colored.Poll: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFE23CB4),
-                    1f to Color(0xFFEA71EF)
+                    1f to Color(0xFFEA71EF),
                 ),
                 start = Offset(21.045f, 19.252f),
-                end = Offset(19.238f, 6.681f)
-            )
+                end = Offset(19.238f, 6.681f),
+            ),
         ) {
             moveTo(21.504f, 9.752f)
             curveTo(21.504f, 8.232f, 20.272f, 7f, 18.752f, 7f)
@@ -87,11 +87,11 @@ public val FluentUi.Colored.Poll: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF0078D4)
+                    1f to Color(0xFF0078D4),
                 ),
                 start = Offset(2.688f, 12.417f),
-                end = Offset(12.665f, 18.911f)
-            )
+                end = Offset(12.665f, 18.911f),
+            ),
         ) {
             moveTo(7.504f, 14.752f)
             curveTo(7.504f, 13.232f, 6.272f, 12f, 4.752f, 12f)
@@ -109,6 +109,6 @@ public val FluentUi.Colored.Poll: ImageVector by lazy(LazyThreadSafetyMode.NONE)
 @Composable
 private fun PollPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Poll, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Poll, contentDescription = null)
     }
 }

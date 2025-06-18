@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.AddCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.AddCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.AddCircle",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF52D17C),
-                    1f to Color(0xFF22918B)
+                    1f to Color(0xFF22918B),
                 ),
                 start = Offset(2.714f, 5.75f),
-                end = Offset(16.517f, 20.09f)
-            )
+                end = Offset(16.517f, 20.09f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(17.523f, 2f, 22f, 6.477f, 22f, 12f)
@@ -66,11 +66,11 @@ public val FluentUi.Colored.AddCircle: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFFFFF),
-                    1f to Color(0xFFE3FFD9)
+                    1f to Color(0xFFE3FFD9),
                 ),
                 start = Offset(8.875f, 8.02f),
-                end = Offset(11.943f, 18.852f)
-            )
+                end = Offset(11.943f, 18.852f),
+            ),
         ) {
             moveTo(12f, 7f)
             curveTo(11.62f, 7f, 11.307f, 7.282f, 11.257f, 7.648f)
@@ -102,6 +102,6 @@ public val FluentUi.Colored.AddCircle: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun AddCirclePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.AddCircle, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.AddCircle, contentDescription = null)
     }
 }

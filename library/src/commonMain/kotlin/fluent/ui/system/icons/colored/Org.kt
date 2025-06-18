@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,28 +34,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Org",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB9C0C7),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(5.5f, 8.5f),
-                end = Offset(7.236f, 16.765f)
+                end = Offset(7.236f, 16.765f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(11f, 11.5f)
             verticalLineTo(8.5f)
@@ -80,12 +80,12 @@ public val FluentUi.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.553f to Color(0xFF70777D),
-                    1f to Color(0x0070777D)
+                    1f to Color(0x0070777D),
                 ),
                 center = Offset(11.75f, 6.246f),
-                radius = 4.561f
+                radius = 4.561f,
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(11f, 11.5f)
             verticalLineTo(8.5f)
@@ -110,12 +110,12 @@ public val FluentUi.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.549f to Color(0xFF70777D),
-                    1f to Color(0x0070777D)
+                    1f to Color(0x0070777D),
                 ),
                 center = Offset(6.125f, 17.749f),
-                radius = 4.67f
+                radius = 4.67f,
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(11f, 11.5f)
             verticalLineTo(8.5f)
@@ -140,12 +140,12 @@ public val FluentUi.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.549f to Color(0xFF70777D),
-                    1f to Color(0x0070777D)
+                    1f to Color(0x0070777D),
                 ),
                 center = Offset(17.355f, 17.731f),
-                radius = 4.616f
+                radius = 4.616f,
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(11f, 11.5f)
             verticalLineTo(8.5f)
@@ -170,11 +170,11 @@ public val FluentUi.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.529f to Color(0xFF1EC8B0),
-                    1f to Color(0xFF1A7F7C)
+                    1f to Color(0xFF1A7F7C),
                 ),
                 center = Offset(-2.031f, 6.141f),
-                radius = 20.282f
-            )
+                radius = 20.282f,
+            ),
         ) {
             moveTo(10f, 18.25f)
             curveTo(10f, 20.321f, 8.321f, 22f, 6.25f, 22f)
@@ -187,11 +187,11 @@ public val FluentUi.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.529f to Color(0xFF7B7BFF),
-                    1f to Color(0xFF4A43CB)
+                    1f to Color(0xFF4A43CB),
                 ),
                 center = Offset(8.969f, 6.141f),
-                radius = 20.282f
-            )
+                radius = 20.282f,
+            ),
         ) {
             moveTo(21f, 18.25f)
             curveTo(21f, 20.321f, 19.321f, 22f, 17.25f, 22f)
@@ -204,11 +204,11 @@ public val FluentUi.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.529f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 center = Offset(3.469f, -6.359f),
-                radius = 20.282f
-            )
+                radius = 20.282f,
+            ),
         ) {
             moveTo(15.5f, 5.75f)
             curveTo(15.5f, 7.821f, 13.821f, 9.5f, 11.75f, 9.5f)
@@ -224,6 +224,6 @@ public val FluentUi.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
 @Composable
 private fun OrgPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Org, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Org, contentDescription = null)
     }
 }

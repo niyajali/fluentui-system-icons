@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -35,17 +35,17 @@ import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.GiftCard: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.GiftCard: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.GiftCard",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFFCECECE))) {
             moveTo(5.25f, 4f)
@@ -64,11 +64,11 @@ public val FluentUi.Colored.GiftCard: ImageVector by lazy(LazyThreadSafetyMode.N
                 colorStops = arrayOf(
                     0.125f to Color(0xFFBB45EA),
                     0.468f to Color(0xFF8B57ED),
-                    1f to Color(0xFF5B2AB5)
+                    1f to Color(0xFF5B2AB5),
                 ),
                 start = Offset(2f, -0.688f),
-                end = Offset(14.41f, 24.366f)
-            )
+                end = Offset(14.41f, 24.366f),
+            ),
         ) {
             moveTo(5.25f, 4f)
             curveTo(3.455f, 4f, 2f, 5.455f, 2f, 7.25f)
@@ -101,11 +101,11 @@ public val FluentUi.Colored.GiftCard: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFB5937),
-                    0.378f to Color(0xFFFFCD0F)
+                    0.378f to Color(0xFFFFCD0F),
                 ),
                 center = Offset(9.5f, 11.5f),
-                radius = 25.625f
-            )
+                radius = 25.625f,
+            ),
         ) {
             moveTo(7.986f, 10f)
             lineTo(8f, 3.998f)
@@ -124,7 +124,7 @@ public val FluentUi.Colored.GiftCard: ImageVector by lazy(LazyThreadSafetyMode.N
         }
         path(
             fill = SolidColor(Color(0xFF515151)),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(6.94f, 11.499f)
             curveTo(5.587f, 11.467f, 4.5f, 10.361f, 4.5f, 9f)
@@ -161,12 +161,12 @@ public val FluentUi.Colored.GiftCard: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF6F47),
-                    0.804f to Color(0xFFFFCD0F)
+                    0.804f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(9.033f, -16.928f),
-                end = Offset(8.457f, 23.071f)
+                end = Offset(8.457f, 23.071f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(6.94f, 11.499f)
             curveTo(5.587f, 11.467f, 4.5f, 10.361f, 4.5f, 9f)
@@ -206,6 +206,6 @@ public val FluentUi.Colored.GiftCard: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun GiftCardPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.GiftCard, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.GiftCard, contentDescription = null)
     }
 }

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Board: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Board: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Board",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB0F098),
-                    1f to Color(0xFF52D17C)
+                    1f to Color(0xFF52D17C),
                 ),
                 start = Offset(7.666f, 11.454f),
-                end = Offset(12.721f, 23.563f)
-            )
+                end = Offset(12.721f, 23.563f),
+            ),
         ) {
             moveTo(11.999f, 15f)
             lineTo(16.5f, 14f)
@@ -69,11 +69,11 @@ public val FluentUi.Colored.Board: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF52D17C),
-                    1f to Color(0xFF309C61)
+                    1f to Color(0xFF309C61),
                 ),
                 start = Offset(13f, 4.333f),
-                end = Offset(20.103f, 13.322f)
-            )
+                end = Offset(20.103f, 13.322f),
+            ),
         ) {
             moveTo(17.751f, 3f)
             curveTo(19.484f, 3f, 20.901f, 4.356f, 20.996f, 6.065f)
@@ -89,11 +89,11 @@ public val FluentUi.Colored.Board: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF42B870),
-                    1f to Color(0xFF1A7F7C)
+                    1f to Color(0xFF1A7F7C),
                 ),
                 start = Offset(4.286f, 10.053f),
-                end = Offset(11.748f, 17.199f)
-            )
+                end = Offset(11.748f, 17.199f),
+            ),
         ) {
             moveTo(11.999f, 9f)
             lineTo(12f, 21.001f)
@@ -109,11 +109,11 @@ public val FluentUi.Colored.Board: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB0F098),
-                    1f to Color(0xFF64DE89)
+                    1f to Color(0xFF64DE89),
                 ),
                 start = Offset(4.286f, 4.2f),
-                end = Offset(6.65f, 10.322f)
-            )
+                end = Offset(6.65f, 10.322f),
+            ),
         ) {
             moveTo(12.001f, 3f)
             lineTo(12f, 9f)
@@ -130,6 +130,6 @@ public val FluentUi.Colored.Board: ImageVector by lazy(LazyThreadSafetyMode.NONE
 @Composable
 private fun BoardPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Board, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Board, contentDescription = null)
     }
 }

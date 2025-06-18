@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -23,7 +23,6 @@
  */
 package fluent.ui.system.icons.filled
 
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
@@ -34,15 +33,16 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.WeatherHaze: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.WeatherHaze: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.WeatherHaze",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFF212121))) {
             moveTo(6.842f, 13.984f)
@@ -142,6 +142,6 @@ public val FluentUi.Filled.WeatherHaze: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun WeatherHazePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.WeatherHaze, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.WeatherHaze, contentDescription = null)
     }
 }

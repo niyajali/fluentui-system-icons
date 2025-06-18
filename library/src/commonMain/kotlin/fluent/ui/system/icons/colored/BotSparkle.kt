@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,28 +33,28 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.BotSparkle",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFF08AF4),
                     0.535f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF4E44DB)
+                    1f to Color(0xFF4E44DB),
                 ),
                 center = Offset(0.311f, 11.538f),
-                radius = 22.253f
-            )
+                radius = 22.253f,
+            ),
         ) {
             moveTo(17.753f, 14f)
             curveTo(18.996f, 14f, 20.003f, 15.007f, 20.003f, 16.25f)
@@ -72,11 +72,11 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(12.003f, 13.047f),
-                end = Offset(15.623f, 26.573f)
-            )
+                end = Offset(15.623f, 26.573f),
+            ),
         ) {
             moveTo(17.753f, 14f)
             curveTo(18.996f, 14f, 20.003f, 15.007f, 20.003f, 16.25f)
@@ -94,11 +94,11 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF4E44DB),
-                    1f to Color(0x004E44DB)
+                    1f to Color(0x004E44DB),
                 ),
                 center = Offset(17.542f, 17.693f),
-                radius = 3.693f
-            )
+                radius = 3.693f,
+            ),
         ) {
             moveTo(17.753f, 14f)
             curveTo(18.996f, 14f, 20.003f, 15.007f, 20.003f, 16.25f)
@@ -116,11 +116,11 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF4E44DB),
-                    1f to Color(0x004E44DB)
+                    1f to Color(0x004E44DB),
                 ),
                 center = Offset(16.926f, 16.462f),
-                radius = 3.481f
-            )
+                radius = 3.481f,
+            ),
         ) {
             moveTo(17.753f, 14f)
             curveTo(18.996f, 14f, 20.003f, 15.007f, 20.003f, 16.25f)
@@ -138,11 +138,11 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF4E44DB),
-                    1f to Color(0x004E44DB)
+                    1f to Color(0x004E44DB),
                 ),
                 center = Offset(17.542f, 15.846f),
-                radius = 5.538f
-            )
+                radius = 5.538f,
+            ),
         ) {
             moveTo(17.753f, 14f)
             curveTo(18.996f, 14f, 20.003f, 15.007f, 20.003f, 16.25f)
@@ -160,11 +160,11 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF8B52F4),
-                    1f to Color(0xFF3D35B1)
+                    1f to Color(0xFF3D35B1),
                 ),
                 start = Offset(11.209f, 2f),
-                end = Offset(12.984f, 3.871f)
-            )
+                end = Offset(12.984f, 3.871f),
+            ),
         ) {
             moveTo(12f, 2.5f)
             lineTo(11.898f, 2.507f)
@@ -181,11 +181,11 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
                 colorStops = arrayOf(
                     0f to Color(0xFFF08AF4),
                     0.535f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF4E44DB)
+                    1f to Color(0xFF4E44DB),
                 ),
                 center = Offset(1.8f, 0.571f),
-                radius = 19.999f
-            )
+                radius = 19.999f,
+            ),
         ) {
             moveTo(18f, 6.25f)
             curveTo(18f, 5.007f, 16.993f, 4f, 15.75f, 4f)
@@ -202,11 +202,11 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFF9DCFA)
+                    1f to Color(0xFFF9DCFA),
                 ),
                 start = Offset(13.585f, 6.596f),
-                end = Offset(15.479f, 9.865f)
-            )
+                end = Offset(15.479f, 9.865f),
+            ),
         ) {
             moveTo(14.242f, 6.5f)
             curveTo(13.552f, 6.5f, 12.993f, 7.059f, 12.993f, 7.749f)
@@ -219,11 +219,11 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFF9DCFA)
+                    1f to Color(0xFFF9DCFA),
                 ),
                 start = Offset(9.092f, 6.596f),
-                end = Offset(10.986f, 9.865f)
-            )
+                end = Offset(10.986f, 9.865f),
+            ),
         ) {
             moveTo(9.749f, 6.5f)
             curveTo(9.059f, 6.5f, 8.5f, 7.059f, 8.5f, 7.749f)
@@ -236,11 +236,11 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFA43D),
-                    1f to Color(0xFFFB5937)
+                    1f to Color(0xFFFB5937),
                 ),
                 start = Offset(20f, 19.5f),
-                end = Offset(23.002f, 23.499f)
-            )
+                end = Offset(23.002f, 23.499f),
+            ),
         ) {
             moveTo(23.017f, 20.965f)
             lineTo(23.783f, 21.213f)
@@ -282,11 +282,11 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF8A69),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(20.071f, 18.714f),
-                end = Offset(13.76f, 11.457f)
-            )
+                end = Offset(13.76f, 11.457f),
+            ),
         ) {
             moveTo(15.854f, 17.146f)
             curveTo(15.938f, 17.23f, 16.016f, 17.319f, 16.088f, 17.412f)
@@ -334,6 +334,6 @@ public val FluentUi.Colored.BotSparkle: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun BotSparklePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.BotSparkle, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.BotSparkle, contentDescription = null)
     }
 }

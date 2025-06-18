@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.DocumentFolder: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.DocumentFolder: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.DocumentFolder",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFBB45EA),
-                    1f to Color(0xFF9C6CFE)
+                    1f to Color(0xFF9C6CFE),
                 ),
                 start = Offset(21.8f, 19.5f),
-                end = Offset(23.639f, 5.773f)
-            )
+                end = Offset(23.639f, 5.773f),
+            ),
         ) {
             moveTo(8f, 6.25f)
             curveTo(8f, 5.007f, 9.007f, 4f, 10.25f, 4f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.DocumentFolder: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.338f to Color(0x005750E2),
-                    1f to Color(0xFF5750E2)
+                    1f to Color(0xFF5750E2),
                 ),
                 start = Offset(20f, 8.5f),
-                end = Offset(17f, 8.5f)
-            )
+                end = Offset(17f, 8.5f),
+            ),
         ) {
             moveTo(8f, 6.25f)
             curveTo(8f, 5.007f, 9.007f, 4f, 10.25f, 4f)
@@ -92,11 +92,11 @@ public val FluentUi.Colored.DocumentFolder: ImageVector by lazy(LazyThreadSafety
                 colorStops = arrayOf(
                     0.228f to Color(0xFF2764E7),
                     0.685f to Color(0xFF5CD1FF),
-                    1f to Color(0xFF6CE0FF)
+                    1f to Color(0xFF6CE0FF),
                 ),
                 center = Offset(8.05f, 14f),
-                radius = 14.465f
-            )
+                radius = 14.465f,
+            ),
         ) {
             moveTo(4f, 4.25f)
             curveTo(4f, 3.007f, 5.007f, 2f, 6.25f, 2f)
@@ -114,11 +114,11 @@ public val FluentUi.Colored.DocumentFolder: ImageVector by lazy(LazyThreadSafety
                 colorStops = arrayOf(
                     0.241f to Color(0xFFFFD638),
                     0.637f to Color(0xFFFAB500),
-                    0.985f to Color(0xFFCA6407)
+                    0.985f to Color(0xFFCA6407),
                 ),
                 start = Offset(6.857f, 8f),
-                end = Offset(6.857f, 27.091f)
-            )
+                end = Offset(6.857f, 27.091f),
+            ),
         ) {
             moveTo(5.25f, 8f)
             curveTo(4.007f, 8f, 3f, 9.007f, 3f, 10.25f)
@@ -142,6 +142,6 @@ public val FluentUi.Colored.DocumentFolder: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun DocumentFolderPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.DocumentFolder, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.DocumentFolder, contentDescription = null)
     }
 }

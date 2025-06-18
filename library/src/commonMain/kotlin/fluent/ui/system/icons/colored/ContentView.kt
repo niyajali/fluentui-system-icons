@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ContentView: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ContentView: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ContentView",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB3E0FF),
-                    1f to Color(0xFF8CD0FF)
+                    1f to Color(0xFF8CD0FF),
                 ),
                 start = Offset(9.429f, 3f),
-                end = Offset(16.325f, 20.03f)
-            )
+                end = Offset(16.325f, 20.03f),
+            ),
         ) {
             moveTo(3f, 6.25f)
             curveTo(3f, 4.455f, 4.455f, 3f, 6.25f, 3f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.ContentView: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0094F0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(6f, 6.5f),
-                end = Offset(20.135f, 11.741f)
-            )
+                end = Offset(20.135f, 11.741f),
+            ),
         ) {
             moveTo(6f, 8.25f)
             curveTo(6f, 7.284f, 6.784f, 6.5f, 7.75f, 6.5f)
@@ -120,6 +120,6 @@ public val FluentUi.Colored.ContentView: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun ContentViewPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ContentView, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ContentView, contentDescription = null)
     }
 }

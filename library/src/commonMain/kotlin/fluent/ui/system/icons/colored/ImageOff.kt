@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ImageOff: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ImageOff: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ImageOff",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.338f to Color(0xFFA9A9A9),
-                    0.695f to Color(0xFF898989)
+                    0.695f to Color(0xFF898989),
                 ),
                 center = Offset(-4.071f, -7.125f),
-                radius = 49.773f
-            )
+                radius = 49.773f,
+            ),
         ) {
             moveTo(17.75f, 3f)
             curveTo(19.545f, 3f, 21f, 4.455f, 21f, 6.25f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.ImageOff: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFE7DEDE),
-                    1f to Color(0xFFD3D3D3)
+                    1f to Color(0xFFD3D3D3),
                 ),
                 start = Offset(9.567f, 12.003f),
-                end = Offset(11.594f, 21.477f)
-            )
+                end = Offset(11.594f, 21.477f),
+            ),
         ) {
             moveTo(20.515f, 19.459f)
             curveTo(19.942f, 20.384f, 18.918f, 21f, 17.75f, 21f)
@@ -91,11 +91,11 @@ public val FluentUi.Colored.ImageOff: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFE4E4E4)
+                    1f to Color(0xFFE4E4E4),
                 ),
                 start = Offset(15.2f, 5.556f),
-                end = Offset(16.661f, 10.816f)
-            )
+                end = Offset(16.661f, 10.816f),
+            ),
         ) {
             moveTo(16f, 6f)
             curveTo(17.105f, 6f, 18f, 6.895f, 18f, 8f)
@@ -109,11 +109,11 @@ public val FluentUi.Colored.ImageOff: ImageVector by lazy(LazyThreadSafetyMode.N
                 colorStops = arrayOf(
                     0.464f to Color(0x00000000),
                     0.49f to Color(0xFF000000),
-                    0.582f to Color(0x00000000)
+                    0.582f to Color(0x00000000),
                 ),
                 start = Offset(21f, 3f),
-                end = Offset(3f, 21f)
-            )
+                end = Offset(3f, 21f),
+            ),
         ) {
             moveTo(17.75f, 3f)
             curveTo(19.545f, 3f, 21f, 4.455f, 21f, 6.25f)
@@ -130,11 +130,11 @@ public val FluentUi.Colored.ImageOff: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFE82C41),
-                    1f to Color(0xFFAA1D2D)
+                    1f to Color(0xFFAA1D2D),
                 ),
                 start = Offset(2f, -1.75f),
-                end = Offset(18.25f, 22.625f)
-            )
+                end = Offset(18.25f, 22.625f),
+            ),
         ) {
             moveTo(2.293f, 2.293f)
             curveTo(2.683f, 1.902f, 3.317f, 1.902f, 3.707f, 2.293f)
@@ -152,6 +152,6 @@ public val FluentUi.Colored.ImageOff: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun ImageOffPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ImageOff, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ImageOff, contentDescription = null)
     }
 }

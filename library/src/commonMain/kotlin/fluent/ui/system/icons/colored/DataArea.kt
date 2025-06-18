@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,28 +33,28 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.DataArea: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.DataArea: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.DataArea",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.164f to Color(0xFF3BD5FF),
                     0.537f to Color(0xFF9C6CFE),
-                    0.908f to Color(0xFFE656EB)
+                    0.908f to Color(0xFFE656EB),
                 ),
                 start = Offset(-0.692f, 7.688f),
-                end = Offset(23.794f, 22.289f)
-            )
+                end = Offset(23.794f, 22.289f),
+            ),
         ) {
             moveTo(19.5f, 6.75f)
             curveTo(19.5f, 6.466f, 19.34f, 6.206f, 19.085f, 6.079f)
@@ -72,12 +72,12 @@ public val FluentUi.Colored.DataArea: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.636f to Color(0x000FAFFF),
-                    0.962f to Color(0xFF0067BF)
+                    0.962f to Color(0xFF0067BF),
                 ),
                 center = Offset(17.192f, 8.25f),
-                radius = 15.351f
+                radius = 15.351f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(19.5f, 6.75f)
             curveTo(19.5f, 6.466f, 19.34f, 6.206f, 19.085f, 6.079f)
@@ -95,12 +95,12 @@ public val FluentUi.Colored.DataArea: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00163697),
-                    1f to Color(0xFF163697)
+                    1f to Color(0xFF163697),
                 ),
                 start = Offset(12f, 17.25f),
-                end = Offset(12f, 19.5f)
+                end = Offset(12f, 19.5f),
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(19.5f, 6.75f)
             curveTo(19.5f, 6.466f, 19.34f, 6.206f, 19.085f, 6.079f)
@@ -118,12 +118,12 @@ public val FluentUi.Colored.DataArea: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00163697),
-                    1f to Color(0xFF163697)
+                    1f to Color(0xFF163697),
                 ),
                 start = Offset(6.808f, 15.563f),
-                end = Offset(4.5f, 15.563f)
+                end = Offset(4.5f, 15.563f),
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(19.5f, 6.75f)
             curveTo(19.5f, 6.466f, 19.34f, 6.206f, 19.085f, 6.079f)
@@ -141,11 +141,11 @@ public val FluentUi.Colored.DataArea: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF70777D),
-                    1f to Color(0xFFB9C0C7)
+                    1f to Color(0xFFB9C0C7),
                 ),
                 start = Offset(19.313f, 4.125f),
-                end = Offset(3.56f, 27.58f)
-            )
+                end = Offset(3.56f, 27.58f),
+            ),
         ) {
             moveTo(5f, 4f)
             curveTo(5f, 3.448f, 4.552f, 3f, 4f, 3f)
@@ -167,6 +167,6 @@ public val FluentUi.Colored.DataArea: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun DataAreaPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.DataArea, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.DataArea, contentDescription = null)
     }
 }

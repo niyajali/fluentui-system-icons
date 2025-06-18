@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Shifts: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Shifts: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Shifts",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF1EC8B0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(6f, 2f),
-                end = Offset(15f, 22f)
-            )
+                end = Offset(15f, 22f),
+            ),
         ) {
             moveTo(17.75f, 3f)
             curveTo(19.545f, 3f, 21f, 4.455f, 21f, 6.25f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.Shifts: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFDEDEFF)
+                    1f to Color(0xFFDEDEFF),
                 ),
                 start = Offset(10.906f, 6.563f),
-                end = Offset(8.694f, 13.988f)
-            )
+                end = Offset(8.694f, 13.988f),
+            ),
         ) {
             moveTo(11.75f, 6f)
             curveTo(11.336f, 6f, 11f, 6.336f, 11f, 6.75f)
@@ -95,6 +95,6 @@ public val FluentUi.Colored.Shifts: ImageVector by lazy(LazyThreadSafetyMode.NON
 @Composable
 private fun ShiftsPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Shifts, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Shifts, contentDescription = null)
     }
 }

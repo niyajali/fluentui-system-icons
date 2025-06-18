@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -23,7 +23,6 @@
  */
 package fluent.ui.system.icons.filled
 
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
@@ -34,15 +33,16 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.DocumentTableSearch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.DocumentTableSearch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.DocumentTableSearch",
         defaultWidth = 24.dp,
         defaultHeight = 25.dp,
         viewportWidth = 24f,
-        viewportHeight = 25f
+        viewportHeight = 25f,
     ).apply {
         path(fill = SolidColor(Color(0xFF212121))) {
             moveTo(10.475f, 19.5f)
@@ -111,6 +111,6 @@ public val FluentUi.Filled.DocumentTableSearch: ImageVector by lazy(LazyThreadSa
 @Composable
 private fun DocumentTableSearchPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.DocumentTableSearch, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.DocumentTableSearch, contentDescription = null)
     }
 }

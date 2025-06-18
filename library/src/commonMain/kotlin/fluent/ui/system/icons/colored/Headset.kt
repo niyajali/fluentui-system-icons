@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,28 +34,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Headset: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Headset: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Headset",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF9CA5AD),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(8.917f, 18.333f),
-                end = Offset(7.821f, 14.887f)
+                end = Offset(7.821f, 14.887f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(5f, 16f)
             lineTo(6f, 15f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.Headset: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF383B3D),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(13.688f, 20.938f),
-                end = Offset(9.876f, 18.711f)
-            )
+                end = Offset(9.876f, 18.711f),
+            ),
         ) {
             moveTo(14.25f, 19.25f)
             curveTo(14.25f, 20.493f, 13.243f, 21.5f, 12f, 21.5f)
@@ -88,11 +88,11 @@ public val FluentUi.Colored.Headset: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB9C0C7),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(-0f, 2f),
-                end = Offset(4.18f, 12.89f)
-            )
+                end = Offset(4.18f, 12.89f),
+            ),
         ) {
             moveTo(17f, 9f)
             verticalLineTo(10f)
@@ -113,11 +113,11 @@ public val FluentUi.Colored.Headset: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(16.25f, 10f),
-                end = Offset(16.25f, 16f)
-            )
+                end = Offset(16.25f, 16f),
+            ),
         ) {
             moveTo(9f, 10f)
             horizontalLineTo(7f)
@@ -133,11 +133,11 @@ public val FluentUi.Colored.Headset: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(16.25f, 10f),
-                end = Offset(16.25f, 16f)
-            )
+                end = Offset(16.25f, 16f),
+            ),
         ) {
             moveTo(15f, 16f)
             lineTo(17f, 16f)
@@ -153,11 +153,11 @@ public val FluentUi.Colored.Headset: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0078D4),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(17.833f, 10f),
-                end = Offset(17.003f, 15.883f)
-            )
+                end = Offset(17.003f, 15.883f),
+            ),
         ) {
             moveTo(7f, 10f)
             horizontalLineTo(5f)
@@ -170,11 +170,11 @@ public val FluentUi.Colored.Headset: ImageVector by lazy(LazyThreadSafetyMode.NO
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0078D4),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(17.833f, 10f),
-                end = Offset(17.003f, 15.883f)
-            )
+                end = Offset(17.003f, 15.883f),
+            ),
         ) {
             moveTo(19f, 10f)
             horizontalLineTo(17f)
@@ -190,6 +190,6 @@ public val FluentUi.Colored.Headset: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun HeadsetPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Headset, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Headset, contentDescription = null)
     }
 }

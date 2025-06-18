@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.AlertBadge: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.AlertBadge: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.AlertBadge",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFEB4824),
-                    1f to Color(0xFBFFCD0F)
+                    1f to Color(0xFBFFCD0F),
                 ),
                 start = Offset(12f, 17.5f),
-                end = Offset(12.019f, 20.999f)
-            )
+                end = Offset(12.019f, 20.999f),
+            ),
         ) {
             moveTo(15f, 18f)
             curveTo(15f, 19.657f, 13.657f, 21f, 12f, 21f)
@@ -66,11 +66,11 @@ public val FluentUi.Colored.AlertBadge: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF6F47),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(21.027f, 17.995f),
-                end = Offset(4.945f, 4.464f)
-            )
+                end = Offset(4.945f, 4.464f),
+            ),
         ) {
             moveTo(12f, 2.004f)
             curveTo(16.142f, 2.004f, 19.5f, 5.362f, 19.5f, 9.504f)
@@ -91,12 +91,12 @@ public val FluentUi.Colored.AlertBadge: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.253f to Color(0xFFFFE994),
-                    0.648f to Color(0x00FFE994)
+                    0.648f to Color(0x00FFE994),
                 ),
                 center = Offset(18.5f, 6.5f),
-                radius = 6.727f
+                radius = 6.727f,
             ),
-            fillAlpha = 0.2f
+            fillAlpha = 0.2f,
         ) {
             moveTo(12f, 2.004f)
             curveTo(16.142f, 2.004f, 19.5f, 5.362f, 19.5f, 9.504f)
@@ -117,11 +117,11 @@ public val FluentUi.Colored.AlertBadge: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFF83F54),
-                    1f to Color(0xFFB91D6B)
+                    1f to Color(0xFFB91D6B),
                 ),
                 start = Offset(16.179f, 3.938f),
-                end = Offset(20.107f, 7.063f)
-            )
+                end = Offset(20.107f, 7.063f),
+            ),
         ) {
             moveTo(18.5f, 8f)
             curveTo(19.881f, 8f, 21f, 6.881f, 21f, 5.5f)
@@ -137,6 +137,6 @@ public val FluentUi.Colored.AlertBadge: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun AlertBadgePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.AlertBadge, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.AlertBadge, contentDescription = null)
     }
 }

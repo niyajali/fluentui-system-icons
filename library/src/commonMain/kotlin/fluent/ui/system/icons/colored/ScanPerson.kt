@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,27 +34,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ScanPerson: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ScanPerson: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ScanPerson",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(8.329f, 16.698f),
-                end = Offset(9.653f, 22.335f)
-            )
+                end = Offset(9.653f, 22.335f),
+            ),
         ) {
             moveTo(18f, 21f)
             curveTo(18.552f, 21f, 19f, 20.552f, 19f, 20f)
@@ -73,11 +73,11 @@ public val FluentUi.Colored.ScanPerson: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(12f, 15.375f),
-                end = Offset(13.835f, 24.517f)
-            )
+                end = Offset(13.835f, 24.517f),
+            ),
         ) {
             moveTo(18f, 21f)
             curveTo(18.552f, 21f, 19f, 20.552f, 19f, 20f)
@@ -96,11 +96,11 @@ public val FluentUi.Colored.ScanPerson: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(9.771f, 6.63f),
-                end = Offset(14.103f, 13.547f)
-            )
+                end = Offset(14.103f, 13.547f),
+            ),
         ) {
             moveTo(12f, 14f)
             curveTo(14.347f, 14f, 16.25f, 12.097f, 16.25f, 9.75f)
@@ -113,12 +113,12 @@ public val FluentUi.Colored.ScanPerson: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.015f to Color(0xFF3DCBFF),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(1.21f, 0.325f),
-                end = Offset(16.893f, 25.659f)
+                end = Offset(16.893f, 25.659f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(4.5f, 4f)
             curveTo(4.224f, 4f, 4f, 4.224f, 4f, 4.5f)
@@ -176,6 +176,6 @@ public val FluentUi.Colored.ScanPerson: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun ScanPersonPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ScanPerson, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ScanPerson, contentDescription = null)
     }
 }

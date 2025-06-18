@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,17 +33,17 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.WeatherSunnyLow: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.WeatherSunnyLow: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.WeatherSunnyLow",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
@@ -51,11 +51,11 @@ public val FluentUi.Colored.WeatherSunnyLow: ImageVector by lazy(LazyThreadSafet
                     0f to Color(0xFFFFE580),
                     0.273f to Color(0xFFFFBF70),
                     0.57f to Color(0xFFFFA342),
-                    0.96f to Color(0xFFFA6673)
+                    0.96f to Color(0xFFFA6673),
                 ),
                 start = Offset(10.31f, 6.089f),
-                end = Offset(14.51f, 14.585f)
-            )
+                end = Offset(14.51f, 14.585f),
+            ),
         ) {
             moveTo(17.125f, 14f)
             curveTo(17.367f, 13.38f, 17.5f, 12.706f, 17.5f, 12f)
@@ -69,11 +69,11 @@ public val FluentUi.Colored.WeatherSunnyLow: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.061f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(0.531f, 13f),
-                end = Offset(22f, 13f)
-            )
+                end = Offset(22f, 13f),
+            ),
         ) {
             moveTo(2f, 14f)
             curveTo(2f, 13.448f, 2.448f, 13f, 3f, 13f)
@@ -88,11 +88,11 @@ public val FluentUi.Colored.WeatherSunnyLow: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.061f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(0.531f, 13f),
-                end = Offset(22f, 13f)
-            )
+                end = Offset(22f, 13f),
+            ),
         ) {
             moveTo(6f, 17f)
             curveTo(6f, 16.448f, 6.448f, 16f, 7f, 16f)
@@ -107,11 +107,11 @@ public val FluentUi.Colored.WeatherSunnyLow: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.061f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(0.531f, 13f),
-                end = Offset(22f, 13f)
-            )
+                end = Offset(22f, 13f),
+            ),
         ) {
             moveTo(10f, 20f)
             curveTo(10f, 19.448f, 10.448f, 19f, 11f, 19f)
@@ -128,11 +128,11 @@ public val FluentUi.Colored.WeatherSunnyLow: ImageVector by lazy(LazyThreadSafet
                     0f to Color(0xFFFFE580),
                     0.273f to Color(0xFFFFBF70),
                     0.57f to Color(0xFFFFA342),
-                    0.815f to Color(0xFFFA6673)
+                    0.815f to Color(0xFFFA6673),
                 ),
                 start = Offset(9.696f, 1.699f),
-                end = Offset(12.931f, 13.084f)
-            )
+                end = Offset(12.931f, 13.084f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(12.552f, 2f, 13f, 2.448f, 13f, 3f)
@@ -149,11 +149,11 @@ public val FluentUi.Colored.WeatherSunnyLow: ImageVector by lazy(LazyThreadSafet
                     0f to Color(0xFFFFE580),
                     0.273f to Color(0xFFFFBF70),
                     0.57f to Color(0xFFFFA342),
-                    0.815f to Color(0xFFFA6673)
+                    0.815f to Color(0xFFFA6673),
                 ),
                 start = Offset(9.696f, 1.699f),
-                end = Offset(12.931f, 13.084f)
-            )
+                end = Offset(12.931f, 13.084f),
+            ),
         ) {
             moveTo(4.793f, 4.793f)
             curveTo(5.183f, 4.402f, 5.817f, 4.402f, 6.207f, 4.793f)
@@ -170,11 +170,11 @@ public val FluentUi.Colored.WeatherSunnyLow: ImageVector by lazy(LazyThreadSafet
                     0f to Color(0xFFFFE580),
                     0.273f to Color(0xFFFFBF70),
                     0.57f to Color(0xFFFFA342),
-                    0.815f to Color(0xFFFA6673)
+                    0.815f to Color(0xFFFA6673),
                 ),
                 start = Offset(9.696f, 1.699f),
-                end = Offset(12.931f, 13.084f)
-            )
+                end = Offset(12.931f, 13.084f),
+            ),
         ) {
             moveTo(19.207f, 4.793f)
             curveTo(19.598f, 5.183f, 19.598f, 5.817f, 19.207f, 6.207f)
@@ -192,6 +192,6 @@ public val FluentUi.Colored.WeatherSunnyLow: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun WeatherSunnyLowPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.WeatherSunnyLow, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.WeatherSunnyLow, contentDescription = null)
     }
 }

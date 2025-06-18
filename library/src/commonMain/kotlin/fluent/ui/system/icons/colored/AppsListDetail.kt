@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.AppsListDetail: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.AppsListDetail: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.AppsListDetail",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(9.35f, 3f),
-                end = Offset(20.9f, 19f)
-            )
+                end = Offset(20.9f, 19f),
+            ),
         ) {
             moveTo(11f, 6f)
             curveTo(11f, 5.448f, 11.448f, 5f, 12f, 5f)
@@ -68,11 +68,11 @@ public val FluentUi.Colored.AppsListDetail: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(9.35f, 3f),
-                end = Offset(20.9f, 19f)
-            )
+                end = Offset(20.9f, 19f),
+            ),
         ) {
             moveTo(11f, 9f)
             curveTo(11f, 8.448f, 11.448f, 8f, 12f, 8f)
@@ -87,11 +87,11 @@ public val FluentUi.Colored.AppsListDetail: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(9.35f, 3f),
-                end = Offset(20.9f, 19f)
-            )
+                end = Offset(20.9f, 19f),
+            ),
         ) {
             moveTo(11f, 15f)
             curveTo(11f, 14.448f, 11.448f, 14f, 12f, 14f)
@@ -106,11 +106,11 @@ public val FluentUi.Colored.AppsListDetail: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(9.35f, 3f),
-                end = Offset(20.9f, 19f)
-            )
+                end = Offset(20.9f, 19f),
+            ),
         ) {
             moveTo(11f, 18f)
             curveTo(11f, 17.448f, 11.448f, 17f, 12f, 17f)
@@ -125,11 +125,11 @@ public val FluentUi.Colored.AppsListDetail: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(3.665f, 6.127f),
-                end = Offset(7.232f, 19.147f)
-            )
+                end = Offset(7.232f, 19.147f),
+            ),
         ) {
             moveTo(4.25f, 4f)
             curveTo(3.007f, 4f, 2f, 5.007f, 2f, 6.25f)
@@ -159,6 +159,6 @@ public val FluentUi.Colored.AppsListDetail: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun AppsListDetailPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.AppsListDetail, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.AppsListDetail, contentDescription = null)
     }
 }

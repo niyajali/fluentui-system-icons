@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.BookOpenLightbulb",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF20AC9D),
-                    0.908f to Color(0xFF2052CB)
+                    0.908f to Color(0xFF2052CB),
                 ),
                 start = Offset(3.875f, 4.571f),
-                end = Offset(7.289f, 24.157f)
-            )
+                end = Offset(7.289f, 24.157f),
+            ),
         ) {
             moveTo(2f, 6f)
             curveTo(2f, 4.895f, 2.895f, 4f, 4f, 4f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSaf
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF20AC9D),
-                    0.908f to Color(0xFF2052CB)
+                    0.908f to Color(0xFF2052CB),
                 ),
                 start = Offset(20.125f, 4.571f),
-                end = Offset(16.711f, 24.157f)
-            )
+                end = Offset(16.711f, 24.157f),
+            ),
         ) {
             moveTo(20f, 4f)
             curveTo(21.105f, 4f, 22f, 4.895f, 22f, 6f)
@@ -94,11 +94,11 @@ public val FluentUi.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSaf
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB6EFFF),
-                    0.851f to Color(0xFF58AAFE)
+                    0.851f to Color(0xFF58AAFE),
                 ),
                 start = Offset(2.286f, 3.442f),
-                end = Offset(27.658f, 15.213f)
-            )
+                end = Offset(27.658f, 15.213f),
+            ),
         ) {
             moveTo(3.5f, 5f)
             curveTo(3.5f, 4.448f, 3.948f, 4f, 4.5f, 4f)
@@ -116,11 +116,11 @@ public val FluentUi.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSaf
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.123f to Color(0xFF9DEAFF),
-                    0.616f to Color(0xFF4894FE)
+                    0.616f to Color(0xFF4894FE),
                 ),
                 start = Offset(19.969f, 4.906f),
-                end = Offset(0.231f, 9.077f)
-            )
+                end = Offset(0.231f, 9.077f),
+            ),
         ) {
             moveTo(20.5f, 5f)
             curveTo(20.5f, 4.448f, 20.052f, 4f, 19.5f, 4f)
@@ -137,11 +137,11 @@ public val FluentUi.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSaf
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.251f to Color(0xFF2063C3),
-                    0.714f to Color(0x008AD6FF)
+                    0.714f to Color(0x008AD6FF),
                 ),
                 center = Offset(19.5f, 18.5f),
-                radius = 12.379f
-            )
+                radius = 12.379f,
+            ),
         ) {
             moveTo(20.5f, 5f)
             curveTo(20.5f, 4.448f, 20.052f, 4f, 19.5f, 4f)
@@ -159,11 +159,11 @@ public val FluentUi.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSaf
                 colorStops = arrayOf(
                     0f to Color(0xFFFFE06B),
                     0.376f to Color(0xFFFFA43D),
-                    1f to Color(0xFFE67505)
+                    1f to Color(0xFFE67505),
                 ),
                 center = Offset(16.618f, 12.694f),
-                radius = 10.094f
-            )
+                radius = 10.094f,
+            ),
         ) {
             moveTo(17.1f, 21f)
             lineTo(17.259f, 21.794f)
@@ -179,11 +179,11 @@ public val FluentUi.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSaf
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFD34719),
-                    1f to Color(0x00D34719)
+                    1f to Color(0x00D34719),
                 ),
                 start = Offset(19f, 20.5f),
-                end = Offset(19f, 23f)
-            )
+                end = Offset(19f, 23f),
+            ),
         ) {
             moveTo(17.1f, 21f)
             lineTo(17.259f, 21.794f)
@@ -200,11 +200,11 @@ public val FluentUi.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSaf
                 colorStops = arrayOf(
                     0f to Color(0xFFFFE06B),
                     0.376f to Color(0xFFFFA43D),
-                    1f to Color(0xFFE67505)
+                    1f to Color(0xFFE67505),
                 ),
                 center = Offset(16.333f, 13.005f),
-                radius = 9.181f
-            )
+                radius = 9.181f,
+            ),
         ) {
             moveTo(23f, 16f)
             curveTo(23f, 17.381f, 22.301f, 18.598f, 21.237f, 19.317f)
@@ -221,11 +221,11 @@ public val FluentUi.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSaf
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFC7A3),
-                    1f to Color(0xFFFF9C70)
+                    1f to Color(0xFFFF9C70),
                 ),
                 start = Offset(18.668f, 20.397f),
-                end = Offset(19.672f, 22.084f)
-            )
+                end = Offset(19.672f, 22.084f),
+            ),
         ) {
             moveTo(20.899f, 21f)
             horizontalLineTo(17.101f)
@@ -241,6 +241,6 @@ public val FluentUi.Colored.BookOpenLightbulb: ImageVector by lazy(LazyThreadSaf
 @Composable
 private fun BookOpenLightbulbPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.BookOpenLightbulb, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.BookOpenLightbulb, contentDescription = null)
     }
 }

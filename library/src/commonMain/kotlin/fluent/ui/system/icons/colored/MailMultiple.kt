@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,17 +34,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.MailMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.MailMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.MailMultiple",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFF1B44B1))) {
             moveTo(5f, 7f)
@@ -75,11 +75,11 @@ public val FluentUi.Colored.MailMultiple: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.228f to Color(0x000094F0),
-                    0.431f to Color(0xFF0094F0)
+                    0.431f to Color(0xFF0094F0),
                 ),
                 start = Offset(13.285f, 9.754f),
-                end = Offset(18.206f, 18.912f)
-            )
+                end = Offset(18.206f, 18.912f),
+            ),
         ) {
             moveTo(20f, 7.5f)
             verticalLineTo(15.75f)
@@ -98,11 +98,11 @@ public val FluentUi.Colored.MailMultiple: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.228f to Color(0x000094F0),
-                    0.431f to Color(0xFF0094F0)
+                    0.431f to Color(0xFF0094F0),
                 ),
                 start = Offset(8.429f, 8.711f),
-                end = Offset(2.971f, 19.477f)
-            )
+                end = Offset(2.971f, 19.477f),
+            ),
         ) {
             moveTo(20f, 7.5f)
             verticalLineTo(15.75f)
@@ -121,12 +121,12 @@ public val FluentUi.Colored.MailMultiple: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x002764E7),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(15.359f, 13.25f),
-                end = Offset(16.523f, 20.063f)
+                end = Offset(16.523f, 20.063f),
             ),
-            fillAlpha = 0.75f
+            fillAlpha = 0.75f,
         ) {
             moveTo(20f, 7.5f)
             verticalLineTo(15.75f)
@@ -145,12 +145,12 @@ public val FluentUi.Colored.MailMultiple: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.533f to Color(0x00DD3CE2),
-                    1f to Color(0xFFDD3CE2)
+                    1f to Color(0xFFDD3CE2),
                 ),
                 start = Offset(13.786f, 8.912f),
-                end = Offset(15.276f, 20.504f)
+                end = Offset(15.276f, 20.504f),
             ),
-            fillAlpha = 0.7f
+            fillAlpha = 0.7f,
         ) {
             moveTo(20f, 7.5f)
             verticalLineTo(15.75f)
@@ -170,11 +170,11 @@ public val FluentUi.Colored.MailMultiple: ImageVector by lazy(LazyThreadSafetyMo
                 colorStops = arrayOf(
                     0f to Color(0xFF6CE0FF),
                     0.462f to Color(0xFF29C3FF),
-                    1f to Color(0xFF4894FE)
+                    1f to Color(0xFF4894FE),
                 ),
                 start = Offset(7.347f, 1.273f),
-                end = Offset(13.394f, 16.281f)
-            )
+                end = Offset(13.394f, 16.281f),
+            ),
         ) {
             moveTo(2f, 8.36f)
             lineTo(10.651f, 12.914f)
@@ -194,6 +194,6 @@ public val FluentUi.Colored.MailMultiple: ImageVector by lazy(LazyThreadSafetyMo
 @Composable
 private fun MailMultiplePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.MailMultiple, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.MailMultiple, contentDescription = null)
     }
 }

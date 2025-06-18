@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PersonTentative: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PersonTentative: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PersonTentative",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(5.808f, 15.064f),
-                end = Offset(8.394f, 23.319f)
-            )
+                end = Offset(8.394f, 23.319f),
+            ),
         ) {
             moveTo(13.257f, 14f)
             horizontalLineTo(4.252f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.PersonTentative: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(10.003f, 13.047f),
-                end = Offset(13.623f, 26.573f)
-            )
+                end = Offset(13.623f, 26.573f),
+            ),
         ) {
             moveTo(13.257f, 14f)
             horizontalLineTo(4.252f)
@@ -91,12 +91,12 @@ public val FluentUi.Colored.PersonTentative: ImageVector by lazy(LazyThreadSafet
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.423f to Color(0xFF30116E),
-                    1f to Color(0x0030116E)
+                    1f to Color(0x0030116E),
                 ),
                 center = Offset(17f, 18f),
-                radius = 6.5f
+                radius = 6.5f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(13.257f, 14f)
             horizontalLineTo(4.252f)
@@ -113,11 +113,11 @@ public val FluentUi.Colored.PersonTentative: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(7.379f, 3.334f),
-                end = Offset(12.475f, 11.472f)
-            )
+                end = Offset(12.475f, 11.472f),
+            ),
         ) {
             moveTo(10f, 2.005f)
             curveTo(12.762f, 2.005f, 15f, 4.243f, 15f, 7.005f)
@@ -130,11 +130,11 @@ public val FluentUi.Colored.PersonTentative: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF29C3FF),
-                    1f to Color(0xFF0078D4)
+                    1f to Color(0xFF0078D4),
                 ),
                 start = Offset(12f, 12.343f),
-                end = Offset(23.916f, 24.03f)
-            )
+                end = Offset(23.916f, 24.03f),
+            ),
         ) {
             moveTo(17.439f, 12f)
             curveTo(14.45f, 12.032f, 12.032f, 14.449f, 12f, 17.439f)
@@ -164,6 +164,6 @@ public val FluentUi.Colored.PersonTentative: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun PersonTentativePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PersonTentative, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PersonTentative, contentDescription = null)
     }
 }

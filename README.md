@@ -1,127 +1,128 @@
-# Fluent UI System Icons
+# Fluent UI System Icons - Kotlin Multiplatform
 
-![Pull request validation](https://github.com/microsoft/fluentui-system-icons/actions/workflows/pr.yml/badge.svg)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.niyajali/fluentui-system-icons.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.niyajali%22%20AND%20a:%22fluentui-system-icons%22)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Kotlin](https://img.shields.io/badge/kotlin-multiplatform-orange.svg?logo=kotlin)](http://kotlinlang.org)
+[![Compose](https://img.shields.io/badge/Compose-Multiplatform-blue.svg?logo=jetpackcompose)](https://www.jetbrains.com/lp/compose-mpp/)
 
-Fluent UI System Icons are a collection of familiar, friendly and modern icons from Microsoft.
+> **Note**: This is a fork of the
+> original [Microsoft FluentUI System Icons](https://github.com/microsoft/fluentui-system-icons) repository,
+> specifically created to provide Kotlin Multiplatform and Compose Multiplatform support.
+
+Fluent UI System Icons are a collection of familiar, friendly and modern icons from Microsoft, now available for Kotlin
+Multiplatform projects with full Compose Multiplatform support.
 
 ![Fluent System Icons](art/readme-banner.png)
 
-## Icon List
+## 🌐 Interactive Web Catalog
 
-- [View the full list of regular icons](icons_regular.md)
+Browse and copy icons with our interactive web catalog: **[Open Catalog](https://niyajali.github.io/fluentui-system-icons)**
 
-- [View the full list of filled icons](icons_filled.md)
-
-
-## Direction
-Within the metadata.json file for an icon, a property named `directionType` is used to indicate the direction of the icon. This property can have one of the following values:
-- `unique`, meaning that the icon is unique and has a specific RTL and LTR version
-- `mirror`, meaning that the icon can be mirrored for RTL or LTR languages
-
-The property `singleton` is also used to indicate the default direction that should be used for the icon. 
+✨ **Features:**
+- 🔍 Search and filter through all available icons
+- 📋 Copy SVG code directly to clipboard
+- 🎨 Copy Jetpack Compose references (e.g., `FluentUi.Filled.FileEdit`)
+- 🌙 Dark/Light theme support
+- 📱 Responsive design for all devices
 
 ## Installation
 
-### Android
+### Using Version Catalog (Recommended)
 
-The library is published via Maven Central, please ensure that the `mavenCentral()` repository has been added to the root `build.gradle` file:
+Add to your `gradle/libs.versions.toml`:
 
-```groovy
-repositories {
-    ...
-    mavenCentral()
+```toml
+[versions]
+fluentui-icons = "${latest_version}"
+
+[libraries]
+fluentui-system-icons = { module = "io.github.niyajali:fluentui-system-icons", version.ref = "fluentui-icons" }
+```
+
+Then in your module's `build.gradle.kts`:
+
+```kotlin
+kotlin {
+    sourceSets {
+        commonMain.dependencies {
+            implementation(libs.fluentui.system.icons)
+        }
+    }
 }
 ```
 
-Include the following dependency in your project's `build.gradle`:
+## Usage
 
-```groovy
-implementation 'com.microsoft.design:fluent-system-icons:1.1.303@aar'
+### Basic Usage
+
+```kotlin
+@Composable
+fun MyScreen() {
+    Column(
+        modifier = Modifier.padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        // Filled style icons
+        Icon(
+            imageVector = FluentUi.Filled.Home,
+            contentDescription = "Home"
+        )
+
+        Icon(
+            imageVector = FluentUi.Filled.Settings,
+            contentDescription = "Settings"
+        )
+
+        // Regular style icons
+        Icon(
+            imageVector = FluentUi.Regular.Mail,
+            contentDescription = "Mail"
+        )
+
+        Icon(
+            imageVector = FluentUi.Regular.Calendar,
+            contentDescription = "Calendar"
+        )
+
+        // In buttons
+        Button(onClick = { }) {
+            Icon(FluentUi.Filled.Add, contentDescription = null)
+            Spacer(Modifier.width(8.dp))
+            Text("Add Item")
+        }
+    }
+}
 ```
 
-For library docs, see [android/README.md](android/README.md).
+### Available Styles
 
-### iOS and macOS
+- **FluentUi.Filled** - Filled style icons
+- **FluentUi.Regular** - Regular/outline style icons
+- **FluentUi.Colored** - Multi-color icons (where available)
 
-#### CocoaPods
+## Supported Platforms
 
-```ruby
-use_frameworks!
+✅ **Android** (Jetpack Compose)  
+✅ **iOS** (Compose Multiplatform)  
+✅ **Desktop** (Windows, macOS, Linux)  
+✅ **Web** (Compose for Web (JS/WasmJS))
 
-pod "FluentIcons", "1.1.303"
-```
+## What's New
 
-#### Carthage
-
-```bash
-git "git@github.com:microsoft/fluentui-system-icons.git" "1.1.303"
-```
-
-For library docs, see [ios/README.md](ios/README.md).
-
-### Flutter
-
-In the `pubspec.yaml` of your flutter project, add the following dependency:
-
-```yaml
-dependencies:
-  ...
-  fluentui_system_icons: ^1.1.303
-```
-
-For library docs, see [flutter/README.md](flutter/README.md).
-
-### Plain svg
-
-Inline svg directly. See [packages/svg-icons/README.md](packages/svg-icons/README.md).
+🎯 **Full Compose Multiplatform support** for all platforms  
+🚀 **Type-safe icon references** with IntelliSense support  
+📦 **Single dependency** for all platforms  
+🌐 **Interactive web catalog** for easy discovery  
+🎨 **Consistent API** across all platforms  
+⚡ **Optimized bundle size** with tree-shaking support
 
 ## Contributing
 
-### Importer
+We welcome contributions! Please feel free to [open an issue](https://github.com/niyajali/fluentui-system-icons/issues/new) with questions or requests.
 
-The importer generates the Android and iOS libraries from the icons in the `assets` directory.
+## License
 
-Jump into the directory:
-
-```
-cd importer
-```
-
-Install npm dependencies:
-
-```
-npm install
-npm run clean
-```
-
-List all the available commands:
-
-```
-npm run
-```
-
-### Build Pipeline
-
-Our [build pipeline](https://github.com/microsoft/fluentui-system-icons/actions) runs `deploy:android` and `deploy:ios` to create the libraries. The build definitions are located in `.github/workflows/`.
-
-## Demo apps
-
-You can build and run the demo apps following the steps below.
-
-### Android
-
-1. Follow the **Importer** section above and run the command `npm run deploy:android`
-2. Open the [android](android) directory in Android Studio
-3. Select the `sample-showcase` in the build configuration dropdown
-4. Click run
-
-### Flutter
-
-Prerequisite: Make sure you have flutter configured in Android Studio
-
-1. Open the [flutter](flutter) directory in Android Studio
-2. Select the `example` in the directory and open it in Android Studio
-3. Click run
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 

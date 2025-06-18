@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Beach: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Beach: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Beach",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFCD3E1D),
-                    1f to Color(0xFF592A00)
+                    1f to Color(0xFF592A00),
                 ),
                 start = Offset(12.073f, 13.327f),
-                end = Offset(17.739f, 7.042f)
-            )
+                end = Offset(17.739f, 7.042f),
+            ),
         ) {
             moveTo(16.552f, 7.8f)
             lineTo(15.25f, 7.061f)
@@ -66,11 +66,11 @@ public val FluentUi.Colored.Beach: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFC7A3),
-                    1f to Color(0xFFFFA43D)
+                    1f to Color(0xFFFFA43D),
                 ),
                 start = Offset(12f, 19.695f),
-                end = Offset(12f, 14.062f)
-            )
+                end = Offset(12f, 14.062f),
+            ),
         ) {
             moveTo(6.347f, 19.448f)
             lineTo(8.809f, 21.062f)
@@ -89,11 +89,11 @@ public val FluentUi.Colored.Beach: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.061f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0078D4)
+                    1f to Color(0xFF0078D4),
                 ),
                 start = Offset(12.013f, 21.467f),
-                end = Offset(12.013f, 18.318f)
-            )
+                end = Offset(12.013f, 18.318f),
+            ),
         ) {
             moveTo(17.915f, 18.061f)
             curveTo(17.531f, 18.061f, 17.201f, 18.307f, 17.08f, 18.668f)
@@ -127,11 +127,11 @@ public val FluentUi.Colored.Beach: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFAA1D2D),
-                    1f to Color(0xFFFB6F7B)
+                    1f to Color(0xFFFB6F7B),
                 ),
                 start = Offset(20.619f, 15.15f),
-                end = Offset(10.728f, 1.963f)
-            )
+                end = Offset(10.728f, 1.963f),
+            ),
         ) {
             moveTo(19.647f, 12.813f)
             curveTo(20.126f, 13.084f, 20.735f, 12.918f, 21.008f, 12.44f)
@@ -147,11 +147,11 @@ public val FluentUi.Colored.Beach: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFECBE6),
-                    1f to Color(0xFFFDAFD9)
+                    1f to Color(0xFFFDAFD9),
                 ),
                 start = Offset(18.483f, 8.005f),
-                end = Offset(12.915f, 6.15f)
-            )
+                end = Offset(12.915f, 6.15f),
+            ),
         ) {
             moveTo(18.618f, 2.97f)
             curveTo(17.067f, 3.476f, 14.068f, 5.592f, 12.4f, 8.704f)
@@ -166,6 +166,6 @@ public val FluentUi.Colored.Beach: ImageVector by lazy(LazyThreadSafetyMode.NONE
 @Composable
 private fun BeachPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Beach, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Beach, contentDescription = null)
     }
 }

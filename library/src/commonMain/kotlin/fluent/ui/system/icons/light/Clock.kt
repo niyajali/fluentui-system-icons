@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -32,11 +32,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Light.Clock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Light.Clock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Light.Clock",
         defaultWidth = 32.dp,
@@ -76,6 +76,6 @@ public val FluentUi.Light.Clock: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
 @Composable
 private fun ClockPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Light.Clock, contentDescription = null)
+        Image(imageVector = FluentIcons.Light.Clock, contentDescription = null)
     }
 }

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.LayerDiagonalPerson: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.LayerDiagonalPerson: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.LayerDiagonalPerson",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0078D4),
-                    1f to Color(0xFF1B44B1)
+                    1f to Color(0xFF1B44B1),
                 ),
                 start = Offset(2.429f, 4.617f),
-                end = Offset(12.05f, 13.167f)
-            )
+                end = Offset(12.05f, 13.167f),
+            ),
         ) {
             moveTo(14f, 4.238f)
             curveTo(14f, 2.678f, 12.451f, 1.592f, 10.984f, 2.123f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.LayerDiagonalPerson: ImageVector by lazy(LazyThreadS
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(6.429f, 7.617f),
-                end = Offset(16.049f, 16.167f)
-            )
+                end = Offset(16.049f, 16.167f),
+            ),
         ) {
             moveTo(18f, 7.238f)
             curveTo(18f, 5.678f, 16.451f, 4.592f, 14.984f, 5.123f)
@@ -91,11 +91,11 @@ public val FluentUi.Colored.LayerDiagonalPerson: ImageVector by lazy(LazyThreadS
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF6CE0FF),
-                    1f to Color(0xFF58AAFE)
+                    1f to Color(0xFF58AAFE),
                 ),
                 start = Offset(10.429f, 10.617f),
-                end = Offset(20.049f, 19.167f)
-            )
+                end = Offset(20.049f, 19.167f),
+            ),
         ) {
             moveTo(22f, 10.238f)
             curveTo(22f, 8.678f, 20.451f, 7.592f, 18.984f, 8.123f)
@@ -112,11 +112,11 @@ public val FluentUi.Colored.LayerDiagonalPerson: ImageVector by lazy(LazyThreadS
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(16.14f, 18.665f),
-                end = Offset(17.898f, 23.718f)
-            )
+                end = Offset(17.898f, 23.718f),
+            ),
         ) {
             moveTo(23f, 19.875f)
             curveTo(23f, 21.431f, 21.714f, 23f, 18.5f, 23f)
@@ -132,11 +132,11 @@ public val FluentUi.Colored.LayerDiagonalPerson: ImageVector by lazy(LazyThreadS
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(17.189f, 12.665f),
-                end = Offset(19.737f, 16.734f)
-            )
+                end = Offset(19.737f, 16.734f),
+            ),
         ) {
             moveTo(21f, 14.5f)
             curveTo(21f, 15.881f, 19.881f, 17f, 18.5f, 17f)
@@ -152,6 +152,6 @@ public val FluentUi.Colored.LayerDiagonalPerson: ImageVector by lazy(LazyThreadS
 @Composable
 private fun LayerDiagonalPersonPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.LayerDiagonalPerson, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.LayerDiagonalPerson, contentDescription = null)
     }
 }

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -23,7 +23,6 @@
  */
 package fluent.ui.system.icons.filled
 
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
@@ -34,50 +33,51 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TextAlignJustifyLowRotate270: ImageVector by
-        lazy(LazyThreadSafetyMode.NONE) {
-    ImageVector.Builder(
-        name = "Filled.TextAlignJustifyLowRotate270",
-        defaultWidth = 24.dp,
-        defaultHeight = 24.dp,
-        viewportWidth = 24f,
-        viewportHeight = 24f
-    ).apply {
-        path(fill = SolidColor(Color(0xFF212121))) {
-            moveTo(6f, 11f)
-            curveTo(5.448f, 11f, 5f, 10.552f, 5f, 10f)
-            verticalLineTo(3f)
-            curveTo(5f, 2.448f, 5.448f, 2f, 6f, 2f)
-            curveTo(6.552f, 2f, 7f, 2.448f, 7f, 3f)
-            verticalLineTo(10f)
-            curveTo(7f, 10.552f, 6.552f, 11f, 6f, 11f)
-            close()
-            moveTo(18f, 22f)
-            curveTo(17.448f, 22f, 17f, 21.552f, 17f, 21f)
-            verticalLineTo(3f)
-            curveTo(17f, 2.448f, 17.448f, 2f, 18f, 2f)
-            curveTo(18.552f, 2f, 19f, 2.448f, 19f, 3f)
-            verticalLineTo(21f)
-            curveTo(19f, 21.552f, 18.552f, 22f, 18f, 22f)
-            close()
-            moveTo(11f, 10f)
-            curveTo(11f, 10.552f, 11.448f, 11f, 12f, 11f)
-            curveTo(12.552f, 11f, 13f, 10.552f, 13f, 10f)
-            verticalLineTo(3f)
-            curveTo(13f, 2.448f, 12.552f, 2f, 12f, 2f)
-            curveTo(11.448f, 2f, 11f, 2.448f, 11f, 3f)
-            verticalLineTo(10f)
-            close()
-        }
-    }.build()
-}
+public val FluentIcons.Filled.TextAlignJustifyLowRotate270: ImageVector by
+    lazy(LazyThreadSafetyMode.NONE) {
+        ImageVector.Builder(
+            name = "Filled.TextAlignJustifyLowRotate270",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f,
+        ).apply {
+            path(fill = SolidColor(Color(0xFF212121))) {
+                moveTo(6f, 11f)
+                curveTo(5.448f, 11f, 5f, 10.552f, 5f, 10f)
+                verticalLineTo(3f)
+                curveTo(5f, 2.448f, 5.448f, 2f, 6f, 2f)
+                curveTo(6.552f, 2f, 7f, 2.448f, 7f, 3f)
+                verticalLineTo(10f)
+                curveTo(7f, 10.552f, 6.552f, 11f, 6f, 11f)
+                close()
+                moveTo(18f, 22f)
+                curveTo(17.448f, 22f, 17f, 21.552f, 17f, 21f)
+                verticalLineTo(3f)
+                curveTo(17f, 2.448f, 17.448f, 2f, 18f, 2f)
+                curveTo(18.552f, 2f, 19f, 2.448f, 19f, 3f)
+                verticalLineTo(21f)
+                curveTo(19f, 21.552f, 18.552f, 22f, 18f, 22f)
+                close()
+                moveTo(11f, 10f)
+                curveTo(11f, 10.552f, 11.448f, 11f, 12f, 11f)
+                curveTo(12.552f, 11f, 13f, 10.552f, 13f, 10f)
+                verticalLineTo(3f)
+                curveTo(13f, 2.448f, 12.552f, 2f, 12f, 2f)
+                curveTo(11.448f, 2f, 11f, 2.448f, 11f, 3f)
+                verticalLineTo(10f)
+                close()
+            }
+        }.build()
+    }
 
 @Preview
 @Composable
 private fun TextAlignJustifyLowRotate270Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TextAlignJustifyLowRotate270, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextAlignJustifyLowRotate270, contentDescription = null)
     }
 }

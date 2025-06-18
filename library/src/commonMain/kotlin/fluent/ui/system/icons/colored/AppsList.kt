@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.AppsList: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.AppsList: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.AppsList",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(7.05f, 1.714f),
-                end = Offset(20.7f, 20f)
-            )
+                end = Offset(20.7f, 20f),
+            ),
         ) {
             moveTo(9f, 5f)
             curveTo(9f, 4.448f, 9.448f, 4f, 10f, 4f)
@@ -68,11 +68,11 @@ public val FluentUi.Colored.AppsList: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(7.05f, 1.714f),
-                end = Offset(20.7f, 20f)
-            )
+                end = Offset(20.7f, 20f),
+            ),
         ) {
             moveTo(9f, 12f)
             curveTo(9f, 11.448f, 9.448f, 11f, 10f, 11f)
@@ -87,11 +87,11 @@ public val FluentUi.Colored.AppsList: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF0094F0)
+                    1f to Color(0xFF0094F0),
                 ),
                 start = Offset(7.05f, 1.714f),
-                end = Offset(20.7f, 20f)
-            )
+                end = Offset(20.7f, 20f),
+            ),
         ) {
             moveTo(9f, 19f)
             curveTo(9f, 18.448f, 9.448f, 18f, 10f, 18f)
@@ -106,11 +106,11 @@ public val FluentUi.Colored.AppsList: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(3.426f, 4.659f),
-                end = Offset(6.483f, 20.934f)
-            )
+                end = Offset(6.483f, 20.934f),
+            ),
         ) {
             moveTo(6.248f, 16.002f)
             curveTo(7.214f, 16.002f, 7.998f, 16.786f, 7.998f, 17.752f)
@@ -150,6 +150,6 @@ public val FluentUi.Colored.AppsList: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun AppsListPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.AppsList, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.AppsList, contentDescription = null)
     }
 }

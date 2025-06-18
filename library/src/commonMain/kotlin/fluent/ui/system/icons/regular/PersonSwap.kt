@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -32,17 +32,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.PersonSwap: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.PersonSwap: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.PersonSwap",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFF212121))) {
             moveTo(15.751f, 13.997f)
@@ -108,6 +108,6 @@ public val FluentUi.Regular.PersonSwap: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun PersonSwapPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.PersonSwap, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.PersonSwap, contentDescription = null)
     }
 }

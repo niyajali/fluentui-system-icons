@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,28 +34,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ChartMultiple",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF6D37CD),
-                    1f to Color(0xFFEA71EF)
+                    1f to Color(0xFFEA71EF),
                 ),
                 start = Offset(18.091f, 21.418f),
-                end = Offset(-0.127f, 3.366f)
+                end = Offset(-0.127f, 3.366f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(10f, 4.016f)
             curveTo(10.275f, 3.998f, 10.5f, 4.224f, 10.5f, 4.5f)
@@ -72,13 +72,13 @@ public val FluentUi.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF30116E),
-                    0.75f to Color(0x0030116E)
+                    0.75f to Color(0x0030116E),
                 ),
                 center = Offset(13.306f, 19f),
-                radius = 3.861f
+                radius = 3.861f,
             ),
             fillAlpha = 0.4f,
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(10f, 4.016f)
             curveTo(10.275f, 3.998f, 10.5f, 4.224f, 10.5f, 4.5f)
@@ -95,13 +95,13 @@ public val FluentUi.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF30116E),
-                    1f to Color(0x0030116E)
+                    1f to Color(0x0030116E),
                 ),
                 center = Offset(17.17f, 17.07f),
-                radius = 3.861f
+                radius = 3.861f,
             ),
             fillAlpha = 0.4f,
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(10f, 4.016f)
             curveTo(10.275f, 3.998f, 10.5f, 4.224f, 10.5f, 4.5f)
@@ -118,12 +118,12 @@ public val FluentUi.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFE23CB4),
-                    1f to Color(0xFFEA71EF)
+                    1f to Color(0xFFEA71EF),
                 ),
                 start = Offset(20.333f, 7.533f),
-                end = Offset(19.974f, 0.71f)
+                end = Offset(19.974f, 0.71f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(20f, 9.402f)
             verticalLineTo(9.455f)
@@ -141,11 +141,11 @@ public val FluentUi.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF16BBDA),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(22.605f, 8.621f),
-                end = Offset(30.398f, 12.589f)
-            )
+                end = Offset(30.398f, 12.589f),
+            ),
         ) {
             moveTo(21.5f, 12f)
             curveTo(20.672f, 12f, 20f, 12.672f, 20f, 13.5f)
@@ -160,11 +160,11 @@ public val FluentUi.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF16BBDA),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(16.75f, 15.571f),
-                end = Offset(21.913f, 19.079f)
-            )
+                end = Offset(21.913f, 19.079f),
+            ),
         ) {
             moveTo(16f, 16.5f)
             curveTo(16f, 15.672f, 16.672f, 15f, 17.5f, 15f)
@@ -179,11 +179,11 @@ public val FluentUi.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF16BBDA),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(12.75f, 18f),
-                end = Offset(15.361f, 20.888f)
-            )
+                end = Offset(15.361f, 20.888f),
+            ),
         ) {
             moveTo(13.5f, 18f)
             curveTo(12.672f, 18f, 12f, 18.672f, 12f, 19.5f)
@@ -201,6 +201,6 @@ public val FluentUi.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun ChartMultiplePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ChartMultiple, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ChartMultiple, contentDescription = null)
     }
 }

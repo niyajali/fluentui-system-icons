@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,28 +34,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.SlideTextSparkle",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFC92CB),
                     0.51f to Color(0xFFDD3CE2),
-                    1f to Color(0xFFB91CBF)
+                    1f to Color(0xFFB91CBF),
                 ),
                 start = Offset(2.407f, 19.869f),
-                end = Offset(16.688f, 1.856f)
-            )
+                end = Offset(16.688f, 1.856f),
+            ),
         ) {
             moveTo(19.25f, 3.99f)
             horizontalLineTo(4.75f)
@@ -72,12 +72,12 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF55107A),
-                    1f to Color(0x0055107A)
+                    1f to Color(0x0055107A),
                 ),
                 center = Offset(9.083f, 8.79f),
-                radius = 0.8f
+                radius = 0.8f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(19.25f, 3.99f)
             horizontalLineTo(4.75f)
@@ -94,12 +94,12 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF55107A),
-                    1f to Color(0x0055107A)
+                    1f to Color(0x0055107A),
                 ),
                 center = Offset(11.167f, 11.99f),
-                radius = 1.2f
+                radius = 1.2f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(19.25f, 3.99f)
             horizontalLineTo(4.75f)
@@ -116,12 +116,12 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF55107A),
-                    1f to Color(0x0055107A)
+                    1f to Color(0x0055107A),
                 ),
                 center = Offset(9.917f, 15.19f),
-                radius = 1.2f
+                radius = 1.2f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(19.25f, 3.99f)
             horizontalLineTo(4.75f)
@@ -138,12 +138,12 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF55107A),
-                    1f to Color(0x0055107A)
+                    1f to Color(0x0055107A),
                 ),
                 center = Offset(17f, 5.59f),
-                radius = 3.6f
+                radius = 3.6f,
             ),
-            fillAlpha = 0.6f
+            fillAlpha = 0.6f,
         ) {
             moveTo(19.25f, 3.99f)
             horizontalLineTo(4.75f)
@@ -160,12 +160,12 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF55107A),
-                    1f to Color(0x0055107A)
+                    1f to Color(0x0055107A),
                 ),
                 center = Offset(21.167f, 10.39f),
-                radius = 2.4f
+                radius = 2.4f,
             ),
-            fillAlpha = 0.4f
+            fillAlpha = 0.4f,
         ) {
             moveTo(19.25f, 3.99f)
             horizontalLineTo(4.75f)
@@ -223,11 +223,11 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFEE5FF),
-                    0.964f to Color(0xFFF0B6F2)
+                    0.964f to Color(0xFFF0B6F2),
                 ),
                 start = Offset(21.823f, 10f),
-                end = Offset(14.664f, 4.247f)
-            )
+                end = Offset(14.664f, 4.247f),
+            ),
         ) {
             moveTo(13.36f, 5f)
             lineTo(14.74f, 5.45f)
@@ -283,11 +283,11 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFEE5FF),
-                    0.964f to Color(0xFFF0B6F2)
+                    0.964f to Color(0xFFF0B6F2),
                 ),
                 start = Offset(15.583f, 11.74f),
-                end = Offset(4.75f, 11.74f)
-            )
+                end = Offset(4.75f, 11.74f),
+            ),
         ) {
             moveTo(16f, 11.74f)
             curveTo(16f, 11.33f, 15.66f, 10.99f, 15.25f, 10.99f)
@@ -312,11 +312,11 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFEE5FF),
-                    0.964f to Color(0xFFF0B6F2)
+                    0.964f to Color(0xFFF0B6F2),
                 ),
                 start = Offset(13.667f, 14.74f),
-                end = Offset(5f, 14.74f)
-            )
+                end = Offset(5f, 14.74f),
+            ),
         ) {
             moveTo(6.75f, 13.99f)
             curveTo(6.34f, 13.99f, 6f, 14.33f, 6f, 14.74f)
@@ -331,11 +331,11 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFEE5FF),
-                    0.964f to Color(0xFFF0B6F2)
+                    0.964f to Color(0xFFF0B6F2),
                 ),
                 start = Offset(29.125f, 21.5f),
-                end = Offset(13.871f, 12.52f)
-            )
+                end = Offset(13.871f, 12.52f),
+            ),
         ) {
             moveTo(23.94f, 10.32f)
             curveTo(23.9f, 10.27f, 23.85f, 10.23f, 23.79f, 10.21f)
@@ -388,11 +388,11 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFEE5FF),
-                    0.964f to Color(0xFFF0B6F2)
+                    0.964f to Color(0xFFF0B6F2),
                 ),
                 start = Offset(11.75f, 8.74f),
-                end = Offset(5.25f, 8.74f)
-            )
+                end = Offset(5.25f, 8.74f),
+            ),
         ) {
             moveTo(6.75f, 9.49f)
             horizontalLineTo(11.25f)
@@ -410,6 +410,6 @@ public val FluentUi.Colored.SlideTextSparkle: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun SlideTextSparklePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.SlideTextSparkle, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.SlideTextSparkle, contentDescription = null)
     }
 }

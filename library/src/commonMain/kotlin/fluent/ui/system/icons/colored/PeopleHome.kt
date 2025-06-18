@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,27 +34,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PeopleHome: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PeopleHome: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PeopleHome",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(5.808f, 15.064f),
-                end = Offset(8.394f, 23.319f)
-            )
+                end = Offset(8.394f, 23.319f),
+            ),
         ) {
             moveTo(15.754f, 14f)
             curveTo(16.996f, 14f, 18.003f, 15.007f, 18.003f, 16.249f)
@@ -72,11 +72,11 @@ public val FluentUi.Colored.PeopleHome: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(10.003f, 13.047f),
-                end = Offset(13.623f, 26.573f)
-            )
+                end = Offset(13.623f, 26.573f),
+            ),
         ) {
             moveTo(15.754f, 14f)
             curveTo(16.996f, 14f, 18.003f, 15.007f, 18.003f, 16.249f)
@@ -94,12 +94,12 @@ public val FluentUi.Colored.PeopleHome: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.042f to Color(0xBF0A1852),
-                    1f to Color(0x000A1852)
+                    1f to Color(0x000A1852),
                 ),
                 center = Offset(14.5f, 19.5f),
-                radius = 3.5f
+                radius = 3.5f,
             ),
-            fillAlpha = 0.75f
+            fillAlpha = 0.75f,
         ) {
             moveTo(15.754f, 14f)
             curveTo(16.996f, 14f, 18.003f, 15.007f, 18.003f, 16.249f)
@@ -117,12 +117,12 @@ public val FluentUi.Colored.PeopleHome: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xBF0A1852),
-                    1f to Color(0x000A1852)
+                    1f to Color(0x000A1852),
                 ),
                 center = Offset(13f, 17f),
-                radius = 1.5f
+                radius = 1.5f,
             ),
-            fillAlpha = 0.55f
+            fillAlpha = 0.55f,
         ) {
             moveTo(15.754f, 14f)
             curveTo(16.996f, 14f, 18.003f, 15.007f, 18.003f, 16.249f)
@@ -140,11 +140,11 @@ public val FluentUi.Colored.PeopleHome: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(7.379f, 3.334f),
-                end = Offset(12.475f, 11.472f)
-            )
+                end = Offset(12.475f, 11.472f),
+            ),
         ) {
             moveTo(10f, 2.005f)
             curveTo(12.762f, 2.005f, 15f, 4.243f, 15f, 7.005f)
@@ -157,11 +157,11 @@ public val FluentUi.Colored.PeopleHome: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF944600),
-                    1f to Color(0xFFCD8E02)
+                    1f to Color(0xFFCD8E02),
                 ),
                 start = Offset(17.5f, 17f),
-                end = Offset(14.694f, 23.238f)
-            )
+                end = Offset(14.694f, 23.238f),
+            ),
         ) {
             moveTo(15f, 17f)
             horizontalLineTo(20f)
@@ -174,11 +174,11 @@ public val FluentUi.Colored.PeopleHome: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFD394),
-                    1f to Color(0xFFFFB357)
+                    1f to Color(0xFFFFB357),
                 ),
                 start = Offset(13.859f, 14.109f),
-                end = Offset(21.397f, 21.439f)
-            )
+                end = Offset(21.397f, 21.439f),
+            ),
         ) {
             moveTo(18.1f, 13.325f)
             curveTo(17.744f, 13.058f, 17.256f, 13.058f, 16.9f, 13.325f)
@@ -205,12 +205,12 @@ public val FluentUi.Colored.PeopleHome: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF921F),
-                    1f to Color(0xFFEB4824)
+                    1f to Color(0xFFEB4824),
                 ),
                 start = Offset(18f, 11f),
-                end = Offset(17.263f, 16.847f)
+                end = Offset(17.263f, 16.847f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(17.5f, 13.95f)
             lineTo(21.54f, 17.092f)
@@ -231,6 +231,6 @@ public val FluentUi.Colored.PeopleHome: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun PeopleHomePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PeopleHome, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PeopleHome, contentDescription = null)
     }
 }

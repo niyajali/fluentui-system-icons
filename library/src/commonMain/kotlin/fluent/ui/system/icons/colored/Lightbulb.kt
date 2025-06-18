@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,28 +33,28 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Lightbulb: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Lightbulb: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Lightbulb",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFE06B),
                     0.376f to Color(0xFFFFA43D),
-                    1f to Color(0xFFE67505)
+                    1f to Color(0xFFE67505),
                 ),
                 center = Offset(7.419f, 7.571f),
-                radius = 14.468f
-            )
+                radius = 14.468f,
+            ),
         ) {
             moveTo(15.247f, 20.258f)
             curveTo(15.024f, 21.221f, 14.201f, 21.919f, 13.228f, 21.993f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.Lightbulb: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFD34719),
-                    1f to Color(0x00D34719)
+                    1f to Color(0x00D34719),
                 ),
                 start = Offset(11.999f, 18.5f),
-                end = Offset(11.999f, 22f)
-            )
+                end = Offset(11.999f, 22f),
+            ),
         ) {
             moveTo(15.247f, 20.258f)
             curveTo(15.024f, 21.221f, 14.201f, 21.919f, 13.228f, 21.993f)
@@ -93,11 +93,11 @@ public val FluentUi.Colored.Lightbulb: ImageVector by lazy(LazyThreadSafetyMode.
                 colorStops = arrayOf(
                     0f to Color(0xFFFFE06B),
                     0.376f to Color(0xFFFFA43D),
-                    1f to Color(0xFFE67505)
+                    1f to Color(0xFFE67505),
                 ),
                 center = Offset(7.166f, 4.012f),
-                radius = 18.226f
-            )
+                radius = 18.226f,
+            ),
         ) {
             moveTo(8.23f, 18f)
             horizontalLineTo(15.77f)
@@ -115,11 +115,11 @@ public val FluentUi.Colored.Lightbulb: ImageVector by lazy(LazyThreadSafetyMode.
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFC7A3),
-                    1f to Color(0xFFFF9C70)
+                    1f to Color(0xFFFF9C70),
                 ),
                 start = Offset(11.385f, 18.095f),
-                end = Offset(12.725f, 20.874f)
-            )
+                end = Offset(12.725f, 20.874f),
+            ),
         ) {
             moveTo(8.461f, 18.999f)
             lineTo(8.114f, 17.5f)
@@ -135,6 +135,6 @@ public val FluentUi.Colored.Lightbulb: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun LightbulbPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Lightbulb, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Lightbulb, contentDescription = null)
     }
 }

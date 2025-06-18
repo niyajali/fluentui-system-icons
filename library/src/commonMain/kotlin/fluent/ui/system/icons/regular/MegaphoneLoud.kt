@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -32,17 +32,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.MegaphoneLoud",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFF212121))) {
             moveTo(17.212f, 2.237f)
@@ -107,6 +107,6 @@ public val FluentUi.Regular.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun MegaphoneLoudPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.MegaphoneLoud, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.MegaphoneLoud, contentDescription = null)
     }
 }

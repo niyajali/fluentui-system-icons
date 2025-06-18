@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,27 +34,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.FastForwardCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.FastForwardCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.FastForwardCircle",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF52D17C),
-                    1f to Color(0xFF22918B)
+                    1f to Color(0xFF22918B),
                 ),
                 start = Offset(2.714f, 5.75f),
-                end = Offset(16.517f, 20.09f)
-            )
+                end = Offset(16.517f, 20.09f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(17.523f, 2f, 22f, 6.477f, 22f, 12f)
@@ -83,11 +83,11 @@ public val FluentUi.Colored.FastForwardCircle: ImageVector by lazy(LazyThreadSaf
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFFFFF),
-                    1f to Color(0xFFE3FFD9)
+                    1f to Color(0xFFE3FFD9),
                 ),
                 start = Offset(9.25f, 8.816f),
-                end = Offset(10.957f, 17.854f)
-            )
+                end = Offset(10.957f, 17.854f),
+            ),
         ) {
             moveTo(12.533f, 8.883f)
             curveTo(12.533f, 8.168f, 13.376f, 7.751f, 13.987f, 8.163f)
@@ -111,6 +111,6 @@ public val FluentUi.Colored.FastForwardCircle: ImageVector by lazy(LazyThreadSaf
 @Composable
 private fun FastForwardCirclePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.FastForwardCircle, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.FastForwardCircle, contentDescription = null)
     }
 }

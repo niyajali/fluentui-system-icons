@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,17 +34,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.TextEditStyle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.TextEditStyle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.TextEditStyle",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
@@ -52,12 +52,12 @@ public val FluentUi.Colored.TextEditStyle: ImageVector by lazy(LazyThreadSafetyM
                     0f to Color(0xFF0FAFFF),
                     0.677f to Color(0xFF0078D4),
                     0.84f to Color(0xFF0057AA),
-                    1f to Color(0xFF0057AA)
+                    1f to Color(0xFF0057AA),
                 ),
                 start = Offset(3f, 2.646f),
-                end = Offset(5.959f, 14.676f)
+                end = Offset(5.959f, 14.676f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(8.202f, 2.474f)
             lineTo(8.151f, 2.369f)
@@ -93,11 +93,11 @@ public val FluentUi.Colored.TextEditStyle: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFA43D),
-                    1f to Color(0xFFFB5937)
+                    1f to Color(0xFFFB5937),
                 ),
                 start = Offset(14.552f, 11.684f),
-                end = Offset(15.969f, 17.238f)
-            )
+                end = Offset(15.969f, 17.238f),
+            ),
         ) {
             moveTo(12.948f, 20.097f)
             lineTo(20.061f, 12.995f)
@@ -111,11 +111,11 @@ public val FluentUi.Colored.TextEditStyle: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.255f to Color(0xFFFFD394),
-                    1f to Color(0xFFFF921F)
+                    1f to Color(0xFFFF921F),
                 ),
                 start = Offset(5.464f, 17.351f),
-                end = Offset(10.112f, 22.041f)
-            )
+                end = Offset(10.112f, 22.041f),
+            ),
         ) {
             moveTo(12.948f, 20.097f)
             curveTo(12.676f, 20.369f, 12.339f, 20.566f, 11.969f, 20.67f)
@@ -131,11 +131,11 @@ public val FluentUi.Colored.TextEditStyle: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFF97DBD),
-                    1f to Color(0xFFDD3CE2)
+                    1f to Color(0xFFDD3CE2),
                 ),
                 start = Offset(19.401f, 9.091f),
-                end = Offset(16.581f, 11.751f)
-            )
+                end = Offset(16.581f, 11.751f),
+            ),
         ) {
             moveTo(20.062f, 12.995f)
             curveTo(21.319f, 11.739f, 21.319f, 9.701f, 20.063f, 8.444f)
@@ -149,11 +149,11 @@ public val FluentUi.Colored.TextEditStyle: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF921F),
-                    1f to Color(0xFFFFE994)
+                    1f to Color(0xFFFFE994),
                 ),
                 start = Offset(16.107f, 13.738f),
-                end = Offset(11.359f, 11.656f)
-            )
+                end = Offset(11.359f, 11.656f),
+            ),
         ) {
             moveTo(17.19f, 15.855f)
             lineTo(19.354f, 13.703f)
@@ -171,6 +171,6 @@ public val FluentUi.Colored.TextEditStyle: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun TextEditStylePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.TextEditStyle, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.TextEditStyle, contentDescription = null)
     }
 }

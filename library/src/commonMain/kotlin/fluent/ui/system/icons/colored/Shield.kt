@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,17 +33,17 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Shield: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Shield: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Shield",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
@@ -51,11 +51,11 @@ public val FluentUi.Colored.Shield: ImageVector by lazy(LazyThreadSafetyMode.NON
                     0.338f to Color(0xFF0FAFFF),
                     0.529f to Color(0xFF367AF2),
                     0.682f to Color(0xFF5750E2),
-                    0.861f to Color(0xFFCC23D1)
+                    0.861f to Color(0xFFCC23D1),
                 ),
                 center = Offset(-4.071f, -9.25f),
-                radius = 47.599f
-            )
+                radius = 47.599f,
+            ),
         ) {
             moveTo(3f, 5.75f)
             curveTo(3f, 5.336f, 3.336f, 5f, 3.75f, 5f)
@@ -77,6 +77,6 @@ public val FluentUi.Colored.Shield: ImageVector by lazy(LazyThreadSafetyMode.NON
 @Composable
 private fun ShieldPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Shield, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Shield, contentDescription = null)
     }
 }

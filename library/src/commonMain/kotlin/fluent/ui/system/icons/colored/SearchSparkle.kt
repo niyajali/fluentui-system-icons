@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.SearchSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.SearchSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.SearchSparkle",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFB3E0FF)
+                    1f to Color(0xFFB3E0FF),
                 ),
                 start = Offset(13.5f, 5.333f),
-                end = Offset(3f, 17f)
-            )
+                end = Offset(3f, 17f),
+            ),
         ) {
             moveTo(17f, 10f)
             curveTo(17f, 13.866f, 13.866f, 17f, 10f, 17f)
@@ -66,11 +66,11 @@ public val FluentUi.Colored.SearchSparkle: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0094F0),
-                    1f to Color(0xFF29C3FF)
+                    1f to Color(0xFF29C3FF),
                 ),
                 start = Offset(3f, 19f),
-                end = Offset(19f, 6f)
-            )
+                end = Offset(19f, 6f),
+            ),
         ) {
             moveTo(14.843f, 16.368f)
             curveTo(13.499f, 17.392f, 11.82f, 18f, 10f, 18f)
@@ -94,11 +94,11 @@ public val FluentUi.Colored.SearchSparkle: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.718f to Color(0xFFFFCD0F),
-                    0.991f to Color(0xFFE67505)
+                    0.991f to Color(0xFFE67505),
                 ),
                 center = Offset(7.375f, -10.813f),
-                radius = 28.614f
-            )
+                radius = 28.614f,
+            ),
         ) {
             moveTo(20.783f, 10.213f)
             lineTo(20.017f, 9.965f)
@@ -140,11 +140,11 @@ public val FluentUi.Colored.SearchSparkle: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.698f to Color(0xFFFFCD0F),
-                    0.991f to Color(0xFFE67505)
+                    0.991f to Color(0xFFE67505),
                 ),
                 center = Offset(-1.17f, -22.661f),
-                radius = 38.697f
-            )
+                radius = 38.697f,
+            ),
         ) {
             moveTo(13.088f, 6.412f)
             curveTo(13.016f, 6.319f, 12.938f, 6.23f, 12.854f, 6.146f)
@@ -192,6 +192,6 @@ public val FluentUi.Colored.SearchSparkle: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun SearchSparklePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.SearchSparkle, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.SearchSparkle, contentDescription = null)
     }
 }

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ArrowSync: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ArrowSync: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ArrowSync",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF22918B),
-                    1f to Color(0xFF20AC9D)
+                    1f to Color(0xFF20AC9D),
                 ),
                 start = Offset(16.8f, 19.475f),
-                end = Offset(7.2f, 0.5f)
-            )
+                end = Offset(7.2f, 0.5f),
+            ),
         ) {
             moveTo(16.052f, 5.029f)
             curveTo(15.717f, 5.468f, 15.801f, 6.095f, 16.24f, 6.43f)
@@ -100,6 +100,6 @@ public val FluentUi.Colored.ArrowSync: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun ArrowSyncPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ArrowSync, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ArrowSync, contentDescription = null)
     }
 }

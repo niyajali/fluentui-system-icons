@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Table: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Table: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Table",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB0F098),
-                    1f to Color(0xFF98F0B0)
+                    1f to Color(0xFF98F0B0),
                 ),
                 start = Offset(4.286f, 4.286f),
-                end = Offset(19.714f, 19.714f)
-            )
+                end = Offset(19.714f, 19.714f),
+            ),
         ) {
             moveTo(7f, 3f)
             lineTo(17f, 3f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.Table: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF42B870),
-                    1f to Color(0xFF1A7F7C)
+                    1f to Color(0xFF1A7F7C),
                 ),
                 start = Offset(3f, 3f),
-                end = Offset(21f, 21f)
-            )
+                end = Offset(21f, 21f),
+            ),
         ) {
             moveTo(9.5f, 21f)
             horizontalLineTo(14.5f)
@@ -142,6 +142,6 @@ public val FluentUi.Colored.Table: ImageVector by lazy(LazyThreadSafetyMode.NONE
 @Composable
 private fun TablePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Table, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Table, contentDescription = null)
     }
 }

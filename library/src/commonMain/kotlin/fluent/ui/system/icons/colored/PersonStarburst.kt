@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,27 +33,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PersonStarburst: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PersonStarburst: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PersonStarburst",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF1EC8B0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(5.262f, 0.763f),
-                end = Offset(15.375f, 23.236f)
-            )
+                end = Offset(15.375f, 23.236f),
+            ),
         ) {
             moveTo(9.84f, 2.034f)
             curveTo(9.952f, 2.072f, 10.062f, 2.118f, 10.169f, 2.17f)
@@ -103,12 +103,12 @@ public val FluentUi.Colored.PersonStarburst: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.533f to Color(0x00FF6CE8),
-                    1f to Color(0xFFFF6CE8)
+                    1f to Color(0xFFFF6CE8),
                 ),
                 start = Offset(15.134f, 4.371f),
-                end = Offset(19.142f, 24.288f)
+                end = Offset(19.142f, 24.288f),
             ),
-            fillAlpha = 0.7f
+            fillAlpha = 0.7f,
         ) {
             moveTo(9.84f, 2.034f)
             curveTo(9.952f, 2.072f, 10.062f, 2.118f, 10.169f, 2.17f)
@@ -158,12 +158,12 @@ public val FluentUi.Colored.PersonStarburst: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF9DEAFF),
-                    1f to Color(0xFFFFFFFF)
+                    1f to Color(0xFFFFFFFF),
                 ),
                 start = Offset(19.246f, 28.381f),
-                end = Offset(-1.946f, -2.712f)
+                end = Offset(-1.946f, -2.712f),
             ),
-            fillAlpha = 0.9f
+            fillAlpha = 0.9f,
         ) {
             moveTo(12f, 5.965f)
             curveTo(10.667f, 5.965f, 9.586f, 7.046f, 9.586f, 8.379f)
@@ -188,6 +188,6 @@ public val FluentUi.Colored.PersonStarburst: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun PersonStarburstPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PersonStarburst, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PersonStarburst, contentDescription = null)
     }
 }

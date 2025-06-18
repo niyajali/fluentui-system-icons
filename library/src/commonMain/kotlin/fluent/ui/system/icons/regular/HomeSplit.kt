@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -32,17 +32,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.HomeSplit: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.HomeSplit: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.HomeSplit",
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFF212121))) {
             moveTo(13.45f, 2.532f)
@@ -101,6 +101,6 @@ public val FluentUi.Regular.HomeSplit: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun HomeSplitPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.HomeSplit, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.HomeSplit, contentDescription = null)
     }
 }
