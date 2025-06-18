@@ -1,0 +1,59 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.DataBarVertical: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.DataBarVertical",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(5.749f, 3f)
+            curveTo(6.991f, 3f, 7.998f, 4.007f, 7.998f, 5.249f)
+            verticalLineTo(18.751f)
+            curveTo(7.998f, 19.993f, 6.991f, 21f, 5.749f, 21f)
+            curveTo(4.507f, 21f, 3.5f, 19.993f, 3.5f, 18.751f)
+            verticalLineTo(5.249f)
+            curveTo(3.5f, 4.007f, 4.507f, 3f, 5.749f, 3f)
+            close()
+            moveTo(12.249f, 7f)
+            curveTo(13.491f, 7f, 14.498f, 8.007f, 14.498f, 9.249f)
+            verticalLineTo(18.751f)
+            curveTo(14.498f, 19.993f, 13.491f, 21f, 12.249f, 21f)
+            curveTo(11.007f, 21f, 10f, 19.993f, 10f, 18.751f)
+            verticalLineTo(9.249f)
+            curveTo(10f, 8.007f, 11.007f, 7f, 12.249f, 7f)
+            close()
+            moveTo(18.749f, 11f)
+            curveTo(19.991f, 11f, 20.998f, 12.007f, 20.998f, 13.249f)
+            verticalLineTo(18.751f)
+            curveTo(20.998f, 19.993f, 19.991f, 21f, 18.749f, 21f)
+            curveTo(17.507f, 21f, 16.5f, 19.993f, 16.5f, 18.751f)
+            verticalLineTo(13.249f)
+            curveTo(16.5f, 12.007f, 17.507f, 11f, 18.749f, 11f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun DataBarVerticalPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.DataBarVertical, contentDescription = null)
+    }
+}

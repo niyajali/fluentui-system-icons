@@ -1,0 +1,77 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.Bot: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.Bot",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(17.753f, 13.999f)
+            curveTo(18.996f, 13.999f, 20.003f, 15.007f, 20.003f, 16.249f)
+            verticalLineTo(17.154f)
+            curveTo(20.003f, 18.248f, 19.526f, 19.287f, 18.696f, 20f)
+            curveTo(17.131f, 21.344f, 14.89f, 22.001f, 12f, 22.001f)
+            curveTo(9.111f, 22.001f, 6.872f, 21.344f, 5.309f, 20f)
+            curveTo(4.481f, 19.288f, 4.004f, 18.25f, 4.004f, 17.157f)
+            verticalLineTo(16.249f)
+            curveTo(4.004f, 15.007f, 5.011f, 13.999f, 6.254f, 13.999f)
+            horizontalLineTo(17.753f)
+            close()
+            moveTo(11.899f, 2.007f)
+            lineTo(12.001f, 2f)
+            curveTo(12.38f, 2f, 12.694f, 2.282f, 12.744f, 2.648f)
+            lineTo(12.751f, 2.75f)
+            lineTo(12.75f, 3.499f)
+            lineTo(16.25f, 3.5f)
+            curveTo(17.493f, 3.5f, 18.5f, 4.507f, 18.5f, 5.75f)
+            verticalLineTo(10.254f)
+            curveTo(18.5f, 11.497f, 17.493f, 12.504f, 16.25f, 12.504f)
+            horizontalLineTo(7.75f)
+            curveTo(6.508f, 12.504f, 5.5f, 11.497f, 5.5f, 10.254f)
+            verticalLineTo(5.75f)
+            curveTo(5.5f, 4.507f, 6.508f, 3.5f, 7.75f, 3.5f)
+            lineTo(11.25f, 3.499f)
+            lineTo(11.251f, 2.75f)
+            curveTo(11.251f, 2.37f, 11.533f, 2.057f, 11.899f, 2.007f)
+            lineTo(12.001f, 2f)
+            lineTo(11.899f, 2.007f)
+            close()
+            moveTo(9.75f, 6.5f)
+            curveTo(9.06f, 6.5f, 8.5f, 7.059f, 8.5f, 7.749f)
+            curveTo(8.5f, 8.439f, 9.06f, 8.998f, 9.75f, 8.998f)
+            curveTo(10.44f, 8.998f, 10.999f, 8.439f, 10.999f, 7.749f)
+            curveTo(10.999f, 7.059f, 10.44f, 6.5f, 9.75f, 6.5f)
+            close()
+            moveTo(14.242f, 6.5f)
+            curveTo(13.552f, 6.5f, 12.993f, 7.059f, 12.993f, 7.749f)
+            curveTo(12.993f, 8.439f, 13.552f, 8.998f, 14.242f, 8.998f)
+            curveTo(14.932f, 8.998f, 15.492f, 8.439f, 15.492f, 7.749f)
+            curveTo(15.492f, 7.059f, 14.932f, 6.5f, 14.242f, 6.5f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun BotPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.Bot, contentDescription = null)
+    }
+}

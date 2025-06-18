@@ -1,0 +1,65 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.LocationOff: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.LocationOff",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(3.28f, 2.22f)
+            curveTo(2.987f, 1.927f, 2.513f, 1.927f, 2.22f, 2.22f)
+            curveTo(1.927f, 2.513f, 1.927f, 2.987f, 2.22f, 3.28f)
+            lineTo(4.786f, 5.847f)
+            curveTo(2.49f, 9.234f, 2.842f, 13.881f, 5.843f, 16.882f)
+            curveTo(6.139f, 17.178f, 6.506f, 17.541f, 6.945f, 17.972f)
+            lineTo(10.436f, 21.368f)
+            curveTo(11.308f, 22.212f, 12.692f, 22.212f, 13.564f, 21.368f)
+            curveTo(14.96f, 20.019f, 16.095f, 18.915f, 16.97f, 18.056f)
+            lineTo(16.983f, 18.044f)
+            lineTo(20.719f, 21.781f)
+            curveTo(21.012f, 22.073f, 21.487f, 22.073f, 21.78f, 21.781f)
+            curveTo(22.073f, 21.488f, 22.073f, 21.013f, 21.78f, 20.72f)
+            lineTo(3.28f, 2.22f)
+            close()
+            moveTo(12.406f, 13.467f)
+            curveTo(12.274f, 13.489f, 12.138f, 13.5f, 12f, 13.5f)
+            curveTo(10.619f, 13.5f, 9.5f, 12.381f, 9.5f, 11f)
+            curveTo(9.5f, 10.862f, 9.511f, 10.726f, 9.533f, 10.594f)
+            lineTo(12.406f, 13.467f)
+            close()
+            moveTo(14.5f, 11f)
+            curveTo(14.5f, 11.102f, 14.494f, 11.202f, 14.482f, 11.3f)
+            lineTo(19.037f, 15.855f)
+            curveTo(21.527f, 12.45f, 21.233f, 7.644f, 18.157f, 4.568f)
+            curveTo(15.081f, 1.492f, 10.276f, 1.199f, 6.87f, 3.688f)
+            lineTo(11.7f, 8.518f)
+            curveTo(11.798f, 8.506f, 11.898f, 8.5f, 12f, 8.5f)
+            curveTo(13.381f, 8.5f, 14.5f, 9.619f, 14.5f, 11f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun LocationOffPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.LocationOff, contentDescription = null)
+    }
+}

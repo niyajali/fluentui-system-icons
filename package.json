@@ -1,0 +1,40 @@
+{
+  "name": "fluentui-system-icons",
+  "version": "1.0.0",
+  "description": "A beautiful, searchable gallery for Microsoft FluentUI System Icons",
+  "main": "generate-icons.js",
+  "scripts": {
+    "generate": "node generate-icons.js",
+    "watch": "node generate-icons.js --watch",
+    "serve": "npx http-server . -p 3000 -o",
+    "build": "npm run generate",
+    "dev": "npm run generate && npm run serve",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "fluentui",
+    "icons",
+    "microsoft",
+    "svg",
+    "gallery",
+    "design-system"
+  ],
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "chokidar": "^3.5.3",
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/niyajali/fluentui-system-icons.git"
+  },
+  "homepage": "https://niyajali.github.io/fluentui-system-icons",
+  "bugs": {
+    "url": "https://github.com/niyajali/fluentui-system-icons/issues"
+  }
+}

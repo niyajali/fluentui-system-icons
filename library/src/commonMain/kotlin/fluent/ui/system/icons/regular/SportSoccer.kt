@@ -1,0 +1,115 @@
+package fluent.ui.system.icons.regular
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Regular.SportSoccer: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Regular.SportSoccer",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(12f, 2f)
+            curveTo(6.477f, 2f, 2f, 6.477f, 2f, 12f)
+            curveTo(2f, 17.523f, 6.477f, 22f, 12f, 22f)
+            curveTo(17.523f, 22f, 22f, 17.523f, 22f, 12f)
+            curveTo(22f, 6.477f, 17.523f, 2f, 12f, 2f)
+            close()
+            moveTo(10.074f, 3.719f)
+            curveTo(10.693f, 3.576f, 11.337f, 3.5f, 12f, 3.5f)
+            curveTo(12.662f, 3.5f, 13.307f, 3.576f, 13.926f, 3.719f)
+            lineTo(12.002f, 4.873f)
+            lineTo(10.074f, 3.719f)
+            close()
+            moveTo(8.244f, 4.373f)
+            lineTo(11.252f, 6.172f)
+            verticalLineTo(8.366f)
+            lineTo(8.461f, 10.394f)
+            lineTo(6.417f, 9.687f)
+            lineTo(5.83f, 6.153f)
+            curveTo(6.52f, 5.426f, 7.336f, 4.821f, 8.244f, 4.373f)
+            close()
+            moveTo(4.589f, 7.835f)
+            lineTo(4.947f, 9.992f)
+            lineTo(3.519f, 11.42f)
+            curveTo(3.607f, 10.124f, 3.985f, 8.907f, 4.589f, 7.835f)
+            close()
+            moveTo(3.621f, 13.439f)
+            lineTo(5.948f, 11.112f)
+            lineTo(7.987f, 11.817f)
+            lineTo(9.07f, 15.15f)
+            lineTo(8.101f, 16.725f)
+            lineTo(4.807f, 16.531f)
+            curveTo(4.223f, 15.606f, 3.813f, 14.56f, 3.621f, 13.439f)
+            close()
+            moveTo(6.09f, 18.109f)
+            lineTo(7.995f, 18.221f)
+            lineTo(8.67f, 19.823f)
+            curveTo(7.706f, 19.412f, 6.833f, 18.828f, 6.09f, 18.109f)
+            close()
+            moveTo(10.53f, 20.373f)
+            lineTo(9.346f, 17.564f)
+            lineTo(10.309f, 15.997f)
+            horizontalLineTo(13.681f)
+            lineTo(14.593f, 17.578f)
+            lineTo(13.553f, 20.358f)
+            curveTo(13.05f, 20.451f, 12.53f, 20.5f, 12f, 20.5f)
+            curveTo(11.499f, 20.5f, 11.007f, 20.457f, 10.53f, 20.373f)
+            close()
+            moveTo(15.359f, 19.81f)
+            lineTo(15.927f, 18.293f)
+            lineTo(17.596f, 18.398f)
+            curveTo(16.934f, 18.978f, 16.18f, 19.457f, 15.359f, 19.81f)
+            close()
+            moveTo(18.892f, 16.976f)
+            lineTo(15.868f, 16.787f)
+            lineTo(14.93f, 15.162f)
+            lineTo(16.017f, 11.817f)
+            lineTo(18.03f, 11.121f)
+            lineTo(20.342f, 13.642f)
+            curveTo(20.102f, 14.868f, 19.598f, 16f, 18.892f, 16.976f)
+            close()
+            moveTo(20.49f, 11.585f)
+            lineTo(19.049f, 10.014f)
+            lineTo(19.412f, 7.837f)
+            curveTo(20.041f, 8.954f, 20.425f, 10.227f, 20.49f, 11.585f)
+            close()
+            moveTo(18.172f, 6.156f)
+            lineTo(17.583f, 9.689f)
+            lineTo(15.543f, 10.394f)
+            lineTo(12.752f, 8.366f)
+            verticalLineTo(6.172f)
+            lineTo(15.754f, 4.372f)
+            curveTo(16.664f, 4.82f, 17.482f, 5.427f, 18.172f, 6.156f)
+            close()
+            moveTo(9.467f, 11.517f)
+            lineTo(12.002f, 9.675f)
+            lineTo(14.537f, 11.517f)
+            lineTo(13.569f, 14.497f)
+            horizontalLineTo(10.435f)
+            lineTo(9.467f, 11.517f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun SportSoccerPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Regular.SportSoccer, contentDescription = null)
+    }
+}

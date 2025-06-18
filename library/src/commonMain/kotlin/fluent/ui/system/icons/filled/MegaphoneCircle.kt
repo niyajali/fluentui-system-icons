@@ -1,0 +1,62 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.MegaphoneCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.MegaphoneCircle",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(12f, 22f)
+            curveTo(17.523f, 22f, 22f, 17.523f, 22f, 12f)
+            curveTo(22f, 6.477f, 17.523f, 2f, 12f, 2f)
+            curveTo(6.477f, 2f, 2f, 6.477f, 2f, 12f)
+            curveTo(2f, 17.523f, 6.477f, 22f, 12f, 22f)
+            close()
+            moveTo(8f, 14.434f)
+            lineTo(7.139f, 14.115f)
+            curveTo(6.452f, 13.861f, 5.996f, 13.206f, 5.996f, 12.474f)
+            verticalLineTo(11.523f)
+            curveTo(5.996f, 10.791f, 6.452f, 10.136f, 7.139f, 9.882f)
+            lineTo(14.64f, 7.107f)
+            curveTo(15.783f, 6.684f, 16.997f, 7.53f, 16.997f, 8.748f)
+            verticalLineTo(15.248f)
+            curveTo(16.997f, 16.467f, 15.783f, 17.313f, 14.64f, 16.89f)
+            lineTo(13.205f, 16.359f)
+            curveTo(12.978f, 17.578f, 11.909f, 18.5f, 10.625f, 18.5f)
+            curveTo(9.175f, 18.5f, 8f, 17.325f, 8f, 15.875f)
+            verticalLineTo(14.434f)
+            close()
+            moveTo(11.75f, 15.821f)
+            verticalLineTo(15.875f)
+            curveTo(11.75f, 16.496f, 11.246f, 17f, 10.625f, 17f)
+            curveTo(10.004f, 17f, 9.5f, 16.496f, 9.5f, 15.875f)
+            verticalLineTo(14.988f)
+            lineTo(11.75f, 15.821f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun MegaphoneCirclePreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.MegaphoneCircle, contentDescription = null)
+    }
+}

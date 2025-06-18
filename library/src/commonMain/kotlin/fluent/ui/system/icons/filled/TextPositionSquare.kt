@@ -1,0 +1,113 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.TextPositionSquare: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.TextPositionSquare",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(3.75f, 3.75f)
+            curveTo(3.198f, 3.75f, 2.75f, 4.198f, 2.75f, 4.75f)
+            curveTo(2.75f, 5.302f, 3.198f, 5.75f, 3.75f, 5.75f)
+            horizontalLineTo(20.25f)
+            curveTo(20.802f, 5.75f, 21.25f, 5.302f, 21.25f, 4.75f)
+            curveTo(21.25f, 4.198f, 20.802f, 3.75f, 20.25f, 3.75f)
+            horizontalLineTo(3.75f)
+            close()
+            moveTo(2.75f, 8.25f)
+            curveTo(2.75f, 7.698f, 3.198f, 7.25f, 3.75f, 7.25f)
+            horizontalLineTo(5.75f)
+            curveTo(6.302f, 7.25f, 6.75f, 7.698f, 6.75f, 8.25f)
+            curveTo(6.75f, 8.802f, 6.302f, 9.25f, 5.75f, 9.25f)
+            horizontalLineTo(3.75f)
+            curveTo(3.198f, 9.25f, 2.75f, 8.802f, 2.75f, 8.25f)
+            close()
+            moveTo(17.25f, 8.25f)
+            curveTo(17.25f, 7.698f, 17.698f, 7.25f, 18.25f, 7.25f)
+            horizontalLineTo(20.25f)
+            curveTo(20.802f, 7.25f, 21.25f, 7.698f, 21.25f, 8.25f)
+            curveTo(21.25f, 8.802f, 20.802f, 9.25f, 20.25f, 9.25f)
+            horizontalLineTo(18.25f)
+            curveTo(17.698f, 9.25f, 17.25f, 8.802f, 17.25f, 8.25f)
+            close()
+            moveTo(3.75f, 10.75f)
+            curveTo(3.198f, 10.75f, 2.75f, 11.198f, 2.75f, 11.75f)
+            curveTo(2.75f, 12.302f, 3.198f, 12.75f, 3.75f, 12.75f)
+            horizontalLineTo(5.75f)
+            curveTo(6.302f, 12.75f, 6.75f, 12.302f, 6.75f, 11.75f)
+            curveTo(6.75f, 11.198f, 6.302f, 10.75f, 5.75f, 10.75f)
+            horizontalLineTo(3.75f)
+            close()
+            moveTo(17.25f, 11.75f)
+            curveTo(17.25f, 11.198f, 17.698f, 10.75f, 18.25f, 10.75f)
+            horizontalLineTo(20.25f)
+            curveTo(20.802f, 10.75f, 21.25f, 11.198f, 21.25f, 11.75f)
+            curveTo(21.25f, 12.302f, 20.802f, 12.75f, 20.25f, 12.75f)
+            horizontalLineTo(18.25f)
+            curveTo(17.698f, 12.75f, 17.25f, 12.302f, 17.25f, 11.75f)
+            close()
+            moveTo(3.75f, 14.25f)
+            curveTo(3.198f, 14.25f, 2.75f, 14.698f, 2.75f, 15.25f)
+            curveTo(2.75f, 15.802f, 3.198f, 16.25f, 3.75f, 16.25f)
+            horizontalLineTo(5.75f)
+            curveTo(6.302f, 16.25f, 6.75f, 15.802f, 6.75f, 15.25f)
+            curveTo(6.75f, 14.698f, 6.302f, 14.25f, 5.75f, 14.25f)
+            horizontalLineTo(3.75f)
+            close()
+            moveTo(17.25f, 15.25f)
+            curveTo(17.25f, 14.698f, 17.698f, 14.25f, 18.25f, 14.25f)
+            horizontalLineTo(20.25f)
+            curveTo(20.802f, 14.25f, 21.25f, 14.698f, 21.25f, 15.25f)
+            curveTo(21.25f, 15.802f, 20.802f, 16.25f, 20.25f, 16.25f)
+            horizontalLineTo(18.25f)
+            curveTo(17.698f, 16.25f, 17.25f, 15.802f, 17.25f, 15.25f)
+            close()
+            moveTo(2.75f, 18.75f)
+            curveTo(2.75f, 18.198f, 3.198f, 17.75f, 3.75f, 17.75f)
+            horizontalLineTo(20.25f)
+            curveTo(20.802f, 17.75f, 21.25f, 18.198f, 21.25f, 18.75f)
+            curveTo(21.25f, 19.302f, 20.802f, 19.75f, 20.25f, 19.75f)
+            horizontalLineTo(3.75f)
+            curveTo(3.198f, 19.75f, 2.75f, 19.302f, 2.75f, 18.75f)
+            close()
+            moveTo(9.75f, 11f)
+            curveTo(9.75f, 9.757f, 10.757f, 8.75f, 12f, 8.75f)
+            curveTo(13.243f, 8.75f, 14.25f, 9.757f, 14.25f, 11f)
+            verticalLineTo(15.75f)
+            curveTo(14.25f, 16.302f, 14.698f, 16.75f, 15.25f, 16.75f)
+            curveTo(15.802f, 16.75f, 16.25f, 16.302f, 16.25f, 15.75f)
+            verticalLineTo(11f)
+            curveTo(16.25f, 8.653f, 14.347f, 6.75f, 12f, 6.75f)
+            curveTo(9.653f, 6.75f, 7.75f, 8.653f, 7.75f, 11f)
+            verticalLineTo(15.75f)
+            curveTo(7.75f, 16.302f, 8.198f, 16.75f, 8.75f, 16.75f)
+            curveTo(9.302f, 16.75f, 9.75f, 16.302f, 9.75f, 15.75f)
+            verticalLineTo(11f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun TextPositionSquarePreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.TextPositionSquare, contentDescription = null)
+    }
+}

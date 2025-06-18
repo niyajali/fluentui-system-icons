@@ -1,0 +1,62 @@
+package fluent.ui.system.icons.regular
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Regular.ArrowStepInLeft: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Regular.ArrowStepInLeft",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(15.295f, 16.234f)
+            curveTo(15.579f, 16.535f, 15.566f, 17.01f, 15.266f, 17.295f)
+            curveTo(14.965f, 17.579f, 14.49f, 17.566f, 14.205f, 17.266f)
+            lineTo(9.706f, 12.516f)
+            curveTo(9.431f, 12.226f, 9.431f, 11.774f, 9.706f, 11.484f)
+            lineTo(14.205f, 6.734f)
+            curveTo(14.49f, 6.433f, 14.965f, 6.421f, 15.266f, 6.706f)
+            curveTo(15.566f, 6.99f, 15.579f, 7.465f, 15.295f, 7.766f)
+            lineTo(11.994f, 11.25f)
+            horizontalLineTo(21.25f)
+            curveTo(21.664f, 11.25f, 22f, 11.586f, 22f, 12f)
+            curveTo(22f, 12.414f, 21.664f, 12.75f, 21.25f, 12.75f)
+            horizontalLineTo(11.994f)
+            lineTo(15.295f, 16.234f)
+            close()
+            moveTo(2f, 12f)
+            curveTo(2f, 10.343f, 3.343f, 9f, 5f, 9f)
+            curveTo(6.657f, 9f, 8f, 10.343f, 8f, 12f)
+            curveTo(8f, 13.657f, 6.657f, 15f, 5f, 15f)
+            curveTo(3.343f, 15f, 2f, 13.657f, 2f, 12f)
+            close()
+            moveTo(3.5f, 12f)
+            curveTo(3.5f, 12.828f, 4.172f, 13.5f, 5f, 13.5f)
+            curveTo(5.828f, 13.5f, 6.5f, 12.828f, 6.5f, 12f)
+            curveTo(6.5f, 11.172f, 5.828f, 10.5f, 5f, 10.5f)
+            curveTo(4.172f, 10.5f, 3.5f, 11.172f, 3.5f, 12f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun ArrowStepInLeftPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Regular.ArrowStepInLeft, contentDescription = null)
+    }
+}

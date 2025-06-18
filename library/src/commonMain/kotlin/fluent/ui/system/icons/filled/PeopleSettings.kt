@@ -1,0 +1,91 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.PeopleSettings: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.PeopleSettings",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(8f, 11f)
+            curveTo(10.209f, 11f, 12f, 9.209f, 12f, 7f)
+            curveTo(12f, 4.791f, 10.209f, 3f, 8f, 3f)
+            curveTo(5.791f, 3f, 4f, 4.791f, 4f, 7f)
+            curveTo(4f, 9.209f, 5.791f, 11f, 8f, 11f)
+            close()
+            moveTo(17f, 11f)
+            curveTo(18.657f, 11f, 20f, 9.657f, 20f, 8f)
+            curveTo(20f, 6.343f, 18.657f, 5f, 17f, 5f)
+            curveTo(15.343f, 5f, 14f, 6.343f, 14f, 8f)
+            curveTo(14f, 9.657f, 15.343f, 11f, 17f, 11f)
+            close()
+            moveTo(4.25f, 13f)
+            curveTo(3.007f, 13f, 2f, 14.007f, 2f, 15.25f)
+            verticalLineTo(15.5f)
+            curveTo(2f, 15.5f, 2f, 20f, 8f, 20f)
+            curveTo(9.39f, 20f, 10.458f, 19.758f, 11.278f, 19.388f)
+            curveTo(11.097f, 18.79f, 11f, 18.156f, 11f, 17.5f)
+            curveTo(11f, 15.843f, 11.62f, 14.331f, 12.641f, 13.183f)
+            curveTo(12.367f, 13.065f, 12.066f, 13f, 11.75f, 13f)
+            horizontalLineTo(4.25f)
+            close()
+            moveTo(14.277f, 13.976f)
+            curveTo(14.592f, 15.066f, 13.938f, 16.199f, 12.836f, 16.472f)
+            lineTo(12.252f, 16.617f)
+            curveTo(12.207f, 16.904f, 12.184f, 17.199f, 12.184f, 17.5f)
+            curveTo(12.184f, 17.815f, 12.209f, 18.124f, 12.258f, 18.424f)
+            lineTo(12.798f, 18.554f)
+            curveTo(13.91f, 18.822f, 14.571f, 19.967f, 14.248f, 21.064f)
+            lineTo(14.061f, 21.695f)
+            curveTo(14.5f, 22.081f, 15.001f, 22.394f, 15.545f, 22.617f)
+            lineTo(16.039f, 22.098f)
+            curveTo(16.827f, 21.269f, 18.15f, 21.269f, 18.938f, 22.099f)
+            lineTo(19.437f, 22.624f)
+            curveTo(19.98f, 22.403f, 20.48f, 22.093f, 20.919f, 21.711f)
+            lineTo(20.721f, 21.025f)
+            curveTo(20.407f, 19.934f, 21.061f, 18.801f, 22.163f, 18.528f)
+            lineTo(22.746f, 18.384f)
+            curveTo(22.791f, 18.096f, 22.815f, 17.801f, 22.815f, 17.5f)
+            curveTo(22.815f, 17.186f, 22.789f, 16.877f, 22.74f, 16.577f)
+            lineTo(22.201f, 16.447f)
+            curveTo(21.088f, 16.179f, 20.427f, 15.034f, 20.751f, 13.936f)
+            lineTo(20.937f, 13.306f)
+            curveTo(20.498f, 12.92f, 19.997f, 12.607f, 19.453f, 12.384f)
+            lineTo(18.96f, 12.902f)
+            curveTo(18.171f, 13.732f, 16.849f, 13.731f, 16.061f, 12.902f)
+            lineTo(15.562f, 12.377f)
+            curveTo(15.018f, 12.597f, 14.518f, 12.907f, 14.079f, 13.29f)
+            lineTo(14.277f, 13.976f)
+            close()
+            moveTo(17.499f, 19f)
+            curveTo(16.698f, 19f, 16.049f, 18.329f, 16.049f, 17.5f)
+            curveTo(16.049f, 16.672f, 16.698f, 16f, 17.499f, 16f)
+            curveTo(18.3f, 16f, 18.949f, 16.672f, 18.949f, 17.5f)
+            curveTo(18.949f, 18.329f, 18.3f, 19f, 17.499f, 19f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun PeopleSettingsPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.PeopleSettings, contentDescription = null)
+    }
+}

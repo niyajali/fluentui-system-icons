@@ -1,0 +1,41 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.Wifi4: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.Wifi4",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(10.959f, 18.567f)
+            curveTo(11.545f, 19.153f, 12.496f, 19.153f, 13.082f, 18.567f)
+            curveTo(13.668f, 17.981f, 13.668f, 17.031f, 13.082f, 16.444f)
+            curveTo(12.496f, 15.858f, 11.545f, 15.858f, 10.959f, 16.444f)
+            curveTo(10.373f, 17.031f, 10.373f, 17.981f, 10.959f, 18.567f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun Wifi4Preview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.Wifi4, contentDescription = null)
+    }
+}

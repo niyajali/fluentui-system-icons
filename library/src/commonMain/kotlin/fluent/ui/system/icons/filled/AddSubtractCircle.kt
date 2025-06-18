@@ -1,0 +1,73 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.AddSubtractCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.AddSubtractCircle",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(13.75f, 14.5f)
+            curveTo(13.336f, 14.5f, 13f, 14.836f, 13f, 15.25f)
+            curveTo(13f, 15.664f, 13.336f, 16f, 13.75f, 16f)
+            horizontalLineTo(17.25f)
+            curveTo(17.664f, 16f, 18f, 15.664f, 18f, 15.25f)
+            curveTo(18f, 14.836f, 17.664f, 14.5f, 17.25f, 14.5f)
+            horizontalLineTo(13.75f)
+            close()
+            moveTo(12f, 22f)
+            curveTo(17.523f, 22f, 22f, 17.523f, 22f, 12f)
+            curveTo(22f, 6.477f, 17.523f, 2f, 12f, 2f)
+            curveTo(6.477f, 2f, 2f, 6.477f, 2f, 12f)
+            curveTo(2f, 17.523f, 6.477f, 22f, 12f, 22f)
+            close()
+            moveTo(18.517f, 6.543f)
+            curveTo(19.755f, 8.02f, 20.5f, 9.923f, 20.5f, 12f)
+            curveTo(20.5f, 16.694f, 16.694f, 20.5f, 12f, 20.5f)
+            curveTo(9.923f, 20.5f, 8.02f, 19.755f, 6.543f, 18.517f)
+            lineTo(18.517f, 6.543f)
+            close()
+            moveTo(6f, 8.75f)
+            curveTo(6f, 8.336f, 6.336f, 8f, 6.75f, 8f)
+            horizontalLineTo(8f)
+            verticalLineTo(6.75f)
+            curveTo(8f, 6.336f, 8.336f, 6f, 8.75f, 6f)
+            curveTo(9.164f, 6f, 9.5f, 6.336f, 9.5f, 6.75f)
+            verticalLineTo(8f)
+            horizontalLineTo(10.75f)
+            curveTo(11.164f, 8f, 11.5f, 8.336f, 11.5f, 8.75f)
+            curveTo(11.5f, 9.164f, 11.164f, 9.5f, 10.75f, 9.5f)
+            horizontalLineTo(9.5f)
+            verticalLineTo(10.75f)
+            curveTo(9.5f, 11.164f, 9.164f, 11.5f, 8.75f, 11.5f)
+            curveTo(8.336f, 11.5f, 8f, 11.164f, 8f, 10.75f)
+            verticalLineTo(9.5f)
+            horizontalLineTo(6.75f)
+            curveTo(6.336f, 9.5f, 6f, 9.164f, 6f, 8.75f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun AddSubtractCirclePreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.AddSubtractCircle, contentDescription = null)
+    }
+}

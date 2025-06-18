@@ -1,0 +1,73 @@
+package fluent.ui.system.icons.colored
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Colored.CheckmarkCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Colored.CheckmarkCircle",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(
+            fill = Brush.linearGradient(
+                colorStops = arrayOf(
+                    0f to Color(0xFF52D17C),
+                    1f to Color(0xFF22918B)
+                ),
+                start = Offset(2.714f, 5.75f),
+                end = Offset(16.517f, 20.09f)
+            )
+        ) {
+            moveTo(12f, 2f)
+            curveTo(17.523f, 2f, 22f, 6.477f, 22f, 12f)
+            curveTo(22f, 17.523f, 17.523f, 22f, 12f, 22f)
+            curveTo(6.477f, 22f, 2f, 17.523f, 2f, 12f)
+            curveTo(2f, 6.477f, 6.477f, 2f, 12f, 2f)
+            close()
+        }
+        path(
+            fill = Brush.linearGradient(
+                colorStops = arrayOf(
+                    0f to Color(0xFFFFFFFF),
+                    1f to Color(0xFFE3FFD9)
+                ),
+                start = Offset(9.188f, 9.413f),
+                end = Offset(10.681f, 16.713f)
+            )
+        ) {
+            moveTo(15.22f, 8.97f)
+            lineTo(10.75f, 13.439f)
+            lineTo(8.78f, 11.47f)
+            curveTo(8.487f, 11.177f, 8.013f, 11.177f, 7.72f, 11.47f)
+            curveTo(7.427f, 11.763f, 7.427f, 12.237f, 7.72f, 12.53f)
+            lineTo(10.22f, 15.03f)
+            curveTo(10.513f, 15.323f, 10.987f, 15.323f, 11.28f, 15.03f)
+            lineTo(16.28f, 10.03f)
+            curveTo(16.573f, 9.737f, 16.573f, 9.263f, 16.28f, 8.97f)
+            curveTo(15.987f, 8.677f, 15.513f, 8.677f, 15.22f, 8.97f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun CheckmarkCirclePreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Colored.CheckmarkCircle, contentDescription = null)
+    }
+}

@@ -1,0 +1,59 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.DoorTag: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.DoorTag",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(12f, 6.5f)
+            curveTo(11.511f, 6.5f, 11.076f, 6.732f, 10.799f, 7.101f)
+            curveTo(10.052f, 8.095f, 8.642f, 8.295f, 7.648f, 7.548f)
+            curveTo(6.655f, 6.802f, 6.455f, 5.392f, 7.201f, 4.398f)
+            curveTo(8.292f, 2.946f, 10.036f, 2f, 12f, 2f)
+            curveTo(15.314f, 2f, 18f, 4.686f, 18f, 8f)
+            verticalLineTo(20f)
+            curveTo(18f, 21.105f, 17.105f, 22f, 16f, 22f)
+            horizontalLineTo(8f)
+            curveTo(6.895f, 22f, 6f, 21.105f, 6f, 20f)
+            verticalLineTo(11.5f)
+            curveTo(6f, 10.395f, 6.895f, 9.5f, 8f, 9.5f)
+            horizontalLineTo(12f)
+            curveTo(12.828f, 9.5f, 13.5f, 8.828f, 13.5f, 8f)
+            curveTo(13.5f, 7.172f, 12.828f, 6.5f, 12f, 6.5f)
+            close()
+            moveTo(9.75f, 17.5f)
+            curveTo(9.336f, 17.5f, 9f, 17.836f, 9f, 18.25f)
+            curveTo(9f, 18.664f, 9.336f, 19f, 9.75f, 19f)
+            horizontalLineTo(14.25f)
+            curveTo(14.664f, 19f, 15f, 18.664f, 15f, 18.25f)
+            curveTo(15f, 17.836f, 14.664f, 17.5f, 14.25f, 17.5f)
+            horizontalLineTo(9.75f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun DoorTagPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.DoorTag, contentDescription = null)
+    }
+}

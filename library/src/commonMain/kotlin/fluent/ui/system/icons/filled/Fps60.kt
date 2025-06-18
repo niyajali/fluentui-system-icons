@@ -1,0 +1,159 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.Fps60: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.Fps60",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(11.75f, 15f)
+            curveTo(12.993f, 15f, 14f, 16.007f, 14f, 17.25f)
+            curveTo(14f, 18.441f, 13.075f, 19.416f, 11.904f, 19.495f)
+            lineTo(11.75f, 19.5f)
+            horizontalLineTo(11f)
+            verticalLineTo(21.25f)
+            curveTo(11f, 21.63f, 10.718f, 21.944f, 10.352f, 21.993f)
+            lineTo(10.25f, 22f)
+            curveTo(9.87f, 22f, 9.557f, 21.718f, 9.507f, 21.352f)
+            lineTo(9.5f, 21.25f)
+            verticalLineTo(15.75f)
+            curveTo(9.5f, 15.37f, 9.782f, 15.057f, 10.148f, 15.007f)
+            lineTo(10.25f, 15f)
+            horizontalLineTo(11.75f)
+            close()
+            moveTo(18f, 15f)
+            curveTo(19.105f, 15f, 20f, 15.895f, 20f, 17f)
+            curveTo(20f, 17.414f, 19.664f, 17.75f, 19.25f, 17.75f)
+            curveTo(18.87f, 17.75f, 18.556f, 17.468f, 18.507f, 17.102f)
+            lineTo(18.5f, 17f)
+            curveTo(18.5f, 16.754f, 18.323f, 16.55f, 18.09f, 16.508f)
+            lineTo(18f, 16.5f)
+            horizontalLineTo(17.375f)
+            curveTo(17.03f, 16.5f, 16.75f, 16.78f, 16.75f, 17.125f)
+            curveTo(16.75f, 17.439f, 16.981f, 17.699f, 17.283f, 17.743f)
+            lineTo(17.375f, 17.75f)
+            horizontalLineTo(17.875f)
+            curveTo(19.049f, 17.75f, 20f, 18.701f, 20f, 19.875f)
+            curveTo(20f, 20.998f, 19.129f, 21.917f, 18.027f, 21.995f)
+            lineTo(17.875f, 22f)
+            horizontalLineTo(17.25f)
+            curveTo(16.145f, 22f, 15.25f, 21.105f, 15.25f, 20f)
+            curveTo(15.25f, 19.586f, 15.586f, 19.25f, 16f, 19.25f)
+            curveTo(16.38f, 19.25f, 16.694f, 19.532f, 16.743f, 19.898f)
+            lineTo(16.75f, 20f)
+            curveTo(16.75f, 20.246f, 16.927f, 20.45f, 17.16f, 20.492f)
+            lineTo(17.25f, 20.5f)
+            horizontalLineTo(17.875f)
+            curveTo(18.22f, 20.5f, 18.5f, 20.22f, 18.5f, 19.875f)
+            curveTo(18.5f, 19.561f, 18.269f, 19.301f, 17.967f, 19.257f)
+            lineTo(17.875f, 19.25f)
+            horizontalLineTo(17.375f)
+            curveTo(16.201f, 19.25f, 15.25f, 18.299f, 15.25f, 17.125f)
+            curveTo(15.25f, 16.002f, 16.121f, 15.083f, 17.223f, 15.005f)
+            lineTo(17.375f, 15f)
+            horizontalLineTo(18f)
+            close()
+            moveTo(7.75f, 15f)
+            curveTo(8.164f, 15f, 8.5f, 15.336f, 8.5f, 15.75f)
+            curveTo(8.5f, 16.13f, 8.218f, 16.444f, 7.852f, 16.493f)
+            lineTo(7.75f, 16.5f)
+            lineTo(5.5f, 16.499f)
+            verticalLineTo(18.002f)
+            lineTo(7.25f, 18.003f)
+            curveTo(7.664f, 18.003f, 8f, 18.339f, 8f, 18.753f)
+            curveTo(8f, 19.132f, 7.718f, 19.446f, 7.352f, 19.496f)
+            lineTo(7.25f, 19.503f)
+            lineTo(5.5f, 19.502f)
+            verticalLineTo(21.231f)
+            curveTo(5.5f, 21.611f, 5.218f, 21.925f, 4.852f, 21.974f)
+            lineTo(4.75f, 21.981f)
+            curveTo(4.37f, 21.981f, 4.057f, 21.699f, 4.007f, 21.333f)
+            lineTo(4f, 21.231f)
+            verticalLineTo(15.75f)
+            curveTo(4f, 15.37f, 4.282f, 15.057f, 4.648f, 15.007f)
+            lineTo(4.75f, 15f)
+            horizontalLineTo(7.75f)
+            close()
+            moveTo(11.75f, 16.5f)
+            horizontalLineTo(11f)
+            verticalLineTo(18f)
+            horizontalLineTo(11.75f)
+            curveTo(12.164f, 18f, 12.5f, 17.664f, 12.5f, 17.25f)
+            curveTo(12.5f, 16.87f, 12.218f, 16.556f, 11.852f, 16.507f)
+            lineTo(11.75f, 16.5f)
+            close()
+            moveTo(8.251f, 3f)
+            curveTo(9.771f, 3f, 11.003f, 4.232f, 11.003f, 5.751f)
+            curveTo(11.003f, 6.304f, 10.555f, 6.751f, 10.003f, 6.751f)
+            curveTo(9.49f, 6.751f, 9.067f, 6.365f, 9.009f, 5.868f)
+            lineTo(9.003f, 5.751f)
+            curveTo(9.003f, 5.371f, 8.72f, 5.057f, 8.353f, 5.007f)
+            lineTo(8.251f, 5f)
+            horizontalLineTo(8.003f)
+            curveTo(7.49f, 5f, 7.067f, 5.386f, 7.009f, 5.883f)
+            lineTo(7.003f, 6f)
+            lineTo(7.003f, 7.171f)
+            curveTo(7.315f, 7.06f, 7.652f, 7f, 8.003f, 7f)
+            curveTo(9.659f, 7f, 11.003f, 8.343f, 11.003f, 10f)
+            curveTo(11.003f, 11.657f, 9.659f, 13f, 8.003f, 13f)
+            curveTo(6.346f, 13f, 5.003f, 11.657f, 5.003f, 10f)
+            lineTo(5.004f, 9.895f)
+            lineTo(5.003f, 9.845f)
+            verticalLineTo(6f)
+            curveTo(5.003f, 4.402f, 6.252f, 3.096f, 7.826f, 3.005f)
+            lineTo(8.003f, 3f)
+            horizontalLineTo(8.251f)
+            close()
+            moveTo(15f, 3f)
+            curveTo(16.598f, 3f, 17.904f, 4.249f, 17.995f, 5.824f)
+            lineTo(18f, 6f)
+            verticalLineTo(10f)
+            curveTo(18f, 11.657f, 16.657f, 13f, 15f, 13f)
+            curveTo(13.402f, 13f, 12.096f, 11.751f, 12.005f, 10.176f)
+            lineTo(12f, 10f)
+            verticalLineTo(6f)
+            curveTo(12f, 4.343f, 13.343f, 3f, 15f, 3f)
+            close()
+            moveTo(8.003f, 9f)
+            curveTo(7.45f, 9f, 7.003f, 9.448f, 7.003f, 10f)
+            curveTo(7.003f, 10.552f, 7.45f, 11f, 8.003f, 11f)
+            curveTo(8.555f, 11f, 9.003f, 10.552f, 9.003f, 10f)
+            curveTo(9.003f, 9.448f, 8.555f, 9f, 8.003f, 9f)
+            close()
+            moveTo(15f, 5f)
+            curveTo(14.487f, 5f, 14.064f, 5.386f, 14.007f, 5.883f)
+            lineTo(14f, 6f)
+            verticalLineTo(10f)
+            curveTo(14f, 10.552f, 14.448f, 11f, 15f, 11f)
+            curveTo(15.513f, 11f, 15.936f, 10.614f, 15.993f, 10.117f)
+            lineTo(16f, 10f)
+            verticalLineTo(6f)
+            curveTo(16f, 5.448f, 15.552f, 5f, 15f, 5f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun Fps60Preview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.Fps60, contentDescription = null)
+    }
+}

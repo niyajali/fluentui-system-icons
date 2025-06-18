@@ -1,0 +1,69 @@
+package fluent.ui.system.icons.regular
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Regular.Shifts: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Regular.Shifts",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(17.75f, 3f)
+            curveTo(19.545f, 3f, 21f, 4.455f, 21f, 6.25f)
+            verticalLineTo(17.75f)
+            curveTo(21f, 19.545f, 19.545f, 21f, 17.75f, 21f)
+            horizontalLineTo(6.25f)
+            curveTo(4.455f, 21f, 3f, 19.545f, 3f, 17.75f)
+            verticalLineTo(6.25f)
+            curveTo(3f, 4.455f, 4.455f, 3f, 6.25f, 3f)
+            horizontalLineTo(17.75f)
+            close()
+            moveTo(17.75f, 4.5f)
+            horizontalLineTo(6.25f)
+            curveTo(5.284f, 4.5f, 4.5f, 5.284f, 4.5f, 6.25f)
+            verticalLineTo(17.75f)
+            curveTo(4.5f, 18.716f, 5.284f, 19.5f, 6.25f, 19.5f)
+            horizontalLineTo(17.75f)
+            curveTo(18.716f, 19.5f, 19.5f, 18.716f, 19.5f, 17.75f)
+            verticalLineTo(6.25f)
+            curveTo(19.5f, 5.284f, 18.716f, 4.5f, 17.75f, 4.5f)
+            close()
+            moveTo(11.75f, 6f)
+            curveTo(12.13f, 6f, 12.443f, 6.282f, 12.493f, 6.648f)
+            lineTo(12.5f, 6.75f)
+            verticalLineTo(12f)
+            horizontalLineTo(16.248f)
+            curveTo(16.663f, 12f, 16.998f, 12.336f, 16.998f, 12.75f)
+            curveTo(16.998f, 13.13f, 16.716f, 13.443f, 16.35f, 13.493f)
+            lineTo(16.248f, 13.5f)
+            horizontalLineTo(11.75f)
+            curveTo(11.37f, 13.5f, 11.057f, 13.218f, 11.007f, 12.852f)
+            lineTo(11f, 12.75f)
+            verticalLineTo(6.75f)
+            curveTo(11f, 6.336f, 11.336f, 6f, 11.75f, 6f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun ShiftsPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Regular.Shifts, contentDescription = null)
+    }
+}

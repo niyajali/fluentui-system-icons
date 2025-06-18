@@ -1,0 +1,81 @@
+package fluent.ui.system.icons.regular
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Regular.CheckboxPerson: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Regular.CheckboxPerson",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(6.25f, 3f)
+            curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
+            verticalLineTo(17.75f)
+            curveTo(3f, 19.545f, 4.455f, 21f, 6.25f, 21f)
+            horizontalLineTo(13.172f)
+            curveTo(13.056f, 20.633f, 13f, 20.254f, 13f, 19.875f)
+            verticalLineTo(19.772f)
+            curveTo(13f, 19.68f, 13.005f, 19.59f, 13.013f, 19.5f)
+            horizontalLineTo(6.25f)
+            curveTo(5.284f, 19.5f, 4.5f, 18.716f, 4.5f, 17.75f)
+            verticalLineTo(6.25f)
+            curveTo(4.5f, 5.284f, 5.284f, 4.5f, 6.25f, 4.5f)
+            horizontalLineTo(17.75f)
+            curveTo(18.716f, 4.5f, 19.5f, 5.284f, 19.5f, 6.25f)
+            verticalLineTo(11.145f)
+            curveTo(20.076f, 11.316f, 20.59f, 11.632f, 21f, 12.05f)
+            verticalLineTo(6.25f)
+            curveTo(21f, 4.455f, 19.545f, 3f, 17.75f, 3f)
+            horizontalLineTo(6.25f)
+            close()
+            moveTo(17.28f, 9.281f)
+            curveTo(17.573f, 8.988f, 17.573f, 8.513f, 17.281f, 8.22f)
+            curveTo(16.988f, 7.927f, 16.513f, 7.927f, 16.22f, 8.219f)
+            lineTo(9.997f, 14.436f)
+            lineTo(7.781f, 12.22f)
+            curveTo(7.488f, 11.927f, 7.013f, 11.927f, 6.72f, 12.22f)
+            curveTo(6.427f, 12.512f, 6.427f, 12.987f, 6.72f, 13.28f)
+            lineTo(9.466f, 16.026f)
+            curveTo(9.759f, 16.319f, 10.233f, 16.319f, 10.526f, 16.027f)
+            lineTo(17.28f, 9.281f)
+            close()
+            moveTo(21f, 14.5f)
+            curveTo(21f, 15.881f, 19.881f, 17f, 18.5f, 17f)
+            curveTo(17.119f, 17f, 16f, 15.881f, 16f, 14.5f)
+            curveTo(16f, 13.119f, 17.119f, 12f, 18.5f, 12f)
+            curveTo(19.881f, 12f, 21f, 13.119f, 21f, 14.5f)
+            close()
+            moveTo(23f, 19.875f)
+            curveTo(23f, 21.431f, 21.714f, 23f, 18.5f, 23f)
+            curveTo(15.286f, 23f, 14f, 21.437f, 14f, 19.875f)
+            verticalLineTo(19.772f)
+            curveTo(14f, 18.793f, 14.794f, 18f, 15.773f, 18f)
+            horizontalLineTo(21.227f)
+            curveTo(22.206f, 18f, 23f, 18.793f, 23f, 19.772f)
+            verticalLineTo(19.875f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun CheckboxPersonPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Regular.CheckboxPerson, contentDescription = null)
+    }
+}

@@ -1,0 +1,79 @@
+package fluent.ui.system.icons.regular
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Regular.CalendarShield: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Regular.CalendarShield",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(17.75f, 3f)
+            curveTo(19.545f, 3f, 21f, 4.455f, 21f, 6.25f)
+            verticalLineTo(12.611f)
+            curveTo(20.659f, 12.545f, 20.328f, 12.421f, 20.002f, 12.233f)
+            curveTo(19.835f, 12.136f, 19.668f, 12.021f, 19.5f, 11.886f)
+            verticalLineTo(8.5f)
+            horizontalLineTo(4.5f)
+            verticalLineTo(17.75f)
+            curveTo(4.5f, 18.716f, 5.284f, 19.5f, 6.25f, 19.5f)
+            horizontalLineTo(13.572f)
+            curveTo(13.646f, 19.667f, 13.727f, 19.829f, 13.816f, 19.988f)
+            curveTo(14.02f, 20.353f, 14.26f, 20.69f, 14.535f, 21f)
+            horizontalLineTo(6.25f)
+            curveTo(4.455f, 21f, 3f, 19.545f, 3f, 17.75f)
+            verticalLineTo(6.25f)
+            curveTo(3f, 4.455f, 4.455f, 3f, 6.25f, 3f)
+            horizontalLineTo(17.75f)
+            close()
+            moveTo(14.689f, 19.5f)
+            curveTo(15.013f, 20.079f, 15.45f, 20.58f, 16f, 21f)
+            curveTo(16.524f, 21.4f, 17.149f, 21.727f, 17.875f, 21.979f)
+            curveTo(17.957f, 22.007f, 18.045f, 22.007f, 18.128f, 21.979f)
+            curveTo(20.688f, 21.09f, 22.001f, 19.266f, 22.001f, 16.584f)
+            verticalLineTo(14.083f)
+            lineTo(21.993f, 13.999f)
+            curveTo(21.956f, 13.809f, 21.794f, 13.667f, 21.601f, 13.667f)
+            curveTo(21.398f, 13.667f, 21.198f, 13.653f, 21.002f, 13.625f)
+            curveTo(20.478f, 13.55f, 19.978f, 13.375f, 19.501f, 13.098f)
+            curveTo(19.078f, 12.853f, 18.673f, 12.528f, 18.285f, 12.122f)
+            curveTo(18.128f, 11.959f, 17.875f, 11.959f, 17.719f, 12.122f)
+            curveTo(16.724f, 13.158f, 15.624f, 13.667f, 14.401f, 13.667f)
+            curveTo(14.18f, 13.667f, 14.001f, 13.853f, 14.001f, 14.083f)
+            verticalLineTo(16.584f)
+            lineTo(14.005f, 16.85f)
+            curveTo(14.039f, 17.863f, 14.268f, 18.748f, 14.689f, 19.5f)
+            close()
+            moveTo(17.75f, 4.5f)
+            horizontalLineTo(6.25f)
+            curveTo(5.284f, 4.5f, 4.5f, 5.284f, 4.5f, 6.25f)
+            verticalLineTo(7f)
+            horizontalLineTo(19.5f)
+            verticalLineTo(6.25f)
+            curveTo(19.5f, 5.284f, 18.716f, 4.5f, 17.75f, 4.5f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun CalendarShieldPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Regular.CalendarShield, contentDescription = null)
+    }
+}

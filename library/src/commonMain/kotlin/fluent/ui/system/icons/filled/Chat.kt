@@ -1,0 +1,70 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.Chat: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.Chat",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(12f, 2f)
+            curveTo(17.523f, 2f, 22f, 6.477f, 22f, 12f)
+            curveTo(22f, 17.523f, 17.523f, 22f, 12f, 22f)
+            curveTo(10.36f, 22f, 8.775f, 21.604f, 7.356f, 20.858f)
+            lineTo(3.065f, 21.975f)
+            curveTo(2.611f, 22.094f, 2.147f, 21.821f, 2.029f, 21.367f)
+            curveTo(1.992f, 21.227f, 1.992f, 21.079f, 2.029f, 20.939f)
+            lineTo(3.145f, 16.65f)
+            curveTo(2.397f, 15.229f, 2f, 13.643f, 2f, 12f)
+            curveTo(2f, 6.477f, 6.477f, 2f, 12f, 2f)
+            close()
+            moveTo(13.252f, 13f)
+            horizontalLineTo(8.75f)
+            lineTo(8.648f, 13.007f)
+            curveTo(8.282f, 13.057f, 8f, 13.37f, 8f, 13.75f)
+            curveTo(8f, 14.13f, 8.282f, 14.443f, 8.648f, 14.493f)
+            lineTo(8.75f, 14.5f)
+            horizontalLineTo(13.252f)
+            lineTo(13.354f, 14.493f)
+            curveTo(13.72f, 14.443f, 14.002f, 14.13f, 14.002f, 13.75f)
+            curveTo(14.002f, 13.37f, 13.72f, 13.057f, 13.354f, 13.007f)
+            lineTo(13.252f, 13f)
+            close()
+            moveTo(15.25f, 9.5f)
+            horizontalLineTo(8.75f)
+            lineTo(8.648f, 9.507f)
+            curveTo(8.282f, 9.557f, 8f, 9.87f, 8f, 10.25f)
+            curveTo(8f, 10.63f, 8.282f, 10.943f, 8.648f, 10.993f)
+            lineTo(8.75f, 11f)
+            horizontalLineTo(15.25f)
+            lineTo(15.352f, 10.993f)
+            curveTo(15.718f, 10.943f, 16f, 10.63f, 16f, 10.25f)
+            curveTo(16f, 9.87f, 15.718f, 9.557f, 15.352f, 9.507f)
+            lineTo(15.25f, 9.5f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun ChatPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.Chat, contentDescription = null)
+    }
+}

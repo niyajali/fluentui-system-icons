@@ -1,0 +1,55 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.Branch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.Branch",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(4f, 5.5f)
+            curveTo(4f, 3.567f, 5.567f, 2f, 7.5f, 2f)
+            curveTo(9.433f, 2f, 11f, 3.567f, 11f, 5.5f)
+            curveTo(11f, 7.09f, 9.94f, 8.432f, 8.489f, 8.858f)
+            curveTo(9.177f, 11.111f, 11.272f, 12.75f, 13.75f, 12.75f)
+            horizontalLineTo(14.08f)
+            curveTo(14.424f, 11.177f, 15.824f, 10f, 17.5f, 10f)
+            curveTo(19.433f, 10f, 21f, 11.567f, 21f, 13.5f)
+            curveTo(21f, 15.433f, 19.433f, 17f, 17.5f, 17f)
+            curveTo(15.824f, 17f, 14.424f, 15.823f, 14.08f, 14.25f)
+            horizontalLineTo(13.75f)
+            curveTo(11.519f, 14.25f, 9.532f, 13.206f, 8.25f, 11.581f)
+            lineTo(8.25f, 15.08f)
+            curveTo(9.823f, 15.424f, 11f, 16.824f, 11f, 18.5f)
+            curveTo(11f, 20.433f, 9.433f, 22f, 7.5f, 22f)
+            curveTo(5.567f, 22f, 4f, 20.433f, 4f, 18.5f)
+            curveTo(4f, 16.824f, 5.177f, 15.424f, 6.75f, 15.08f)
+            lineTo(6.75f, 8.919f)
+            curveTo(5.177f, 8.576f, 4f, 7.176f, 4f, 5.5f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun BranchPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.Branch, contentDescription = null)
+    }
+}

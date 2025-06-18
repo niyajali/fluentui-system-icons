@@ -1,0 +1,50 @@
+package fluent.ui.system.icons.filled
+
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Filled.ArrowDownLeft: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Filled.ArrowDownLeft",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(13f, 21f)
+            curveTo(13.552f, 21f, 14f, 20.552f, 14f, 20f)
+            curveTo(14f, 19.448f, 13.552f, 19f, 13f, 19f)
+            horizontalLineTo(6.414f)
+            lineTo(20.707f, 4.707f)
+            curveTo(21.098f, 4.317f, 21.098f, 3.683f, 20.707f, 3.293f)
+            curveTo(20.317f, 2.902f, 19.683f, 2.902f, 19.293f, 3.293f)
+            lineTo(5f, 17.586f)
+            verticalLineTo(11f)
+            curveTo(5f, 10.448f, 4.552f, 10f, 4f, 10f)
+            curveTo(3.448f, 10f, 3f, 10.448f, 3f, 11f)
+            verticalLineTo(20f)
+            curveTo(3f, 20.552f, 3.448f, 21f, 4f, 21f)
+            horizontalLineTo(13f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun ArrowDownLeftPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Filled.ArrowDownLeft, contentDescription = null)
+    }
+}

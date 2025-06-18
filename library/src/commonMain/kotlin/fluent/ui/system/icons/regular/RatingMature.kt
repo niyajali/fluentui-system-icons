@@ -1,0 +1,75 @@
+package fluent.ui.system.icons.regular
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Regular.RatingMature: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Regular.RatingMature",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(8.826f, 8.27f)
+            curveTo(8.624f, 8.027f, 8.292f, 7.937f, 7.995f, 8.045f)
+            curveTo(7.698f, 8.152f, 7.5f, 8.434f, 7.5f, 8.75f)
+            verticalLineTo(15.25f)
+            curveTo(7.5f, 15.664f, 7.836f, 16f, 8.25f, 16f)
+            curveTo(8.664f, 16f, 9f, 15.664f, 9f, 15.25f)
+            verticalLineTo(10.822f)
+            lineTo(11.424f, 13.73f)
+            curveTo(11.566f, 13.901f, 11.777f, 14f, 12f, 14f)
+            curveTo(12.223f, 14f, 12.434f, 13.901f, 12.576f, 13.73f)
+            lineTo(15f, 10.822f)
+            verticalLineTo(15.25f)
+            curveTo(15f, 15.664f, 15.336f, 16f, 15.75f, 16f)
+            curveTo(16.164f, 16f, 16.5f, 15.664f, 16.5f, 15.25f)
+            verticalLineTo(8.75f)
+            curveTo(16.5f, 8.434f, 16.302f, 8.152f, 16.005f, 8.045f)
+            curveTo(15.708f, 7.937f, 15.376f, 8.027f, 15.174f, 8.27f)
+            lineTo(12f, 12.078f)
+            lineTo(8.826f, 8.27f)
+            close()
+            moveTo(6.25f, 3f)
+            curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
+            verticalLineTo(17.75f)
+            curveTo(3f, 19.545f, 4.455f, 21f, 6.25f, 21f)
+            horizontalLineTo(17.75f)
+            curveTo(19.545f, 21f, 21f, 19.545f, 21f, 17.75f)
+            verticalLineTo(6.25f)
+            curveTo(21f, 4.455f, 19.545f, 3f, 17.75f, 3f)
+            horizontalLineTo(6.25f)
+            close()
+            moveTo(4.5f, 6.25f)
+            curveTo(4.5f, 5.284f, 5.284f, 4.5f, 6.25f, 4.5f)
+            horizontalLineTo(17.75f)
+            curveTo(18.716f, 4.5f, 19.5f, 5.284f, 19.5f, 6.25f)
+            verticalLineTo(17.75f)
+            curveTo(19.5f, 18.716f, 18.716f, 19.5f, 17.75f, 19.5f)
+            horizontalLineTo(6.25f)
+            curveTo(5.284f, 19.5f, 4.5f, 18.716f, 4.5f, 17.75f)
+            verticalLineTo(6.25f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun RatingMaturePreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Regular.RatingMature, contentDescription = null)
+    }
+}

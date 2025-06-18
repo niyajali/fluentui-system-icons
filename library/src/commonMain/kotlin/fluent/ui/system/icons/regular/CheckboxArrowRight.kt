@@ -1,0 +1,85 @@
+package fluent.ui.system.icons.regular
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentUi
+
+public val FluentUi.Regular.CheckboxArrowRight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+    ImageVector.Builder(
+        name = "Regular.CheckboxArrowRight",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f
+    ).apply {
+        path(fill = SolidColor(Color(0xFF212121))) {
+            moveTo(5.25f, 2f)
+            curveTo(3.455f, 2f, 2f, 3.455f, 2f, 5.25f)
+            verticalLineTo(16.75f)
+            curveTo(2f, 18.545f, 3.455f, 20f, 5.25f, 20f)
+            horizontalLineTo(11.498f)
+            curveTo(11.3f, 19.526f, 11.157f, 19.023f, 11.076f, 18.5f)
+            horizontalLineTo(5.25f)
+            curveTo(4.284f, 18.5f, 3.5f, 17.716f, 3.5f, 16.75f)
+            verticalLineTo(5.25f)
+            curveTo(3.5f, 4.284f, 4.284f, 3.5f, 5.25f, 3.5f)
+            horizontalLineTo(16.75f)
+            curveTo(17.716f, 3.5f, 18.5f, 4.284f, 18.5f, 5.25f)
+            verticalLineTo(11.076f)
+            curveTo(19.023f, 11.157f, 19.526f, 11.3f, 20f, 11.498f)
+            verticalLineTo(5.25f)
+            curveTo(20f, 3.455f, 18.545f, 2f, 16.75f, 2f)
+            horizontalLineTo(5.25f)
+            close()
+            moveTo(16.28f, 8.281f)
+            curveTo(16.573f, 7.988f, 16.573f, 7.513f, 16.281f, 7.22f)
+            curveTo(15.988f, 6.927f, 15.513f, 6.927f, 15.22f, 7.219f)
+            lineTo(8.997f, 13.436f)
+            lineTo(6.781f, 11.22f)
+            curveTo(6.488f, 10.927f, 6.013f, 10.927f, 5.72f, 11.22f)
+            curveTo(5.427f, 11.512f, 5.427f, 11.987f, 5.72f, 12.28f)
+            lineTo(8.466f, 15.026f)
+            curveTo(8.759f, 15.319f, 9.233f, 15.319f, 9.526f, 15.027f)
+            lineTo(16.28f, 8.281f)
+            close()
+            moveTo(17.5f, 12f)
+            curveTo(20.538f, 12f, 23f, 14.462f, 23f, 17.5f)
+            curveTo(23f, 20.538f, 20.538f, 23f, 17.5f, 23f)
+            curveTo(14.462f, 23f, 12f, 20.538f, 12f, 17.5f)
+            curveTo(12f, 14.462f, 14.462f, 12f, 17.5f, 12f)
+            close()
+            moveTo(14.5f, 17f)
+            curveTo(14.224f, 17f, 14f, 17.224f, 14f, 17.5f)
+            curveTo(14f, 17.776f, 14.224f, 18f, 14.5f, 18f)
+            horizontalLineTo(19.293f)
+            lineTo(17.646f, 19.646f)
+            curveTo(17.451f, 19.842f, 17.451f, 20.158f, 17.646f, 20.354f)
+            curveTo(17.842f, 20.549f, 18.158f, 20.549f, 18.354f, 20.354f)
+            lineTo(20.854f, 17.854f)
+            curveTo(21.049f, 17.658f, 21.049f, 17.342f, 20.854f, 17.146f)
+            lineTo(18.354f, 14.646f)
+            curveTo(18.158f, 14.451f, 17.842f, 14.451f, 17.646f, 14.646f)
+            curveTo(17.451f, 14.842f, 17.451f, 15.158f, 17.646f, 15.354f)
+            lineTo(19.293f, 17f)
+            horizontalLineTo(14.5f)
+            close()
+        }
+    }.build()
+}
+
+@Preview
+@Composable
+private fun CheckboxArrowRightPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentUi.Regular.CheckboxArrowRight, contentDescription = null)
+    }
+}
