@@ -55,3 +55,4 @@ build/
 vendor/
 node_modules/
 package-lock.json
+fluentui-icons-data.js.backup
