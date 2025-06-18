@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -35,9 +35,9 @@ import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Gift: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -45,18 +45,18 @@ public val FluentUi.Colored.Gift: ImageVector by lazy(LazyThreadSafetyMode.NONE)
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFBB45EA),
                     0.348f to Color(0xFF8B57ED),
-                    1f to Color(0xFF5B2AB5)
+                    1f to Color(0xFF5B2AB5),
                 ),
                 start = Offset(10.98f, 25.733f),
-                end = Offset(10.98f, 8.8f)
-            )
+                end = Offset(10.98f, 8.8f),
+            ),
         ) {
             moveTo(20.001f, 12.5f)
             lineTo(20f, 18.75f)
@@ -74,11 +74,11 @@ public val FluentUi.Colored.Gift: ImageVector by lazy(LazyThreadSafetyMode.NONE)
                 colorStops = arrayOf(
                     0.196f to Color(0xFF5B2AB5),
                     0.763f to Color(0xFF8B57ED),
-                    1f to Color(0xFFBB45EA)
+                    1f to Color(0xFFBB45EA),
                 ),
                 center = Offset(12f, 4.759f),
-                radius = 23.183f
-            )
+                radius = 23.183f,
+            ),
         ) {
             moveTo(19.75f, 7f)
             curveTo(20.44f, 7f, 21f, 7.56f, 21f, 8.25f)
@@ -95,11 +95,11 @@ public val FluentUi.Colored.Gift: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFB5937),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(11.25f, 6.375f),
-                end = Offset(11.25f, 20.261f)
-            )
+                end = Offset(11.25f, 20.261f),
+            ),
         ) {
             moveTo(11.25f, 22f)
             verticalLineTo(12f)
@@ -112,11 +112,11 @@ public val FluentUi.Colored.Gift: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFB5937),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(11.25f, -13.429f),
-                end = Offset(11.25f, 21.571f)
-            )
+                end = Offset(11.25f, 21.571f),
+            ),
         ) {
             moveTo(11.25f, 13f)
             verticalLineTo(8f)
@@ -127,7 +127,7 @@ public val FluentUi.Colored.Gift: ImageVector by lazy(LazyThreadSafetyMode.NONE)
         }
         path(
             fill = SolidColor(Color(0xFF000000)),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(9.5f, 8.5f)
             curveTo(7.705f, 8.5f, 6.25f, 7.045f, 6.25f, 5.25f)
@@ -157,12 +157,12 @@ public val FluentUi.Colored.Gift: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF6F47),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(15.194f, 8.498f),
-                end = Offset(11.905f, -4.901f)
+                end = Offset(11.905f, -4.901f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(9.5f, 8.5f)
             curveTo(7.705f, 8.5f, 6.25f, 7.045f, 6.25f, 5.25f)

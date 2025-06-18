@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.LinkMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,7 +44,7 @@ public val FluentUi.Colored.LinkMultiple: ImageVector by lazy(LazyThreadSafetyMo
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
@@ -52,12 +52,12 @@ public val FluentUi.Colored.LinkMultiple: ImageVector by lazy(LazyThreadSafetyMo
                     0f to Color(0xFF0FAFFF),
                     0.429f to Color(0xFF367AF2),
                     0.942f to Color(0xFF5750E2),
-                    1f to Color(0xFF6F47DF)
+                    1f to Color(0xFF6F47DF),
                 ),
                 center = Offset(1.773f, 5f),
-                radius = 17.591f
+                radius = 17.591f,
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(1f, 10f)
             curveTo(1f, 7.239f, 3.239f, 5f, 6f, 5f)
@@ -82,12 +82,12 @@ public val FluentUi.Colored.LinkMultiple: ImageVector by lazy(LazyThreadSafetyMo
                     0.239f to Color(0x00261D82),
                     0.424f to Color(0xFF261D82),
                     0.568f to Color(0xFF261D82),
-                    0.754f to Color(0x00261D82)
+                    0.754f to Color(0x00261D82),
                 ),
                 center = Offset(10.5f, 14.5f),
-                radius = 7f
+                radius = 7f,
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(1f, 10f)
             curveTo(1f, 7.239f, 3.239f, 5f, 6f, 5f)
@@ -112,12 +112,12 @@ public val FluentUi.Colored.LinkMultiple: ImageVector by lazy(LazyThreadSafetyMo
                     0f to Color(0x005157E4),
                     0.066f to Color(0xFF5157E4),
                     0.319f to Color(0xFF5157E4),
-                    0.6f to Color(0x005157E4)
+                    0.6f to Color(0x005157E4),
                 ),
                 start = Offset(17f, 15.5f),
-                end = Offset(8.382f, 5.667f)
+                end = Offset(8.382f, 5.667f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(1f, 10f)
             curveTo(1f, 7.239f, 3.239f, 5f, 6f, 5f)
@@ -140,11 +140,11 @@ public val FluentUi.Colored.LinkMultiple: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF36DFF1),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(0.536f, 4.188f),
-                end = Offset(11.117f, 28.777f)
-            )
+                end = Offset(11.117f, 28.777f),
+            ),
         ) {
             moveTo(15.829f, 9f)
             horizontalLineTo(11f)
@@ -173,11 +173,11 @@ public val FluentUi.Colored.LinkMultiple: ImageVector by lazy(LazyThreadSafetyMo
                     0.246f to Color(0x002764E7),
                     0.396f to Color(0xFF2764E7),
                     0.578f to Color(0xFF2764E7),
-                    0.748f to Color(0x002764E7)
+                    0.748f to Color(0x002764E7),
                 ),
                 center = Offset(13.5f, 9.5f),
-                radius = 7f
-            )
+                radius = 7f,
+            ),
         ) {
             moveTo(15.829f, 9f)
             horizontalLineTo(11f)
@@ -206,11 +206,11 @@ public val FluentUi.Colored.LinkMultiple: ImageVector by lazy(LazyThreadSafetyMo
                     0f to Color(0x3D31B3EE),
                     0.208f to Color(0xFF31B3EE),
                     0.569f to Color(0xFF31B3EE),
-                    0.763f to Color(0x0031B3EE)
+                    0.763f to Color(0x0031B3EE),
                 ),
                 start = Offset(8.5f, 5f),
-                end = Offset(16.77f, 12.103f)
-            )
+                end = Offset(16.77f, 12.103f),
+            ),
         ) {
             moveTo(15.829f, 9f)
             horizontalLineTo(11f)

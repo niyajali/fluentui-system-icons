@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Star: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.Star: ImageVector by lazy(LazyThreadSafetyMode.NONE)
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF6F47),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(21.994f, 21.928f),
-                end = Offset(1.427f, 2.53f)
-            )
+                end = Offset(1.427f, 2.53f),
+            ),
         ) {
             moveTo(10.788f, 3.103f)
             curveTo(11.283f, 2.099f, 12.714f, 2.099f, 13.209f, 3.103f)

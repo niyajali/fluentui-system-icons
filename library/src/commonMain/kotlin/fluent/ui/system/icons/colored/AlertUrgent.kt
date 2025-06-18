@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.AlertUrgent: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.AlertUrgent: ImageVector by lazy(LazyThreadSafetyMod
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFEB4824),
-                    1f to Color(0xFBFFCD0F)
+                    1f to Color(0xFBFFCD0F),
                 ),
                 start = Offset(11.438f, 18.188f),
-                end = Offset(12.756f, 21f)
-            )
+                end = Offset(12.756f, 21f),
+            ),
         ) {
             moveTo(14.25f, 18.75f)
             curveTo(14.25f, 19.993f, 13.243f, 21f, 12f, 21f)
@@ -66,11 +66,11 @@ public val FluentUi.Colored.AlertUrgent: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF6F47),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(17.259f, 16.64f),
-                end = Offset(4.822f, 8.252f)
-            )
+                end = Offset(4.822f, 8.252f),
+            ),
         ) {
             moveTo(6.711f, 6.515f)
             curveTo(9.573f, 5.241f, 12.916f, 6.446f, 14.311f, 9.261f)
@@ -92,11 +92,11 @@ public val FluentUi.Colored.AlertUrgent: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF5B2AB5)
+                    1f to Color(0xFF5B2AB5),
                 ),
                 start = Offset(16.296f, 3.525f),
-                end = Offset(20.981f, 14.356f)
-            )
+                end = Offset(20.981f, 14.356f),
+            ),
         ) {
             moveTo(15.861f, 2.094f)
             curveTo(17.947f, 3.233f, 19.513f, 4.696f, 20.543f, 6.481f)

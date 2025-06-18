@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Sport: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,17 +44,17 @@ public val FluentUi.Colored.Sport: ImageVector by lazy(LazyThreadSafetyMode.NONE
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFEB4824),
-                    0.978f to Color(0xFFFF921F)
+                    0.978f to Color(0xFFFF921F),
                 ),
                 center = Offset(16.154f, 26.333f),
-                radius = 27.957f
-            )
+                radius = 27.957f,
+            ),
         ) {
             moveTo(14f, 10f)
             moveToRelative(-8f, 0f)
@@ -65,12 +65,12 @@ public val FluentUi.Colored.Sport: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.588f to Color(0xFFAA1D2D),
-                    0.931f to Color(0x19EB4824)
+                    0.931f to Color(0x19EB4824),
                 ),
                 center = Offset(8f, 16f),
-                radius = 9.428f
+                radius = 9.428f,
             ),
-            fillAlpha = 0.8f
+            fillAlpha = 0.8f,
         ) {
             moveTo(14f, 10f)
             moveToRelative(-8f, 0f)
@@ -81,13 +81,13 @@ public val FluentUi.Colored.Sport: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.713f to Color(0xFF8E250B),
-                    0.903f to Color(0x008E250B)
+                    0.903f to Color(0x008E250B),
                 ),
                 start = Offset(20.05f, 4.194f),
-                end = Offset(11.576f, 12.667f)
+                end = Offset(11.576f, 12.667f),
             ),
             fillAlpha = 0.6f,
-            strokeAlpha = 0.6f
+            strokeAlpha = 0.6f,
         ) {
             moveTo(9.468f, 3.407f)
             lineTo(14.5f, 8.439f)
@@ -120,11 +120,11 @@ public val FluentUi.Colored.Sport: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.24f to Color(0xFFAE5606),
-                    1f to Color(0xFF944600)
+                    1f to Color(0xFF944600),
                 ),
                 center = Offset(3.182f, 9.591f),
-                radius = 16.9f
-            )
+                radius = 16.9f,
+            ),
         ) {
             moveTo(4.25f, 9f)
             curveTo(3.007f, 9f, 2f, 10.007f, 2f, 11.25f)
@@ -141,12 +141,12 @@ public val FluentUi.Colored.Sport: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.626f to Color(0x00FFA43D),
-                    0.927f to Color(0xFFFFA43D)
+                    0.927f to Color(0xFFFFA43D),
                 ),
                 center = Offset(6.748f, 25.441f),
-                radius = 19.237f
+                radius = 19.237f,
             ),
-            fillAlpha = 0.9f
+            fillAlpha = 0.9f,
         ) {
             moveTo(4.25f, 9f)
             curveTo(3.007f, 9f, 2f, 10.007f, 2f, 11.25f)

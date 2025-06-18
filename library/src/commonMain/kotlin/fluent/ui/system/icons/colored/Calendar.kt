@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Calendar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.Calendar: ImageVector by lazy(LazyThreadSafetyMode.N
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB3E0FF),
-                    1f to Color(0xFFB3E0FF)
+                    1f to Color(0xFFB3E0FF),
                 ),
                 start = Offset(15.25f, 22.781f),
-                end = Offset(9.834f, 7.321f)
-            )
+                end = Offset(9.834f, 7.321f),
+            ),
         ) {
             moveTo(21f, 7.5f)
             verticalLineTo(17.75f)
@@ -69,11 +69,11 @@ public val FluentUi.Colored.Calendar: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00DCF8FF),
-                    1f to Color(0xB2FF6CE8)
+                    1f to Color(0xB2FF6CE8),
                 ),
                 start = Offset(13.929f, 12.432f),
-                end = Offset(16.625f, 24.267f)
-            )
+                end = Offset(16.625f, 24.267f),
+            ),
         ) {
             moveTo(21f, 7.5f)
             verticalLineTo(17.75f)
@@ -89,11 +89,11 @@ public val FluentUi.Colored.Calendar: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0078D4),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(10.909f, 9.692f),
-                end = Offset(13.059f, 23.697f)
-            )
+                end = Offset(13.059f, 23.697f),
+            ),
         ) {
             moveTo(7.25f, 15f)
             curveTo(7.94f, 15f, 8.5f, 15.56f, 8.5f, 16.25f)
@@ -130,11 +130,11 @@ public val FluentUi.Colored.Calendar: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0094F0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(3f, 3f),
-                end = Offset(18.372f, -1.963f)
-            )
+                end = Offset(18.372f, -1.963f),
+            ),
         ) {
             moveTo(17.75f, 3f)
             curveTo(19.545f, 3f, 21f, 4.455f, 21f, 6.25f)

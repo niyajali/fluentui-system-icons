@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FluentUI System Icons Gallery</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Fluent UI Icons - Catalog</title>
     <style>
         * {
             margin: 0;
@@ -234,7 +237,6 @@
             border-radius: 12px;
             padding: 20px;
             text-align: center;
-            cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -244,6 +246,60 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
             border-color: var(--primary-color);
+        }
+
+        .copy-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .icon-card:hover .copy-buttons {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .copy-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .copy-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .copy-btn.svg-btn:hover {
+            background: #f59e0b;
+            border-color: #f59e0b;
+        }
+
+        .copy-btn.compose-btn:hover {
+            background: #10b981;
+            border-color: #10b981;
         }
 
         .icon-display {
@@ -374,9 +430,10 @@
         <div class="header-content">
             <div class="logo">
                 <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                    <path d="M11.9146 2.0817C12.1257 1.97613 12.3743 1.97613 12.5854 2.0817L18.5854 5.0817C18.8395 5.20875 19 5.46845 19 5.75253C19 6.0366 18.8395 6.2963 18.5854 6.42335L13.9271 8.75253L18.5854 11.0817C18.8395 11.2087 19 11.4684 19 11.7525C19 12.0366 18.8395 12.2963 18.5854 12.4233L13 15.2161V21.25C13 21.523 12.8517 21.7744 12.6128 21.9064C12.3739 22.0385 12.0821 22.0303 11.851 21.8851L5.85102 18.1155C5.63258 17.9783 5.5 17.7384 5.5 17.4805V5.75253C5.5 5.46845 5.6605 5.20875 5.91459 5.0817L11.9146 2.0817ZM7 6.21605V17.0659L11.5 19.8931V14.7525C11.5 14.4684 11.6605 14.2087 11.9146 14.0817L16.5729 11.7525L11.9146 9.42335C11.6605 9.2963 11.5 9.0366 11.5 8.75253C11.5 8.46845 11.6605 8.20875 11.9146 8.08171L16.5729 5.75253L12.25 3.59105L7 6.21605Z" fill="#212121"/>
                 </svg>
-                FluentUI Icons Gallery
+
+                Fluent UI Icons
             </div>
 
             <div class="search-container">

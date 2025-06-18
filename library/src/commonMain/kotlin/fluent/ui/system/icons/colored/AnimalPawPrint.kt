@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.AnimalPawPrint: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.AnimalPawPrint: ImageVector by lazy(LazyThreadSafety
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFFFF921F),
-                    1f to Color(0xFFEB4824)
+                    1f to Color(0xFFEB4824),
                 ),
                 start = Offset(8.329f, 11.462f),
-                end = Offset(13.266f, 21.495f)
-            )
+                end = Offset(13.266f, 21.495f),
+            ),
         ) {
             moveTo(12f, 10f)
             curveTo(8.134f, 10f, 5f, 13.134f, 5f, 17f)
@@ -69,11 +69,11 @@ public val FluentUi.Colored.AnimalPawPrint: ImageVector by lazy(LazyThreadSafety
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFEB4824),
-                    1f to Color(0xFFFF921F)
+                    1f to Color(0xFFFF921F),
                 ),
                 center = Offset(12.611f, 12.143f),
-                radius = 11.571f
-            )
+                radius = 11.571f,
+            ),
         ) {
             moveTo(6.25f, 5.25f)
             curveTo(6.25f, 3.828f, 7.278f, 2.5f, 8.75f, 2.5f)

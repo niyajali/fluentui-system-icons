@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Settings: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.Settings: ImageVector by lazy(LazyThreadSafetyMode.N
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF70777D),
-                    1f to Color(0xFFB9C0C7)
+                    1f to Color(0xFFB9C0C7),
                 ),
                 start = Offset(16.682f, 20.995f),
-                end = Offset(5.785f, 3.996f)
-            )
+                end = Offset(5.785f, 3.996f),
+            ),
         ) {
             moveTo(12.012f, 2.25f)
             curveTo(12.746f, 2.258f, 13.477f, 2.343f, 14.194f, 2.503f)

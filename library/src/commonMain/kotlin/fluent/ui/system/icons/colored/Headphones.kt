@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Headphones: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,18 +44,18 @@ public val FluentUi.Colored.Headphones: ImageVector by lazy(LazyThreadSafetyMode
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB9C0C7),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(-3.429f, 3f),
-                end = Offset(-0.856f, 13.052f)
+                end = Offset(-0.856f, 13.052f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(12f, 4f)
             curveTo(7.582f, 4f, 4f, 7.582f, 4f, 12f)
@@ -76,11 +76,11 @@ public val FluentUi.Colored.Headphones: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(17.75f, 14f),
-                end = Offset(17.75f, 22f)
-            )
+                end = Offset(17.75f, 22f),
+            ),
         ) {
             moveTo(3.5f, 14f)
             verticalLineTo(21.599f)
@@ -96,11 +96,11 @@ public val FluentUi.Colored.Headphones: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(17.75f, 14f),
-                end = Offset(17.75f, 22f)
-            )
+                end = Offset(17.75f, 22f),
+            ),
         ) {
             moveTo(20.5f, 21.599f)
             verticalLineTo(14f)
@@ -116,11 +116,11 @@ public val FluentUi.Colored.Headphones: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0078D4),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(3f, 14f),
-                end = Offset(3f, 21.829f)
-            )
+                end = Offset(3f, 21.829f),
+            ),
         ) {
             moveTo(2f, 19f)
             curveTo(2f, 20.306f, 2.835f, 21.417f, 4f, 21.829f)
@@ -133,11 +133,11 @@ public val FluentUi.Colored.Headphones: ImageVector by lazy(LazyThreadSafetyMode
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0078D4),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(3f, 14f),
-                end = Offset(3f, 21.829f)
-            )
+                end = Offset(3f, 21.829f),
+            ),
         ) {
             moveTo(22f, 19f)
             curveTo(22f, 20.306f, 21.165f, 21.417f, 20f, 21.829f)

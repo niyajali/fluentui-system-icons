@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.WrenchScrewdriver: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.WrenchScrewdriver: ImageVector by lazy(LazyThreadSaf
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF2BDABE),
-                    0.853f to Color(0xFF0067BF)
+                    0.853f to Color(0xFF0067BF),
                 ),
                 start = Offset(19.167f, -0.001f),
-                end = Offset(15.474f, 20.502f)
-            )
+                end = Offset(15.474f, 20.502f),
+            ),
         ) {
             moveTo(16.75f, 2f)
             curveTo(16.466f, 2f, 16.206f, 2.161f, 16.079f, 2.415f)
@@ -74,11 +74,11 @@ public val FluentUi.Colored.WrenchScrewdriver: ImageVector by lazy(LazyThreadSaf
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF6F47),
-                    1f to Color(0xFFFFCD0F)
+                    1f to Color(0xFFFFCD0F),
                 ),
                 start = Offset(20.999f, 22.167f),
-                end = Offset(13.047f, 15.463f)
-            )
+                end = Offset(13.047f, 15.463f),
+            ),
         ) {
             moveTo(14f, 14.5f)
             verticalLineTo(18.5f)
@@ -92,11 +92,11 @@ public val FluentUi.Colored.WrenchScrewdriver: ImageVector by lazy(LazyThreadSaf
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFA43D),
-                    1f to Color(0xFFFB5937)
+                    1f to Color(0xFFFB5937),
                 ),
                 start = Offset(15.927f, 12.726f),
-                end = Offset(16.976f, 15.177f)
-            )
+                end = Offset(16.976f, 15.177f),
+            ),
         ) {
             moveTo(20.25f, 12f)
             curveTo(20.664f, 12f, 21f, 12.336f, 21f, 12.75f)
@@ -111,11 +111,11 @@ public val FluentUi.Colored.WrenchScrewdriver: ImageVector by lazy(LazyThreadSaf
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF2BDABE),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(11.167f, -1.713f),
-                end = Offset(4.557f, 22.532f)
-            )
+                end = Offset(4.557f, 22.532f),
+            ),
         ) {
             moveTo(8.828f, 2.212f)
             curveTo(9.034f, 2.072f, 9.295f, 2.044f, 9.526f, 2.135f)

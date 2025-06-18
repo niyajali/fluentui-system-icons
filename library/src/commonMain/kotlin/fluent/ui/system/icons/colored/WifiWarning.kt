@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.WifiWarning: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.WifiWarning: ImageVector by lazy(LazyThreadSafetyMod
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.114f to Color(0xFF8B52F4),
-                    1f to Color(0xFFEA71EF)
+                    1f to Color(0xFFEA71EF),
                 ),
                 center = Offset(12f, 17.3f),
-                radius = 12.492f
-            )
+                radius = 12.492f,
+            ),
         ) {
             moveTo(17.784f, 10.708f)
             curveTo(18.381f, 11.305f, 18.896f, 12.026f, 19.288f, 12.793f)
@@ -102,11 +102,11 @@ public val FluentUi.Colored.WifiWarning: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFCD0F),
-                    1f to Color(0xFFFE8401)
+                    1f to Color(0xFFFE8401),
                 ),
                 start = Offset(13.723f, 10.281f),
-                end = Offset(20.941f, 24.031f)
-            )
+                end = Offset(20.941f, 24.031f),
+            ),
         ) {
             moveTo(16.161f, 12.83f)
             lineTo(12.164f, 20.828f)
@@ -121,11 +121,11 @@ public val FluentUi.Colored.WifiWarning: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF4A4A4A),
-                    1f to Color(0xFF212121)
+                    1f to Color(0xFF212121),
                 ),
                 start = Offset(16.17f, 14.995f),
-                end = Offset(19.376f, 20.696f)
-            )
+                end = Offset(19.376f, 20.696f),
+            ),
         ) {
             moveTo(18.005f, 15.495f)
             verticalLineTo(18.497f)

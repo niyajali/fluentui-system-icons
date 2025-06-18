@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.ChatMore: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.ChatMore: ImageVector by lazy(LazyThreadSafetyMode.N
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFFCC23D1)
+                    1f to Color(0xFFCC23D1),
                 ),
                 start = Offset(2.714f, 5.751f),
-                end = Offset(20.178f, 35.521f)
-            )
+                end = Offset(20.178f, 35.521f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(17.523f, 2f, 22f, 6.477f, 22f, 12f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.ChatMore: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFCCEAFF)
+                    1f to Color(0xFFCCEAFF),
                 ),
                 start = Offset(8.7f, 9.588f),
-                end = Offset(9.227f, 15.025f)
-            )
+                end = Offset(9.227f, 15.025f),
+            ),
         ) {
             moveTo(13.252f, 13f)
             horizontalLineTo(8.75f)

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -32,55 +32,55 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Regular.LineHorizontal2DashesSolid: ImageVector by
-        lazy(LazyThreadSafetyMode.NONE) {
-    ImageVector.Builder(
-        name = "Regular.LineHorizontal2DashesSolid",
-        defaultWidth = 24.dp,
-        defaultHeight = 24.dp,
-        viewportWidth = 24f,
-        viewportHeight = 24f
-    ).apply {
-        path(fill = SolidColor(Color(0xFF212121))) {
-            moveTo(2.75f, 7f)
-            curveTo(2.336f, 7f, 2f, 7.336f, 2f, 7.75f)
-            curveTo(2f, 8.164f, 2.336f, 8.5f, 2.75f, 8.5f)
-            horizontalLineTo(6.25f)
-            curveTo(6.664f, 8.5f, 7f, 8.164f, 7f, 7.75f)
-            curveTo(7f, 7.336f, 6.664f, 7f, 6.25f, 7f)
-            horizontalLineTo(2.75f)
-            close()
-            moveTo(10.25f, 7f)
-            curveTo(9.836f, 7f, 9.5f, 7.336f, 9.5f, 7.75f)
-            curveTo(9.5f, 8.164f, 9.836f, 8.5f, 10.25f, 8.5f)
-            horizontalLineTo(13.75f)
-            curveTo(14.164f, 8.5f, 14.5f, 8.164f, 14.5f, 7.75f)
-            curveTo(14.5f, 7.336f, 14.164f, 7f, 13.75f, 7f)
-            horizontalLineTo(10.25f)
-            close()
-            moveTo(17.75f, 7f)
-            curveTo(17.336f, 7f, 17f, 7.336f, 17f, 7.75f)
-            curveTo(17f, 8.164f, 17.336f, 8.5f, 17.75f, 8.5f)
-            horizontalLineTo(21.25f)
-            curveTo(21.664f, 8.5f, 22f, 8.164f, 22f, 7.75f)
-            curveTo(22f, 7.336f, 21.664f, 7f, 21.25f, 7f)
-            horizontalLineTo(17.75f)
-            close()
-            moveTo(2.75f, 15f)
-            curveTo(2.336f, 15f, 2f, 15.336f, 2f, 15.75f)
-            curveTo(2f, 16.164f, 2.336f, 16.5f, 2.75f, 16.5f)
-            horizontalLineTo(21.25f)
-            curveTo(21.664f, 16.5f, 22f, 16.164f, 22f, 15.75f)
-            curveTo(22f, 15.336f, 21.664f, 15f, 21.25f, 15f)
-            horizontalLineTo(2.75f)
-            close()
-        }
-    }.build()
-}
+    lazy(LazyThreadSafetyMode.NONE) {
+        ImageVector.Builder(
+            name = "Regular.LineHorizontal2DashesSolid",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f,
+        ).apply {
+            path(fill = SolidColor(Color(0xFF212121))) {
+                moveTo(2.75f, 7f)
+                curveTo(2.336f, 7f, 2f, 7.336f, 2f, 7.75f)
+                curveTo(2f, 8.164f, 2.336f, 8.5f, 2.75f, 8.5f)
+                horizontalLineTo(6.25f)
+                curveTo(6.664f, 8.5f, 7f, 8.164f, 7f, 7.75f)
+                curveTo(7f, 7.336f, 6.664f, 7f, 6.25f, 7f)
+                horizontalLineTo(2.75f)
+                close()
+                moveTo(10.25f, 7f)
+                curveTo(9.836f, 7f, 9.5f, 7.336f, 9.5f, 7.75f)
+                curveTo(9.5f, 8.164f, 9.836f, 8.5f, 10.25f, 8.5f)
+                horizontalLineTo(13.75f)
+                curveTo(14.164f, 8.5f, 14.5f, 8.164f, 14.5f, 7.75f)
+                curveTo(14.5f, 7.336f, 14.164f, 7f, 13.75f, 7f)
+                horizontalLineTo(10.25f)
+                close()
+                moveTo(17.75f, 7f)
+                curveTo(17.336f, 7f, 17f, 7.336f, 17f, 7.75f)
+                curveTo(17f, 8.164f, 17.336f, 8.5f, 17.75f, 8.5f)
+                horizontalLineTo(21.25f)
+                curveTo(21.664f, 8.5f, 22f, 8.164f, 22f, 7.75f)
+                curveTo(22f, 7.336f, 21.664f, 7f, 21.25f, 7f)
+                horizontalLineTo(17.75f)
+                close()
+                moveTo(2.75f, 15f)
+                curveTo(2.336f, 15f, 2f, 15.336f, 2f, 15.75f)
+                curveTo(2f, 16.164f, 2.336f, 16.5f, 2.75f, 16.5f)
+                horizontalLineTo(21.25f)
+                curveTo(21.664f, 16.5f, 22f, 16.164f, 22f, 15.75f)
+                curveTo(22f, 15.336f, 21.664f, 15f, 21.25f, 15f)
+                horizontalLineTo(2.75f)
+                close()
+            }
+        }.build()
+    }
 
 @Preview
 @Composable

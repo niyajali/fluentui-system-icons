@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.ShieldCheckmark: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,7 +44,7 @@ public val FluentUi.Colored.ShieldCheckmark: ImageVector by lazy(LazyThreadSafet
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
@@ -52,11 +52,11 @@ public val FluentUi.Colored.ShieldCheckmark: ImageVector by lazy(LazyThreadSafet
                     0.338f to Color(0xFF0FAFFF),
                     0.529f to Color(0xFF367AF2),
                     0.682f to Color(0xFF5750E2),
-                    0.861f to Color(0xFFCC23D1)
+                    0.861f to Color(0xFFCC23D1),
                 ),
                 center = Offset(-4.071f, -9.25f),
-                radius = 47.599f
-            )
+                radius = 47.599f,
+            ),
         ) {
             moveTo(3f, 5.75f)
             curveTo(3f, 5.336f, 3.336f, 5f, 3.75f, 5f)
@@ -75,12 +75,12 @@ public val FluentUi.Colored.ShieldCheckmark: ImageVector by lazy(LazyThreadSafet
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.5f to Color(0xFF1E1868),
-                    1f to Color(0x001E1868)
+                    1f to Color(0x001E1868),
                 ),
                 center = Offset(17.786f, 18.875f),
-                radius = 8.125f
+                radius = 8.125f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(3f, 5.75f)
             curveTo(3f, 5.336f, 3.336f, 5f, 3.75f, 5f)
@@ -99,11 +99,11 @@ public val FluentUi.Colored.ShieldCheckmark: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF52D17C),
-                    1f to Color(0xFF22918B)
+                    1f to Color(0xFF22918B),
                 ),
                 start = Offset(12.393f, 14.063f),
-                end = Offset(19.984f, 21.95f)
-            )
+                end = Offset(19.984f, 21.95f),
+            ),
         ) {
             moveTo(17.5f, 12f)
             curveTo(20.538f, 12f, 23f, 14.462f, 23f, 17.5f)
@@ -116,12 +116,12 @@ public val FluentUi.Colored.ShieldCheckmark: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFFFFF),
-                    1f to Color(0xFFE3FFD9)
+                    1f to Color(0xFFE3FFD9),
                 ),
                 start = Offset(15.313f, 15.51f),
-                end = Offset(16.45f, 21.13f)
+                end = Offset(16.45f, 21.13f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(20.854f, 15.146f)
             curveTo(21.049f, 15.342f, 21.049f, 15.658f, 20.854f, 15.854f)

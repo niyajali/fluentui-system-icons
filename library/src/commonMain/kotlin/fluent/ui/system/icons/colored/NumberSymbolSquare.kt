@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.NumberSymbolSquare: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,18 +43,18 @@ public val FluentUi.Colored.NumberSymbolSquare: ImageVector by lazy(LazyThreadSa
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.028f to Color(0xFFE67EEA),
                     0.438f to Color(0xFFAD64D7),
-                    1f to Color(0xFF794DC5)
+                    1f to Color(0xFF794DC5),
                 ),
                 start = Offset(7.389f, 3f),
-                end = Offset(17.26f, 21f)
-            )
+                end = Offset(17.26f, 21f),
+            ),
         ) {
             moveTo(6.25f, 3f)
             curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.NumberSymbolSquare: ImageVector by lazy(LazyThreadSa
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFF9DCFA)
+                    1f to Color(0xFFF9DCFA),
                 ),
                 start = Offset(9.371f, 7.846f),
-                end = Offset(15.82f, 20.21f)
-            )
+                end = Offset(15.82f, 20.21f),
+            ),
         ) {
             moveTo(10.898f, 7.515f)
             curveTo(11.304f, 7.596f, 11.567f, 7.991f, 11.486f, 8.397f)

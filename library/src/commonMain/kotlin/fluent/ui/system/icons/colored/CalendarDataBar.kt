@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.CalendarDataBar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.CalendarDataBar: ImageVector by lazy(LazyThreadSafet
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB3E0FF),
-                    1f to Color(0xFF8CD0FF)
+                    1f to Color(0xFF8CD0FF),
                 ),
                 start = Offset(9.429f, 6.5f),
-                end = Offset(14.137f, 20.932f)
-            )
+                end = Offset(14.137f, 20.932f),
+            ),
         ) {
             moveTo(21f, 7.5f)
             verticalLineTo(17.75f)
@@ -69,11 +69,11 @@ public val FluentUi.Colored.CalendarDataBar: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00DCF8FF),
-                    1f to Color(0xB2FF6CE8)
+                    1f to Color(0xB2FF6CE8),
                 ),
                 start = Offset(13.929f, 12.432f),
-                end = Offset(16.625f, 24.267f)
-            )
+                end = Offset(16.625f, 24.267f),
+            ),
         ) {
             moveTo(21f, 7.5f)
             verticalLineTo(17.75f)
@@ -89,12 +89,12 @@ public val FluentUi.Colored.CalendarDataBar: ImageVector by lazy(LazyThreadSafet
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.535f to Color(0xFF4A43CB),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(13.5f, 21f),
-                radius = 5.5f
+                radius = 5.5f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(21f, 7.5f)
             verticalLineTo(17.75f)
@@ -110,12 +110,12 @@ public val FluentUi.Colored.CalendarDataBar: ImageVector by lazy(LazyThreadSafet
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.535f to Color(0xFF4A43CB),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(17.5f, 19.5f),
-                radius = 8f
+                radius = 8f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(21f, 7.5f)
             verticalLineTo(17.75f)
@@ -131,12 +131,12 @@ public val FluentUi.Colored.CalendarDataBar: ImageVector by lazy(LazyThreadSafet
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.535f to Color(0xFF4A43CB),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(21.5f, 20f),
-                radius = 5.5f
+                radius = 5.5f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(21f, 7.5f)
             verticalLineTo(17.75f)
@@ -152,11 +152,11 @@ public val FluentUi.Colored.CalendarDataBar: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0094F0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(3.723f, 3f),
-                end = Offset(5.356f, 11.537f)
-            )
+                end = Offset(5.356f, 11.537f),
+            ),
         ) {
             moveTo(17.75f, 3f)
             curveTo(19.545f, 3f, 21f, 4.455f, 21f, 6.25f)
@@ -171,11 +171,11 @@ public val FluentUi.Colored.CalendarDataBar: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFD7257D),
-                    1f to Color(0xFFE656EB)
+                    1f to Color(0xFFE656EB),
                 ),
                 start = Offset(22.75f, 21.35f),
-                end = Offset(21.562f, 13.841f)
-            )
+                end = Offset(21.562f, 13.841f),
+            ),
         ) {
             moveTo(20f, 15.5f)
             curveTo(20f, 14.672f, 20.672f, 14f, 21.5f, 14f)
@@ -190,11 +190,11 @@ public val FluentUi.Colored.CalendarDataBar: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF5B2AB5),
-                    1f to Color(0xFFDD3CE2)
+                    1f to Color(0xFFDD3CE2),
                 ),
                 start = Offset(19.75f, 24.222f),
-                end = Offset(18.104f, 12f)
-            )
+                end = Offset(18.104f, 12f),
+            ),
         ) {
             moveTo(17.5f, 12f)
             curveTo(16.672f, 12f, 16f, 12.672f, 16f, 13.5f)
@@ -209,11 +209,11 @@ public val FluentUi.Colored.CalendarDataBar: ImageVector by lazy(LazyThreadSafet
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF16BBDA),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(12.375f, 16.292f),
-                end = Offset(18.534f, 19.414f)
-            )
+                end = Offset(18.534f, 19.414f),
+            ),
         ) {
             moveTo(13.5f, 16f)
             curveTo(12.672f, 16f, 12f, 16.672f, 12f, 17.5f)

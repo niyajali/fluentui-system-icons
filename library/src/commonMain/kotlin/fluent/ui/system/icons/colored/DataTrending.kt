@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.DataTrending: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,18 +43,18 @@ public val FluentUi.Colored.DataTrending: ImageVector by lazy(LazyThreadSafetyMo
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
                     0.445f to Color(0xFF9C6CFE),
-                    0.957f to Color(0xFFE656EB)
+                    0.957f to Color(0xFFE656EB),
                 ),
                 start = Offset(5.423f, 14.5f),
-                end = Offset(24.458f, 7.097f)
-            )
+                end = Offset(24.458f, 7.097f),
+            ),
         ) {
             moveTo(15f, 6f)
             curveTo(14.448f, 6f, 14f, 6.448f, 14f, 7f)
@@ -83,11 +83,11 @@ public val FluentUi.Colored.DataTrending: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF70777D),
-                    1f to Color(0xFFB9C0C7)
+                    1f to Color(0xFFB9C0C7),
                 ),
                 start = Offset(19.313f, 4.125f),
-                end = Offset(3.56f, 27.58f)
-            )
+                end = Offset(3.56f, 27.58f),
+            ),
         ) {
             moveTo(5f, 4f)
             curveTo(5f, 3.448f, 4.552f, 3f, 4f, 3f)

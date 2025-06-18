@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Laptop: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.Laptop: ImageVector by lazy(LazyThreadSafetyMode.NON
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF63686E),
-                    1f to Color(0xFF889096)
+                    1f to Color(0xFF889096),
                 ),
                 start = Offset(22f, 18.912f),
-                end = Offset(20.765f, 12.254f)
-            )
+                end = Offset(20.765f, 12.254f),
+            ),
         ) {
             moveTo(6.254f, 16f)
             lineTo(12f, 15.469f)
@@ -73,11 +73,11 @@ public val FluentUi.Colored.Laptop: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF889096),
-                    1f to Color(0xFFAAB3BD)
+                    1f to Color(0xFFAAB3BD),
                 ),
                 start = Offset(22f, 18.893f),
-                end = Offset(21.792f, 16.123f)
-            )
+                end = Offset(21.792f, 16.123f),
+            ),
         ) {
             moveTo(2.75f, 17.5f)
             curveTo(2.336f, 17.5f, 2f, 17.836f, 2f, 18.25f)
@@ -92,11 +92,11 @@ public val FluentUi.Colored.Laptop: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF6CE0FF),
-                    1f to Color(0xFF4894FE)
+                    1f to Color(0xFF4894FE),
                 ),
                 start = Offset(15.2f, 4f),
-                end = Offset(15.95f, 17.722f)
-            )
+                end = Offset(15.95f, 17.722f),
+            ),
         ) {
             moveTo(4f, 6.25f)
             curveTo(4f, 5.007f, 5.007f, 4f, 6.25f, 4f)

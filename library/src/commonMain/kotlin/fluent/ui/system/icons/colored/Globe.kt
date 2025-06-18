@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Globe: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,17 +44,17 @@ public val FluentUi.Colored.Globe: ImageVector by lazy(LazyThreadSafetyMode.NONE
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF29C3FF),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(6.444f, 5.333f),
-                end = Offset(20.889f, 18.667f)
-            )
+                end = Offset(20.889f, 18.667f),
+            ),
         ) {
             moveTo(12f, 22f)
             curveTo(17.523f, 22f, 22f, 17.523f, 22f, 12f)
@@ -67,12 +67,12 @@ public val FluentUi.Colored.Globe: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF25A2F0),
-                    0.974f to Color(0xFF3BD5FF)
+                    0.974f to Color(0xFF3BD5FF),
                 ),
                 center = Offset(18.324f, 17.003f),
-                radius = 16.009f
+                radius = 16.009f,
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(9.115f, 2.422f)
             curveTo(8.794f, 2.921f, 8.511f, 3.496f, 8.266f, 4.126f)

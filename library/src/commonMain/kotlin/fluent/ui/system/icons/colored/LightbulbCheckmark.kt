@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.LightbulbCheckmark: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,19 +44,19 @@ public val FluentUi.Colored.LightbulbCheckmark: ImageVector by lazy(LazyThreadSa
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFE06B),
                     0.376f to Color(0xFFFFA43D),
-                    1f to Color(0xFFE67505)
+                    1f to Color(0xFFE67505),
                 ),
                 center = Offset(7.419f, 7.571f),
-                radius = 14.468f
+                radius = 14.468f,
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(15.247f, 20.258f)
             curveTo(15.024f, 21.221f, 14.201f, 21.919f, 13.228f, 21.993f)
@@ -73,12 +73,12 @@ public val FluentUi.Colored.LightbulbCheckmark: ImageVector by lazy(LazyThreadSa
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFD34719),
-                    1f to Color(0x00D34719)
+                    1f to Color(0x00D34719),
                 ),
                 start = Offset(11.999f, 18.5f),
-                end = Offset(11.999f, 22f)
+                end = Offset(11.999f, 22f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(15.247f, 20.258f)
             curveTo(15.024f, 21.221f, 14.201f, 21.919f, 13.228f, 21.993f)
@@ -96,12 +96,12 @@ public val FluentUi.Colored.LightbulbCheckmark: ImageVector by lazy(LazyThreadSa
                 colorStops = arrayOf(
                     0f to Color(0xFFFFE06B),
                     0.376f to Color(0xFFFFA43D),
-                    1f to Color(0xFFE67505)
+                    1f to Color(0xFFE67505),
                 ),
                 center = Offset(7.166f, 4.012f),
-                radius = 18.226f
+                radius = 18.226f,
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(8.23f, 18f)
             horizontalLineTo(15.77f)
@@ -119,13 +119,13 @@ public val FluentUi.Colored.LightbulbCheckmark: ImageVector by lazy(LazyThreadSa
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.165f to Color(0xFF741C06),
-                    1f to Color(0x00741C06)
+                    1f to Color(0x00741C06),
                 ),
                 center = Offset(17.5f, 8f),
-                radius = 7f
+                radius = 7f,
             ),
             fillAlpha = 0.2f,
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(8.23f, 18f)
             horizontalLineTo(15.77f)
@@ -143,11 +143,11 @@ public val FluentUi.Colored.LightbulbCheckmark: ImageVector by lazy(LazyThreadSa
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFC7A3),
-                    1f to Color(0xFFFF9C70)
+                    1f to Color(0xFFFF9C70),
                 ),
                 start = Offset(11.386f, 18.095f),
-                end = Offset(12.726f, 20.874f)
-            )
+                end = Offset(12.726f, 20.874f),
+            ),
         ) {
             moveTo(8.461f, 19f)
             lineTo(8.114f, 17.5f)
@@ -160,12 +160,12 @@ public val FluentUi.Colored.LightbulbCheckmark: ImageVector by lazy(LazyThreadSa
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF52D17C),
-                    1f to Color(0xFF22918B)
+                    1f to Color(0xFF22918B),
                 ),
                 start = Offset(12.393f, 3.063f),
-                end = Offset(19.984f, 10.95f)
+                end = Offset(19.984f, 10.95f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(17.5f, 12f)
             curveTo(20.538f, 12f, 23f, 9.538f, 23f, 6.5f)
@@ -178,12 +178,12 @@ public val FluentUi.Colored.LightbulbCheckmark: ImageVector by lazy(LazyThreadSa
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFFFFF),
-                    1f to Color(0xFFE3FFD9)
+                    1f to Color(0xFFE3FFD9),
                 ),
                 start = Offset(15.313f, 4.51f),
-                end = Offset(16.45f, 10.13f)
+                end = Offset(16.45f, 10.13f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(20.854f, 4.854f)
             curveTo(21.049f, 4.658f, 21.049f, 4.342f, 20.854f, 4.146f)

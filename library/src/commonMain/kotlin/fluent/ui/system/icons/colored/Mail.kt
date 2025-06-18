@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Mail: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,7 +44,7 @@ public val FluentUi.Colored.Mail: ImageVector by lazy(LazyThreadSafetyMode.NONE)
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(fill = SolidColor(Color(0xFF367AF2))) {
             moveTo(22f, 7.5f)
@@ -64,11 +64,11 @@ public val FluentUi.Colored.Mail: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.199f to Color(0x000094F0),
-                    0.431f to Color(0xFF0094F0)
+                    0.431f to Color(0xFF0094F0),
                 ),
                 start = Offset(14.539f, 9.95f),
-                end = Offset(20.005f, 20.515f)
-            )
+                end = Offset(20.005f, 20.515f),
+            ),
         ) {
             moveTo(22f, 7.5f)
             lineTo(22f, 16.75f)
@@ -87,11 +87,11 @@ public val FluentUi.Colored.Mail: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.191f to Color(0x000094F0),
-                    0.431f to Color(0xFF0094F0)
+                    0.431f to Color(0xFF0094F0),
                 ),
                 start = Offset(9.143f, 8.816f),
-                end = Offset(3.828f, 20.865f)
-            )
+                end = Offset(3.828f, 20.865f),
+            ),
         ) {
             moveTo(22f, 7.5f)
             lineTo(22f, 16.75f)
@@ -110,12 +110,12 @@ public val FluentUi.Colored.Mail: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x002764E7),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(17.273f, 14.957f),
-                end = Offset(18.143f, 21.151f)
+                end = Offset(18.143f, 21.151f),
             ),
-            fillAlpha = 0.75f
+            fillAlpha = 0.75f,
         ) {
             moveTo(22f, 7.5f)
             lineTo(22f, 16.75f)
@@ -134,12 +134,12 @@ public val FluentUi.Colored.Mail: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.533f to Color(0x00FF6CE8),
-                    1f to Color(0xFFFF6CE8)
+                    1f to Color(0xFFFF6CE8),
                 ),
                 start = Offset(15.095f, 9.035f),
-                end = Offset(16.681f, 21.643f)
+                end = Offset(16.681f, 21.643f),
             ),
-            fillAlpha = 0.7f
+            fillAlpha = 0.7f,
         ) {
             moveTo(22f, 7.5f)
             lineTo(22f, 16.75f)
@@ -159,11 +159,11 @@ public val FluentUi.Colored.Mail: ImageVector by lazy(LazyThreadSafetyMode.NONE)
                 colorStops = arrayOf(
                     0f to Color(0xFF6CE0FF),
                     0.462f to Color(0xFF29C3FF),
-                    1f to Color(0xFF4894FE)
+                    1f to Color(0xFF4894FE),
                 ),
                 start = Offset(7.942f, 1.151f),
-                end = Offset(13.98f, 17.089f)
-            )
+                end = Offset(13.98f, 17.089f),
+            ),
         ) {
             moveTo(2f, 7.86f)
             lineTo(11.652f, 12.916f)

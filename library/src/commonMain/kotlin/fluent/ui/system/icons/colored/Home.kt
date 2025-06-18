@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Home: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,17 +44,17 @@ public val FluentUi.Colored.Home: ImageVector by lazy(LazyThreadSafetyMode.NONE)
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF944600),
-                    1f to Color(0xFFCD8E02)
+                    1f to Color(0xFFCD8E02),
                 ),
                 start = Offset(12f, 13f),
-                end = Offset(6.707f, 21.825f)
-            )
+                end = Offset(6.707f, 21.825f),
+            ),
         ) {
             moveTo(9f, 13f)
             horizontalLineTo(15f)
@@ -67,11 +67,11 @@ public val FluentUi.Colored.Home: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFD394),
-                    1f to Color(0xFFFFB357)
+                    1f to Color(0xFFFFB357),
                 ),
                 start = Offset(4.718f, 3.172f),
-                end = Offset(21.568f, 17.673f)
-            )
+                end = Offset(21.568f, 17.673f),
+            ),
         ) {
             moveTo(13.451f, 4.533f)
             curveTo(12.613f, 3.826f, 11.387f, 3.826f, 10.549f, 4.533f)
@@ -98,12 +98,12 @@ public val FluentUi.Colored.Home: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF921F),
-                    1f to Color(0xFFEB4824)
+                    1f to Color(0xFFEB4824),
                 ),
                 start = Offset(8.768f, -0.375f),
-                end = Offset(13.162f, 11.505f)
+                end = Offset(13.162f, 11.505f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(12.804f, 2.299f)
             curveTo(12.345f, 1.9f, 11.655f, 1.9f, 11.196f, 2.299f)
@@ -121,12 +121,12 @@ public val FluentUi.Colored.Home: ImageVector by lazy(LazyThreadSafetyMode.NONE)
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFF921F),
-                    1f to Color(0xFFEB4824)
+                    1f to Color(0xFFEB4824),
                 ),
                 start = Offset(8.768f, -0.375f),
-                end = Offset(13.162f, 11.505f)
+                end = Offset(13.162f, 11.505f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(11.196f, 2.299f)
             curveTo(11.655f, 1.9f, 12.345f, 1.9f, 12.804f, 2.299f)

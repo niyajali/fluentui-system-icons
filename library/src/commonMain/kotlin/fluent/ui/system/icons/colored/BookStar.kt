@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.BookStar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.BookStar: ImageVector by lazy(LazyThreadSafetyMode.N
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF9DEAFF),
-                    0.716f to Color(0xFF58AAFE)
+                    0.716f to Color(0xFF58AAFE),
                 ),
                 start = Offset(12.174f, 20.4f),
-                end = Offset(12.174f, 18f)
-            )
+                end = Offset(12.174f, 18f),
+            ),
         ) {
             moveTo(5f, 19f)
             horizontalLineTo(20.281f)
@@ -68,11 +68,11 @@ public val FluentUi.Colored.BookStar: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF20AC9D),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(9.693f, 5.742f),
-                end = Offset(12.681f, 27.308f)
-            )
+                end = Offset(12.681f, 27.308f),
+            ),
         ) {
             moveTo(4f, 4.5f)
             curveTo(4f, 3.119f, 5.119f, 2f, 6.5f, 2f)
@@ -94,12 +94,12 @@ public val FluentUi.Colored.BookStar: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF171155),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(12f, 12.5f),
-                radius = 5.315f
+                radius = 5.315f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(4f, 4.5f)
             curveTo(4f, 3.119f, 5.119f, 2f, 6.5f, 2f)
@@ -121,12 +121,12 @@ public val FluentUi.Colored.BookStar: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF171155),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(14f, 12f),
-                radius = 5.81f
+                radius = 5.81f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(4f, 4.5f)
             curveTo(4f, 3.119f, 5.119f, 2f, 6.5f, 2f)
@@ -148,12 +148,12 @@ public val FluentUi.Colored.BookStar: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF171155),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(12f, 13f),
-                radius = 4.61f
+                radius = 4.61f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(4f, 4.5f)
             curveTo(4f, 3.119f, 5.119f, 2f, 6.5f, 2f)
@@ -175,11 +175,11 @@ public val FluentUi.Colored.BookStar: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFE06B),
-                    1f to Color(0xFFFF835C)
+                    1f to Color(0xFFFF835C),
                 ),
                 start = Offset(10.893f, 7.655f),
-                end = Offset(13.647f, 17.289f)
-            )
+                end = Offset(13.647f, 17.289f),
+            ),
         ) {
             moveTo(10.542f, 8.608f)
             lineTo(11.642f, 6.378f)

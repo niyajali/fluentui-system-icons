@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.ApprovalsApp: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,17 +44,17 @@ public val FluentUi.Colored.ApprovalsApp: ImageVector by lazy(LazyThreadSafetyMo
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(3.25f, 3.175f),
-                end = Offset(9.247f, 25.271f)
-            )
+                end = Offset(9.247f, 25.271f),
+            ),
         ) {
             moveTo(12.744f, 2.293f)
             curveTo(12.354f, 1.902f, 11.72f, 1.902f, 11.33f, 2.293f)
@@ -80,12 +80,12 @@ public val FluentUi.Colored.ApprovalsApp: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF42B870),
-                    1f to Color(0xFF309C61)
+                    1f to Color(0xFF309C61),
                 ),
                 start = Offset(16.024f, 10.428f),
-                end = Offset(7.892f, 14.47f)
+                end = Offset(7.892f, 14.47f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(16.937f, 9.481f)
             curveTo(17.328f, 9.871f, 17.328f, 10.505f, 16.937f, 10.895f)

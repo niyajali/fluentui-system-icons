@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.LocationRipple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,18 +43,18 @@ public val FluentUi.Colored.LocationRipple: ImageVector by lazy(LazyThreadSafety
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF7B7BFF),
                     0.502f to Color(0xFFA3A3FF),
-                    1f to Color(0xFFCEB0FF)
+                    1f to Color(0xFFCEB0FF),
                 ),
                 center = Offset(11.357f, 17.667f),
-                radius = 14.392f
-            )
+                radius = 14.392f,
+            ),
         ) {
             moveTo(21f, 19f)
             curveTo(21f, 21.5f, 16.971f, 23f, 12f, 23f)
@@ -67,11 +67,11 @@ public val FluentUi.Colored.LocationRipple: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFF97DBD),
-                    1f to Color(0xFFD7257D)
+                    1f to Color(0xFFD7257D),
                 ),
                 start = Offset(1.219f, -2.857f),
-                end = Offset(13.202f, 16.549f)
-            )
+                end = Offset(13.202f, 16.549f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(7.858f, 2f, 4.5f, 5.358f, 4.5f, 9.5f)
@@ -87,11 +87,11 @@ public val FluentUi.Colored.LocationRipple: ImageVector by lazy(LazyThreadSafety
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFFECBE6)
+                    1f to Color(0xFFFECBE6),
                 ),
                 start = Offset(9.79f, 9.721f),
-                end = Offset(12.394f, 12.428f)
-            )
+                end = Offset(12.394f, 12.428f),
+            ),
         ) {
             moveTo(14.5f, 9.5f)
             curveTo(14.5f, 10.881f, 13.381f, 12f, 12f, 12f)

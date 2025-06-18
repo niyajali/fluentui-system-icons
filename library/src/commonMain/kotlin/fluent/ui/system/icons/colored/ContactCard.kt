@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.ContactCard: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.ContactCard: ImageVector by lazy(LazyThreadSafetyMod
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB3E0FF),
-                    1f to Color(0xFF8CD0FF)
+                    1f to Color(0xFF8CD0FF),
                 ),
                 start = Offset(9.143f, 4f),
-                end = Offset(14.312f, 19.95f)
-            )
+                end = Offset(14.312f, 19.95f),
+            ),
         ) {
             moveTo(19.75f, 4f)
             curveTo(20.993f, 4f, 22f, 5.007f, 22f, 6.25f)
@@ -70,12 +70,12 @@ public val FluentUi.Colored.ContactCard: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.447f to Color(0x00FF6CE8),
-                    1f to Color(0xFFFF6CE8)
+                    1f to Color(0xFFFF6CE8),
                 ),
                 start = Offset(15.095f, 5.965f),
-                end = Offset(19.486f, 28.797f)
+                end = Offset(19.486f, 28.797f),
             ),
-            fillAlpha = 0.7f
+            fillAlpha = 0.7f,
         ) {
             moveTo(19.75f, 4f)
             curveTo(20.993f, 4f, 22f, 5.007f, 22f, 6.25f)
@@ -92,11 +92,11 @@ public val FluentUi.Colored.ContactCard: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0078D4),
-                    1f to Color(0xFF0067BF)
+                    1f to Color(0xFF0067BF),
                 ),
                 start = Offset(14.956f, 8.924f),
-                end = Offset(17.097f, 18.686f)
-            )
+                end = Offset(17.097f, 18.686f),
+            ),
         ) {
             moveTo(13.252f, 12.996f)
             horizontalLineTo(17.75f)
@@ -127,11 +127,11 @@ public val FluentUi.Colored.ContactCard: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(5.5f, 10.678f),
-                end = Offset(6.693f, 15.92f)
-            )
+                end = Offset(6.693f, 15.92f),
+            ),
         ) {
             moveTo(9.75f, 12.5f)
             curveTo(10.164f, 12.5f, 10.5f, 12.836f, 10.5f, 13.25f)
@@ -149,11 +149,11 @@ public val FluentUi.Colored.ContactCard: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(6.5f, 7.502f),
-                end = Offset(8.742f, 11.342f)
-            )
+                end = Offset(8.742f, 11.342f),
+            ),
         ) {
             moveTo(8f, 8.502f)
             curveTo(8.828f, 8.502f, 9.5f, 9.174f, 9.5f, 10.002f)

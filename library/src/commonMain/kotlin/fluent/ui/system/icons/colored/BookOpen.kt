@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.BookOpen: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.BookOpen: ImageVector by lazy(LazyThreadSafetyMode.N
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF20AC9D),
-                    0.908f to Color(0xFF2052CB)
+                    0.908f to Color(0xFF2052CB),
                 ),
                 start = Offset(3.875f, 4.571f),
-                end = Offset(7.289f, 24.157f)
-            )
+                end = Offset(7.289f, 24.157f),
+            ),
         ) {
             moveTo(2f, 6f)
             curveTo(2f, 4.895f, 2.895f, 4f, 4f, 4f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.BookOpen: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF20AC9D),
-                    0.908f to Color(0xFF2052CB)
+                    0.908f to Color(0xFF2052CB),
                 ),
                 start = Offset(20.125f, 4.571f),
-                end = Offset(16.711f, 24.157f)
-            )
+                end = Offset(16.711f, 24.157f),
+            ),
         ) {
             moveTo(22f, 6f)
             curveTo(22f, 4.895f, 21.105f, 4f, 20f, 4f)
@@ -93,11 +93,11 @@ public val FluentUi.Colored.BookOpen: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB6EFFF),
-                    0.851f to Color(0xFF58AAFE)
+                    0.851f to Color(0xFF58AAFE),
                 ),
                 start = Offset(2.286f, 3.442f),
-                end = Offset(27.658f, 15.213f)
-            )
+                end = Offset(27.658f, 15.213f),
+            ),
         ) {
             moveTo(3.5f, 5f)
             curveTo(3.5f, 4.448f, 3.948f, 4f, 4.5f, 4f)
@@ -115,11 +115,11 @@ public val FluentUi.Colored.BookOpen: ImageVector by lazy(LazyThreadSafetyMode.N
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.123f to Color(0xFF9DEAFF),
-                    0.616f to Color(0xFF4894FE)
+                    0.616f to Color(0xFF4894FE),
                 ),
                 start = Offset(19.969f, 4.906f),
-                end = Offset(0.231f, 9.077f)
-            )
+                end = Offset(0.231f, 9.077f),
+            ),
         ) {
             moveTo(20.5f, 5f)
             curveTo(20.5f, 4.448f, 20.052f, 4f, 19.5f, 4f)

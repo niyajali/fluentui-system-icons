@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.ArrowClockwiseDashes: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.ArrowClockwiseDashes: ImageVector by lazy(LazyThread
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0FAFFF),
-                    0.923f to Color(0xFF0067BF)
+                    0.923f to Color(0xFF0067BF),
                 ),
                 start = Offset(5.536f, 3f),
-                end = Offset(21.03f, 26.625f)
-            )
+                end = Offset(21.03f, 26.625f),
+            ),
         ) {
             moveTo(13.241f, 3.085f)
             curveTo(13.688f, 3.147f, 14f, 3.543f, 14f, 3.994f)
@@ -139,11 +139,11 @@ public val FluentUi.Colored.ArrowClockwiseDashes: ImageVector by lazy(LazyThread
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(11.975f, 0.857f),
-                end = Offset(16.036f, 31.286f)
-            )
+                end = Offset(16.036f, 31.286f),
+            ),
         ) {
             moveTo(13.241f, 3.085f)
             curveTo(13.688f, 3.147f, 14f, 3.543f, 14f, 3.994f)

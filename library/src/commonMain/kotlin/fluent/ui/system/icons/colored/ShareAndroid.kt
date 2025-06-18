@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.ShareAndroid: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.ShareAndroid: ImageVector by lazy(LazyThreadSafetyMo
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB9C0C7),
-                    1f to Color(0xFF70777D)
+                    1f to Color(0xFF70777D),
                 ),
                 start = Offset(4.988f, 5.349f),
-                end = Offset(10.03f, 18.759f)
-            )
+                end = Offset(10.03f, 18.759f),
+            ),
         ) {
             moveTo(16.628f, 5.349f)
             lineTo(17.372f, 6.651f)
@@ -68,11 +68,11 @@ public val FluentUi.Colored.ShareAndroid: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.549f to Color(0xFF70777D),
-                    1f to Color(0x0070777D)
+                    1f to Color(0x0070777D),
                 ),
                 center = Offset(17f, 18f),
-                radius = 4.717f
-            )
+                radius = 4.717f,
+            ),
         ) {
             moveTo(16.628f, 5.349f)
             lineTo(17.372f, 6.651f)
@@ -87,11 +87,11 @@ public val FluentUi.Colored.ShareAndroid: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.549f to Color(0xFF70777D),
-                    1f to Color(0x0070777D)
+                    1f to Color(0x0070777D),
                 ),
                 center = Offset(6.5f, 12f),
-                radius = 4.5f
-            )
+                radius = 4.5f,
+            ),
         ) {
             moveTo(16.628f, 5.349f)
             lineTo(17.372f, 6.651f)
@@ -106,11 +106,11 @@ public val FluentUi.Colored.ShareAndroid: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.549f to Color(0xFF70777D),
-                    1f to Color(0x0070777D)
+                    1f to Color(0x0070777D),
                 ),
                 center = Offset(17f, 6f),
-                radius = 4.598f
-            )
+                radius = 4.598f,
+            ),
         ) {
             moveTo(16.628f, 5.349f)
             lineTo(17.372f, 6.651f)
@@ -125,11 +125,11 @@ public val FluentUi.Colored.ShareAndroid: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.529f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0078D4)
+                    1f to Color(0xFF0078D4),
                 ),
                 center = Offset(9.271f, 6.698f),
-                radius = 18.93f
-            )
+                radius = 18.93f,
+            ),
         ) {
             moveTo(20.5f, 18f)
             curveTo(20.5f, 19.933f, 18.933f, 21.5f, 17f, 21.5f)
@@ -142,11 +142,11 @@ public val FluentUi.Colored.ShareAndroid: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.529f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0078D4)
+                    1f to Color(0xFF0078D4),
                 ),
                 center = Offset(-1.229f, 0.698f),
-                radius = 18.93f
-            )
+                radius = 18.93f,
+            ),
         ) {
             moveTo(10f, 12f)
             curveTo(10f, 13.933f, 8.433f, 15.5f, 6.5f, 15.5f)
@@ -159,11 +159,11 @@ public val FluentUi.Colored.ShareAndroid: ImageVector by lazy(LazyThreadSafetyMo
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.529f to Color(0xFF0FAFFF),
-                    1f to Color(0xFF0078D4)
+                    1f to Color(0xFF0078D4),
                 ),
                 center = Offset(9.271f, -5.302f),
-                radius = 18.93f
-            )
+                radius = 18.93f,
+            ),
         ) {
             moveTo(20.5f, 6f)
             curveTo(20.5f, 7.933f, 18.933f, 9.5f, 17f, 9.5f)

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,18 +44,18 @@ public val FluentUi.Colored.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyM
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF43E5CA),
-                    1f to Color(0xFF0C74A1)
+                    1f to Color(0xFF0C74A1),
                 ),
                 start = Offset(17.714f, 27.143f),
-                end = Offset(14.271f, 18.684f)
+                end = Offset(14.271f, 18.684f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(8f, 18f)
             curveTo(8f, 15.791f, 9.791f, 14f, 12f, 14f)
@@ -74,13 +74,13 @@ public val FluentUi.Colored.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.08f to Color(0xFFE362F8),
-                    0.656f to Color(0x009966FF)
+                    0.656f to Color(0x009966FF),
                 ),
                 start = Offset(10.286f, 15.143f),
-                end = Offset(13.717f, 23.713f)
+                end = Offset(13.717f, 23.713f),
             ),
             fillAlpha = 0.8f,
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(8f, 18f)
             curveTo(8f, 15.791f, 9.791f, 14f, 12f, 14f)
@@ -99,11 +99,11 @@ public val FluentUi.Colored.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF43E5CA),
-                    1f to Color(0xFF1384B1)
+                    1f to Color(0xFF1384B1),
                 ),
                 start = Offset(3.625f, 6.282f),
-                end = Offset(15.699f, 18.832f)
-            )
+                end = Offset(15.699f, 18.832f),
+            ),
         ) {
             moveTo(9.076f, 4.318f)
             curveTo(9.786f, 2.845f, 11.755f, 2.545f, 12.871f, 3.741f)
@@ -120,12 +120,12 @@ public val FluentUi.Colored.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x009966FF),
-                    0.63f to Color(0xFFE362F8)
+                    0.63f to Color(0xFFE362F8),
                 ),
                 start = Offset(11.752f, 12.841f),
-                end = Offset(19.408f, 25.419f)
+                end = Offset(19.408f, 25.419f),
             ),
-            fillAlpha = 0.8f
+            fillAlpha = 0.8f,
         ) {
             moveTo(9.076f, 4.318f)
             curveTo(9.786f, 2.845f, 11.755f, 2.545f, 12.871f, 3.741f)
@@ -142,11 +142,11 @@ public val FluentUi.Colored.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.623f to Color(0xFFFB5937),
-                    0.935f to Color(0xFFFFA43D)
+                    0.935f to Color(0xFFFFA43D),
                 ),
                 center = Offset(7.212f, 17.047f),
-                radius = 23.227f
-            )
+                radius = 23.227f,
+            ),
         ) {
             moveTo(17.212f, 2.237f)
             curveTo(17.343f, 1.844f, 17.13f, 1.42f, 16.737f, 1.288f)

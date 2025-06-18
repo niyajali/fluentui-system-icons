@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.CalendarClock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -44,17 +44,17 @@ public val FluentUi.Colored.CalendarClock: ImageVector by lazy(LazyThreadSafetyM
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFB3E0FF),
-                    1f to Color(0xFF8CD0FF)
+                    1f to Color(0xFF8CD0FF),
                 ),
                 start = Offset(9.429f, 6.5f),
-                end = Offset(14.137f, 20.932f)
-            )
+                end = Offset(14.137f, 20.932f),
+            ),
         ) {
             moveTo(21f, 7.5f)
             verticalLineTo(17.75f)
@@ -70,11 +70,11 @@ public val FluentUi.Colored.CalendarClock: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00DCF8FF),
-                    1f to Color(0xB2FF6CE8)
+                    1f to Color(0xB2FF6CE8),
                 ),
                 start = Offset(13.929f, 12.432f),
-                end = Offset(16.625f, 24.267f)
-            )
+                end = Offset(16.625f, 24.267f),
+            ),
         ) {
             moveTo(21f, 7.5f)
             verticalLineTo(17.75f)
@@ -90,12 +90,12 @@ public val FluentUi.Colored.CalendarClock: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.535f to Color(0xFF4A43CB),
-                    1f to Color(0x004A43CB)
+                    1f to Color(0x004A43CB),
                 ),
                 center = Offset(17.786f, 19.023f),
-                radius = 8.568f
+                radius = 8.568f,
             ),
-            fillAlpha = 0.3f
+            fillAlpha = 0.3f,
         ) {
             moveTo(21f, 7.5f)
             verticalLineTo(17.75f)
@@ -111,11 +111,11 @@ public val FluentUi.Colored.CalendarClock: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0094F0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(3.723f, 3f),
-                end = Offset(5.356f, 11.537f)
-            )
+                end = Offset(5.356f, 11.537f),
+            ),
         ) {
             moveTo(17.75f, 3f)
             curveTo(19.545f, 3f, 21f, 4.455f, 21f, 6.25f)
@@ -130,11 +130,11 @@ public val FluentUi.Colored.CalendarClock: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF1EC8B0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(13.833f, 11.389f),
-                end = Offset(19.333f, 23.611f)
-            )
+                end = Offset(19.333f, 23.611f),
+            ),
         ) {
             moveTo(17.5f, 12f)
             curveTo(20.538f, 12f, 23f, 14.462f, 23f, 17.5f)
@@ -147,12 +147,12 @@ public val FluentUi.Colored.CalendarClock: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFD1D1FF)
+                    1f to Color(0xFFD1D1FF),
                 ),
                 start = Offset(17.306f, 14.612f),
-                end = Offset(16.398f, 17.88f)
+                end = Offset(16.398f, 17.88f),
             ),
-            pathFillType = PathFillType.EvenOdd
+            pathFillType = PathFillType.EvenOdd,
         ) {
             moveTo(17.5f, 14f)
             curveTo(17.776f, 14f, 18f, 14.224f, 18f, 14.5f)

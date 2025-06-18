@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.PersonHeart: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.PersonHeart: ImageVector by lazy(LazyThreadSafetyMod
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(5.808f, 15.064f),
-                end = Offset(8.394f, 23.319f)
-            )
+                end = Offset(8.394f, 23.319f),
+            ),
         ) {
             moveTo(15.754f, 14f)
             curveTo(16.996f, 14f, 18.003f, 15.007f, 18.003f, 16.249f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.PersonHeart: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(10.003f, 13.047f),
-                end = Offset(13.623f, 26.573f)
-            )
+                end = Offset(13.623f, 26.573f),
+            ),
         ) {
             moveTo(15.754f, 14f)
             curveTo(16.996f, 14f, 18.003f, 15.007f, 18.003f, 16.249f)
@@ -94,12 +94,12 @@ public val FluentUi.Colored.PersonHeart: ImageVector by lazy(LazyThreadSafetyMod
                 colorStops = arrayOf(
                     0.436f to Color(0xFF30116E),
                     0.715f to Color(0xCE30116E),
-                    1f to Color(0x0030116E)
+                    1f to Color(0x0030116E),
                 ),
                 center = Offset(16.5f, 19f),
-                radius = 8.439f
+                radius = 8.439f,
             ),
-            fillAlpha = 0.25f
+            fillAlpha = 0.25f,
         ) {
             moveTo(15.754f, 14f)
             curveTo(16.996f, 14f, 18.003f, 15.007f, 18.003f, 16.249f)
@@ -117,11 +117,11 @@ public val FluentUi.Colored.PersonHeart: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(7.379f, 3.334f),
-                end = Offset(12.475f, 11.472f)
-            )
+                end = Offset(12.475f, 11.472f),
+            ),
         ) {
             moveTo(10f, 2.005f)
             curveTo(12.762f, 2.005f, 15f, 4.243f, 15f, 7.005f)
@@ -134,11 +134,11 @@ public val FluentUi.Colored.PersonHeart: ImageVector by lazy(LazyThreadSafetyMod
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFC92CB),
-                    1f to Color(0xFFD7257D)
+                    1f to Color(0xFFD7257D),
                 ),
                 start = Offset(12.413f, 13.109f),
-                end = Offset(19.253f, 24.453f)
-            )
+                end = Offset(19.253f, 24.453f),
+            ),
         ) {
             moveTo(17.044f, 22.996f)
             curveTo(16.852f, 22.996f, 16.66f, 22.923f, 16.514f, 22.776f)

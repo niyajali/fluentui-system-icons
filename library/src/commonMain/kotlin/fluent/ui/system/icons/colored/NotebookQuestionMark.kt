@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.NotebookQuestionMark: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.NotebookQuestionMark: ImageVector by lazy(LazyThread
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFD373FC),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(18.5f, 0.501f),
-                end = Offset(27.052f, 20.789f)
-            )
+                end = Offset(27.052f, 20.789f),
+            ),
         ) {
             moveTo(18.5f, 15f)
             lineTo(20.25f, 15f)
@@ -96,11 +96,11 @@ public val FluentUi.Colored.NotebookQuestionMark: ImageVector by lazy(LazyThread
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFE587F2),
-                    1f to Color(0xFF816CDE)
+                    1f to Color(0xFF816CDE),
                 ),
                 start = Offset(2.125f, 2f),
-                end = Offset(1.006f, 24.381f)
-            )
+                end = Offset(1.006f, 24.381f),
+            ),
         ) {
             moveTo(16.749f, 2f)
             curveTo(17.992f, 2f, 18.999f, 3.007f, 18.999f, 4.25f)
@@ -117,12 +117,12 @@ public val FluentUi.Colored.NotebookQuestionMark: ImageVector by lazy(LazyThread
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.5f to Color(0x00DD3CE2),
-                    1f to Color(0xFFDD3CE2)
+                    1f to Color(0xFFDD3CE2),
                 ),
                 center = Offset(10.875f, 0.75f),
-                radius = 22.901f
+                radius = 22.901f,
             ),
-            fillAlpha = 0.5f
+            fillAlpha = 0.5f,
         ) {
             moveTo(16.749f, 2f)
             curveTo(17.992f, 2f, 18.999f, 3.007f, 18.999f, 4.25f)
@@ -139,11 +139,11 @@ public val FluentUi.Colored.NotebookQuestionMark: ImageVector by lazy(LazyThread
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDD3FF),
-                    1f to Color(0xFFF3D8FF)
+                    1f to Color(0xFFF3D8FF),
                 ),
                 start = Offset(8.687f, 5f),
-                end = Offset(17.134f, 10.128f)
-            )
+                end = Offset(17.134f, 10.128f),
+            ),
         ) {
             moveTo(15.249f, 5f)
             curveTo(15.663f, 5f, 15.999f, 5.336f, 15.999f, 5.75f)
@@ -160,11 +160,11 @@ public val FluentUi.Colored.NotebookQuestionMark: ImageVector by lazy(LazyThread
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFDC8AFD),
-                    1f to Color(0x00DC8AFD)
+                    1f to Color(0x00DC8AFD),
                 ),
                 center = Offset(9f, 16.688f),
-                radius = 12.668f
-            )
+                radius = 12.668f,
+            ),
         ) {
             moveTo(16.749f, 2f)
             curveTo(17.992f, 2f, 18.999f, 3.007f, 18.999f, 4.25f)
@@ -181,11 +181,11 @@ public val FluentUi.Colored.NotebookQuestionMark: ImageVector by lazy(LazyThread
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF2052CB),
-                    1f to Color(0x002052CB)
+                    1f to Color(0x002052CB),
                 ),
                 center = Offset(8.375f, 18.953f),
-                radius = 5.126f
-            )
+                radius = 5.126f,
+            ),
         ) {
             moveTo(16.749f, 2f)
             curveTo(17.992f, 2f, 18.999f, 3.007f, 18.999f, 4.25f)
@@ -202,11 +202,11 @@ public val FluentUi.Colored.NotebookQuestionMark: ImageVector by lazy(LazyThread
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0094F0),
-                    1f to Color(0xFF2052CB)
+                    1f to Color(0xFF2052CB),
                 ),
                 start = Offset(1f, 12f),
-                end = Offset(12f, 23f)
-            )
+                end = Offset(12f, 23f),
+            ),
         ) {
             moveTo(6.5f, 12f)
             curveTo(9.538f, 12f, 12f, 14.462f, 12f, 17.5f)
@@ -219,11 +219,11 @@ public val FluentUi.Colored.NotebookQuestionMark: ImageVector by lazy(LazyThread
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFCCEAFF)
+                    1f to Color(0xFFCCEAFF),
                 ),
                 start = Offset(4.971f, 14.128f),
-                end = Offset(7.113f, 21.311f)
-            )
+                end = Offset(7.113f, 21.311f),
+            ),
         ) {
             moveTo(6.5f, 19.88f)
             curveTo(6.155f, 19.88f, 5.875f, 20.16f, 5.875f, 20.504f)

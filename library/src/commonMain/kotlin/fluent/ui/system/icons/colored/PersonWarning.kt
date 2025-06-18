@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.PersonWarning: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.PersonWarning: ImageVector by lazy(LazyThreadSafetyM
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(7.808f, 15.064f),
-                end = Offset(10.394f, 23.319f)
-            )
+                end = Offset(10.394f, 23.319f),
+            ),
         ) {
             moveTo(17.754f, 14f)
             curveTo(18.996f, 14f, 20.003f, 15.007f, 20.003f, 16.249f)
@@ -71,11 +71,11 @@ public val FluentUi.Colored.PersonWarning: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0x00885EDB),
-                    1f to Color(0xFFE362F8)
+                    1f to Color(0xFFE362F8),
                 ),
                 start = Offset(12.003f, 13.047f),
-                end = Offset(15.623f, 26.573f)
-            )
+                end = Offset(15.623f, 26.573f),
+            ),
         ) {
             moveTo(17.754f, 14f)
             curveTo(18.996f, 14f, 20.003f, 15.007f, 20.003f, 16.249f)
@@ -93,12 +93,12 @@ public val FluentUi.Colored.PersonWarning: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0f to Color(0xBF0A1852),
-                    1f to Color(0x000A1852)
+                    1f to Color(0x000A1852),
                 ),
                 center = Offset(15.5f, 23.5f),
-                radius = 13.656f
+                radius = 13.656f,
             ),
-            fillAlpha = 0.75f
+            fillAlpha = 0.75f,
         ) {
             moveTo(17.754f, 14f)
             curveTo(18.996f, 14f, 20.003f, 15.007f, 20.003f, 16.249f)
@@ -116,11 +116,11 @@ public val FluentUi.Colored.PersonWarning: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0.125f to Color(0xFF9C6CFE),
-                    1f to Color(0xFF7A41DC)
+                    1f to Color(0xFF7A41DC),
                 ),
                 start = Offset(9.379f, 3.334f),
-                end = Offset(14.475f, 11.472f)
-            )
+                end = Offset(14.475f, 11.472f),
+            ),
         ) {
             moveTo(12f, 2.005f)
             curveTo(14.762f, 2.005f, 17f, 4.243f, 17f, 7.005f)
@@ -133,11 +133,11 @@ public val FluentUi.Colored.PersonWarning: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFFCD0F),
-                    1f to Color(0xFFFE8401)
+                    1f to Color(0xFFFE8401),
                 ),
                 start = Offset(13.723f, 10.281f),
-                end = Offset(20.941f, 24.032f)
-            )
+                end = Offset(20.941f, 24.032f),
+            ),
         ) {
             moveTo(16.161f, 12.83f)
             lineTo(12.164f, 20.829f)
@@ -152,11 +152,11 @@ public val FluentUi.Colored.PersonWarning: ImageVector by lazy(LazyThreadSafetyM
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF4A4A4A),
-                    1f to Color(0xFF212121)
+                    1f to Color(0xFF212121),
                 ),
                 start = Offset(16.169f, 14.995f),
-                end = Offset(19.376f, 20.697f)
-            )
+                end = Offset(19.376f, 20.697f),
+            ),
         ) {
             moveTo(18.004f, 15.496f)
             verticalLineTo(18.497f)

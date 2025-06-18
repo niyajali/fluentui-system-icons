@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Clock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.Clock: ImageVector by lazy(LazyThreadSafetyMode.NONE
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF1EC8B0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(5.333f, 0.889f),
-                end = Offset(15.333f, 23.111f)
-            )
+                end = Offset(15.333f, 23.111f),
+            ),
         ) {
             moveTo(12f, 2f)
             curveTo(6.477f, 2f, 2f, 6.477f, 2f, 12f)
@@ -66,11 +66,11 @@ public val FluentUi.Colored.Clock: ImageVector by lazy(LazyThreadSafetyMode.NONE
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFFFDFDFD),
-                    1f to Color(0xFFD1D1FF)
+                    1f to Color(0xFFD1D1FF),
                 ),
                 start = Offset(10.981f, 7.148f),
-                end = Offset(9.01f, 13.094f)
-            )
+                end = Offset(9.01f, 13.094f),
+            ),
         ) {
             moveTo(11.993f, 6.648f)
             curveTo(11.943f, 6.282f, 11.63f, 6f, 11.25f, 6f)

@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.ArrowTrendingLines: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.ArrowTrendingLines: ImageVector by lazy(LazyThreadSa
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF0094F0),
-                    1f to Color(0xFF2764E7)
+                    1f to Color(0xFF2764E7),
                 ),
                 start = Offset(21.109f, 9.308f),
-                end = Offset(0.978f, 20.334f)
-            )
+                end = Offset(0.978f, 20.334f),
+            ),
         ) {
             moveTo(5f, 18f)
             verticalLineTo(21f)
@@ -92,11 +92,11 @@ public val FluentUi.Colored.ArrowTrendingLines: ImageVector by lazy(LazyThreadSa
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF22918B),
-                    1f to Color(0xFF20AC9D)
+                    1f to Color(0xFF20AC9D),
                 ),
                 start = Offset(3.668f, 14f),
-                end = Offset(22.349f, 1.536f)
-            )
+                end = Offset(22.349f, 1.536f),
+            ),
         ) {
             moveTo(17f, 4f)
             curveTo(16.448f, 4f, 16f, 3.552f, 16f, 3f)

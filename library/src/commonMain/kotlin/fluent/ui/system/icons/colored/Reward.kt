@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020 Microsoft Corporation
@@ -33,9 +33,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentUi
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 public val FluentUi.Colored.Reward: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
@@ -43,17 +43,17 @@ public val FluentUi.Colored.Reward: ImageVector by lazy(LazyThreadSafetyMode.NON
         defaultWidth = 24.dp,
         defaultHeight = 24.dp,
         viewportWidth = 24f,
-        viewportHeight = 24f
+        viewportHeight = 24f,
     ).apply {
         path(
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF52D17C),
-                    1f to Color(0xFF1A7F7C)
+                    1f to Color(0xFF1A7F7C),
                 ),
                 start = Offset(22f, 2.858f),
-                end = Offset(14.966f, 10.309f)
-            )
+                end = Offset(14.966f, 10.309f),
+            ),
         ) {
             moveTo(16f, 11.65f)
             lineTo(20.662f, 9.202f)
@@ -69,11 +69,11 @@ public val FluentUi.Colored.Reward: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF52D17C),
-                    1f to Color(0xFF1A7F7C)
+                    1f to Color(0xFF1A7F7C),
                 ),
                 start = Offset(2f, 4.599f),
-                end = Offset(9.064f, 9.274f)
-            )
+                end = Offset(9.064f, 9.274f),
+            ),
         ) {
             moveTo(8f, 2f)
             horizontalLineTo(3.75f)
@@ -89,11 +89,11 @@ public val FluentUi.Colored.Reward: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.linearGradient(
                 colorStops = arrayOf(
                     0f to Color(0xFF76EB95),
-                    1f to Color(0xFF1EC8B0)
+                    1f to Color(0xFF1EC8B0),
                 ),
                 start = Offset(12f, 0.559f),
-                end = Offset(15.64f, 12.405f)
-            )
+                end = Offset(15.64f, 12.405f),
+            ),
         ) {
             moveTo(8f, 11.65f)
             verticalLineTo(2f)
@@ -108,11 +108,11 @@ public val FluentUi.Colored.Reward: ImageVector by lazy(LazyThreadSafetyMode.NON
             fill = Brush.radialGradient(
                 colorStops = arrayOf(
                     0.772f to Color(0xFFFFCD0F),
-                    0.991f to Color(0xFFE67505)
+                    0.991f to Color(0xFFE67505),
                 ),
                 center = Offset(-14.607f, -23f),
-                radius = 55.818f
-            )
+                radius = 55.818f,
+            ),
         ) {
             moveTo(17f, 17f)
             curveTo(17f, 19.761f, 14.761f, 22f, 12f, 22f)
