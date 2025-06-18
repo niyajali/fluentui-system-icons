@@ -29,34 +29,33 @@ plugins {
     alias(libs.plugins.androidLibrary) apply false
     alias(libs.plugins.bcv) apply false
     alias(libs.plugins.maven) apply false
-    alias(libs.plugins.spotless) apply true
 }
 
-private val ktlintVersion = "1.0.1"
-spotless {
-    kotlin {
-        target("**/*.kt")
-        targetExclude("**/build/**/*.kt")
-        targetExclude("spotless/copyright.kt")
-        ktlint(ktlintVersion).editorConfigOverride(
-            mapOf("android" to "true"),
-        )
-        licenseHeaderFile(rootProject.file("spotless/copyright.kt"))
-    }
-
-    format("kts") {
-        target("**/*.kts")
-        targetExclude("**/build/**/*.kts")
-        targetExclude("spotless/copyright.kts")
-        // Look for the first line that doesn't have a block comment (assumed to be the license)
-        licenseHeaderFile(rootProject.file("spotless/copyright.kts"), "(^(?![\\/ ]\\*).*$)")
-    }
-
-    format("xml") {
-        target("**/*.xml")
-        targetExclude("**/build/**/*.xml")
-        targetExclude("spotless/copyright.xml")
-        // Look for the first XML tag that isn't a comment (<!--) or the xml declaration (<?xml)
-        licenseHeaderFile(rootProject.file("spotless/copyright.xml"), "(<[^!?])")
-    }
-}
+//private val ktlintVersion = "1.0.1"
+//spotless {
+//    kotlin {
+//        target("**/*.kt")
+//        targetExclude("**/build/**/*.kt")
+//        targetExclude("spotless/copyright.kt")
+//        ktlint(ktlintVersion).editorConfigOverride(
+//            mapOf("android" to "true"),
+//        )
+//        licenseHeaderFile(rootProject.file("spotless/copyright.kt"))
+//    }
+//
+//    format("kts") {
+//        target("**/*.kts")
+//        targetExclude("**/build/**/*.kts")
+//        targetExclude("spotless/copyright.kts")
+//        // Look for the first line that doesn't have a block comment (assumed to be the license)
+//        licenseHeaderFile(rootProject.file("spotless/copyright.kts"), "(^(?![\\/ ]\\*).*$)")
+//    }
+//
+//    format("xml") {
+//        target("**/*.xml")
+//        targetExclude("**/build/**/*.xml")
+//        targetExclude("spotless/copyright.xml")
+//        // Look for the first XML tag that isn't a comment (<!--) or the xml declaration (<?xml)
+//        licenseHeaderFile(rootProject.file("spotless/copyright.xml"), "(<[^!?])")
+//    }
+//}
