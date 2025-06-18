@@ -6,10 +6,11 @@
   "scripts": {
     "generate": "node generate-icons.js",
     "watch": "node generate-icons.js --watch",
-    "serve": "npx http-server . -p 3000 -o",
+    "serve": "npx http-server . -p 3001 -o",
     "build": "npm run generate",
     "dev": "npm run generate && npm run serve",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "stop": "npm run stop"
   },
   "keywords": [
     "fluentui",

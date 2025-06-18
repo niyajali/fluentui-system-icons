@@ -410,7 +410,7 @@
 
         <div class="filters" id="filtersContainer">
             <!-- Filter buttons will be generated dynamically -->
-            <div class="stats" id="iconStats">
+            <div class="stats" id="iconStatsContainer">
                 <div class="loading-indicator show">Loading icons...</div>
                 <div class="stats-text" style="display: none;">Showing 0 icons</div>
             </div>
@@ -457,14 +457,14 @@
     // DOM elements
     const iconGrid = document.getElementById('iconGrid');
     const searchInput = document.getElementById('searchInput');
-    const iconStats = document.getElementById('iconStats');
+    const iconStatsContainer = document.getElementById('iconStatsContainer');
     const noResults = document.getElementById('noResults');
     const themeToggle = document.getElementById('themeToggle');
     const refreshBtn = document.getElementById('refreshBtn');
     const filtersContainer = document.getElementById('filtersContainer');
     const errorContainer = document.getElementById('errorContainer');
-    const loadingIndicator = iconStats.querySelector('.loading-indicator');
-    const statsText = iconStats.querySelector('.stats-text');
+    const loadingIndicator = iconStatsContainer.querySelector('.loading-indicator');
+    const statsText = iconStatsContainer.querySelector('.stats-text');
 
     // Initialize the app
     function init() {
@@ -536,7 +536,7 @@
         allBtn.className = 'filter-btn active';
         allBtn.dataset.category = 'all';
         allBtn.innerHTML = `All Icons <span class="badge">${allIcons.length}</span>`;
-        filtersContainer.insertBefore(allBtn, iconStats);
+        filtersContainer.insertBefore(allBtn, iconStatsContainer);
 
         // Create category buttons
         allCategories.forEach(category => {
@@ -557,7 +557,7 @@
 
             const count = categoryCounts[category] || 0;
             btn.innerHTML = `${displayName} <span class="badge">${count}</span>`;
-            filtersContainer.insertBefore(btn, iconStats);
+            filtersContainer.insertBefore(btn, iconStatsContainer);
         });
 
         // Attach event listeners to all filter buttons
