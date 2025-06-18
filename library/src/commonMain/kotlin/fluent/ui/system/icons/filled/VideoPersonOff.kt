@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.VideoPersonOff: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.VideoPersonOff: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.VideoPersonOff",
         defaultWidth = 24.dp,
@@ -97,6 +97,6 @@ public val FluentUi.Filled.VideoPersonOff: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun VideoPersonOffPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.VideoPersonOff, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.VideoPersonOff, contentDescription = null)
     }
 }

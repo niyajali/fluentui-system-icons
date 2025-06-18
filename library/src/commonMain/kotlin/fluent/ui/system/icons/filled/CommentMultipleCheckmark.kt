@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.CommentMultipleCheckmark: ImageVector by
+public val FluentIcons.Filled.CommentMultipleCheckmark: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.CommentMultipleCheckmark",
@@ -97,6 +97,6 @@ public val FluentUi.Filled.CommentMultipleCheckmark: ImageVector by
 @Composable
 private fun CommentMultipleCheckmarkPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.CommentMultipleCheckmark, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.CommentMultipleCheckmark, contentDescription = null)
     }
 }

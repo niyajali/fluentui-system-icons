@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ChatMultipleCheckmark: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ChatMultipleCheckmark: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ChatMultipleCheckmark",
         defaultWidth = 24.dp,
@@ -97,6 +97,6 @@ public val FluentUi.Filled.ChatMultipleCheckmark: ImageVector by lazy(LazyThread
 @Composable
 private fun ChatMultipleCheckmarkPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ChatMultipleCheckmark, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ChatMultipleCheckmark, contentDescription = null)
     }
 }

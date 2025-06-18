@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Alert: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Alert: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Alert",
         defaultWidth = 24.dp,
@@ -94,6 +94,6 @@ public val FluentUi.Colored.Alert: ImageVector by lazy(LazyThreadSafetyMode.NONE
 @Composable
 private fun AlertPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Alert, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Alert, contentDescription = null)
     }
 }

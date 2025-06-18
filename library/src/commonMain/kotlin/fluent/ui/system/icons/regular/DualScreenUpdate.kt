@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.DualScreenUpdate: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.DualScreenUpdate: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.DualScreenUpdate",
         defaultWidth = 24.dp,
@@ -116,6 +116,6 @@ public val FluentUi.Regular.DualScreenUpdate: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun DualScreenUpdatePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.DualScreenUpdate, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.DualScreenUpdate, contentDescription = null)
     }
 }

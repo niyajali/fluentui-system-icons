@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.SlideContent: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.SlideContent: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.SlideContent",
         defaultWidth = 24.dp,
@@ -107,6 +107,6 @@ public val FluentUi.Regular.SlideContent: ImageVector by lazy(LazyThreadSafetyMo
 @Composable
 private fun SlideContentPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.SlideContent, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.SlideContent, contentDescription = null)
     }
 }

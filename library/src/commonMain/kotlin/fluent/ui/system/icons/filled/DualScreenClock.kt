@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.DualScreenClock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.DualScreenClock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.DualScreenClock",
         defaultWidth = 24.dp,
@@ -114,6 +114,6 @@ public val FluentUi.Filled.DualScreenClock: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun DualScreenClockPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.DualScreenClock, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.DualScreenClock, contentDescription = null)
     }
 }

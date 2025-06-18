@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TextColumnOneWideLightning: ImageVector by
+public val FluentIcons.Filled.TextColumnOneWideLightning: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.TextColumnOneWideLightning",
@@ -101,6 +101,6 @@ public val FluentUi.Filled.TextColumnOneWideLightning: ImageVector by
 @Composable
 private fun TextColumnOneWideLightningPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TextColumnOneWideLightning, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextColumnOneWideLightning, contentDescription = null)
     }
 }

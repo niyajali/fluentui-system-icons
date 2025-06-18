@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.LearningApp: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.LearningApp: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.LearningApp",
         defaultWidth = 24.dp,
@@ -116,6 +116,6 @@ public val FluentUi.Regular.LearningApp: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun LearningAppPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.LearningApp, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.LearningApp, contentDescription = null)
     }
 }

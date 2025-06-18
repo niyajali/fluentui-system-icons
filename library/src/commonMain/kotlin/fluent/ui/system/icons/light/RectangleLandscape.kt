@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Light.RectangleLandscape: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Light.RectangleLandscape: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Light.RectangleLandscape",
         defaultWidth = 32.dp,
@@ -73,6 +73,6 @@ public val FluentUi.Light.RectangleLandscape: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun RectangleLandscapePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Light.RectangleLandscape, contentDescription = null)
+        Image(imageVector = FluentIcons.Light.RectangleLandscape, contentDescription = null)
     }
 }

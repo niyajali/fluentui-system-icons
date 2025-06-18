@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.DualScreenArrowRight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.DualScreenArrowRight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.DualScreenArrowRight",
         defaultWidth = 24.dp,
@@ -138,6 +138,6 @@ public val FluentUi.Regular.DualScreenArrowRight: ImageVector by lazy(LazyThread
 @Composable
 private fun DualScreenArrowRightPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.DualScreenArrowRight, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.DualScreenArrowRight, contentDescription = null)
     }
 }

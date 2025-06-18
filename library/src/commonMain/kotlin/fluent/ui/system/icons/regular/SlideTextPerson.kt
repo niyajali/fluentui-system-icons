@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.SlideTextPerson: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.SlideTextPerson: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.SlideTextPerson",
         defaultWidth = 24.dp,
@@ -113,6 +113,6 @@ public val FluentUi.Regular.SlideTextPerson: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun SlideTextPersonPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.SlideTextPerson, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.SlideTextPerson, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.AutoFitHeight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.AutoFitHeight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.AutoFitHeight",
         defaultWidth = 24.dp,
@@ -107,6 +107,6 @@ public val FluentUi.Regular.AutoFitHeight: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun AutoFitHeightPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.AutoFitHeight, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.AutoFitHeight, contentDescription = null)
     }
 }

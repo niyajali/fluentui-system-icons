@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TableColumnTopBottomArrowRepeatAll: ImageVector by
+public val FluentIcons.Filled.TableColumnTopBottomArrowRepeatAll: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.TableColumnTopBottomArrowRepeatAll",
@@ -152,6 +152,6 @@ public val FluentUi.Filled.TableColumnTopBottomArrowRepeatAll: ImageVector by
 @Composable
 private fun TableColumnTopBottomArrowRepeatAllPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TableColumnTopBottomArrowRepeatAll, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TableColumnTopBottomArrowRepeatAll, contentDescription = null)
     }
 }

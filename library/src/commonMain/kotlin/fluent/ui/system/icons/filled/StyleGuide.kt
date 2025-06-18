@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.StyleGuide: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.StyleGuide: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.StyleGuide",
         defaultWidth = 24.dp,
@@ -83,6 +83,6 @@ public val FluentUi.Filled.StyleGuide: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun StyleGuidePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.StyleGuide, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.StyleGuide, contentDescription = null)
     }
 }

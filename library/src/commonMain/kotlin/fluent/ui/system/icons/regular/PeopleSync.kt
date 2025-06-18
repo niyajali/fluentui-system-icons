@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.PeopleSync: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.PeopleSync: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.PeopleSync",
         defaultWidth = 24.dp,
@@ -144,6 +144,6 @@ public val FluentUi.Regular.PeopleSync: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun PeopleSyncPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.PeopleSync, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.PeopleSync, contentDescription = null)
     }
 }

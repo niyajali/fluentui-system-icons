@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TextHeader3LinesCaret: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TextHeader3LinesCaret: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TextHeader3LinesCaret",
         defaultWidth = 24.dp,
@@ -123,6 +123,6 @@ public val FluentUi.Filled.TextHeader3LinesCaret: ImageVector by lazy(LazyThread
 @Composable
 private fun TextHeader3LinesCaretPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TextHeader3LinesCaret, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextHeader3LinesCaret, contentDescription = null)
     }
 }

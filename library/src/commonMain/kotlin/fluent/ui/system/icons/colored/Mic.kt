@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Mic: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Mic: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Mic",
         defaultWidth = 24.dp,
@@ -111,6 +111,6 @@ public val FluentUi.Colored.Mic: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
 @Composable
 private fun MicPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Mic, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Mic, contentDescription = null)
     }
 }

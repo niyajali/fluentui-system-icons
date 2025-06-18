@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Autosum: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Autosum: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Autosum",
         defaultWidth = 24.dp,
@@ -72,6 +72,6 @@ public val FluentUi.Regular.Autosum: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun AutosumPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Autosum, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Autosum, contentDescription = null)
     }
 }

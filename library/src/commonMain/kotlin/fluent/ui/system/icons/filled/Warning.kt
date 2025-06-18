@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.Warning: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.Warning: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.Warning",
         defaultWidth = 24.dp,
@@ -77,6 +77,6 @@ public val FluentUi.Filled.Warning: ImageVector by lazy(LazyThreadSafetyMode.NON
 @Composable
 private fun WarningPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.Warning, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.Warning, contentDescription = null)
     }
 }

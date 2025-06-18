@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.PanelLeftText: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.PanelLeftText: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.PanelLeftText",
         defaultWidth = 24.dp,
@@ -103,6 +103,6 @@ public val FluentUi.Regular.PanelLeftText: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun PanelLeftTextPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.PanelLeftText, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.PanelLeftText, contentDescription = null)
     }
 }

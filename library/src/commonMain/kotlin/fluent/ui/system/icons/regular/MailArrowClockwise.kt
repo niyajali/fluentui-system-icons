@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.MailArrowClockwise: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.MailArrowClockwise: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.MailArrowClockwise",
         defaultWidth = 24.dp,
@@ -108,6 +108,6 @@ public val FluentUi.Regular.MailArrowClockwise: ImageVector by lazy(LazyThreadSa
 @Composable
 private fun MailArrowClockwisePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.MailArrowClockwise, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.MailArrowClockwise, contentDescription = null)
     }
 }

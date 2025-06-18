@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.BookOpenGlobe: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.BookOpenGlobe: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.BookOpenGlobe",
         defaultWidth = 24.dp,
@@ -136,6 +136,6 @@ public val FluentUi.Regular.BookOpenGlobe: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun BookOpenGlobePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.BookOpenGlobe, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.BookOpenGlobe, contentDescription = null)
     }
 }

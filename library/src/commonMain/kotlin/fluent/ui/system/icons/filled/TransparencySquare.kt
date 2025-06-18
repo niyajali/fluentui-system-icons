@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TransparencySquare: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TransparencySquare: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TransparencySquare",
         defaultWidth = 24.dp,
@@ -105,6 +105,6 @@ public val FluentUi.Filled.TransparencySquare: ImageVector by lazy(LazyThreadSaf
 @Composable
 private fun TransparencySquarePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TransparencySquare, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TransparencySquare, contentDescription = null)
     }
 }

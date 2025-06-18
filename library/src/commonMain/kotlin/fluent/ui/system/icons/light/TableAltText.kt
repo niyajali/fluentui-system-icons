@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Light.TableAltText: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Light.TableAltText: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Light.TableAltText",
         defaultWidth = 32.dp,
@@ -136,6 +136,6 @@ public val FluentUi.Light.TableAltText: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun TableAltTextPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Light.TableAltText, contentDescription = null)
+        Image(imageVector = FluentIcons.Light.TableAltText, contentDescription = null)
     }
 }

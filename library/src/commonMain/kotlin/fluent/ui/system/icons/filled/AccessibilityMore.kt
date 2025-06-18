@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.AccessibilityMore: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.AccessibilityMore: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.AccessibilityMore",
         defaultWidth = 24.dp,
@@ -109,6 +109,6 @@ public val FluentUi.Filled.AccessibilityMore: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun AccessibilityMorePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.AccessibilityMore, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.AccessibilityMore, contentDescription = null)
     }
 }

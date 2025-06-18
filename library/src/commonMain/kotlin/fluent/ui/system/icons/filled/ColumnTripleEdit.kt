@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ColumnTripleEdit: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ColumnTripleEdit: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ColumnTripleEdit",
         defaultWidth = 24.dp,
@@ -100,6 +100,6 @@ public val FluentUi.Filled.ColumnTripleEdit: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun ColumnTripleEditPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ColumnTripleEdit, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ColumnTripleEdit, contentDescription = null)
     }
 }

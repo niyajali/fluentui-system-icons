@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.ImageCopy: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.ImageCopy: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.ImageCopy",
         defaultWidth = 24.dp,
@@ -104,6 +104,6 @@ public val FluentUi.Regular.ImageCopy: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun ImageCopyPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.ImageCopy, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.ImageCopy, contentDescription = null)
     }
 }

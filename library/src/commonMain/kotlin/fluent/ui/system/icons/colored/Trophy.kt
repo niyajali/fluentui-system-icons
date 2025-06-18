@@ -36,10 +36,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Trophy: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Trophy: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Trophy",
         defaultWidth = 24.dp,
@@ -258,6 +258,6 @@ public val FluentUi.Colored.Trophy: ImageVector by lazy(LazyThreadSafetyMode.NON
 @Composable
 private fun TrophyPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Trophy, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Trophy, contentDescription = null)
     }
 }

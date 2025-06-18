@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.DataTrending: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.DataTrending: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.DataTrending",
         defaultWidth = 24.dp,
@@ -109,6 +109,6 @@ public val FluentUi.Colored.DataTrending: ImageVector by lazy(LazyThreadSafetyMo
 @Composable
 private fun DataTrendingPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.DataTrending, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.DataTrending, contentDescription = null)
     }
 }

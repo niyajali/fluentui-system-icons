@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.AlignTop: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.AlignTop: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.AlignTop",
         defaultWidth = 24.dp,
@@ -81,6 +81,6 @@ public val FluentUi.Filled.AlignTop: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun AlignTopPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.AlignTop, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.AlignTop, contentDescription = null)
     }
 }

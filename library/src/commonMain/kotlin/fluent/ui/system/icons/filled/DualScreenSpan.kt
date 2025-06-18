@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.DualScreenSpan: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.DualScreenSpan: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.DualScreenSpan",
         defaultWidth = 24.dp,
@@ -97,6 +97,6 @@ public val FluentUi.Filled.DualScreenSpan: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun DualScreenSpanPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.DualScreenSpan, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.DualScreenSpan, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.ArrowCircleRight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.ArrowCircleRight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.ArrowCircleRight",
         defaultWidth = 24.dp,
@@ -88,6 +88,6 @@ public val FluentUi.Regular.ArrowCircleRight: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun ArrowCircleRightPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.ArrowCircleRight, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.ArrowCircleRight, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TextBulletListTree: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TextBulletListTree: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TextBulletListTree",
         defaultWidth = 24.dp,
@@ -107,6 +107,6 @@ public val FluentUi.Filled.TextBulletListTree: ImageVector by lazy(LazyThreadSaf
 @Composable
 private fun TextBulletListTreePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TextBulletListTree, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextBulletListTree, contentDescription = null)
     }
 }

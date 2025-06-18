@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.Home: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.Home: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.Home",
         defaultWidth = 24.dp,
@@ -73,6 +73,6 @@ public val FluentUi.Filled.Home: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
 @Composable
 private fun HomePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.Home, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.Home, contentDescription = null)
     }
 }

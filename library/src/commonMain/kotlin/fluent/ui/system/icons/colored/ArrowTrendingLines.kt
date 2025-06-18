@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ArrowTrendingLines: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ArrowTrendingLines: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ArrowTrendingLines",
         defaultWidth = 24.dp,
@@ -128,6 +128,6 @@ public val FluentUi.Colored.ArrowTrendingLines: ImageVector by lazy(LazyThreadSa
 @Composable
 private fun ArrowTrendingLinesPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ArrowTrendingLines, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ArrowTrendingLines, contentDescription = null)
     }
 }

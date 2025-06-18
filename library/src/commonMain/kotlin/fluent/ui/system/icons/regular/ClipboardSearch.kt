@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.ClipboardSearch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.ClipboardSearch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.ClipboardSearch",
         defaultWidth = 24.dp,
@@ -108,6 +108,6 @@ public val FluentUi.Regular.ClipboardSearch: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun ClipboardSearchPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.ClipboardSearch, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.ClipboardSearch, contentDescription = null)
     }
 }

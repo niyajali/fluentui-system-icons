@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.CalendarLock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.CalendarLock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.CalendarLock",
         defaultWidth = 24.dp,
@@ -101,6 +101,6 @@ public val FluentUi.Filled.CalendarLock: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun CalendarLockPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.CalendarLock, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.CalendarLock, contentDescription = null)
     }
 }

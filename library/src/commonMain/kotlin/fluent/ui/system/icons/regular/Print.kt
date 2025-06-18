@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Print: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Print: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Print",
         defaultWidth = 24.dp,
@@ -109,6 +109,6 @@ public val FluentUi.Regular.Print: ImageVector by lazy(LazyThreadSafetyMode.NONE
 @Composable
 private fun PrintPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Print, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Print, contentDescription = null)
     }
 }

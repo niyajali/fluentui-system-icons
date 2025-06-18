@@ -35,10 +35,10 @@ import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ShieldCheckmark: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ShieldCheckmark: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ShieldCheckmark",
         defaultWidth = 24.dp,
@@ -142,6 +142,6 @@ public val FluentUi.Colored.ShieldCheckmark: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun ShieldCheckmarkPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ShieldCheckmark, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ShieldCheckmark, contentDescription = null)
     }
 }

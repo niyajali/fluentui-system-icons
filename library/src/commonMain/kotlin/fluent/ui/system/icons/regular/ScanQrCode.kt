@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.ScanQrCode: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.ScanQrCode: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.ScanQrCode",
         defaultWidth = 24.dp,
@@ -127,6 +127,6 @@ public val FluentUi.Regular.ScanQrCode: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun ScanQrCodePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.ScanQrCode, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.ScanQrCode, contentDescription = null)
     }
 }

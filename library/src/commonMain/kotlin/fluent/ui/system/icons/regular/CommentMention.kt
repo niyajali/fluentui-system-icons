@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.CommentMention: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.CommentMention: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.CommentMention",
         defaultWidth = 24.dp,
@@ -112,6 +112,6 @@ public val FluentUi.Regular.CommentMention: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun CommentMentionPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.CommentMention, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.CommentMention, contentDescription = null)
     }
 }

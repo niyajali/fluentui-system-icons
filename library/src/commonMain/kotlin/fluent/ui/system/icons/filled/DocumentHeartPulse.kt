@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.DocumentHeartPulse: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.DocumentHeartPulse: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.DocumentHeartPulse",
         defaultWidth = 24.dp,
@@ -130,6 +130,6 @@ public val FluentUi.Filled.DocumentHeartPulse: ImageVector by lazy(LazyThreadSaf
 @Composable
 private fun DocumentHeartPulsePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.DocumentHeartPulse, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.DocumentHeartPulse, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TextBulletList90: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TextBulletList90: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TextBulletList90",
         defaultWidth = 24.dp,
@@ -101,6 +101,6 @@ public val FluentUi.Filled.TextBulletList90: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun TextBulletList90Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TextBulletList90, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextBulletList90, contentDescription = null)
     }
 }

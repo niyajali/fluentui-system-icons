@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.ArrowCounterclockwiseInfo: ImageVector by
+public val FluentIcons.Regular.ArrowCounterclockwiseInfo: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Regular.ArrowCounterclockwiseInfo",
@@ -101,6 +101,6 @@ public val FluentUi.Regular.ArrowCounterclockwiseInfo: ImageVector by
 @Composable
 private fun ArrowCounterclockwiseInfoPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.ArrowCounterclockwiseInfo, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.ArrowCounterclockwiseInfo, contentDescription = null)
     }
 }

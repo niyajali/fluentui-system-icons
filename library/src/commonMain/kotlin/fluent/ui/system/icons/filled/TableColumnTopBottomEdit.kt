@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TableColumnTopBottomEdit: ImageVector by
+public val FluentIcons.Filled.TableColumnTopBottomEdit: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.TableColumnTopBottomEdit",
@@ -118,6 +118,6 @@ public val FluentUi.Filled.TableColumnTopBottomEdit: ImageVector by
 @Composable
 private fun TableColumnTopBottomEditPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TableColumnTopBottomEdit, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TableColumnTopBottomEdit, contentDescription = null)
     }
 }

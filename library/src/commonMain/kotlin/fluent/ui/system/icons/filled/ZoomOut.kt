@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ZoomOut: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ZoomOut: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ZoomOut",
         defaultWidth = 24.dp,
@@ -73,6 +73,6 @@ public val FluentUi.Filled.ZoomOut: ImageVector by lazy(LazyThreadSafetyMode.NON
 @Composable
 private fun ZoomOutPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ZoomOut, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ZoomOut, contentDescription = null)
     }
 }

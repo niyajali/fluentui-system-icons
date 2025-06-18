@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.VideoPersonStar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.VideoPersonStar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.VideoPersonStar",
         defaultWidth = 24.dp,
@@ -105,6 +105,6 @@ public val FluentUi.Filled.VideoPersonStar: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun VideoPersonStarPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.VideoPersonStar, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.VideoPersonStar, contentDescription = null)
     }
 }

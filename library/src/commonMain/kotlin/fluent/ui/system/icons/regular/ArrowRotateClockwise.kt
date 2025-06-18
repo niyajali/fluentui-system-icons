@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.ArrowRotateClockwise: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.ArrowRotateClockwise: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.ArrowRotateClockwise",
         defaultWidth = 24.dp,
@@ -87,6 +87,6 @@ public val FluentUi.Regular.ArrowRotateClockwise: ImageVector by lazy(LazyThread
 @Composable
 private fun ArrowRotateClockwisePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.ArrowRotateClockwise, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.ArrowRotateClockwise, contentDescription = null)
     }
 }

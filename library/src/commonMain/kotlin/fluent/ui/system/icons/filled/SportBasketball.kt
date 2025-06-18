@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.SportBasketball: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.SportBasketball: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.SportBasketball",
         defaultWidth = 24.dp,
@@ -124,6 +124,6 @@ public val FluentUi.Filled.SportBasketball: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun SportBasketballPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.SportBasketball, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.SportBasketball, contentDescription = null)
     }
 }

@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.CalendarEdit: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.CalendarEdit: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.CalendarEdit",
         defaultWidth = 24.dp,
@@ -248,6 +248,6 @@ public val FluentUi.Colored.CalendarEdit: ImageVector by lazy(LazyThreadSafetyMo
 @Composable
 private fun CalendarEditPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.CalendarEdit, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.CalendarEdit, contentDescription = null)
     }
 }

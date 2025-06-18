@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.CropInterimOff: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.CropInterimOff: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.CropInterimOff",
         defaultWidth = 24.dp,
@@ -160,6 +160,6 @@ public val FluentUi.Regular.CropInterimOff: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun CropInterimOffPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.CropInterimOff, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.CropInterimOff, contentDescription = null)
     }
 }

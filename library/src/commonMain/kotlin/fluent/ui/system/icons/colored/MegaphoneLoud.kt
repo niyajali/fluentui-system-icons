@@ -35,10 +35,10 @@ import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.MegaphoneLoud",
         defaultWidth = 24.dp,
@@ -180,6 +180,6 @@ public val FluentUi.Colored.MegaphoneLoud: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun MegaphoneLoudPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.MegaphoneLoud, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.MegaphoneLoud, contentDescription = null)
     }
 }

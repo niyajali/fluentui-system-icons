@@ -35,10 +35,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Molecule",
         defaultWidth = 24.dp,
@@ -222,6 +222,6 @@ public val FluentUi.Colored.Molecule: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun MoleculePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Molecule, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Molecule, contentDescription = null)
     }
 }

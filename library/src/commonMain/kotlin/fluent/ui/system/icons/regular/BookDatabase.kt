@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.BookDatabase: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.BookDatabase: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.BookDatabase",
         defaultWidth = 24.dp,
@@ -114,6 +114,6 @@ public val FluentUi.Regular.BookDatabase: ImageVector by lazy(LazyThreadSafetyMo
 @Composable
 private fun BookDatabasePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.BookDatabase, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.BookDatabase, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Payment: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Payment: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Payment",
         defaultWidth = 24.dp,
@@ -87,6 +87,6 @@ public val FluentUi.Regular.Payment: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun PaymentPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Payment, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Payment, contentDescription = null)
     }
 }

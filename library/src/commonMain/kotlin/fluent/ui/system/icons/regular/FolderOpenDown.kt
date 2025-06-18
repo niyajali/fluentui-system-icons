@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.FolderOpenDown: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.FolderOpenDown: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.FolderOpenDown",
         defaultWidth = 24.dp,
@@ -95,6 +95,6 @@ public val FluentUi.Regular.FolderOpenDown: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun FolderOpenDownPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.FolderOpenDown, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.FolderOpenDown, contentDescription = null)
     }
 }

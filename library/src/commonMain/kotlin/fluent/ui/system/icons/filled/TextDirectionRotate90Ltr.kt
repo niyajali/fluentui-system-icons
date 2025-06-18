@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TextDirectionRotate90Ltr: ImageVector by
+public val FluentIcons.Filled.TextDirectionRotate90Ltr: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.TextDirectionRotate90Ltr",
@@ -102,6 +102,6 @@ public val FluentUi.Filled.TextDirectionRotate90Ltr: ImageVector by
 @Composable
 private fun TextDirectionRotate90LtrPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TextDirectionRotate90Ltr, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextDirectionRotate90Ltr, contentDescription = null)
     }
 }

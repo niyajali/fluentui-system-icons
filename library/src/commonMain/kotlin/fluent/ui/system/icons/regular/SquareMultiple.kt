@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.SquareMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.SquareMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.SquareMultiple",
         defaultWidth = 24.dp,
@@ -87,6 +87,6 @@ public val FluentUi.Regular.SquareMultiple: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun SquareMultiplePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.SquareMultiple, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.SquareMultiple, contentDescription = null)
     }
 }

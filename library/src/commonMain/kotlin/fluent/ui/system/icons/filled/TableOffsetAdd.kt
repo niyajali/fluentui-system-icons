@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TableOffsetAdd: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TableOffsetAdd: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TableOffsetAdd",
         defaultWidth = 24.dp,
@@ -113,6 +113,6 @@ public val FluentUi.Filled.TableOffsetAdd: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun TableOffsetAddPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TableOffsetAdd, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TableOffsetAdd, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.VideoPersonCall: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.VideoPersonCall: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.VideoPersonCall",
         defaultWidth = 24.dp,
@@ -104,6 +104,6 @@ public val FluentUi.Filled.VideoPersonCall: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun VideoPersonCallPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.VideoPersonCall, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.VideoPersonCall, contentDescription = null)
     }
 }

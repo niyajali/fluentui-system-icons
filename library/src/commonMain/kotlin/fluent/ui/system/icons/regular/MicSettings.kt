@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.MicSettings: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.MicSettings: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.MicSettings",
         defaultWidth = 24.dp,
@@ -122,6 +122,6 @@ public val FluentUi.Regular.MicSettings: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun MicSettingsPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.MicSettings, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.MicSettings, contentDescription = null)
     }
 }

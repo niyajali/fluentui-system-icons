@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ClipboardBrush: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ClipboardBrush: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ClipboardBrush",
         defaultWidth = 24.dp,
@@ -112,6 +112,6 @@ public val FluentUi.Filled.ClipboardBrush: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun ClipboardBrushPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ClipboardBrush, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ClipboardBrush, contentDescription = null)
     }
 }

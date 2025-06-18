@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.LineHorizontal2DashesSolid: ImageVector by
+public val FluentIcons.Filled.LineHorizontal2DashesSolid: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.LineHorizontal2DashesSolid",
@@ -86,6 +86,6 @@ public val FluentUi.Filled.LineHorizontal2DashesSolid: ImageVector by
 @Composable
 private fun LineHorizontal2DashesSolidPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.LineHorizontal2DashesSolid, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.LineHorizontal2DashesSolid, contentDescription = null)
     }
 }

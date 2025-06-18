@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.FlowSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.FlowSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.FlowSparkle",
         defaultWidth = 24.dp,
@@ -139,6 +139,6 @@ public val FluentUi.Filled.FlowSparkle: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun FlowSparklePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.FlowSparkle, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.FlowSparkle, contentDescription = null)
     }
 }

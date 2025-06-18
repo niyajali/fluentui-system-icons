@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.PlayCircleHintHalf: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.PlayCircleHintHalf: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.PlayCircleHintHalf",
         defaultWidth = 24.dp,
@@ -119,6 +119,6 @@ public val FluentUi.Filled.PlayCircleHintHalf: ImageVector by lazy(LazyThreadSaf
 @Composable
 private fun PlayCircleHintHalfPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.PlayCircleHintHalf, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.PlayCircleHintHalf, contentDescription = null)
     }
 }

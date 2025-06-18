@@ -35,10 +35,10 @@ import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Camera: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Camera: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Camera",
         defaultWidth = 24.dp,
@@ -161,6 +161,6 @@ public val FluentUi.Colored.Camera: ImageVector by lazy(LazyThreadSafetyMode.NON
 @Composable
 private fun CameraPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Camera, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Camera, contentDescription = null)
     }
 }

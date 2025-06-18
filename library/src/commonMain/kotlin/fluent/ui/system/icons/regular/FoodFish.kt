@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.FoodFish: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.FoodFish: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.FoodFish",
         defaultWidth = 24.dp,
@@ -107,6 +107,6 @@ public val FluentUi.Regular.FoodFish: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun FoodFishPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.FoodFish, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.FoodFish, contentDescription = null)
     }
 }

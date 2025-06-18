@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PersonWarning: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PersonWarning: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PersonWarning",
         defaultWidth = 24.dp,
@@ -180,6 +180,6 @@ public val FluentUi.Colored.PersonWarning: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun PersonWarningPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PersonWarning, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PersonWarning, contentDescription = null)
     }
 }

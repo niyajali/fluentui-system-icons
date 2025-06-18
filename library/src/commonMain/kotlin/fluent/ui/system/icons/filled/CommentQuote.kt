@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.CommentQuote: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.CommentQuote: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.CommentQuote",
         defaultWidth = 24.dp,
@@ -104,6 +104,6 @@ public val FluentUi.Filled.CommentQuote: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun CommentQuotePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.CommentQuote, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.CommentQuote, contentDescription = null)
     }
 }

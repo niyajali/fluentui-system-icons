@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.PersonArrowRight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.PersonArrowRight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.PersonArrowRight",
         defaultWidth = 24.dp,
@@ -95,6 +95,6 @@ public val FluentUi.Filled.PersonArrowRight: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun PersonArrowRightPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.PersonArrowRight, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.PersonArrowRight, contentDescription = null)
     }
 }

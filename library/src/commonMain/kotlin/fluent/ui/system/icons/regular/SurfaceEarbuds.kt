@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.SurfaceEarbuds: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.SurfaceEarbuds: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.SurfaceEarbuds",
         defaultWidth = 24.dp,
@@ -154,6 +154,6 @@ public val FluentUi.Regular.SurfaceEarbuds: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun SurfaceEarbudsPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.SurfaceEarbuds, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.SurfaceEarbuds, contentDescription = null)
     }
 }

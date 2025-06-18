@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Light.TableMoveAbove: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Light.TableMoveAbove: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Light.TableMoveAbove",
         defaultWidth = 32.dp,
@@ -124,6 +124,6 @@ public val FluentUi.Light.TableMoveAbove: ImageVector by lazy(LazyThreadSafetyMo
 @Composable
 private fun TableMoveAbovePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Light.TableMoveAbove, contentDescription = null)
+        Image(imageVector = FluentIcons.Light.TableMoveAbove, contentDescription = null)
     }
 }

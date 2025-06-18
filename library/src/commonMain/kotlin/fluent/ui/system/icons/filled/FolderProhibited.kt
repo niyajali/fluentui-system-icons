@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.FolderProhibited: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.FolderProhibited: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.FolderProhibited",
         defaultWidth = 24.dp,
@@ -95,6 +95,6 @@ public val FluentUi.Filled.FolderProhibited: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun FolderProhibitedPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.FolderProhibited, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.FolderProhibited, contentDescription = null)
     }
 }

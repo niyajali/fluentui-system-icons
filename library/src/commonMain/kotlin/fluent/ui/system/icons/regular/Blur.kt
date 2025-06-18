@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Blur: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Blur: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Blur",
         defaultWidth = 24.dp,
@@ -94,6 +94,6 @@ public val FluentUi.Regular.Blur: ImageVector by lazy(LazyThreadSafetyMode.NONE)
 @Composable
 private fun BlurPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Blur, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Blur, contentDescription = null)
     }
 }

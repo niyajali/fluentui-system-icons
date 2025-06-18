@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.DocumentAdd: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.DocumentAdd: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.DocumentAdd",
         defaultWidth = 24.dp,
@@ -183,6 +183,6 @@ public val FluentUi.Colored.DocumentAdd: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun DocumentAddPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.DocumentAdd, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.DocumentAdd, contentDescription = null)
     }
 }

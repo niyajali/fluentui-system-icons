@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.PhoneHeaderArrowUp: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.PhoneHeaderArrowUp: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.PhoneHeaderArrowUp",
         defaultWidth = 24.dp,
@@ -97,6 +97,6 @@ public val FluentUi.Regular.PhoneHeaderArrowUp: ImageVector by lazy(LazyThreadSa
 @Composable
 private fun PhoneHeaderArrowUpPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.PhoneHeaderArrowUp, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.PhoneHeaderArrowUp, contentDescription = null)
     }
 }

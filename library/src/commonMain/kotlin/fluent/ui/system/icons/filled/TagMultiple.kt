@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TagMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TagMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TagMultiple",
         defaultWidth = 24.dp,
@@ -88,6 +88,6 @@ public val FluentUi.Filled.TagMultiple: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun TagMultiplePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TagMultiple, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TagMultiple, contentDescription = null)
     }
 }

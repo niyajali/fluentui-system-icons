@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Smartwatch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Smartwatch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Smartwatch",
         defaultWidth = 24.dp,
@@ -101,6 +101,6 @@ public val FluentUi.Regular.Smartwatch: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun SmartwatchPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Smartwatch, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Smartwatch, contentDescription = null)
     }
 }

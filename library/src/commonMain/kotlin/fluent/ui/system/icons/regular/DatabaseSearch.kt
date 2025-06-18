@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.DatabaseSearch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.DatabaseSearch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.DatabaseSearch",
         defaultWidth = 24.dp,
@@ -110,6 +110,6 @@ public val FluentUi.Regular.DatabaseSearch: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun DatabaseSearchPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.DatabaseSearch, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.DatabaseSearch, contentDescription = null)
     }
 }

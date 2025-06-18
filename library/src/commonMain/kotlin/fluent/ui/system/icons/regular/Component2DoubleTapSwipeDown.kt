@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Component2DoubleTapSwipeDown: ImageVector by
+public val FluentIcons.Regular.Component2DoubleTapSwipeDown: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Regular.Component2DoubleTapSwipeDown",
@@ -98,6 +98,6 @@ public val FluentUi.Regular.Component2DoubleTapSwipeDown: ImageVector by
 @Composable
 private fun Component2DoubleTapSwipeDownPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Component2DoubleTapSwipeDown, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Component2DoubleTapSwipeDown, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.EditLineHorizontal3: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.EditLineHorizontal3: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.EditLineHorizontal3",
         defaultWidth = 24.dp,
@@ -92,6 +92,6 @@ public val FluentUi.Filled.EditLineHorizontal3: ImageVector by lazy(LazyThreadSa
 @Composable
 private fun EditLineHorizontal3Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.EditLineHorizontal3, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.EditLineHorizontal3, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Battery4: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Battery4: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Battery4",
         defaultWidth = 24.dp,
@@ -101,6 +101,6 @@ public val FluentUi.Regular.Battery4: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun Battery4Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Battery4, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Battery4, contentDescription = null)
     }
 }

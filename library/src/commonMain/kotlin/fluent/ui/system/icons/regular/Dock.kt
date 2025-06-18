@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Dock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Dock: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Dock",
         defaultWidth = 24.dp,
@@ -108,6 +108,6 @@ public val FluentUi.Regular.Dock: ImageVector by lazy(LazyThreadSafetyMode.NONE)
 @Composable
 private fun DockPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Dock, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Dock, contentDescription = null)
     }
 }

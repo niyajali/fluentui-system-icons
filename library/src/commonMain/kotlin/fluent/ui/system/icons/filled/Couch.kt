@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.Couch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.Couch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.Couch",
         defaultWidth = 24.dp,
@@ -85,6 +85,6 @@ public val FluentUi.Filled.Couch: ImageVector by lazy(LazyThreadSafetyMode.NONE)
 @Composable
 private fun CouchPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.Couch, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.Couch, contentDescription = null)
     }
 }

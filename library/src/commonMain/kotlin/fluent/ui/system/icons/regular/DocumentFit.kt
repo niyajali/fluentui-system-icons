@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.DocumentFit: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.DocumentFit: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.DocumentFit",
         defaultWidth = 24.dp,
@@ -121,6 +121,6 @@ public val FluentUi.Regular.DocumentFit: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun DocumentFitPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.DocumentFit, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.DocumentFit, contentDescription = null)
     }
 }

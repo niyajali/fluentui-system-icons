@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ContentView: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ContentView: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ContentView",
         defaultWidth = 24.dp,
@@ -120,6 +120,6 @@ public val FluentUi.Colored.ContentView: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun ContentViewPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ContentView, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ContentView, contentDescription = null)
     }
 }

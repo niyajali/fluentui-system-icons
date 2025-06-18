@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.LayoutRowThreeFocusBottom: ImageVector by
+public val FluentIcons.Filled.LayoutRowThreeFocusBottom: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.LayoutRowThreeFocusBottom",
@@ -78,6 +78,6 @@ public val FluentUi.Filled.LayoutRowThreeFocusBottom: ImageVector by
 @Composable
 private fun LayoutRowThreeFocusBottomPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.LayoutRowThreeFocusBottom, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.LayoutRowThreeFocusBottom, contentDescription = null)
     }
 }

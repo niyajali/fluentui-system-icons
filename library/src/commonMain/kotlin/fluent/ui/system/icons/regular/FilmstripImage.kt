@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.FilmstripImage: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.FilmstripImage: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.FilmstripImage",
         defaultWidth = 24.dp,
@@ -139,6 +139,6 @@ public val FluentUi.Regular.FilmstripImage: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun FilmstripImagePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.FilmstripImage, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.FilmstripImage, contentDescription = null)
     }
 }

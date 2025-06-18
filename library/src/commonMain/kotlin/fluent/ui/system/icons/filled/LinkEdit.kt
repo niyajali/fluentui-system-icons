@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.LinkEdit: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.LinkEdit: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.LinkEdit",
         defaultWidth = 24.dp,
@@ -107,6 +107,6 @@ public val FluentUi.Filled.LinkEdit: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun LinkEditPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.LinkEdit, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.LinkEdit, contentDescription = null)
     }
 }

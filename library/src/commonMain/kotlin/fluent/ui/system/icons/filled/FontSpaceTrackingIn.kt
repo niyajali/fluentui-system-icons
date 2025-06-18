@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.FontSpaceTrackingIn: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.FontSpaceTrackingIn: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.FontSpaceTrackingIn",
         defaultWidth = 24.dp,
@@ -138,6 +138,6 @@ public val FluentUi.Filled.FontSpaceTrackingIn: ImageVector by lazy(LazyThreadSa
 @Composable
 private fun FontSpaceTrackingInPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.FontSpaceTrackingIn, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.FontSpaceTrackingIn, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TimeAndWeather: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TimeAndWeather: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TimeAndWeather",
         defaultWidth = 24.dp,
@@ -154,6 +154,6 @@ public val FluentUi.Filled.TimeAndWeather: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun TimeAndWeatherPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TimeAndWeather, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TimeAndWeather, contentDescription = null)
     }
 }

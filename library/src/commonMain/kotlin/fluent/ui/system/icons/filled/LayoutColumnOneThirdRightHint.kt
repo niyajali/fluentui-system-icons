@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.LayoutColumnOneThirdRightHint: ImageVector by
+public val FluentIcons.Filled.LayoutColumnOneThirdRightHint: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.LayoutColumnOneThirdRightHint",
@@ -104,6 +104,6 @@ public val FluentUi.Filled.LayoutColumnOneThirdRightHint: ImageVector by
 @Composable
 private fun LayoutColumnOneThirdRightHintPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.LayoutColumnOneThirdRightHint, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.LayoutColumnOneThirdRightHint, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.ArrowUpLeft: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.ArrowUpLeft: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.ArrowUpLeft",
         defaultWidth = 24.dp,
@@ -68,6 +68,6 @@ public val FluentUi.Regular.ArrowUpLeft: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun ArrowUpLeftPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.ArrowUpLeft, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.ArrowUpLeft, contentDescription = null)
     }
 }

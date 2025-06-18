@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Light.PersonMail: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Light.PersonMail: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Light.PersonMail",
         defaultWidth = 32.dp,
@@ -96,6 +96,6 @@ public val FluentUi.Light.PersonMail: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun PersonMailPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Light.PersonMail, contentDescription = null)
+        Image(imageVector = FluentIcons.Light.PersonMail, contentDescription = null)
     }
 }

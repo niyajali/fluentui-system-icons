@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.EyeLines: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.EyeLines: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.EyeLines",
         defaultWidth = 24.dp,
@@ -115,6 +115,6 @@ public val FluentUi.Regular.EyeLines: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun EyeLinesPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.EyeLines, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.EyeLines, contentDescription = null)
     }
 }

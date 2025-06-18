@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.PresenceBusy: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.PresenceBusy: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.PresenceBusy",
         defaultWidth = 24.dp,
@@ -59,6 +59,6 @@ public val FluentUi.Filled.PresenceBusy: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun PresenceBusyPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.PresenceBusy, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.PresenceBusy, contentDescription = null)
     }
 }

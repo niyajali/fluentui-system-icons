@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TextColumnWide: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TextColumnWide: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TextColumnWide",
         defaultWidth = 24.dp,
@@ -85,6 +85,6 @@ public val FluentUi.Filled.TextColumnWide: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun TextColumnWidePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TextColumnWide, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextColumnWide, contentDescription = null)
     }
 }

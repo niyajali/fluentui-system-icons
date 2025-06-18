@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.ImageCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.ImageCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.ImageCircle",
         defaultWidth = 24.dp,
@@ -87,6 +87,6 @@ public val FluentUi.Regular.ImageCircle: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun ImageCirclePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.ImageCircle, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.ImageCircle, contentDescription = null)
     }
 }

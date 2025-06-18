@@ -35,10 +35,10 @@ import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Org",
         defaultWidth = 24.dp,
@@ -224,6 +224,6 @@ public val FluentUi.Colored.Org: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
 @Composable
 private fun OrgPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Org, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Org, contentDescription = null)
     }
 }

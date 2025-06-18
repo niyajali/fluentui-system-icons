@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.SlideTextCursor: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.SlideTextCursor: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.SlideTextCursor",
         defaultWidth = 24.dp,
@@ -98,6 +98,6 @@ public val FluentUi.Filled.SlideTextCursor: ImageVector by lazy(LazyThreadSafety
 @Composable
 private fun SlideTextCursorPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.SlideTextCursor, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.SlideTextCursor, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TableDeleteColumn: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TableDeleteColumn: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TableDeleteColumn",
         defaultWidth = 24.dp,
@@ -135,6 +135,6 @@ public val FluentUi.Filled.TableDeleteColumn: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun TableDeleteColumnPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TableDeleteColumn, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TableDeleteColumn, contentDescription = null)
     }
 }

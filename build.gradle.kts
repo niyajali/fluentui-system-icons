@@ -29,7 +29,6 @@ plugins {
     alias(libs.plugins.androidLibrary) apply false
     alias(libs.plugins.bcv) apply false
     alias(libs.plugins.maven) apply false
-    alias(libs.plugins.dokka) apply false
     alias(libs.plugins.spotless) apply true
 }
 

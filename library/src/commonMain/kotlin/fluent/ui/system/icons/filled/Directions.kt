@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.Directions: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.Directions: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.Directions",
         defaultWidth = 24.dp,
@@ -82,6 +82,6 @@ public val FluentUi.Filled.Directions: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun DirectionsPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.Directions, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.Directions, contentDescription = null)
     }
 }

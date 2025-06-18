@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Light.Important: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Light.Important: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Light.Important",
         defaultWidth = 32.dp,
@@ -83,6 +83,6 @@ public val FluentUi.Light.Important: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun ImportantPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Light.Important, contentDescription = null)
+        Image(imageVector = FluentIcons.Light.Important, contentDescription = null)
     }
 }

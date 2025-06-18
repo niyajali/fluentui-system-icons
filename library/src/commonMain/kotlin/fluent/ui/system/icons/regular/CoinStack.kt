@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.CoinStack: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.CoinStack: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.CoinStack",
         defaultWidth = 24.dp,
@@ -105,6 +105,6 @@ public val FluentUi.Regular.CoinStack: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun CoinStackPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.CoinStack, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.CoinStack, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Sticker: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Sticker: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Sticker",
         defaultWidth = 24.dp,
@@ -104,6 +104,6 @@ public val FluentUi.Regular.Sticker: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun StickerPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Sticker, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Sticker, contentDescription = null)
     }
 }

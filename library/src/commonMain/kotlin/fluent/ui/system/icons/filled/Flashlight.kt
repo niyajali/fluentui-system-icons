@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.Flashlight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.Flashlight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.Flashlight",
         defaultWidth = 24.dp,
@@ -107,6 +107,6 @@ public val FluentUi.Filled.Flashlight: ImageVector by lazy(LazyThreadSafetyMode.
 @Composable
 private fun FlashlightPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.Flashlight, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.Flashlight, contentDescription = null)
     }
 }

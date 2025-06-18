@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.GlobeSearch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.GlobeSearch: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.GlobeSearch",
         defaultWidth = 24.dp,
@@ -123,6 +123,6 @@ public val FluentUi.Filled.GlobeSearch: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun GlobeSearchPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.GlobeSearch, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.GlobeSearch, contentDescription = null)
     }
 }

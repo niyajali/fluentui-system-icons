@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.SubtractCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.SubtractCircle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.SubtractCircle",
         defaultWidth = 24.dp,
@@ -69,6 +69,6 @@ public val FluentUi.Filled.SubtractCircle: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun SubtractCirclePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.SubtractCircle, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.SubtractCircle, contentDescription = null)
     }
 }

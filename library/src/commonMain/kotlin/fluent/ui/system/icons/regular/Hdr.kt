@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Hdr: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Hdr: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Hdr",
         defaultWidth = 24.dp,
@@ -145,6 +145,6 @@ public val FluentUi.Regular.Hdr: ImageVector by lazy(LazyThreadSafetyMode.NONE) 
 @Composable
 private fun HdrPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Hdr, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Hdr, contentDescription = null)
     }
 }

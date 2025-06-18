@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.ChevronUpDown: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.ChevronUpDown: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.ChevronUpDown",
         defaultWidth = 24.dp,
@@ -77,6 +77,6 @@ public val FluentUi.Regular.ChevronUpDown: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun ChevronUpDownPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.ChevronUpDown, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.ChevronUpDown, contentDescription = null)
     }
 }

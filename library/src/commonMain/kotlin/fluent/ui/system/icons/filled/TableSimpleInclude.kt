@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TableSimpleInclude: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TableSimpleInclude: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TableSimpleInclude",
         defaultWidth = 24.dp,
@@ -91,6 +91,6 @@ public val FluentUi.Filled.TableSimpleInclude: ImageVector by lazy(LazyThreadSaf
 @Composable
 private fun TableSimpleIncludePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TableSimpleInclude, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TableSimpleInclude, contentDescription = null)
     }
 }

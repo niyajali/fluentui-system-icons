@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.PersonAvailable: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.PersonAvailable: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.PersonAvailable",
         defaultWidth = 24.dp,
@@ -98,6 +98,6 @@ public val FluentUi.Regular.PersonAvailable: ImageVector by lazy(LazyThreadSafet
 @Composable
 private fun PersonAvailablePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.PersonAvailable, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.PersonAvailable, contentDescription = null)
     }
 }

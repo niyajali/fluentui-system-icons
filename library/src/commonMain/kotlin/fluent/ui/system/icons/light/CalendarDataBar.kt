@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Light.CalendarDataBar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Light.CalendarDataBar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Light.CalendarDataBar",
         defaultWidth = 32.dp,
@@ -101,6 +101,6 @@ public val FluentUi.Light.CalendarDataBar: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun CalendarDataBarPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Light.CalendarDataBar, contentDescription = null)
+        Image(imageVector = FluentIcons.Light.CalendarDataBar, contentDescription = null)
     }
 }

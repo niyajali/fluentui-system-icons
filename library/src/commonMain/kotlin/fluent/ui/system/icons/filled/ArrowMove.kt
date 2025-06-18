@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ArrowMove: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ArrowMove: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ArrowMove",
         defaultWidth = 24.dp,
@@ -117,6 +117,6 @@ public val FluentUi.Filled.ArrowMove: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun ArrowMovePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ArrowMove, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ArrowMove, contentDescription = null)
     }
 }

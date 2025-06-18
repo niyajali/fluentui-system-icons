@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.FlashSettings: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.FlashSettings: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.FlashSettings",
         defaultWidth = 24.dp,
@@ -119,6 +119,6 @@ public val FluentUi.Regular.FlashSettings: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun FlashSettingsPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.FlashSettings, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.FlashSettings, contentDescription = null)
     }
 }

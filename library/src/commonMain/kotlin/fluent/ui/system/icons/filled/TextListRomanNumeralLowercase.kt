@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TextListRomanNumeralLowercase: ImageVector by
+public val FluentIcons.Filled.TextListRomanNumeralLowercase: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.TextListRomanNumeralLowercase",
@@ -120,6 +120,6 @@ public val FluentUi.Filled.TextListRomanNumeralLowercase: ImageVector by
 @Composable
 private fun TextListRomanNumeralLowercasePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TextListRomanNumeralLowercase, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextListRomanNumeralLowercase, contentDescription = null)
     }
 }

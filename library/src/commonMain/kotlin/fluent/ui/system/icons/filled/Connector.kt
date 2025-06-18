@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.Connector: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.Connector: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.Connector",
         defaultWidth = 24.dp,
@@ -113,6 +113,6 @@ public val FluentUi.Filled.Connector: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun ConnectorPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.Connector, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.Connector, contentDescription = null)
     }
 }

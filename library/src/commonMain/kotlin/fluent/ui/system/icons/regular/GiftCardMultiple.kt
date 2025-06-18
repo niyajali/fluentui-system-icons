@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.GiftCardMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.GiftCardMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.GiftCardMultiple",
         defaultWidth = 24.dp,
@@ -129,6 +129,6 @@ public val FluentUi.Regular.GiftCardMultiple: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun GiftCardMultiplePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.GiftCardMultiple, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.GiftCardMultiple, contentDescription = null)
     }
 }

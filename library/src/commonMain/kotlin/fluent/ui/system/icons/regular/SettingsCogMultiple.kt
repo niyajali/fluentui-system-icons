@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.SettingsCogMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.SettingsCogMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.SettingsCogMultiple",
         defaultWidth = 24.dp,
@@ -177,6 +177,6 @@ public val FluentUi.Regular.SettingsCogMultiple: ImageVector by lazy(LazyThreadS
 @Composable
 private fun SettingsCogMultiplePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.SettingsCogMultiple, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.SettingsCogMultiple, contentDescription = null)
     }
 }

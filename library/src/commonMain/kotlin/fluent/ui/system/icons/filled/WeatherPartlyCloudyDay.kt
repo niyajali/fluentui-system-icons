@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.WeatherPartlyCloudyDay: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.WeatherPartlyCloudyDay: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.WeatherPartlyCloudyDay",
         defaultWidth = 24.dp,
@@ -115,6 +115,6 @@ public val FluentUi.Filled.WeatherPartlyCloudyDay: ImageVector by lazy(LazyThrea
 @Composable
 private fun WeatherPartlyCloudyDayPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.WeatherPartlyCloudyDay, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.WeatherPartlyCloudyDay, contentDescription = null)
     }
 }

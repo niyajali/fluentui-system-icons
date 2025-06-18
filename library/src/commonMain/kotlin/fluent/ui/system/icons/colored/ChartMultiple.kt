@@ -35,10 +35,10 @@ import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.ChartMultiple",
         defaultWidth = 24.dp,
@@ -201,6 +201,6 @@ public val FluentUi.Colored.ChartMultiple: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun ChartMultiplePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.ChartMultiple, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.ChartMultiple, contentDescription = null)
     }
 }

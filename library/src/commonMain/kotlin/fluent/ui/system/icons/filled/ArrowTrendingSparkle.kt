@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ArrowTrendingSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ArrowTrendingSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ArrowTrendingSparkle",
         defaultWidth = 24.dp,
@@ -149,6 +149,6 @@ public val FluentUi.Filled.ArrowTrendingSparkle: ImageVector by lazy(LazyThreadS
 @Composable
 private fun ArrowTrendingSparklePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ArrowTrendingSparkle, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ArrowTrendingSparkle, contentDescription = null)
     }
 }

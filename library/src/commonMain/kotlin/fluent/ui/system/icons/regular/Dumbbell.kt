@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Dumbbell: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Dumbbell: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Dumbbell",
         defaultWidth = 24.dp,
@@ -157,6 +157,6 @@ public val FluentUi.Regular.Dumbbell: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun DumbbellPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Dumbbell, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Dumbbell, contentDescription = null)
     }
 }

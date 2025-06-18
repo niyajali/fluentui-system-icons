@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ReOrderDotsHorizontal: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ReOrderDotsHorizontal: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ReOrderDotsHorizontal",
         defaultWidth = 24.dp,
@@ -89,6 +89,6 @@ public val FluentUi.Filled.ReOrderDotsHorizontal: ImageVector by lazy(LazyThread
 @Composable
 private fun ReOrderDotsHorizontalPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ReOrderDotsHorizontal, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ReOrderDotsHorizontal, contentDescription = null)
     }
 }

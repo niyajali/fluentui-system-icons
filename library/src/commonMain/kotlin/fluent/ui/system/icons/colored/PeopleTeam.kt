@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PeopleTeam",
         defaultWidth = 24.dp,
@@ -233,6 +233,6 @@ public val FluentUi.Colored.PeopleTeam: ImageVector by lazy(LazyThreadSafetyMode
 @Composable
 private fun PeopleTeamPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PeopleTeam, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PeopleTeam, contentDescription = null)
     }
 }

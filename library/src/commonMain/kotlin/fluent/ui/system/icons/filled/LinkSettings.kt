@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.LinkSettings: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.LinkSettings: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.LinkSettings",
         defaultWidth = 24.dp,
@@ -128,6 +128,6 @@ public val FluentUi.Filled.LinkSettings: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun LinkSettingsPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.LinkSettings, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.LinkSettings, contentDescription = null)
     }
 }

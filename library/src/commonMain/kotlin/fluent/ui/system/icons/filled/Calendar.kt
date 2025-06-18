@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.Calendar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.Calendar: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.Calendar",
         defaultWidth = 24.dp,
@@ -99,6 +99,6 @@ public val FluentUi.Filled.Calendar: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun CalendarPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.Calendar, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.Calendar, contentDescription = null)
     }
 }

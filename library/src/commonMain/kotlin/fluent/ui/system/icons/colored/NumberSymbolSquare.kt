@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.NumberSymbolSquare: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.NumberSymbolSquare: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.NumberSymbolSquare",
         defaultWidth = 24.dp,
@@ -129,6 +129,6 @@ public val FluentUi.Colored.NumberSymbolSquare: ImageVector by lazy(LazyThreadSa
 @Composable
 private fun NumberSymbolSquarePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.NumberSymbolSquare, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.NumberSymbolSquare, contentDescription = null)
     }
 }

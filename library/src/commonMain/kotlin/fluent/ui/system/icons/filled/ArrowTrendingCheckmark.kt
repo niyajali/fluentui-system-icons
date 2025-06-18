@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ArrowTrendingCheckmark: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ArrowTrendingCheckmark: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ArrowTrendingCheckmark",
         defaultWidth = 24.dp,
@@ -93,6 +93,6 @@ public val FluentUi.Filled.ArrowTrendingCheckmark: ImageVector by lazy(LazyThrea
 @Composable
 private fun ArrowTrendingCheckmarkPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ArrowTrendingCheckmark, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ArrowTrendingCheckmark, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.KeyboardShift: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.KeyboardShift: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.KeyboardShift",
         defaultWidth = 24.dp,
@@ -83,6 +83,6 @@ public val FluentUi.Regular.KeyboardShift: ImageVector by lazy(LazyThreadSafetyM
 @Composable
 private fun KeyboardShiftPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.KeyboardShift, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.KeyboardShift, contentDescription = null)
     }
 }

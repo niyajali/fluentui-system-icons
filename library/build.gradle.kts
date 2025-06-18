@@ -23,8 +23,6 @@
  */
 @file:OptIn(ExperimentalWasmDsl::class)
 
-import com.vanniktech.maven.publish.JavadocJar
-import com.vanniktech.maven.publish.KotlinMultiplatform
 import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
@@ -34,10 +32,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.composeHotReload)
     alias(libs.plugins.bcv)
     alias(libs.plugins.maven)
-    alias(libs.plugins.dokka)
 }
 
 kotlin {
@@ -50,7 +46,7 @@ kotlin {
         compilations.all {
             compileTaskProvider.configure {
                 compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_11)
+                    jvmTarget.set(JvmTarget.JVM_17)
                 }
             }
         }
@@ -60,7 +56,7 @@ kotlin {
         compilations.all {
             compileTaskProvider.configure {
                 compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_11)
+                    jvmTarget.set(JvmTarget.JVM_17)
                 }
             }
         }
@@ -163,18 +159,9 @@ group = mavenGroup
 version = currentVersion
 
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, automaticRelease = true)
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
     coordinates(mavenGroup, artifactId, currentVersion)
-
-    // sources publishing is always enabled by the Kotlin Multiplatform plugin
-    configure(
-        KotlinMultiplatform(
-            // - `JavadocJar.Dokka("dokkaHtml")` when using Kotlin with Dokka,
-            // where `dokkaHtml` is the name of the Dokka task that should be used as input
-            javadocJar = JavadocJar.Dokka("dokkaGenerate")
-        )
-    )
 
     pom {
         name = project.name
@@ -202,11 +189,5 @@ mavenPublishing {
         issueManagement {
             url = "https://github.com/$githubRepo/issues"
         }
-    }
-}
-
-dokka {
-    dokkaPublications.html {
-        outputDirectory.set(layout.buildDirectory.dir("$rootDir/docs/kdoc"))
     }
 }

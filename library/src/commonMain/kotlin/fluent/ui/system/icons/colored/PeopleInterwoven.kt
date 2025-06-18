@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.PeopleInterwoven: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.PeopleInterwoven: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.PeopleInterwoven",
         defaultWidth = 24.dp,
@@ -256,6 +256,6 @@ public val FluentUi.Colored.PeopleInterwoven: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun PeopleInterwovenPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.PeopleInterwoven, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.PeopleInterwoven, contentDescription = null)
     }
 }

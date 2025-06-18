@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.CropSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.CropSparkle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.CropSparkle",
         defaultWidth = 24.dp,
@@ -163,6 +163,6 @@ public val FluentUi.Regular.CropSparkle: ImageVector by lazy(LazyThreadSafetyMod
 @Composable
 private fun CropSparklePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.CropSparkle, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.CropSparkle, contentDescription = null)
     }
 }

@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.Headset: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.Headset: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.Headset",
         defaultWidth = 24.dp,
@@ -108,6 +108,6 @@ public val FluentUi.Regular.Headset: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun HeadsetPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.Headset, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.Headset, contentDescription = null)
     }
 }

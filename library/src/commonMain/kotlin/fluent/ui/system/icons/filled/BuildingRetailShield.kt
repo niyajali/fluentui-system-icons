@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.BuildingRetailShield: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.BuildingRetailShield: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.BuildingRetailShield",
         defaultWidth = 24.dp,
@@ -115,6 +115,6 @@ public val FluentUi.Filled.BuildingRetailShield: ImageVector by lazy(LazyThreadS
 @Composable
 private fun BuildingRetailShieldPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.BuildingRetailShield, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.BuildingRetailShield, contentDescription = null)
     }
 }

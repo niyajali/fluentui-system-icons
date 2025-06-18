@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.VehicleMotorcycle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.VehicleMotorcycle: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.VehicleMotorcycle",
         defaultWidth = 24.dp,
@@ -122,6 +122,6 @@ public val FluentUi.Filled.VehicleMotorcycle: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun VehicleMotorcyclePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.VehicleMotorcycle, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.VehicleMotorcycle, contentDescription = null)
     }
 }

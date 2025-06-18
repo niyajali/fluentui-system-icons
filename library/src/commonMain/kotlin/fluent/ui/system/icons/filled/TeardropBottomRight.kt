@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.TeardropBottomRight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.TeardropBottomRight: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.TeardropBottomRight",
         defaultWidth = 24.dp,
@@ -61,6 +61,6 @@ public val FluentUi.Filled.TeardropBottomRight: ImageVector by lazy(LazyThreadSa
 @Composable
 private fun TeardropBottomRightPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.TeardropBottomRight, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TeardropBottomRight, contentDescription = null)
     }
 }

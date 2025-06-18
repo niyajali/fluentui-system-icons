@@ -34,10 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Colored.Shifts: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Colored.Shifts: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Colored.Shifts",
         defaultWidth = 24.dp,
@@ -95,6 +95,6 @@ public val FluentUi.Colored.Shifts: ImageVector by lazy(LazyThreadSafetyMode.NON
 @Composable
 private fun ShiftsPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Colored.Shifts, contentDescription = null)
+        Image(imageVector = FluentIcons.Colored.Shifts, contentDescription = null)
     }
 }

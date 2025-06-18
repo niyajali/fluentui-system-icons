@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.LayoutCellFourFocusBottomLeft: ImageVector by
+public val FluentIcons.Filled.LayoutCellFourFocusBottomLeft: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.LayoutCellFourFocusBottomLeft",
@@ -85,6 +85,6 @@ public val FluentUi.Filled.LayoutCellFourFocusBottomLeft: ImageVector by
 @Composable
 private fun LayoutCellFourFocusBottomLeftPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.LayoutCellFourFocusBottomLeft, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.LayoutCellFourFocusBottomLeft, contentDescription = null)
     }
 }

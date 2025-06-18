@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Regular.AlbumAdd: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Regular.AlbumAdd: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Regular.AlbumAdd",
         defaultWidth = 24.dp,
@@ -120,6 +120,6 @@ public val FluentUi.Regular.AlbumAdd: ImageVector by lazy(LazyThreadSafetyMode.N
 @Composable
 private fun AlbumAddPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Regular.AlbumAdd, contentDescription = null)
+        Image(imageVector = FluentIcons.Regular.AlbumAdd, contentDescription = null)
     }
 }

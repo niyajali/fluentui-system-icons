@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.CheckmarkUnderlineCircle: ImageVector by
+public val FluentIcons.Filled.CheckmarkUnderlineCircle: ImageVector by
     lazy(LazyThreadSafetyMode.NONE) {
         ImageVector.Builder(
             name = "Filled.CheckmarkUnderlineCircle",
@@ -82,6 +82,6 @@ public val FluentUi.Filled.CheckmarkUnderlineCircle: ImageVector by
 @Composable
 private fun CheckmarkUnderlineCirclePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.CheckmarkUnderlineCircle, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.CheckmarkUnderlineCircle, contentDescription = null)
     }
 }

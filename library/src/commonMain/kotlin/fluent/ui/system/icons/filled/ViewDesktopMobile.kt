@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ViewDesktopMobile: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ViewDesktopMobile: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ViewDesktopMobile",
         defaultWidth = 24.dp,
@@ -92,6 +92,6 @@ public val FluentUi.Filled.ViewDesktopMobile: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun ViewDesktopMobilePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ViewDesktopMobile, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ViewDesktopMobile, contentDescription = null)
     }
 }

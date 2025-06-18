@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.DualScreenSpeaker: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.DualScreenSpeaker: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.DualScreenSpeaker",
         defaultWidth = 24.dp,
@@ -156,6 +156,6 @@ public val FluentUi.Filled.DualScreenSpeaker: ImageVector by lazy(LazyThreadSafe
 @Composable
 private fun DualScreenSpeakerPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.DualScreenSpeaker, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.DualScreenSpeaker, contentDescription = null)
     }
 }

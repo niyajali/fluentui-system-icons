@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.ArrowReplyAll: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.ArrowReplyAll: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.ArrowReplyAll",
         defaultWidth = 24.dp,
@@ -81,6 +81,6 @@ public val FluentUi.Filled.ArrowReplyAll: ImageVector by lazy(LazyThreadSafetyMo
 @Composable
 private fun ArrowReplyAllPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.ArrowReplyAll, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.ArrowReplyAll, contentDescription = null)
     }
 }

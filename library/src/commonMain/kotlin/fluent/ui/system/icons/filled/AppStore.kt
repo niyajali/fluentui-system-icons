@@ -33,10 +33,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentUi
+import fluent.ui.system.icons.FluentIcons
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentUi.Filled.AppStore: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
+public val FluentIcons.Filled.AppStore: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
     ImageVector.Builder(
         name = "Filled.AppStore",
         defaultWidth = 24.dp,
@@ -115,6 +115,6 @@ public val FluentUi.Filled.AppStore: ImageVector by lazy(LazyThreadSafetyMode.NO
 @Composable
 private fun AppStorePreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentUi.Filled.AppStore, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.AppStore, contentDescription = null)
     }
 }
