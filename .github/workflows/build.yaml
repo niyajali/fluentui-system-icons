@@ -5,7 +5,21 @@ on:
   pull_request:
 
 env:
-  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx6g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
+  # Enhanced Gradle options for better memory management
+  GRADLE_OPTS: >-
+    -Dorg.gradle.jvmargs=-Xmx8g
+    -XX:MaxMetaspaceSize=2g
+    -XX:+HeapDumpOnOutOfMemoryError
+    -XX:+UseG1GC
+    -XX:G1HeapRegionSize=16m
+    -XX:+UseStringDeduplication
+    -XX:+OptimizeStringConcat
+    -Dorg.gradle.daemon=true
+    -Dorg.gradle.parallel=true
+    -Dorg.gradle.caching=true
+    -Dorg.gradle.configureondemand=true
+    -Dkotlin.incremental=true
+    -Dkotlin.daemon.jvm.options=-Xmx4g
 
 jobs:
   jvm:
@@ -21,6 +35,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Shallow clone for faster checkout
+          fetch-depth: 1
 
       - name: Configure JDK
         uses: actions/setup-java@v4
@@ -28,13 +45,64 @@ jobs:
           distribution: 'zulu'
           java-version: 19
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          # Enable build cache
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+
       - name: Grant execute permission for gradlew
+        if: runner.os != 'Windows'
         run: chmod +x gradlew
+
+      - name: Create gradle.properties for memory optimization
+        run: |
+          echo "org.gradle.jvmargs=-Xmx8g -XX:MaxMetaspaceSize=2g -XX:+UseG1GC" >> gradle.properties
+          echo "org.gradle.daemon=true" >> gradle.properties
+          echo "org.gradle.parallel=true" >> gradle.properties
+          echo "org.gradle.caching=true" >> gradle.properties
+          echo "org.gradle.configureondemand=true" >> gradle.properties
+          echo "kotlin.incremental=true" >> gradle.properties
+          echo "kotlin.daemon.jvm.options=-Xmx4g" >> gradle.properties
+
+      - name: Free up disk space (Ubuntu only)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "/usr/local/share/boost"
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+          df -h
 
       - name: Full build
         if: matrix.os == 'ubuntu-latest'
-        run: ./gradlew build
+        run: ./gradlew build --stacktrace --info --max-workers=2
+        env:
+          # Additional JVM options for the build process
+          JAVA_OPTS: >-
+            -Xmx6g
+            -XX:+UseG1GC
+            -XX:G1HeapRegionSize=16m
+            -XX:+UseStringDeduplication
 
       - name: API check
-        if: "matrix.os != 'ubuntu-latest'"
-        run: ./gradlew check
+        if: matrix.os != 'ubuntu-latest'
+        run: ./gradlew check --stacktrace --info --max-workers=2
+        env:
+          # Additional JVM options for the build process
+          JAVA_OPTS: >-
+            -Xmx6g
+            -XX:+UseG1GC
+            -XX:G1HeapRegionSize=16m
+            -XX:+UseStringDeduplication
+
+      - name: Upload build reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-reports-${{ matrix.os }}
+          path: |
+            **/build/reports/
+            **/build/test-results/
+            **/*.hprof
+          retention-days: 7
