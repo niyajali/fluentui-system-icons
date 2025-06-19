@@ -65,6 +65,9 @@ jobs:
           echo "kotlin.incremental=true" >> gradle.properties
           echo "kotlin.daemon.jvm.options=-Xmx4g" >> gradle.properties
 
+      - name: Cache Gradle
+        uses: burrunan/gradle-cache-action@v3
+
       - name: Free up disk space (Ubuntu only)
         if: matrix.os == 'ubuntu-latest'
         run: |
@@ -77,24 +80,10 @@ jobs:
       - name: Full build
         if: matrix.os == 'ubuntu-latest'
         run: ./gradlew build --stacktrace --info --max-workers=2
-        env:
-          # Additional JVM options for the build process
-          JAVA_OPTS: >-
-            -Xmx6g
-            -XX:+UseG1GC
-            -XX:G1HeapRegionSize=16m
-            -XX:+UseStringDeduplication
 
       - name: API check
         if: matrix.os != 'ubuntu-latest'
         run: ./gradlew check --stacktrace --info --max-workers=2
-        env:
-          # Additional JVM options for the build process
-          JAVA_OPTS: >-
-            -Xmx6g
-            -XX:+UseG1GC
-            -XX:G1HeapRegionSize=16m
-            -XX:+UseStringDeduplication
 
       - name: Upload build reports
         if: failure()
