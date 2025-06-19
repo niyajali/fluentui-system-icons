@@ -35,9 +35,4 @@ jobs:
         run: chmod +x gradlew
 
       - name: Full build
-        if: matrix.os == 'ubuntu-latest'
         run: ./gradlew build
-
-      - name: API check
-        if: "matrix.os != 'ubuntu-latest'"
-        run: ./gradlew check
