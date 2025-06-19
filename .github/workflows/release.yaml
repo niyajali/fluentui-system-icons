@@ -4,166 +4,71 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version to publish (e.g., 1.0.0)'
+        description: 'Version to publish'
         required: true
-        type: string
-      dry_run:
-        description: 'Perform a dry run without actually publishing'
-        required: false
-        type: boolean
-        default: false
 
 env:
   PACKAGE_VERSION: ${{ github.event.inputs.version }}
-  # Conservative Gradle options to avoid runner OOM
-  GRADLE_OPTS: >-
-    -Dorg.gradle.jvmargs=-Xmx8g
-    -XX:MaxMetaspaceSize=2g
-    -XX:+UseG1GC
-    -Dorg.gradle.daemon=true
-    -Dorg.gradle.parallel=true
-    -Dorg.gradle.caching=true
-    -Dfile.encoding=UTF-8
 
 jobs:
-  validate:
-    name: Validate version and inputs
-    runs-on: ubuntu-latest
-    outputs:
-      version: ${{ steps.validate.outputs.version }}
-      is_prerelease: ${{ steps.validate.outputs.is_prerelease }}
-    steps:
-      - name: Validate version format
-        id: validate
-        run: |
-          VERSION="${{ github.event.inputs.version }}"
-          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.-]+)?$ ]]; then
-            echo "❌ Invalid version format: $VERSION"
-            echo "Expected format: X.Y.Z or X.Y.Z-SUFFIX"
-            exit 1
-          fi
-          
-          echo "✅ Version format is valid: $VERSION"
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          
-          # Check if this is a prerelease
-          if [[ "$VERSION" =~ -[a-zA-Z] ]]; then
-            echo "is_prerelease=true" >> $GITHUB_OUTPUT
-            echo "📦 This will be marked as a prerelease"
-          else
-            echo "is_prerelease=false" >> $GITHUB_OUTPUT
-            echo "📦 This will be marked as a stable release"
-          fi
-
   publish:
     name: Publish & Release to Maven Central
-    needs: validate
     runs-on: macos-latest
-    outputs:
-      artifact_url: ${{ steps.publish.outputs.artifact_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Use more reliable Java setup
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'  # More reliable than Zulu
+          distribution: 'zulu'
           java-version: '17'
 
-      # Verify Java installation to catch JAVA_HOME issues early
-      - name: Verify Java installation
-        run: |
-          echo "JAVA_HOME: $JAVA_HOME"
-          echo "Java version:"
-          java -version
-          echo "Javac version:"
-          javac -version
-          
-          # Verify JAVA_HOME is valid
-          if [[ ! -d "$JAVA_HOME" ]]; then
-            echo "❌ JAVA_HOME directory does not exist: $JAVA_HOME"
-            exit 1
-          fi
-          echo "✅ JAVA_HOME is valid"
-
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          cache-read-only: false
-          cache-write-only: false
-          # Remove conflicting cache configuration
+      - uses: gradle/actions/setup-gradle@v4
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      # Remove conflicting gradle cache action
-      # gradle/actions/setup-gradle already handles caching efficiently
+      - name: Cache gradle, wrapper and buildSrc
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-
+          restore-keys: ${{ runner.os }}-gradle-
+
+
+      - name: Cache konan
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.konan/cache
+            ~/.konan/dependencies
+            ~/.konan/kotlin-native-macos*
+            ~/.konan/kotlin-native-mingw*
+            ~/.konan/kotlin-native-windows*
+            ~/.konan/kotlin-native-linux*
+            ~/.konan/kotlin-native-prebuilt-macos*
+            ~/.konan/kotlin-native-prebuilt-mingw*
+            ~/.konan/kotlin-native-prebuilt-windows*
+            ~/.konan/kotlin-native-prebuilt-linux*
+          key: ${{ runner.os }}-konan-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-konan-
+
+
+
 
       - name: Setup Xcode
         uses: maxim-lobanov/setup-xcode@v1.6.0
         with:
           xcode-version: 'latest-stable'
 
-      # Streamlined gradle.properties without conflicts
-      - name: Create gradle.properties for publishing
-        run: |
-          cat > gradle.properties << 'EOF'
-          # Memory optimization for multiplatform builds (conservative settings)
-          org.gradle.jvmargs=-Xmx8g -XX:MaxMetaspaceSize=2g -XX:+UseG1GC
-          org.gradle.daemon=true
-          org.gradle.parallel=true
-          org.gradle.caching=true
-          org.gradle.configureondemand=false
-          kotlin.incremental=true
-          kotlin.daemon.jvm.options=-Xmx6g
-          
-          # Modern Gradle optimizations
-          org.gradle.vfs.watch=true
-          org.gradle.configuration-cache=false
-          
-          # Publishing configuration
-          signing.gnupg.useLegacyGpg=false
-          systemProp.org.gradle.internal.publish.checksums.insecure=true
-          
-          # Version configuration
-          version=${{ env.PACKAGE_VERSION }}
-          EOF
-
-      # Validate Gradle setup before proceeding
-      - name: Validate Gradle setup
-        run: |
-          echo "🔍 Validating Gradle setup..."
-          ./gradlew --version
-          ./gradlew tasks --dry-run
-          echo "✅ Gradle setup successful"
-
-      - name: Validate build before publishing
-        if: ${{ github.event.inputs.dry_run == 'true' }}
-        run: |
-          echo "🧪 Running dry run - validating build..."
-          ./gradlew build --stacktrace --max-workers=2
-        env:
-          PACKAGE_VERSION: ${{ env.PACKAGE_VERSION }}
-
-      - name: Check repository status
-        if: ${{ github.event.inputs.dry_run != 'true' }}
-        run: |
-          echo "🔍 Checking repository status..."
-          if [[ -n "$(git status --porcelain)" ]]; then
-            echo "⚠️ Warning: Repository has uncommitted changes"
-            git status --short
-          else
-            echo "✅ Repository is clean"
-          fi
-
-      - name: Publish to Maven Central
-        if: ${{ github.event.inputs.dry_run != 'true' }}
-        id: publish
+      - name: Publish
         env:
           ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
@@ -171,53 +76,33 @@ jobs:
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_SIGNING_KEY }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSPHRASE }}
           PACKAGE_VERSION: ${{ env.PACKAGE_VERSION }}
-        run: |
-          echo "📦 Publishing version ${{ env.PACKAGE_VERSION }} to Maven Central..."
-          
-          # Show memory available before build
-          echo "💾 Available memory:"
-          if command -v vm_stat >/dev/null 2>&1; then
-            vm_stat | head -5
-          elif command -v free >/dev/null 2>&1; then
-            free -h
-          fi
-          
-          # Publish with retry logic
-          for attempt in 1 2 3; do
-            echo "🚀 Publishing attempt $attempt/3..."
-            if ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache --stacktrace --max-workers=2; then
-              echo "✅ Publishing successful on attempt $attempt"
-              break
-            else
-              if [[ $attempt -eq 3 ]]; then
-                echo "❌ Publishing failed after 3 attempts"
-                exit 1
-              else
-                echo "⚠️ Attempt $attempt failed, retrying in 30 seconds..."
-                sleep 30
-              fi
-            fi
-          done
-          
-          # Output artifact information for later steps
-          echo "artifact_url=https://central.sonatype.com/search?q=${{ github.repository }}" >> $GITHUB_OUTPUT
+        run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
 
-      - name: Upload build artifacts on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
+      - name: Prep openapi-docs
+        run: ./gradlew dokkaGenerate
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          name: build-artifacts-${{ github.run_number }}
-          path: |
-            **/*.hprof
-            **/build/reports/
-            **/build/test-results/
-            gradle.properties
-          retention-days: 7
+          python-version: 3.8
+
+      - name: Build mkdocs
+        run: |
+          pip3 install -r .github/workflows/mkdocs-requirements.txt
+          mkdocs build
+
+      - name: Deploy 🚀
+        if: success()
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: site # The folder the action should deploy.
+          SINGLE_COMMIT: true
 
   release:
-    name: Create GitHub release
-    needs: [ validate, publish ]
-    if: ${{ github.event.inputs.dry_run != 'true' }}
+    name: Create Github release
+    needs: publish
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -226,124 +111,27 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate release notes
-        id: release_notes
-        run: |
-          VERSION="${{ needs.validate.outputs.version }}"
-          
-          # Get the latest tag for comparison
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
-          
-          if [[ -n "$LATEST_TAG" ]]; then
-            echo "📋 Generating release notes since $LATEST_TAG..."
-            RELEASE_NOTES=$(git log --pretty=format:"- %s (%h)" $LATEST_TAG..HEAD | head -20)
-          else
-            echo "📋 No previous tags found, generating initial release notes..."
-            RELEASE_NOTES=$(git log --pretty=format:"- %s (%h)" --max-count=20)
-          fi
-          
-          # Handle empty release notes
-          if [[ -z "$RELEASE_NOTES" ]]; then
-            RELEASE_NOTES="- Initial release"
-          fi
-          
-          # Create release notes with additional context
-          cat > release_notes.md << EOF
-          ## 🚀 What's New in v${VERSION}
-          
-          ${RELEASE_NOTES}
-          
-          ## 📦 Installation
-          
-          Add this to your \`build.gradle.kts\`:
-          
-          \`\`\`kotlin
-          dependencies {
-              implementation("${{ github.repository }}:${VERSION}")
-          }
-          \`\`\`
-          
-          ## 🔗 Links
-          
-          - [Maven Central](${{ needs.publish.outputs.artifact_url }})
-          - [Documentation](https://github.com/${{ github.repository }}/tree/v${VERSION}#readme)
-          
-          ---
-          
-          **Full Changelog**: https://github.com/${{ github.repository }}/compare/${LATEST_TAG}...v${VERSION}
-          EOF
 
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ needs.validate.outputs.version }}
-          name: v${{ needs.validate.outputs.version }}
-          body_path: release_notes.md
+          commitish: ${{ github.ref }}
+          tag_name: ${{ github.event.inputs.version }}
+          release_name: v${{ github.event.inputs.version }}
+          generate_release_notes: true
           draft: false
-          prerelease: ${{ needs.validate.outputs.is_prerelease }}
-          generate_release_notes: false
-          make_latest: ${{ needs.validate.outputs.is_prerelease == 'false' }}
+          prerelease: false
 
-      - name: Update version in gradle.properties
+
+      - name: Update gradle.properties
         run: |
-          # Update the version in gradle.properties if it exists
-          if [[ -f "gradle.properties" ]]; then
-            if grep -q "^version=" gradle.properties; then
-              sed -i "s/^version=.*/version=${{ needs.validate.outputs.version }}/" gradle.properties
-            elif grep -q "^defaultVersion=" gradle.properties; then
-              sed -i "s/^defaultVersion=.*/defaultVersion=${{ needs.validate.outputs.version }}/" gradle.properties
-            else
-              echo "version=${{ needs.validate.outputs.version }}" >> gradle.properties
-            fi
-            echo "📝 Updated gradle.properties with version ${{ needs.validate.outputs.version }}"
-          else
-            echo "⚠️ gradle.properties not found, creating new one"
-            echo "version=${{ needs.validate.outputs.version }}" > gradle.properties
-          fi
+          sed -i 's/^defaultVersion=.*/defaultVersion=${{ github.event.inputs.version }}/' gradle.properties
 
-      - name: Commit version bump
+      - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🔖 Bump version to ${{ needs.validate.outputs.version }}"
+          commit_message: Bump version to ${{ github.event.inputs.version }}
           file_pattern: gradle.properties
-          commit_user_name: github-actions[bot]
-          commit_user_email: github-actions[bot]@users.noreply.github.com
-
-  notify:
-    name: Notify completion
-    needs: [ validate, publish, release ]
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Summary
-        run: |
-          echo "## 📊 Publishing Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Version:** ${{ needs.validate.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Prerelease:** ${{ needs.validate.outputs.is_prerelease }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Dry Run:** ${{ github.event.inputs.dry_run }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          if [[ "${{ needs.publish.result }}" == "success" ]]; then
-            echo "✅ **Publish:** Successful" >> $GITHUB_STEP_SUMMARY
-            echo "📦 **Artifact:** ${{ needs.publish.outputs.artifact_url }}" >> $GITHUB_STEP_SUMMARY
-          elif [[ "${{ github.event.inputs.dry_run }}" == "true" ]]; then
-            echo "⏭️ **Publish:** Skipped (dry run)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ **Publish:** Failed" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          if [[ "${{ needs.release.result }}" == "success" ]]; then
-            echo "✅ **Release:** Successful" >> $GITHUB_STEP_SUMMARY
-          elif [[ "${{ github.event.inputs.dry_run }}" == "true" ]]; then
-            echo "⏭️ **Release:** Skipped (dry run)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ **Release:** Failed" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "---" >> $GITHUB_STEP_SUMMARY
-          echo "*Generated at $(date)*" >> $GITHUB_STEP_SUMMARY

@@ -2,15 +2,14 @@ name: Build
 
 on:
   push:
+    branches-ignore:
+      - main
+    tags-ignore:
+      - '**'
   pull_request:
 
-# Simplified environment variables - avoid duplication with gradle.properties
 env:
-  GRADLE_OPTS: >-
-    -Dorg.gradle.jvmargs=-Xmx8g
-    -Dorg.gradle.daemon=true
-    -Dorg.gradle.parallel=true
-    -Dorg.gradle.caching=true
+  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
 
 jobs:
   jvm:
@@ -26,82 +25,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
 
-      # Use Java 21 LTS for better stability and availability
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
       - name: Configure JDK
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'  # Eclipse Temurin is more reliable than Zulu in CI
-          java-version: '21'       # LTS version, more stable
-
-      # Verify Java installation
-      - name: Verify Java installation
-        run: |
-          echo "JAVA_HOME: $JAVA_HOME"
-          echo "Java version:"
-          java -version
-          echo "Javac version:"
-          javac -version
-
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
-          # gradle/actions/setup-gradle already handles caching efficiently
+          distribution: 'zulu'
+          java-version: 19
 
       - name: Grant execute permission for gradlew
-        if: runner.os != 'Windows'
         run: chmod +x gradlew
-
-      # Create optimized gradle.properties (avoid conflicts with env vars)
-      - name: Create gradle.properties for optimization
-        run: |
-          echo "# Memory and performance optimization" > gradle.properties
-          echo "org.gradle.jvmargs=-Xmx8g -XX:MaxMetaspaceSize=2g -XX:+UseG1GC -XX:+UseStringDeduplication" >> gradle.properties
-          echo "org.gradle.daemon=true" >> gradle.properties
-          echo "org.gradle.parallel=true" >> gradle.properties
-          echo "org.gradle.caching=true" >> gradle.properties
-          echo "org.gradle.configureondemand=true" >> gradle.properties
-          echo "kotlin.incremental=true" >> gradle.properties
-          echo "kotlin.daemon.jvm.options=-Xmx4g" >> gradle.properties
-          echo "# Build optimization" >> gradle.properties
-          echo "org.gradle.vfs.watch=true" >> gradle.properties
-          echo "org.gradle.configuration-cache=true" >> gradle.properties
-
-      # Remove conflicting cache action - gradle/actions/setup-gradle handles this
-      # - name: Cache Gradle
-      #   uses: burrunan/gradle-cache-action@v3
-
-      - name: Free up disk space (Ubuntu only)
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          sudo rm -rf /usr/share/dotnet
-          sudo rm -rf /opt/ghc
-          sudo rm -rf "/usr/local/share/boost"
-          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-          df -h
-
-      # Add a step to validate Gradle setup before building
-      - name: Validate Gradle setup
-        run: ./gradlew --version
 
       - name: Full build
         if: matrix.os == 'ubuntu-latest'
-        run: ./gradlew build --stacktrace --info --max-workers=2
+        run: ./gradlew build
 
       - name: API check
-        if: matrix.os != 'ubuntu-latest'
-        run: ./gradlew check --stacktrace --info --max-workers=2
-
-      - name: Upload build reports
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-reports-${{ matrix.os }}
-          path: |
-            **/build/reports/
-            **/build/test-results/
-            **/*.hprof
-          retention-days: 7
+        if: "matrix.os != 'ubuntu-latest'"
+        run: ./gradlew check
