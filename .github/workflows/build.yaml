@@ -4,22 +4,13 @@ on:
   push:
   pull_request:
 
+# Simplified environment variables - avoid duplication with gradle.properties
 env:
-  # Enhanced Gradle options for better memory management
   GRADLE_OPTS: >-
     -Dorg.gradle.jvmargs=-Xmx8g
-    -XX:MaxMetaspaceSize=2g
-    -XX:+HeapDumpOnOutOfMemoryError
-    -XX:+UseG1GC
-    -XX:G1HeapRegionSize=16m
-    -XX:+UseStringDeduplication
-    -XX:+OptimizeStringConcat
     -Dorg.gradle.daemon=true
     -Dorg.gradle.parallel=true
     -Dorg.gradle.caching=true
-    -Dorg.gradle.configureondemand=true
-    -Dkotlin.incremental=true
-    -Dkotlin.daemon.jvm.options=-Xmx4g
 
 jobs:
   jvm:
@@ -36,37 +27,52 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # Shallow clone for faster checkout
           fetch-depth: 1
 
+      # Use Java 21 LTS for better stability and availability
       - name: Configure JDK
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
-          java-version: 19
+          distribution: 'temurin'  # Eclipse Temurin is more reliable than Zulu in CI
+          java-version: '21'       # LTS version, more stable
+
+      # Verify Java installation
+      - name: Verify Java installation
+        run: |
+          echo "JAVA_HOME: $JAVA_HOME"
+          echo "Java version:"
+          java -version
+          echo "Javac version:"
+          javac -version
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
-          # Enable build cache
           cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+          # gradle/actions/setup-gradle already handles caching efficiently
 
       - name: Grant execute permission for gradlew
         if: runner.os != 'Windows'
         run: chmod +x gradlew
 
-      - name: Create gradle.properties for memory optimization
+      # Create optimized gradle.properties (avoid conflicts with env vars)
+      - name: Create gradle.properties for optimization
         run: |
-          echo "org.gradle.jvmargs=-Xmx8g -XX:MaxMetaspaceSize=2g -XX:+UseG1GC" >> gradle.properties
+          echo "# Memory and performance optimization" > gradle.properties
+          echo "org.gradle.jvmargs=-Xmx8g -XX:MaxMetaspaceSize=2g -XX:+UseG1GC -XX:+UseStringDeduplication" >> gradle.properties
           echo "org.gradle.daemon=true" >> gradle.properties
           echo "org.gradle.parallel=true" >> gradle.properties
           echo "org.gradle.caching=true" >> gradle.properties
           echo "org.gradle.configureondemand=true" >> gradle.properties
           echo "kotlin.incremental=true" >> gradle.properties
           echo "kotlin.daemon.jvm.options=-Xmx4g" >> gradle.properties
+          echo "# Build optimization" >> gradle.properties
+          echo "org.gradle.vfs.watch=true" >> gradle.properties
+          echo "org.gradle.configuration-cache=true" >> gradle.properties
 
-      - name: Cache Gradle
-        uses: burrunan/gradle-cache-action@v3
+      # Remove conflicting cache action - gradle/actions/setup-gradle handles this
+      # - name: Cache Gradle
+      #   uses: burrunan/gradle-cache-action@v3
 
       - name: Free up disk space (Ubuntu only)
         if: matrix.os == 'ubuntu-latest'
@@ -76,6 +82,10 @@ jobs:
           sudo rm -rf "/usr/local/share/boost"
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
           df -h
+
+      # Add a step to validate Gradle setup before building
+      - name: Validate Gradle setup
+        run: ./gradlew --version
 
       - name: Full build
         if: matrix.os == 'ubuntu-latest'
