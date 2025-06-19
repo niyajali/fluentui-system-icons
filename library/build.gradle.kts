@@ -46,6 +46,14 @@ kotlin {
             compileTaskProvider.configure {
                 compilerOptions {
                     jvmTarget.set(JvmTarget.JVM_17)
+                    // Optimize for large codebases with many constants
+                    freeCompilerArgs.addAll(
+                        "-Xuse-k2",
+                        "-Xopt-in=kotlin.RequiresOptIn",
+                        "-Xno-param-assertions",
+                        "-Xno-call-assertions",
+                        "-Xno-receiver-assertions"
+                    )
                 }
             }
         }
@@ -56,6 +64,14 @@ kotlin {
             compileTaskProvider.configure {
                 compilerOptions {
                     jvmTarget.set(JvmTarget.JVM_17)
+                    // Optimize for large codebases
+                    freeCompilerArgs.addAll(
+                        "-Xuse-k2",
+                        "-Xopt-in=kotlin.RequiresOptIn",
+                        "-Xno-param-assertions",
+                        "-Xno-call-assertions",
+                        "-Xno-receiver-assertions"
+                    )
                 }
             }
         }

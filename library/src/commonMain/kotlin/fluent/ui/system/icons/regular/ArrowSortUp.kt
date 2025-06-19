@@ -1,26 +1,3 @@
-/*
- * MIT License
- *
- * Copyright (c) 2020 Microsoft Corporation
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package fluent.ui.system.icons.regular
 
 import androidx.compose.foundation.Image
@@ -32,45 +9,54 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Regular.ArrowSortUp: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
-    ImageVector.Builder(
-        name = "Regular.ArrowSortUp",
-        defaultWidth = 24.dp,
-        defaultHeight = 24.dp,
-        viewportWidth = 24f,
-        viewportHeight = 24f,
-    ).apply {
-        path(fill = SolidColor(Color(0xFF212121))) {
-            moveTo(6.72f, 8.715f)
-            lineTo(11.214f, 4.22f)
-            curveTo(11.481f, 3.954f, 11.897f, 3.929f, 12.19f, 4.147f)
-            lineTo(12.274f, 4.219f)
-            lineTo(16.779f, 8.714f)
-            curveTo(17.073f, 9.007f, 17.073f, 9.482f, 16.781f, 9.775f)
-            curveTo(16.514f, 10.041f, 16.098f, 10.066f, 15.804f, 9.848f)
-            lineTo(15.72f, 9.776f)
-            lineTo(12.497f, 6.559f)
-            lineTo(12.498f, 19.255f)
-            curveTo(12.498f, 19.635f, 12.215f, 19.948f, 11.849f, 19.998f)
-            lineTo(11.748f, 20.005f)
-            curveTo(11.368f, 20.005f, 11.054f, 19.723f, 11.005f, 19.357f)
-            lineTo(10.998f, 19.255f)
-            lineTo(10.997f, 6.557f)
-            lineTo(7.78f, 9.775f)
-            curveTo(7.514f, 10.042f, 7.097f, 10.066f, 6.804f, 9.848f)
-            lineTo(6.72f, 9.775f)
-            curveTo(6.453f, 9.509f, 6.429f, 9.092f, 6.647f, 8.799f)
-            lineTo(6.72f, 8.715f)
-            lineTo(11.214f, 4.22f)
-            lineTo(6.72f, 8.715f)
-            close()
+public val FluentIcons.Regular.ArrowSortUp: ImageVector
+    get() {
+        if (_ArrowSortUp != null) {
+            return _ArrowSortUp!!
         }
-    }.build()
-}
+        _ArrowSortUp = ImageVector.Builder(
+            name = "Regular.ArrowSortUp",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f,
+        ).apply {
+            path(fill = SolidColor(Color(0xFF212121))) {
+                moveTo(6.72f, 8.715f)
+                lineTo(11.214f, 4.22f)
+                curveTo(11.481f, 3.954f, 11.897f, 3.929f, 12.19f, 4.147f)
+                lineTo(12.274f, 4.219f)
+                lineTo(16.779f, 8.714f)
+                curveTo(17.073f, 9.007f, 17.073f, 9.482f, 16.781f, 9.775f)
+                curveTo(16.514f, 10.041f, 16.098f, 10.066f, 15.804f, 9.848f)
+                lineTo(15.72f, 9.776f)
+                lineTo(12.497f, 6.559f)
+                lineTo(12.498f, 19.255f)
+                curveTo(12.498f, 19.635f, 12.215f, 19.948f, 11.849f, 19.998f)
+                lineTo(11.748f, 20.005f)
+                curveTo(11.368f, 20.005f, 11.054f, 19.723f, 11.005f, 19.357f)
+                lineTo(10.998f, 19.255f)
+                lineTo(10.997f, 6.557f)
+                lineTo(7.78f, 9.775f)
+                curveTo(7.514f, 10.042f, 7.097f, 10.066f, 6.804f, 9.848f)
+                lineTo(6.72f, 9.775f)
+                curveTo(6.453f, 9.509f, 6.429f, 9.092f, 6.647f, 8.799f)
+                lineTo(6.72f, 8.715f)
+                lineTo(11.214f, 4.22f)
+                lineTo(6.72f, 8.715f)
+                close()
+            }
+        }.build()
+
+        return _ArrowSortUp!!
+    }
+
+@Suppress("ObjectPropertyName")
+private var _ArrowSortUp: ImageVector? = null
 
 @Preview
 @Composable

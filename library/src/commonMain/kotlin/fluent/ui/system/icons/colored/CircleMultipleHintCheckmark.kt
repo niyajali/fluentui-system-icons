@@ -1,26 +1,3 @@
-/*
- * MIT License
- *
- * Copyright (c) 2020 Microsoft Corporation
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package fluent.ui.system.icons.colored
 
 import androidx.compose.foundation.Image
@@ -33,13 +10,16 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Colored.CircleMultipleHintCheckmark: ImageVector by
-    lazy(LazyThreadSafetyMode.NONE) {
-        ImageVector.Builder(
+public val FluentIcons.Colored.CircleMultipleHintCheckmark: ImageVector
+    get() {
+        if (_CircleMultipleHintCheckmark != null) {
+            return _CircleMultipleHintCheckmark!!
+        }
+        _CircleMultipleHintCheckmark = ImageVector.Builder(
             name = "Colored.CircleMultipleHintCheckmark",
             defaultWidth = 24.dp,
             defaultHeight = 24.dp,
@@ -51,11 +31,11 @@ public val FluentIcons.Colored.CircleMultipleHintCheckmark: ImageVector by
                     colorStops = arrayOf(
                         0f to Color(0xFF8B52F4),
                         0.395f to Color(0xFF6D37CD),
-                        0.862f to Color(0xFF4B20A0),
+                        0.862f to Color(0xFF4B20A0)
                     ),
                     start = Offset(3.101f, 6.367f),
-                    end = Offset(15.55f, 12.376f),
-                ),
+                    end = Offset(15.55f, 12.376f)
+                )
             ) {
                 moveTo(4.891f, 14.023f)
                 curveTo(5.144f, 13.77f, 5.535f, 13.73f, 5.856f, 13.888f)
@@ -117,11 +97,11 @@ public val FluentIcons.Colored.CircleMultipleHintCheckmark: ImageVector by
                         0.251f to Color(0xFFFF835C),
                         0.584f to Color(0xFFF24A9D),
                         0.871f to Color(0xFFB339F0),
-                        1f to Color(0xFFC354FF),
+                        1f to Color(0xFFC354FF)
                     ),
                     center = Offset(9f, 9.521f),
-                    radius = 18.38f,
-                ),
+                    radius = 18.38f
+                )
             ) {
                 moveTo(16f, 16f)
                 moveToRelative(-7f, 0f)
@@ -132,10 +112,10 @@ public val FluentIcons.Colored.CircleMultipleHintCheckmark: ImageVector by
                 fill = Brush.linearGradient(
                     colorStops = arrayOf(
                         0.024f to Color(0xFFFFC8D7),
-                        0.807f to Color(0xFFFFFFFF),
+                        0.807f to Color(0xFFFFFFFF)
                     ),
                     start = Offset(16.94f, 21.461f),
-                    end = Offset(12.6f, 14.818f),
+                    end = Offset(12.6f, 14.818f)
                 ),
                 fillAlpha = 0.95f,
             ) {
@@ -153,7 +133,12 @@ public val FluentIcons.Colored.CircleMultipleHintCheckmark: ImageVector by
                 close()
             }
         }.build()
+
+        return _CircleMultipleHintCheckmark!!
     }
+
+@Suppress("ObjectPropertyName")
+private var _CircleMultipleHintCheckmark: ImageVector? = null
 
 @Preview
 @Composable

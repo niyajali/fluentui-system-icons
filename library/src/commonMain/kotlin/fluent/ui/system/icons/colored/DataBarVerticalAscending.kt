@@ -1,26 +1,3 @@
-/*
- * MIT License
- *
- * Copyright (c) 2020 Microsoft Corporation
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package fluent.ui.system.icons.colored
 
 import androidx.compose.foundation.Image
@@ -33,13 +10,16 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Colored.DataBarVerticalAscending: ImageVector by
-    lazy(LazyThreadSafetyMode.NONE) {
-        ImageVector.Builder(
+public val FluentIcons.Colored.DataBarVerticalAscending: ImageVector
+    get() {
+        if (_DataBarVerticalAscending != null) {
+            return _DataBarVerticalAscending!!
+        }
+        _DataBarVerticalAscending = ImageVector.Builder(
             name = "Colored.DataBarVerticalAscending",
             defaultWidth = 24.dp,
             defaultHeight = 24.dp,
@@ -50,11 +30,11 @@ public val FluentIcons.Colored.DataBarVerticalAscending: ImageVector by
                 fill = Brush.linearGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFF16BBDA),
-                        1f to Color(0xFF0067BF),
+                        1f to Color(0xFF0067BF)
                     ),
                     start = Offset(19.908f, -2.529f),
-                    end = Offset(31.994f, 3.112f),
-                ),
+                    end = Offset(31.994f, 3.112f)
+                )
             ) {
                 moveTo(20.5f, 5.25f)
                 curveTo(20.5f, 4.007f, 19.493f, 3f, 18.25f, 3f)
@@ -69,11 +49,11 @@ public val FluentIcons.Colored.DataBarVerticalAscending: ImageVector by
                 fill = Brush.linearGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFF16BBDA),
-                        1f to Color(0xFF0067BF),
+                        1f to Color(0xFF0067BF)
                     ),
                     start = Offset(9.934f, 3.58f),
-                    end = Offset(20.859f, 10.018f),
-                ),
+                    end = Offset(20.859f, 10.018f)
+                )
             ) {
                 moveTo(14f, 9.25f)
                 curveTo(14f, 8.007f, 12.993f, 7f, 11.75f, 7f)
@@ -88,11 +68,11 @@ public val FluentIcons.Colored.DataBarVerticalAscending: ImageVector by
                 fill = Brush.linearGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFF16BBDA),
-                        1f to Color(0xFF0067BF),
+                        1f to Color(0xFF0067BF)
                     ),
                     start = Offset(2.719f, 5.375f),
-                    end = Offset(11.477f, 12.6f),
-                ),
+                    end = Offset(11.477f, 12.6f)
+                )
             ) {
                 moveTo(7.5f, 13.25f)
                 curveTo(7.5f, 12.007f, 6.493f, 11f, 5.25f, 11f)
@@ -104,7 +84,12 @@ public val FluentIcons.Colored.DataBarVerticalAscending: ImageVector by
                 close()
             }
         }.build()
+
+        return _DataBarVerticalAscending!!
     }
+
+@Suppress("ObjectPropertyName")
+private var _DataBarVerticalAscending: ImageVector? = null
 
 @Preview
 @Composable

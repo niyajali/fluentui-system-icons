@@ -1,26 +1,3 @@
-/*
- * MIT License
- *
- * Copyright (c) 2020 Microsoft Corporation
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package fluent.ui.system.icons.colored
 
 import androidx.compose.foundation.Image
@@ -33,13 +10,16 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector by
-    lazy(LazyThreadSafetyMode.NONE) {
-        ImageVector.Builder(
+public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector
+    get() {
+        if (_TextBulletListSquareSparkle != null) {
+            return _TextBulletListSquareSparkle!!
+        }
+        _TextBulletListSquareSparkle = ImageVector.Builder(
             name = "Colored.TextBulletListSquareSparkle",
             defaultWidth = 24.dp,
             defaultHeight = 24.dp,
@@ -50,11 +30,11 @@ public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector by
                 fill = Brush.linearGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFF0FAFFF),
-                        1f to Color(0xFF2764E7),
+                        1f to Color(0xFF2764E7)
                     ),
                     start = Offset(3.643f, 6.375f),
-                    end = Offset(16.065f, 19.281f),
-                ),
+                    end = Offset(16.065f, 19.281f)
+                )
             ) {
                 moveTo(6.25f, 3f)
                 curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -71,11 +51,11 @@ public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector by
                 fill = Brush.linearGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFFFFFFFF),
-                        1f to Color(0xFFB3E0FF),
+                        1f to Color(0xFFB3E0FF)
                     ),
                     start = Offset(8.817f, 7.981f),
-                    end = Offset(15.189f, 25.449f),
-                ),
+                    end = Offset(15.189f, 25.449f)
+                )
             ) {
                 moveTo(7.75f, 9.25f)
                 curveTo(8.302f, 9.25f, 8.75f, 8.802f, 8.75f, 8.25f)
@@ -124,11 +104,11 @@ public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector by
                 fill = Brush.radialGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFF4A43CB),
-                        1f to Color(0x004A43CB),
+                        1f to Color(0x004A43CB)
                     ),
                     center = Offset(20.438f, 10.875f),
-                    radius = 4.098f,
-                ),
+                    radius = 4.098f
+                )
             ) {
                 moveTo(6.25f, 3f)
                 curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -145,11 +125,11 @@ public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector by
                 fill = Brush.radialGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFF4A43CB),
-                        1f to Color(0x004A43CB),
+                        1f to Color(0x004A43CB)
                     ),
                     center = Offset(16.54f, 4.446f),
-                    radius = 5.665f,
-                ),
+                    radius = 5.665f
+                )
             ) {
                 moveTo(6.25f, 3f)
                 curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -166,11 +146,11 @@ public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector by
                 fill = Brush.radialGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFF4A43CB),
-                        1f to Color(0x004A43CB),
+                        1f to Color(0x004A43CB)
                     ),
                     center = Offset(16.54f, 4.446f),
-                    radius = 5.987f,
-                ),
+                    radius = 5.987f
+                )
             ) {
                 moveTo(6.25f, 3f)
                 curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -187,11 +167,11 @@ public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector by
                 fill = Brush.radialGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFF4A43CB),
-                        1f to Color(0x004A43CB),
+                        1f to Color(0x004A43CB)
                     ),
                     center = Offset(20.317f, 11.277f),
-                    radius = 2.729f,
-                ),
+                    radius = 2.729f
+                )
             ) {
                 moveTo(6.25f, 3f)
                 curveTo(4.455f, 3f, 3f, 4.455f, 3f, 6.25f)
@@ -208,11 +188,11 @@ public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector by
                 fill = Brush.radialGradient(
                     colorStops = arrayOf(
                         0.718f to Color(0xFFFFCD0F),
-                        0.991f to Color(0xFFE67505),
+                        0.991f to Color(0xFFE67505)
                     ),
                     center = Offset(9.375f, -10.813f),
-                    radius = 28.614f,
-                ),
+                    radius = 28.614f
+                )
             ) {
                 moveTo(22.783f, 10.213f)
                 lineTo(22.017f, 9.965f)
@@ -254,11 +234,11 @@ public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector by
                 fill = Brush.radialGradient(
                     colorStops = arrayOf(
                         0.698f to Color(0xFFFFCD0F),
-                        0.991f to Color(0xFFE67505),
+                        0.991f to Color(0xFFE67505)
                     ),
                     center = Offset(0.83f, -22.661f),
-                    radius = 38.697f,
-                ),
+                    radius = 38.697f
+                )
             ) {
                 moveTo(15.088f, 6.412f)
                 curveTo(15.016f, 6.319f, 14.938f, 6.23f, 14.854f, 6.146f)
@@ -300,7 +280,12 @@ public val FluentIcons.Colored.TextBulletListSquareSparkle: ImageVector by
                 close()
             }
         }.build()
+
+        return _TextBulletListSquareSparkle!!
     }
+
+@Suppress("ObjectPropertyName")
+private var _TextBulletListSquareSparkle: ImageVector? = null
 
 @Preview
 @Composable

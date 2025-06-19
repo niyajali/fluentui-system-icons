@@ -1,26 +1,3 @@
-/*
- * MIT License
- *
- * Copyright (c) 2020 Microsoft Corporation
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -32,46 +9,55 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.Brain: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
-    ImageVector.Builder(
-        name = "Filled.Brain",
-        defaultWidth = 24.dp,
-        defaultHeight = 24.dp,
-        viewportWidth = 24f,
-        viewportHeight = 24f,
-    ).apply {
-        path(fill = SolidColor(Color(0xFF212121))) {
-            moveTo(9.5f, 2f)
-            curveTo(10.144f, 2f, 10.745f, 2.188f, 11.25f, 2.512f)
-            verticalLineTo(21.245f)
-            curveTo(10.621f, 21.718f, 9.84f, 22f, 8.994f, 22f)
-            curveTo(7.268f, 22f, 5.799f, 20.813f, 5.367f, 19.199f)
-            curveTo(3.459f, 18.896f, 2f, 17.244f, 2f, 15.25f)
-            verticalLineTo(15f)
-            curveTo(2f, 13.438f, 2.896f, 12.086f, 4.201f, 11.428f)
-            curveTo(3.462f, 10.722f, 3f, 9.728f, 3f, 8.625f)
-            curveTo(3f, 6.686f, 4.423f, 5.08f, 6.282f, 4.795f)
-            curveTo(6.504f, 3.215f, 7.86f, 2f, 9.5f, 2f)
-            close()
-            moveTo(14.5f, 2f)
-            curveTo(16.14f, 2f, 17.496f, 3.215f, 17.718f, 4.795f)
-            curveTo(19.576f, 5.08f, 21f, 6.686f, 21f, 8.625f)
-            curveTo(21f, 9.728f, 20.538f, 10.722f, 19.799f, 11.428f)
-            curveTo(21.104f, 12.086f, 22f, 13.438f, 22f, 15f)
-            verticalLineTo(15.25f)
-            curveTo(22f, 17.244f, 20.541f, 18.896f, 18.633f, 19.199f)
-            curveTo(18.201f, 20.813f, 16.732f, 22f, 15.006f, 22f)
-            curveTo(14.16f, 22f, 13.379f, 21.718f, 12.75f, 21.245f)
-            verticalLineTo(2.512f)
-            curveTo(13.255f, 2.188f, 13.856f, 2f, 14.5f, 2f)
-            close()
+public val FluentIcons.Filled.Brain: ImageVector
+    get() {
+        if (_Brain != null) {
+            return _Brain!!
         }
-    }.build()
-}
+        _Brain = ImageVector.Builder(
+            name = "Filled.Brain",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f,
+        ).apply {
+            path(fill = SolidColor(Color(0xFF212121))) {
+                moveTo(9.5f, 2f)
+                curveTo(10.144f, 2f, 10.745f, 2.188f, 11.25f, 2.512f)
+                verticalLineTo(21.245f)
+                curveTo(10.621f, 21.718f, 9.84f, 22f, 8.994f, 22f)
+                curveTo(7.268f, 22f, 5.799f, 20.813f, 5.367f, 19.199f)
+                curveTo(3.459f, 18.896f, 2f, 17.244f, 2f, 15.25f)
+                verticalLineTo(15f)
+                curveTo(2f, 13.438f, 2.896f, 12.086f, 4.201f, 11.428f)
+                curveTo(3.462f, 10.722f, 3f, 9.728f, 3f, 8.625f)
+                curveTo(3f, 6.686f, 4.423f, 5.08f, 6.282f, 4.795f)
+                curveTo(6.504f, 3.215f, 7.86f, 2f, 9.5f, 2f)
+                close()
+                moveTo(14.5f, 2f)
+                curveTo(16.14f, 2f, 17.496f, 3.215f, 17.718f, 4.795f)
+                curveTo(19.576f, 5.08f, 21f, 6.686f, 21f, 8.625f)
+                curveTo(21f, 9.728f, 20.538f, 10.722f, 19.799f, 11.428f)
+                curveTo(21.104f, 12.086f, 22f, 13.438f, 22f, 15f)
+                verticalLineTo(15.25f)
+                curveTo(22f, 17.244f, 20.541f, 18.896f, 18.633f, 19.199f)
+                curveTo(18.201f, 20.813f, 16.732f, 22f, 15.006f, 22f)
+                curveTo(14.16f, 22f, 13.379f, 21.718f, 12.75f, 21.245f)
+                verticalLineTo(2.512f)
+                curveTo(13.255f, 2.188f, 13.856f, 2f, 14.5f, 2f)
+                close()
+            }
+        }.build()
+
+        return _Brain!!
+    }
+
+@Suppress("ObjectPropertyName")
+private var _Brain: ImageVector? = null
 
 @Preview
 @Composable

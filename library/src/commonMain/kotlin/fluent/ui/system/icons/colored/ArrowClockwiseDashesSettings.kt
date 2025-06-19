@@ -1,26 +1,3 @@
-/*
- * MIT License
- *
- * Copyright (c) 2020 Microsoft Corporation
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package fluent.ui.system.icons.colored
 
 import androidx.compose.foundation.Image
@@ -33,13 +10,16 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Colored.ArrowClockwiseDashesSettings: ImageVector by
-    lazy(LazyThreadSafetyMode.NONE) {
-        ImageVector.Builder(
+public val FluentIcons.Colored.ArrowClockwiseDashesSettings: ImageVector
+    get() {
+        if (_ArrowClockwiseDashesSettings != null) {
+            return _ArrowClockwiseDashesSettings!!
+        }
+        _ArrowClockwiseDashesSettings = ImageVector.Builder(
             name = "Colored.ArrowClockwiseDashesSettings",
             defaultWidth = 24.dp,
             defaultHeight = 24.dp,
@@ -50,11 +30,11 @@ public val FluentIcons.Colored.ArrowClockwiseDashesSettings: ImageVector by
                 fill = Brush.linearGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFF0FAFFF),
-                        0.923f to Color(0xFF0067BF),
+                        0.923f to Color(0xFF0067BF)
                     ),
                     start = Offset(5.516f, 3f),
-                    end = Offset(4.702f, 25.8f),
-                ),
+                    end = Offset(4.702f, 25.8f)
+                )
             ) {
                 moveTo(19f, 4f)
                 curveTo(19f, 3.448f, 18.552f, 3f, 18f, 3f)
@@ -108,11 +88,11 @@ public val FluentIcons.Colored.ArrowClockwiseDashesSettings: ImageVector by
                 fill = Brush.linearGradient(
                     colorStops = arrayOf(
                         0f to Color(0x00885EDB),
-                        1f to Color(0xFFE362F8),
+                        1f to Color(0xFFE362F8)
                     ),
                     start = Offset(11.113f, 0.884f),
-                    end = Offset(15.604f, 30.793f),
-                ),
+                    end = Offset(15.604f, 30.793f)
+                )
             ) {
                 moveTo(19f, 4f)
                 curveTo(19f, 3.448f, 18.552f, 3f, 18f, 3f)
@@ -166,11 +146,11 @@ public val FluentIcons.Colored.ArrowClockwiseDashesSettings: ImageVector by
                 fill = Brush.linearGradient(
                     colorStops = arrayOf(
                         0f to Color(0xFF70777D),
-                        1f to Color(0xFFB9C0C7),
+                        1f to Color(0xFFB9C0C7)
                     ),
                     start = Offset(20.156f, 22.227f),
-                    end = Offset(14.626f, 12.905f),
-                ),
+                    end = Offset(14.626f, 12.905f)
+                )
             ) {
                 moveTo(14.277f, 13.976f)
                 curveTo(14.592f, 15.066f, 13.938f, 16.199f, 12.836f, 16.472f)
@@ -208,7 +188,12 @@ public val FluentIcons.Colored.ArrowClockwiseDashesSettings: ImageVector by
                 close()
             }
         }.build()
+
+        return _ArrowClockwiseDashesSettings!!
     }
+
+@Suppress("ObjectPropertyName")
+private var _ArrowClockwiseDashesSettings: ImageVector? = null
 
 @Preview
 @Composable

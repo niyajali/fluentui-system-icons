@@ -1,26 +1,3 @@
-/*
- * MIT License
- *
- * Copyright (c) 2020 Microsoft Corporation
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package fluent.ui.system.icons.regular
 
 import androidx.compose.foundation.Image
@@ -32,56 +9,65 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Regular.Emoji: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
-    ImageVector.Builder(
-        name = "Regular.Emoji",
-        defaultWidth = 24.dp,
-        defaultHeight = 24.dp,
-        viewportWidth = 24f,
-        viewportHeight = 24f,
-    ).apply {
-        path(fill = SolidColor(Color(0xFF212121))) {
-            moveTo(12f, 1.998f)
-            curveTo(17.524f, 1.998f, 22.001f, 6.476f, 22.001f, 12f)
-            curveTo(22.001f, 17.523f, 17.524f, 22.001f, 12f, 22.001f)
-            curveTo(6.476f, 22.001f, 1.998f, 17.523f, 1.998f, 12f)
-            curveTo(1.998f, 6.476f, 6.476f, 1.998f, 12f, 1.998f)
-            close()
-            moveTo(12f, 3.498f)
-            curveTo(7.305f, 3.498f, 3.498f, 7.304f, 3.498f, 12f)
-            curveTo(3.498f, 16.695f, 7.305f, 20.501f, 12f, 20.501f)
-            curveTo(16.695f, 20.501f, 20.501f, 16.695f, 20.501f, 12f)
-            curveTo(20.501f, 7.304f, 16.695f, 3.498f, 12f, 3.498f)
-            close()
-            moveTo(8.462f, 14.783f)
-            curveTo(9.311f, 15.861f, 10.602f, 16.501f, 12f, 16.501f)
-            curveTo(13.396f, 16.501f, 14.686f, 15.862f, 15.535f, 14.787f)
-            curveTo(15.792f, 14.462f, 16.263f, 14.407f, 16.588f, 14.663f)
-            curveTo(16.913f, 14.92f, 16.969f, 15.392f, 16.712f, 15.717f)
-            curveTo(15.581f, 17.149f, 13.86f, 18.001f, 12f, 18.001f)
-            curveTo(10.137f, 18.001f, 8.414f, 17.146f, 7.283f, 15.711f)
-            curveTo(7.027f, 15.386f, 7.083f, 14.914f, 7.408f, 14.658f)
-            curveTo(7.734f, 14.402f, 8.205f, 14.458f, 8.462f, 14.783f)
-            close()
-            moveTo(9f, 8.75f)
-            curveTo(9.69f, 8.75f, 10.25f, 9.31f, 10.25f, 10f)
-            curveTo(10.25f, 10.689f, 9.69f, 11.249f, 9f, 11.249f)
-            curveTo(8.31f, 11.249f, 7.751f, 10.689f, 7.751f, 10f)
-            curveTo(7.751f, 9.31f, 8.31f, 8.75f, 9f, 8.75f)
-            close()
-            moveTo(15f, 8.75f)
-            curveTo(15.69f, 8.75f, 16.25f, 9.31f, 16.25f, 10f)
-            curveTo(16.25f, 10.689f, 15.69f, 11.249f, 15f, 11.249f)
-            curveTo(14.31f, 11.249f, 13.751f, 10.689f, 13.751f, 10f)
-            curveTo(13.751f, 9.31f, 14.31f, 8.75f, 15f, 8.75f)
-            close()
+public val FluentIcons.Regular.Emoji: ImageVector
+    get() {
+        if (_Emoji != null) {
+            return _Emoji!!
         }
-    }.build()
-}
+        _Emoji = ImageVector.Builder(
+            name = "Regular.Emoji",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f,
+        ).apply {
+            path(fill = SolidColor(Color(0xFF212121))) {
+                moveTo(12f, 1.998f)
+                curveTo(17.524f, 1.998f, 22.001f, 6.476f, 22.001f, 12f)
+                curveTo(22.001f, 17.523f, 17.524f, 22.001f, 12f, 22.001f)
+                curveTo(6.476f, 22.001f, 1.998f, 17.523f, 1.998f, 12f)
+                curveTo(1.998f, 6.476f, 6.476f, 1.998f, 12f, 1.998f)
+                close()
+                moveTo(12f, 3.498f)
+                curveTo(7.305f, 3.498f, 3.498f, 7.304f, 3.498f, 12f)
+                curveTo(3.498f, 16.695f, 7.305f, 20.501f, 12f, 20.501f)
+                curveTo(16.695f, 20.501f, 20.501f, 16.695f, 20.501f, 12f)
+                curveTo(20.501f, 7.304f, 16.695f, 3.498f, 12f, 3.498f)
+                close()
+                moveTo(8.462f, 14.783f)
+                curveTo(9.311f, 15.861f, 10.602f, 16.501f, 12f, 16.501f)
+                curveTo(13.396f, 16.501f, 14.686f, 15.862f, 15.535f, 14.787f)
+                curveTo(15.792f, 14.462f, 16.263f, 14.407f, 16.588f, 14.663f)
+                curveTo(16.913f, 14.92f, 16.969f, 15.392f, 16.712f, 15.717f)
+                curveTo(15.581f, 17.149f, 13.86f, 18.001f, 12f, 18.001f)
+                curveTo(10.137f, 18.001f, 8.414f, 17.146f, 7.283f, 15.711f)
+                curveTo(7.027f, 15.386f, 7.083f, 14.914f, 7.408f, 14.658f)
+                curveTo(7.734f, 14.402f, 8.205f, 14.458f, 8.462f, 14.783f)
+                close()
+                moveTo(9f, 8.75f)
+                curveTo(9.69f, 8.75f, 10.25f, 9.31f, 10.25f, 10f)
+                curveTo(10.25f, 10.689f, 9.69f, 11.249f, 9f, 11.249f)
+                curveTo(8.31f, 11.249f, 7.751f, 10.689f, 7.751f, 10f)
+                curveTo(7.751f, 9.31f, 8.31f, 8.75f, 9f, 8.75f)
+                close()
+                moveTo(15f, 8.75f)
+                curveTo(15.69f, 8.75f, 16.25f, 9.31f, 16.25f, 10f)
+                curveTo(16.25f, 10.689f, 15.69f, 11.249f, 15f, 11.249f)
+                curveTo(14.31f, 11.249f, 13.751f, 10.689f, 13.751f, 10f)
+                curveTo(13.751f, 9.31f, 14.31f, 8.75f, 15f, 8.75f)
+                close()
+            }
+        }.build()
+
+        return _Emoji!!
+    }
+
+@Suppress("ObjectPropertyName")
+private var _Emoji: ImageVector? = null
 
 @Preview
 @Composable

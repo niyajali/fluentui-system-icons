@@ -1,26 +1,3 @@
-/*
- * MIT License
- *
- * Copyright (c) 2020 Microsoft Corporation
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -32,56 +9,65 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.PersonMail: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
-    ImageVector.Builder(
-        name = "Filled.PersonMail",
-        defaultWidth = 24.dp,
-        defaultHeight = 24.dp,
-        viewportWidth = 24f,
-        viewportHeight = 24f,
-    ).apply {
-        path(fill = SolidColor(Color(0xFF212121))) {
-            moveTo(11f, 15.5f)
-            curveTo(11f, 14.937f, 11.186f, 14.418f, 11.5f, 14f)
-            horizontalLineTo(5.253f)
-            curveTo(4.011f, 14f, 3.004f, 15.007f, 3.004f, 16.249f)
-            verticalLineTo(17.169f)
-            curveTo(3.004f, 17.741f, 3.182f, 18.299f, 3.514f, 18.765f)
-            curveTo(5.056f, 20.929f, 7.579f, 22.001f, 11f, 22.001f)
-            lineTo(11.051f, 22.001f)
-            curveTo(11.018f, 21.839f, 11f, 21.672f, 11f, 21.5f)
-            verticalLineTo(15.5f)
-            close()
-            moveTo(11f, 2.005f)
-            curveTo(13.762f, 2.005f, 16f, 4.243f, 16f, 7.005f)
-            curveTo(16f, 9.766f, 13.762f, 12.005f, 11f, 12.005f)
-            curveTo(8.239f, 12.005f, 6f, 9.766f, 6f, 7.005f)
-            curveTo(6f, 4.243f, 8.239f, 2.005f, 11f, 2.005f)
-            close()
-            moveTo(17.51f, 18.927f)
-            lineTo(12.019f, 15.724f)
-            curveTo(12.154f, 14.75f, 12.99f, 14f, 14f, 14f)
-            horizontalLineTo(21f)
-            curveTo(22.095f, 14f, 22.985f, 14.88f, 23f, 15.971f)
-            lineTo(17.51f, 18.927f)
-            close()
-            moveTo(17.737f, 19.941f)
-            lineTo(23f, 17.107f)
-            verticalLineTo(21f)
-            curveTo(23f, 22.105f, 22.105f, 23f, 21f, 23f)
-            horizontalLineTo(14f)
-            curveTo(12.896f, 23f, 12f, 22.105f, 12f, 21f)
-            verticalLineTo(16.871f)
-            lineTo(17.249f, 19.932f)
-            curveTo(17.399f, 20.02f, 17.584f, 20.023f, 17.737f, 19.941f)
-            close()
+public val FluentIcons.Filled.PersonMail: ImageVector
+    get() {
+        if (_PersonMail != null) {
+            return _PersonMail!!
         }
-    }.build()
-}
+        _PersonMail = ImageVector.Builder(
+            name = "Filled.PersonMail",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f,
+        ).apply {
+            path(fill = SolidColor(Color(0xFF212121))) {
+                moveTo(11f, 15.5f)
+                curveTo(11f, 14.937f, 11.186f, 14.418f, 11.5f, 14f)
+                horizontalLineTo(5.253f)
+                curveTo(4.011f, 14f, 3.004f, 15.007f, 3.004f, 16.249f)
+                verticalLineTo(17.169f)
+                curveTo(3.004f, 17.741f, 3.182f, 18.299f, 3.514f, 18.765f)
+                curveTo(5.056f, 20.929f, 7.579f, 22.001f, 11f, 22.001f)
+                lineTo(11.051f, 22.001f)
+                curveTo(11.018f, 21.839f, 11f, 21.672f, 11f, 21.5f)
+                verticalLineTo(15.5f)
+                close()
+                moveTo(11f, 2.005f)
+                curveTo(13.762f, 2.005f, 16f, 4.243f, 16f, 7.005f)
+                curveTo(16f, 9.766f, 13.762f, 12.005f, 11f, 12.005f)
+                curveTo(8.239f, 12.005f, 6f, 9.766f, 6f, 7.005f)
+                curveTo(6f, 4.243f, 8.239f, 2.005f, 11f, 2.005f)
+                close()
+                moveTo(17.51f, 18.927f)
+                lineTo(12.019f, 15.724f)
+                curveTo(12.154f, 14.75f, 12.99f, 14f, 14f, 14f)
+                horizontalLineTo(21f)
+                curveTo(22.095f, 14f, 22.985f, 14.88f, 23f, 15.971f)
+                lineTo(17.51f, 18.927f)
+                close()
+                moveTo(17.737f, 19.941f)
+                lineTo(23f, 17.107f)
+                verticalLineTo(21f)
+                curveTo(23f, 22.105f, 22.105f, 23f, 21f, 23f)
+                horizontalLineTo(14f)
+                curveTo(12.896f, 23f, 12f, 22.105f, 12f, 21f)
+                verticalLineTo(16.871f)
+                lineTo(17.249f, 19.932f)
+                curveTo(17.399f, 20.02f, 17.584f, 20.023f, 17.737f, 19.941f)
+                close()
+            }
+        }.build()
+
+        return _PersonMail!!
+    }
+
+@Suppress("ObjectPropertyName")
+private var _PersonMail: ImageVector? = null
 
 @Preview
 @Composable

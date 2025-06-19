@@ -1,26 +1,3 @@
-/*
- * MIT License
- *
- * Copyright (c) 2020 Microsoft Corporation
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -32,38 +9,47 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.Step: ImageVector by lazy(LazyThreadSafetyMode.NONE) {
-    ImageVector.Builder(
-        name = "Filled.Step",
-        defaultWidth = 24.dp,
-        defaultHeight = 24.dp,
-        viewportWidth = 24f,
-        viewportHeight = 24f,
-    ).apply {
-        path(fill = SolidColor(Color(0xFF212121))) {
-            moveTo(15.75f, 2f)
-            curveTo(15.06f, 2f, 14.5f, 2.56f, 14.5f, 3.25f)
-            verticalLineTo(8f)
-            horizontalLineTo(9.25f)
-            curveTo(8.56f, 8f, 8f, 8.56f, 8f, 9.25f)
-            verticalLineTo(14.5f)
-            horizontalLineTo(3.25f)
-            curveTo(2.56f, 14.5f, 2f, 15.06f, 2f, 15.75f)
-            verticalLineTo(20.75f)
-            curveTo(2f, 21.44f, 2.56f, 22f, 3.25f, 22f)
-            horizontalLineTo(18.75f)
-            curveTo(20.545f, 22f, 22f, 20.545f, 22f, 18.75f)
-            verticalLineTo(3.25f)
-            curveTo(22f, 2.56f, 21.44f, 2f, 20.75f, 2f)
-            horizontalLineTo(15.75f)
-            close()
+public val FluentIcons.Filled.Step: ImageVector
+    get() {
+        if (_Step != null) {
+            return _Step!!
         }
-    }.build()
-}
+        _Step = ImageVector.Builder(
+            name = "Filled.Step",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f,
+        ).apply {
+            path(fill = SolidColor(Color(0xFF212121))) {
+                moveTo(15.75f, 2f)
+                curveTo(15.06f, 2f, 14.5f, 2.56f, 14.5f, 3.25f)
+                verticalLineTo(8f)
+                horizontalLineTo(9.25f)
+                curveTo(8.56f, 8f, 8f, 8.56f, 8f, 9.25f)
+                verticalLineTo(14.5f)
+                horizontalLineTo(3.25f)
+                curveTo(2.56f, 14.5f, 2f, 15.06f, 2f, 15.75f)
+                verticalLineTo(20.75f)
+                curveTo(2f, 21.44f, 2.56f, 22f, 3.25f, 22f)
+                horizontalLineTo(18.75f)
+                curveTo(20.545f, 22f, 22f, 20.545f, 22f, 18.75f)
+                verticalLineTo(3.25f)
+                curveTo(22f, 2.56f, 21.44f, 2f, 20.75f, 2f)
+                horizontalLineTo(15.75f)
+                close()
+            }
+        }.build()
+
+        return _Step!!
+    }
+
+@Suppress("ObjectPropertyName")
+private var _Step: ImageVector? = null
 
 @Preview
 @Composable
