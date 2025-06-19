@@ -32,7 +32,6 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.bcv)
     alias(libs.plugins.maven)
 }
 
@@ -135,14 +134,6 @@ android {
         abortOnError = false
         warningsAsErrors = false
     }
-}
-
-apiValidation {
-    @OptIn(kotlinx.validation.ExperimentalBCVApi::class)
-    klib {
-        enabled = true
-    }
-    nonPublicMarkers.add("kotlin.PublishedApi")
 }
 
 // Maven publishing configuration

@@ -27,7 +27,6 @@ plugins {
     alias(libs.plugins.composeCompiler) apply false
     alias(libs.plugins.composeHotReload) apply false
     alias(libs.plugins.androidLibrary) apply false
-    alias(libs.plugins.bcv) apply false
     alias(libs.plugins.maven) apply false
 }
 
