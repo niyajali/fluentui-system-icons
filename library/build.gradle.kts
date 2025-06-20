@@ -46,14 +46,6 @@ kotlin {
             compileTaskProvider.configure {
                 compilerOptions {
                     jvmTarget.set(JvmTarget.JVM_17)
-                    // Optimize for large codebases with many constants
-                    freeCompilerArgs.addAll(
-                        "-Xuse-k2",
-                        "-Xopt-in=kotlin.RequiresOptIn",
-                        "-Xno-param-assertions",
-                        "-Xno-call-assertions",
-                        "-Xno-receiver-assertions"
-                    )
                 }
             }
         }
@@ -64,14 +56,6 @@ kotlin {
             compileTaskProvider.configure {
                 compilerOptions {
                     jvmTarget.set(JvmTarget.JVM_17)
-                    // Optimize for large codebases
-                    freeCompilerArgs.addAll(
-                        "-Xuse-k2",
-                        "-Xopt-in=kotlin.RequiresOptIn",
-                        "-Xno-param-assertions",
-                        "-Xno-call-assertions",
-                        "-Xno-receiver-assertions"
-                    )
                 }
             }
         }
@@ -79,11 +63,9 @@ kotlin {
 
     js(IR) {
         browser()
-        nodejs()
     }
 
     wasmJs {
-        nodejs()
         browser()
     }
 
@@ -121,7 +103,7 @@ kotlin {
 
 android {
     namespace = "fluent.ui.system.icons"
-    compileSdk = 35
+    compileSdk = 36
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
