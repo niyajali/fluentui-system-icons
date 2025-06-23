@@ -21,7 +21,7 @@ Browse and copy icons with our interactive web catalog: **[Open Catalog](https:/
 ✨ **Features:**
 - 🔍 Search and filter through all available icons
 - 📋 Copy SVG code directly to clipboard
-- 🎨 Copy Jetpack Compose references (e.g., `FluentUi.Filled.FileEdit`)
+- 🎨 Copy Jetpack Compose references (e.g., `FluentIcons.Filled.FileEdit`)
 - 🌙 Dark/Light theme support
 - 📱 Responsive design for all devices
 
@@ -64,29 +64,29 @@ fun MyScreen() {
     ) {
         // Filled style icons
         Icon(
-            imageVector = FluentUi.Filled.Home,
+            imageVector = FluentIcons.Filled.Home,
             contentDescription = "Home"
         )
 
         Icon(
-            imageVector = FluentUi.Filled.Settings,
+            imageVector = FluentIcons.Filled.Settings,
             contentDescription = "Settings"
         )
 
         // Regular style icons
         Icon(
-            imageVector = FluentUi.Regular.Mail,
+            imageVector = FluentIcons.Regular.Mail,
             contentDescription = "Mail"
         )
 
         Icon(
-            imageVector = FluentUi.Regular.Calendar,
+            imageVector = FluentIcons.Regular.Calendar,
             contentDescription = "Calendar"
         )
 
         // In buttons
         Button(onClick = { }) {
-            Icon(FluentUi.Filled.Add, contentDescription = null)
+            Icon(FluentIcons.Filled.Add, contentDescription = null)
             Spacer(Modifier.width(8.dp))
             Text("Add Item")
         }
@@ -96,9 +96,9 @@ fun MyScreen() {
 
 ### Available Styles
 
-- **FluentUi.Filled** - Filled style icons
-- **FluentUi.Regular** - Regular/outline style icons
-- **FluentUi.Colored** - Multi-color icons (where available)
+- **FluentIcons.Filled** - Filled style icons
+- **FluentIcons.Regular** - Regular/outline style icons
+- **FluentIcons.Colored** - Multi-color icons (where available)
 
 ## Supported Platforms
 
