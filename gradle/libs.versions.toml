@@ -4,6 +4,8 @@ androidx-activity = "1.10.1"
 androidx-lifecycle = "2.9.1"
 composeHotReload = "1.0.0-alpha10"
 composeMultiplatform = "1.8.1"
+androidxComposeBom = "2025.06.01"
+appcompatVersion = "1.7.1"
 kotlin = "2.1.21"
 kotlinx-coroutines = "1.10.2"
 kotlinx-datetime = "0.6.2"
@@ -13,9 +15,15 @@ dokka = "2.0.0"
 jetbrains-navigation = "2.8.4"
 spotlessVersion = "7.0.2"
 composeVectorize = "1.0.2"
+kotlinStdlib = "2.1.21"
+runner = "1.6.2"
+core = "1.6.1"
+junit = "1.2.1"
+fluentui-icons = "1.0.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompatVersion" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
@@ -29,6 +37,8 @@ kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.
 jetbrains-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "jetbrains-navigation" }
 compose-vectorize = { module="dev.sergiobelda.compose.vectorize:compose-vectorize-core", version.ref="composeVectorize" }
 spotless-gradle = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotlessVersion" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
+fluentui-system-icons = { module = "io.github.niyajali:fluentui-system-icons", version.ref = "fluentui-icons" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -42,3 +52,4 @@ maven = { id = 'com.vanniktech.maven.publish', version.ref = 'maven' }
 dokka = { id = 'org.jetbrains.dokka', version.ref = 'dokka' }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotlessVersion" }
 compose-vectorize = { id="dev.sergiobelda.compose.vectorize", version.ref="composeVectorize" }
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }

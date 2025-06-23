@@ -64,3 +64,7 @@ buildCache {
 
 include(":library")
 
+include(":sample:shared")
+include(":sample:androidApp")
+include(":sample:desktopApp")
+include(":sample:webApp")
