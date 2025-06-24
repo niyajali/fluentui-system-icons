@@ -48,13 +48,18 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(projects.library)
+
             implementation(compose.ui)
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
             implementation(compose.components.resources)
-            // implementation(libs.fluentui.system.icons)
-            implementation(projects.library)
+            implementation(compose.material3AdaptiveNavigationSuite)
+            implementation(compose.animation)
+            implementation(libs.material3.adaptive)
+            implementation(libs.material3.adaptive.layout)
+            implementation(libs.kotlinx.coroutines.core)
         }
     }
 }
@@ -62,10 +67,6 @@ kotlin {
 android {
     namespace = "com.niyajali.sample.shared"
     compileSdk = 36
-
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-    sourceSets["main"].res.srcDirs("src/androidMain/res")
-    sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
         minSdk = 21

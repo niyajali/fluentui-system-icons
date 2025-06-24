@@ -20,6 +20,7 @@ runner = "1.6.2"
 core = "1.6.1"
 junit = "1.2.1"
 fluentui-icons = "1.0.0"
+material3adaptive = "1.1.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -39,6 +40,11 @@ compose-vectorize = { module="dev.sergiobelda.compose.vectorize:compose-vectoriz
 spotless-gradle = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotlessVersion" }
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
 fluentui-system-icons = { module = "io.github.niyajali:fluentui-system-icons", version.ref = "fluentui-icons" }
+
+material3-adaptive = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive", version.ref = "material3adaptive" }
+material3-adaptive-layout = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive-layout", version.ref = "material3adaptive" }
+material3-adaptive-navigation = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive-navigation", version.ref = "material3adaptive" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
