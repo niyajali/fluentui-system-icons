@@ -1,0 +1,25 @@
+name: Build And Deploy Web App
+
+# Trigger conditions for the workflow
+on:
+  workflow_dispatch:
+
+# Concurrency settings to manage multiple workflow runs
+# This ensures orderly deployment to production environment
+concurrency:
+  group: "web-pages"
+  cancel-in-progress: false
+
+permissions:
+  contents: read  # Read repository contents
+  pages: write    # Write to GitHub Pages
+  id-token: write # Write authentication tokens
+  pull-requests: write # Write to pull requests
+
+jobs:
+  build_and_deploy_web:
+    name: Build And Deploy Web App
+    uses: openMF/mifos-x-actionhub/.github/workflows/build-and-deploy-site.yaml@v1.0.2
+    secrets: inherit
+    with:
+      web_package_name: 'sample:webApp' # <-- Change with your web package name
