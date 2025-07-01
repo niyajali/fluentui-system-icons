@@ -25,6 +25,7 @@ rootProject.name = "fluentui-system-icons"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             mavenContent {
@@ -35,6 +36,8 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven("https://jitpack.io")
+        maven("https://jetbrains.bintray.com/trove4j")
     }
 }
 

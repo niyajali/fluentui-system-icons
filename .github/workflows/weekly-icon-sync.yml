@@ -1,0 +1,287 @@
+name: Weekly Icon Sync
+
+on:
+  schedule:
+    # Run every Monday at 9:00 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      force_sync:
+        description: 'Force sync even if no new icons found'
+        required: false
+        default: false
+        type: boolean
+      custom_branch:
+        description: 'Custom branch name for PR'
+        required: false
+        default: ''
+        type: string
+
+env:
+  GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.parallel=true -Dorg.gradle.caching=true
+  JAVA_VERSION: '17'
+
+jobs:
+  sync-icons:
+    runs-on: ubuntu-latest
+    
+    outputs:
+      new_families_count: ${{ steps.check_icons.outputs.new_families_count }}
+      new_variants_count: ${{ steps.check_icons.outputs.new_variants_count }}
+      sync_performed: ${{ steps.sync_check.outputs.sync_performed }}
+      pr_created: ${{ steps.create_pr.outputs.pull-request-number != '' }}
+    
+    steps:
+    - name: 🏗️ Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: 📦 Setup JDK ${{ env.JAVA_VERSION }}
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ env.JAVA_VERSION }}
+        distribution: 'temurin'
+        cache: gradle
+    
+    - name: 🔧 Setup Gradle
+      uses: gradle/gradle-build-action@v3
+      with:
+        gradle-home-cache-cleanup: true
+    
+    - name: 🔍 Check for new icons
+      id: check_icons
+      run: |
+        echo "🔍 Checking for new icons..."
+        # Configure source path for CI environment
+        ./gradlew checkNewIcons -PsourceRepositoryPath=fluentui-source/assets > check_output.txt 2>&1
+        
+        # Extract counts from output
+        new_families=$(grep -c "📁" check_output.txt || echo '0')
+        new_variants=$(grep "Total variants to sync:" check_output.txt | grep -o '[0-9]\+' || echo '0')
+        
+        echo "new_families_count=$new_families" >> $GITHUB_OUTPUT
+        echo "new_variants_count=$new_variants" >> $GITHUB_OUTPUT
+        
+        echo "📊 Found: $new_families new families, $new_variants new variants"
+        echo "📋 Full check output:"
+        cat check_output.txt
+        
+        # Save output for later steps
+        echo "CHECK_OUTPUT<<EOF" >> $GITHUB_ENV
+        cat check_output.txt >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+    
+    - name: 🎯 Determine if sync should proceed
+      id: sync_check
+      run: |
+        should_sync="false"
+        
+        if [ "${{ steps.check_icons.outputs.new_variants_count }}" -gt "0" ]; then
+          echo "✅ New variants found, proceeding with sync"
+          should_sync="true"
+        elif [ "${{ github.event.inputs.force_sync }}" == "true" ]; then
+          echo "🔄 Force sync requested, proceeding anyway"
+          should_sync="true"
+        else
+          echo "ℹ️ No new variants found and force sync not requested"
+          should_sync="false"
+        fi
+        
+        echo "sync_performed=$should_sync" >> $GITHUB_OUTPUT
+        echo "SHOULD_SYNC=$should_sync" >> $GITHUB_ENV
+    
+    - name: 🎨 Sync and convert new icons
+      if: env.SHOULD_SYNC == 'true'
+      run: |
+        echo "🎨 Starting icon sync and conversion..."
+        # Configure source path for CI environment where fluentui-source is cloned
+        ./gradlew syncNewIcons -PsourceRepositoryPath=fluentui-source/assets
+        
+        echo "📊 Sync completed, checking for changes..."
+        if [[ `git status --porcelain` ]]; then
+          echo "✅ Changes detected after sync"
+          git status --short
+        else
+          echo "⚠️ No changes detected after sync"
+        fi
+    
+    - name: 📈 Analyze icon coverage
+      if: env.SHOULD_SYNC == 'true'
+      run: |
+        echo "📈 Running icon coverage analysis..."
+        ./gradlew analyzeIconCoverage -PsourceRepositoryPath=fluentui-source/assets > coverage_analysis.txt 2>&1
+        
+        echo "COVERAGE_ANALYSIS<<EOF" >> $GITHUB_ENV
+        cat coverage_analysis.txt >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+        
+        echo "📋 Coverage analysis:"
+        cat coverage_analysis.txt
+    
+    - name: 🔧 Setup Git configuration
+      if: env.SHOULD_SYNC == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+    
+    - name: 📝 Generate comprehensive commit message
+      if: env.SHOULD_SYNC == 'true'
+      id: commit_msg
+      run: |
+        timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
+        families="${{ steps.check_icons.outputs.new_families_count }}"
+        variants="${{ steps.check_icons.outputs.new_variants_count }}"
+        
+        # Create detailed commit message
+        cat > commit_message.txt << EOF
+        🎨 Weekly icon sync: Added $variants icon variants from $families families
+        
+        📅 Sync Date: $timestamp
+        📊 Summary:
+        - New icon families: $families
+        - New style variants: $variants
+        - Conversion: SVG → ImageVector (Compose)
+        - Organization: Style-based directories
+        
+        🎯 Changes:
+        - SVGs converted using svg2compose
+        - Icons organized by style (filled/, regular/, light/, colored/)
+        - IconList files auto-updated with imports
+        - Proper naming: FluentIcons.Style.IconName
+        
+        Generated by weekly-icon-sync workflow
+        EOF
+        
+        echo "COMMIT_MESSAGE<<EOF" >> $GITHUB_ENV
+        cat commit_message.txt >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+    
+    - name: 🔀 Create Pull Request
+      if: env.SHOULD_SYNC == 'true'
+      id: create_pr
+      uses: peter-evans/create-pull-request@v6
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: ${{ env.COMMIT_MESSAGE }}
+        title: "🎨 Weekly Icon Sync - ${{ steps.check_icons.outputs.new_variants_count }} New ImageVectors"
+        branch: ${{ github.event.inputs.custom_branch || format('weekly-icon-sync-{0}', github.run_number) }}
+        delete-branch: true
+        body: |
+          ## 🎨 Weekly Icon Sync Report
+          
+          **📅 Sync Date:** ${{ steps.commit_msg.outputs.timestamp }}
+          
+          ### 📊 Summary
+          - **🏠 Icon Families Added:** ${{ steps.check_icons.outputs.new_families_count }}
+          - **🎨 Style Variants Added:** ${{ steps.check_icons.outputs.new_variants_count }}
+          - **🔄 Conversion Method:** SVG → ImageVector (svg2compose)
+          - **📁 Organization:** Style-based directories
+          
+          ### ✨ What's New
+          - ✅ **SVG Conversion:** Converted SVGs to Compose ImageVectors using svg2compose
+          - 📁 **Style Organization:** Icons organized into `filled/`, `regular/`, `light/`, `colored/` directories
+          - 🏷️ **Proper Naming:** Using `FluentIcons.Style.IconName` pattern
+          - 📝 **Auto-Import Management:** IconList files updated with proper imports
+          - 🎯 **Size Fallback:** Prioritized 24px variants with smart fallback per style
+          
+          ### 📂 Generated Structure
+          ```
+          fluent/ui/system/icons/
+          ├── filled/FluentIconName.kt
+          ├── regular/FluentIconName.kt  
+          ├── light/FluentIconName.kt
+          ├── colored/FluentIconName.kt
+          └── StyleIconList.kt (auto-updated)
+          ```
+          
+          ### 🔍 New Icons Preview
+          
+          ${{ env.CHECK_OUTPUT }}
+          
+          ### 📈 Coverage Analysis
+          
+          ${{ env.COVERAGE_ANALYSIS }}
+          
+          ### 🎯 Collection Strategy
+          1. **All Styles:** Collect all available styles for each icon family
+          2. **Size Priority:** 24px → 20px → 16px → 28px → 32px (per style)
+          3. **Naming Convention:** `access_time_24_filled.svg` → `FluentAccessTime.kt`
+          4. **Organization:** Place in appropriate style directory with object reference
+          5. **Import Management:** Auto-update StyleIconList.kt files
+          
+          ### 🚀 Usage
+          ```kotlin
+          // Use the new icons immediately
+          Icon(
+              imageVector = FluentIcons.Filled.FluentNewIcon,
+              contentDescription = "New Icon"
+          )
+          
+          // Access all icons of a style
+          val allFilledIcons = FluentIcons.Filled.All
+          ```
+          
+          ### 🔧 Technical Details
+          - **Plugin Version:** fluent.icon-sync v1.0.0
+          - **Conversion Library:** svg2compose v0.8.1
+          - **Serialization:** Kotlinx.Serialization v1.6.2
+          - **Source:** FluentUI System Icons Repository
+          
+          ---
+          
+          🤖 **Auto-generated by:** `weekly-icon-sync` workflow  
+          📅 **Generated on:** ${{ steps.commit_msg.outputs.timestamp }}  
+          🔗 **Workflow Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        labels: |
+          🎨 icons
+          🤖 automation
+          📦 enhancement
+        assignees: ${{ github.actor }}
+        reviewers: ${{ github.actor }}
+    
+    - name: 📊 Generate workflow summary
+      run: |
+        echo "## 🎨 Weekly Icon Sync Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📋 Results" >> $GITHUB_STEP_SUMMARY
+        echo "- 🔍 **Checked for new icons:** ✅" >> $GITHUB_STEP_SUMMARY
+        echo "- 🏠 **New families found:** ${{ steps.check_icons.outputs.new_families_count }}" >> $GITHUB_STEP_SUMMARY
+        echo "- 🎨 **New variants found:** ${{ steps.check_icons.outputs.new_variants_count }}" >> $GITHUB_STEP_SUMMARY
+        echo "- 🔄 **Sync performed:** ${{ steps.sync_check.outputs.sync_performed }}" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ steps.sync_check.outputs.sync_performed }}" == "true" ]; then
+          if [ "${{ steps.create_pr.outputs.pull-request-number }}" != "" ]; then
+            echo "- ✅ **PR Created:** #${{ steps.create_pr.outputs.pull-request-number }}" >> $GITHUB_STEP_SUMMARY
+            echo "- 🔗 **PR URL:** ${{ steps.create_pr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- ⚠️ **PR Creation:** Failed or no changes detected" >> $GITHUB_STEP_SUMMARY
+          fi
+        else
+          echo "- ℹ️ **No sync needed:** No new variants found" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📅 Details" >> $GITHUB_STEP_SUMMARY
+        echo "- **🕐 Triggered:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **🏃 Run ID:** ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **👤 Actor:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **🌿 Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+    
+    - name: 💬 Add comment to existing PR (if manual trigger)
+      if: github.event_name == 'workflow_dispatch' && steps.create_pr.outputs.pull-request-number != ''
+      uses: peter-evans/create-or-update-comment@v4
+      with:
+        issue-number: ${{ steps.create_pr.outputs.pull-request-number }}
+        body: |
+          🔄 **Manual sync triggered by @${{ github.actor }}**
+          
+          **Trigger Inputs:**
+          - Force Sync: `${{ github.event.inputs.force_sync }}`
+          - Custom Branch: `${{ github.event.inputs.custom_branch || 'default' }}`
+          
+          **Results:**
+          - New Families: ${{ steps.check_icons.outputs.new_families_count }}
+          - New Variants: ${{ steps.check_icons.outputs.new_variants_count }}
+

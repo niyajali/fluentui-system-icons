@@ -29,6 +29,7 @@ plugins {
     alias(libs.plugins.androidLibrary) apply false
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.maven) apply false
+    alias(libs.plugins.kotlinx.serialization) apply false
 //    alias(libs.plugins.spotless) apply true
 }
 
