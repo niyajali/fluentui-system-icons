@@ -22,17 +22,14 @@
  * SOFTWARE.
  */
 
-
 package models
 
-import java.io.File
-
-data class IconVariant(
-    val name: String,
-    val size: Int,
+/**
+ * Information about a successfully synced icon
+ */
+data class SyncedIconInfo(
+    val iconName: String,
     val style: String,
-    val svgFile: File,
-    val priority: Int,
-    // "ltr", "rtl", or null for non-directional icons
-    val direction: String? = null
+    val size: Int,
+    val filePath: String
 )

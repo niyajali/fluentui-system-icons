@@ -26,5 +26,6 @@ package models
 
 data class IconFamily(
     val baseName: String,
-    val variants: Map<String, IconVariant> // style -> best variant for that style
+    // style -> best variant for that style
+    val variants: Map<String, IconVariant>
 )

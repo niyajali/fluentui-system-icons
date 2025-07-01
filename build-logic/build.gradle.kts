@@ -44,11 +44,11 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        create("weeklyIconSync") {
-            id = "fluent.icon-sync"
+        create("fluentIconsSync") {
+            id = "fluent.icons"
             implementationClass = "WeeklyIconSyncPlugin"
-            displayName = "Weekly Icon Sync Plugin"
-            description = "Automatically syncs new icons from FluentUI System Icons repository"
+            displayName = "FluentUI Icons Plugin"
+            description = "Automatically syncs and converts FluentUI System Icons to Jetpack Compose ImageVectors"
         }
     }
 }

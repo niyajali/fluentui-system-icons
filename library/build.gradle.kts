@@ -33,11 +33,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.maven)
-    id("fluent.icon-sync")
-}
-
-iconSync {
-    sourceRepositoryPath.set("F:/fluentui-source/assets")
+    id("fluent.icons")
 }
 
 kotlin {

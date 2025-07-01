@@ -24,74 +24,95 @@
 
 package tasks
 
-import IconSyncConfig
+import FluentIconsConfig
 import org.gradle.api.DefaultTask
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.TaskAction
+import services.GitRepositoryFactory
 import utils.IconScanner
 import java.io.File
 
 abstract class AnalyzeIconCoverageTask : DefaultTask() {
     
     @get:Input
-    abstract val config: Property<IconSyncConfig>
+    abstract val config: Property<FluentIconsConfig>
     
     @TaskAction
     fun analyzeIconCoverage() {
-        val iconConfig = config.get()
-        val sourceDir = File(iconConfig.sourceRepositoryPath)
-        val targetDir = File(project.projectDir, iconConfig.targetIconsPath)
+        val fluentConfig = config.get()
+        val targetDir = File(project.projectDir, fluentConfig.targetIconsPath)
         
-        if (!sourceDir.exists()) {
-            throw IllegalArgumentException("Source repository path does not exist: ${iconConfig.sourceRepositoryPath}")
-        }
+        println("📊 FluentUI Icons Coverage Analysis")
+        println("📂 Target: ${targetDir.absolutePath}")
         
-        val scanner = IconScanner()
-        val existingIcons = scanner.getExistingIconVariants(targetDir, iconConfig.supportedStyles)
-        val sourceIcons = scanner.scanSourceIcons(sourceDir, iconConfig.supportedStyles)
-        
-        println("📊 Icon Coverage Analysis")
-        println("================================================================================")
-        
-        val existingFamilies = existingIcons.map { it.substringBeforeLast("_") }.toSet()
-        val sourceFamilies = sourceIcons.keys
-        
-        println("📁 Total families in source: ${sourceFamilies.size}")
-        println("📁 Total families in target: ${existingFamilies.size}")
-        println("📁 Missing families: ${sourceFamilies.size - existingFamilies.size}")
-        
-        // Style coverage analysis
-        println("\n🎨 Style Coverage:")
-        iconConfig.supportedStyles.forEach { style ->
-            val existingWithStyle = existingIcons.count { it.endsWith("_$style") }
-            val sourceWithStyle = sourceIcons.values.sumOf { variants ->
-                variants.count { it.style == style }
+        // Use repository service with automatic cleanup
+        GitRepositoryFactory.createRepository(
+            fluentConfig.useLocalDirectory,
+            fluentConfig.localDirectoryPath,
+            fluentConfig.gitRepository,
+            fluentConfig.gitRef
+        ).use { gitRepo ->
+            
+            println("📍 Source: ${gitRepo.getRepositoryInfo()}")
+            
+            val sourceDir = gitRepo.getAssetsDirectory(fluentConfig.assetsPath)
+            
+            val scanner = IconScanner()
+            
+            // Get existing and source icons
+            val existingIcons = scanner.getExistingIconVariants(targetDir, fluentConfig.supportedStyles)
+            val sourceIcons = scanner.scanSourceIcons(sourceDir, fluentConfig.supportedStyles)
+            
+            // Calculate coverage statistics
+            val totalSourceFamilies = sourceIcons.size
+            val totalSourceVariants = sourceIcons.values.sumOf { it.size }
+            val existingVariantsCount = existingIcons.size
+            
+            // Style breakdown
+            val styleStats = mutableMapOf<String, Pair<Int, Int>>() // source count, existing count
+            
+            fluentConfig.supportedStyles.forEach { style ->
+                val sourceVariantsForStyle = sourceIcons.values.flatten().count { it.style == style }
+                val existingVariantsForStyle = existingIcons.count { it.endsWith("_$style") }
+                styleStats[style] = Pair(sourceVariantsForStyle, existingVariantsForStyle)
             }
-            println("  $style: $existingWithStyle/$sourceWithStyle available")
-        }
-        
-        // Size distribution
-        println("\n📏 Size Distribution in Source:")
-        val sizeDistribution = sourceIcons.values.flatten()
-            .groupBy { it.size }
-            .mapValues { it.value.size }
-            .toSortedMap()
-        
-        sizeDistribution.forEach { (size, count) ->
-            println("  ${size}px: $count variants")
-        }
-        
-        // Directory structure analysis
-        println("\n📂 Directory Structure:")
-        iconConfig.supportedStyles.forEach { style ->
-            val styleDir = File(targetDir, style.lowercase())
-            val iconCount = if (styleDir.exists()) {
-                styleDir.listFiles { file: File -> file.extension == "kt" && !file.name.endsWith("IconList.kt") }?.size ?: 0
-            } else {
-                0
+            
+            // Coverage analysis
+            val coveragePercentage = if (totalSourceVariants > 0) {
+                (existingVariantsCount.toDouble() / totalSourceVariants * 100)
+            } else 0.0
+            
+            println("\n" + "=".repeat(60))
+            println("📊 FLUENT ICONS COVERAGE ANALYSIS")
+            println("=".repeat(60))
+            println("🏠 Total families in source: $totalSourceFamilies")
+            println("🎨 Total variants in source: $totalSourceVariants") 
+            println("✅ Existing variants in target: $existingVariantsCount")
+            println("📈 Coverage: ${"%.1f".format(coveragePercentage)}%")
+            
+            println("\n🎨 Style Breakdown:")
+            styleStats.forEach { (style, counts) ->
+                val (sourceCount, existingCount) = counts
+                val stylePercentage = if (sourceCount > 0) {
+                    (existingCount.toDouble() / sourceCount * 100)
+                } else 0.0
+                println("   📁 ${style.lowercase()}: $existingCount/$sourceCount (${"%.1f".format(stylePercentage)}%)")
             }
-            println("  ${style.lowercase()}/: $iconCount icons")
+            
+            println("\n📂 Directory Structure:")
+            fluentConfig.supportedStyles.forEach { style ->
+                val styleDir = File(targetDir, style.lowercase())
+                if (styleDir.exists()) {
+                    val iconCount = styleDir.listFiles { file -> 
+                        file.extension == "kt" && !file.name.endsWith("IconList.kt") 
+                    }?.size ?: 0
+                    println("   📁 ${style.lowercase()}/: $iconCount icons")
+                } else {
+                    println("   📁 ${style.lowercase()}/: (not found)")
+                }
+            }
+            println("=".repeat(60))
         }
     }
 }

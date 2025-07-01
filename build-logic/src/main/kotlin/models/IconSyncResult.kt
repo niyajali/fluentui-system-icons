@@ -22,8 +22,6 @@
  * SOFTWARE.
  */
 
-// File: build-logic/src/main/kotlin/models/SyncResults.kt
-
 package models
 
 data class IconSyncResult(
@@ -35,9 +33,3 @@ data class IconSyncResult(
     val styleBreakdown: Map<String, Int>
 )
 
-data class SyncedIconInfo(
-    val iconName: String,
-    val style: String,
-    val size: Int,
-    val filePath: String
-)

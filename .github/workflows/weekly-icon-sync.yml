@@ -1,4 +1,4 @@
-name: Weekly Icon Sync
+name: FluentUI Icons Sync
 
 on:
   schedule:
@@ -11,6 +11,11 @@ on:
         required: false
         default: false
         type: boolean
+      git_ref:
+        description: 'Git reference: branch name (main) or tag name (1.1.305)'
+        required: false
+        default: 'main'
+        type: string
       custom_branch:
         description: 'Custom branch name for PR'
         required: false
@@ -30,6 +35,8 @@ jobs:
       new_variants_count: ${{ steps.check_icons.outputs.new_variants_count }}
       sync_performed: ${{ steps.sync_check.outputs.sync_performed }}
       pr_created: ${{ steps.create_pr.outputs.pull-request-number != '' }}
+      git_ref_formatted: ${{ steps.setup_config.outputs.git_ref_formatted }}
+      git_ref_display: ${{ steps.setup_config.outputs.git_ref_display }}
     
     steps:
     - name: 🏗️ Checkout repository
@@ -50,12 +57,52 @@ jobs:
       with:
         gradle-home-cache-cleanup: true
     
+    - name: ⚙️ Configure FluentUI plugin
+      id: setup_config
+      run: |
+        input_ref="${{ github.event.inputs.git_ref || 'main' }}"
+        
+        # Format Git reference properly
+        if [[ "$input_ref" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          # Version tag format: 1.1.305 -> refs/tags/1.1.305
+          git_ref="refs/tags/$input_ref"
+          ref_type="tag"
+        elif [[ "$input_ref" == refs/* ]]; then
+          # Already formatted reference
+          git_ref="$input_ref"
+          if [[ "$input_ref" == refs/tags/* ]]; then
+            ref_type="tag"
+          else
+            ref_type="branch"
+          fi
+        else
+          # Branch name: main -> refs/heads/main
+          git_ref="refs/heads/$input_ref"
+          ref_type="branch"
+        fi
+        
+        echo "git_ref_formatted=$git_ref" >> $GITHUB_OUTPUT
+        echo "git_ref_display=$input_ref" >> $GITHUB_OUTPUT
+        echo "ref_type=$ref_type" >> $GITHUB_OUTPUT
+        
+        echo "GIT_REF_FORMATTED=$git_ref" >> $GITHUB_ENV
+        
+        echo "🔧 FluentUI Icons Plugin Configuration:"
+        echo "🔗 Mode: Git Repository (workflows always use Git cloning)"
+        echo "📍 Repository: https://github.com/microsoft/fluentui-system-icons.git"
+        echo "🌿 Reference: $git_ref ($ref_type)"
+        echo "🎯 Plugin: fluent.icons"
+    
     - name: 🔍 Check for new icons
       id: check_icons
       run: |
-        echo "🔍 Checking for new icons..."
-        # Configure source path for CI environment
-        ./gradlew checkNewIcons -PsourceRepositoryPath=fluentui-source/assets > check_output.txt 2>&1
+        echo "🔍 Checking for new FluentUI icons..."
+        echo "🔗 Using git repository with reference: $GIT_REF_FORMATTED"
+        
+        # Plugin handles Git operations internally
+        ./gradlew checkNewIcons \
+          -PfluentIcons.gitRef="$GIT_REF_FORMATTED" \
+          --console=plain > check_output.txt 2>&1
         
         # Extract counts from output
         new_families=$(grep -c "📁" check_output.txt || echo '0')
@@ -95,9 +142,13 @@ jobs:
     - name: 🎨 Sync and convert new icons
       if: env.SHOULD_SYNC == 'true'
       run: |
-        echo "🎨 Starting icon sync and conversion..."
-        # Configure source path for CI environment where fluentui-source is cloned
-        ./gradlew syncNewIcons -PsourceRepositoryPath=fluentui-source/assets
+        echo "🎨 Starting FluentUI icon sync and conversion..."
+        echo "🔄 Plugin will handle: Git clone → SVG scan → ImageVector conversion"
+        
+        # Plugin handles entire pipeline: Git operations + SVG conversion + file generation
+        ./gradlew syncNewIcons \
+          -PfluentIcons.gitRef="$GIT_REF_FORMATTED" \
+          --console=plain
         
         echo "📊 Sync completed, checking for changes..."
         if [[ `git status --porcelain` ]]; then
@@ -110,8 +161,11 @@ jobs:
     - name: 📈 Analyze icon coverage
       if: env.SHOULD_SYNC == 'true'
       run: |
-        echo "📈 Running icon coverage analysis..."
-        ./gradlew analyzeIconCoverage -PsourceRepositoryPath=fluentui-source/assets > coverage_analysis.txt 2>&1
+        echo "📈 Running FluentUI icon coverage analysis..."
+        
+        ./gradlew analyzeIconCoverage \
+          -PfluentIcons.gitRef="$GIT_REF_FORMATTED" \
+          --console=plain > coverage_analysis.txt 2>&1
         
         echo "COVERAGE_ANALYSIS<<EOF" >> $GITHUB_ENV
         cat coverage_analysis.txt >> $GITHUB_ENV
@@ -133,30 +187,36 @@ jobs:
         timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
         families="${{ steps.check_icons.outputs.new_families_count }}"
         variants="${{ steps.check_icons.outputs.new_variants_count }}"
+        git_ref="${{ steps.setup_config.outputs.git_ref_display }}"
         
         # Create detailed commit message
         cat > commit_message.txt << EOF
-        🎨 Weekly icon sync: Added $variants icon variants from $families families
+        🎨 FluentUI Icons Sync: Added $variants ImageVectors from $families families
         
         📅 Sync Date: $timestamp
+        🌿 Source: microsoft/fluentui-system-icons@$git_ref
+        
         📊 Summary:
         - New icon families: $families
         - New style variants: $variants
-        - Conversion: SVG → ImageVector (Compose)
-        - Organization: Style-based directories
+        - Conversion: SVG → ImageVector (Jetpack Compose)
+        - Organization: Style-based directories (filled/, regular/, light/, color/)
         
         🎯 Changes:
-        - SVGs converted using svg2compose
-        - Icons organized by style (filled/, regular/, light/, colored/)
-        - IconList files auto-updated with imports
-        - Proper naming: FluentIcons.Style.IconName
+        - SVGs auto-converted using svg2compose
+        - Icons organized by style with proper naming
+        - IconList files updated with new imports
+        - Generated: FluentIcons.Style.IconName accessors
         
-        Generated by weekly-icon-sync workflow
+        🔧 Plugin: fluent.icons v2.0.0
+        Generated by fluentui-icons-sync workflow
         EOF
         
         echo "COMMIT_MESSAGE<<EOF" >> $GITHUB_ENV
         cat commit_message.txt >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
+        
+        echo "timestamp=$timestamp" >> $GITHUB_OUTPUT
     
     - name: 🔀 Create Pull Request
       if: env.SHOULD_SYNC == 'true'
@@ -165,90 +225,126 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: ${{ env.COMMIT_MESSAGE }}
-        title: "🎨 Weekly Icon Sync - ${{ steps.check_icons.outputs.new_variants_count }} New ImageVectors"
-        branch: ${{ github.event.inputs.custom_branch || format('weekly-icon-sync-{0}', github.run_number) }}
+        title: "🎨 FluentUI Icons Sync - ${{ steps.check_icons.outputs.new_variants_count }} New ImageVectors"
+        branch: ${{ github.event.inputs.custom_branch || format('fluentui-icons-sync-{0}', github.run_number) }}
         delete-branch: true
         body: |
-          ## 🎨 Weekly Icon Sync Report
+          ## 🎨 FluentUI Icons Sync Report
           
-          **📅 Sync Date:** ${{ steps.commit_msg.outputs.timestamp }}
+          **📅 Sync Date:** ${{ steps.commit_msg.outputs.timestamp }}  
+          **🌿 Source:** microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}  
+          **🔧 Plugin:** fluent.icons v2.0.0  
           
           ### 📊 Summary
           - **🏠 Icon Families Added:** ${{ steps.check_icons.outputs.new_families_count }}
           - **🎨 Style Variants Added:** ${{ steps.check_icons.outputs.new_variants_count }}
-          - **🔄 Conversion Method:** SVG → ImageVector (svg2compose)
+          - **🔄 Conversion:** SVG → ImageVector (svg2compose)
           - **📁 Organization:** Style-based directories
+          - **🎯 Naming:** FluentIcons.Style.IconName pattern
           
           ### ✨ What's New
-          - ✅ **SVG Conversion:** Converted SVGs to Compose ImageVectors using svg2compose
-          - 📁 **Style Organization:** Icons organized into `filled/`, `regular/`, `light/`, `colored/` directories
-          - 🏷️ **Proper Naming:** Using `FluentIcons.Style.IconName` pattern
-          - 📝 **Auto-Import Management:** IconList files updated with proper imports
-          - 🎯 **Size Fallback:** Prioritized 24px variants with smart fallback per style
+          This sync brings new FluentUI System Icons automatically converted to Jetpack Compose ImageVectors:
+          
+          - ✅ **Automated Git Integration:** Plugin clones microsoft/fluentui-system-icons directly
+          - 🎨 **SVG Conversion:** High-quality SVG → ImageVector conversion using svg2compose
+          - 📁 **Smart Organization:** Icons sorted into `filled/`, `regular/`, `light/`, `color/` directories  
+          - 🏷️ **Consistent Naming:** PascalCase with proper LTR/RTL handling
+          - 📝 **Auto-Import Management:** IconList files updated automatically
+          - 🎯 **Size Optimization:** Smart 24px→20px→16px→28px→32px fallback per style
           
           ### 📂 Generated Structure
           ```
-          fluent/ui/system/icons/
-          ├── filled/FluentIconName.kt
-          ├── regular/FluentIconName.kt  
-          ├── light/FluentIconName.kt
-          ├── colored/FluentIconName.kt
-          └── StyleIconList.kt (auto-updated)
+          library/src/commonMain/kotlin/fluent/ui/system/icons/
+          ├── filled/
+          │   ├── FluentIconName.kt
+          │   ├── FluentTaskListLtr.kt
+          │   └── FluentTaskListRtl.kt
+          ├── regular/
+          │   ├── FluentIconName.kt
+          │   └── FluentTaskListLtr.kt
+          ├── light/
+          │   └── FluentIconName.kt
+          ├── color/
+          │   └── FluentTaskListLtr.kt
+          ├── FilledIconList.kt        # Auto-updated
+          ├── RegularIconList.kt       # Auto-updated
+          ├── LightIconList.kt         # Auto-updated
+          └── ColorIconList.kt         # Auto-updated
           ```
           
           ### 🔍 New Icons Preview
           
+          ```
           ${{ env.CHECK_OUTPUT }}
+          ```
           
           ### 📈 Coverage Analysis
           
+          ```
           ${{ env.COVERAGE_ANALYSIS }}
+          ```
           
-          ### 🎯 Collection Strategy
-          1. **All Styles:** Collect all available styles for each icon family
-          2. **Size Priority:** 24px → 20px → 16px → 28px → 32px (per style)
-          3. **Naming Convention:** `access_time_24_filled.svg` → `FluentAccessTime.kt`
-          4. **Organization:** Place in appropriate style directory with object reference
-          5. **Import Management:** Auto-update StyleIconList.kt files
+          ### 🎯 Sync Strategy
+          1. **Git Integration:** Shallow clone from microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_formatted }}
+          2. **Icon Discovery:** Scan metadata.json files in assets/ directory  
+          3. **Style Collection:** Gather all available styles per icon family
+          4. **Size Selection:** Prefer 24px, fallback per style independently
+          5. **Conversion:** SVG → ImageVector using svg2compose library
+          6. **Organization:** Place in style directories with proper imports
+          7. **Cleanup:** Automatic temporary file cleanup
           
-          ### 🚀 Usage
+          ### 🚀 Usage Examples
           ```kotlin
-          // Use the new icons immediately
-          Icon(
-              imageVector = FluentIcons.Filled.FluentNewIcon,
-              contentDescription = "New Icon"
-          )
+          import fluent.ui.system.icons.FluentIcons
           
-          // Access all icons of a style
-          val allFilledIcons = FluentIcons.Filled.All
+          @Composable
+          fun MyScreen() {
+              // Individual icons
+              Icon(FluentIcons.Filled.FluentNewIcon, contentDescription = "New Icon")
+              Icon(FluentIcons.Regular.FluentTaskListLtr, contentDescription = "Task List LTR")
+          
+              // All icons of a style  
+              val allFilledIcons = FluentIcons.Filled.All
+              val allRegularIcons = FluentIcons.Regular.All
+          }
           ```
           
           ### 🔧 Technical Details
-          - **Plugin Version:** fluent.icon-sync v1.0.0
+          - **Plugin ID:** `fluent.icons` 
+          - **Plugin Version:** v2.0.0
           - **Conversion Library:** svg2compose v0.8.1
+          - **Git Library:** JGit (shallow clones)
           - **Serialization:** Kotlinx.Serialization v1.6.2
-          - **Source:** FluentUI System Icons Repository
+          - **Architecture:** SOLID principles with clean separation
+          
+          ### 🎨 Icon Patterns Supported
+          - **Regular:** `ic_fluent_access_time_24_filled.svg` → `FluentAccessTime.kt`
+          - **LTR/RTL Pattern 1:** `ic_fluent_multiselect_ltr_24_filled.svg` → `FluentMultiselectLtr.kt`
+          - **LTR/RTL Pattern 2:** `ic_fluent_task_list_24_filled_ltr.svg` → `FluentTaskListLtr.kt`
           
           ---
           
-          🤖 **Auto-generated by:** `weekly-icon-sync` workflow  
+          🤖 **Auto-generated by:** `fluentui-icons-sync` workflow  
           📅 **Generated on:** ${{ steps.commit_msg.outputs.timestamp }}  
-          🔗 **Workflow Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          🔗 **Workflow Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}  
+          🎯 **Plugin:** fluent.icons with Git integration
         labels: |
-          🎨 icons
+          🎨 fluent-icons
           🤖 automation
           📦 enhancement
+          🔄 sync
         assignees: ${{ github.actor }}
         reviewers: ${{ github.actor }}
     
     - name: 📊 Generate workflow summary
       run: |
-        echo "## 🎨 Weekly Icon Sync Summary" >> $GITHUB_STEP_SUMMARY
+        echo "## 🎨 FluentUI Icons Sync Summary" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### 📋 Results" >> $GITHUB_STEP_SUMMARY
-        echo "- 🔍 **Checked for new icons:** ✅" >> $GITHUB_STEP_SUMMARY
-        echo "- 🏠 **New families found:** ${{ steps.check_icons.outputs.new_families_count }}" >> $GITHUB_STEP_SUMMARY
-        echo "- 🎨 **New variants found:** ${{ steps.check_icons.outputs.new_variants_count }}" >> $GITHUB_STEP_SUMMARY
+        echo "- 🔍 **Icons Check:** ✅ Completed" >> $GITHUB_STEP_SUMMARY
+        echo "- 🌿 **Git Reference:** ${{ steps.setup_config.outputs.git_ref_display }} (${{ steps.setup_config.outputs.git_ref_formatted }})" >> $GITHUB_STEP_SUMMARY
+        echo "- 🏠 **New families:** ${{ steps.check_icons.outputs.new_families_count }}" >> $GITHUB_STEP_SUMMARY
+        echo "- 🎨 **New variants:** ${{ steps.check_icons.outputs.new_variants_count }}" >> $GITHUB_STEP_SUMMARY
         echo "- 🔄 **Sync performed:** ${{ steps.sync_check.outputs.sync_performed }}" >> $GITHUB_STEP_SUMMARY
         
         if [ "${{ steps.sync_check.outputs.sync_performed }}" == "true" ]; then
@@ -263,25 +359,39 @@ jobs:
         fi
         
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### 📅 Details" >> $GITHUB_STEP_SUMMARY
+        echo "### 🔧 Plugin Details" >> $GITHUB_STEP_SUMMARY
+        echo "- **Plugin ID:** fluent.icons" >> $GITHUB_STEP_SUMMARY
+        echo "- **Mode:** Git Repository (automatic shallow clones)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Architecture:** SOLID principles with clean separation" >> $GITHUB_STEP_SUMMARY
+        echo "- **Conversion:** svg2compose → ImageVector" >> $GITHUB_STEP_SUMMARY
+        echo "- **Organization:** Style-based directory structure" >> $GITHUB_STEP_SUMMARY
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📅 Workflow Details" >> $GITHUB_STEP_SUMMARY
         echo "- **🕐 Triggered:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
         echo "- **🏃 Run ID:** ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
         echo "- **👤 Actor:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
         echo "- **🌿 Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
     
-    - name: 💬 Add comment to existing PR (if manual trigger)
+    - name: 💬 Add comment for manual triggers
       if: github.event_name == 'workflow_dispatch' && steps.create_pr.outputs.pull-request-number != ''
       uses: peter-evans/create-or-update-comment@v4
       with:
         issue-number: ${{ steps.create_pr.outputs.pull-request-number }}
         body: |
-          🔄 **Manual sync triggered by @${{ github.actor }}**
+          🔄 **Manual FluentUI sync triggered by @${{ github.actor }}**
           
-          **Trigger Inputs:**
+          **Input Parameters:**
           - Force Sync: `${{ github.event.inputs.force_sync }}`
-          - Custom Branch: `${{ github.event.inputs.custom_branch || 'default' }}`
+          - Git Reference: `${{ github.event.inputs.git_ref || 'main' }}` → `${{ steps.setup_config.outputs.git_ref_formatted }}`
+          - Custom Branch: `${{ github.event.inputs.custom_branch || 'auto-generated' }}`
           
-          **Results:**
+          **Sync Results:**
           - New Families: ${{ steps.check_icons.outputs.new_families_count }}
           - New Variants: ${{ steps.check_icons.outputs.new_variants_count }}
-
+          - Source: microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}
+          
+          **Plugin Configuration:**
+          - Plugin: fluent.icons v2.0.0
+          - Mode: Git Repository (automatic shallow clones)
+          - Conversion: SVG → ImageVector

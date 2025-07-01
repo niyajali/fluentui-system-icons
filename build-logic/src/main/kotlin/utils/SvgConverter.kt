@@ -28,12 +28,13 @@ import br.com.devsrsouza.svg2compose.Svg2Compose
 import br.com.devsrsouza.svg2compose.VectorType
 import models.IconVariant
 import java.io.File
+import kotlin.io.path.createTempDirectory
 
 class SvgConverter {
 
     fun convertSvgToImageVector(variant: IconVariant, targetFile: File, style: String, iconName: String) {
         // Create a temporary directory for svg2compose processing
-        val tempDir = createTempDir("svg2compose")
+        val tempDir = createTempDirectory(prefix = "svg2compose").toFile()
         val tempSvgFile = File(tempDir, "${variant.name}_${variant.size}_${variant.style}.svg")
 
         try {
@@ -162,6 +163,8 @@ import fluent.ui.system.icons.FluentIcons
 /**
  * Generated from ${variant.svgFile.name}
  * Size: ${variant.size}dp${if (variant.direction != null) ", Direction: ${variant.direction.uppercase()}" else ""}
+ * 
+ * @return The [ImageVector] for [${iconName}].
  */
 public val FluentIcons.$styleCapitalized.$iconName: ImageVector
     get() {

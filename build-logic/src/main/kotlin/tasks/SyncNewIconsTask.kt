@@ -24,12 +24,13 @@
 
 package tasks
 
-import IconSyncConfig
+import FluentIconsConfig
 import models.SyncedIconInfo
 import org.gradle.api.DefaultTask
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.TaskAction
+import services.GitRepositoryFactory
 import utils.FileUtils
 import utils.IconListUpdater
 import utils.IconScanner
@@ -41,100 +42,108 @@ import java.util.*
 abstract class SyncNewIconsTask : DefaultTask() {
 
     @get:Input
-    abstract val config: Property<IconSyncConfig>
+    abstract val config: Property<FluentIconsConfig>
 
     @TaskAction
     fun syncNewIcons() {
-        val iconConfig = config.get()
-        val sourceDir = File(iconConfig.sourceRepositoryPath)
-        val targetDir = File(project.projectDir, iconConfig.targetIconsPath)
+        val fluentConfig = config.get()
 
-        if (!sourceDir.exists()) {
-            throw IllegalArgumentException("Source repository path does not exist: ${iconConfig.sourceRepositoryPath}")
-        }
+        // Create target directory
+        val targetDir = File(project.projectDir, fluentConfig.targetIconsPath)
+        FileUtils.createDirectoriesIfNeeded(targetDir, fluentConfig.supportedStyles)
 
-        // Ensure target directory and style subdirectories exist
-        FileUtils.createDirectoriesIfNeeded(targetDir, iconConfig.supportedStyles)
+        println("🎨 FluentUI Icons Sync")
+        println("📂 Target: ${targetDir.absolutePath}")
+        println("🎯 Strategy: SVG to ImageVector conversion with style organization")
 
-        println("Starting comprehensive icon sync with SVG to ImageVector conversion...")
-        println("Source: ${sourceDir.absolutePath}")
-        println("Target: ${targetDir.absolutePath}")
-        println("Strategy: Convert SVGs to ImageVectors organized by style categories")
+        // Use repository service with automatic cleanup
+        GitRepositoryFactory.createRepository(
+            fluentConfig.useLocalDirectory,
+            fluentConfig.localDirectoryPath,
+            fluentConfig.gitRepository,
+            fluentConfig.gitRef,
+        ).use { gitRepo ->
 
-        val scanner = IconScanner()
-        val converter = SvgConverter()
-        val listUpdater = IconListUpdater()
+            println("📍 Source: ${gitRepo.getRepositoryInfo()}")
 
-        // Get existing icons in target directory
-        val existingIcons = scanner.getExistingIconVariants(targetDir, iconConfig.supportedStyles)
-        println("Found ${existingIcons.size} existing icon variants in target directory")
+            val sourceDir = gitRepo.getAssetsDirectory(fluentConfig.assetsPath)
 
-        // Scan source directory for all available icons
-        val sourceIcons = scanner.scanSourceIcons(sourceDir, iconConfig.supportedStyles)
-        println("Found ${sourceIcons.size} icon families in source directory")
+            // Initialize services
+            val scanner = IconScanner()
+            val converter = SvgConverter()
+            val listUpdater = IconListUpdater()
 
-        // Build icon families with all available styles
-        val iconFamiliesToSync = scanner.buildIconFamiliesForSync(sourceIcons, existingIcons, iconConfig)
-        println("Selected ${iconFamiliesToSync.size} icon families for sync")
+            // Get existing icons in target directory
+            val existingIcons = scanner.getExistingIconVariants(targetDir, fluentConfig.supportedStyles)
+            println("📊 Found ${existingIcons.size} existing icon variants")
 
-        // Perform the actual sync with SVG conversion
-        var newIconsAdded = 0
-        var duplicatesSkipped = 0
-        val syncedIcons = mutableListOf<SyncedIconInfo>()
-        val styleBreakdown = mutableMapOf<String, Int>()
+            // Scan source directory for all available icons
+            val sourceIcons = scanner.scanSourceIcons(sourceDir, fluentConfig.supportedStyles)
+            println("📊 Found ${sourceIcons.size} icon families in source")
 
-        iconFamiliesToSync.forEach { iconFamily ->
-            println("\n📁 Processing family: ${iconFamily.baseName}")
+            // Build icon families with all available styles
+            val iconFamiliesToSync = scanner.buildIconFamiliesForSync(sourceIcons, existingIcons, fluentConfig)
+            println("📊 Selected ${iconFamiliesToSync.size} families for sync")
 
-            iconFamily.variants.forEach { (style, variant) ->
-                try {
-                    val iconName = FileUtils.toPascalCase(iconFamily.baseName)
-                    val variantKey = "${iconFamily.baseName}_${variant.style}"
+            // Perform the actual sync with SVG conversion
+            var newIconsAdded = 0
+            var duplicatesSkipped = 0
+            val syncedIcons = mutableListOf<SyncedIconInfo>()
+            val styleBreakdown = mutableMapOf<String, Int>()
 
-                    if (existingIcons.contains(variantKey)) {
-                        println("  ⚠️  Skipping ${style} - already exists")
-                        duplicatesSkipped++
-                    } else {
-                        val targetFile = File(targetDir, "${style.lowercase()}/${iconName}.kt")
+            iconFamiliesToSync.forEach { iconFamily ->
+                println("\n📁 Processing: ${iconFamily.baseName}")
 
-                        // Convert SVG to ImageVector and generate Kotlin code
-                        converter.convertSvgToImageVector(variant, targetFile, style, iconName)
+                iconFamily.variants.forEach { (style, variant) ->
+                    try {
+                        val iconName = FileUtils.toPascalCase(iconFamily.baseName)
+                        val variantKey = "${iconFamily.baseName}_${variant.style}"
 
-                        // Update the corresponding IconList file
-                        listUpdater.updateIconListFile(targetDir, style, iconName)
+                        if (existingIcons.contains(variantKey)) {
+                            println("  ⚠️  Skipping $style - already exists")
+                            duplicatesSkipped++
+                        } else {
+                            val targetFile = File(targetDir, "${style.lowercase()}/${iconName}.kt")
 
-                        syncedIcons.add(
-                            SyncedIconInfo(
-                                iconName = iconName,
-                                style = style,
-                                size = variant.size,
-                                filePath = targetFile.relativeTo(project.projectDir).path,
-                            ),
-                        )
-                        styleBreakdown[style] = styleBreakdown.getOrDefault(style, 0) + 1
-                        newIconsAdded++
-                        println("  ✅ Synced ${style} (${variant.size}px) → ${targetFile.relativeTo(targetDir).path}")
+                            // Convert SVG to ImageVector and generate Kotlin code
+                            converter.convertSvgToImageVector(variant, targetFile, style, iconName)
+
+                            // Update the corresponding IconList file
+                            listUpdater.updateIconListFile(targetDir, style, iconName)
+
+                            syncedIcons.add(
+                                SyncedIconInfo(
+                                    iconName = iconName,
+                                    style = style,
+                                    size = variant.size,
+                                    filePath = targetFile.relativeTo(project.projectDir).path,
+                                ),
+                            )
+                            styleBreakdown[style] = styleBreakdown.getOrDefault(style, 0) + 1
+                            newIconsAdded++
+                            println("  ✅ Synced $style (${variant.size}px) → ${targetFile.relativeTo(targetDir).path}")
+                        }
+                    } catch (e: Exception) {
+                        println("  ❌ Failed to sync $style: ${e.message}")
+                        e.printStackTrace()
                     }
-                } catch (e: Exception) {
-                    println("  ❌ Failed to sync ${style}: ${e.message}")
-                    e.printStackTrace()
                 }
             }
-        }
 
-        // Log results
-        logSyncResult(
-            iconConfig,
-            newIconsAdded,
-            duplicatesSkipped,
-            syncedIcons,
-            iconFamiliesToSync.size,
-            styleBreakdown,
-        )
+            // Log results
+            logSyncResult(
+                fluentConfig,
+                newIconsAdded,
+                duplicatesSkipped,
+                syncedIcons,
+                iconFamiliesToSync.size,
+                styleBreakdown,
+            )
+        }
     }
 
     private fun logSyncResult(
-        config: IconSyncConfig,
+        config: FluentIconsConfig,
         newIconsAdded: Int,
         duplicatesSkipped: Int,
         syncedIcons: List<SyncedIconInfo>,
@@ -154,7 +163,7 @@ abstract class SyncNewIconsTask : DefaultTask() {
 
         val logEntry = """
             
-            === Icon Sync Report - $timestamp ===
+            === FluentUI Icons Sync Report - $timestamp ===
             📊 Summary:
               Icon families processed: $iconFamiliesProcessed
               New variants added: $newIconsAdded
@@ -172,7 +181,7 @@ abstract class SyncNewIconsTask : DefaultTask() {
         logFile.appendText(logEntry)
 
         println("\n" + "=".repeat(60))
-        println("📊 SVG TO IMAGEVECTOR SYNC SUMMARY")
+        println("📊 FLUENT ICONS SYNC SUMMARY")
         println("=".repeat(60))
         println("🏠 Icon families processed: $iconFamiliesProcessed")
         println("✅ New variants added: $newIconsAdded")

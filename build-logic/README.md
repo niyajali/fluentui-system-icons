@@ -1,22 +1,23 @@
-# FluentUI System Icons Sync Plugin
+# FluentUI Icons Plugin
 
-A comprehensive Gradle plugin for automatically syncing new icons from the FluentUI System Icons repository, converting
-SVGs to Compose ImageVectors, and organizing them by style categories.
+A Gradle plugin for automatically syncing Microsoft FluentUI System Icons with Jetpack Compose projects. Converts SVG icons to ImageVectors with style-based organization.
 
-## 🎯 Overview
+## 🚀 Features
 
-This plugin provides automated icon synchronization with:
+- **Flexible Source**: Git integration OR local directory for development
+- **Smart Git References**: Auto-formats branch/tag names (main → refs/heads/main, 1.1.305 → refs/tags/1.1.305)
+- **Git Integration**: Automatic shallow clones from Microsoft's repository
+- **SVG to ImageVector**: Converts SVGs to Compose-ready ImageVectors
+- **Style Organization**: Organizes by filled, regular, light, and colored styles
+- **Smart Fallback**: Intelligent size selection (24px → 20px → 16px → 28px → 32px)
+- **Duplicate Prevention**: Skips existing icons automatically
+- **Directional Support**: Handles LTR/RTL variants correctly
+- **IconList Management**: Auto-updates style-specific icon collections
+- **Development Mode**: Use local directories for faster iteration
 
-- **SVG to ImageVector conversion** using svg2compose
-- **Style-based organization** (filled/, regular/, light/, colored/)
-- **Smart size fallback** (24px → 20px → 16px → 28px → 32px)
-- **Automatic IconList management** with imports
-- **Duplicate prevention** and comprehensive logging
-- **All style collection** for maximum coverage
+## 📋 Setup
 
-## 🚀 Quick Start
-
-### 1. Setup
+### 1. Plugin Configuration
 
 Add to your main project's `settings.gradle.kts`:
 
@@ -26,732 +27,389 @@ pluginManagement {
 }
 ```
 
-Apply plugin in your main `build.gradle.kts`:
+Apply plugin in your `build.gradle.kts`:
 
 ```kotlin
 plugins {
-    id("fluent.icon-sync")
+    id("fluent.icons")
 }
+```
 
-// Configure the icon sync
-iconSync {
-    // For local development: point to your cloned repository
-    sourceRepositoryPath.set("F:/fluentui-system-icons/assets")
+### 2. Basic Configuration
+
+```kotlin
+fluentIcons {
+    // Option 1: Git repository (default - automatic cloning)
+    gitRepository.set("https://github.com/microsoft/fluentui-system-icons.git")
+    gitRef.set("main") // Simple branch name - auto-formatted to refs/heads/main
     
-    // Or use environment variable for flexibility:
-    // sourceRepositoryPath.set(System.getenv("FLUENT_ICONS_PATH") ?: "F:/fluentui-system-icons/assets")
+    // Option 2: Use specific version
+    // gitRef.set("1.1.305") // Simple tag name - auto-formatted to refs/tags/1.1.305
     
+    // Option 3: Local directory (for development/testing)
+    // useLocalDirectory.set(true)
+    // localDirectoryPath.set("F:/fluentui-system-icons")
+    
+    // Target configuration
+    targetIconsPath.set("library/src/commonMain/kotlin/fluent/ui/system/icons")
+    
+    // Size preferences
+    preferredSize.set(24)
+    fallbackSizes.set(listOf(20, 16, 28, 32))
+    
+    // Style filtering
+    supportedStyles.set(listOf("filled", "regular", "light", "color"))
+}
+```
+
+### 3. Local Development Setup
+
+For faster development/testing, use a local directory instead of cloning:
+
+```kotlin
+fluentIcons {
+    // Use local directory (much faster for development)
+    useLocalDirectory.set(true)
+    localDirectoryPath.set("F:/fluentui-system-icons")
+    
+    // Git settings are ignored when using local directory
     targetIconsPath.set("library/src/commonMain/kotlin/fluent/ui/system/icons")
 }
 ```
 
-**📝 Note:** You'll need to clone the Microsoft FluentUI repository first:
+**Local Directory Setup:**
 ```bash
-# Clone the source repository
+# Clone the repository once
 git clone https://github.com/microsoft/fluentui-system-icons.git F:/fluentui-system-icons
 
-# Then point your configuration to the assets folder
-# sourceRepositoryPath.set("F:/fluentui-system-icons/assets")
+# Then use local path in plugin configuration
+# This avoids cloning on every sync - much faster for development!
 ```
 
-**📁 For detailed setup instructions, see:** [`SETUP.md`](SETUP.md)
+### 4. Git Reference Examples
 
-### 2. Basic Usage
+The plugin automatically formats Git references for you:
 
+```kotlin
+fluentIcons {
+    // Branch names (automatically formatted)
+    gitRef.set("main")                    // → refs/heads/main
+    gitRef.set("develop")                 // → refs/heads/develop
+    gitRef.set("feature/new-icons")       // → refs/heads/feature/new-icons
+    
+    // Version tags (automatically formatted)
+    gitRef.set("1.1.305")                 // → refs/tags/1.1.305
+    gitRef.set("2.0.0")                   // → refs/tags/2.0.0
+    
+    // Already formatted (passed through)
+    gitRef.set("refs/heads/main")         // → refs/heads/main
+    gitRef.set("refs/tags/1.1.305")       // → refs/tags/1.1.305
+}
+```
+
+### 5. Advanced Configuration
+
+```kotlin
+fluentIcons {
+    // Development mode with local directory
+    useLocalDirectory.set(true)
+    localDirectoryPath.set("/path/to/local/fluentui-system-icons")
+    
+    // Production mode with Git (automatic ref formatting)
+    // useLocalDirectory.set(false)
+    // gitRepository.set("https://github.com/microsoft/fluentui-system-icons.git")
+    // gitRef.set("1.1.305")  // Auto-formatted to refs/tags/1.1.305
+    
+    // Custom size preferences
+    preferredSize.set(20)
+    sizePreferences.set(mapOf(20 to 1, 24 to 2, 16 to 3, 32 to 4, 28 to 5))
+    
+    // Exclude patterns
+    excludePatterns.set(listOf("test", "experimental", "beta"))
+    
+    // Custom log file
+    syncLogFile.set("my-icons-sync.log")
+}
+```
+
+## 🎮 Usage
+
+### Check for New Icons
 ```bash
-# Check what new icons would be synced
 ./gradlew checkNewIcons
+```
 
-# Sync and convert new icons
+Preview what icons would be synced without making changes:
+```
+🔍 FluentUI Icons Check
+🔗 Repository: https://github.com/microsoft/fluentui-system-icons.git
+🌿 Reference: main
+
+📊 Results:
+Found 3 new icon families that would be synced:
+  📁 access_time:
+    - filled: 24px → filled/AccessTime.kt
+    - regular: 24px → regular/AccessTime.kt
+  📁 task_list_ltr:
+    - filled: 24px → filled/TaskListLtr.kt
+    - regular: 24px → regular/TaskListLtr.kt
+
+Total variants to sync: 4
+```
+
+### Sync New Icons
+```bash
 ./gradlew syncNewIcons
+```
 
-# Analyze current coverage
+Downloads and converts new icons:
+```
+🎨 FluentUI Icons Sync
+🔄 Cloning FluentUI repository (shallow clone)...
+✅ Repository cloned successfully
+
+📁 Processing: access_time
+  ✅ Synced filled (24px) → filled/AccessTime.kt
+  ✅ Synced regular (24px) → regular/AccessTime.kt
+
+📊 FLUENT ICONS SYNC SUMMARY
+🏠 Icon families processed: 1
+✅ New variants added: 2
+📈 Total processed: 2
+```
+
+### Analyze Coverage
+```bash
 ./gradlew analyzeIconCoverage
 ```
 
-## 📋 Available Tasks
-
-### `checkNewIcons`
-
-Previews what icons would be synced without making changes.
-
-**Output Example:**
-
+Get comprehensive statistics:
 ```
-Found 3 new icon families that would be synced:
-  📁 access_time:
-    - filled: 24px → filled/FluentAccessTime.kt
-    - regular: 24px → regular/FluentAccessTime.kt
-    - light: 20px → light/FluentAccessTime.kt
-  📁 add_circle:
-    - filled: 24px → filled/FluentAddCircle.kt
-    - regular: 24px → regular/FluentAddCircle.kt
+📊 FLUENT ICONS COVERAGE ANALYSIS
+🏠 Total families in source: 2,847
+🎨 Total variants in source: 11,388
+✅ Existing variants in target: 245
+📈 Coverage: 2.2%
 
-Total variants to sync: 5
+🎨 Style Breakdown:
+   📁 filled: 89/3,567 (2.5%)
+   📁 regular: 86/3,421 (2.5%)
+   📁 light: 35/2,234 (1.6%)
+   📁 color: 35/2,166 (1.6%)
 ```
 
-### `syncNewIcons`
-
-Converts SVGs to ImageVectors and syncs all available styles.
-
-**Process:**
-
-1. Scans source repository for new icon families
-2. Converts SVGs to Compose ImageVectors using svg2compose
-3. Organizes icons into style-based directories
-4. Updates IconList files with proper imports
-5. Generates comprehensive sync report
-
-### `analyzeIconCoverage`
-
-Provides detailed analysis of icon coverage and statistics.
-
-**Analysis Includes:**
-
-- Total families in source vs target
-- Style coverage breakdown
-- Size distribution
-- Directory structure overview
-
-## ⚙️ Configuration
-
-### Basic Configuration
-
-```kotlin
-iconSync {
-    // Point to your local clone of the FluentUI repository
-    sourceRepositoryPath.set("F:/fluentui-system-icons/assets")
-    targetIconsPath.set("library/src/commonMain/kotlin/fluent/ui/system/icons")
-    preferredSize.set(24)
-    fallbackSizes.set(listOf(20, 16, 28, 32))
-    supportedStyles.set(listOf("filled", "regular", "light", "colored"))
-}
-```
-
-**🔗 Source Setup Required:**
-```bash
-# Clone the Microsoft FluentUI repository first
-git clone https://github.com/microsoft/fluentui-system-icons.git F:/fluentui-system-icons
-```
-
-### Advanced Configuration
-
-```kotlin
-iconSync {
-    // Source and target paths
-    sourceRepositoryPath.set("/custom/path/to/icons")
-    targetIconsPath.set("custom/icons/path")
-
-    // Size preferences
-    preferredSize.set(20)                               // Prefer 20px over 24px
-    fallbackSizes.set(listOf(24, 16, 32, 28))          // Custom fallback order
-    sizePreferences.set(
-        mapOf(                          // Custom size priorities
-            20 to 1, 24 to 2, 16 to 3, 32 to 4, 28 to 5
-        )
-    )
-
-    // Style filtering
-    supportedStyles.set(listOf("filled", "regular"))    // Only specific styles
-
-    // Exclusion patterns
-    excludePatterns.set(listOf("test", "temp", "beta", "experimental"))
-
-    // Logging
-    syncLogFile.set("custom-sync-log.txt")
-}
-```
-
-## 📂 Generated Directory Structure
-
-The plugin creates this organized structure:
+## 📂 Generated Structure
 
 ```
 library/src/commonMain/kotlin/fluent/ui/system/icons/
 ├── filled/
-│   ├── FluentAccessTime.kt           # 24px filled variant
-│   ├── FluentAddCircle.kt            # 24px filled variant
-│   └── ...
+│   ├── AccessTime.kt
+│   ├── TaskListLtr.kt
+│   └── TaskListRtl.kt
 ├── regular/
-│   ├── FluentAccessTime.kt           # 24px regular variant
-│   ├── FluentAddCircle.kt            # 24px regular variant
-│   └── ...
+│   ├── AccessTime.kt
+│   ├── TaskListLtr.kt
+│   └── TaskListRtl.kt
 ├── light/
-│   ├── FluentAccessTime.kt           # 20px light variant (fallback)
-│   └── ...
-├── colored/
-│   ├── FluentAddCircle.kt            # 16px colored variant (fallback)
-│   └── ...
-├── FilledIconList.kt                 # Auto-updated with imports
-├── RegularIconList.kt                # Auto-updated with imports
-├── LightIconList.kt                  # Auto-updated with imports
-└── ColoredIconList.kt                # Auto-updated with imports
+│   └── AccessTime.kt
+├── color/
+│   └── TaskListLtr.kt
+├── FilledIconList.kt
+├── RegularIconList.kt
+├── LightIconList.kt
+└── ColorIconList.kt
 ```
 
 ## 🎨 Generated Code Examples
 
-### Individual Icon File
-
-**Input:** `assets/Access Time/SVG/ic_fluent_access_time_24_filled.svg`
-
-**Output:** `filled/FluentAccessTime.kt`
-
+### Individual Icon
 ```kotlin
 package fluent.ui.system.icons.filled
 
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.graphics.vector.ImageVector.Builder
-import androidx.compose.ui.graphics.vector.path
-import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentIcons
-
-/**
- * Generated from ic_fluent_access_time_24_filled.svg
- * Size: 24dp
- */
-public val FluentIcons.Filled.FluentAccessTime: ImageVector
-get() {
-    if (_FluentAccessTime != null) {
-        return _FluentAccessTime!!
-    }
-    _FluentAccessTime = ImageVector.Builder(
-        name = "FluentAccessTime",
-        defaultWidth = 24.dp,
-        defaultHeight = 24.dp,
-        viewportWidth = 24f,
-        viewportHeight = 24f
-    ).apply {
-        path(
-            fill = SolidColor(Color(0xFF212121)),
-            // ... generated path data from SVG
-        ) {
-            // ... path commands
+public val FluentIcons.Filled.AccessTime: ImageVector
+    get() {
+        if (_AccessTime != null) {
+            return _AccessTime!!
         }
-    }.build()
-    return _FluentAccessTime!!
-}
-
-private var _FluentAccessTime: ImageVector? = null
+        _AccessTime = ImageVector.Builder(
+            name = "Filled.AccessTime",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f,
+        ).apply {
+            // Generated path data...
+        }.build()
+        return _AccessTime!!
+    }
 ```
 
-### Auto-Updated IconList
-
-**FilledIconList.kt** (automatically maintained):
-
+### Icon Collection
 ```kotlin
 package fluent.ui.system.icons
 
-import androidx.compose.ui.graphics.vector.ImageVector
-import fluent.ui.system.icons.FluentIcons
-import fluent.ui.system.icons.filled.FluentAccessTime
-import fluent.ui.system.icons.filled.FluentAddCircle
-// ... more imports added automatically
-
-/**
- * All Filled icons in the Fluent System Icons collection.
- */
 public val FluentIcons.Filled.All: List<ImageVector> = listOf(
-    FluentIcons.Filled.FluentAccessTime,
-    FluentIcons.Filled.FluentAddCircle,
-    // ... more icons added automatically
+    FluentIcons.Filled.AccessTime,
+    FluentIcons.Filled.TaskListLtr,
+    FluentIcons.Filled.TaskListRtl,
+    // ... more icons
 )
 ```
 
-## ✨ Key Features
-
-### 🔄 SVG to ImageVector Conversion
-
-- Uses **svg2compose** library for accurate conversion
-- Preserves original SVG dimensions and styling
-- Generates optimized Compose vector graphics
-- Maintains proper color handling and gradients
-
-### 📁 Style-Based Organization
-
-- **Filled**: Bold, solid icon variants
-- **Regular**: Standard outlined variants
-- **Light**: Thin, minimal variants
-- **Colored**: Multi-color variants
-
-### 🎯 Smart Size Fallback
-
-**Per-Style Logic:**
-
-1. Try preferred size (default: 24px) for each style
-2. If not available, fallback to next size: 20px → 16px → 28px → 32px
-3. Each style processed independently
-
-**Example:**
-
-```
-📁 access_time:
-  ✅ filled: 24px (preferred size available)
-  ✅ regular: 24px (preferred size available)  
-  ⚠️ light: 20px (24px not available, fallback to 20px)
-  ❌ colored: not available in any size
-```
-
-### 🚫 Duplicate Prevention
-
-- Compares existing icons by style and name
-- Skips icons that already exist
-- Provides clear reporting of what was skipped
-
-### 📝 Automatic IconList Management
-
-- Creates style-specific IconList files if they don't exist
-- Adds proper imports for new icons
-- Maintains alphabetical organization
-- Updates the `All` list automatically
-
-### 🔍 Comprehensive Logging
-
-- Detailed sync reports with timestamps
-- Style breakdown statistics
-- File path tracking
-- Error reporting with context
-
-## 🔧 Sync Logic
-
-### Icon Detection
-
-1. **Scan Source**: Parses `metadata.json` files in asset directories
-2. **Extract Variants**: Finds all SVG files for each icon family
-3. **Parse Filenames**: Extracts size and style from filenames like `ic_fluent_access_time_24_filled.svg`
-
-### Style Collection Strategy
-
-```
-For each new icon family:
-├── Try to get 24px filled variant
-├── Try to get 24px regular variant  
-├── Try to get 24px light variant
-├── Try to get 24px colored variant
-└── For missing 24px variants:
-    ├── Fallback to 20px for that specific style
-    ├── Fallback to 16px for that specific style
-    └── Continue until variant found or exhausted
-```
-
-### Naming Convention
-
-- **Input**: `ic_fluent_access_time_24_filled.svg`
-- **Processing**: Extract `access_time` → Convert to `AccessTime`
-- **Output**: `FluentAccessTime.kt`
-- **Reference**: `FluentIcons.Filled.FluentAccessTime`
-
-## 📊 Example Sync Output
-
-```bash
-$ ./gradlew syncNewIcons
-
-Starting comprehensive icon sync with SVG to ImageVector conversion...
-Source: F:\fluentui-system-icons\assets
-Target: F:\project\library\src\commonMain\kotlin\fluent\ui\system\icons
-Strategy: Convert SVGs to ImageVectors organized by style categories
-
-Found 125 existing icon variants in target directory
-Found 847 icon families in source directory
-Selected 12 icon families for sync
-
-📁 Processing family: access_time
-  ✅ Synced filled (24px) → filled/FluentAccessTime.kt
-  ✅ Synced regular (24px) → regular/FluentAccessTime.kt  
-  ✅ Synced light (20px) → light/FluentAccessTime.kt
-
-📁 Processing family: add_circle
-  ✅ Synced filled (24px) → filled/FluentAddCircle.kt
-  ✅ Synced regular (24px) → regular/FluentAddCircle.kt
-  ✅ Synced colored (16px) → colored/FluentAddCircle.kt
-
-============================================================
-📊 SVG TO IMAGEVECTOR SYNC SUMMARY  
-============================================================
-🏠 Icon families processed: 12
-✅ New variants added: 34
-⚠️  Duplicates skipped: 3
-📈 Total processed: 37
-
-🎨 Style Distribution:
-   📁 filled/: 12 icons
-   📁 regular/: 12 icons
-   📁 light/: 6 icons
-   📁 colored/: 4 icons
-
-📝 Log saved to: F:\project\icon-sync-log.txt
-============================================================
-```
-
-## 🎮 Usage in Compose
-
-After sync, use icons seamlessly:
+## 💻 Usage in Compose
 
 ```kotlin
 import fluent.ui.system.icons.FluentIcons
 
 @Composable
 fun MyScreen() {
-    Icon(
-        imageVector = FluentIcons.Filled.FluentAccessTime,
-        contentDescription = "Access Time"
-    )
-
-    Icon(
-        imageVector = FluentIcons.Regular.FluentAccessTime,
-        contentDescription = "Access Time Regular"
-    )
-}
-
-// Access all icons of a style
-val allFilledIcons = FluentIcons.Filled.All
-val allRegularIcons = FluentIcons.Regular.All
-```
-
-## 🔍 Troubleshooting
-
-### Common Issues
-
-**Issue**: `Source repository path does not exist`
-
-```kotlin
-// Solution: Verify the path exists
-iconSync {
-    sourceRepositoryPath.set("F:/fluentui-system-icons/assets") // Check this path
+    // Individual icons
+    Icon(FluentIcons.Filled.AccessTime, contentDescription = "Access Time")
+    Icon(FluentIcons.Regular.TaskListLtr, contentDescription = "Task List LTR")
+    
+    // All icons of a style
+    val allFilledIcons = FluentIcons.Filled.All
 }
 ```
 
-**Issue**: No icons found to sync
+## 🔧 JGit Configuration
 
-```kotlin
-// Solution: Check exclusion patterns
-iconSync {
-    excludePatterns.set(listOf()) // Remove restrictive patterns
-}
+The plugin uses **proper JGit RefSpec configurations** for different reference types:
+
+### **Branch References**
+```
+Input:   refs/heads/main
+RefSpec: refs/heads/main:refs/remotes/origin/main
+Process: 
+1. Fetch branch to local tracking branch
+2. Create local branch with upstream tracking
+3. Checkout local branch
 ```
 
-**Issue**: SVG conversion fails
+### **Tag References**
+```
+Input:   refs/tags/1.1.305  
+RefSpec: +refs/tags/1.1.305:refs/tags/1.1.305
+Process:
+1. Fetch tag directly with force (+)
+2. Checkout tag directly
+```
 
-- Ensure `svg2compose` dependency is available
-- Check SVG file format and validity
-- Review generated temp files for errors
+### **Error Handling**
+The plugin automatically handles RefSpec formatting based on reference type, preventing common JGit errors like:
+- ❌ `Invalid RefSpec` for branches
+- ❌ `Remote does not have refs/heads/...` 
+- ❌ `Cannot checkout refs/tags/...`
 
-### Debug Tips
+## 🔧 Architecture
 
-1. **Use `checkNewIcons` first** to preview changes
-2. **Check log files** for detailed error information
-3. **Verify source directory structure** contains `metadata.json` and `SVG/` folders
-4. **Review exclusion patterns** that might filter out desired icons
+The plugin follows SOLID principles with clean separation of concerns:
+
+- **GitRepository**: Handles Git operations and repository management
+- **IconScanner**: Scans and compares icon metadata (unchanged logic)
+- **SvgConverter**: Converts SVGs to ImageVectors
+- **IconListUpdater**: Manages icon collection files
+- **FluentIconsConfig**: Immutable configuration data class
+
+## 🔄 Git Integration
+
+- **Shallow Clones**: Downloads only the latest commit for efficiency
+- **Automatic Cleanup**: Temporary repositories are cleaned up automatically
+- **Version Pinning**: Lock to specific tags for reproducible builds
+- **Branch Support**: Use main branch or specific commits
 
 ## 🚀 GitHub Actions Integration
 
-### 📋 Complete Weekly Sync Workflow
+The plugin works seamlessly with CI/CD:
 
-The plugin includes a comprehensive GitHub Actions workflow for automated weekly icon synchronization. The workflow file is located at `.github/workflows/weekly-icon-sync.yml`.
+```yaml
+- name: Sync FluentUI Icons
+  run: ./gradlew syncNewIcons
 
-#### 🎯 Workflow Features
+- name: Check for changes
+  run: |
+    if [[ -n $(git status --porcelain) ]]; then
+      echo "New icons found!"
+      git add -A
+      git commit -m "🎨 Sync new FluentUI icons"
+    fi
+```
 
-- **📅 Scheduled Runs:** Every Monday at 9:00 AM UTC
-- **🔧 Manual Triggers:** Run on-demand with custom options
-- **🔍 Smart Detection:** Only creates PRs when new icons are found
-- **📊 Comprehensive Reporting:** Detailed sync reports and coverage analysis
-- **🎨 Professional PRs:** Rich PR descriptions with previews and technical details
-- **🤖 Auto-merge Support:** Optional auto-merge for small updates
-- **📢 Notifications:** Extensible notification system
+## 🎯 Icon Selection Strategy
 
-#### 🎮 Manual Workflow Triggers
+1. **Style Collection**: Finds all available styles for each icon family
+2. **Size Fallback**: Prefers 24px, falls back to 20px → 16px → 28px → 32px per style
+3. **Directional Handling**: Creates separate icons for LTR/RTL variants
+4. **Duplicate Prevention**: Compares existing icons to avoid re-processing
 
-**Via GitHub UI:**
-1. Go to Actions → Weekly Icon Sync
-2. Click "Run workflow"
-3. Optional inputs:
-   - **Force Sync:** Run even if no new icons found
-   - **Custom Branch:** Use custom branch name for PR
+## 📈 Performance
 
-**Via GitHub CLI:**
+- **Shallow Clone**: Only downloads latest commit (~10MB vs full repo ~500MB)
+- **Incremental Sync**: Only processes new/changed icons
+- **Efficient Scanning**: Smart comparison using normalized names
+- **Automatic Cleanup**: No disk space accumulation
+
+## 🔍 Troubleshooting
+
+### Git Reference Issues
+
+**Problem**: Branch fetching fails with RefSpec errors
+```
+🌿 Fetching branch: main
+🔧 RefSpec: refs/heads/main:refs/remotes/origin/main
+🌿 Creating local tracking branch: main
+```
+**Solution**: This is the correct flow for branches. If it fails, check network connectivity and repository access.
+
+**Problem**: Tag fetching fails  
+```
+🏷️ Fetching tag: 1.1.305
+🔧 RefSpec: +refs/tags/1.1.305:refs/tags/1.1.305
+🏷️ Checking out tag: 1.1.305
+```
+**Solution**: This is the correct flow for tags. The `+` forces the fetch even if it's not a fast-forward.
+
+**Problem**: Unknown reference format
+```
+⚠️ Unknown ref format: some-ref, attempting direct fetch
+🔧 RefSpec: some-ref (direct)
+```
+**Solution**: The plugin falls back to direct fetch. Use proper Git reference format or let the plugin auto-format it.
+
+### Common Issues
+
+**Issue**: `Source repository path does not exist` (when using local directory)
+```kotlin
+// Solution: Use Git mode instead of local directory
+fluentIcons {
+    useLocalDirectory.set(false)  // Use Git cloning
+    gitRef.set("main")            // Will be formatted to refs/heads/main
+}
+```
+
+### No New Icons Found
 ```bash
-# Basic manual trigger
-gh workflow run weekly-icon-sync.yml
-
-# Force sync with custom branch
-gh workflow run weekly-icon-sync.yml \
-  -f force_sync=true \
-  -f custom_branch=feature/custom-icons
+# Force check latest from repository
+./gradlew checkNewIcons --rerun-tasks
 ```
 
-#### 📊 Workflow Outputs
+### Git Clone Issues
+- Ensure network connectivity to GitHub
+- Check if repository URL is accessible
+- Verify Git is installed and available
 
-**Successful Run Example:**
+### Build Failures
+```bash
+# Check plugin tasks are available
+./gradlew tasks --group="fluent icons"
 ```
-🎨 Weekly Icon Sync Summary
-
-📋 Results
-- 🔍 Checked for new icons: ✅
-- 🏠 New families found: 5
-- 🎨 New variants found: 18
-- 🔄 Sync performed: true
-- ✅ PR Created: #123
-- 🔗 PR URL: https://github.com/owner/repo/pull/123
-
-📅 Details
-- 🕐 Triggered: schedule
-- 🏃 Run ID: 1234567890
-- 👤 Actor: github-actions[bot]
-- 🌿 Branch: main
-```
-
-#### 🎨 Generated Pull Request
-
-The workflow creates comprehensive PRs with:
-
-**📋 PR Title:**
-```
-🎨 Weekly Icon Sync - 18 New ImageVectors
-```
-
-**📝 PR Description Includes:**
-- 📊 **Summary Stats:** New families and variants count
-- ✨ **What's New:** Detailed list of changes and improvements
-- 📂 **Generated Structure:** Directory layout preview
-- 🔍 **New Icons Preview:** List of added icons with paths
-- 📈 **Coverage Analysis:** Statistics and coverage breakdown
-- 🎯 **Collection Strategy:** How icons were selected and processed
-- 🚀 **Usage Examples:** Code samples for immediate use
-- 🔧 **Technical Details:** Plugin versions and dependencies
-
-**🏷️ Auto-Applied Labels:**
-- 🎨 icons
-- 🤖 automation  
-- 📦 enhancement
-
-#### 🔧 Workflow Configuration
-
-**Environment Variables:**
-```yaml
-env:
-  GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.parallel=true -Dorg.gradle.caching=true
-  JAVA_VERSION: '17'
-```
-
-**Caching:**
-- ✅ Gradle build cache
-- ✅ JDK installation cache
-- ✅ Gradle home cache cleanup
-
-#### 🎛️ Workflow Jobs
-
-**1. sync-icons (Main Job)**
-- 🔍 Check for new icons
-- 🎨 Convert SVGs to ImageVectors
-- 📈 Analyze coverage
-- 🔀 Create pull request
-- 📊 Generate summary
-
-**2. notify (Optional)**
-- 📢 Send notifications to Slack/Discord/etc.
-- 🔔 Only runs when new variants are found
-- 🎯 Extensible for custom notification systems
-
-**3. auto-merge (Optional)**
-- 🤖 Auto-merge small updates (< 10 variants)
-- 🕐 Only for scheduled runs (not manual)
-- 🛡️ Safety checks for trusted updates
-
-#### 📢 Adding Notifications
-
-**Slack Integration:**
-```yaml
-# Add to notify job
-- name: Send Slack notification
-  run: |
-    curl -X POST -H 'Content-type: application/json' \
-      --data '{"text":"🎨 Icon sync completed! Added ${{ needs.sync-icons.outputs.new_variants_count }} new variants."}' \
-      ${{ secrets.SLACK_WEBHOOK_URL }}
-```
-
-**Discord Integration:**
-```yaml
-- name: Send Discord notification
-  uses: Ilshidur/action-discord@master
-  with:
-    args: '🎨 Weekly icon sync completed! Added ${{ needs.sync-icons.outputs.new_variants_count }} new variants.'
-  env:
-    DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-```
-
-#### 🛡️ Security & Permissions
-
-**Required Permissions:**
-- `contents: write` - For creating commits
-- `pull-requests: write` - For creating PRs
-- `actions: read` - For workflow metadata
-
-**Repository Secrets (Optional):**
-- `SLACK_WEBHOOK_URL` - For Slack notifications
-- `DISCORD_WEBHOOK` - For Discord notifications
-- Custom tokens for other integrations
-
-#### 🎯 Workflow Customization
-
-**Change Schedule:**
-```yaml
-on:
-  schedule:
-    - cron: '0 14 * * 3'  # Wednesday at 2 PM UTC
-    - cron: '0 9 * * 1'   # Monday at 9 AM UTC (multiple schedules)
-```
-
-**Custom Plugin Configuration:**
-```yaml
-- name: Sync Icons with Custom Config
-  run: |
-    ./gradlew syncNewIcons -PpreferredSize=20 -PsupportedStyles=filled,regular
-```
-
-**Branch Protection:**
-```yaml
-# Add branch protection to prevent auto-merge on important branches
-- name: Check branch protection
-  if: github.ref_name == 'main' || github.ref_name == 'production'
-  run: echo "Protected branch detected, skipping auto-merge"
-```
-
-#### 📈 Monitoring & Analytics
-
-**Workflow Analytics:**
-- 📊 Track sync frequency and success rates
-- 📈 Monitor icon growth over time
-- 🔍 Analyze which styles are most active
-- ⏱️ Performance metrics for sync duration
-
-**Custom Metrics:**
-```yaml
-- name: Record metrics
-  run: |
-    echo "::notice::Icons synced: ${{ steps.check_icons.outputs.new_variants_count }}"
-    echo "::notice::Families added: ${{ steps.check_icons.outputs.new_families_count }}"
-    
-    # Send to analytics service
-    curl -X POST "https://analytics.example.com/metrics" \
-      -H "Content-Type: application/json" \
-      -d '{"sync_date":"$(date -u +%Y-%m-%d)","new_variants":${{ steps.check_icons.outputs.new_variants_count }}}'
-```
-
-#### 🚨 Troubleshooting Workflows
-
-**Common Issues:**
-
-1. **No PR Created Despite New Icons**
-   ```yaml
-   # Add debug step
-   - name: Debug git status
-     run: |
-       git status
-       git diff --name-only
-   ```
-
-2. **Gradle Build Failures**
-   ```yaml
-   # Add validation step
-   - name: Validate Gradle setup
-     run: |
-       ./gradlew --version
-       ./gradlew tasks --group="icon management"
-   ```
-
-3. **Permission Errors**
-   ```yaml
-   # Check token permissions
-   - name: Check permissions
-     run: |
-       gh auth status
-       gh api user
-   ```
-
-#### 🔄 Workflow Updates
-
-To update the workflow:
-
-1. **Edit `.github/workflows/weekly-icon-sync.yml`**
-2. **Test changes in a feature branch**
-3. **Use workflow_dispatch for testing**
-4. **Monitor workflow runs in GitHub Actions tab**
-
-**Version Pinning:**
-```yaml
-# Pin action versions for stability
-uses: actions/checkout@v4.1.1
-uses: actions/setup-java@v4.0.0
-uses: peter-evans/create-pull-request@v6.0.0
-```
-
-The workflow provides a robust, production-ready solution for automated icon management with comprehensive reporting, error handling, and extensibility options.
-
-## 📈 Advanced Usage
-
-### Custom Size Priorities
-
-```kotlin
-iconSync {
-    preferredSize.set(20)
-    sizePreferences.set(
-        mapOf(
-            20 to 1,    // Highest priority
-            24 to 2,
-            16 to 3,
-            32 to 4,
-            28 to 5     // Lowest priority
-        )
-    )
-}
-```
-
-### Style-Specific Workflows
-
-```kotlin
-// Only sync filled and regular styles
-iconSync {
-    supportedStyles.set(listOf("filled", "regular"))
-}
-
-// Custom exclusions for beta icons
-iconSync {
-    excludePatterns.set(listOf("beta", "experimental", "deprecated"))
-}
-```
-
-### Multiple Icon Sources
-
-```kotlin
-// Create separate tasks for different sources
-tasks.register("syncMaterialIcons") {
-    doLast {
-        // Custom sync logic for Material Icons
-    }
-}
-```
-
-## 🤝 Contributing
-
-To extend the plugin:
-
-1. **Add new utilities** in `utils/` package
-2. **Create custom tasks** in `tasks/` package
-3. **Extend models** in `models/` package
-4. **Update plugin class** to register new functionality
-
-## 📄 License
-
-This build-logic plugin is part of the FluentUI System Icons project.
 
 ---
 
-**Plugin Version**: 1.0.0  
+**Plugin Version**: 2.0.0  
 **Kotlin DSL**: Compatible  
 **Gradle**: 7.0+ Required  
-**Dependencies**: Kotlinx.Serialization, svg2compose, JGit
+**Dependencies**: svg2compose, JGit, Kotlinx.Serialization
 
-## 📚 Additional Resources
-
-- **[SETUP.md](SETUP.md)** - Detailed setup instructions for different scenarios
-- **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Comprehensive troubleshooting guide
-- **[GitHub Issues](https://github.com/microsoft/fluentui-system-icons/issues)** - Report bugs or request features
+**Repository**: Microsoft FluentUI System Icons  
+**License**: Icons are licensed under MIT by Microsoft

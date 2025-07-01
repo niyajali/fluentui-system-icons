@@ -24,7 +24,7 @@
 
 package utils
 
-import IconSyncConfig
+import FluentIconsConfig
 import kotlinx.serialization.json.Json
 import models.IconFamily
 import models.IconMetadata
@@ -233,7 +233,7 @@ class IconScanner {
     fun buildIconFamiliesForSync(
         sourceIcons: Map<String, List<IconVariant>>,
         existingIcons: Set<String>,
-        config: IconSyncConfig,
+        config: FluentIconsConfig,
     ): List<IconFamily> {
         val familiesToSync = mutableListOf<IconFamily>()
 
@@ -299,7 +299,7 @@ class IconScanner {
         return familiesToSync
     }
 
-    private fun findBestSizeVariant(variants: List<IconVariant>, config: IconSyncConfig): IconVariant? {
+    private fun findBestSizeVariant(variants: List<IconVariant>, config: FluentIconsConfig): IconVariant? {
         // First, try preferred size
         val preferredSize = variants.find { it.size == config.preferredSize }
         if (preferredSize != null) return preferredSize
