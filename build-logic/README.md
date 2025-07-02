@@ -136,7 +136,7 @@ fluentIcons {
 
 ### Check for New Icons
 ```bash
-./gradlew checkNewIcons
+./gradlew checkNewIcons --no-configuration-cache
 ```
 
 Preview what icons would be synced without making changes:
@@ -159,7 +159,7 @@ Total variants to sync: 4
 
 ### Sync New Icons
 ```bash
-./gradlew syncNewIcons
+./gradlew syncNewIcons --no-configuration-cache
 ```
 
 Downloads and converts new icons:
@@ -180,7 +180,7 @@ Downloads and converts new icons:
 
 ### Analyze Coverage
 ```bash
-./gradlew analyzeIconCoverage
+./gradlew analyzeIconCoverage --no-configuration-cache
 ```
 
 Get comprehensive statistics:

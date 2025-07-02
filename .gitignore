@@ -58,3 +58,5 @@ package-lock.json
 fluentui-icons-data.js.backup
 docs/
 build-cache/
+check_output.txt
+gradlew

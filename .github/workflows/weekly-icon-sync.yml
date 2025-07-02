@@ -2,7 +2,8 @@ name: FluentUI Icons Sync
 
 on:
   schedule:
-    - cron: '0 9 * * 1'
+    # Run on 1st and 16th of every month at 9:00 AM UTC (approximately every 15 days)
+    - cron: '0 9 1,16 * *'
   workflow_dispatch:
     inputs:
       force_sync:
@@ -128,6 +129,9 @@ jobs:
           commit-message: "🎨 FluentUI Icons Sync: Added ${{ steps.check_icons.outputs.new_variants_count }} ImageVectors"
           title: "🎨 FluentUI Icons Sync - ${{ steps.check_icons.outputs.new_variants_count }} New ImageVectors"
           branch: "fluentui-icons-sync-${{ github.run_number }}"
+          committer: "Sk Niyaj Ali <niyaj639@gmail.com>"
+          author: "Sk Niyaj Ali <niyaj639@gmail.com>"
+          assignees: "niyajali"
           delete-branch: true
           body: |
             ## 🎨 FluentUI Icons Sync Report
@@ -144,13 +148,3 @@ jobs:
             fluent-icons
             automation
             enhancement
-
-      - name: Cleanup
-        if: always()
-        run: |
-          # Restore original build.gradle.kts
-          if [ -f "build.gradle.kts.backup" ]; then
-            mv build.gradle.kts.backup build.gradle.kts
-          fi
-          
-          echo "✅ Cleanup completed"
