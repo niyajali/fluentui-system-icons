@@ -75,7 +75,7 @@ class SvgConverter {
                 }
 
                 val modifiedContent = modifyGeneratedContent(generatedContent, style, iconName, variant)
-                
+
                 // Write to target file
                 targetFile.parentFile.mkdirs()
                 targetFile.writeText(modifiedContent)
@@ -96,7 +96,12 @@ class SvgConverter {
         }
     }
 
-    private fun modifyGeneratedContent(content: String, style: String, iconName: String, variant: IconVariant): String {
+    private fun modifyGeneratedContent(
+        content: String,
+        style: String,
+        iconName: String,
+        variant: IconVariant,
+    ): String {
         // Extract the complete ImageVector Builder definition from generated content
         val imageVectorDefinition = extractImageVectorDefinition(content, iconName)
 
@@ -172,7 +177,7 @@ private var $privateVarName: ImageVector? = null
 @Composable
 private fun ${iconName}Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.$styleCapitalized.$iconName, contentDescription = null)
+        Image(imageVector = FluentIcons.$styleCapitalized.$iconName, contentDescription = "$iconName Icon")
     }
 }
 
@@ -283,7 +288,7 @@ private fun ${iconName}Preview() {
      */
     private fun extractImportsFromContent(content: String): Set<String> {
         val imports = mutableSetOf<String>()
-        
+
         // Simple and robust import extraction
         content.lines().forEach { line ->
             val trimmed = line.trim()
@@ -291,7 +296,7 @@ private fun ${iconName}Preview() {
                 imports.add(trimmed)
             }
         }
-        
+
         return imports
     }
 
@@ -300,7 +305,7 @@ private fun ${iconName}Preview() {
      */
     private fun processImports(generatedImports: Set<String>, style: String): Set<String> {
         val processedImports = mutableSetOf<String>()
-        
+
         // Process each import and only fix specific known issues
         generatedImports.forEach { import ->
             when {
@@ -312,19 +317,19 @@ private fun ${iconName}Preview() {
                 import.contains("fluent.ui.system.icons.${style.lowercase()}.FluentIcons") -> {
                     processedImports.add("import fluent.ui.system.icons.FluentIcons")
                 }
-                
+
                 // Fix incorrect preview import
                 import.contains("androidx.compose.ui.tooling.preview.Preview") -> {
                     processedImports.add("import org.jetbrains.compose.ui.tooling.preview.Preview")
                 }
-                
+
                 // Use all other imports as-is (trust svg2compose)
                 else -> {
                     processedImports.add(import)
                 }
             }
         }
-        
+
         // Add only essential imports that might be missing
         val essentialImports = setOf(
             "import fluent.ui.system.icons.FluentIcons",
@@ -335,14 +340,14 @@ private fun ${iconName}Preview() {
             "import androidx.compose.ui.Modifier",
             "import androidx.compose.foundation.layout.padding",
         )
-        
+
         essentialImports.forEach { essential ->
             val className = essential.substringAfterLast(".")
             if (!processedImports.any { it.substringAfterLast(".") == className }) {
                 processedImports.add(essential)
             }
         }
-        
+
         return processedImports
     }
 }
