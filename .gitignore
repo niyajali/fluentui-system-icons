@@ -60,3 +60,4 @@ docs/
 build-cache/
 check_output.txt
 gradlew
+library/fluent-icons-sync.log
