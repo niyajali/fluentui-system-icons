@@ -7,11 +7,14 @@ on:
 env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx6g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
 
+concurrency:
+  group: "build-library"
+  cancel-in-progress: true
+
 jobs:
   build:
     name: "Build the Library"
     runs-on: 'macos-latest'
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
