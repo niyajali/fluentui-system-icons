@@ -36,11 +36,6 @@ plugins {
     id("fluent.icons")
 }
 
-fluentIcons {
-    useLocalDirectory.set(true)
-    localDirectoryPath.set("H:/fluentui-source")
-}
-
 kotlin {
     applyDefaultHierarchyTemplate()
 

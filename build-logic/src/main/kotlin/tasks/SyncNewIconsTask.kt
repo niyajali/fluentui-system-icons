@@ -132,12 +132,12 @@ abstract class SyncNewIconsTask : DefaultTask() {
 
             // Log results
             logSyncResult(
-                fluentConfig,
-                newIconsAdded,
-                duplicatesSkipped,
-                syncedIcons,
-                iconFamiliesToSync.size,
-                styleBreakdown,
+                config = fluentConfig,
+                newIconsAdded = newIconsAdded,
+                duplicatesSkipped = duplicatesSkipped,
+                syncedIcons = syncedIcons,
+                iconFamiliesProcessed = iconFamiliesToSync.size,
+                styleBreakdown = styleBreakdown,
             )
         }
     }
