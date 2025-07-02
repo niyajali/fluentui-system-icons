@@ -2,7 +2,6 @@ name: FluentUI Icons Sync
 
 on:
   schedule:
-    # Run every Monday at 9:00 AM UTC
     - cron: '0 9 * * 1'
   workflow_dispatch:
     inputs:
@@ -16,11 +15,6 @@ on:
         required: false
         default: 'main'
         type: string
-      custom_branch:
-        description: 'Custom branch name for PR'
-        required: false
-        default: ''
-        type: string
 
 env:
   GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.parallel=true -Dorg.gradle.caching=true
@@ -29,350 +23,160 @@ env:
 jobs:
   sync-icons:
     runs-on: ubuntu-latest
-    
-    outputs:
-      new_families_count: ${{ steps.check_icons.outputs.new_families_count }}
-      new_variants_count: ${{ steps.check_icons.outputs.new_variants_count }}
-      sync_performed: ${{ steps.sync_check.outputs.sync_performed }}
-      pr_created: ${{ steps.create_pr.outputs.pull-request-number != '' }}
-      git_ref_display: ${{ steps.setup_config.outputs.git_ref_display }}
-    
-    steps:
-    - name: 🏗️ Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: 📦 Setup JDK ${{ env.JAVA_VERSION }}
-      uses: actions/setup-java@v4
-      with:
-        java-version: ${{ env.JAVA_VERSION }}
-        distribution: 'temurin'
-        cache: gradle
-    
-    - name: 🔧 Setup Gradle
-      uses: gradle/actions/setup-gradle@v4
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    
-    - name: ⚙️ Configure FluentUI plugin
-      id: setup_config
-      run: |
-        input_ref="${{ github.event.inputs.git_ref || 'main' }}"
-        echo "git_ref_display=$input_ref" >> $GITHUB_OUTPUT
-        echo "GIT_REF_INPUT=$input_ref" >> $GITHUB_ENV
-        
-        echo "🔧 FluentUI Icons Plugin Configuration:"
-        echo "🔗 Mode: Git Repository (automatic git reference formatting)"
-        echo "📍 Repository: https://github.com/microsoft/fluentui-system-icons.git"
-        echo "🌿 Reference: $input_ref (will be auto-formatted by plugin)"
-        echo "🎯 Plugin: fluent.icons"
-    
-    - name: ⚙️ Configure build.gradle.kts for sync
-      run: |
-        cat >> build.gradle.kts << EOF
-        
-        // FluentUI Icons Plugin Configuration
-        fluentIcons {
-            // Git repository mode (automatic cloning and ref formatting)
-            useLocalDirectory.set(false)
-            gitRepository.set("https://github.com/microsoft/fluentui-system-icons.git")
-            gitRef.set("$GIT_REF_INPUT")  // Plugin auto-formats: main -> refs/heads/main, 1.1.305 -> refs/tags/1.1.305          
-        }
-        EOF
-        
-        echo "✅ Build configuration updated for FluentUI sync"
-    
-    - name: 🔍 Check for new icons
-      id: check_icons
-      run: |
-        echo "🔍 Checking for new FluentUI icons using fluent.icons plugin..."
-        echo "🌿 Git reference: $GIT_REF_INPUT (will be auto-formatted by plugin)"
-        
-        # Use the plugin's checkNewIcons task
-        ./gradlew checkNewIcons --console=plain > check_output.txt 2>&1
-        
-        echo "📋 Check output:"
-        cat check_output.txt
-        
-        # Extract counts from plugin output
-        new_families=$(grep -o "Found [0-9]\+ new icon families" check_output.txt | grep -o '[0-9]\+' || echo '0')
-        new_variants=$(grep -o "Total variants to sync: [0-9]\+" check_output.txt | grep -o '[0-9]\+' || echo '0')
-        
-        echo "new_families_count=$new_families" >> $GITHUB_OUTPUT
-        echo "new_variants_count=$new_variants" >> $GITHUB_OUTPUT
-        
-        echo "📊 Plugin Results: $new_families new families, $new_variants new variants"
-        
-        # Save output for later steps
-        echo "CHECK_OUTPUT<<EOF" >> $GITHUB_ENV
-        cat check_output.txt >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
-    
-    - name: 🎯 Determine if sync should proceed
-      id: sync_check
-      run: |
-        should_sync="false"
-        
-        if [ "${{ steps.check_icons.outputs.new_variants_count }}" -gt "0" ]; then
-          echo "✅ New variants found, proceeding with sync"
-          should_sync="true"
-        elif [ "${{ github.event.inputs.force_sync }}" == "true" ]; then
-          echo "🔄 Force sync requested, proceeding anyway"
-          should_sync="true"
-        else
-          echo "ℹ️ No new variants found and force sync not requested"
-          should_sync="false"
-        fi
-        
-        echo "sync_performed=$should_sync" >> $GITHUB_OUTPUT
-        echo "SHOULD_SYNC=$should_sync" >> $GITHUB_ENV
-    
-    - name: 🎨 Sync and convert new icons
-      if: env.SHOULD_SYNC == 'true'
-      run: |
-        echo "🎨 Starting FluentUI icon sync using fluent.icons plugin..."
-        echo "🔄 Plugin handles: Git clone → SVG scan → ImageVector conversion → File generation"
-        
-        # Use the plugin's syncNewIcons task
-        ./gradlew syncNewIcons --console=plain
-        
-        echo "📊 Sync completed, checking for changes..."
-        if [[ `git status --porcelain` ]]; then
-          echo "✅ Changes detected after sync"
-          git status --short
-        else
-          echo "⚠️ No changes detected after sync"
-        fi
-    
-    - name: 📈 Analyze icon coverage
-      if: env.SHOULD_SYNC == 'true'
-      run: |
-        echo "📈 Running FluentUI icon coverage analysis..."
-        
-        ./gradlew analyzeIconCoverage --console=plain > coverage_analysis.txt 2>&1
-        
-        echo "COVERAGE_ANALYSIS<<EOF" >> $GITHUB_ENV
-        cat coverage_analysis.txt >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
-        
-        echo "📋 Coverage analysis:"
-        cat coverage_analysis.txt
-    
-    - name: 🔧 Setup Git configuration
-      if: env.SHOULD_SYNC == 'true'
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-    
-    - name: 📝 Generate comprehensive commit message
-      if: env.SHOULD_SYNC == 'true'
-      id: commit_msg
-      run: |
-        timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
-        families="${{ steps.check_icons.outputs.new_families_count }}"
-        variants="${{ steps.check_icons.outputs.new_variants_count }}"
-        git_ref="${{ steps.setup_config.outputs.git_ref_display }}"
-        
-        # Create detailed commit message
-        cat > commit_message.txt << EOF
-        🎨 FluentUI Icons Sync: Added $variants ImageVectors from $families families
-        
-        📅 Sync Date: $timestamp
-        🌿 Source: microsoft/fluentui-system-icons@$git_ref
-        
-        📊 Summary:
-        - New icon families: $families
-        - New style variants: $variants
-        - Conversion: SVG → ImageVector (svg2compose)
-        - Organization: Style-based directories (filled/, regular/, light/, color/)
-        
-        🎯 Changes:
-        - SVGs auto-converted using fluent.icons plugin
-        - Icons organized by style with proper naming
-        - IconList files updated with new imports
-        - Generated: FluentIcons.Style.IconName accessors
-        
-        🔧 Plugin: fluent.icons with build-logic module
-        Generated by fluentui-icons-sync workflow
-        EOF
-        
-        echo "COMMIT_MESSAGE<<EOF" >> $GITHUB_ENV
-        cat commit_message.txt >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
-        
-        echo "timestamp=$timestamp" >> $GITHUB_OUTPUT
-    
-    - name: 🔀 Create Pull Request
-      if: env.SHOULD_SYNC == 'true'
-      id: create_pr
-      uses: peter-evans/create-pull-request@v6
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: ${{ env.COMMIT_MESSAGE }}
-        title: "🎨 FluentUI Icons Sync - ${{ steps.check_icons.outputs.new_variants_count }} New ImageVectors"
-        branch: ${{ github.event.inputs.custom_branch || format('fluentui-icons-sync-{0}', github.run_number) }}
-        delete-branch: true
-        body: |
-          ## 🎨 FluentUI Icons Sync Report
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+
+      - name: Configure FluentUI plugin
+        id: setup_config
+        run: |
+          input_ref="${{ github.event.inputs.git_ref || 'main' }}"
+          echo "git_ref_display=$input_ref" >> $GITHUB_OUTPUT
+          echo "GIT_REF_INPUT=$input_ref" >> $GITHUB_ENV
+
+      - name: Configure plugin settings
+        run: |
+          # Backup original build.gradle.kts
+          cp build.gradle.kts build.gradle.kts.backup
           
-          **📅 Sync Date:** ${{ steps.commit_msg.outputs.timestamp }}  
-          **🌿 Source:** microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}  
-          **🔧 Plugin:** fluent.icons (build-logic module)  
+          # Add FluentUI configuration
+          cat >> build.gradle.kts << EOF
           
-          ### 📊 Summary
-          - **🏠 Icon Families Added:** ${{ steps.check_icons.outputs.new_families_count }}
-          - **🎨 Style Variants Added:** ${{ steps.check_icons.outputs.new_variants_count }}
-          - **🔄 Conversion:** SVG → ImageVector (svg2compose)
-          - **📁 Organization:** Style-based directories
-          - **🎯 Naming:** FluentIcons.Style.IconName pattern
-          
-          ### ✨ What's New
-          This sync uses the dedicated `fluent.icons` plugin from the build-logic module:
-          
-          - ✅ **Gradle Plugin Integration:** Uses the custom build-logic module
-          - 🎨 **SVG Conversion:** High-quality SVG → ImageVector conversion
-          - 📁 **Smart Organization:** Icons sorted into style directories  
-          - 🏷️ **Consistent Naming:** PascalCase with proper LTR/RTL handling
-          - 📝 **Auto-Import Management:** IconList files updated automatically
-          - 🎯 **Size Optimization:** Smart 24px→20px→16px→28px→32px fallback per style
-          - 🔧 **Git Integration:** Automatic reference formatting and shallow clones
-          
-          ### 📂 Generated Structure
-          ```
-          library/src/commonMain/kotlin/fluent/ui/system/icons/
-          ├── filled/
-          │   ├── FluentIconName.kt
-          │   ├── FluentTaskListLtr.kt
-          │   └── FluentTaskListRtl.kt
-          ├── regular/
-          │   ├── FluentIconName.kt
-          │   └── FluentTaskListLtr.kt
-          ├── light/
-          │   └── FluentIconName.kt
-          ├── color/
-          │   └── FluentTaskListLtr.kt
-          ├── FilledIconList.kt        # Auto-updated
-          ├── RegularIconList.kt       # Auto-updated
-          ├── LightIconList.kt         # Auto-updated
-          └── ColorIconList.kt         # Auto-updated
-          ```
-          
-          ### 🔍 Plugin Check Results
-          
-          ```
-          ${{ env.CHECK_OUTPUT }}
-          ```
-          
-          ### 📈 Coverage Analysis
-          
-          ```
-          ${{ env.COVERAGE_ANALYSIS }}
-          ```
-          
-          ### 🎯 Build-Logic Plugin Features
-          - **Plugin ID:** `fluent.icons` 
-          - **Git Integration:** Automatic shallow clones with proper RefSpec handling
-          - **Reference Formatting:** Auto-formats branch/tag names (main → refs/heads/main)
-          - **Conversion:** svg2compose library integration
-          - **Architecture:** Clean SOLID principles with separation of concerns
-          - **Task Management:** checkNewIcons → syncNewIcons → analyzeIconCoverage
-          
-          ### 🚀 Usage Examples
-          ```kotlin
-          import fluent.ui.system.icons.FluentIcons
-          
-          @Composable
-          fun MyScreen() {
-              // Individual icons
-              Icon(FluentIcons.Filled.FluentNewIcon, contentDescription = "New Icon")
-              Icon(FluentIcons.Regular.FluentTaskListLtr, contentDescription = "Task List LTR")
-          
-              // All icons of a style  
-              val allFilledIcons = FluentIcons.Filled.All
-              val allRegularIcons = FluentIcons.Regular.All
+          // FluentUI Icons Plugin Configuration
+          fluentIcons {
+              useLocalDirectory.set(false)
+              gitRepository.set("https://github.com/microsoft/fluentui-system-icons.git")
+              gitRef.set("$GIT_REF_INPUT")
+              targetIconsPath.set("library/src/commonMain/kotlin/fluent/ui/system/icons")
+              assetsPath.set("assets")
+              preferredSize.set(24)
+              fallbackSizes.set(listOf(20, 16, 28, 32))
+              supportedStyles.set(listOf("filled", "regular", "light", "color"))
+              excludePatterns.set(listOf("test", "temp", "draft"))
+              syncLogFile.set("fluent-icons-sync.log")
           }
-          ```
+          EOF
           
-          ### 🔧 Technical Details
-          - **Build System:** Gradle plugin using kotlin-dsl
-          - **Plugin Module:** build-logic with custom WeeklyIconSyncPlugin
-          - **Dependencies:** svg2compose, JGit, KotlinPoet, kotlinx-serialization
-          - **Git Handling:** Proper RefSpec configuration for branches and tags
-          - **Cleanup:** Automatic temporary repository cleanup
+          echo "✅ Plugin configuration added"
+
+      - name: Check for new icons
+        id: check_icons
+        run: |
+          echo "🔍 Checking for new FluentUI icons..."
           
-          ---
-          
-          🤖 **Auto-generated by:** `fluentui-icons-sync` workflow  
-          📅 **Generated on:** ${{ steps.commit_msg.outputs.timestamp }}  
-          🔗 **Workflow Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}  
-          🎯 **Plugin:** fluent.icons from build-logic module
-        labels: |
-          🎨 fluent-icons
-          🤖 automation
-          📦 enhancement
-          🔄 sync
-        assignees: ${{ github.actor }}
-        reviewers: ${{ github.actor }}
-    
-    - name: 📊 Generate workflow summary
-      run: |
-        echo "## 🎨 FluentUI Icons Sync Summary" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### 📋 Results" >> $GITHUB_STEP_SUMMARY
-        echo "- 🔍 **Icons Check:** ✅ Completed using fluent.icons plugin" >> $GITHUB_STEP_SUMMARY
-        echo "- 🌿 **Git Reference:** ${{ steps.setup_config.outputs.git_ref_display }}" >> $GITHUB_STEP_SUMMARY
-        echo "- 🏠 **New families:** ${{ steps.check_icons.outputs.new_families_count }}" >> $GITHUB_STEP_SUMMARY
-        echo "- 🎨 **New variants:** ${{ steps.check_icons.outputs.new_variants_count }}" >> $GITHUB_STEP_SUMMARY
-        echo "- 🔄 **Sync performed:** ${{ steps.sync_check.outputs.sync_performed }}" >> $GITHUB_STEP_SUMMARY
-        
-        if [ "${{ steps.sync_check.outputs.sync_performed }}" == "true" ]; then
-          if [ "${{ steps.create_pr.outputs.pull-request-number }}" != "" ]; then
-            echo "- ✅ **PR Created:** #${{ steps.create_pr.outputs.pull-request-number }}" >> $GITHUB_STEP_SUMMARY
-            echo "- 🔗 **PR URL:** ${{ steps.create_pr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY
+          # Run with error handling
+          if ./gradlew checkNewIcons --console=plain > check_output.txt 2>&1; then
+            echo "✅ Check completed successfully"
           else
-            echo "- ⚠️ **PR Creation:** Failed or no changes detected" >> $GITHUB_STEP_SUMMARY
+            echo "❌ Check failed"
+            cat check_output.txt
+            exit 1
           fi
-        else
-          echo "- ℹ️ **No sync needed:** No new variants found" >> $GITHUB_STEP_SUMMARY
-        fi
-        
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### 🔧 Build-Logic Plugin Details" >> $GITHUB_STEP_SUMMARY
-        echo "- **Plugin ID:** fluent.icons" >> $GITHUB_STEP_SUMMARY
-        echo "- **Source:** build-logic module (WeeklyIconSyncPlugin)" >> $GITHUB_STEP_SUMMARY
-        echo "- **Git Integration:** Automatic shallow clones with RefSpec handling" >> $GITHUB_STEP_SUMMARY
-        echo "- **Tasks:** checkNewIcons → syncNewIcons → analyzeIconCoverage" >> $GITHUB_STEP_SUMMARY
-        echo "- **Architecture:** SOLID principles with clean separation" >> $GITHUB_STEP_SUMMARY
-        
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### 📅 Workflow Details" >> $GITHUB_STEP_SUMMARY
-        echo "- **🕐 Triggered:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
-        echo "- **🏃 Run ID:** ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
-        echo "- **👤 Actor:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
-        echo "- **🌿 Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
-    
-    - name: 💬 Add comment for manual triggers
-      if: github.event_name == 'workflow_dispatch' && steps.create_pr.outputs.pull-request-number != ''
-      uses: peter-evans/create-or-update-comment@v4
-      with:
-        issue-number: ${{ steps.create_pr.outputs.pull-request-number }}
-        body: |
-          🔄 **Manual FluentUI sync triggered by @${{ github.actor }}**
           
-          **Input Parameters:**
-          - Force Sync: `${{ github.event.inputs.force_sync }}`
-          - Git Reference: `${{ github.event.inputs.git_ref || 'main' }}`
-          - Custom Branch: `${{ github.event.inputs.custom_branch || 'auto-generated' }}`
+          # Extract counts from output
+          new_families=$(grep -o "Found [0-9]\+ new icon families" check_output.txt | grep -o '[0-9]\+' || echo '0')
+          new_variants=$(grep -o "Total variants to sync: [0-9]\+" check_output.txt | grep -o '[0-9]\+' || echo '0')
           
-          **Sync Results:**
-          - New Families: ${{ steps.check_icons.outputs.new_families_count }}
-          - New Variants: ${{ steps.check_icons.outputs.new_variants_count }}
-          - Source: microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}
+          echo "new_families_count=$new_families" >> $GITHUB_OUTPUT
+          echo "new_variants_count=$new_variants" >> $GITHUB_OUTPUT
           
-          **Plugin Configuration:**
-          - Plugin: fluent.icons (from build-logic module)
-          - Git Integration: Automatic reference formatting and shallow clones
-          - Conversion: SVG → ImageVector with style organization
+          echo "📊 Results: $new_families new families, $new_variants new variants"
+          cat check_output.txt
+
+      - name: Determine if sync should proceed
+        id: sync_check
+        run: |
+          should_sync="false"
+          
+          if [ "${{ steps.check_icons.outputs.new_variants_count }}" -gt "0" ]; then
+            echo "✅ New variants found, proceeding with sync"
+            should_sync="true"
+          elif [ "${{ github.event.inputs.force_sync }}" == "true" ]; then
+            echo "🔄 Force sync requested, proceeding anyway"
+            should_sync="true"
+          else
+            echo "ℹ️ No new variants found and force sync not requested"
+            should_sync="false"
+          fi
+          
+          echo "sync_performed=$should_sync" >> $GITHUB_OUTPUT
+          echo "SHOULD_SYNC=$should_sync" >> $GITHUB_ENV
+
+      - name: Sync new icons
+        if: env.SHOULD_SYNC == 'true'
+        run: |
+          echo "🎨 Starting FluentUI icon sync..."
+          
+          if ./gradlew syncNewIcons --console=plain; then
+            echo "✅ Sync completed successfully"
+          else
+            echo "❌ Sync failed"
+            exit 1
+          fi
+          
+          if [[ `git status --porcelain` ]]; then
+            echo "✅ Changes detected after sync"
+            git status --short
+          else
+            echo "⚠️ No changes detected after sync"
+          fi
+
+      - name: Setup Git configuration
+        if: env.SHOULD_SYNC == 'true'
+        run: |
+          git config --local user.email "niyaj639@gmail.com"
+          git config --local user.name "Sk Niyaj Ali"
+
+      - name: Create Pull Request
+        if: env.SHOULD_SYNC == 'true'
+        id: create_pr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "🎨 FluentUI Icons Sync: Added ${{ steps.check_icons.outputs.new_variants_count }} ImageVectors"
+          title: "🎨 FluentUI Icons Sync - ${{ steps.check_icons.outputs.new_variants_count }} New ImageVectors"
+          branch: "fluentui-icons-sync-${{ github.run_number }}"
+          delete-branch: true
+          body: |
+            ## 🎨 FluentUI Icons Sync Report
+            
+            **📅 Sync Date:** ${{ steps.commit_msg.outputs.timestamp }}  
+            **🌿 Source:** microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}  
+            
+            ### 📊 Summary
+            - **🏠 Icon Families Added:** ${{ steps.check_icons.outputs.new_families_count }}
+            - **🎨 Style Variants Added:** ${{ steps.check_icons.outputs.new_variants_count }}
+            - **🔄 Conversion:** SVG → ImageVector
+            - **🎯 Plugin:** fluent.icons from build-logic module
+          labels: |
+            fluent-icons
+            automation
+            enhancement
+
+      - name: Cleanup
+        if: always()
+        run: |
+          # Restore original build.gradle.kts
+          if [ -f "build.gradle.kts.backup" ]; then
+            mv build.gradle.kts.backup build.gradle.kts
+          fi
+          
+          echo "✅ Cleanup completed"
