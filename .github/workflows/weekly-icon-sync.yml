@@ -99,7 +99,7 @@ jobs:
         run: |
           echo "🎨 Starting FluentUI icon sync..."
           
-          if ./gradlew syncNewIcons --console=plain; then
+          if ./gradlew syncNewIcons -PgitRef=$GIT_REF_INPUT --no-configuration-cache --console=plain; then
             echo "✅ Sync completed successfully"
           else
             echo "❌ Sync failed"
