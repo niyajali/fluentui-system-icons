@@ -50,13 +50,10 @@ class SvgConverter {
             // Copy SVG to temp directory
             variant.svgFile.copyTo(tempSvgFile)
 
-            // FIX: Use consistent case handling - titlecase for accessor name
-            val accessorCategory = style.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
-
             // Use svg2compose to convert SVG to ImageVector
             Svg2Compose.parse(
                 applicationIconPackage = "fluent.ui.system.icons.${style.lowercase()}",
-                accessorName = "FluentIcons.${accessorCategory}",
+                accessorName = "FluentIcons",
                 outputSourceDirectory = tempDir,
                 vectorsDirectory = tempDir,
                 type = VectorType.SVG,
@@ -78,7 +75,7 @@ class SvgConverter {
                 }
 
                 val modifiedContent = modifyGeneratedContent(generatedContent, style, iconName, variant)
-
+                
                 // Write to target file
                 targetFile.parentFile.mkdirs()
                 targetFile.writeText(modifiedContent)
@@ -100,25 +97,24 @@ class SvgConverter {
     }
 
     private fun modifyGeneratedContent(content: String, style: String, iconName: String, variant: IconVariant): String {
-        // Extract the ImageVector definition from generated content
-        val imageVectorRegex = Regex(
-            """ImageVector\.Builder\s*\([^)]*\).*?\.build\(\)""",
-            setOf(RegexOption.DOT_MATCHES_ALL, RegexOption.MULTILINE),
-        )
+        // Extract the complete ImageVector Builder definition from generated content
+        val imageVectorDefinition = extractImageVectorDefinition(content, iconName)
 
-        val imageVectorDefinition = imageVectorRegex.find(content)?.value
-            ?: run {
-                // Fallback: try to find any ImageVector.Builder pattern
-                val fallbackRegex = Regex(
-                    """ImageVector\.Builder[^.]*\.build\(\)""",
-                    RegexOption.DOT_MATCHES_ALL,
-                )
-                fallbackRegex.find(content)?.value
-                    ?: throw IllegalStateException("Could not extract ImageVector definition from generated content for $iconName")
-            }
+        // Extract ALL imports from the generated content
+        val generatedImports = extractImportsFromContent(content)
 
-        // FIX: Use consistent case handling
+        // Process and filter imports
+        val processedImports = processImports(generatedImports, style)
+
         val styleCapitalized = style.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+        val privateVarName = "_${iconName.replaceFirstChar { it.lowercase() }}"
+
+        // Generate keywords from icon name for KDoc
+        val keywords = iconName.replace(Regex("(?<=[a-z])(?=[A-Z])"), " ")
+            .lowercase()
+            .split(" ")
+            .filter { it.isNotBlank() }
+            .joinToString(", ")
 
         return """
 /*
@@ -143,40 +139,34 @@ class SvgConverter {
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- */            
+ */
+
 package fluent.ui.system.icons.${style.lowercase()}
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.padding
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import fluent.ui.system.icons.FluentIcons
+${processedImports.sorted().joinToString("\n")}
 
 /**
- * Generated from ${variant.svgFile.name}
- * Size: ${variant.size}dp${if (variant.direction != null) ", Direction: ${variant.direction.uppercase()}" else ""}
+ * $iconName icon from Microsoft FluentUI System Icons.
  * 
- * @return The [ImageVector] for [${iconName}].
+ * **Icon details:**
+ * - Style: $styleCapitalized
+ * - Size: ${variant.size}dp${if (variant.direction != null) "\n * - Direction: ${variant.direction.uppercase()}" else ""}
+ * - Keywords: $keywords
+ * - Source: ${variant.svgFile.name}
+ * 
+ * @return The [ImageVector] for the $iconName icon.
  */
 public val FluentIcons.$styleCapitalized.$iconName: ImageVector
     get() {
-        if (_$iconName != null) {
-            return _$iconName!!
+        if ($privateVarName != null) {
+            return $privateVarName!!
         }
-        _$iconName = $imageVectorDefinition
-        return _$iconName!!
+        $privateVarName = $imageVectorDefinition
+        return $privateVarName!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _$iconName: ImageVector? = null
+private var $privateVarName: ImageVector? = null
 
 @Preview
 @Composable
@@ -186,6 +176,173 @@ private fun ${iconName}Preview() {
     }
 }
 
-        """.trimIndent()
+        """.trimIndent() + "\n"
+    }
+
+    private fun extractImageVectorDefinition(content: String, iconName: String): String {
+        // First, clean the content by removing any imports that appear in the middle of code
+        val cleanedContent = cleanContentFromInvalidImports(content)
+
+        // Pattern 1: Look for complete Builder definition with .apply and .build()
+        val pattern1 = Regex(
+            """Builder\s*\([^)]+\)\s*\.apply\s*\{.*?\}\s*\.build\(\)""",
+            setOf(RegexOption.DOT_MATCHES_ALL, RegexOption.MULTILINE),
+        )
+
+        pattern1.find(cleanedContent)?.let {
+            return it.value
+        }
+
+        // Pattern 2: Look for Builder with parentheses and curly braces (more flexible)
+        val pattern2 = Regex(
+            """Builder\s*\([^)]+\)\.apply\s*\{[^}]*\}\.build\(\)""",
+            setOf(RegexOption.DOT_MATCHES_ALL, RegexOption.MULTILINE),
+        )
+
+        pattern2.find(cleanedContent)?.let {
+            return it.value
+        }
+
+        // Pattern 3: Extract everything from Builder to .build() across multiple lines
+        val pattern3 = Regex(
+            """Builder.*?\.build\(\)""",
+            setOf(RegexOption.DOT_MATCHES_ALL, RegexOption.MULTILINE),
+        )
+
+        pattern3.find(cleanedContent)?.let { match ->
+            // Clean up the extracted content to remove any stray imports
+            val cleaned = match.value.lines()
+                .filter { line -> !line.trim().startsWith("import ") }
+                .joinToString("\n")
+            return cleaned
+        }
+
+        // Pattern 4: Look for assignment and extract just the Builder part
+        val pattern4 = Regex(
+            """_\w+\s*=\s*(Builder.*?\.build\(\))""",
+            setOf(RegexOption.DOT_MATCHES_ALL, RegexOption.MULTILINE),
+        )
+
+        pattern4.find(cleanedContent)?.let { match ->
+            return match.groupValues[1]
+        }
+
+        // If all patterns fail, provide debug info for failure case only
+        println("=== EXTRACTION FAILURE DEBUG FOR $iconName ===")
+        println("Cleaned content length: ${cleanedContent.length}")
+        println("Contains 'Builder': ${cleanedContent.contains("Builder")}")
+        println("Contains '.build()': ${cleanedContent.contains(".build()")}")
+        println("Content preview (first 1000 chars):")
+        println(cleanedContent.take(1000))
+        println("=== END DEBUG ===")
+
+        throw IllegalStateException("Could not extract ImageVector definition from generated content for $iconName. See debug output above.")
+    }
+
+    /**
+     * Removes any import statements that appear in the middle of code (invalid placement)
+     */
+    private fun cleanContentFromInvalidImports(content: String): String {
+        val lines = content.lines()
+        val result = mutableListOf<String>()
+        var foundFirstNonImport = false
+
+        for (line in lines) {
+            val trimmedLine = line.trim()
+
+            when {
+                trimmedLine.startsWith("import ") && !foundFirstNonImport -> {
+                    // Valid import at the top of file
+                    result.add(line)
+                }
+
+                trimmedLine.startsWith("import ") && foundFirstNonImport -> {
+                    // Invalid import in the middle of code - skip it
+                    continue
+                }
+
+                trimmedLine.isNotEmpty() && !trimmedLine.startsWith("package")
+                        && !trimmedLine.startsWith("/*") && !trimmedLine.startsWith("*")
+                        && !trimmedLine.startsWith("*/") -> {
+                    // First non-import, non-comment line
+                    foundFirstNonImport = true
+                    result.add(line)
+                }
+
+                else -> {
+                    result.add(line)
+                }
+            }
+        }
+
+        return result.joinToString("\n")
+    }
+
+    /**
+     * Extracts all import statements from generated content
+     */
+    private fun extractImportsFromContent(content: String): Set<String> {
+        val imports = mutableSetOf<String>()
+        
+        // Simple and robust import extraction
+        content.lines().forEach { line ->
+            val trimmed = line.trim()
+            if (trimmed.startsWith("import ") && trimmed.length > 7) {
+                imports.add(trimmed)
+            }
+        }
+        
+        return imports
+    }
+
+    /**
+     * Uses generated imports as-is and only fixes specific known issues
+     */
+    private fun processImports(generatedImports: Set<String>, style: String): Set<String> {
+        val processedImports = mutableSetOf<String>()
+        
+        // Process each import and only fix specific known issues
+        generatedImports.forEach { import ->
+            when {
+                // Skip malformed .fluenticons imports
+                import.contains(".fluenticons.") -> {
+                    // Skip these completely
+                }
+
+                import.contains("fluent.ui.system.icons.${style.lowercase()}.FluentIcons") -> {
+                    processedImports.add("import fluent.ui.system.icons.FluentIcons")
+                }
+                
+                // Fix incorrect preview import
+                import.contains("androidx.compose.ui.tooling.preview.Preview") -> {
+                    processedImports.add("import org.jetbrains.compose.ui.tooling.preview.Preview")
+                }
+                
+                // Use all other imports as-is (trust svg2compose)
+                else -> {
+                    processedImports.add(import)
+                }
+            }
+        }
+        
+        // Add only essential imports that might be missing
+        val essentialImports = setOf(
+            "import fluent.ui.system.icons.FluentIcons",
+            "import org.jetbrains.compose.ui.tooling.preview.Preview",
+            "import androidx.compose.foundation.Image",
+            "import androidx.compose.runtime.Composable",
+            "import androidx.compose.foundation.layout.Box",
+            "import androidx.compose.ui.Modifier",
+            "import androidx.compose.foundation.layout.padding",
+        )
+        
+        essentialImports.forEach { essential ->
+            val className = essential.substringAfterLast(".")
+            if (!processedImports.any { it.substringAfterLast(".") == className }) {
+                processedImports.add(essential)
+            }
+        }
+        
+        return processedImports
     }
 }
