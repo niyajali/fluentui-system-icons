@@ -1,19 +1,17 @@
 name: Build Library
 
 on:
-  push:
-  pull_request:
   workflow_dispatch:
-
-env:
-  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
+  pull_request:
+  push:
+    branches:
+      - main
 
 concurrency:
   group: "build-library-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
-  # Main library build - all platforms
   library:
     name: "Build Library"
     runs-on: 'macos-latest'

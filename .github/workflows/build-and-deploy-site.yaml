@@ -2,6 +2,9 @@ name: 🌐 KMP Publish Web App
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build-web-app:
@@ -39,7 +42,7 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle-
 
       - name: Build Web App
-        run: ./gradlew :sample:jsBrowserDistribution
+        run: ./gradlew :sample:webApp:jsBrowserDistribution
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

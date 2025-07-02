@@ -7,13 +7,12 @@ on:
   workflow_dispatch:
     inputs:
       git_ref:
-        description: 'Git reference: branch name (main) or tag name (1.1.305)'
+        description: 'Branch Name or Tag Version'
         required: false
         default: 'main'
         type: string
 
 env:
-  GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.parallel=true -Dorg.gradle.caching=true
   JAVA_VERSION: '17'
 
 permissions:
@@ -76,6 +75,7 @@ jobs:
           echo "  New Kotlin files: $new_files"
           echo "  Modified Kotlin files: $modified_files"
           echo "  Total changes: $total_files"
+
 
       - name: Setup Git configuration
         if: steps.sync_icons.outputs.total_kt_files > 0
