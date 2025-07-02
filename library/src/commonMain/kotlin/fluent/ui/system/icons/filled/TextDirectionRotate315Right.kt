@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,39 +30,48 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
+/**
+ * TextDirectionRotate315Right icon from Microsoft FluentUI System Icons.
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: text, direction, rotate315right
+ * - Source: ic_fluent_text_direction_rotate_315_right_24_filled.svg
+ * 
+ * @return The [ImageVector] for the TextDirectionRotate315Right icon.
+ */
 public val FluentIcons.Filled.TextDirectionRotate315Right: ImageVector
     get() {
-        if (_TextDirectionRotate315Right != null) {
-            return _TextDirectionRotate315Right!!
+        if (_textDirectionRotate315Right != null) {
+            return _textDirectionRotate315Right!!
         }
-        _TextDirectionRotate315Right = ImageVector.Builder(
-            name = "Filled.TextDirectionRotate315Right",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
-                moveTo(11.5f, 2f)
-                curveTo(10.948f, 2f, 10.5f, 2.448f, 10.5f, 3f)
-                curveTo(10.5f, 3.552f, 10.948f, 4f, 11.5f, 4f)
+        _textDirectionRotate315Right = Builder(name = "TextDirectionRotate315Right", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                moveTo(11.5f, 2.0f)
+                curveTo(10.948f, 2.0f, 10.5f, 2.448f, 10.5f, 3.0f)
+                curveTo(10.5f, 3.552f, 10.948f, 4.0f, 11.5f, 4.0f)
                 horizontalLineTo(11.586f)
                 lineTo(8.543f, 7.043f)
                 curveTo(8.152f, 7.433f, 8.152f, 8.067f, 8.543f, 8.457f)
                 curveTo(8.933f, 8.848f, 9.567f, 8.848f, 9.957f, 8.457f)
-                lineTo(13f, 5.414f)
+                lineTo(13.0f, 5.414f)
                 verticalLineTo(5.5f)
-                curveTo(13f, 6.052f, 13.448f, 6.5f, 14f, 6.5f)
-                curveTo(14.552f, 6.5f, 15f, 6.052f, 15f, 5.5f)
-                verticalLineTo(3f)
-                curveTo(15f, 2.448f, 14.552f, 2f, 14f, 2f)
+                curveTo(13.0f, 6.052f, 13.448f, 6.5f, 14.0f, 6.5f)
+                curveTo(14.552f, 6.5f, 15.0f, 6.052f, 15.0f, 5.5f)
+                verticalLineTo(3.0f)
+                curveTo(15.0f, 2.448f, 14.552f, 2.0f, 14.0f, 2.0f)
                 horizontalLineTo(11.5f)
                 close()
                 moveTo(3.428f, 7.596f)
@@ -82,29 +92,29 @@ public val FluentIcons.Filled.TextDirectionRotate315Right: ImageVector
                 lineTo(5.102f, 10.602f)
                 lineTo(7.736f, 11.85f)
                 close()
-                moveTo(18.5f, 9f)
-                curveTo(17.948f, 9f, 17.5f, 9.448f, 17.5f, 10f)
-                curveTo(17.5f, 10.552f, 17.948f, 11f, 18.5f, 11f)
+                moveTo(18.5f, 9.0f)
+                curveTo(17.948f, 9.0f, 17.5f, 9.448f, 17.5f, 10.0f)
+                curveTo(17.5f, 10.552f, 17.948f, 11.0f, 18.5f, 11.0f)
                 horizontalLineTo(18.586f)
                 lineTo(9.293f, 20.293f)
                 curveTo(8.902f, 20.683f, 8.902f, 21.317f, 9.293f, 21.707f)
                 curveTo(9.683f, 22.098f, 10.317f, 22.098f, 10.707f, 21.707f)
-                lineTo(20f, 12.414f)
+                lineTo(20.0f, 12.414f)
                 verticalLineTo(12.5f)
-                curveTo(20f, 13.052f, 20.448f, 13.5f, 21f, 13.5f)
-                curveTo(21.552f, 13.5f, 22f, 13.052f, 22f, 12.5f)
-                verticalLineTo(10f)
-                curveTo(22f, 9.448f, 21.552f, 9f, 21f, 9f)
+                curveTo(20.0f, 13.052f, 20.448f, 13.5f, 21.0f, 13.5f)
+                curveTo(21.552f, 13.5f, 22.0f, 13.052f, 22.0f, 12.5f)
+                verticalLineTo(10.0f)
+                curveTo(22.0f, 9.448f, 21.552f, 9.0f, 21.0f, 9.0f)
                 horizontalLineTo(18.5f)
                 close()
             }
-        }.build()
-
-        return _TextDirectionRotate315Right!!
+        }
+        .build()
+        return _textDirectionRotate315Right!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _TextDirectionRotate315Right: ImageVector? = null
+private var _textDirectionRotate315Right: ImageVector? = null
 
 @Preview
 @Composable
@@ -113,3 +123,4 @@ private fun TextDirectionRotate315RightPreview() {
         Image(imageVector = FluentIcons.Filled.TextDirectionRotate315Right, contentDescription = null)
     }
 }
+

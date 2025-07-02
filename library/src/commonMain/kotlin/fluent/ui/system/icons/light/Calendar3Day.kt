@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.light
 
 import androidx.compose.foundation.Image
@@ -29,78 +30,87 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
+/**
+ * Calendar3Day icon from Microsoft FluentUI System Icons.
+ * 
+ * **Icon details:**
+ * - Style: Light
+ * - Size: 32dp
+ * - Keywords: calendar3day
+ * - Source: ic_fluent_calendar_3_day_32_light.svg
+ * 
+ * @return The [ImageVector] for the Calendar3Day icon.
+ */
 public val FluentIcons.Light.Calendar3Day: ImageVector
     get() {
-        if (_Calendar3Day != null) {
-            return _Calendar3Day!!
+        if (_calendar3Day != null) {
+            return _calendar3Day!!
         }
-        _Calendar3Day = ImageVector.Builder(
-            name = "Light.Calendar3Day",
-            defaultWidth = 32.dp,
-            defaultHeight = 32.dp,
-            viewportWidth = 32f,
-            viewportHeight = 32f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
-                moveTo(10f, 9.5f)
-                curveTo(10f, 9.224f, 9.776f, 9f, 9.5f, 9f)
-                curveTo(9.224f, 9f, 9f, 9.224f, 9f, 9.5f)
+        _calendar3Day = Builder(name = "Calendar3Day", defaultWidth = 32.0.dp, defaultHeight = 32.0.dp, viewportWidth = 32.0f, viewportHeight = 32.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                moveTo(10.0f, 9.5f)
+                curveTo(10.0f, 9.224f, 9.776f, 9.0f, 9.5f, 9.0f)
+                curveTo(9.224f, 9.0f, 9.0f, 9.224f, 9.0f, 9.5f)
                 verticalLineTo(22.5f)
-                curveTo(9f, 22.776f, 9.224f, 23f, 9.5f, 23f)
-                curveTo(9.776f, 23f, 10f, 22.776f, 10f, 22.5f)
+                curveTo(9.0f, 22.776f, 9.224f, 23.0f, 9.5f, 23.0f)
+                curveTo(9.776f, 23.0f, 10.0f, 22.776f, 10.0f, 22.5f)
                 verticalLineTo(9.5f)
                 close()
-                moveTo(16f, 9f)
-                curveTo(16.276f, 9f, 16.5f, 9.224f, 16.5f, 9.5f)
+                moveTo(16.0f, 9.0f)
+                curveTo(16.276f, 9.0f, 16.5f, 9.224f, 16.5f, 9.5f)
                 verticalLineTo(22.5f)
-                curveTo(16.5f, 22.776f, 16.276f, 23f, 16f, 23f)
-                curveTo(15.724f, 23f, 15.5f, 22.776f, 15.5f, 22.5f)
+                curveTo(16.5f, 22.776f, 16.276f, 23.0f, 16.0f, 23.0f)
+                curveTo(15.724f, 23.0f, 15.5f, 22.776f, 15.5f, 22.5f)
                 verticalLineTo(9.5f)
-                curveTo(15.5f, 9.224f, 15.724f, 9f, 16f, 9f)
+                curveTo(15.5f, 9.224f, 15.724f, 9.0f, 16.0f, 9.0f)
                 close()
-                moveTo(23f, 9.5f)
-                curveTo(23f, 9.224f, 22.776f, 9f, 22.5f, 9f)
-                curveTo(22.224f, 9f, 22f, 9.224f, 22f, 9.5f)
+                moveTo(23.0f, 9.5f)
+                curveTo(23.0f, 9.224f, 22.776f, 9.0f, 22.5f, 9.0f)
+                curveTo(22.224f, 9.0f, 22.0f, 9.224f, 22.0f, 9.5f)
                 verticalLineTo(22.5f)
-                curveTo(22f, 22.776f, 22.224f, 23f, 22.5f, 23f)
-                curveTo(22.776f, 23f, 23f, 22.776f, 23f, 22.5f)
+                curveTo(22.0f, 22.776f, 22.224f, 23.0f, 22.5f, 23.0f)
+                curveTo(22.776f, 23.0f, 23.0f, 22.776f, 23.0f, 22.5f)
                 verticalLineTo(9.5f)
                 close()
-                moveTo(3f, 7.5f)
-                curveTo(3f, 5.015f, 5.015f, 3f, 7.5f, 3f)
+                moveTo(3.0f, 7.5f)
+                curveTo(3.0f, 5.015f, 5.015f, 3.0f, 7.5f, 3.0f)
                 horizontalLineTo(24.5f)
-                curveTo(26.985f, 3f, 29f, 5.015f, 29f, 7.5f)
+                curveTo(26.985f, 3.0f, 29.0f, 5.015f, 29.0f, 7.5f)
                 verticalLineTo(24.5f)
-                curveTo(29f, 26.985f, 26.985f, 29f, 24.5f, 29f)
+                curveTo(29.0f, 26.985f, 26.985f, 29.0f, 24.5f, 29.0f)
                 horizontalLineTo(7.5f)
-                curveTo(5.015f, 29f, 3f, 26.985f, 3f, 24.5f)
+                curveTo(5.015f, 29.0f, 3.0f, 26.985f, 3.0f, 24.5f)
                 verticalLineTo(7.5f)
                 close()
-                moveTo(7.5f, 4f)
-                curveTo(5.567f, 4f, 4f, 5.567f, 4f, 7.5f)
+                moveTo(7.5f, 4.0f)
+                curveTo(5.567f, 4.0f, 4.0f, 5.567f, 4.0f, 7.5f)
                 verticalLineTo(24.5f)
-                curveTo(4f, 26.433f, 5.567f, 28f, 7.5f, 28f)
+                curveTo(4.0f, 26.433f, 5.567f, 28.0f, 7.5f, 28.0f)
                 horizontalLineTo(24.5f)
-                curveTo(26.433f, 28f, 28f, 26.433f, 28f, 24.5f)
+                curveTo(26.433f, 28.0f, 28.0f, 26.433f, 28.0f, 24.5f)
                 verticalLineTo(7.5f)
-                curveTo(28f, 5.567f, 26.433f, 4f, 24.5f, 4f)
+                curveTo(28.0f, 5.567f, 26.433f, 4.0f, 24.5f, 4.0f)
                 horizontalLineTo(7.5f)
                 close()
             }
-        }.build()
-
-        return _Calendar3Day!!
+        }
+        .build()
+        return _calendar3Day!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _Calendar3Day: ImageVector? = null
+private var _calendar3Day: ImageVector? = null
 
 @Preview
 @Composable
@@ -109,3 +119,4 @@ private fun Calendar3DayPreview() {
         Image(imageVector = FluentIcons.Light.Calendar3Day, contentDescription = null)
     }
 }
+

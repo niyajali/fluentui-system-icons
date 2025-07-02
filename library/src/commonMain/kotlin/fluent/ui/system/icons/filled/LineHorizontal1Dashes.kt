@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,58 +30,67 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
+/**
+ * LineHorizontal1Dashes icon from Microsoft FluentUI System Icons.
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: line, horizontal1dashes
+ * - Source: ic_fluent_line_horizontal_1_dashes_24_filled.svg
+ * 
+ * @return The [ImageVector] for the LineHorizontal1Dashes icon.
+ */
 public val FluentIcons.Filled.LineHorizontal1Dashes: ImageVector
     get() {
-        if (_LineHorizontal1Dashes != null) {
-            return _LineHorizontal1Dashes!!
+        if (_lineHorizontal1Dashes != null) {
+            return _lineHorizontal1Dashes!!
         }
-        _LineHorizontal1Dashes = ImageVector.Builder(
-            name = "Filled.LineHorizontal1Dashes",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
-                moveTo(2f, 12f)
-                curveTo(2f, 11.448f, 2.448f, 11f, 3f, 11f)
-                horizontalLineTo(6f)
-                curveTo(6.552f, 11f, 7f, 11.448f, 7f, 12f)
-                curveTo(7f, 12.552f, 6.552f, 13f, 6f, 13f)
-                horizontalLineTo(3f)
-                curveTo(2.448f, 13f, 2f, 12.552f, 2f, 12f)
+        _lineHorizontal1Dashes = Builder(name = "LineHorizontal1Dashes", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                moveTo(2.0f, 12.0f)
+                curveTo(2.0f, 11.448f, 2.448f, 11.0f, 3.0f, 11.0f)
+                horizontalLineTo(6.0f)
+                curveTo(6.552f, 11.0f, 7.0f, 11.448f, 7.0f, 12.0f)
+                curveTo(7.0f, 12.552f, 6.552f, 13.0f, 6.0f, 13.0f)
+                horizontalLineTo(3.0f)
+                curveTo(2.448f, 13.0f, 2.0f, 12.552f, 2.0f, 12.0f)
                 close()
-                moveTo(9.5f, 12f)
-                curveTo(9.5f, 11.448f, 9.948f, 11f, 10.5f, 11f)
+                moveTo(9.5f, 12.0f)
+                curveTo(9.5f, 11.448f, 9.948f, 11.0f, 10.5f, 11.0f)
                 horizontalLineTo(13.5f)
-                curveTo(14.052f, 11f, 14.5f, 11.448f, 14.5f, 12f)
-                curveTo(14.5f, 12.552f, 14.052f, 13f, 13.5f, 13f)
+                curveTo(14.052f, 11.0f, 14.5f, 11.448f, 14.5f, 12.0f)
+                curveTo(14.5f, 12.552f, 14.052f, 13.0f, 13.5f, 13.0f)
                 horizontalLineTo(10.5f)
-                curveTo(9.948f, 13f, 9.5f, 12.552f, 9.5f, 12f)
+                curveTo(9.948f, 13.0f, 9.5f, 12.552f, 9.5f, 12.0f)
                 close()
-                moveTo(17f, 12f)
-                curveTo(17f, 11.448f, 17.448f, 11f, 18f, 11f)
-                horizontalLineTo(21f)
-                curveTo(21.552f, 11f, 22f, 11.448f, 22f, 12f)
-                curveTo(22f, 12.552f, 21.552f, 13f, 21f, 13f)
-                horizontalLineTo(18f)
-                curveTo(17.448f, 13f, 17f, 12.552f, 17f, 12f)
+                moveTo(17.0f, 12.0f)
+                curveTo(17.0f, 11.448f, 17.448f, 11.0f, 18.0f, 11.0f)
+                horizontalLineTo(21.0f)
+                curveTo(21.552f, 11.0f, 22.0f, 11.448f, 22.0f, 12.0f)
+                curveTo(22.0f, 12.552f, 21.552f, 13.0f, 21.0f, 13.0f)
+                horizontalLineTo(18.0f)
+                curveTo(17.448f, 13.0f, 17.0f, 12.552f, 17.0f, 12.0f)
                 close()
             }
-        }.build()
-
-        return _LineHorizontal1Dashes!!
+        }
+        .build()
+        return _lineHorizontal1Dashes!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _LineHorizontal1Dashes: ImageVector? = null
+private var _lineHorizontal1Dashes: ImageVector? = null
 
 @Preview
 @Composable
@@ -89,3 +99,4 @@ private fun LineHorizontal1DashesPreview() {
         Image(imageVector = FluentIcons.Filled.LineHorizontal1Dashes, contentDescription = null)
     }
 }
+
