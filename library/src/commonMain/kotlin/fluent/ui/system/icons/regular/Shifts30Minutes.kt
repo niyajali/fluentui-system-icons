@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.regular
 
 import androidx.compose.foundation.Image
@@ -29,59 +30,68 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
+/**
+ * Shifts30Minutes icon from Microsoft FluentUI System Icons.
+ * 
+ * **Icon details:**
+ * - Style: Regular
+ * - Size: 24dp
+ * - Keywords: shifts30minutes
+ * - Source: ic_fluent_shifts_30_minutes_24_regular.svg
+ * 
+ * @return The [ImageVector] for the Shifts30Minutes icon.
+ */
 public val FluentIcons.Regular.Shifts30Minutes: ImageVector
     get() {
-        if (_Shifts30Minutes != null) {
-            return _Shifts30Minutes!!
+        if (_shifts30Minutes != null) {
+            return _shifts30Minutes!!
         }
-        _Shifts30Minutes = ImageVector.Builder(
-            name = "Regular.Shifts30Minutes",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
+        _shifts30Minutes = Builder(name = "Shifts30Minutes", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(15.5f, 5.5f)
-                curveTo(15.5f, 3.567f, 13.933f, 2f, 12f, 2f)
-                curveTo(10.067f, 2f, 8.5f, 3.567f, 8.5f, 5.5f)
-                curveTo(8.5f, 7.433f, 10.067f, 9f, 12f, 9f)
-                curveTo(13.933f, 9f, 15.5f, 7.433f, 15.5f, 5.5f)
+                curveTo(15.5f, 3.567f, 13.933f, 2.0f, 12.0f, 2.0f)
+                curveTo(10.067f, 2.0f, 8.5f, 3.567f, 8.5f, 5.5f)
+                curveTo(8.5f, 7.433f, 10.067f, 9.0f, 12.0f, 9.0f)
+                curveTo(13.933f, 9.0f, 15.5f, 7.433f, 15.5f, 5.5f)
                 close()
-                moveTo(10f, 5.5f)
-                curveTo(10f, 4.395f, 10.895f, 3.5f, 12f, 3.5f)
-                curveTo(13.105f, 3.5f, 14f, 4.395f, 14f, 5.5f)
-                curveTo(14f, 6.605f, 13.105f, 7.5f, 12f, 7.5f)
-                curveTo(10.895f, 7.5f, 10f, 6.605f, 10f, 5.5f)
+                moveTo(10.0f, 5.5f)
+                curveTo(10.0f, 4.395f, 10.895f, 3.5f, 12.0f, 3.5f)
+                curveTo(13.105f, 3.5f, 14.0f, 4.395f, 14.0f, 5.5f)
+                curveTo(14.0f, 6.605f, 13.105f, 7.5f, 12.0f, 7.5f)
+                curveTo(10.895f, 7.5f, 10.0f, 6.605f, 10.0f, 5.5f)
                 close()
-                moveTo(8.75f, 10f)
-                curveTo(7.507f, 10f, 6.5f, 11.007f, 6.5f, 12.25f)
+                moveTo(8.75f, 10.0f)
+                curveTo(7.507f, 10.0f, 6.5f, 11.007f, 6.5f, 12.25f)
                 verticalLineTo(12.75f)
                 curveTo(6.5f, 13.164f, 6.836f, 13.5f, 7.25f, 13.5f)
-                curveTo(7.664f, 13.5f, 8f, 13.164f, 8f, 12.75f)
+                curveTo(7.664f, 13.5f, 8.0f, 13.164f, 8.0f, 12.75f)
                 verticalLineTo(12.25f)
-                curveTo(8f, 11.836f, 8.336f, 11.5f, 8.75f, 11.5f)
+                curveTo(8.0f, 11.836f, 8.336f, 11.5f, 8.75f, 11.5f)
                 horizontalLineTo(15.25f)
-                curveTo(15.664f, 11.5f, 16f, 11.836f, 16f, 12.25f)
+                curveTo(15.664f, 11.5f, 16.0f, 11.836f, 16.0f, 12.25f)
                 verticalLineTo(12.75f)
-                curveTo(16f, 13.164f, 16.336f, 13.5f, 16.75f, 13.5f)
+                curveTo(16.0f, 13.164f, 16.336f, 13.5f, 16.75f, 13.5f)
                 curveTo(17.164f, 13.5f, 17.5f, 13.164f, 17.5f, 12.75f)
                 verticalLineTo(12.25f)
-                curveTo(17.5f, 11.007f, 16.493f, 10f, 15.25f, 10f)
+                curveTo(17.5f, 11.007f, 16.493f, 10.0f, 15.25f, 10.0f)
                 horizontalLineTo(8.75f)
                 close()
                 moveTo(6.497f, 16.999f)
                 curveTo(6.497f, 17.55f, 6.05f, 17.997f, 5.499f, 17.997f)
                 curveTo(4.947f, 17.997f, 4.5f, 17.55f, 4.5f, 16.999f)
-                curveTo(4.5f, 16.447f, 4.947f, 16f, 5.499f, 16f)
-                curveTo(6.05f, 16f, 6.497f, 16.447f, 6.497f, 16.999f)
+                curveTo(4.5f, 16.447f, 4.947f, 16.0f, 5.499f, 16.0f)
+                curveTo(6.05f, 16.0f, 6.497f, 16.447f, 6.497f, 16.999f)
                 close()
                 moveTo(5.499f, 21.497f)
                 curveTo(6.05f, 21.497f, 6.497f, 21.05f, 6.497f, 20.499f)
@@ -116,15 +126,15 @@ public val FluentIcons.Regular.Shifts30Minutes: ImageVector
                 curveTo(11.142f, 17.081f, 11.019f, 16.777f, 10.811f, 16.636f)
                 curveTo(10.593f, 16.488f, 10.363f, 16.468f, 10.111f, 16.528f)
                 close()
-                moveTo(16.5f, 15f)
-                curveTo(15.631f, 15f, 14.94f, 15.372f, 14.513f, 16.083f)
+                moveTo(16.5f, 15.0f)
+                curveTo(15.631f, 15.0f, 14.94f, 15.372f, 14.513f, 16.083f)
                 curveTo(14.126f, 16.727f, 13.999f, 17.58f, 13.999f, 18.5f)
                 curveTo(13.999f, 19.42f, 14.126f, 20.273f, 14.513f, 20.918f)
-                curveTo(14.94f, 21.629f, 15.631f, 22f, 16.5f, 22f)
-                curveTo(17.364f, 22f, 18.058f, 21.635f, 18.486f, 20.924f)
-                curveTo(18.874f, 20.28f, 19f, 19.426f, 19f, 18.5f)
-                curveTo(19f, 17.575f, 18.874f, 16.72f, 18.486f, 16.077f)
-                curveTo(18.058f, 15.365f, 17.364f, 15f, 16.5f, 15f)
+                curveTo(14.94f, 21.629f, 15.631f, 22.0f, 16.5f, 22.0f)
+                curveTo(17.364f, 22.0f, 18.058f, 21.635f, 18.486f, 20.924f)
+                curveTo(18.874f, 20.28f, 19.0f, 19.426f, 19.0f, 18.5f)
+                curveTo(19.0f, 17.575f, 18.874f, 16.72f, 18.486f, 16.077f)
+                curveTo(18.058f, 15.365f, 17.364f, 15.0f, 16.5f, 15.0f)
                 close()
                 moveTo(15.499f, 18.5f)
                 curveTo(15.499f, 17.67f, 15.623f, 17.148f, 15.799f, 16.855f)
@@ -137,13 +147,13 @@ public val FluentIcons.Regular.Shifts30Minutes: ImageVector
                 curveTo(15.623f, 19.852f, 15.499f, 19.33f, 15.499f, 18.5f)
                 close()
             }
-        }.build()
-
-        return _Shifts30Minutes!!
+        }
+        .build()
+        return _shifts30Minutes!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _Shifts30Minutes: ImageVector? = null
+private var _shifts30Minutes: ImageVector? = null
 
 @Preview
 @Composable
@@ -152,3 +162,4 @@ private fun Shifts30MinutesPreview() {
         Image(imageVector = FluentIcons.Regular.Shifts30Minutes, contentDescription = null)
     }
 }
+

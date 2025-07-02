@@ -206,6 +206,10 @@ import fluent.ui.system.icons.light.Window
 import fluent.ui.system.icons.light.WrenchScrewdriver
 import fluent.ui.system.icons.light.ZoomIn
 import fluent.ui.system.icons.light.ZoomOut
+import fluent.ui.system.icons.light.PersonSupport
+import fluent.ui.system.icons.light.Sticker
+import fluent.ui.system.icons.light.SpeakerMute
+import fluent.ui.system.icons.light.TextBoxAlignTopLeft
 
 public val FluentIcons.LightIconList: List<ImageVector>
     get() {
@@ -214,7 +218,7 @@ public val FluentIcons.LightIconList: List<ImageVector>
         }
 
         lightIcons = listOf(
-            FluentIcons.Light.AccessibilityCheckmark,
+FluentIcons.Light.AccessibilityCheckmark,
             FluentIcons.Light.Add,
             FluentIcons.Light.Alert,
             FluentIcons.Light.AppFolder,
@@ -394,7 +398,11 @@ public val FluentIcons.LightIconList: List<ImageVector>
             FluentIcons.Light.Window,
             FluentIcons.Light.WrenchScrewdriver,
             FluentIcons.Light.ZoomIn,
-            FluentIcons.Light.ZoomOut
+            FluentIcons.Light.ZoomOut,
+            FluentIcons.Light.PersonSupport,
+            FluentIcons.Light.Sticker,
+            FluentIcons.Light.SpeakerMute,
+            FluentIcons.Light.TextBoxAlignTopLeft
         )
 
         return lightIcons!!

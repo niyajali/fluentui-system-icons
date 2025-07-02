@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,80 +30,89 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
+/**
+ * Calendar3Day icon from Microsoft FluentUI System Icons.
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: calendar3day
+ * - Source: ic_fluent_calendar_3_day_24_filled.svg
+ * 
+ * @return The [ImageVector] for the Calendar3Day icon.
+ */
 public val FluentIcons.Filled.Calendar3Day: ImageVector
     get() {
-        if (_Calendar3Day != null) {
-            return _Calendar3Day!!
+        if (_calendar3Day != null) {
+            return _calendar3Day!!
         }
-        _Calendar3Day = ImageVector.Builder(
-            name = "Filled.Calendar3Day",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
-                moveTo(17.75f, 3f)
-                curveTo(19.545f, 3f, 21f, 4.455f, 21f, 6.25f)
+        _calendar3Day = Builder(name = "Calendar3Day", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                moveTo(17.75f, 3.0f)
+                curveTo(19.545f, 3.0f, 21.0f, 4.455f, 21.0f, 6.25f)
                 verticalLineTo(17.75f)
-                curveTo(21f, 19.545f, 19.545f, 21f, 17.75f, 21f)
+                curveTo(21.0f, 19.545f, 19.545f, 21.0f, 17.75f, 21.0f)
                 horizontalLineTo(6.25f)
-                curveTo(4.455f, 21f, 3f, 19.545f, 3f, 17.75f)
+                curveTo(4.455f, 21.0f, 3.0f, 19.545f, 3.0f, 17.75f)
                 verticalLineTo(6.25f)
-                curveTo(3f, 4.455f, 4.455f, 3f, 6.25f, 3f)
+                curveTo(3.0f, 4.455f, 4.455f, 3.0f, 6.25f, 3.0f)
                 horizontalLineTo(17.75f)
                 close()
-                moveTo(7.75f, 7f)
-                curveTo(7.37f, 7f, 7.057f, 7.282f, 7.007f, 7.648f)
-                lineTo(7f, 7.75f)
+                moveTo(7.75f, 7.0f)
+                curveTo(7.37f, 7.0f, 7.057f, 7.282f, 7.007f, 7.648f)
+                lineTo(7.0f, 7.75f)
                 verticalLineTo(16.25f)
                 lineTo(7.007f, 16.352f)
-                curveTo(7.057f, 16.718f, 7.37f, 17f, 7.75f, 17f)
-                curveTo(8.13f, 17f, 8.443f, 16.718f, 8.493f, 16.352f)
+                curveTo(7.057f, 16.718f, 7.37f, 17.0f, 7.75f, 17.0f)
+                curveTo(8.13f, 17.0f, 8.443f, 16.718f, 8.493f, 16.352f)
                 lineTo(8.5f, 16.25f)
                 verticalLineTo(7.75f)
                 lineTo(8.493f, 7.648f)
-                curveTo(8.443f, 7.282f, 8.13f, 7f, 7.75f, 7f)
+                curveTo(8.443f, 7.282f, 8.13f, 7.0f, 7.75f, 7.0f)
                 close()
-                moveTo(16.25f, 7f)
-                curveTo(15.87f, 7f, 15.557f, 7.282f, 15.507f, 7.648f)
+                moveTo(16.25f, 7.0f)
+                curveTo(15.87f, 7.0f, 15.557f, 7.282f, 15.507f, 7.648f)
                 lineTo(15.5f, 7.75f)
                 verticalLineTo(16.25f)
                 lineTo(15.507f, 16.352f)
-                curveTo(15.557f, 16.718f, 15.87f, 17f, 16.25f, 17f)
-                curveTo(16.63f, 17f, 16.944f, 16.718f, 16.993f, 16.352f)
-                lineTo(17f, 16.25f)
+                curveTo(15.557f, 16.718f, 15.87f, 17.0f, 16.25f, 17.0f)
+                curveTo(16.63f, 17.0f, 16.944f, 16.718f, 16.993f, 16.352f)
+                lineTo(17.0f, 16.25f)
                 verticalLineTo(7.75f)
                 lineTo(16.993f, 7.648f)
-                curveTo(16.944f, 7.282f, 16.63f, 7f, 16.25f, 7f)
+                curveTo(16.944f, 7.282f, 16.63f, 7.0f, 16.25f, 7.0f)
                 close()
-                moveTo(12f, 7f)
-                curveTo(11.62f, 7f, 11.307f, 7.282f, 11.257f, 7.648f)
+                moveTo(12.0f, 7.0f)
+                curveTo(11.62f, 7.0f, 11.307f, 7.282f, 11.257f, 7.648f)
                 lineTo(11.25f, 7.75f)
                 verticalLineTo(16.25f)
                 lineTo(11.257f, 16.352f)
-                curveTo(11.307f, 16.718f, 11.62f, 17f, 12f, 17f)
-                curveTo(12.38f, 17f, 12.693f, 16.718f, 12.743f, 16.352f)
+                curveTo(11.307f, 16.718f, 11.62f, 17.0f, 12.0f, 17.0f)
+                curveTo(12.38f, 17.0f, 12.693f, 16.718f, 12.743f, 16.352f)
                 lineTo(12.75f, 16.25f)
                 verticalLineTo(7.75f)
                 lineTo(12.743f, 7.648f)
-                curveTo(12.693f, 7.282f, 12.38f, 7f, 12f, 7f)
+                curveTo(12.693f, 7.282f, 12.38f, 7.0f, 12.0f, 7.0f)
                 close()
             }
-        }.build()
-
-        return _Calendar3Day!!
+        }
+        .build()
+        return _calendar3Day!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _Calendar3Day: ImageVector? = null
+private var _calendar3Day: ImageVector? = null
 
 @Preview
 @Composable
@@ -111,3 +121,4 @@ private fun Calendar3DayPreview() {
         Image(imageVector = FluentIcons.Filled.Calendar3Day, contentDescription = null)
     }
 }
+
