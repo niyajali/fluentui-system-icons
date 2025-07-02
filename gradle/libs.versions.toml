@@ -9,6 +9,7 @@ appcompatVersion = "1.7.1"
 kotlin = "2.1.21"
 kotlinx-coroutines = "1.10.2"
 kotlinx-datetime = "0.6.2"
+kotlinx-serialization = "1.8.1"
 bcv = "0.17.0"
 maven = "0.30.0"
 dokka = "2.0.0"
@@ -45,6 +46,10 @@ material3-adaptive = { group = "org.jetbrains.compose.material3.adaptive", name 
 material3-adaptive-layout = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive-layout", version.ref = "material3adaptive" }
 material3-adaptive-navigation = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive-navigation", version.ref = "material3adaptive" }
 
+generator-svgToCompose = { module = "com.github.DevSrSouza:svg-to-compose", version = "0.11.0" }
+generator-jgit = { module = "org.eclipse.jgit:org.eclipse.jgit", version = "7.0.0.202409031743-r" }
+generator-kotlinpoet = { module = "com.squareup:kotlinpoet", version = "2.0.0" }
+kotlinx-serialization-json = { module="org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref="kotlinx-serialization" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -58,4 +63,4 @@ maven = { id = 'com.vanniktech.maven.publish', version.ref = 'maven' }
 dokka = { id = 'org.jetbrains.dokka', version.ref = 'dokka' }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotlessVersion" }
 compose-vectorize = { id="dev.sergiobelda.compose.vectorize", version.ref="composeVectorize" }
-android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+kotlinx-serialization = { id="org.jetbrains.kotlin.plugin.serialization", version.ref="kotlin" }

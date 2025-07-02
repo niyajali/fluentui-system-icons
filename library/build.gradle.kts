@@ -33,6 +33,12 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.maven)
+    id("fluent.icons")
+}
+
+fluentIcons {
+    useLocalDirectory.set(true)
+    localDirectoryPath.set("H:/fluentui-source")
 }
 
 kotlin {
