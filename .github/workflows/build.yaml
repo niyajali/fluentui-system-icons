@@ -1,4 +1,4 @@
-name: Build
+name: Build Library
 
 on:
   push:
@@ -6,15 +6,16 @@ on:
   workflow_dispatch:
 
 env:
-  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx6g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
+  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
 
 concurrency:
-  group: "build-library"
+  group: "build-library-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: "Build the Library"
+  # Main library build - all platforms
+  library:
+    name: "Build Library"
     runs-on: 'macos-latest'
     steps:
       - name: Checkout
@@ -29,8 +30,26 @@ jobs:
           distribution: 'zulu'
           java-version: 19
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Full build
-        run: ./gradlew build
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.konan
+            build
+            */build
+            ~/.kotlin
+            /build-cache
+          key: ${{ runner.os }}-gradle-
+          restore-keys: ${{ runner.os }}-gradle-
+
+      # Build and test the library for all platforms
+      - name: Build Library (All Platforms)
+        run: ./gradlew :library:build --no-configuration-cache

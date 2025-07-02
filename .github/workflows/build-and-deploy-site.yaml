@@ -1,4 +1,4 @@
-name: 🌐 KMP Build Web App
+name: 🌐 KMP Publish Web App
 
 on:
   workflow_dispatch:
@@ -33,14 +33,22 @@ jobs:
             ~/.konan
             build
             */build
+            ~/.kotlin
+            /build-cache
           key: ${{ runner.os }}-gradle-
           restore-keys: ${{ runner.os }}-gradle-
 
       - name: Build Web App
-        run: ./gradlew jsBrowserDistribution
+        run: ./gradlew :sample:jsBrowserDistribution
 
-      - name: Upload Web Artifact
-        uses: actions/upload-artifact@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static files as artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: web-app
           path: './sample/webApp/build/dist/js/productionExecutable'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,4 +1,4 @@
-name: FluentUI Icons Sync
+name: Sync Icons
 
 on:
   schedule:
@@ -6,11 +6,6 @@ on:
     - cron: '0 9 1,16 * *'
   workflow_dispatch:
     inputs:
-      force_sync:
-        description: 'Force sync even if no new icons found'
-        required: false
-        default: false
-        type: boolean
       git_ref:
         description: 'Git reference: branch name (main) or tag name (1.1.305)'
         required: false
@@ -34,7 +29,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Setup JDK ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v4
@@ -56,53 +51,10 @@ jobs:
           echo "git_ref_display=$input_ref" >> $GITHUB_OUTPUT
           echo "GIT_REF_INPUT=$input_ref" >> $GITHUB_ENV
 
-      - name: Check for new icons
-        id: check_icons
+      - name: Sync FluentUI icons
+        id: sync_icons
         run: |
-          echo "🔍 Checking for new FluentUI icons..."
-          
-          # Run with error handling
-          if ./gradlew checkNewIcons --console=plain > check_output.txt 2>&1; then
-            echo "✅ Check completed successfully"
-          else
-            echo "❌ Check failed"
-            cat check_output.txt
-            exit 1
-          fi
-          
-          # Extract counts from output
-          new_families=$(grep -o "Found [0-9]\+ new icon families" check_output.txt | grep -o '[0-9]\+' || echo '0')
-          new_variants=$(grep -o "Total variants to sync: [0-9]\+" check_output.txt | grep -o '[0-9]\+' || echo '0')
-          
-          echo "new_families_count=$new_families" >> $GITHUB_OUTPUT
-          echo "new_variants_count=$new_variants" >> $GITHUB_OUTPUT
-          
-          echo "📊 Results: $new_families new families, $new_variants new variants"
-          cat check_output.txt
-
-      - name: Determine if sync should proceed
-        id: sync_check
-        run: |
-          should_sync="false"
-          
-          if [ "${{ steps.check_icons.outputs.new_variants_count }}" -gt "0" ]; then
-            echo "✅ New variants found, proceeding with sync"
-            should_sync="true"
-          elif [ "${{ github.event.inputs.force_sync }}" == "true" ]; then
-            echo "🔄 Force sync requested, proceeding anyway"
-            should_sync="true"
-          else
-            echo "ℹ️ No new variants found and force sync not requested"
-            should_sync="false"
-          fi
-          
-          echo "sync_performed=$should_sync" >> $GITHUB_OUTPUT
-          echo "SHOULD_SYNC=$should_sync" >> $GITHUB_ENV
-
-      - name: Sync new icons
-        if: env.SHOULD_SYNC == 'true'
-        run: |
-          echo "🎨 Starting FluentUI icon sync..."
+          echo "🎨 Starting FluentUI icon sync from microsoft/fluentui-system-icons@$GIT_REF_INPUT"
           
           if ./gradlew syncNewIcons -PgitRef=$GIT_REF_INPUT --no-configuration-cache --console=plain; then
             echo "✅ Sync completed successfully"
@@ -111,44 +63,94 @@ jobs:
             exit 1
           fi
           
-          if [[ `git status --porcelain` ]]; then
-            echo "✅ Changes detected after sync"
-            git status --short
-          else
-            echo "⚠️ No changes detected after sync"
-          fi
+          # Count new/updated Kotlin icon files
+          new_files=$(git diff --name-only --diff-filter=A | grep '\.kt$' | wc -l)
+          modified_files=$(git diff --name-only --diff-filter=M | grep '\.kt$' | wc -l)
+          total_files=$((new_files + modified_files))
+          
+          echo "new_kt_files=$new_files" >> $GITHUB_OUTPUT
+          echo "modified_kt_files=$modified_files" >> $GITHUB_OUTPUT
+          echo "total_kt_files=$total_files" >> $GITHUB_OUTPUT
+          
+          echo "📊 Sync Results:"
+          echo "  New Kotlin files: $new_files"
+          echo "  Modified Kotlin files: $modified_files"
+          echo "  Total changes: $total_files"
 
       - name: Setup Git configuration
-        if: env.SHOULD_SYNC == 'true'
+        if: steps.sync_icons.outputs.total_kt_files > 0
         run: |
           git config --local user.email "niyaj639@gmail.com"
           git config --local user.name "Sk Niyaj Ali"
 
+      - name: Commit Kotlin icon files
+        if: steps.sync_icons.outputs.total_kt_files > 0
+        run: |
+          # Add only Kotlin icon files
+          git add "library/src/commonMain/kotlin/fluent/ui/system/icons/**/*.kt"
+          
+          if git diff --staged --quiet; then
+            echo "⚠️ No Kotlin icon files to commit"
+            echo "has_changes=false" >> $GITHUB_ENV
+          else
+            git commit -m "🎨 Sync FluentUI icons: ${{ steps.sync_icons.outputs.total_kt_files }} ImageVectors updated
+            
+            - New icons: ${{ steps.sync_icons.outputs.new_kt_files }}
+            - Updated icons: ${{ steps.sync_icons.outputs.modified_kt_files }}
+            - Source: microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}"
+            
+            echo "has_changes=true" >> $GITHUB_ENV
+          fi
+
       - name: Create Pull Request
-        if: env.SHOULD_SYNC == 'true'
+        if: env.has_changes == 'true'
         id: create_pr
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "🎨 FluentUI Icons Sync: Added ${{ steps.check_icons.outputs.new_variants_count }} ImageVectors"
-          title: "🎨 FluentUI Icons Sync - ${{ steps.check_icons.outputs.new_variants_count }} New ImageVectors"
+          token: ${{ secrets.PAT_TOKEN }}
+          commit-message: "🎨 Sync FluentUI icons: ${{ steps.sync_icons.outputs.total_kt_files }} ImageVectors updated"
+          title: "🎨 FluentUI Icons Sync - ${{ steps.sync_icons.outputs.total_kt_files }} ImageVectors Updated"
           branch: "fluentui-icons-sync-${{ github.run_number }}"
           committer: "Sk Niyaj Ali <niyaj639@gmail.com>"
           author: "Sk Niyaj Ali <niyaj639@gmail.com>"
           assignees: "niyajali"
           delete-branch: true
           body: |
-            ## 🎨 FluentUI Icons Sync Report
+            ## 🎨 FluentUI Icons Sync
             
-            **📅 Sync Date:** ${{ steps.commit_msg.outputs.timestamp }}  
-            **🌿 Source:** microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}  
+            **📅 Sync Date:** ${{ github.event.schedule && 'Scheduled' || 'Manual' }}  
+            **🌿 Source:** `microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}`
             
-            ### 📊 Summary
-            - **🏠 Icon Families Added:** ${{ steps.check_icons.outputs.new_families_count }}
-            - **🎨 Style Variants Added:** ${{ steps.check_icons.outputs.new_variants_count }}
-            - **🔄 Conversion:** SVG → ImageVector
-            - **🎯 Plugin:** fluent.icons from build-logic module
+            ### 📊 Changes Summary
+            - **🆕 New Icons:** ${{ steps.sync_icons.outputs.new_kt_files }} Kotlin files
+            - **📝 Updated Icons:** ${{ steps.sync_icons.outputs.modified_kt_files }} Kotlin files
+            - **📦 Total Changes:** ${{ steps.sync_icons.outputs.total_kt_files }} ImageVector definitions
+            
+            ### 🔄 What's Included
+            - ✅ Fresh icon definitions from Microsoft's latest release
+            - ✅ Converted to Compose `ImageVector` format
+            - ✅ Ready for Kotlin Multiplatform usage
+            - ✅ Maintains existing API compatibility
+            
+            ---
+            
+            🤖 *This PR was automatically generated by the FluentUI Icons Sync workflow*
           labels: |
             fluent-icons
-            automation
             enhancement
+            automated-sync
+
+      - name: Workflow Summary
+        run: |
+          echo "## 📊 FluentUI Icons Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Source:** microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Kotlin Files Changed:** ${{ steps.sync_icons.outputs.total_kt_files }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ env.has_changes }}" = "true" ]; then
+            echo "✅ **Status:** Pull request created successfully" >> $GITHUB_STEP_SUMMARY
+            echo "🔗 **PR:** ${{ steps.create_pr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ **Status:** No changes detected, no PR created" >> $GITHUB_STEP_SUMMARY
+          fi

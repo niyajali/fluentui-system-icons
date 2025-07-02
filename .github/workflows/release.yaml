@@ -56,9 +56,8 @@ jobs:
             ~/.konan/kotlin-native-prebuilt-mingw*
             ~/.konan/kotlin-native-prebuilt-windows*
             ~/.konan/kotlin-native-prebuilt-linux*
-          key: ${{ runner.os }}-konan-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-konan-
+          key: ${{ runner.os }}-konan-
+          restore-keys: ${{ runner.os }}-konan-
 
 
       - name: Setup Xcode
