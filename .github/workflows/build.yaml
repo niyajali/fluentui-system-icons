@@ -52,4 +52,4 @@ jobs:
 
       # Build and test the library for all platforms
       - name: Build Library (All Platforms)
-        run: ./gradlew :library:build --no-configuration-cache
+        run: ./gradlew :library:build
