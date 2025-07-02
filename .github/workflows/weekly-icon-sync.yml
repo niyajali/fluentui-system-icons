@@ -44,38 +44,12 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-
       - name: Configure FluentUI plugin
         id: setup_config
         run: |
           input_ref="${{ github.event.inputs.git_ref || 'main' }}"
           echo "git_ref_display=$input_ref" >> $GITHUB_OUTPUT
           echo "GIT_REF_INPUT=$input_ref" >> $GITHUB_ENV
-
-      - name: Configure plugin settings
-        run: |
-          # Backup original build.gradle.kts
-          cp build.gradle.kts build.gradle.kts.backup
-          
-          # Add FluentUI configuration
-          cat >> build.gradle.kts << EOF
-          
-          // FluentUI Icons Plugin Configuration
-          fluentIcons {
-              useLocalDirectory.set(false)
-              gitRepository.set("https://github.com/microsoft/fluentui-system-icons.git")
-              gitRef.set("$GIT_REF_INPUT")
-              targetIconsPath.set("library/src/commonMain/kotlin/fluent/ui/system/icons")
-              assetsPath.set("assets")
-              preferredSize.set(24)
-              fallbackSizes.set(listOf(20, 16, 28, 32))
-              supportedStyles.set(listOf("filled", "regular", "light", "color"))
-              excludePatterns.set(listOf("test", "temp", "draft"))
-              syncLogFile.set("fluent-icons-sync.log")
-          }
-          EOF
-          
-          echo "✅ Plugin configuration added"
 
       - name: Check for new icons
         id: check_icons
