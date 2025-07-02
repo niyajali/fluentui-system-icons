@@ -221,6 +221,10 @@ import fluent.ui.system.icons.color.Wifi
 import fluent.ui.system.icons.color.WifiWarning
 import fluent.ui.system.icons.color.Wrench
 import fluent.ui.system.icons.color.WrenchScrewdriver
+import fluent.ui.system.icons.color.GameChat
+import fluent.ui.system.icons.color.WiFiWarning
+import fluent.ui.system.icons.color.PersonEdit
+import fluent.ui.system.icons.color.ShareIOs
 
 public val FluentIcons.ColoredIconList: List<ImageVector>
     get() {

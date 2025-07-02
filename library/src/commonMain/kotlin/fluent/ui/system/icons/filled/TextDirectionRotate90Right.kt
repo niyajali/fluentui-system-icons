@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,47 +30,56 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
+/**
+ * TextDirectionRotate90Right icon from Microsoft FluentUI System Icons.
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: text, direction, rotate90right
+ * - Source: ic_fluent_text_direction_rotate_90_right_24_filled.svg
+ * 
+ * @return The [ImageVector] for the TextDirectionRotate90Right icon.
+ */
 public val FluentIcons.Filled.TextDirectionRotate90Right: ImageVector
     get() {
-        if (_TextDirectionRotate90Right != null) {
-            return _TextDirectionRotate90Right!!
+        if (_textDirectionRotate90Right != null) {
+            return _textDirectionRotate90Right!!
         }
-        _TextDirectionRotate90Right = ImageVector.Builder(
-            name = "Filled.TextDirectionRotate90Right",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
+        _textDirectionRotate90Right = Builder(name = "TextDirectionRotate90Right", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(20.385f, 8.673f)
                 lineTo(11.385f, 12.423f)
                 curveTo(10.875f, 12.636f, 10.289f, 12.395f, 10.077f, 11.885f)
                 curveTo(9.865f, 11.375f, 10.106f, 10.79f, 10.615f, 10.577f)
-                lineTo(13f, 9.584f)
+                lineTo(13.0f, 9.584f)
                 verticalLineTo(5.917f)
                 lineTo(10.615f, 4.923f)
                 curveTo(10.106f, 4.711f, 9.865f, 4.125f, 10.077f, 3.616f)
                 curveTo(10.289f, 3.106f, 10.875f, 2.865f, 11.385f, 3.077f)
                 lineTo(20.385f, 6.827f)
-                curveTo(20.757f, 6.982f, 21f, 7.347f, 21f, 7.75f)
-                curveTo(21f, 8.154f, 20.757f, 8.518f, 20.385f, 8.673f)
+                curveTo(20.757f, 6.982f, 21.0f, 7.347f, 21.0f, 7.75f)
+                curveTo(21.0f, 8.154f, 20.757f, 8.518f, 20.385f, 8.673f)
                 close()
-                moveTo(15f, 8.75f)
+                moveTo(15.0f, 8.75f)
                 lineTo(17.4f, 7.75f)
-                lineTo(15f, 6.75f)
+                lineTo(15.0f, 6.75f)
                 verticalLineTo(8.75f)
                 close()
-                moveTo(8f, 4f)
-                curveTo(8f, 3.448f, 7.552f, 3f, 7f, 3f)
-                curveTo(6.448f, 3f, 6f, 3.448f, 6f, 4f)
+                moveTo(8.0f, 4.0f)
+                curveTo(8.0f, 3.448f, 7.552f, 3.0f, 7.0f, 3.0f)
+                curveTo(6.448f, 3.0f, 6.0f, 3.448f, 6.0f, 4.0f)
                 verticalLineTo(17.586f)
                 lineTo(5.707f, 17.293f)
                 curveTo(5.317f, 16.902f, 4.683f, 16.902f, 4.293f, 17.293f)
@@ -79,11 +89,11 @@ public val FluentIcons.Filled.TextDirectionRotate90Right: ImageVector
                 lineTo(9.707f, 18.707f)
                 curveTo(10.098f, 18.317f, 10.098f, 17.683f, 9.707f, 17.293f)
                 curveTo(9.317f, 16.902f, 8.683f, 16.902f, 8.293f, 17.293f)
-                lineTo(8f, 17.586f)
-                verticalLineTo(4f)
+                lineTo(8.0f, 17.586f)
+                verticalLineTo(4.0f)
                 close()
-                moveTo(16f, 13f)
-                curveTo(15.448f, 13f, 15f, 13.448f, 15f, 14f)
+                moveTo(16.0f, 13.0f)
+                curveTo(15.448f, 13.0f, 15.0f, 13.448f, 15.0f, 14.0f)
                 verticalLineTo(17.586f)
                 lineTo(14.707f, 17.293f)
                 curveTo(14.317f, 16.902f, 13.683f, 16.902f, 13.293f, 17.293f)
@@ -93,18 +103,18 @@ public val FluentIcons.Filled.TextDirectionRotate90Right: ImageVector
                 lineTo(18.707f, 18.707f)
                 curveTo(19.098f, 18.317f, 19.098f, 17.683f, 18.707f, 17.293f)
                 curveTo(18.317f, 16.902f, 17.683f, 16.902f, 17.293f, 17.293f)
-                lineTo(17f, 17.586f)
-                verticalLineTo(14f)
-                curveTo(17f, 13.448f, 16.552f, 13f, 16f, 13f)
+                lineTo(17.0f, 17.586f)
+                verticalLineTo(14.0f)
+                curveTo(17.0f, 13.448f, 16.552f, 13.0f, 16.0f, 13.0f)
                 close()
             }
-        }.build()
-
-        return _TextDirectionRotate90Right!!
+        }
+        .build()
+        return _textDirectionRotate90Right!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _TextDirectionRotate90Right: ImageVector? = null
+private var _textDirectionRotate90Right: ImageVector? = null
 
 @Preview
 @Composable
@@ -113,3 +123,4 @@ private fun TextDirectionRotate90RightPreview() {
         Image(imageVector = FluentIcons.Filled.TextDirectionRotate90Right, contentDescription = null)
     }
 }
+

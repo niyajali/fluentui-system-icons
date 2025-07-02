@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,26 +30,35 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
+/**
+ * TextHeader3Lines icon from Microsoft FluentUI System Icons.
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: text, header3lines
+ * - Source: ic_fluent_text_header_3_lines_24_filled.svg
+ * 
+ * @return The [ImageVector] for the TextHeader3Lines icon.
+ */
 public val FluentIcons.Filled.TextHeader3Lines: ImageVector
     get() {
-        if (_TextHeader3Lines != null) {
-            return _TextHeader3Lines!!
+        if (_textHeader3Lines != null) {
+            return _textHeader3Lines!!
         }
-        _TextHeader3Lines = ImageVector.Builder(
-            name = "Filled.TextHeader3Lines",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
+        _textHeader3Lines = Builder(name = "TextHeader3Lines", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(14.573f, 3.812f)
                 curveTo(14.054f, 3.645f, 13.207f, 3.826f, 12.742f, 4.345f)
                 curveTo(12.373f, 4.756f, 11.742f, 4.79f, 11.332f, 4.421f)
@@ -75,48 +85,48 @@ public val FluentIcons.Filled.TextHeader3Lines: ImageVector
                 curveTo(15.27f, 4.78f, 15.274f, 4.551f, 15.19f, 4.347f)
                 curveTo(15.099f, 4.127f, 14.889f, 3.913f, 14.573f, 3.812f)
                 close()
-                moveTo(4f, 3f)
-                curveTo(4f, 2.448f, 3.552f, 2f, 3f, 2f)
-                curveTo(2.448f, 2f, 2f, 2.448f, 2f, 3f)
-                verticalLineTo(10f)
-                curveTo(2f, 10.552f, 2.448f, 11f, 3f, 11f)
-                curveTo(3.552f, 11f, 4f, 10.552f, 4f, 10f)
-                lineTo(4f, 7.5f)
-                lineTo(7f, 7.5f)
+                moveTo(4.0f, 3.0f)
+                curveTo(4.0f, 2.448f, 3.552f, 2.0f, 3.0f, 2.0f)
+                curveTo(2.448f, 2.0f, 2.0f, 2.448f, 2.0f, 3.0f)
+                verticalLineTo(10.0f)
+                curveTo(2.0f, 10.552f, 2.448f, 11.0f, 3.0f, 11.0f)
+                curveTo(3.552f, 11.0f, 4.0f, 10.552f, 4.0f, 10.0f)
+                lineTo(4.0f, 7.5f)
+                lineTo(7.0f, 7.5f)
                 verticalLineTo(9.995f)
-                curveTo(7f, 10.547f, 7.448f, 10.995f, 8f, 10.995f)
-                curveTo(8.552f, 10.995f, 9f, 10.547f, 9f, 9.995f)
-                lineTo(9f, 3.002f)
-                curveTo(9f, 2.449f, 8.552f, 2.002f, 8f, 2.002f)
-                curveTo(7.448f, 2.002f, 7f, 2.449f, 7f, 3.002f)
+                curveTo(7.0f, 10.547f, 7.448f, 10.995f, 8.0f, 10.995f)
+                curveTo(8.552f, 10.995f, 9.0f, 10.547f, 9.0f, 9.995f)
+                lineTo(9.0f, 3.002f)
+                curveTo(9.0f, 2.449f, 8.552f, 2.002f, 8.0f, 2.002f)
+                curveTo(7.448f, 2.002f, 7.0f, 2.449f, 7.0f, 3.002f)
                 verticalLineTo(5.5f)
-                horizontalLineTo(4f)
-                lineTo(4f, 3f)
+                horizontalLineTo(4.0f)
+                lineTo(4.0f, 3.0f)
                 close()
-                moveTo(3f, 19f)
-                curveTo(2.448f, 19f, 2f, 19.448f, 2f, 20f)
-                curveTo(2f, 20.552f, 2.448f, 21f, 3f, 21f)
-                horizontalLineTo(21f)
-                curveTo(21.552f, 21f, 22f, 20.552f, 22f, 20f)
-                curveTo(22f, 19.448f, 21.552f, 19f, 21f, 19f)
-                horizontalLineTo(3f)
+                moveTo(3.0f, 19.0f)
+                curveTo(2.448f, 19.0f, 2.0f, 19.448f, 2.0f, 20.0f)
+                curveTo(2.0f, 20.552f, 2.448f, 21.0f, 3.0f, 21.0f)
+                horizontalLineTo(21.0f)
+                curveTo(21.552f, 21.0f, 22.0f, 20.552f, 22.0f, 20.0f)
+                curveTo(22.0f, 19.448f, 21.552f, 19.0f, 21.0f, 19.0f)
+                horizontalLineTo(3.0f)
                 close()
-                moveTo(2f, 15f)
-                curveTo(2f, 14.448f, 2.448f, 14f, 3f, 14f)
-                horizontalLineTo(21f)
-                curveTo(21.552f, 14f, 22f, 14.448f, 22f, 15f)
-                curveTo(22f, 15.552f, 21.552f, 16f, 21f, 16f)
-                horizontalLineTo(3f)
-                curveTo(2.448f, 16f, 2f, 15.552f, 2f, 15f)
+                moveTo(2.0f, 15.0f)
+                curveTo(2.0f, 14.448f, 2.448f, 14.0f, 3.0f, 14.0f)
+                horizontalLineTo(21.0f)
+                curveTo(21.552f, 14.0f, 22.0f, 14.448f, 22.0f, 15.0f)
+                curveTo(22.0f, 15.552f, 21.552f, 16.0f, 21.0f, 16.0f)
+                horizontalLineTo(3.0f)
+                curveTo(2.448f, 16.0f, 2.0f, 15.552f, 2.0f, 15.0f)
                 close()
             }
-        }.build()
-
-        return _TextHeader3Lines!!
+        }
+        .build()
+        return _textHeader3Lines!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _TextHeader3Lines: ImageVector? = null
+private var _textHeader3Lines: ImageVector? = null
 
 @Preview
 @Composable
@@ -125,3 +135,4 @@ private fun TextHeader3LinesPreview() {
         Image(imageVector = FluentIcons.Filled.TextHeader3Lines, contentDescription = null)
     }
 }
+

@@ -1,0 +1,2054 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: checkNewIcons
+
+> Configure project :build-logic
+WARNING: Unsupported Kotlin plugin version.
+The `embedded-kotlin` and `kotlin-dsl` plugins rely on features of Kotlin `2.0.21` that might work differently than in the requested version `2.1.21`.
+Type-safe project accessors is an incubating feature.
+
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:pluginDescriptors
+> Task :build-logic:processResources
+
+> Task :build-logic:compileKotlin
+w: file:///home/runner/work/fluentui-system-icons/fluentui-system-icons/build-logic/src/main/kotlin/utils/IconListUpdater.kt:93:73 Parameter 'styleCapitalized' is never used
+
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:classes
+> Task :build-logic:jar
+
+> Task :library:checkNewIcons
+🔍 FluentUI Icons Check
+📂 Target: /home/runner/work/fluentui-system-icons/fluentui-system-icons/library/src/commonMain/kotlin/fluent/ui/system/icons
+🔄 Cloning FluentUI repository (shallow clone)...
+📍 Repository: https://github.com/microsoft/fluentui-system-icons.git
+🌿 Reference: refs/heads/main
+🌿 Fetching branch: main
+🔧 RefSpec: refs/heads/main:refs/remotes/origin/main
+🌿 Creating local tracking branch: main
+✅ Repository cloned successfully to: /tmp/fluent-icons-485387458538474193
+📍 Source: Git Clone: https://github.com/microsoft/fluentui-system-icons.git@refs/heads/main
+📂 Scanning existing icons in: /home/runner/work/fluentui-system-icons/fluentui-system-icons/library/src/commonMain/kotlin/fluent/ui/system/icons
+  ✓ filled/: 2373 icons
+  ✓ regular/: 1899 icons
+  ✓ light/: 181 icons
+  ✓ color/: 196 icons
+📈 Total existing variants: 4649
+Scanning source icons...
+Source directory: /tmp/fluent-icons-485387458538474193/assets
+Found 2618 icon families in source directory
+Building icon families for synchronization...
+Source icons: 2618, Existing icons: 4649
+779 icon families selected for synchronization
+
+📊 Results:
+Found 779 new icon families that would be synced:
+  📁 arrow_turn_left_right:
+    - filled: 20px → filled/ArrowTurnLeftRight.kt
+    - regular: 20px → regular/ArrowTurnLeftRight.kt
+  📁 weather_partly_cloudy_day:
+    - regular: 24px → regular/WeatherPartlyCloudyDay.kt
+  📁 gather:
+    - filled: 20px → filled/Gather.kt
+    - regular: 20px → regular/Gather.kt
+  📁 table_lightning:
+    - regular: 24px → regular/TableLightning.kt
+  📁 column_single_compare:
+    - filled: 20px → filled/ColumnSingleCompare.kt
+    - regular: 20px → regular/ColumnSingleCompare.kt
+  📁 chat_mail:
+    - filled: 20px → filled/ChatMail.kt
+    - regular: 20px → regular/ChatMail.kt
+  📁 tab_in_private_account:
+    - filled: 24px → filled/TabInPrivateAccount.kt
+    - regular: 24px → regular/TabInPrivateAccount.kt
+  📁 warning:
+    - regular: 24px → regular/Warning.kt
+  📁 tab_desktop_search:
+    - regular: 24px → regular/TabDesktopSearch.kt
+  📁 text_box_settings:
+    - filled: 24px → filled/TextBoxSettings.kt
+    - regular: 24px → regular/TextBoxSettings.kt
+  📁 text_box_checkmark:
+    - filled: 24px → filled/TextBoxCheckmark.kt
+    - regular: 24px → regular/TextBoxCheckmark.kt
+  📁 align_start_vertical:
+    - filled: 20px → filled/AlignStartVertical.kt
+    - regular: 20px → regular/AlignStartVertical.kt
+  📁 text_arrow_down_right_column:
+    - regular: 24px → regular/TextArrowDownRightColumn.kt
+  📁 text_grammar_arrow_left:
+    - regular: 24px → regular/TextGrammarArrowLeft.kt
+  📁 delete_lines:
+    - filled: 20px → filled/DeleteLines.kt
+    - regular: 20px → regular/DeleteLines.kt
+  📁 wi_fi2:
+    - filled: 24px → filled/WiFi2.kt
+    - regular: 24px → regular/WiFi2.kt
+  📁 code_cs_rectangle:
+    - filled: 16px → filled/CodeCsRectangle.kt
+    - regular: 16px → regular/CodeCsRectangle.kt
+  📁 text_case_uppercase:
+    - regular: 24px → regular/TextCaseUppercase.kt
+  📁 panel_right_expand:
+    - filled: 20px → filled/PanelRightExpand.kt
+    - regular: 20px → regular/PanelRightExpand.kt
+  📁 radar:
+    - filled: 20px → filled/Radar.kt
+    - regular: 20px → regular/Radar.kt
+  📁 text_add_space_after:
+    - regular: 24px → regular/TextAddSpaceAfter.kt
+  📁 circle_multiple_subtract_checkmark:
+    - filled: 20px → filled/CircleMultipleSubtractCheckmark.kt
+    - regular: 20px → regular/CircleMultipleSubtractCheckmark.kt
+  📁 vehicle_ship:
+    - regular: 24px → regular/VehicleShip.kt
+  📁 chevron_double_left:
+    - filled: 20px → filled/ChevronDoubleLeft.kt
+    - regular: 20px → regular/ChevronDoubleLeft.kt
+  📁 game_chat:
+    - filled: 20px → filled/GameChat.kt
+    - regular: 20px → regular/GameChat.kt
+    - color: 20px → color/GameChat.kt
+  📁 document_image:
+    - filled: 20px → filled/DocumentImage.kt
+    - regular: 20px → regular/DocumentImage.kt
+  📁 window_settings:
+    - filled: 20px → filled/WindowSettings.kt
+    - regular: 20px → regular/WindowSettings.kt
+  📁 hand_open_heart:
+    - filled: 20px → filled/HandOpenHeart.kt
+    - regular: 20px → regular/HandOpenHeart.kt
+  📁 chevron_double_right:
+    - filled: 20px → filled/ChevronDoubleRight.kt
+    - regular: 20px → regular/ChevronDoubleRight.kt
+  📁 water:
+    - regular: 24px → regular/Water.kt
+  📁 database_stack:
+    - filled: 16px → filled/DatabaseStack.kt
+    - regular: 16px → regular/DatabaseStack.kt
+  📁 window_column_one_fourth_left_focus_left:
+    - filled: 20px → filled/WindowColumnOneFourthLeftFocusLeft.kt
+  📁 text_direction_horizontal_right:
+    - regular: 24px → regular/TextDirectionHorizontalRight.kt
+  📁 teaching:
+    - regular: 24px → regular/Teaching.kt
+  📁 text_subscript:
+    - regular: 24px → regular/TextSubscript.kt
+  📁 weather_rain_showers_night:
+    - regular: 24px → regular/WeatherRainShowersNight.kt
+  📁 text_box_align_middle_rotate90:
+    - filled: 24px → filled/TextBoxAlignMiddleRotate90.kt
+    - regular: 24px → regular/TextBoxAlignMiddleRotate90.kt
+  📁 weather_snowflake:
+    - regular: 24px → regular/WeatherSnowflake.kt
+  📁 window_dev_edit:
+    - filled: 20px → filled/WindowDevEdit.kt
+    - regular: 20px → regular/WindowDevEdit.kt
+  📁 board_games:
+    - filled: 20px → filled/BoardGames.kt
+    - regular: 20px → regular/BoardGames.kt
+  📁 window_header_horizontal_off:
+    - filled: 20px → filled/WindowHeaderHorizontalOff.kt
+    - regular: 20px → regular/WindowHeaderHorizontalOff.kt
+  📁 text_bullet_list:
+    - regular: 24px → regular/TextBulletList.kt
+  📁 text_field:
+    - regular: 24px → regular/TextField.kt
+  📁 search_shield:
+    - filled: 20px → filled/SearchShield.kt
+    - regular: 20px → regular/SearchShield.kt
+  📁 joystick:
+    - filled: 20px → filled/Joystick.kt
+    - regular: 20px → regular/Joystick.kt
+  📁 tray_item_add:
+    - regular: 24px → regular/TrayItemAdd.kt
+  📁 table_simple_checkmark:
+    - regular: 24px → regular/TableSimpleCheckmark.kt
+  📁 tab_desktop_clock:
+    - filled: 20px → filled/TabDesktopClock.kt
+    - regular: 20px → regular/TabDesktopClock.kt
+  📁 subtract_circle_arrow_forward:
+    - filled: 20px → filled/SubtractCircleArrowForward.kt
+    - regular: 20px → regular/SubtractCircleArrowForward.kt
+  📁 task_list_square_settings:
+    - filled: 20px → filled/TaskListSquareSettings.kt
+    - regular: 20px → regular/TaskListSquareSettings.kt
+  📁 clipboard_edit:
+    - filled: 20px → filled/ClipboardEdit.kt
+    - regular: 20px → regular/ClipboardEdit.kt
+  📁 text_column_three:
+    - regular: 24px → regular/TextColumnThree.kt
+  📁 table_arrow_up:
+    - regular: 24px → regular/TableArrowUp.kt
+  📁 folder_briefcase:
+    - filled: 20px → filled/FolderBriefcase.kt
+    - regular: 20px → regular/FolderBriefcase.kt
+  📁 umbrella:
+    - regular: 24px → regular/Umbrella.kt
+  📁 table_move_above:
+    - regular: 24px → regular/TableMoveAbove.kt
+  📁 video_clip_optimize:
+    - regular: 24px → regular/VideoClipOptimize.kt
+  📁 beaker_off:
+    - filled: 20px → filled/BeakerOff.kt
+    - regular: 20px → regular/BeakerOff.kt
+  📁 server_surface_multiple:
+    - filled: 16px → filled/ServerSurfaceMultiple.kt
+    - regular: 16px → regular/ServerSurfaceMultiple.kt
+  📁 text_paragraph_direction_left:
+    - regular: 24px → regular/TextParagraphDirectionLeft.kt
+  📁 text_paragraph_direction:
+    - regular: 24px → regular/TextParagraphDirection.kt
+  📁 weather_moon_off:
+    - regular: 24px → regular/WeatherMoonOff.kt
+  📁 vehicle_car_profile_ltr_clock:
+    - regular: 24px → regular/VehicleCarProfileLtrClock.kt
+  📁 radar_rectangle_multiple:
+    - filled: 20px → filled/RadarRectangleMultiple.kt
+    - regular: 20px → regular/RadarRectangleMultiple.kt
+  📁 window_edit:
+    - filled: 20px → filled/WindowEdit.kt
+    - regular: 20px → regular/WindowEdit.kt
+  📁 document_ts:
+    - filled: 16px → filled/DocumentTs.kt
+    - regular: 16px → regular/DocumentTs.kt
+  📁 transparency_square:
+    - regular: 24px → regular/TransparencySquare.kt
+  📁 line_horizontal1_dot:
+    - filled: 20px → filled/LineHorizontal1Dot.kt
+    - regular: 20px → regular/LineHorizontal1Dot.kt
+  📁 tabs:
+    - regular: 24px → regular/Tabs.kt
+  📁 mail_briefcase:
+    - filled: 48px → filled/MailBriefcase.kt
+    - regular: 48px → regular/MailBriefcase.kt
+  📁 subtract_circle_arrow_back:
+    - filled: 20px → filled/SubtractCircleArrowBack.kt
+    - regular: 20px → regular/SubtractCircleArrowBack.kt
+  📁 document_key:
+    - filled: 20px → filled/DocumentKey.kt
+    - regular: 20px → regular/DocumentKey.kt
+  📁 text_align_distributed_evenly:
+    - regular: 24px → regular/TextAlignDistributedEvenly.kt
+  📁 shifts30_minutes:
+    - filled: 24px → filled/Shifts30Minutes.kt
+    - regular: 24px → regular/Shifts30Minutes.kt
+  📁 triangle_down:
+    - regular: 24px → regular/TriangleDown.kt
+  📁 window_arrow_up:
+    - regular: 24px → regular/WindowArrowUp.kt
+  📁 weather_thunderstorm:
+    - regular: 24px → regular/WeatherThunderstorm.kt
+  📁 line_horizontal5:
+    - filled: 20px → filled/LineHorizontal5.kt
+    - regular: 20px → regular/LineHorizontal5.kt
+  📁 text_more:
+    - regular: 24px → regular/TextMore.kt
+  📁 squares_nested:
+    - filled: 20px → filled/SquaresNested.kt
+    - regular: 20px → regular/SquaresNested.kt
+  📁 mail_arrow_down:
+    - filled: 20px → filled/MailArrowDown.kt
+    - regular: 20px → regular/MailArrowDown.kt
+  📁 text_box_align_center:
+    - filled: 24px → filled/TextBoxAlignCenter.kt
+    - regular: 24px → regular/TextBoxAlignCenter.kt
+  📁 weather_hail_day:
+    - regular: 24px → regular/WeatherHailDay.kt
+  📁 chevron_double_down:
+    - filled: 20px → filled/ChevronDoubleDown.kt
+    - regular: 20px → regular/ChevronDoubleDown.kt
+  📁 text_header3_lines_caret:
+    - filled: 24px → filled/TextHeader3LinesCaret.kt
+    - regular: 24px → regular/TextHeader3LinesCaret.kt
+  📁 text_bullet_list_square_person:
+    - filled: 20px → filled/TextBulletListSquarePerson.kt
+    - regular: 20px → regular/TextBulletListSquarePerson.kt
+  📁 tab_shield_dismiss:
+    - regular: 24px → regular/TabShieldDismiss.kt
+  📁 panel_top_contract:
+    - filled: 20px → filled/PanelTopContract.kt
+    - regular: 20px → regular/PanelTopContract.kt
+  📁 wi_fi_settings:
+    - filled: 20px → filled/WiFiSettings.kt
+    - regular: 20px → regular/WiFiSettings.kt
+  📁 code_fs_rectangle:
+    - filled: 16px → filled/CodeFsRectangle.kt
+    - regular: 16px → regular/CodeFsRectangle.kt
+  📁 timer10:
+    - regular: 24px → regular/Timer10.kt
+  📁 clipboard_task_list:
+    - filled: 16px → filled/ClipboardTaskList.kt
+    - regular: 16px → regular/ClipboardTaskList.kt
+  📁 panel_top_expand:
+    - filled: 20px → filled/PanelTopExpand.kt
+    - regular: 20px → regular/PanelTopExpand.kt
+  📁 zoom_fit:
+    - regular: 24px → regular/ZoomFit.kt
+  📁 i_os_chevron_right:
+    - filled: 20px → filled/IOsChevronRight.kt
+    - regular: 20px → regular/IOsChevronRight.kt
+  📁 text_underline:
+    - regular: 24px → regular/TextUnderline.kt
+  📁 text_paragraph_direction_right:
+    - regular: 24px → regular/TextParagraphDirectionRight.kt
+  📁 thumb_like_dislike:
+    - regular: 24px → regular/ThumbLikeDislike.kt
+  📁 camera_edit:
+    - filled: 20px → filled/CameraEdit.kt
+    - regular: 20px → regular/CameraEdit.kt
+  📁 window_brush:
+    - regular: 24px → regular/WindowBrush.kt
+  📁 database_lightning:
+    - filled: 20px → filled/DatabaseLightning.kt
+    - regular: 20px → regular/DatabaseLightning.kt
+  📁 tag:
+    - regular: 24px → regular/Tag.kt
+  📁 shield_person_add:
+    - filled: 20px → filled/ShieldPersonAdd.kt
+    - regular: 20px → regular/ShieldPersonAdd.kt
+  📁 phone_checkmark:
+    - filled: 20px → filled/PhoneCheckmark.kt
+    - regular: 20px → regular/PhoneCheckmark.kt
+  📁 grid_kanban:
+    - filled: 20px → filled/GridKanban.kt
+    - regular: 20px → regular/GridKanban.kt
+  📁 document_fs:
+    - filled: 16px → filled/DocumentFs.kt
+    - regular: 16px → regular/DocumentFs.kt
+  📁 document_vb:
+    - filled: 16px → filled/DocumentVb.kt
+    - regular: 16px → regular/DocumentVb.kt
+  📁 panel_bottom_expand:
+    - filled: 20px → filled/PanelBottomExpand.kt
+    - regular: 20px → regular/PanelBottomExpand.kt
+  📁 window_play:
+    - filled: 20px → filled/WindowPlay.kt
+    - regular: 20px → regular/WindowPlay.kt
+  📁 window_ad_person:
+    - filled: 20px → filled/WindowAdPerson.kt
+    - regular: 20px → regular/WindowAdPerson.kt
+  📁 text_direction_rotate90_right:
+    - filled: 24px → filled/TextDirectionRotate90Right.kt
+    - regular: 24px → regular/TextDirectionRotate90Right.kt
+  📁 text_box:
+    - filled: 24px → filled/TextBox.kt
+    - regular: 24px → regular/TextBox.kt
+  📁 code_ts_rectangle:
+    - filled: 16px → filled/CodeTsRectangle.kt
+    - regular: 16px → regular/CodeTsRectangle.kt
+  📁 window_ad_off:
+    - filled: 20px → filled/WindowAdOff.kt
+    - regular: 20px → regular/WindowAdOff.kt
+  📁 text_position_through:
+    - regular: 24px → regular/TextPositionThrough.kt
+  📁 vehicle_subway:
+    - regular: 24px → regular/VehicleSubway.kt
+  📁 window_header_horizontal:
+    - filled: 20px → filled/WindowHeaderHorizontal.kt
+    - regular: 20px → regular/WindowHeaderHorizontal.kt
+  📁 video_background_effect:
+    - regular: 24px → regular/VideoBackgroundEffect.kt
+  📁 cube_arrow_curve_down:
+    - filled: 20px → filled/CubeArrowCurveDown.kt
+    - regular: 20px → regular/CubeArrowCurveDown.kt
+  📁 contact_card_link:
+    - filled: 20px → filled/ContactCardLink.kt
+    - regular: 20px → regular/ContactCardLink.kt
+  📁 video_background_effect_horizontal:
+    - regular: 24px → regular/VideoBackgroundEffectHorizontal.kt
+  📁 weather_rain_showers_day:
+    - regular: 24px → regular/WeatherRainShowersDay.kt
+  📁 text_grammar_error:
+    - filled: 20px → filled/TextGrammarError.kt
+    - regular: 20px → regular/TextGrammarError.kt
+  📁 line_horizontal4:
+    - filled: 20px → filled/LineHorizontal4.kt
+    - regular: 20px → regular/LineHorizontal4.kt
+  📁 filter_add:
+    - filled: 20px → filled/FilterAdd.kt
+    - regular: 20px → regular/FilterAdd.kt
+  📁 video_prohibited:
+    - regular: 24px → regular/VideoProhibited.kt
+  📁 text_edit_style:
+    - regular: 24px → regular/TextEditStyle.kt
+  📁 video_clip:
+    - regular: 24px → regular/VideoClip.kt
+  📁 view_desktop:
+    - regular: 24px → regular/ViewDesktop.kt
+  📁 task_list_ltr:
+    - regular: 24px → regular/TaskListLtr.kt
+  📁 task_list_rtl:
+    - regular: 24px → regular/TaskListRtl.kt
+  📁 arrow_step_back:
+    - filled: 20px → filled/ArrowStepBack.kt
+    - regular: 20px → regular/ArrowStepBack.kt
+  📁 window_in_private_account:
+    - filled: 20px → filled/WindowInPrivateAccount.kt
+    - regular: 20px → regular/WindowInPrivateAccount.kt
+  📁 highlight_link:
+    - filled: 20px → filled/HighlightLink.kt
+    - regular: 20px → regular/HighlightLink.kt
+  📁 flash_add:
+    - filled: 20px → filled/FlashAdd.kt
+    - regular: 20px → regular/FlashAdd.kt
+  📁 text_bullet_list90:
+    - regular: 24px → regular/TextBulletList90.kt
+  📁 align_distribute_left:
+    - filled: 16px → filled/AlignDistributeLeft.kt
+    - regular: 16px → regular/AlignDistributeLeft.kt
+  📁 line_horizontal2_dashes_solid:
+    - filled: 24px → filled/LineHorizontal2DashesSolid.kt
+    - regular: 24px → regular/LineHorizontal2DashesSolid.kt
+  📁 tag_reset:
+    - regular: 24px → regular/TagReset.kt
+  📁 pipeline_arrow_curve_down:
+    - filled: 20px → filled/PipelineArrowCurveDown.kt
+    - regular: 20px → regular/PipelineArrowCurveDown.kt
+  📁 weather_sunny:
+    - regular: 24px → regular/WeatherSunny.kt
+  📁 table_delete_column:
+    - regular: 24px → regular/TableDeleteColumn.kt
+  📁 virtual_network_toolbox:
+    - filled: 20px → filled/VirtualNetworkToolbox.kt
+    - regular: 20px → regular/VirtualNetworkToolbox.kt
+  📁 target_edit:
+    - regular: 24px → regular/TargetEdit.kt
+  📁 cube_add:
+    - filled: 20px → filled/CubeAdd.kt
+    - regular: 20px → regular/CubeAdd.kt
+  📁 vehicle_car_parking:
+    - regular: 24px → regular/VehicleCarParking.kt
+  📁 receipt_search:
+    - filled: 20px → filled/ReceiptSearch.kt
+    - regular: 20px → regular/ReceiptSearch.kt
+  📁 clipboard_multiple:
+    - filled: 16px → filled/ClipboardMultiple.kt
+    - regular: 16px → regular/ClipboardMultiple.kt
+  📁 text_position_top_bottom:
+    - regular: 24px → regular/TextPositionTopBottom.kt
+  📁 window_column_one_fourth_left_focus_top:
+    - filled: 20px → filled/WindowColumnOneFourthLeftFocusTop.kt
+  📁 java_script:
+    - filled: 24px → filled/JavaScript.kt
+    - regular: 24px → regular/JavaScript.kt
+  📁 tv:
+    - regular: 24px → regular/Tv.kt
+  📁 square_dismiss:
+    - filled: 20px → filled/SquareDismiss.kt
+    - regular: 20px → regular/SquareDismiss.kt
+  📁 rectangle_portrait_location_target:
+    - filled: 20px → filled/RectanglePortraitLocationTarget.kt
+    - regular: 20px → regular/RectanglePortraitLocationTarget.kt
+  📁 window_bullet_list_add:
+    - filled: 20px → filled/WindowBulletListAdd.kt
+    - regular: 20px → regular/WindowBulletListAdd.kt
+  📁 database_window:
+    - filled: 20px → filled/DatabaseWindow.kt
+    - regular: 20px → regular/DatabaseWindow.kt
+  📁 laser_tool:
+    - filled: 20px → filled/LaserTool.kt
+    - regular: 20px → regular/LaserTool.kt
+  📁 text_column_one:
+    - regular: 24px → regular/TextColumnOne.kt
+  📁 wi_fi4:
+    - filled: 24px → filled/WiFi4.kt
+    - regular: 24px → regular/WiFi4.kt
+  📁 video_person:
+    - regular: 24px → regular/VideoPerson.kt
+  📁 text_direction_rotate90_left:
+    - filled: 24px → filled/TextDirectionRotate90Left.kt
+    - regular: 24px → regular/TextDirectionRotate90Left.kt
+  📁 tab_desktop_new_page:
+    - filled: 20px → filled/TabDesktopNewPage.kt
+    - regular: 20px → regular/TabDesktopNewPage.kt
+  📁 vehicle_car:
+    - regular: 24px → regular/VehicleCar.kt
+  📁 text_baseline:
+    - filled: 20px → filled/TextBaseline.kt
+    - regular: 20px → regular/TextBaseline.kt
+  📁 text_t:
+    - regular: 24px → regular/TextT.kt
+  📁 square_eraser:
+    - filled: 20px → filled/SquareEraser.kt
+    - regular: 20px → regular/SquareEraser.kt
+  📁 text_indent_decrease_rotate270:
+    - regular: 24px → regular/TextIndentDecreaseRotate270.kt
+  📁 arrow_sprint:
+    - filled: 20px → filled/ArrowSprint.kt
+    - regular: 20px → regular/ArrowSprint.kt
+  📁 text_box_align_top_rotate90:
+    - filled: 24px → filled/TextBoxAlignTopRotate90.kt
+    - regular: 24px → regular/TextBoxAlignTopRotate90.kt
+  📁 arrow_eject:
+    - filled: 20px → filled/ArrowEject.kt
+    - regular: 20px → regular/ArrowEject.kt
+  📁 calligraphy_pen_question_mark:
+    - filled: 20px → filled/CalligraphyPenQuestionMark.kt
+    - regular: 20px → regular/CalligraphyPenQuestionMark.kt
+  📁 screen_person:
+    - filled: 20px → filled/ScreenPerson.kt
+    - regular: 20px → regular/ScreenPerson.kt
+  📁 markdown:
+    - filled: 20px → filled/Markdown.kt
+    - regular: 20px → regular/Markdown.kt
+  📁 wallet:
+    - regular: 24px → regular/Wallet.kt
+  📁 window_multiple:
+    - filled: 20px → filled/WindowMultiple.kt
+    - regular: 20px → regular/WindowMultiple.kt
+  📁 document_number1:
+    - filled: 16px → filled/DocumentNumber1.kt
+    - regular: 16px → regular/DocumentNumber1.kt
+  📁 text_position_square_left:
+    - regular: 24px → regular/TextPositionSquareLeft.kt
+  📁 bubble_multiple:
+    - filled: 20px → filled/BubbleMultiple.kt
+    - regular: 20px → regular/BubbleMultiple.kt
+  📁 stream_input:
+    - filled: 20px → filled/StreamInput.kt
+    - regular: 20px → regular/StreamInput.kt
+  📁 voicemail_arrow_forward:
+    - filled: 20px → filled/VoicemailArrowForward.kt
+    - regular: 20px → regular/VoicemailArrowForward.kt
+  📁 text_bullet_list270:
+    - regular: 24px → regular/TextBulletList270.kt
+  📁 tab_prohibited:
+    - regular: 24px → regular/TabProhibited.kt
+  📁 folder_list:
+    - filled: 20px → filled/FolderList.kt
+    - regular: 20px → regular/FolderList.kt
+  📁 table_search:
+    - regular: 24px → regular/TableSearch.kt
+  📁 person_support:
+    - light: 32px → light/PersonSupport.kt
+  📁 mailbox:
+    - filled: 20px → filled/Mailbox.kt
+    - regular: 20px → regular/Mailbox.kt
+  📁 text_header2:
+    - regular: 24px → regular/TextHeader2.kt
+  📁 window_ad:
+    - regular: 24px → regular/WindowAd.kt
+  📁 panel_right_add:
+    - filled: 20px → filled/PanelRightAdd.kt
+    - regular: 20px → regular/PanelRightAdd.kt
+  📁 warning_lock_open:
+    - regular: 24px → regular/WarningLockOpen.kt
+  📁 split_hint:
+    - filled: 20px → filled/SplitHint.kt
+    - regular: 20px → regular/SplitHint.kt
+  📁 wallpaper:
+    - regular: 24px → regular/Wallpaper.kt
+  📁 text_position_line:
+    - regular: 24px → regular/TextPositionLine.kt
+  📁 table_offset_settings:
+    - regular: 24px → regular/TableOffsetSettings.kt
+  📁 clipboard_text:
+    - filled: 32px → filled/ClipboardText.kt
+    - regular: 32px → regular/ClipboardText.kt
+  📁 zoom_out:
+    - regular: 24px → regular/ZoomOut.kt
+  📁 text_number_list_ltr:
+    - regular: 24px → regular/TextNumberListLtr.kt
+  📁 text_number_list_rtl:
+    - regular: 24px → regular/TextNumberListRtl.kt
+  📁 puzzle_cube_piece:
+    - filled: 20px → filled/PuzzleCubePiece.kt
+    - regular: 20px → regular/PuzzleCubePiece.kt
+  📁 circle_eraser:
+    - filled: 20px → filled/CircleEraser.kt
+    - regular: 20px → regular/CircleEraser.kt
+  📁 triangle:
+    - regular: 24px → regular/Triangle.kt
+  📁 notebook_eye:
+    - filled: 20px → filled/NotebookEye.kt
+    - regular: 20px → regular/NotebookEye.kt
+  📁 music_note2_play:
+    - filled: 20px → filled/MusicNote2Play.kt
+    - regular: 20px → regular/MusicNote2Play.kt
+  📁 weather_hail_night:
+    - regular: 24px → regular/WeatherHailNight.kt
+  📁 table_stack_above:
+    - regular: 24px → regular/TableStackAbove.kt
+  📁 chess:
+    - filled: 20px → filled/Chess.kt
+    - regular: 20px → regular/Chess.kt
+  📁 text_strikethrough:
+    - regular: 24px → regular/TextStrikethrough.kt
+  📁 beaker_settings:
+    - filled: 20px → filled/BeakerSettings.kt
+    - regular: 20px → regular/BeakerSettings.kt
+  📁 wi_fi_warning:
+    - filled: 24px → filled/WiFiWarning.kt
+    - regular: 24px → regular/WiFiWarning.kt
+    - color: 24px → color/WiFiWarning.kt
+  📁 tab_desktop_arrow_left:
+    - filled: 20px → filled/TabDesktopArrowLeft.kt
+    - regular: 20px → regular/TabDesktopArrowLeft.kt
+  📁 tv_usb:
+    - regular: 24px → regular/TvUsb.kt
+  📁 table_offset:
+    - regular: 24px → regular/TableOffset.kt
+  📁 walkie_talkie:
+    - regular: 24px → regular/WalkieTalkie.kt
+  📁 mail_settings:
+    - filled: 20px → filled/MailSettings.kt
+    - regular: 20px → regular/MailSettings.kt
+  📁 voicemail:
+    - regular: 24px → regular/Voicemail.kt
+  📁 mail_inbox_arrow_down:
+    - filled: 20px → filled/MailInboxArrowDown.kt
+    - regular: 20px → regular/MailInboxArrowDown.kt
+  📁 save_image:
+    - filled: 20px → filled/SaveImage.kt
+    - regular: 20px → regular/SaveImage.kt
+  📁 text_indent_increase_rotate270:
+    - regular: 24px → regular/TextIndentIncreaseRotate270.kt
+  📁 pipeline_add:
+    - filled: 20px → filled/PipelineAdd.kt
+    - regular: 20px → regular/PipelineAdd.kt
+  📁 video_off:
+    - regular: 24px → regular/VideoOff.kt
+  📁 arrow_move_inward:
+    - filled: 20px → filled/ArrowMoveInward.kt
+    - regular: 20px → regular/ArrowMoveInward.kt
+  📁 circle_off:
+    - filled: 20px → filled/CircleOff.kt
+    - regular: 20px → regular/CircleOff.kt
+  📁 video_clip_multiple:
+    - regular: 24px → regular/VideoClipMultiple.kt
+  📁 text_case_lowercase:
+    - regular: 24px → regular/TextCaseLowercase.kt
+  📁 teddy:
+    - regular: 24px → regular/Teddy.kt
+  📁 vote:
+    - regular: 24px → regular/Vote.kt
+  📁 text_grammar_wand:
+    - regular: 24px → regular/TextGrammarWand.kt
+  📁 document_py:
+    - filled: 16px → filled/DocumentPy.kt
+    - regular: 16px → regular/DocumentPy.kt
+  📁 people_toolbox:
+    - filled: 20px → filled/PeopleToolbox.kt
+    - regular: 20px → regular/PeopleToolbox.kt
+  📁 table_edit:
+    - regular: 24px → regular/TableEdit.kt
+  📁 call_warning:
+    - filled: 20px → filled/CallWarning.kt
+    - regular: 20px → regular/CallWarning.kt
+  📁 arrow_turn_right_down:
+    - filled: 20px → filled/ArrowTurnRightDown.kt
+    - regular: 20px → regular/ArrowTurnRightDown.kt
+  📁 navigation_location_target:
+    - filled: 20px → filled/NavigationLocationTarget.kt
+    - regular: 20px → regular/NavigationLocationTarget.kt
+  📁 table_simple_exclude:
+    - regular: 24px → regular/TableSimpleExclude.kt
+  📁 database_plug_connected:
+    - filled: 20px → filled/DatabasePlugConnected.kt
+    - regular: 20px → regular/DatabasePlugConnected.kt
+  📁 video_chat:
+    - regular: 24px → regular/VideoChat.kt
+  📁 video_people:
+    - filled: 32px → filled/VideoPeople.kt
+    - regular: 32px → regular/VideoPeople.kt
+  📁 window_database:
+    - regular: 24px → regular/WindowDatabase.kt
+  📁 xray:
+    - regular: 24px → regular/Xray.kt
+  📁 text_density:
+    - regular: 24px → regular/TextDensity.kt
+  📁 time_and_weather:
+    - regular: 24px → regular/TimeAndWeather.kt
+  📁 navigation_play:
+    - filled: 20px → filled/NavigationPlay.kt
+    - regular: 20px → regular/NavigationPlay.kt
+  📁 phone_desktop_add:
+    - filled: 20px → filled/PhoneDesktopAdd.kt
+    - regular: 20px → regular/PhoneDesktopAdd.kt
+  📁 person_running:
+    - filled: 20px → filled/PersonRunning.kt
+    - regular: 20px → regular/PersonRunning.kt
+  📁 window_wrench:
+    - regular: 24px → regular/WindowWrench.kt
+  📁 shield_person:
+    - filled: 20px → filled/ShieldPerson.kt
+    - regular: 20px → regular/ShieldPerson.kt
+  📁 video_recording:
+    - filled: 20px → filled/VideoRecording.kt
+    - regular: 20px → regular/VideoRecording.kt
+  📁 task_list_add:
+    - regular: 24px → regular/TaskListAdd.kt
+  📁 video_clip_off:
+    - regular: 24px → regular/VideoClipOff.kt
+  📁 arrow_turn_down_right:
+    - filled: 20px → filled/ArrowTurnDownRight.kt
+    - regular: 20px → regular/ArrowTurnDownRight.kt
+  📁 wrench:
+    - regular: 24px → regular/Wrench.kt
+  📁 line_horizontal1_dashes:
+    - filled: 24px → filled/LineHorizontal1Dashes.kt
+    - regular: 24px → regular/LineHorizontal1Dashes.kt
+  📁 table_freeze_column:
+    - regular: 24px → regular/TableFreezeColumn.kt
+  📁 apps_settings:
+    - filled: 20px → filled/AppsSettings.kt
+    - regular: 20px → regular/AppsSettings.kt
+  📁 table_freeze_row:
+    - regular: 24px → regular/TableFreezeRow.kt
+  📁 flag_checkered:
+    - filled: 20px → filled/FlagCheckered.kt
+    - regular: 20px → regular/FlagCheckered.kt
+  📁 delete_arrow_back:
+    - filled: 20px → filled/DeleteArrowBack.kt
+    - regular: 20px → regular/DeleteArrowBack.kt
+  📁 table_cells_split:
+    - regular: 24px → regular/TableCellsSplit.kt
+  📁 bug_arrow_counterclockwise:
+    - filled: 20px → filled/BugArrowCounterclockwise.kt
+    - regular: 20px → regular/BugArrowCounterclockwise.kt
+  📁 video_person_sparkle:
+    - regular: 24px → regular/VideoPersonSparkle.kt
+  📁 text_font_size:
+    - regular: 24px → regular/TextFontSize.kt
+  📁 multiplier_5x:
+    - filled: 24px → filled/Multiplier5x.kt
+    - regular: 24px → regular/Multiplier5x.kt
+  📁 weather_squalls:
+    - regular: 24px → regular/WeatherSqualls.kt
+  📁 arrow_join:
+    - filled: 20px → filled/ArrowJoin.kt
+    - regular: 20px → regular/ArrowJoin.kt
+  📁 link_toolbox:
+    - filled: 20px → filled/LinkToolbox.kt
+    - regular: 20px → regular/LinkToolbox.kt
+  📁 text_font:
+    - regular: 24px → regular/TextFont.kt
+  📁 wi_fi3:
+    - filled: 24px → filled/WiFi3.kt
+    - regular: 24px → regular/WiFi3.kt
+  📁 folder_globe:
+    - filled: 20px → filled/FolderGlobe.kt
+    - regular: 20px → regular/FolderGlobe.kt
+  📁 text_align_right:
+    - regular: 24px → regular/TextAlignRight.kt
+  📁 text_bullet_list_square_search:
+    - filled: 20px → filled/TextBulletListSquareSearch.kt
+    - regular: 20px → regular/TextBulletListSquareSearch.kt
+  📁 recycle:
+    - filled: 20px → filled/Recycle.kt
+    - regular: 20px → regular/Recycle.kt
+  📁 text_box_more:
+    - filled: 24px → filled/TextBoxMore.kt
+    - regular: 24px → regular/TextBoxMore.kt
+  📁 code_text_off:
+    - filled: 16px → filled/CodeTextOff.kt
+    - regular: 16px → regular/CodeTextOff.kt
+  📁 clipboard3_day:
+    - filled: 24px → filled/Clipboard3Day.kt
+    - regular: 24px → regular/Clipboard3Day.kt
+  📁 document_settings:
+    - filled: 20px → filled/DocumentSettings.kt
+    - regular: 20px → regular/DocumentSettings.kt
+  📁 text_box_align_bottom_left:
+    - filled: 24px → filled/TextBoxAlignBottomLeft.kt
+    - regular: 24px → regular/TextBoxAlignBottomLeft.kt
+  📁 arrow_sync_off:
+    - filled: 20px → filled/ArrowSyncOff.kt
+    - regular: 20px → regular/ArrowSyncOff.kt
+  📁 text_quote:
+    - regular: 24px → regular/TextQuote.kt
+  📁 list_bar_tree:
+    - filled: 20px → filled/ListBarTree.kt
+    - regular: 20px → regular/ListBarTree.kt
+  📁 text_clear_formatting:
+    - regular: 24px → regular/TextClearFormatting.kt
+  📁 table_link:
+    - regular: 24px → regular/TableLink.kt
+  📁 align_end_horizontal:
+    - filled: 20px → filled/AlignEndHorizontal.kt
+    - regular: 20px → regular/AlignEndHorizontal.kt
+  📁 playing_cards:
+    - filled: 20px → filled/PlayingCards.kt
+    - regular: 20px → regular/PlayingCards.kt
+  📁 target_add:
+    - regular: 24px → regular/TargetAdd.kt
+  📁 insert:
+    - filled: 20px → filled/Insert.kt
+    - regular: 20px → regular/Insert.kt
+  📁 panel_bottom_contract:
+    - filled: 20px → filled/PanelBottomContract.kt
+    - regular: 20px → regular/PanelBottomContract.kt
+  📁 voicemail_shield:
+    - regular: 24px → regular/VoicemailShield.kt
+  📁 virtual_network:
+    - filled: 20px → filled/VirtualNetwork.kt
+    - regular: 20px → regular/VirtualNetwork.kt
+  📁 window_dev_tools:
+    - regular: 24px → regular/WindowDevTools.kt
+  📁 align_distribute_right:
+    - filled: 16px → filled/AlignDistributeRight.kt
+    - regular: 16px → regular/AlignDistributeRight.kt
+  📁 database_arrow_down:
+    - filled: 20px → filled/DatabaseArrowDown.kt
+    - regular: 20px → regular/DatabaseArrowDown.kt
+  📁 video360:
+    - regular: 24px → regular/Video360.kt
+  📁 text_box_align_bottom_center:
+    - filled: 24px → filled/TextBoxAlignBottomCenter.kt
+    - regular: 24px → regular/TextBoxAlignBottomCenter.kt
+  📁 document_cs:
+    - filled: 16px → filled/DocumentCs.kt
+    - regular: 16px → regular/DocumentCs.kt
+  📁 vehicle_tractor:
+    - regular: 24px → regular/VehicleTractor.kt
+  📁 vehicle_truck_bag:
+    - regular: 24px → regular/VehicleTruckBag.kt
+  📁 tent:
+    - regular: 24px → regular/Tent.kt
+  📁 tablet_speaker:
+    - regular: 24px → regular/TabletSpeaker.kt
+  📁 align_space_between_vertical:
+    - filled: 20px → filled/AlignSpaceBetweenVertical.kt
+    - regular: 20px → regular/AlignSpaceBetweenVertical.kt
+  📁 text_bullet_list_add:
+    - regular: 24px → regular/TextBulletListAdd.kt
+  📁 layout_row_two_split_bottom_focus_bottom_right:
+    - filled: 24px → filled/LayoutRowTwoSplitBottomFocusBottomRight.kt
+  📁 table_insert_row:
+    - regular: 24px → regular/TableInsertRow.kt
+  📁 text_align_justify_low_rotate90:
+    - regular: 24px → regular/TextAlignJustifyLowRotate90.kt
+  📁 form_sparkle:
+    - filled: 20px → filled/FormSparkle.kt
+    - regular: 20px → regular/FormSparkle.kt
+  📁 triangle_left:
+    - filled: 20px → filled/TriangleLeft.kt
+    - regular: 20px → regular/TriangleLeft.kt
+  📁 text_align_distributed_vertical:
+    - regular: 24px → regular/TextAlignDistributedVertical.kt
+  📁 text_grammar_settings:
+    - regular: 24px → regular/TextGrammarSettings.kt
+  📁 align_space_fit_vertical:
+    - filled: 20px → filled/AlignSpaceFitVertical.kt
+    - regular: 20px → regular/AlignSpaceFitVertical.kt
+  📁 column_double_compare:
+    - filled: 20px → filled/ColumnDoubleCompare.kt
+    - regular: 20px → regular/ColumnDoubleCompare.kt
+  📁 text_grammar_arrow_right:
+    - regular: 24px → regular/TextGrammarArrowRight.kt
+  📁 arrow_curve_down_right:
+    - filled: 20px → filled/ArrowCurveDownRight.kt
+    - regular: 20px → regular/ArrowCurveDownRight.kt
+  📁 arrow_wrap_up_to_down:
+    - filled: 20px → filled/ArrowWrapUpToDown.kt
+    - regular: 20px → regular/ArrowWrapUpToDown.kt
+  📁 tree_deciduous:
+    - regular: 24px → regular/TreeDeciduous.kt
+  📁 window_apps:
+    - regular: 24px → regular/WindowApps.kt
+  📁 text_case_title:
+    - regular: 24px → regular/TextCaseTitle.kt
+  📁 window_text:
+    - regular: 24px → regular/WindowText.kt
+  📁 arrow_turn_down_up:
+    - filled: 20px → filled/ArrowTurnDownUp.kt
+    - regular: 20px → regular/ArrowTurnDownUp.kt
+  📁 password_clock:
+    - filled: 24px → filled/PasswordClock.kt
+    - regular: 24px → regular/PasswordClock.kt
+  📁 text_bold:
+    - regular: 24px → regular/TextBold.kt
+  📁 vehicle_bus:
+    - regular: 24px → regular/VehicleBus.kt
+  📁 keyboard_mouse:
+    - filled: 16px → filled/KeyboardMouse.kt
+    - regular: 16px → regular/KeyboardMouse.kt
+  📁 text_hanging:
+    - regular: 24px → regular/TextHanging.kt
+  📁 arrow_step_over:
+    - filled: 20px → filled/ArrowStepOver.kt
+    - regular: 20px → regular/ArrowStepOver.kt
+  📁 cloud_database:
+    - filled: 20px → filled/CloudDatabase.kt
+    - regular: 20px → regular/CloudDatabase.kt
+  📁 branch_request:
+    - filled: 20px → filled/BranchRequest.kt
+    - regular: 20px → regular/BranchRequest.kt
+  📁 apps_shield:
+    - filled: 20px → filled/AppsShield.kt
+    - regular: 20px → regular/AppsShield.kt
+  📁 timer:
+    - regular: 24px → regular/Timer.kt
+  📁 tab_in_private:
+    - regular: 24px → regular/TabInPrivate.kt
+  📁 text_align_left_rotate90:
+    - regular: 24px → regular/TextAlignLeftRotate90.kt
+  📁 video360_off:
+    - filled: 20px → filled/Video360Off.kt
+    - regular: 20px → regular/Video360Off.kt
+  📁 calendar_search:
+    - filled: 20px → filled/CalendarSearch.kt
+    - regular: 20px → regular/CalendarSearch.kt
+  📁 weather_snow_shower_day:
+    - regular: 24px → regular/WeatherSnowShowerDay.kt
+  📁 document_person:
+    - filled: 20px → filled/DocumentPerson.kt
+    - regular: 20px → regular/DocumentPerson.kt
+  📁 image_multiple_off:
+    - filled: 20px → filled/ImageMultipleOff.kt
+    - regular: 20px → regular/ImageMultipleOff.kt
+  📁 tablet:
+    - regular: 24px → regular/Tablet.kt
+  📁 text_align_center_rotate270:
+    - regular: 24px → regular/TextAlignCenterRotate270.kt
+  📁 text_period_asterisk:
+    - filled: 20px → filled/TextPeriodAsterisk.kt
+    - regular: 20px → regular/TextPeriodAsterisk.kt
+  📁 align_space_between_horizontal:
+    - filled: 20px → filled/AlignSpaceBetweenHorizontal.kt
+    - regular: 20px → regular/AlignSpaceBetweenHorizontal.kt
+  📁 laptop_dismiss:
+    - filled: 20px → filled/LaptopDismiss.kt
+    - regular: 20px → regular/LaptopDismiss.kt
+  📁 text_bullet_list_square_toolbox:
+    - filled: 20px → filled/TextBulletListSquareToolbox.kt
+    - regular: 20px → regular/TextBulletListSquareToolbox.kt
+  📁 book_question_mark_rtl_rtl:
+    - filled: 24px → filled/BookQuestionMarkRtlRtl.kt
+    - regular: 24px → regular/BookQuestionMarkRtlRtl.kt
+  📁 text_column_one_semi_narrow:
+    - regular: 24px → regular/TextColumnOneSemiNarrow.kt
+  📁 tag_error:
+    - regular: 24px → regular/TagError.kt
+  📁 usb_plug:
+    - regular: 24px → regular/UsbPlug.kt
+  📁 plug_connected_checkmark:
+    - filled: 20px → filled/PlugConnectedCheckmark.kt
+    - regular: 20px → regular/PlugConnectedCheckmark.kt
+  📁 table_insert_column:
+    - regular: 24px → regular/TableInsertColumn.kt
+  📁 video:
+    - regular: 24px → regular/Video.kt
+  📁 text_header1:
+    - regular: 24px → regular/TextHeader1.kt
+  📁 text_number_list_rotate90:
+    - regular: 24px → regular/TextNumberListRotate90.kt
+  📁 text_bullet_list_dismiss:
+    - filled: 20px → filled/TextBulletListDismiss.kt
+    - regular: 20px → regular/TextBulletListDismiss.kt
+  📁 code_py:
+    - filled: 16px → filled/CodePy.kt
+    - regular: 16px → regular/CodePy.kt
+  📁 text_footnote:
+    - regular: 24px → regular/TextFootnote.kt
+  📁 arrow_turn_left_up:
+    - filled: 20px → filled/ArrowTurnLeftUp.kt
+    - regular: 20px → regular/ArrowTurnLeftUp.kt
+  📁 mail_shield:
+    - filled: 20px → filled/MailShield.kt
+    - regular: 20px → regular/MailShield.kt
+  📁 pentagon:
+    - filled: 20px → filled/Pentagon.kt
+    - regular: 20px → regular/Pentagon.kt
+  📁 timer_off:
+    - regular: 24px → regular/TimerOff.kt
+  📁 video_person_call:
+    - regular: 24px → regular/VideoPersonCall.kt
+  📁 table_resize_row:
+    - regular: 24px → regular/TableResizeRow.kt
+  📁 toggle_right:
+    - regular: 24px → regular/ToggleRight.kt
+  📁 text_box_align_top_center:
+    - filled: 24px → filled/TextBoxAlignTopCenter.kt
+    - regular: 24px → regular/TextBoxAlignTopCenter.kt
+  📁 phone_eraser:
+    - filled: 20px → filled/PhoneEraser.kt
+    - regular: 20px → regular/PhoneEraser.kt
+  📁 window_multiple_swap:
+    - filled: 20px → filled/WindowMultipleSwap.kt
+    - regular: 20px → regular/WindowMultipleSwap.kt
+  📁 io_t:
+    - filled: 24px → filled/IoT.kt
+    - regular: 24px → regular/IoT.kt
+  📁 animal_rabbit_off:
+    - filled: 20px → filled/AnimalRabbitOff.kt
+    - regular: 20px → regular/AnimalRabbitOff.kt
+  📁 text_bullet_list_square_shield:
+    - filled: 20px → filled/TextBulletListSquareShield.kt
+    - regular: 20px → regular/TextBulletListSquareShield.kt
+  📁 table_image:
+    - filled: 20px → filled/TableImage.kt
+    - regular: 20px → regular/TableImage.kt
+  📁 table_calculator:
+    - filled: 20px → filled/TableCalculator.kt
+    - regular: 20px → regular/TableCalculator.kt
+  📁 spinner_i_os:
+    - filled: 20px → filled/SpinnerIOs.kt
+    - regular: 20px → regular/SpinnerIOs.kt
+  📁 time_picker:
+    - regular: 24px → regular/TimePicker.kt
+  📁 table_checker:
+    - filled: 20px → filled/TableChecker.kt
+    - regular: 20px → regular/TableChecker.kt
+  📁 server_surface:
+    - filled: 16px → filled/ServerSurface.kt
+    - regular: 16px → regular/ServerSurface.kt
+  📁 web_asset:
+    - regular: 24px → regular/WebAsset.kt
+  📁 arrow_turn_left_down:
+    - filled: 20px → filled/ArrowTurnLeftDown.kt
+    - regular: 20px → regular/ArrowTurnLeftDown.kt
+  📁 text_font_info:
+    - regular: 24px → regular/TextFontInfo.kt
+  📁 text_align_justify_low:
+    - regular: 24px → regular/TextAlignJustifyLow.kt
+  📁 vehicle_cab:
+    - regular: 24px → regular/VehicleCab.kt
+  📁 align_distribute_bottom:
+    - filled: 16px → filled/AlignDistributeBottom.kt
+    - regular: 16px → regular/AlignDistributeBottom.kt
+  📁 video_add:
+    - regular: 24px → regular/VideoAdd.kt
+  📁 teardrop_bottom_right:
+    - regular: 24px → regular/TeardropBottomRight.kt
+  📁 panel_separate_window:
+    - filled: 20px → filled/PanelSeparateWindow.kt
+    - regular: 20px → regular/PanelSeparateWindow.kt
+  📁 radio_button_off:
+    - filled: 16px → filled/RadioButtonOff.kt
+    - regular: 16px → regular/RadioButtonOff.kt
+  📁 location_arrow_right:
+    - filled: 20px → filled/LocationArrowRight.kt
+    - regular: 20px → regular/LocationArrowRight.kt
+  📁 sticker:
+    - light: 32px → light/Sticker.kt
+  📁 people_eye:
+    - filled: 20px → filled/PeopleEye.kt
+    - regular: 20px → regular/PeopleEye.kt
+  📁 table_move_right:
+    - regular: 24px → regular/TableMoveRight.kt
+  📁 task_list_square_person:
+    - filled: 20px → filled/TaskListSquarePerson.kt
+    - regular: 20px → regular/TaskListSquarePerson.kt
+  📁 task_list_square_database:
+    - regular: 24px → regular/TaskListSquareDatabase.kt
+  📁 weather_haze:
+    - regular: 24px → regular/WeatherHaze.kt
+  📁 text_align_center_rotate90:
+    - regular: 24px → regular/TextAlignCenterRotate90.kt
+  📁 task_list_square_rtl:
+    - regular: 24px → regular/TaskListSquareRtl.kt
+  📁 task_list_square_ltr:
+    - regular: 24px → regular/TaskListSquareLtr.kt
+  📁 laptop_shield:
+    - filled: 20px → filled/LaptopShield.kt
+    - regular: 20px → regular/LaptopShield.kt
+  📁 video_person_star_off:
+    - regular: 24px → regular/VideoPersonStarOff.kt
+  📁 memory:
+    - filled: 16px → filled/Memory.kt
+    - regular: 16px → regular/Memory.kt
+  📁 wi_fi1:
+    - filled: 24px → filled/WiFi1.kt
+    - regular: 24px → regular/WiFi1.kt
+  📁 window_header_vertical:
+    - filled: 20px → filled/WindowHeaderVertical.kt
+    - regular: 20px → regular/WindowHeaderVertical.kt
+  📁 wi_fi_lock:
+    - filled: 24px → filled/WiFiLock.kt
+    - regular: 24px → regular/WiFiLock.kt
+  📁 code_cs:
+    - filled: 16px → filled/CodeCs.kt
+    - regular: 16px → regular/CodeCs.kt
+  📁 text_align_left_rotate270:
+    - regular: 24px → regular/TextAlignLeftRotate270.kt
+  📁 tablet_laptop:
+    - regular: 24px → regular/TabletLaptop.kt
+  📁 text_continuous:
+    - regular: 24px → regular/TextContinuous.kt
+  📁 ticket_horizontal:
+    - regular: 24px → regular/TicketHorizontal.kt
+  📁 ticket_diagonal:
+    - regular: 24px → regular/TicketDiagonal.kt
+  📁 weather_sunny_high:
+    - regular: 24px → regular/WeatherSunnyHigh.kt
+  📁 person_lightning:
+    - filled: 20px → filled/PersonLightning.kt
+    - regular: 20px → regular/PersonLightning.kt
+  📁 text_add_space_before:
+    - regular: 24px → regular/TextAddSpaceBefore.kt
+  📁 vehicle_bicycle:
+    - regular: 24px → regular/VehicleBicycle.kt
+  📁 table_cells_merge:
+    - regular: 24px → regular/TableCellsMerge.kt
+  📁 text_box_align_bottom_right:
+    - filled: 24px → filled/TextBoxAlignBottomRight.kt
+    - regular: 24px → regular/TextBoxAlignBottomRight.kt
+  📁 table_simple:
+    - regular: 24px → regular/TableSimple.kt
+  📁 video_clip_wand:
+    - regular: 24px → regular/VideoClipWand.kt
+  📁 tag_off:
+    - regular: 24px → regular/TagOff.kt
+  📁 text_first_line:
+    - regular: 24px → regular/TextFirstLine.kt
+  📁 document_yml:
+    - filled: 20px → filled/DocumentYml.kt
+    - regular: 20px → regular/DocumentYml.kt
+  📁 video_person_clock:
+    - regular: 24px → regular/VideoPersonClock.kt
+  📁 usb_stick:
+    - regular: 24px → regular/UsbStick.kt
+  📁 drink_bottle:
+    - filled: 20px → filled/DrinkBottle.kt
+    - regular: 20px → regular/DrinkBottle.kt
+  📁 text_underline_double:
+    - regular: 24px → regular/TextUnderlineDouble.kt
+  📁 arrow_circle_down_up:
+    - filled: 20px → filled/ArrowCircleDownUp.kt
+    - regular: 20px → regular/ArrowCircleDownUp.kt
+  📁 document_sass:
+    - filled: 20px → filled/DocumentSass.kt
+    - regular: 20px → regular/DocumentSass.kt
+  📁 align_distribute_top:
+    - filled: 16px → filled/AlignDistributeTop.kt
+    - regular: 16px → regular/AlignDistributeTop.kt
+  📁 vehicle_subway_clock:
+    - regular: 24px → regular/VehicleSubwayClock.kt
+  📁 align_space_around_horizontal:
+    - filled: 20px → filled/AlignSpaceAroundHorizontal.kt
+    - regular: 20px → regular/AlignSpaceAroundHorizontal.kt
+  📁 person_wrench:
+    - filled: 20px → filled/PersonWrench.kt
+    - regular: 20px → regular/PersonWrench.kt
+  📁 text_position_front:
+    - regular: 24px → regular/TextPositionFront.kt
+  📁 table_resize_column:
+    - regular: 24px → regular/TableResizeColumn.kt
+  📁 vehicle_car_profile:
+    - regular: 24px → regular/VehicleCarProfile.kt
+  📁 document_multiple_sync:
+    - filled: 20px → filled/DocumentMultipleSync.kt
+    - regular: 20px → regular/DocumentMultipleSync.kt
+  📁 folder_multiple:
+    - filled: 16px → filled/FolderMultiple.kt
+    - regular: 16px → regular/FolderMultiple.kt
+  📁 align_start_horizontal:
+    - filled: 20px → filled/AlignStartHorizontal.kt
+    - regular: 20px → regular/AlignStartHorizontal.kt
+  📁 heart_pulse_warning:
+    - filled: 20px → filled/HeartPulseWarning.kt
+    - regular: 20px → regular/HeartPulseWarning.kt
+  📁 arrow_turn_up_down:
+    - filled: 20px → filled/ArrowTurnUpDown.kt
+    - regular: 20px → regular/ArrowTurnUpDown.kt
+  📁 calendar_mail:
+    - filled: 20px → filled/CalendarMail.kt
+    - regular: 20px → regular/CalendarMail.kt
+  📁 chat_arrow_double_back:
+    - filled: 20px → filled/ChatArrowDoubleBack.kt
+    - regular: 20px → regular/ChatArrowDoubleBack.kt
+  📁 multiplier1_2x:
+    - filled: 24px → filled/Multiplier12x.kt
+    - regular: 24px → regular/Multiplier12x.kt
+  📁 tetris_app:
+    - regular: 24px → regular/TetrisApp.kt
+  📁 table_move_below:
+    - regular: 24px → regular/TableMoveBelow.kt
+  📁 text_bullet_list_square_clock:
+    - filled: 20px → filled/TextBulletListSquareClock.kt
+    - regular: 20px → regular/TextBulletListSquareClock.kt
+  📁 info_shield:
+    - filled: 20px → filled/InfoShield.kt
+    - regular: 20px → regular/InfoShield.kt
+  📁 whiteboard:
+    - regular: 24px → regular/Whiteboard.kt
+  📁 tab_desktop_multiple_sparkle:
+    - regular: 24px → regular/TabDesktopMultipleSparkle.kt
+  📁 pause_settings:
+    - filled: 20px → filled/PauseSettings.kt
+    - regular: 20px → regular/PauseSettings.kt
+  📁 text_superscript:
+    - regular: 24px → regular/TextSuperscript.kt
+  📁 radar_checkmark:
+    - filled: 20px → filled/RadarCheckmark.kt
+    - regular: 20px → regular/RadarCheckmark.kt
+  📁 column_single:
+    - filled: 16px → filled/ColumnSingle.kt
+    - regular: 16px → regular/ColumnSingle.kt
+  📁 heart_pulse_checkmark:
+    - filled: 20px → filled/HeartPulseCheckmark.kt
+    - regular: 20px → regular/HeartPulseCheckmark.kt
+  📁 tag_multiple:
+    - regular: 24px → regular/TagMultiple.kt
+  📁 calligraphy_pen_checkmark:
+    - filled: 20px → filled/CalligraphyPenCheckmark.kt
+    - regular: 20px → regular/CalligraphyPenCheckmark.kt
+  📁 speaker_mute:
+    - light: 32px → light/SpeakerMute.kt
+  📁 text_collapse:
+    - regular: 24px → regular/TextCollapse.kt
+  📁 document_contract:
+    - filled: 16px → filled/DocumentContract.kt
+    - regular: 16px → regular/DocumentContract.kt
+  📁 trophy_lock:
+    - regular: 24px → regular/TrophyLock.kt
+  📁 view_desktop_mobile:
+    - regular: 24px → regular/ViewDesktopMobile.kt
+  📁 code_rb_rectangle:
+    - filled: 16px → filled/CodeRbRectangle.kt
+    - regular: 16px → regular/CodeRbRectangle.kt
+  📁 comment_multiple_mention:
+    - filled: 20px → filled/CommentMultipleMention.kt
+    - regular: 20px → regular/CommentMultipleMention.kt
+  📁 calendar_eye:
+    - filled: 20px → filled/CalendarEye.kt
+    - regular: 20px → regular/CalendarEye.kt
+  📁 calendar_pattern:
+    - filled: 20px → filled/CalendarPattern.kt
+    - regular: 20px → regular/CalendarPattern.kt
+  📁 arrow_turn_up_left:
+    - filled: 20px → filled/ArrowTurnUpLeft.kt
+    - regular: 20px → regular/ArrowTurnUpLeft.kt
+  📁 video_person_pulse:
+    - regular: 24px → regular/VideoPersonPulse.kt
+  📁 server_multiple:
+    - filled: 20px → filled/ServerMultiple.kt
+    - regular: 20px → regular/ServerMultiple.kt
+  📁 text_effects:
+    - regular: 24px → regular/TextEffects.kt
+  📁 transmission:
+    - regular: 24px → regular/Transmission.kt
+  📁 wi_fi_off:
+    - filled: 24px → filled/WiFiOff.kt
+    - regular: 24px → regular/WiFiOff.kt
+  📁 text_grammar_checkmark:
+    - regular: 24px → regular/TextGrammarCheckmark.kt
+  📁 line_horizontal4_search:
+    - filled: 20px → filled/LineHorizontal4Search.kt
+    - regular: 20px → regular/LineHorizontal4Search.kt
+  📁 database_warning:
+    - filled: 20px → filled/DatabaseWarning.kt
+    - regular: 20px → regular/DatabaseWarning.kt
+  📁 arrow_turn_down_left:
+    - filled: 20px → filled/ArrowTurnDownLeft.kt
+    - regular: 20px → regular/ArrowTurnDownLeft.kt
+  📁 table_multiple:
+    - filled: 20px → filled/TableMultiple.kt
+    - regular: 20px → regular/TableMultiple.kt
+  📁 table_copy:
+    - filled: 20px → filled/TableCopy.kt
+    - regular: 20px → regular/TableCopy.kt
+  📁 image_stack:
+    - filled: 20px → filled/ImageStack.kt
+    - regular: 20px → regular/ImageStack.kt
+  📁 video_person_star:
+    - regular: 24px → regular/VideoPersonStar.kt
+  📁 weather_blowing_snow:
+    - regular: 24px → regular/WeatherBlowingSnow.kt
+  📁 text_box_align_top_right:
+    - filled: 24px → filled/TextBoxAlignTopRight.kt
+    - regular: 24px → regular/TextBoxAlignTopRight.kt
+  📁 table_sparkle:
+    - regular: 24px → regular/TableSparkle.kt
+  📁 call_exclamation:
+    - filled: 20px → filled/CallExclamation.kt
+    - regular: 20px → regular/CallExclamation.kt
+  📁 text_whole_word:
+    - filled: 20px → filled/TextWholeWord.kt
+    - regular: 20px → regular/TextWholeWord.kt
+  📁 wrench_screwdriver:
+    - regular: 24px → regular/WrenchScrewdriver.kt
+  📁 text_position_behind:
+    - regular: 24px → regular/TextPositionBehind.kt
+  📁 table_simple_multiple:
+    - regular: 24px → regular/TableSimpleMultiple.kt
+  📁 text_align_left:
+    - regular: 24px → regular/TextAlignLeft.kt
+  📁 text_header1_lines_caret:
+    - filled: 24px → filled/TextHeader1LinesCaret.kt
+    - regular: 24px → regular/TextHeader1LinesCaret.kt
+  📁 plug_connected_add:
+    - filled: 20px → filled/PlugConnectedAdd.kt
+    - regular: 20px → regular/PlugConnectedAdd.kt
+  📁 text_description:
+    - regular: 24px → regular/TextDescription.kt
+  📁 text_sort_descending:
+    - regular: 24px → regular/TextSortDescending.kt
+  📁 text_sort_ascending:
+    - regular: 24px → regular/TextSortAscending.kt
+  📁 mic_sync:
+    - filled: 20px → filled/MicSync.kt
+    - regular: 20px → regular/MicSync.kt
+  📁 window_column_one_fourth_left:
+    - filled: 20px → filled/WindowColumnOneFourthLeft.kt
+    - regular: 20px → regular/WindowColumnOneFourthLeft.kt
+  📁 text_box_align_middle:
+    - filled: 24px → filled/TextBoxAlignMiddle.kt
+    - regular: 24px → regular/TextBoxAlignMiddle.kt
+  📁 puzzle_piece_shield:
+    - filled: 20px → filled/PuzzlePieceShield.kt
+    - regular: 20px → regular/PuzzlePieceShield.kt
+  📁 code_js:
+    - filled: 16px → filled/CodeJs.kt
+    - regular: 16px → regular/CodeJs.kt
+  📁 toggle_multiple:
+    - regular: 24px → regular/ToggleMultiple.kt
+  📁 document_arrow_up:
+    - filled: 20px → filled/DocumentArrowUp.kt
+    - regular: 20px → regular/DocumentArrowUp.kt
+  📁 timer2:
+    - regular: 24px → regular/Timer2.kt
+  📁 text_add_t:
+    - regular: 24px → regular/TextAddT.kt
+  📁 layout_column_two_split_right_focus_bottom_right:
+    - filled: 24px → filled/LayoutColumnTwoSplitRightFocusBottomRight.kt
+  📁 text_indent_increase_rotate90:
+    - regular: 24px → regular/TextIndentIncreaseRotate90.kt
+  📁 play_multiple:
+    - filled: 16px → filled/PlayMultiple.kt
+    - regular: 16px → regular/PlayMultiple.kt
+  📁 mail_arrow_forward:
+    - filled: 20px → filled/MailArrowForward.kt
+    - regular: 20px → regular/MailArrowForward.kt
+  📁 person_standing:
+    - filled: 16px → filled/PersonStanding.kt
+    - regular: 16px → regular/PersonStanding.kt
+  📁 database_arrow_up:
+    - filled: 20px → filled/DatabaseArrowUp.kt
+    - regular: 20px → regular/DatabaseArrowUp.kt
+  📁 data_bar_horizontal_descending:
+    - filled: 16px → filled/DataBarHorizontalDescending.kt
+    - regular: 16px → regular/DataBarHorizontalDescending.kt
+  📁 table_cell_edit:
+    - regular: 24px → regular/TableCellEdit.kt
+  📁 text_position_tight:
+    - regular: 24px → regular/TextPositionTight.kt
+  📁 square_hint_arrow_back:
+    - filled: 20px → filled/SquareHintArrowBack.kt
+    - regular: 20px → regular/SquareHintArrowBack.kt
+  📁 gauge_add:
+    - filled: 20px → filled/GaugeAdd.kt
+    - regular: 20px → regular/GaugeAdd.kt
+  📁 cube_rotate:
+    - filled: 20px → filled/CubeRotate.kt
+    - regular: 20px → regular/CubeRotate.kt
+  📁 text_box_align_bottom:
+    - filled: 24px → filled/TextBoxAlignBottom.kt
+    - regular: 24px → regular/TextBoxAlignBottom.kt
+  📁 vault:
+    - regular: 24px → regular/Vault.kt
+  📁 tv_arrow_right:
+    - filled: 20px → filled/TvArrowRight.kt
+    - regular: 20px → regular/TvArrowRight.kt
+  📁 ram:
+    - filled: 20px → filled/Ram.kt
+    - regular: 20px → regular/Ram.kt
+  📁 subtract_square_multiple:
+    - filled: 20px → filled/SubtractSquareMultiple.kt
+    - regular: 20px → regular/SubtractSquareMultiple.kt
+  📁 password_reset:
+    - filled: 48px → filled/PasswordReset.kt
+    - regular: 48px → regular/PasswordReset.kt
+  📁 text_wrap:
+    - regular: 24px → regular/TextWrap.kt
+  📁 text_grammar_lightning:
+    - regular: 24px → regular/TextGrammarLightning.kt
+  📁 text_column_one_narrow:
+    - regular: 24px → regular/TextColumnOneNarrow.kt
+  📁 layout_column_two_split_right_focus_top_right:
+    - filled: 24px → filled/LayoutColumnTwoSplitRightFocusTopRight.kt
+  📁 text_align_justify_rotate90:
+    - regular: 24px → regular/TextAlignJustifyRotate90.kt
+  📁 vehicle_car_collision:
+    - regular: 24px → regular/VehicleCarCollision.kt
+  📁 weather_moon:
+    - regular: 24px → regular/WeatherMoon.kt
+  📁 weather_snow_shower_night:
+    - regular: 24px → regular/WeatherSnowShowerNight.kt
+  📁 server_play:
+    - filled: 20px → filled/ServerPlay.kt
+    - regular: 20px → regular/ServerPlay.kt
+  📁 weather_duststorm:
+    - regular: 24px → regular/WeatherDuststorm.kt
+  📁 person5:
+    - filled: 20px → filled/Person5.kt
+    - regular: 20px → regular/Person5.kt
+  📁 target_dismiss:
+    - regular: 24px → regular/TargetDismiss.kt
+  📁 video_bluetooth:
+    - regular: 24px → regular/VideoBluetooth.kt
+  📁 tree_evergreen:
+    - filled: 20px → filled/TreeEvergreen.kt
+    - regular: 20px → regular/TreeEvergreen.kt
+  📁 text_header3:
+    - regular: 24px → regular/TextHeader3.kt
+  📁 tab_group:
+    - regular: 24px → regular/TabGroup.kt
+  📁 cone:
+    - filled: 16px → filled/Cone.kt
+    - regular: 16px → regular/Cone.kt
+  📁 braces_dismiss:
+    - filled: 16px → filled/BracesDismiss.kt
+    - regular: 16px → regular/BracesDismiss.kt
+  📁 window_in_private:
+    - filled: 20px → filled/WindowInPrivate.kt
+    - regular: 20px → regular/WindowInPrivate.kt
+  📁 text_box_rotate90:
+    - filled: 24px → filled/TextBoxRotate90.kt
+    - regular: 24px → regular/TextBoxRotate90.kt
+  📁 xbox_controller_error:
+    - regular: 24px → regular/XboxControllerError.kt
+  📁 text_column_wide:
+    - regular: 24px → regular/TextColumnWide.kt
+  📁 list_rtl_rtl:
+    - filled: 20px → filled/ListRtlRtl.kt
+    - regular: 20px → regular/ListRtlRtl.kt
+  📁 table_stack_left:
+    - regular: 24px → regular/TableStackLeft.kt
+  📁 network_adapter:
+    - filled: 16px → filled/NetworkAdapter.kt
+    - regular: 16px → regular/NetworkAdapter.kt
+  📁 window_shield:
+    - regular: 24px → regular/WindowShield.kt
+  📁 table_split:
+    - filled: 20px → filled/TableSplit.kt
+    - regular: 20px → regular/TableSplit.kt
+  📁 developer_board_lightning_toolbox:
+    - filled: 20px → filled/DeveloperBoardLightningToolbox.kt
+    - regular: 20px → regular/DeveloperBoardLightningToolbox.kt
+  📁 save_sync:
+    - filled: 20px → filled/SaveSync.kt
+    - regular: 20px → regular/SaveSync.kt
+  📁 translate:
+    - regular: 24px → regular/Translate.kt
+  📁 trophy_off:
+    - regular: 24px → regular/TrophyOff.kt
+  📁 video_play_pause:
+    - regular: 24px → regular/VideoPlayPause.kt
+  📁 beaker_empty:
+    - filled: 16px → filled/BeakerEmpty.kt
+    - regular: 16px → regular/BeakerEmpty.kt
+  📁 weather_fog:
+    - regular: 24px → regular/WeatherFog.kt
+  📁 sync_off:
+    - filled: 20px → filled/SyncOff.kt
+    - regular: 20px → regular/SyncOff.kt
+  📁 mail_pause:
+    - filled: 20px → filled/MailPause.kt
+    - regular: 20px → regular/MailPause.kt
+  📁 text_change_case:
+    - regular: 24px → regular/TextChangeCase.kt
+  📁 save_search:
+    - filled: 20px → filled/SaveSearch.kt
+    - regular: 20px → regular/SaveSearch.kt
+  📁 filmstrip_off:
+    - filled: 48px → filled/FilmstripOff.kt
+    - regular: 48px → regular/FilmstripOff.kt
+  📁 table_settings:
+    - regular: 24px → regular/TableSettings.kt
+  📁 table_column_top_bottom:
+    - regular: 24px → regular/TableColumnTopBottom.kt
+  📁 text_position_square:
+    - regular: 24px → regular/TextPositionSquare.kt
+  📁 align_stretch_vertical:
+    - filled: 20px → filled/AlignStretchVertical.kt
+    - regular: 20px → regular/AlignStretchVertical.kt
+  📁 cd:
+    - filled: 16px → filled/Cd.kt
+    - regular: 16px → regular/Cd.kt
+  📁 notebook_arrow_curve_down:
+    - filled: 20px → filled/NotebookArrowCurveDown.kt
+    - regular: 20px → regular/NotebookArrowCurveDown.kt
+  📁 table_simple_include:
+    - regular: 24px → regular/TableSimpleInclude.kt
+  📁 pause_off:
+    - filled: 20px → filled/PauseOff.kt
+    - regular: 20px → regular/PauseOff.kt
+  📁 heart_pulse_error:
+    - filled: 20px → filled/HeartPulseError.kt
+    - regular: 20px → regular/HeartPulseError.kt
+  📁 text_line_spacing:
+    - regular: 24px → regular/TextLineSpacing.kt
+  📁 calendar3_day:
+    - filled: 24px → filled/Calendar3Day.kt
+    - regular: 24px → regular/Calendar3Day.kt
+    - light: 32px → light/Calendar3Day.kt
+  📁 text_grammar_dismiss:
+    - regular: 24px → regular/TextGrammarDismiss.kt
+  📁 io_t_alert:
+    - filled: 24px → filled/IoTAlert.kt
+    - regular: 24px → regular/IoTAlert.kt
+  📁 text_bullet_list_checkmark:
+    - filled: 20px → filled/TextBulletListCheckmark.kt
+    - regular: 20px → regular/TextBulletListCheckmark.kt
+  📁 tag_search:
+    - regular: 24px → regular/TagSearch.kt
+  📁 arrow_wrap:
+    - filled: 20px → filled/ArrowWrap.kt
+    - regular: 20px → regular/ArrowWrap.kt
+  📁 text_box_align_middle_left:
+    - filled: 24px → filled/TextBoxAlignMiddleLeft.kt
+    - regular: 24px → regular/TextBoxAlignMiddleLeft.kt
+  📁 text_effects_sparkle:
+    - regular: 24px → regular/TextEffectsSparkle.kt
+  📁 weather_rain:
+    - regular: 24px → regular/WeatherRain.kt
+  📁 database_multiple:
+    - filled: 20px → filled/DatabaseMultiple.kt
+    - regular: 20px → regular/DatabaseMultiple.kt
+  📁 target_arrow:
+    - regular: 24px → regular/TargetArrow.kt
+  📁 table_move_left:
+    - regular: 24px → regular/TableMoveLeft.kt
+  📁 video_sync:
+    - filled: 20px → filled/VideoSync.kt
+    - regular: 20px → regular/VideoSync.kt
+  📁 text_column_two_left:
+    - regular: 24px → regular/TextColumnTwoLeft.kt
+  📁 sidebar_search_ltr:
+    - filled: 20px → filled/SidebarSearchLtr.kt
+    - regular: 20px → regular/SidebarSearchLtr.kt
+  📁 sidebar_search_rtl:
+    - filled: 20px → filled/SidebarSearchRtl.kt
+    - regular: 20px → regular/SidebarSearchRtl.kt
+  📁 table_switch:
+    - regular: 24px → regular/TableSwitch.kt
+  📁 spray_can:
+    - filled: 16px → filled/SprayCan.kt
+    - regular: 16px → regular/SprayCan.kt
+  📁 translate_off:
+    - regular: 24px → regular/TranslateOff.kt
+  📁 weather_drizzle:
+    - regular: 24px → regular/WeatherDrizzle.kt
+  📁 table_bottom_row:
+    - regular: 24px → regular/TableBottomRow.kt
+  📁 window_fingerprint:
+    - regular: 24px → regular/WindowFingerprint.kt
+  📁 vehicle_truck:
+    - regular: 24px → regular/VehicleTruck.kt
+  📁 line_horizontal5_error:
+    - filled: 20px → filled/LineHorizontal5Error.kt
+    - regular: 20px → regular/LineHorizontal5Error.kt
+  📁 align_stretch_horizontal:
+    - filled: 20px → filled/AlignStretchHorizontal.kt
+    - regular: 20px → regular/AlignStretchHorizontal.kt
+  📁 cursor_prohibited:
+    - filled: 20px → filled/CursorProhibited.kt
+    - regular: 20px → regular/CursorProhibited.kt
+  📁 window:
+    - regular: 24px → regular/Window.kt
+  📁 square_add:
+    - filled: 20px → filled/SquareAdd.kt
+    - regular: 20px → regular/SquareAdd.kt
+  📁 text_header2_lines_caret:
+    - filled: 24px → filled/TextHeader2LinesCaret.kt
+    - regular: 24px → regular/TextHeader2LinesCaret.kt
+  📁 text_indent_decrease:
+    - regular: 24px → regular/TextIndentDecrease.kt
+  📁 xbox_controller:
+    - regular: 24px → regular/XboxController.kt
+  📁 pipeline_play:
+    - filled: 20px → filled/PipelinePlay.kt
+    - regular: 20px → regular/PipelinePlay.kt
+  📁 bug_prohibited:
+    - filled: 20px → filled/BugProhibited.kt
+    - regular: 20px → regular/BugProhibited.kt
+  📁 chevron_double_up:
+    - filled: 20px → filled/ChevronDoubleUp.kt
+    - regular: 20px → regular/ChevronDoubleUp.kt
+  📁 arrow_wrap_off:
+    - filled: 20px → filled/ArrowWrapOff.kt
+    - regular: 20px → regular/ArrowWrapOff.kt
+  📁 tab_desktop_multiple_bottom:
+    - regular: 24px → regular/TabDesktopMultipleBottom.kt
+  📁 table_add:
+    - regular: 24px → regular/TableAdd.kt
+  📁 arrow_curve_up_right:
+    - filled: 20px → filled/ArrowCurveUpRight.kt
+    - regular: 20px → regular/ArrowCurveUpRight.kt
+  📁 align_end_vertical:
+    - filled: 20px → filled/AlignEndVertical.kt
+    - regular: 20px → regular/AlignEndVertical.kt
+  📁 code_vb:
+    - filled: 16px → filled/CodeVb.kt
+    - regular: 16px → regular/CodeVb.kt
+  📁 code_js_rectangle:
+    - filled: 16px → filled/CodeJsRectangle.kt
+    - regular: 16px → regular/CodeJsRectangle.kt
+  📁 door_arrow_right:
+    - filled: 20px → filled/DoorArrowRight.kt
+    - regular: 20px → regular/DoorArrowRight.kt
+  📁 error_circle_settings:
+    - filled: 20px → filled/ErrorCircleSettings.kt
+    - regular: 20px → regular/ErrorCircleSettings.kt
+  📁 video_link:
+    - regular: 24px → regular/VideoLink.kt
+  📁 column_arrow_right:
+    - filled: 20px → filled/ColumnArrowRight.kt
+    - regular: 20px → regular/ColumnArrowRight.kt
+  📁 vehicle_truck_cube:
+    - regular: 24px → regular/VehicleTruckCube.kt
+  📁 text_box_align_middle_right:
+    - filled: 24px → filled/TextBoxAlignMiddleRight.kt
+    - regular: 24px → regular/TextBoxAlignMiddleRight.kt
+  📁 calendar_phone:
+    - filled: 20px → filled/CalendarPhone.kt
+    - regular: 20px → regular/CalendarPhone.kt
+  📁 weather_snow:
+    - regular: 24px → regular/WeatherSnow.kt
+  📁 trophy:
+    - regular: 24px → regular/Trophy.kt
+  📁 table_stack_right:
+    - regular: 24px → regular/TableStackRight.kt
+  📁 multiplier1_5x:
+    - filled: 24px → filled/Multiplier15x.kt
+    - regular: 24px → regular/Multiplier15x.kt
+  📁 text_direction_vertical:
+    - regular: 24px → regular/TextDirectionVertical.kt
+  📁 gavel_prohibited:
+    - filled: 20px → filled/GavelProhibited.kt
+    - regular: 20px → regular/GavelProhibited.kt
+  📁 tag_lock:
+    - regular: 24px → regular/TagLock.kt
+  📁 mail_all_unread:
+    - filled: 20px → filled/MailAllUnread.kt
+    - regular: 20px → regular/MailAllUnread.kt
+  📁 video_usb:
+    - regular: 24px → regular/VideoUsb.kt
+  📁 code_ts:
+    - filled: 16px → filled/CodeTs.kt
+    - regular: 16px → regular/CodeTs.kt
+  📁 building_checkmark:
+    - filled: 20px → filled/BuildingCheckmark.kt
+    - regular: 20px → regular/BuildingCheckmark.kt
+  📁 text_align_right_rotate270:
+    - regular: 24px → regular/TextAlignRightRotate270.kt
+  📁 mention_brackets:
+    - filled: 20px → filled/MentionBrackets.kt
+    - regular: 20px → regular/MentionBrackets.kt
+  📁 whiteboard_off:
+    - regular: 24px → regular/WhiteboardOff.kt
+  📁 layout_row_two_split_bottom_focus_bottom_left:
+    - filled: 24px → filled/LayoutRowTwoSplitBottomFocusBottomLeft.kt
+  📁 weather_sunny_low:
+    - regular: 24px → regular/WeatherSunnyLow.kt
+  📁 square_shadow:
+    - filled: 20px → filled/SquareShadow.kt
+    - regular: 20px → regular/SquareShadow.kt
+  📁 text_word_count:
+    - regular: 24px → regular/TextWordCount.kt
+  📁 weather_cloudy:
+    - regular: 24px → regular/WeatherCloudy.kt
+  📁 vehicle_truck_profile:
+    - regular: 24px → regular/VehicleTruckProfile.kt
+  📁 text_align_center:
+    - regular: 24px → regular/TextAlignCenter.kt
+  📁 stream_output:
+    - filled: 20px → filled/StreamOutput.kt
+    - regular: 20px → regular/StreamOutput.kt
+  📁 table_stack_below:
+    - regular: 24px → regular/TableStackBelow.kt
+  📁 text_bullet_list_square_settings:
+    - filled: 20px → filled/TextBulletListSquareSettings.kt
+    - regular: 20px → regular/TextBulletListSquareSettings.kt
+  📁 text_proofing_tools:
+    - regular: 24px → regular/TextProofingTools.kt
+  📁 person_edit:
+    - color: 32px → color/PersonEdit.kt
+  📁 screen_cut:
+    - filled: 20px → filled/ScreenCut.kt
+    - regular: 20px → regular/ScreenCut.kt
+  📁 table_offset_add:
+    - regular: 24px → regular/TableOffsetAdd.kt
+  📁 person_desktop:
+    - filled: 20px → filled/PersonDesktop.kt
+    - regular: 20px → regular/PersonDesktop.kt
+  📁 text_direction_rotate45_right:
+    - filled: 24px → filled/TextDirectionRotate45Right.kt
+    - regular: 24px → regular/TextDirectionRotate45Right.kt
+  📁 wrench_settings:
+    - regular: 24px → regular/WrenchSettings.kt
+  📁 person_settings:
+    - filled: 20px → filled/PersonSettings.kt
+    - regular: 20px → regular/PersonSettings.kt
+  📁 chat_arrow_back:
+    - filled: 20px → filled/ChatArrowBack.kt
+    - regular: 20px → regular/ChatArrowBack.kt
+  📁 tray_item_remove:
+    - regular: 24px → regular/TrayItemRemove.kt
+  📁 text_align_justify_low_rotate270:
+    - regular: 24px → regular/TextAlignJustifyLowRotate270.kt
+  📁 prohibited_note:
+    - filled: 20px → filled/ProhibitedNote.kt
+    - regular: 20px → regular/ProhibitedNote.kt
+  📁 triangle_right:
+    - filled: 20px → filled/TriangleRight.kt
+    - regular: 20px → regular/TriangleRight.kt
+  📁 thumb_like:
+    - regular: 24px → regular/ThumbLike.kt
+  📁 call_connecting:
+    - filled: 20px → filled/CallConnecting.kt
+    - regular: 20px → regular/CallConnecting.kt
+  📁 wallet_credit_card:
+    - regular: 24px → regular/WalletCreditCard.kt
+  📁 video_security:
+    - regular: 24px → regular/VideoSecurity.kt
+  📁 checkmark_note:
+    - filled: 20px → filled/CheckmarkNote.kt
+    - regular: 20px → regular/CheckmarkNote.kt
+  📁 notepad_edit:
+    - filled: 20px → filled/NotepadEdit.kt
+    - regular: 20px → regular/NotepadEdit.kt
+  📁 table_lock:
+    - regular: 24px → regular/TableLock.kt
+  📁 text_wrap_off:
+    - regular: 24px → regular/TextWrapOff.kt
+  📁 text_box_align_bottom_rotate90:
+    - filled: 24px → filled/TextBoxAlignBottomRotate90.kt
+    - regular: 24px → regular/TextBoxAlignBottomRotate90.kt
+  📁 toggle_left:
+    - regular: 24px → regular/ToggleLeft.kt
+  📁 line_horizontal1_dash_dot_dash:
+    - filled: 20px → filled/LineHorizontal1DashDotDash.kt
+    - regular: 20px → regular/LineHorizontal1DashDotDash.kt
+  📁 button:
+    - filled: 20px → filled/Button.kt
+    - regular: 20px → regular/Button.kt
+  📁 arrow_turn_right_left:
+    - filled: 20px → filled/ArrowTurnRightLeft.kt
+    - regular: 20px → regular/ArrowTurnRightLeft.kt
+  📁 tab_desktop_multiple_add:
+    - filled: 20px → filled/TabDesktopMultipleAdd.kt
+    - regular: 20px → regular/TabDesktopMultipleAdd.kt
+  📁 wand:
+    - regular: 24px → regular/Wand.kt
+  📁 text_direction_rotate315_right:
+    - filled: 24px → filled/TextDirectionRotate315Right.kt
+    - regular: 24px → regular/TextDirectionRotate315Right.kt
+  📁 align_space_around_vertical:
+    - filled: 20px → filled/AlignSpaceAroundVertical.kt
+    - regular: 20px → regular/AlignSpaceAroundVertical.kt
+  📁 window_new:
+    - regular: 24px → regular/WindowNew.kt
+  📁 dismiss_square_multiple:
+    - filled: 20px → filled/DismissSquareMultiple.kt
+    - regular: 20px → regular/DismissSquareMultiple.kt
+  📁 text_expand:
+    - regular: 24px → regular/TextExpand.kt
+  📁 text_indent_decrease_rotate90:
+    - regular: 24px → regular/TextIndentDecreaseRotate90.kt
+  📁 table_delete_row:
+    - regular: 24px → regular/TableDeleteRow.kt
+  📁 shield_dismiss_shield:
+    - filled: 20px → filled/ShieldDismissShield.kt
+    - regular: 20px → regular/ShieldDismissShield.kt
+  📁 document_one_page_beaker:
+    - filled: 16px → filled/DocumentOnePageBeaker.kt
+    - regular: 16px → regular/DocumentOnePageBeaker.kt
+  📁 text_align_distributed:
+    - regular: 24px → regular/TextAlignDistributed.kt
+  📁 pin_globe:
+    - filled: 20px → filled/PinGlobe.kt
+    - regular: 20px → regular/PinGlobe.kt
+  📁 text_align_justify:
+    - regular: 24px → regular/TextAlignJustify.kt
+  📁 text_header3_lines:
+    - filled: 24px → filled/TextHeader3Lines.kt
+    - regular: 24px → regular/TextHeader3Lines.kt
+  📁 table_dismiss:
+    - regular: 24px → regular/TableDismiss.kt
+  📁 text_indent_increase:
+    - regular: 24px → regular/TextIndentIncrease.kt
+  📁 document_java:
+    - filled: 20px → filled/DocumentJava.kt
+    - regular: 20px → regular/DocumentJava.kt
+  📁 share_i_os:
+    - filled: 24px → filled/ShareIOs.kt
+    - regular: 24px → regular/ShareIOs.kt
+    - color: 24px → color/ShareIOs.kt
+  📁 code_rb:
+    - filled: 16px → filled/CodeRb.kt
+    - regular: 16px → regular/CodeRb.kt
+  📁 text_box_align_top_left:
+    - filled: 24px → filled/TextBoxAlignTopLeft.kt
+    - regular: 24px → regular/TextBoxAlignTopLeft.kt
+    - light: 32px → light/TextBoxAlignTopLeft.kt
+  📁 xbox_console:
+    - regular: 24px → regular/XboxConsole.kt
+  📁 bezier_curve_square:
+    - filled: 20px → filled/BezierCurveSquare.kt
+    - regular: 20px → regular/BezierCurveSquare.kt
+  📁 text_box_align_top:
+    - filled: 24px → filled/TextBoxAlignTop.kt
+    - regular: 24px → regular/TextBoxAlignTop.kt
+  📁 voicemail_subtract:
+    - filled: 20px → filled/VoicemailSubtract.kt
+    - regular: 20px → regular/VoicemailSubtract.kt
+  📁 thumb_dislike:
+    - regular: 24px → regular/ThumbDislike.kt
+  📁 layout_column_two_split_left_focus_bottom_left:
+    - filled: 24px → filled/LayoutColumnTwoSplitLeftFocusBottomLeft.kt
+  📁 stream_input_output:
+    - filled: 20px → filled/StreamInputOutput.kt
+    - regular: 20px → regular/StreamInputOutput.kt
+  📁 arrow_turn_right_up:
+    - filled: 20px → filled/ArrowTurnRightUp.kt
+    - regular: 20px → regular/ArrowTurnRightUp.kt
+  📁 arrow_enter:
+    - filled: 20px → filled/ArrowEnter.kt
+    - regular: 20px → regular/ArrowEnter.kt
+  📁 tag_dismiss:
+    - regular: 24px → regular/TagDismiss.kt
+  📁 calligraphy_pen_error:
+    - filled: 20px → filled/CalligraphyPenError.kt
+    - regular: 20px → regular/CalligraphyPenError.kt
+  📁 timer3:
+    - regular: 24px → regular/Timer3.kt
+  📁 code_fs:
+    - filled: 16px → filled/CodeFs.kt
+    - regular: 16px → regular/CodeFs.kt
+  📁 code_text_edit:
+    - filled: 20px → filled/CodeTextEdit.kt
+    - regular: 20px → regular/CodeTextEdit.kt
+  📁 tap_single:
+    - regular: 24px → regular/TapSingle.kt
+  📁 fax:
+    - filled: 20px → filled/Fax.kt
+    - regular: 20px → regular/Fax.kt
+  📁 text_direction_rotate270_right:
+    - filled: 24px → filled/TextDirectionRotate270Right.kt
+    - regular: 24px → regular/TextDirectionRotate270Right.kt
+  📁 text_number_format:
+    - regular: 24px → regular/TextNumberFormat.kt
+  📁 location_arrow_left:
+    - filled: 20px → filled/LocationArrowLeft.kt
+    - regular: 20px → regular/LocationArrowLeft.kt
+  📁 text_number_list_rotate270:
+    - regular: 24px → regular/TextNumberListRotate270.kt
+  📁 panel_bottom:
+    - filled: 20px → filled/PanelBottom.kt
+    - regular: 20px → regular/PanelBottom.kt
+  📁 tag_question_mark:
+    - regular: 24px → regular/TagQuestionMark.kt
+  📁 braces_checkmark:
+    - filled: 16px → filled/BracesCheckmark.kt
+    - regular: 16px → regular/BracesCheckmark.kt
+  📁 note_pin:
+    - filled: 20px → filled/NotePin.kt
+    - regular: 20px → regular/NotePin.kt
+  📁 text_italic:
+    - regular: 24px → regular/TextItalic.kt
+  📁 zoom_in:
+    - regular: 24px → regular/ZoomIn.kt
+  📁 multiplier1_8x:
+    - filled: 24px → filled/Multiplier18x.kt
+    - regular: 24px → regular/Multiplier18x.kt
+  📁 flash_play:
+    - filled: 20px → filled/FlashPlay.kt
+    - regular: 20px → regular/FlashPlay.kt
+  📁 video_person_sparkle_off:
+    - regular: 24px → regular/VideoPersonSparkleOff.kt
+  📁 layout_row_two_focus_top_settings:
+    - filled: 20px → filled/LayoutRowTwoFocusTopSettings.kt
+  📁 book_dismiss:
+    - filled: 20px → filled/BookDismiss.kt
+    - regular: 20px → regular/BookDismiss.kt
+  📁 washer:
+    - regular: 24px → regular/Washer.kt
+  📁 person6:
+    - filled: 20px → filled/Person6.kt
+    - regular: 20px → regular/Person6.kt
+  📁 text_asterisk:
+    - filled: 20px → filled/TextAsterisk.kt
+    - regular: 20px → regular/TextAsterisk.kt
+  📁 checkbox_checked_sync:
+    - filled: 20px → filled/CheckboxCheckedSync.kt
+    - regular: 20px → regular/CheckboxCheckedSync.kt
+  📁 text_align_right_rotate90:
+    - regular: 24px → regular/TextAlignRightRotate90.kt
+  📁 window_location_target:
+    - filled: 20px → filled/WindowLocationTarget.kt
+    - regular: 20px → regular/WindowLocationTarget.kt
+  📁 list_bar_tree_offset:
+    - filled: 20px → filled/ListBarTreeOffset.kt
+    - regular: 20px → regular/ListBarTreeOffset.kt
+  📁 clipboard_note:
+    - filled: 20px → filled/ClipboardNote.kt
+    - regular: 20px → regular/ClipboardNote.kt
+  📁 table_offset_less_than_or_equal_to:
+    - regular: 24px → regular/TableOffsetLessThanOrEqualTo.kt
+  📁 document_rb:
+    - filled: 16px → filled/DocumentRb.kt
+    - regular: 16px → regular/DocumentRb.kt
+  📁 weather_rain_snow:
+    - regular: 24px → regular/WeatherRainSnow.kt
+  📁 developer_board_lightning:
+    - filled: 20px → filled/DeveloperBoardLightning.kt
+    - regular: 20px → regular/DeveloperBoardLightning.kt
+  📁 warning_shield:
+    - filled: 20px → filled/WarningShield.kt
+    - regular: 20px → regular/WarningShield.kt
+  📁 text_t_tag:
+    - filled: 16px → filled/TextTTag.kt
+    - regular: 16px → regular/TextTTag.kt
+  📁 weather_partly_cloudy_night:
+    - regular: 24px → regular/WeatherPartlyCloudyNight.kt
+  📁 in_private_account:
+    - filled: 24px → filled/InPrivateAccount.kt
+    - regular: 24px → regular/InPrivateAccount.kt
+  📁 window_console:
+    - filled: 20px → filled/WindowConsole.kt
+    - regular: 20px → regular/WindowConsole.kt
+  📁 toolbox:
+    - regular: 24px → regular/Toolbox.kt
+  📁 code_vb_rectangle:
+    - filled: 16px → filled/CodeVbRectangle.kt
+    - regular: 16px → regular/CodeVbRectangle.kt
+  📁 tasks_app:
+    - regular: 24px → regular/TasksApp.kt
+  📁 top_speed:
+    - regular: 24px → regular/TopSpeed.kt
+  📁 table_cursor:
+    - regular: 24px → regular/TableCursor.kt
+  📁 code_text:
+    - filled: 20px → filled/CodeText.kt
+    - regular: 20px → regular/CodeText.kt
+  📁 video_person_off:
+    - regular: 24px → regular/VideoPersonOff.kt
+  📁 text_column_two:
+    - regular: 24px → regular/TextColumnTwo.kt
+  📁 task_list_square_add:
+    - regular: 24px → regular/TaskListSquareAdd.kt
+  📁 text_paragraph:
+    - regular: 24px → regular/TextParagraph.kt
+  📁 table_freeze_column_and_row:
+    - regular: 24px → regular/TableFreezeColumnAndRow.kt
+  📁 text_header2_lines:
+    - filled: 24px → filled/TextHeader2Lines.kt
+    - regular: 24px → regular/TextHeader2Lines.kt
+  📁 auto_sum:
+    - filled: 24px → filled/AutoSum.kt
+    - regular: 24px → regular/AutoSum.kt
+  📁 text_position_square_right:
+    - regular: 24px → regular/TextPositionSquareRight.kt
+  📁 tag_circle:
+    - filled: 20px → filled/TagCircle.kt
+    - regular: 20px → regular/TagCircle.kt
+  📁 play_settings:
+    - filled: 20px → filled/PlaySettings.kt
+    - regular: 20px → regular/PlaySettings.kt
+  📁 tab_desktop_copy:
+    - filled: 20px → filled/TabDesktopCopy.kt
+    - regular: 20px → regular/TabDesktopCopy.kt
+  📁 arrow_between_up:
+    - filled: 20px → filled/ArrowBetweenUp.kt
+    - regular: 20px → regular/ArrowBetweenUp.kt
+  📁 cube_link:
+    - filled: 20px → filled/CubeLink.kt
+    - regular: 20px → regular/CubeLink.kt
+  📁 window_bullet_list:
+    - filled: 20px → filled/WindowBulletList.kt
+    - regular: 20px → regular/WindowBulletList.kt
+  📁 text_align_justify_rotate270:
+    - regular: 24px → regular/TextAlignJustifyRotate270.kt
+  📁 search_settings:
+    - filled: 20px → filled/SearchSettings.kt
+    - regular: 20px → regular/SearchSettings.kt
+  📁 vehicle_motorcycle:
+    - regular: 24px → regular/VehicleMotorcycle.kt
+  📁 mail_inbox_person:
+    - filled: 20px → filled/MailInboxPerson.kt
+    - regular: 20px → regular/MailInboxPerson.kt
+  📁 text_column_one_wide_lightning:
+    - regular: 24px → regular/TextColumnOneWideLightning.kt
+  📁 remote:
+    - filled: 20px → filled/Remote.kt
+    - regular: 20px → regular/Remote.kt
+  📁 arrow_curve_up_left:
+    - filled: 20px → filled/ArrowCurveUpLeft.kt
+    - regular: 20px → regular/ArrowCurveUpLeft.kt
+  📁 globe_star:
+    - filled: 20px → filled/GlobeStar.kt
+    - regular: 20px → regular/GlobeStar.kt
+  📁 tooltip_quote:
+    - regular: 24px → regular/TooltipQuote.kt
+  📁 i_os_arrow:
+    - filled: 24px → filled/IOsArrow.kt
+    - regular: 24px → regular/IOsArrow.kt
+  📁 uninstall_app:
+    - regular: 24px → regular/UninstallApp.kt
+  📁 drink_bottle_off:
+    - filled: 20px → filled/DrinkBottleOff.kt
+    - regular: 20px → regular/DrinkBottleOff.kt
+  📁 text_color:
+    - regular: 24px → regular/TextColor.kt
+  📁 table:
+    - regular: 24px → regular/Table.kt
+  📁 vehicle_cable_car:
+    - regular: 24px → regular/VehicleCableCar.kt
+  📁 voicemail_arrow_back:
+    - filled: 20px → filled/VoicemailArrowBack.kt
+    - regular: 20px → regular/VoicemailArrowBack.kt
+  📁 target:
+    - regular: 24px → regular/Target.kt
+  📁 calendar_mention:
+    - filled: 20px → filled/CalendarMention.kt
+    - regular: 20px → regular/CalendarMention.kt
+  📁 clipboard_bullet_list:
+    - filled: 20px → filled/ClipboardBulletList.kt
+    - regular: 20px → regular/ClipboardBulletList.kt
+  📁 translate_auto:
+    - regular: 24px → regular/TranslateAuto.kt
+  📁 tap_double:
+    - regular: 24px → regular/TapDouble.kt
+  📁 location_arrow_up:
+    - filled: 20px → filled/LocationArrowUp.kt
+    - regular: 20px → regular/LocationArrowUp.kt
+  📁 text_column_two_right:
+    - regular: 24px → regular/TextColumnTwoRight.kt
+  📁 mention_arrow_down:
+    - filled: 20px → filled/MentionArrowDown.kt
+    - regular: 20px → regular/MentionArrowDown.kt
+  📁 timeline:
+    - regular: 24px → regular/Timeline.kt
+  📁 code_py_rectangle:
+    - filled: 16px → filled/CodePyRectangle.kt
+    - regular: 16px → regular/CodePyRectangle.kt
+  📁 video_switch:
+    - regular: 24px → regular/VideoSwitch.kt
+  📁 thinking:
+    - regular: 24px → regular/Thinking.kt
+  📁 calendar_info:
+    - filled: 20px → filled/CalendarInfo.kt
+    - regular: 20px → regular/CalendarInfo.kt
+  📁 text_direction_horizontal_left:
+    - regular: 24px → regular/TextDirectionHorizontalLeft.kt
+  📁 text_header1_lines:
+    - filled: 24px → filled/TextHeader1Lines.kt
+    - regular: 24px → regular/TextHeader1Lines.kt
+
+Total variants to sync: 1207
+🧹 Cleaned up temporary repository
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/check_icons-1751424852108.json
+
+1 problem was found storing the configuration cache.
+- Task `:library:checkNewIcons` of type `tasks.CheckNewIconsTask`: invocation of 'Task.project' at execution time is unsupported.
+  See https://docs.gradle.org/8.14.1/userguide/configuration_cache.html#config_cache:requirements:use_project_during_execution
+
+See the complete report at file:///home/runner/work/fluentui-system-icons/fluentui-system-icons/build/reports/configuration-cache/5rm5ucj5hvfqtrq62ohd6bj6d/6hs93y6yv9dt2shbt8ehsw8mn/configuration-cache-report.html
+
+[Incubating] Problems report is available at: file:///home/runner/work/fluentui-system-icons/fluentui-system-icons/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 1m 4s
+5 actionable tasks: 5 executed
+Configuration cache entry stored with 1 problem.
