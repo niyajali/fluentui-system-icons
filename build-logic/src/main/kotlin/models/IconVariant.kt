@@ -34,5 +34,7 @@ data class IconVariant(
     val svgFile: File,
     val priority: Int,
     // "ltr", "rtl", or null for non-directional icons
-    val direction: String? = null
+    val direction: String? = null,
+    val keyword: String? = null,
+    val description: String? = null,
 )

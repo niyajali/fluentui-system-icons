@@ -156,6 +156,8 @@ class IconScanner {
                                 svgFile = svgFile,
                                 priority = calculatePriority(size),
                                 direction = direction,
+                                keyword = metadata.keyword,
+                                description = metadata.description,
                             ),
                         )
                     } else {

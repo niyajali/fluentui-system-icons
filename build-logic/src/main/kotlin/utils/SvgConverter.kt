@@ -115,7 +115,7 @@ class SvgConverter {
         val privateVarName = "_${iconName.replaceFirstChar { it.lowercase() }}"
 
         // Generate keywords from icon name for KDoc
-        val keywords = iconName.replace(Regex("(?<=[a-z])(?=[A-Z])"), " ")
+        val keywords = variant.keyword ?:  iconName.replace(Regex("(?<=[a-z])(?=[A-Z])"), " ")
             .lowercase()
             .split(" ")
             .filter { it.isNotBlank() }
@@ -151,13 +151,15 @@ package fluent.ui.system.icons.${style.lowercase()}
 ${processedImports.sorted().joinToString("\n")}
 
 /**
- * $iconName icon from Microsoft FluentUI System Icons.
+ * $iconName Icon (${variant.size}dp)
  * 
  * **Icon details:**
  * - Style: $styleCapitalized
  * - Size: ${variant.size}dp${if (variant.direction != null) "\n * - Direction: ${variant.direction.uppercase()}" else ""}
  * - Keywords: $keywords
- * - Source: ${variant.svgFile.name}
+ * - Description: ${variant.description ?: "No description provided."}
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/${variant.svgFile.name})
  * 
  * @return The [ImageVector] for the $iconName icon.
  */

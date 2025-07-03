@@ -59,7 +59,7 @@ class IconListUpdater {
         newContent = addIconToListOf(newContent, iconReference, styleCapitalized)
         
         iconListFile.writeText(newContent)
-        println("  ✅ Added $iconName to ${styleCapitalized}IconList")
+        // println("  ✅ Added $iconName to ${styleCapitalized}IconList")
     }
     
     private fun addImportToFile(content: String, importStatement: String): String {
