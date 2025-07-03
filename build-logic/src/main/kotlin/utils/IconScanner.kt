@@ -41,9 +41,6 @@ class IconScanner {
     fun scanSourceIcons(sourceDir: File, supportedStyles: List<String>): Map<String, List<IconVariant>> {
         val iconFamilies = mutableMapOf<String, MutableList<IconVariant>>()
 
-        println("Scanning source icons...")
-        println("Source directory: ${sourceDir.absolutePath}")
-
         if (!sourceDir.exists()) {
             println("ERROR: Source directory does not exist: ${sourceDir.absolutePath}")
             return emptyMap()
@@ -83,7 +80,6 @@ class IconScanner {
                 }
             }
 
-        println("Found ${iconFamilies.size} icon families in source directory")
         return iconFamilies
     }
 
@@ -160,6 +156,8 @@ class IconScanner {
                                 svgFile = svgFile,
                                 priority = calculatePriority(size),
                                 direction = direction,
+                                keyword = metadata.keyword,
+                                description = metadata.description,
                             ),
                         )
                     } else {
@@ -191,8 +189,6 @@ class IconScanner {
     fun getExistingIconVariants(targetDir: File, supportedStyles: List<String>): Set<String> {
         val existingVariants = mutableSetOf<String>()
 
-        println("📂 Scanning existing icons in: ${targetDir.absolutePath}")
-
         if (!targetDir.exists()) {
             println("❌ Target directory does not exist")
             return emptySet()
@@ -206,7 +202,6 @@ class IconScanner {
                     val files = styleDir.listFiles { file: File ->
                         file.extension == "kt" && !file.name.endsWith("IconList.kt")
                     }
-                    println("  ✓ $style/: ${files?.size ?: 0} icons")
 
                     files?.forEach { file ->
                         try {
@@ -226,7 +221,6 @@ class IconScanner {
             }
         }
 
-        println("📈 Total existing variants: ${existingVariants.size}")
         return existingVariants
     }
 
@@ -236,9 +230,6 @@ class IconScanner {
         config: FluentIconsConfig,
     ): List<IconFamily> {
         val familiesToSync = mutableListOf<IconFamily>()
-
-        println("Building icon families for synchronization...")
-        println("Source icons: ${sourceIcons.size}, Existing icons: ${existingIcons.size}")
 
         if (sourceIcons.isEmpty()) {
             println("Warning: No source icons found")
@@ -295,7 +286,6 @@ class IconScanner {
             }
         }
 
-        println("${familiesToSync.size} icon families selected for synchronization")
         return familiesToSync
     }
 

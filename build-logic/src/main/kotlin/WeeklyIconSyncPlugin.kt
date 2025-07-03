@@ -86,13 +86,6 @@ class WeeklyIconSyncPlugin : Plugin<Project> {
             description = "Analyzes FluentUI icon coverage and statistics"
             config.set(extension.toConfig())
         }
-        
-        // Configure task dependencies
-        project.afterEvaluate {
-            project.tasks.named("syncNewIcons") {
-                dependsOn("checkNewIcons")
-            }
-        }
     }
 }
 

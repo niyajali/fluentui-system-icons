@@ -73,9 +73,7 @@ abstract class CheckNewIconsTask : DefaultTask() {
             println("\n📊 Results:")
             println("Found ${families.size} new icon families that would be synced:")
             families.forEach { family ->
-                println("  📁 ${family.baseName}:")
-                family.variants.forEach { (style, variant) ->
-                    println("    - ${style}: ${variant.size}px → ${style}/${FileUtils.toPascalCase(family.baseName)}.kt")
+                family.variants.forEach { (_, _) ->
                     totalVariants++
                 }
             }

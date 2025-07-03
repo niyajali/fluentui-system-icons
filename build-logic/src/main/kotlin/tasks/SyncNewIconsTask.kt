@@ -75,15 +75,12 @@ abstract class SyncNewIconsTask : DefaultTask() {
 
             // Get existing icons in target directory
             val existingIcons = scanner.getExistingIconVariants(targetDir, fluentConfig.supportedStyles)
-            println("📊 Found ${existingIcons.size} existing icon variants")
 
             // Scan source directory for all available icons
             val sourceIcons = scanner.scanSourceIcons(sourceDir, fluentConfig.supportedStyles)
-            println("📊 Found ${sourceIcons.size} icon families in source")
 
             // Build icon families with all available styles
             val iconFamiliesToSync = scanner.buildIconFamiliesForSync(sourceIcons, existingIcons, fluentConfig)
-            println("📊 Selected ${iconFamiliesToSync.size} families for sync")
 
             // Perform the actual sync with SVG conversion
             var newIconsAdded = 0
@@ -92,15 +89,12 @@ abstract class SyncNewIconsTask : DefaultTask() {
             val styleBreakdown = mutableMapOf<String, Int>()
 
             iconFamiliesToSync.forEach { iconFamily ->
-                println("\n📁 Processing: ${iconFamily.baseName}")
-
                 iconFamily.variants.forEach { (style, variant) ->
                     try {
                         val iconName = FileUtils.toPascalCase(iconFamily.baseName)
                         val variantKey = "${iconFamily.baseName}_${variant.style}"
 
                         if (existingIcons.contains(variantKey)) {
-                            println("  ⚠️  Skipping $style - already exists")
                             duplicatesSkipped++
                         } else {
                             val targetFile = File(targetDir, "${style.lowercase()}/${iconName}.kt")
@@ -121,7 +115,6 @@ abstract class SyncNewIconsTask : DefaultTask() {
                             )
                             styleBreakdown[style] = styleBreakdown.getOrDefault(style, 0) + 1
                             newIconsAdded++
-                            println("  ✅ Synced $style (${variant.size}px) → ${targetFile.relativeTo(targetDir).path}")
                         }
                     } catch (e: Exception) {
                         println("  ❌ Failed to sync $style: ${e.message}")

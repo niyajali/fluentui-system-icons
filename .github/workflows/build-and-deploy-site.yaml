@@ -6,6 +6,11 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read  # Read repository contents
+  pages: write    # Write to GitHub Pages
+  id-token: write # Write authentication tokens
+
 jobs:
   build-web-app:
     name: Build Kotlin JS Web App
