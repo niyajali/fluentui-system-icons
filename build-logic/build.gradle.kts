@@ -40,6 +40,8 @@ dependencies {
     implementation(libs.generator.jgit)
     implementation(libs.generator.kotlinpoet)
     implementation(libs.kotlinx.serialization.json)
+    
+    testImplementation(libs.kotlin.test)
 }
 
 gradlePlugin {

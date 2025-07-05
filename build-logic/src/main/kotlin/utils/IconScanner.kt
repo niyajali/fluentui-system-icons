@@ -64,7 +64,7 @@ class IconScanner {
                         if (svgDir.exists()) {
                             val variants = extractIconVariants(svgDir, metadata, supportedStyles)
                             if (variants.isNotEmpty()) {
-                                // Group variants by their final name (includes direction)
+                                // Group variants by their normalized name (includes direction)
                                 variants.groupBy { it.name }.forEach { (iconName, iconVariants) ->
                                     iconFamilies[iconName] = iconVariants.toMutableList()
                                 }
@@ -186,12 +186,12 @@ class IconScanner {
         else -> 10
     }
 
-    fun getExistingIconVariants(targetDir: File, supportedStyles: List<String>): Set<String> {
-        val existingVariants = mutableSetOf<String>()
+    fun getExistingIconVariants(targetDir: File, supportedStyles: List<String>): Map<String, ExistingIconInfo> {
+        val existingVariants = mutableMapOf<String, ExistingIconInfo>()
 
         if (!targetDir.exists()) {
             println("❌ Target directory does not exist")
-            return emptySet()
+            return emptyMap()
         }
 
         supportedStyles.forEach { style ->
@@ -205,10 +205,18 @@ class IconScanner {
 
                     files?.forEach { file ->
                         try {
-                            val iconName = file.nameWithoutExtension
-                            val baseName = iconName.normalizeIconName()
-                            val variantKey = "${baseName}_${style}"
-                            existingVariants.add(variantKey)
+                            val fileName = file.nameWithoutExtension
+
+                            // CRITICAL FIX: Convert Pascal case filename back to normalized name
+                            val normalizedName = fileName.fromPascalCaseToNormalized()
+                            val variantKey = "${normalizedName}_${style}"
+
+                            existingVariants[variantKey] = ExistingIconInfo(
+                                normalizedName = normalizedName,
+                                fileName = fileName,
+                                file = file,
+                                style = style,
+                            )
                         } catch (e: Exception) {
                             println("  Warning: Failed to process file ${file.name}: ${e.message}")
                         }
@@ -226,7 +234,7 @@ class IconScanner {
 
     fun buildIconFamiliesForSync(
         sourceIcons: Map<String, List<IconVariant>>,
-        existingIcons: Set<String>,
+        existingIcons: Map<String, ExistingIconInfo>,
         config: FluentIconsConfig,
     ): List<IconFamily> {
         val familiesToSync = mutableListOf<IconFamily>()
@@ -266,15 +274,26 @@ class IconScanner {
                         if (bestVariant != null) {
                             val variantKey = "${bestVariant.name}_${bestVariant.style}"
 
-                            // Only add if not already exists
-                            if (!existingIcons.contains(variantKey)) {
+                            // Check if we need to sync this variant
+                            val existingInfo = existingIcons[variantKey]
+
+                            if (existingInfo == null) {
+                                // New icon - add for sync
                                 selectedVariants[style] = bestVariant
+                            } else {
+                                // Icon exists but might have different Pascal case name
+                                val expectedPascalName = FileUtils.toPascalCase(bestVariant.name)
+                                if (existingInfo.fileName != expectedPascalName) {
+                                    // Name mismatch - needs update
+                                    selectedVariants[style] = bestVariant
+                                    println("  📝 Icon name change detected: ${existingInfo.fileName} → $expectedPascalName")
+                                }
                             }
                         }
                     }
                 }
 
-                // Only create family if we have at least one new variant
+                // Only create family if we have at least one variant to sync
                 if (selectedVariants.isNotEmpty()) {
                     familiesToSync.add(
                         IconFamily(
@@ -312,12 +331,23 @@ class IconScanner {
 }
 
 /**
+ * Information about existing icon files
+ */
+data class ExistingIconInfo(
+    val normalizedName: String,  // Normalized name (snake_case)
+    val fileName: String,        // Pascal case filename
+    val file: File,             // Actual file
+    val style: String,           // Icon style
+)
+
+/**
  * Normalizes icon names to a consistent format for comparison
  * Examples:
  * - "Battery 0" -> "battery0"
  * - "Battery0" -> "battery0"
  * - "XMLHttpRequest" -> "xml_http_request"
  * - "Access Time" -> "access_time"
+ * - "WiFi1" -> "wifi1"
  */
 fun String.normalizeIconName(): String {
     if (isBlank()) return this
@@ -327,7 +357,7 @@ fun String.normalizeIconName(): String {
         .replace(Regex("\\s+([0-9])"), "$1")
         // Handle letter followed by uppercase letter
         .replace(Regex("([a-z])([A-Z])"), "$1_$2")
-        // Handle uppercase letter followed by uppercase+lowercase  
+        // Handle uppercase letter followed by uppercase+lowercase
         .replace(Regex("([A-Z])([A-Z][a-z])"), "$1_$2")
         // Replace remaining spaces with underscores
         .replace(Regex("\\s+"), "_")
@@ -335,6 +365,22 @@ fun String.normalizeIconName(): String {
         .replace(Regex("_+"), "_")
         // Remove leading/trailing underscores
         .trim('_')
+        .lowercase()
+}
+
+/**
+ * Converts Pascal case back to normalized form for comparison
+ * Examples:
+ * - "WiFi1" -> "wifi1"
+ * - "AccessTime" -> "access_time"
+ * - "TaskListLtr" -> "task_list_ltr"
+ */
+fun String.fromPascalCaseToNormalized(): String {
+    if (isBlank()) return this
+
+    return this
+        // Insert underscore before uppercase letters (except at start)
+        .replace(Regex("(?<!^)([A-Z])"), "_$1")
         .lowercase()
 }
 

@@ -73,20 +73,22 @@ abstract class SyncNewIconsTask : DefaultTask() {
             val converter = SvgConverter()
             val listUpdater = IconListUpdater()
 
-            // Get existing icons in target directory
+            // Get existing icons in target directory with improved detection
             val existingIcons = scanner.getExistingIconVariants(targetDir, fluentConfig.supportedStyles)
 
             // Scan source directory for all available icons
             val sourceIcons = scanner.scanSourceIcons(sourceDir, fluentConfig.supportedStyles)
 
-            // Build icon families with all available styles
+            // Build icon families with improved duplicate detection
             val iconFamiliesToSync = scanner.buildIconFamiliesForSync(sourceIcons, existingIcons, fluentConfig)
 
             // Perform the actual sync with SVG conversion
             var newIconsAdded = 0
+            var iconsUpdated = 0
             var duplicatesSkipped = 0
             val syncedIcons = mutableListOf<SyncedIconInfo>()
             val styleBreakdown = mutableMapOf<String, Int>()
+            val modifiedStyles = mutableSetOf<String>()
 
             iconFamiliesToSync.forEach { iconFamily ->
                 iconFamily.variants.forEach { (style, variant) ->
@@ -94,17 +96,40 @@ abstract class SyncNewIconsTask : DefaultTask() {
                         val iconName = FileUtils.toPascalCase(iconFamily.baseName)
                         val variantKey = "${iconFamily.baseName}_${variant.style}"
 
-                        if (existingIcons.contains(variantKey)) {
-                            duplicatesSkipped++
-                        } else {
-                            val targetFile = File(targetDir, "${style.lowercase()}/${iconName}.kt")
+                        val existingInfo = existingIcons[variantKey]
+                        val targetFile = File(targetDir, "${style.lowercase()}/${iconName}.kt")
 
-                            // Convert SVG to ImageVector and generate Kotlin code
+                        if (existingInfo == null) {
+                            // New icon
                             converter.convertSvgToImageVector(variant, targetFile, style, iconName)
-
-                            // Update the corresponding IconList file
                             listUpdater.updateIconListFile(targetDir, style, iconName)
+                            newIconsAdded++
+                            modifiedStyles.add(style)
+                        } else if (existingInfo.fileName != iconName) {
+                            // Icon name changed - update existing file
+                            println("  🔄 Icon name change: ${existingInfo.fileName} → $iconName")
+                            
+                            // Delete old file if different
+                            if (existingInfo.file.name != "${iconName}.kt") {
+                                existingInfo.file.delete()
+                                println("  🗑️  Removed old file: ${existingInfo.file.name}")
+                            }
+                            
+                            // Create new file with updated content
+                            converter.convertSvgToImageVector(variant, targetFile, style, iconName)
+                            
+                            // Update icon list with cleanup of old references
+                            listUpdater.updateIconListFile(targetDir, style, iconName, existingInfo.fileName)
+                            
+                            iconsUpdated++
+                            modifiedStyles.add(style)
+                        } else {
+                            // Icon exists with same name - skip
+                            duplicatesSkipped++
+                        }
 
+                        // Track for reporting
+                        if (existingInfo == null || existingInfo.fileName != iconName) {
                             syncedIcons.add(
                                 SyncedIconInfo(
                                     iconName = iconName,
@@ -114,19 +139,25 @@ abstract class SyncNewIconsTask : DefaultTask() {
                                 ),
                             )
                             styleBreakdown[style] = styleBreakdown.getOrDefault(style, 0) + 1
-                            newIconsAdded++
                         }
                     } catch (e: Exception) {
-                        println("  ❌ Failed to sync $style: ${e.message}")
+                        println("  ❌ Failed to sync $style/${iconFamily.baseName}: ${e.message}")
                         e.printStackTrace()
                     }
                 }
+            }
+
+            // Rebuild icon lists for modified styles to ensure consistency
+            modifiedStyles.forEach { style ->
+                println("  🔄 Rebuilding ${style}IconList for consistency...")
+                listUpdater.rebuildIconListFile(targetDir, style)
             }
 
             // Log results
             logSyncResult(
                 config = fluentConfig,
                 newIconsAdded = newIconsAdded,
+                iconsUpdated = iconsUpdated,
                 duplicatesSkipped = duplicatesSkipped,
                 syncedIcons = syncedIcons,
                 iconFamiliesProcessed = iconFamiliesToSync.size,
@@ -138,6 +169,7 @@ abstract class SyncNewIconsTask : DefaultTask() {
     private fun logSyncResult(
         config: FluentIconsConfig,
         newIconsAdded: Int,
+        iconsUpdated: Int,
         duplicatesSkipped: Int,
         syncedIcons: List<SyncedIconInfo>,
         iconFamiliesProcessed: Int,
@@ -160,6 +192,7 @@ abstract class SyncNewIconsTask : DefaultTask() {
             📊 Summary:
               Icon families processed: $iconFamiliesProcessed
               New variants added: $newIconsAdded
+              Icons updated: $iconsUpdated
               Duplicates skipped: $duplicatesSkipped
               Total processed: ${syncedIcons.size + duplicatesSkipped}
             
@@ -178,6 +211,9 @@ abstract class SyncNewIconsTask : DefaultTask() {
         println("=".repeat(60))
         println("🏠 Icon families processed: $iconFamiliesProcessed")
         println("✅ New variants added: $newIconsAdded")
+        if (iconsUpdated > 0) {
+            println("🔄 Icons updated: $iconsUpdated")
+        }
         println("⚠️  Duplicates skipped: $duplicatesSkipped")
         println("📈 Total processed: ${syncedIcons.size + duplicatesSkipped}")
 

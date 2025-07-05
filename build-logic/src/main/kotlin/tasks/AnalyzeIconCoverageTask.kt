@@ -70,11 +70,11 @@ abstract class AnalyzeIconCoverageTask : DefaultTask() {
             val existingVariantsCount = existingIcons.size
             
             // Style breakdown
-            val styleStats = mutableMapOf<String, Pair<Int, Int>>() // source count, existing count
+            val styleStats = mutableMapOf<String, Pair<Int, Int>>()
             
             fluentConfig.supportedStyles.forEach { style ->
                 val sourceVariantsForStyle = sourceIcons.values.flatten().count { it.style == style }
-                val existingVariantsForStyle = existingIcons.count { it.endsWith("_$style") }
+                val existingVariantsForStyle = existingIcons.count { it.key.endsWith("_$style") }
                 styleStats[style] = Pair(sourceVariantsForStyle, existingVariantsForStyle)
             }
             

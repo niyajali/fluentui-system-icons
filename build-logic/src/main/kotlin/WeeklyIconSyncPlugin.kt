@@ -29,6 +29,7 @@ import org.gradle.api.provider.MapProperty
 import org.gradle.api.provider.Property
 import tasks.AnalyzeIconCoverageTask
 import tasks.CheckNewIconsTask
+import tasks.CleanupIconsTask
 import tasks.SyncNewIconsTask
 import utils.GitRefUtils
 
@@ -84,6 +85,12 @@ class WeeklyIconSyncPlugin : Plugin<Project> {
         project.tasks.register("analyzeIconCoverage", AnalyzeIconCoverageTask::class.java) {
             group = "fluent icons"
             description = "Analyzes FluentUI icon coverage and statistics"
+            config.set(extension.toConfig())
+        }
+        
+        project.tasks.register("cleanupIcons", CleanupIconsTask::class.java) {
+            group = "fluent icons"
+            description = "Cleans up duplicate icons and rebuilds icon lists for consistency"
             config.set(extension.toConfig())
         }
     }
