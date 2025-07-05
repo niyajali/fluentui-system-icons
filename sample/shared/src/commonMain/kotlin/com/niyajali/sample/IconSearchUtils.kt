@@ -38,7 +38,7 @@ object IconSearchUtils {
      */
     fun getAllIcons(): Map<IconCategory, List<IconItem>> {
         return mapOf(
-            IconCategory.COLORED to FluentIcons.ColoredIconList.mapToIconItems(IconCategory.COLORED),
+            IconCategory.COLORED to FluentIcons.ColorIconList.mapToIconItems(IconCategory.COLORED),
             IconCategory.REGULAR to FluentIcons.RegularIconList.mapToIconItems(IconCategory.REGULAR),
             IconCategory.FILLED to FluentIcons.FilledIconList.mapToIconItems(IconCategory.FILLED),
             IconCategory.LIGHT to FluentIcons.LightIconList.mapToIconItems(IconCategory.LIGHT)
