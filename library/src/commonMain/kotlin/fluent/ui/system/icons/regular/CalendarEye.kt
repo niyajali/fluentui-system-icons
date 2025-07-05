@@ -1,0 +1,134 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2020 Microsoft Corporation
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+package fluent.ui.system.icons.regular
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
+
+/**
+ * CalendarEye Icon (20dp)
+ * 
+ * **Icon details:**
+ * - Style: Regular
+ * - Size: 20dp
+ * - Keywords: calendar, eye
+ * - Description: No description provided.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_calendar_eye_20_regular.svg)
+ * 
+ * @return The [ImageVector] for the CalendarEye icon.
+ */
+public val FluentIcons.Regular.CalendarEye: ImageVector
+    get() {
+        if (_calendarEye != null) {
+            return _calendarEye!!
+        }
+        _calendarEye = Builder(name = "CalendarEye", defaultWidth = 20.0.dp, defaultHeight = 20.0.dp, viewportWidth = 20.0f, viewportHeight = 20.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                moveTo(14.5f, 3.0f)
+                curveTo(15.881f, 3.0f, 17.0f, 4.119f, 17.0f, 5.5f)
+                verticalLineTo(11.567f)
+                curveTo(16.688f, 11.417f, 16.354f, 11.291f, 16.0f, 11.196f)
+                verticalLineTo(7.0f)
+                horizontalLineTo(4.0f)
+                verticalLineTo(14.5f)
+                curveTo(4.0f, 15.328f, 4.672f, 16.0f, 5.5f, 16.0f)
+                horizontalLineTo(9.052f)
+                curveTo(9.118f, 16.331f, 9.245f, 16.67f, 9.42f, 17.0f)
+                horizontalLineTo(5.5f)
+                curveTo(4.119f, 17.0f, 3.0f, 15.881f, 3.0f, 14.5f)
+                verticalLineTo(5.5f)
+                curveTo(3.0f, 4.119f, 4.119f, 3.0f, 5.5f, 3.0f)
+                horizontalLineTo(14.5f)
+                close()
+                moveTo(14.5f, 4.0f)
+                horizontalLineTo(5.5f)
+                curveTo(4.672f, 4.0f, 4.0f, 4.672f, 4.0f, 5.5f)
+                verticalLineTo(6.0f)
+                horizontalLineTo(16.0f)
+                verticalLineTo(5.5f)
+                curveTo(16.0f, 4.672f, 15.328f, 4.0f, 14.5f, 4.0f)
+                close()
+                moveTo(14.5f, 12.0f)
+                curveTo(11.736f, 12.0f, 10.0f, 14.318f, 10.0f, 15.5f)
+                curveTo(10.0f, 16.7f, 11.739f, 19.0f, 14.5f, 19.0f)
+                curveTo(17.261f, 19.0f, 19.0f, 16.682f, 19.0f, 15.5f)
+                curveTo(19.0f, 14.3f, 17.261f, 12.0f, 14.5f, 12.0f)
+                close()
+                moveTo(14.5f, 18.0f)
+                curveTo(14.005f, 18.0f, 13.522f, 17.853f, 13.111f, 17.579f)
+                curveTo(12.7f, 17.304f, 12.38f, 16.913f, 12.19f, 16.457f)
+                curveTo(12.001f, 16.0f, 11.952f, 15.497f, 12.048f, 15.012f)
+                curveTo(12.144f, 14.527f, 12.383f, 14.082f, 12.732f, 13.732f)
+                curveTo(13.082f, 13.383f, 13.527f, 13.144f, 14.012f, 13.048f)
+                curveTo(14.497f, 12.952f, 15.0f, 13.001f, 15.457f, 13.19f)
+                curveTo(15.913f, 13.38f, 16.304f, 13.7f, 16.579f, 14.111f)
+                curveTo(16.853f, 14.522f, 17.0f, 15.005f, 17.0f, 15.5f)
+                curveTo(17.0f, 16.163f, 16.737f, 16.799f, 16.268f, 17.268f)
+                curveTo(15.799f, 17.737f, 15.163f, 18.0f, 14.5f, 18.0f)
+                close()
+                moveTo(16.0f, 15.5f)
+                curveTo(16.0f, 15.797f, 15.912f, 16.087f, 15.747f, 16.333f)
+                curveTo(15.582f, 16.58f, 15.348f, 16.772f, 15.074f, 16.886f)
+                curveTo(14.8f, 16.999f, 14.498f, 17.029f, 14.207f, 16.971f)
+                curveTo(13.916f, 16.913f, 13.649f, 16.77f, 13.439f, 16.561f)
+                curveTo(13.23f, 16.351f, 13.087f, 16.084f, 13.029f, 15.793f)
+                curveTo(12.971f, 15.502f, 13.001f, 15.2f, 13.114f, 14.926f)
+                curveTo(13.228f, 14.652f, 13.42f, 14.418f, 13.667f, 14.253f)
+                curveTo(13.913f, 14.088f, 14.203f, 14.0f, 14.5f, 14.0f)
+                curveTo(14.898f, 14.0f, 15.279f, 14.158f, 15.561f, 14.439f)
+                curveTo(15.842f, 14.721f, 16.0f, 15.102f, 16.0f, 15.5f)
+                close()
+            }
+        }
+        .build()
+        return _calendarEye!!
+    }
+
+@Suppress("ObjectPropertyName")
+private var _calendarEye: ImageVector? = null
+
+@Preview
+@Composable
+private fun CalendarEyePreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentIcons.Regular.CalendarEye, contentDescription = "CalendarEye Icon")
+    }
+}
+
