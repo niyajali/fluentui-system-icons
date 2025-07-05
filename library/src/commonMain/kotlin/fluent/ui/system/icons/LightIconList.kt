@@ -156,6 +156,7 @@ import fluent.ui.system.icons.light.PersonFeedback
 import fluent.ui.system.icons.light.PersonMail
 import fluent.ui.system.icons.light.PersonProhibited
 import fluent.ui.system.icons.light.PersonSuport
+import fluent.ui.system.icons.light.PersonSupport
 import fluent.ui.system.icons.light.Phone
 import fluent.ui.system.icons.light.PictureInPicture
 import fluent.ui.system.icons.light.Pin
@@ -172,10 +173,12 @@ import fluent.ui.system.icons.light.Settings
 import fluent.ui.system.icons.light.Share
 import fluent.ui.system.icons.light.ShieldError
 import fluent.ui.system.icons.light.Signature
+import fluent.ui.system.icons.light.SpeakerMute
 import fluent.ui.system.icons.light.SquareArrowForward
 import fluent.ui.system.icons.light.Stamp
 import fluent.ui.system.icons.light.StarAdd
 import fluent.ui.system.icons.light.StarArrowRight
+import fluent.ui.system.icons.light.Sticker
 import fluent.ui.system.icons.light.TabAdd
 import fluent.ui.system.icons.light.Table
 import fluent.ui.system.icons.light.TableAltText
@@ -190,6 +193,7 @@ import fluent.ui.system.icons.light.TableSettings
 import fluent.ui.system.icons.light.TableSimple
 import fluent.ui.system.icons.light.Tag
 import fluent.ui.system.icons.light.Text
+import fluent.ui.system.icons.light.TextBoxAlignTopLeft
 import fluent.ui.system.icons.light.TextClearFormatting
 import fluent.ui.system.icons.light.TextCollapse
 import fluent.ui.system.icons.light.TextDensity
@@ -345,6 +349,7 @@ public val FluentIcons.LightIconList: List<ImageVector>
             FluentIcons.Light.PersonMail,
             FluentIcons.Light.PersonProhibited,
             FluentIcons.Light.PersonSuport,
+            FluentIcons.Light.PersonSupport,
             FluentIcons.Light.Phone,
             FluentIcons.Light.PictureInPicture,
             FluentIcons.Light.Pin,
@@ -361,10 +366,12 @@ public val FluentIcons.LightIconList: List<ImageVector>
             FluentIcons.Light.Share,
             FluentIcons.Light.ShieldError,
             FluentIcons.Light.Signature,
+            FluentIcons.Light.SpeakerMute,
             FluentIcons.Light.SquareArrowForward,
             FluentIcons.Light.Stamp,
             FluentIcons.Light.StarAdd,
             FluentIcons.Light.StarArrowRight,
+            FluentIcons.Light.Sticker,
             FluentIcons.Light.TabAdd,
             FluentIcons.Light.Table,
             FluentIcons.Light.TableAltText,
@@ -379,6 +386,7 @@ public val FluentIcons.LightIconList: List<ImageVector>
             FluentIcons.Light.TableSimple,
             FluentIcons.Light.Tag,
             FluentIcons.Light.Text,
+            FluentIcons.Light.TextBoxAlignTopLeft,
             FluentIcons.Light.TextClearFormatting,
             FluentIcons.Light.TextCollapse,
             FluentIcons.Light.TextDensity,
