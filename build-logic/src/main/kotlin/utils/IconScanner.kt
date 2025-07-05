@@ -41,9 +41,6 @@ class IconScanner {
     fun scanSourceIcons(sourceDir: File, supportedStyles: List<String>): Map<String, List<IconVariant>> {
         val iconFamilies = mutableMapOf<String, MutableList<IconVariant>>()
 
-        println("Scanning source icons...")
-        println("Source directory: ${sourceDir.absolutePath}")
-
         if (!sourceDir.exists()) {
             println("ERROR: Source directory does not exist: ${sourceDir.absolutePath}")
             return emptyMap()
@@ -56,10 +53,7 @@ class IconScanner {
                 if (metadataFile.exists()) {
                     try {
                         val metadataContent = metadataFile.readText()
-                        if (metadataContent.isBlank()) {
-                            println("Warning: Empty metadata file: ${iconDir.name}")
-                            return@forEach
-                        }
+                        if (metadataContent.isBlank()) return@forEach
 
                         val metadata = json.decodeFromString<IconMetadata>(metadataContent)
                         val svgDir = File(iconDir, "SVG")
@@ -67,23 +61,17 @@ class IconScanner {
                         if (svgDir.exists()) {
                             val variants = extractIconVariants(svgDir, metadata, supportedStyles)
                             if (variants.isNotEmpty()) {
-                                // Group variants by their final name (includes direction)
                                 variants.groupBy { it.name }.forEach { (iconName, iconVariants) ->
                                     iconFamilies[iconName] = iconVariants.toMutableList()
                                 }
-                            } else {
-                                println("Warning: No valid variants found for '${metadata.name}'")
                             }
-                        } else {
-                            println("Warning: SVG directory not found for '${metadata.name}'")
                         }
                     } catch (e: Exception) {
-                        println("Error parsing metadata for ${iconDir.name}: ${e.message}")
+                        // Skip problematic metadata files silently
                     }
                 }
             }
 
-        println("Found ${iconFamilies.size} icon families in source directory")
         return iconFamilies
     }
 
@@ -95,10 +83,7 @@ class IconScanner {
         val variants = mutableListOf<IconVariant>()
 
         val svgFiles = svgDir.listFiles { file: File -> file.extension == "svg" }
-        if (svgFiles.isNullOrEmpty()) {
-            println("  No SVG files found in ${svgDir.absolutePath}")
-            return variants
-        }
+        if (svgFiles.isNullOrEmpty()) return variants
 
         svgFiles.forEach { svgFile ->
             val fileName = svgFile.nameWithoutExtension
@@ -160,19 +145,18 @@ class IconScanner {
                                 svgFile = svgFile,
                                 priority = calculatePriority(size),
                                 direction = direction,
+                                keyword = metadata.keyword,
+                                description = metadata.description,
                             ),
                         )
                     } else {
-                        // Skip with minimal logging for unsupported variants
-                        if (size == null) {
-                            println("    Skipped $fileName: invalid size")
-                        }
+                        // Skip unsupported variants silently
                     }
                 } catch (e: Exception) {
-                    println("    Warning: Failed to parse filename: $fileName")
+                    // Skip problematic files silently
                 }
             } else {
-                println("    Warning: Invalid filename pattern: $fileName")
+                // Skip invalid filename patterns silently
             }
         }
 
@@ -188,102 +172,100 @@ class IconScanner {
         else -> 10
     }
 
-    fun getExistingIconVariants(targetDir: File, supportedStyles: List<String>): Set<String> {
-        val existingVariants = mutableSetOf<String>()
-
-        println("📂 Scanning existing icons in: ${targetDir.absolutePath}")
+    fun getExistingIconVariants(targetDir: File, supportedStyles: List<String>): Map<String, ExistingIconInfo> {
+        val existingVariants = mutableMapOf<String, ExistingIconInfo>()
 
         if (!targetDir.exists()) {
-            println("❌ Target directory does not exist")
-            return emptySet()
+            return emptyMap()
         }
 
         supportedStyles.forEach { style ->
             val styleDir = File(targetDir, style.lowercase())
 
             if (styleDir.exists()) {
-                try {
-                    val files = styleDir.listFiles { file: File ->
-                        file.extension == "kt" && !file.name.endsWith("IconList.kt")
-                    }
-                    println("  ✓ $style/: ${files?.size ?: 0} icons")
-
-                    files?.forEach { file ->
-                        try {
-                            val iconName = file.nameWithoutExtension
-                            val baseName = iconName.normalizeIconName()
-                            val variantKey = "${baseName}_${style}"
-                            existingVariants.add(variantKey)
-                        } catch (e: Exception) {
-                            println("  Warning: Failed to process file ${file.name}: ${e.message}")
-                        }
-                    }
-                } catch (e: Exception) {
-                    println("  ❌ Error reading $style/: ${e.message}")
+                val files = styleDir.listFiles { file: File ->
+                    file.extension == "kt" && !file.name.endsWith("IconList.kt")
                 }
-            } else {
-                println("  ❌ $style/: directory not found")
+
+                files?.forEach { file ->
+                    try {
+                        val fileName = file.nameWithoutExtension
+                        val actualPropertyName = extractImageVectorPropertyName(file, style)
+                        if (actualPropertyName != null) {
+                            val normalizedName = actualPropertyName.fromPascalCaseToNormalized()
+                            val variantKey = "${normalizedName}_${style}"
+                            
+                            existingVariants[variantKey] = ExistingIconInfo(
+                                normalizedName = normalizedName,
+                                propertyName = actualPropertyName,
+                                fileName = fileName,
+                                file = file,
+                                style = style
+                            )
+                        }
+                    } catch (e: Exception) {
+                        // Skip problematic files silently
+                    }
+                }
             }
         }
 
-        println("📈 Total existing variants: ${existingVariants.size}")
         return existingVariants
+    }
+
+    /**
+     * Extracts the actual ImageVector property name from a Kotlin file
+     * This ensures we know exactly what property names are in use
+     */
+    private fun extractImageVectorPropertyName(file: File, style: String): String? {
+        try {
+            val content = file.readText()
+            val styleCapitalized = style.replaceFirstChar { it.uppercase() }
+            
+            // Look for pattern: public val FluentIcons.StyleName.PropertyName: ImageVector
+            val pattern = Regex(
+                """public\s+val\s+FluentIcons\.$styleCapitalized\.([A-Za-z][A-Za-z0-9]*)\s*:\s*ImageVector""",
+                RegexOption.MULTILINE
+            )
+            
+            return pattern.find(content)?.groupValues?.get(1)
+        } catch (e: Exception) {
+            return null
+        }
     }
 
     fun buildIconFamiliesForSync(
         sourceIcons: Map<String, List<IconVariant>>,
-        existingIcons: Set<String>,
+        existingIcons: Map<String, ExistingIconInfo>,
         config: FluentIconsConfig,
     ): List<IconFamily> {
         val familiesToSync = mutableListOf<IconFamily>()
 
-        println("Building icon families for synchronization...")
-        println("Source icons: ${sourceIcons.size}, Existing icons: ${existingIcons.size}")
-
-        if (sourceIcons.isEmpty()) {
-            println("Warning: No source icons found")
-            return emptyList()
-        }
-
-        if (config.supportedStyles.isEmpty()) {
-            println("Warning: No supported styles configured")
+        if (sourceIcons.isEmpty() || config.supportedStyles.isEmpty()) {
             return emptyList()
         }
 
         sourceIcons.forEach { (iconName, variants) ->
-            if (iconName.isBlank()) {
-                println("Warning: Skipping icon with blank name")
-                return@forEach
-            }
+            if (iconName.isNotBlank() && variants.isNotEmpty() && !isExcluded(iconName, config.excludePatterns)) {
 
-            if (variants.isEmpty()) {
-                println("Warning: No variants found for icon: $iconName")
-                return@forEach
-            }
-
-            if (!isExcluded(iconName, config.excludePatterns)) {
-
-                // Group variants by style
                 val variantsByStyle = variants.groupBy { it.style }
                 val selectedVariants = mutableMapOf<String, IconVariant>()
 
-                // For each supported style, find the best size variant
                 config.supportedStyles.forEach { style ->
                     val styleVariants = variantsByStyle[style]
                     if (!styleVariants.isNullOrEmpty()) {
                         val bestVariant = findBestSizeVariant(styleVariants, config)
                         if (bestVariant != null) {
                             val variantKey = "${bestVariant.name}_${bestVariant.style}"
-
-                            // Only add if not already exists
-                            if (!existingIcons.contains(variantKey)) {
+                            val existingInfo = existingIcons[variantKey]
+                            
+                            if (existingInfo == null) {
                                 selectedVariants[style] = bestVariant
                             }
                         }
                     }
                 }
 
-                // Only create family if we have at least one new variant
                 if (selectedVariants.isNotEmpty()) {
                     familiesToSync.add(
                         IconFamily(
@@ -295,7 +277,6 @@ class IconScanner {
             }
         }
 
-        println("${familiesToSync.size} icon families selected for synchronization")
         return familiesToSync
     }
 
@@ -322,12 +303,24 @@ class IconScanner {
 }
 
 /**
+ * Information about existing icon files
+ */
+data class ExistingIconInfo(
+    val normalizedName: String,   // Normalized name (snake_case) for comparison
+    val propertyName: String,     // Actual ImageVector property name (e.g., "WiFi")
+    val fileName: String,         // Pascal case filename (e.g., "WiFi") 
+    val file: File,              // Actual file
+    val style: String            // Icon style
+)
+
+/**
  * Normalizes icon names to a consistent format for comparison
  * Examples:
  * - "Battery 0" -> "battery0"
  * - "Battery0" -> "battery0"
  * - "XMLHttpRequest" -> "xml_http_request"
  * - "Access Time" -> "access_time"
+ * - "WiFi1" -> "wifi1"
  */
 fun String.normalizeIconName(): String {
     if (isBlank()) return this
@@ -345,6 +338,22 @@ fun String.normalizeIconName(): String {
         .replace(Regex("_+"), "_")
         // Remove leading/trailing underscores
         .trim('_')
+        .lowercase()
+}
+
+/**
+ * Converts Pascal case back to normalized form for comparison
+ * Examples:
+ * - "WiFi1" -> "wifi1"
+ * - "AccessTime" -> "access_time"
+ * - "TaskListLtr" -> "task_list_ltr"
+ */
+fun String.fromPascalCaseToNormalized(): String {
+    if (isBlank()) return this
+    
+    return this
+        // Insert underscore before uppercase letters (except at start)
+        .replace(Regex("(?<!^)([A-Z])"), "_$1")
         .lowercase()
 }
 

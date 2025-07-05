@@ -22,35 +22,5 @@
  * SOFTWARE.
  */
 
-plugins {
-    `kotlin-dsl`
-    alias(libs.plugins.kotlinx.serialization)
-}
-
-repositories {
-    gradlePluginPortal()
-    google()
-    mavenCentral()
-    maven("https://jitpack.io")
-    maven("https://jetbrains.bintray.com/trove4j")
-}
-
-dependencies {
-    implementation(libs.generator.svgToCompose)
-    implementation(libs.generator.jgit)
-    implementation(libs.generator.kotlinpoet)
-    implementation(libs.kotlinx.serialization.json)
-    
-    testImplementation(libs.kotlin.test)
-}
-
-gradlePlugin {
-    plugins {
-        create("fluentIconsSync") {
-            id = "fluent.icons"
-            implementationClass = "WeeklyIconSyncPlugin"
-            displayName = "FluentUI Icons Plugin"
-            description = "Automatically syncs and converts FluentUI System Icons to Jetpack Compose ImageVectors"
-        }
-    }
-}
+// This file has been replaced by Gradle's built-in task dependencies.
+// See WeeklyIconSyncPlugin.kt for the syncAndUpdateIcons task configuration.

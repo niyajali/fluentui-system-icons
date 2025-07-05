@@ -29,7 +29,9 @@ import org.gradle.api.provider.MapProperty
 import org.gradle.api.provider.Property
 import tasks.AnalyzeIconCoverageTask
 import tasks.CheckNewIconsTask
+import tasks.CleanupIconsTask
 import tasks.SyncNewIconsTask
+import tasks.UpdateIconListsTask
 import utils.GitRefUtils
 
 /**
@@ -77,8 +79,27 @@ class WeeklyIconSyncPlugin : Plugin<Project> {
         
         project.tasks.register("syncNewIcons", SyncNewIconsTask::class.java) {
             group = "fluent icons"
-            description = "Syncs new FluentUI icons, converting SVGs to ImageVectors"
+            description = "Syncs new FluentUI icons (SVG to ImageVector conversion only)"
             config.set(extension.toConfig())
+        }
+        
+        project.tasks.register("updateIconLists", UpdateIconListsTask::class.java) {
+            group = "fluent icons"
+            description = "Updates icon list files by reading actual ImageVector properties from generated files"
+            config.set(extension.toConfig())
+        }
+        
+        project.tasks.register("syncAndUpdateIcons") {
+            group = "fluent icons"
+            description = "Syncs new icons and updates icon lists in sequence"
+            dependsOn("syncNewIcons", "updateIconLists")
+        }
+        
+        // Configure task ordering after all tasks are registered
+        project.afterEvaluate {
+            project.tasks.named("updateIconLists") {
+                mustRunAfter("syncNewIcons")
+            }
         }
         
         project.tasks.register("analyzeIconCoverage", AnalyzeIconCoverageTask::class.java) {
@@ -87,11 +108,10 @@ class WeeklyIconSyncPlugin : Plugin<Project> {
             config.set(extension.toConfig())
         }
         
-        // Configure task dependencies
-        project.afterEvaluate {
-            project.tasks.named("syncNewIcons") {
-                dependsOn("checkNewIcons")
-            }
+        project.tasks.register("cleanupIcons", CleanupIconsTask::class.java) {
+            group = "fluent icons"
+            description = "Analyzes icon consistency and rebuilds lists (safe mode - no file deletions)"
+            config.set(extension.toConfig())
         }
     }
 }

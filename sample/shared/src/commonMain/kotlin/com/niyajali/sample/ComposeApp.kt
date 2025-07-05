@@ -98,7 +98,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.window.core.layout.WindowSizeClass
 import androidx.window.core.layout.WindowWidthSizeClass
-import fluent.ui.system.icons.ColoredIconList
+import fluent.ui.system.icons.ColorIconList
 import fluent.ui.system.icons.FilledIconList
 import fluent.ui.system.icons.FluentIcons
 import fluent.ui.system.icons.LightIconList
@@ -134,7 +134,7 @@ fun ComposeApp(modifier: Modifier = Modifier) {
     // Simulate loading and gather all icons
     val allIcons by remember {
         derivedStateOf {
-            val coloredIcons = FluentIcons.ColoredIconList.map {
+            val coloredIcons = FluentIcons.ColorIconList.map {
                 IconItem(
                     icon = it,
                     name = it.name.substringAfter("."),
@@ -538,7 +538,6 @@ private fun IconCard(
     onCopyName: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    var isHovered by remember { mutableStateOf(false) }
     var showCopyFeedback by remember { mutableStateOf(false) }
 
     LaunchedEffect(showCopyFeedback) {

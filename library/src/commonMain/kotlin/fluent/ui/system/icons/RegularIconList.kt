@@ -1924,6 +1924,15 @@ import fluent.ui.system.icons.regular.TextBulletListSquareEdit
 import fluent.ui.system.icons.regular.TextBulletListSquareSparkle
 import fluent.ui.system.icons.regular.TextBulletListSquareWarning
 import fluent.ui.system.icons.regular.TextBulletListTree
+import fluent.ui.system.icons.regular.WiFi1
+import fluent.ui.system.icons.regular.WiFi2
+import fluent.ui.system.icons.regular.WiFi3
+import fluent.ui.system.icons.regular.WiFi4
+import fluent.ui.system.icons.regular.WiFiLock
+import fluent.ui.system.icons.regular.WiFiOff
+import fluent.ui.system.icons.regular.ZoomFit
+import fluent.ui.system.icons.regular.ZoomIn
+import fluent.ui.system.icons.regular.ZoomOut
 
 public val FluentIcons.RegularIconList: List<ImageVector>
     get() {
@@ -3830,7 +3839,16 @@ public val FluentIcons.RegularIconList: List<ImageVector>
             FluentIcons.Regular.TextBulletListSquareEdit,
             FluentIcons.Regular.TextBulletListSquareSparkle,
             FluentIcons.Regular.TextBulletListSquareWarning,
-            FluentIcons.Regular.TextBulletListTree
+            FluentIcons.Regular.TextBulletListTree,
+            FluentIcons.Regular.WiFi1,
+            FluentIcons.Regular.WiFi2,
+            FluentIcons.Regular.WiFi3,
+            FluentIcons.Regular.WiFi4,
+            FluentIcons.Regular.WiFiLock,
+            FluentIcons.Regular.WiFiOff,
+            FluentIcons.Regular.ZoomFit,
+            FluentIcons.Regular.ZoomIn,
+            FluentIcons.Regular.ZoomOut
         )
 
         return regularIcons!!
