@@ -53,10 +53,7 @@ class IconScanner {
                 if (metadataFile.exists()) {
                     try {
                         val metadataContent = metadataFile.readText()
-                        if (metadataContent.isBlank()) {
-                            println("Warning: Empty metadata file: ${iconDir.name}")
-                            return@forEach
-                        }
+                        if (metadataContent.isBlank()) return@forEach
 
                         val metadata = json.decodeFromString<IconMetadata>(metadataContent)
                         val svgDir = File(iconDir, "SVG")
@@ -64,18 +61,13 @@ class IconScanner {
                         if (svgDir.exists()) {
                             val variants = extractIconVariants(svgDir, metadata, supportedStyles)
                             if (variants.isNotEmpty()) {
-                                // Group variants by their normalized name (includes direction)
                                 variants.groupBy { it.name }.forEach { (iconName, iconVariants) ->
                                     iconFamilies[iconName] = iconVariants.toMutableList()
                                 }
-                            } else {
-                                println("Warning: No valid variants found for '${metadata.name}'")
                             }
-                        } else {
-                            println("Warning: SVG directory not found for '${metadata.name}'")
                         }
                     } catch (e: Exception) {
-                        println("Error parsing metadata for ${iconDir.name}: ${e.message}")
+                        // Skip problematic metadata files silently
                     }
                 }
             }
@@ -91,10 +83,7 @@ class IconScanner {
         val variants = mutableListOf<IconVariant>()
 
         val svgFiles = svgDir.listFiles { file: File -> file.extension == "svg" }
-        if (svgFiles.isNullOrEmpty()) {
-            println("  No SVG files found in ${svgDir.absolutePath}")
-            return variants
-        }
+        if (svgFiles.isNullOrEmpty()) return variants
 
         svgFiles.forEach { svgFile ->
             val fileName = svgFile.nameWithoutExtension
@@ -161,16 +150,13 @@ class IconScanner {
                             ),
                         )
                     } else {
-                        // Skip with minimal logging for unsupported variants
-                        if (size == null) {
-                            println("    Skipped $fileName: invalid size")
-                        }
+                        // Skip unsupported variants silently
                     }
                 } catch (e: Exception) {
-                    println("    Warning: Failed to parse filename: $fileName")
+                    // Skip problematic files silently
                 }
             } else {
-                println("    Warning: Invalid filename pattern: $fileName")
+                // Skip invalid filename patterns silently
             }
         }
 
@@ -190,7 +176,6 @@ class IconScanner {
         val existingVariants = mutableMapOf<String, ExistingIconInfo>()
 
         if (!targetDir.exists()) {
-            println("❌ Target directory does not exist")
             return emptyMap()
         }
 
@@ -198,41 +183,30 @@ class IconScanner {
             val styleDir = File(targetDir, style.lowercase())
 
             if (styleDir.exists()) {
-                try {
-                    val files = styleDir.listFiles { file: File ->
-                        file.extension == "kt" && !file.name.endsWith("IconList.kt")
-                    }
-
-                    files?.forEach { file ->
-                        try {
-                            val fileName = file.nameWithoutExtension
-                            
-                            // Extract ImageVector property name from file content to ensure accuracy
-                            val actualPropertyName = extractImageVectorPropertyName(file, style)
-                            if (actualPropertyName != null) {
-                                // Convert property name back to normalized form for comparison
-                                val normalizedName = actualPropertyName.fromPascalCaseToNormalized()
-                                val variantKey = "${normalizedName}_${style}"
-                                
-                                existingVariants[variantKey] = ExistingIconInfo(
-                                    normalizedName = normalizedName,
-                                    propertyName = actualPropertyName,
-                                    fileName = fileName,
-                                    file = file,
-                                    style = style
-                                )
-                            } else {
-                                println("  Warning: Could not extract ImageVector property from ${file.name}")
-                            }
-                        } catch (e: Exception) {
-                            println("  Warning: Failed to process file ${file.name}: ${e.message}")
-                        }
-                    }
-                } catch (e: Exception) {
-                    println("  ❌ Error reading $style/: ${e.message}")
+                val files = styleDir.listFiles { file: File ->
+                    file.extension == "kt" && !file.name.endsWith("IconList.kt")
                 }
-            } else {
-                println("  ❌ $style/: directory not found")
+
+                files?.forEach { file ->
+                    try {
+                        val fileName = file.nameWithoutExtension
+                        val actualPropertyName = extractImageVectorPropertyName(file, style)
+                        if (actualPropertyName != null) {
+                            val normalizedName = actualPropertyName.fromPascalCaseToNormalized()
+                            val variantKey = "${normalizedName}_${style}"
+                            
+                            existingVariants[variantKey] = ExistingIconInfo(
+                                normalizedName = normalizedName,
+                                propertyName = actualPropertyName,
+                                fileName = fileName,
+                                file = file,
+                                style = style
+                            )
+                        }
+                    } catch (e: Exception) {
+                        // Skip problematic files silently
+                    }
+                }
             }
         }
 
@@ -267,57 +241,31 @@ class IconScanner {
     ): List<IconFamily> {
         val familiesToSync = mutableListOf<IconFamily>()
 
-        if (sourceIcons.isEmpty()) {
-            println("Warning: No source icons found")
-            return emptyList()
-        }
-
-        if (config.supportedStyles.isEmpty()) {
-            println("Warning: No supported styles configured")
+        if (sourceIcons.isEmpty() || config.supportedStyles.isEmpty()) {
             return emptyList()
         }
 
         sourceIcons.forEach { (iconName, variants) ->
-            if (iconName.isBlank()) {
-                println("Warning: Skipping icon with blank name")
-                return@forEach
-            }
+            if (iconName.isNotBlank() && variants.isNotEmpty() && !isExcluded(iconName, config.excludePatterns)) {
 
-            if (variants.isEmpty()) {
-                println("Warning: No variants found for icon: $iconName")
-                return@forEach
-            }
-
-            if (!isExcluded(iconName, config.excludePatterns)) {
-
-                // Group variants by style
                 val variantsByStyle = variants.groupBy { it.style }
                 val selectedVariants = mutableMapOf<String, IconVariant>()
 
-                // For each supported style, find the best size variant
                 config.supportedStyles.forEach { style ->
                     val styleVariants = variantsByStyle[style]
                     if (!styleVariants.isNullOrEmpty()) {
                         val bestVariant = findBestSizeVariant(styleVariants, config)
                         if (bestVariant != null) {
                             val variantKey = "${bestVariant.name}_${bestVariant.style}"
-
-                            // CRITICAL: Only add if icon doesn't already exist
-                            // Existing icons are treated as the source of truth
                             val existingInfo = existingIcons[variantKey]
                             
                             if (existingInfo == null) {
-                                // Completely new icon - safe to add
                                 selectedVariants[style] = bestVariant
-                            } else {
-                                // Icon already exists - skip to avoid breaking changes
-                                println("  ⏩ Skipped ${existingInfo.propertyName} (already exists)")
                             }
                         }
                     }
                 }
 
-                // Only create family if we have at least one new variant to sync
                 if (selectedVariants.isNotEmpty()) {
                     familiesToSync.add(
                         IconFamily(

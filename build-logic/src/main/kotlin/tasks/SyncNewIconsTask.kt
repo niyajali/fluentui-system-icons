@@ -46,16 +46,12 @@ abstract class SyncNewIconsTask : DefaultTask() {
     @TaskAction
     fun syncNewIcons() {
         val fluentConfig = config.get()
-
-        // Create target directory
         val targetDir = File(project.projectDir, fluentConfig.targetIconsPath)
         FileUtils.createDirectoriesIfNeeded(targetDir, fluentConfig.supportedStyles)
 
-        println("🎨 FluentUI Icons Sync (Additive Mode)")
-        println("📂 Target: ${targetDir.absolutePath}")
-        println("🛡️  Strategy: Only add NEW icons - never modify existing ones")
+        println("🎨 Syncing FluentUI Icons")
+        println("📂 Target: ${targetDir.relativeTo(project.projectDir)}")
 
-        // Use repository service with automatic cleanup
         GitRepositoryFactory.createRepository(
             fluentConfig.useLocalDirectory,
             fluentConfig.localDirectoryPath,
@@ -63,25 +59,16 @@ abstract class SyncNewIconsTask : DefaultTask() {
             fluentConfig.gitRef,
         ).use { gitRepo ->
 
-            println("📍 Source: ${gitRepo.getRepositoryInfo()}")
-
             val sourceDir = gitRepo.getAssetsDirectory(fluentConfig.assetsPath)
-
-            // Initialize services
             val scanner = IconScanner()
             val converter = SvgConverter()
 
-            // Get existing icons in target directory - these are the source of truth
+            // Get existing icons and scan source
             val existingIcons = scanner.getExistingIconVariants(targetDir, fluentConfig.supportedStyles)
-            println("🔍 Found ${existingIcons.size} existing icon variants (will be preserved)")
-
-            // Scan source directory for all available icons
             val sourceIcons = scanner.scanSourceIcons(sourceDir, fluentConfig.supportedStyles)
-
-            // Build icon families - only includes NEW icons that don't conflict
             val iconFamiliesToSync = scanner.buildIconFamiliesForSync(sourceIcons, existingIcons, fluentConfig)
 
-            // Perform the actual sync - only adding new icons
+            // Perform sync
             var newIconsAdded = 0
             var duplicatesSkipped = 0
             val syncedIcons = mutableListOf<SyncedIconInfo>()
@@ -93,14 +80,10 @@ abstract class SyncNewIconsTask : DefaultTask() {
                         val iconName = FileUtils.toPascalCase(iconFamily.baseName)
                         val targetFile = File(targetDir, "${style.lowercase()}/${iconName}.kt")
 
-                        // Double-check that file doesn't already exist (safety check)
                         if (!targetFile.exists()) {
-                            // Convert SVG to ImageVector and generate Kotlin code
                             converter.convertSvgToImageVector(variant, targetFile, style, iconName)
                             newIconsAdded++
-                            println("  ✅ Added ${style}/${iconName}.kt")
 
-                            // Track for reporting
                             syncedIcons.add(
                                 SyncedIconInfo(
                                     iconName = iconName,
@@ -111,24 +94,19 @@ abstract class SyncNewIconsTask : DefaultTask() {
                             )
                             styleBreakdown[style] = styleBreakdown.getOrDefault(style, 0) + 1
                         } else {
-                            // This shouldn't happen if our logic is correct, but safety first
                             duplicatesSkipped++
-                            println("  ⏩ Skipped ${style}/${iconName}.kt (file already exists)")
                         }
                     } catch (e: Exception) {
-                        println("  ❌ Failed to sync $style/${iconFamily.baseName}: ${e.message}")
-                        e.printStackTrace()
+                        println("❌ Failed to sync ${iconFamily.baseName}: ${e.message}")
                     }
                 }
             }
 
-            // Log results
+            // Summary
             logSyncResult(
                 config = fluentConfig,
                 newIconsAdded = newIconsAdded,
                 duplicatesSkipped = duplicatesSkipped,
-                syncedIcons = syncedIcons,
-                iconFamiliesProcessed = iconFamiliesToSync.size,
                 styleBreakdown = styleBreakdown,
                 totalExisting = existingIcons.size
             )
@@ -139,65 +117,35 @@ abstract class SyncNewIconsTask : DefaultTask() {
         config: FluentIconsConfig,
         newIconsAdded: Int,
         duplicatesSkipped: Int,
-        syncedIcons: List<SyncedIconInfo>,
-        iconFamiliesProcessed: Int,
         styleBreakdown: Map<String, Int>,
         totalExisting: Int
     ) {
-        val logFile = File(project.projectDir, config.syncLogFile)
-        val timestamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date())
-
-        val styleBreakdownText = styleBreakdown.entries
-            .sortedByDescending { it.value }
-            .joinToString("\n") { "    ${it.key}: ${it.value} new icons" }
-
-        val syncedIconsText = syncedIcons.joinToString("\n") { icon ->
-            "    ${icon.iconName} (${icon.style}, ${icon.size}px) → ${icon.filePath}"
+        println("\n📊 Sync Results:")
+        println("   Existing icons preserved: $totalExisting")
+        println("   New icons added: $newIconsAdded")
+        if (duplicatesSkipped > 0) {
+            println("   Duplicates skipped: $duplicatesSkipped")
         }
 
-        val logEntry = """
-            
-            === FluentUI Icons Sync Report (Additive Mode) - $timestamp ===
-            📊 Summary:
-              Existing variants preserved: $totalExisting
-              Icon families processed: $iconFamiliesProcessed
-              New variants added: $newIconsAdded
-              Duplicates skipped: $duplicatesSkipped
-              Total processed: $newIconsAdded
-            
-            🎨 New Icons by Style:
-            $styleBreakdownText
-            
-            📝 Newly synced variants:
-            $syncedIconsText
-            
-        """.trimIndent()
-
-        logFile.appendText(logEntry)
-
-        println("\n" + "=".repeat(60))
-        println("📊 FLUENT ICONS SYNC SUMMARY (ADDITIVE MODE)")
-        println("=".repeat(60))
-        println("🛡️  Existing variants preserved: $totalExisting")
-        println("🏠 Icon families processed: $iconFamiliesProcessed")
-        println("✅ New variants added: $newIconsAdded")
-        println("⏩ Duplicates skipped: $duplicatesSkipped")
-
         if (styleBreakdown.isNotEmpty()) {
-            println("\n🎨 New Icons by Style:")
-            styleBreakdown.entries.sortedByDescending { it.value }.forEach { (style, count) ->
-                println("   📁 ${style.lowercase()}/: $count new icons")
-            }
+            println("   New icons by style: ${styleBreakdown.entries.joinToString(", ") { "${it.key}(${it.value})" }}")
         }
 
         if (newIconsAdded > 0) {
-            println("\n💡 Next step: Run './gradlew updateIconLists' to update icon collection files")
-            println("💡 Or use: './gradlew syncAndUpdateIcons' for complete workflow")
+            println("\n💡 Run './gradlew updateIconLists' to update icon collection files")
         } else {
-            println("\n🎉 All icons are up to date! No new icons found.")
+            println("\n✅ All icons are up to date")
         }
 
-        println("\n📝 Log saved to: ${logFile.absolutePath}")
-        println("=".repeat(60))
+        // Log to file
+        val logFile = File(project.projectDir, config.syncLogFile)
+        val timestamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date())
+        val logEntry = """
+            === FluentUI Icons Sync - $timestamp ===
+            Existing preserved: $totalExisting, New added: $newIconsAdded, Skipped: $duplicatesSkipped
+            Style breakdown: ${styleBreakdown.entries.joinToString(", ") { "${it.key}: ${it.value}" }}
+            
+        """.trimIndent()
+        logFile.appendText(logEntry)
     }
 }

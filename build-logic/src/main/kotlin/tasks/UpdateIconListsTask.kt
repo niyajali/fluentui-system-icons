@@ -41,110 +41,62 @@ abstract class UpdateIconListsTask : DefaultTask() {
         val fluentConfig = config.get()
         val targetDir = File(project.projectDir, fluentConfig.targetIconsPath)
 
-        println("📝 Updating FluentUI Icon Lists")
-        println("📂 Target: ${targetDir.absolutePath}")
-        println("🎯 Strategy: Read actual files and extract ImageVector names")
+        println("📝 Updating Icon Lists")
 
         if (!targetDir.exists()) {
-            throw IllegalArgumentException("Target directory does not exist: ${targetDir.absolutePath}")
+            throw IllegalArgumentException("Target directory does not exist: ${targetDir.relativeTo(project.projectDir)}")
         }
 
         var totalIconsProcessed = 0
-        var listsCreated = 0
         var listsUpdated = 0
 
         fluentConfig.supportedStyles.forEach { style ->
             val styleDir = File(targetDir, style.lowercase())
             
             if (styleDir.exists()) {
-                println("\n🔍 Processing ${style.lowercase()}/ directory...")
-                
-                // Get all icon files (excluding IconList files)
                 val iconFiles = styleDir.listFiles { file ->
                     file.extension == "kt" && !file.name.endsWith("IconList.kt")
                 }?.sortedBy { it.nameWithoutExtension } ?: emptyList()
                 
                 if (iconFiles.isEmpty()) {
-                    println("  ℹ️  No icon files found - removing IconList if exists")
                     removeIconListFile(targetDir, style)
-                    return
+                    return@forEach
                 }
 
-                // Extract ImageVector names from actual files
                 val iconEntries = iconFiles.mapNotNull { file ->
                     extractImageVectorName(file, style)
                 }.sorted()
 
                 if (iconEntries.isNotEmpty()) {
-                    val iconListFile = createOrUpdateIconListFile(targetDir, style, iconEntries)
-                    
-                    if (iconListFile.first) {
-                        listsCreated++
-                        println("  🆕 Created ${style}IconList.kt with ${iconEntries.size} icons")
-                    } else {
-                        listsUpdated++
-                        println("  🔄 Updated ${style}IconList.kt with ${iconEntries.size} icons")
-                    }
-                    
+                    createOrUpdateIconListFile(targetDir, style, iconEntries)
                     totalIconsProcessed += iconEntries.size
-                } else {
-                    println("  ⚠️  No valid ImageVector names found in ${iconFiles.size} files")
+                    listsUpdated++
                 }
-                
-            } else {
-                println("  ⚠️  Style directory not found: ${style.lowercase()}/")
             }
         }
 
-        println("\n" + "=".repeat(60))
-        println("📝 ICON LISTS UPDATE SUMMARY")
-        println("=".repeat(60))
-        println("📊 Total icons processed: $totalIconsProcessed")
-        println("🆕 Icon lists created: $listsCreated")
-        println("🔄 Icon lists updated: $listsUpdated")
-        println("✅ Update completed successfully")
-        println("=".repeat(60))
+        println("📊 Updated $listsUpdated icon lists with $totalIconsProcessed total icons")
     }
 
-    /**
-     * Extracts the ImageVector property name from a Kotlin icon file
-     * Returns the property name if found, null if not a valid icon file
-     */
     private fun extractImageVectorName(file: File, style: String): String? {
-        try {
+        return try {
             val content = file.readText()
             val styleCapitalized = style.replaceFirstChar { it.uppercase() }
-            
-            // Look for pattern: public val FluentIcons.StyleName.IconName: ImageVector
             val pattern = Regex(
                 """public\s+val\s+FluentIcons\.$styleCapitalized\.([A-Za-z][A-Za-z0-9]*)\s*:\s*ImageVector""",
                 RegexOption.MULTILINE
             )
-            
-            val match = pattern.find(content)
-            return match?.groupValues?.get(1)?.also { iconName ->
-                println("    ✅ Found: FluentIcons.$styleCapitalized.$iconName in ${file.name}")
-            }
+            pattern.find(content)?.groupValues?.get(1)
         } catch (e: Exception) {
-            println("    ❌ Failed to read ${file.name}: ${e.message}")
-            return null
+            e.printStackTrace()
+            null
         }
     }
 
-    /**
-     * Creates or updates an IconList file with the provided icon entries
-     * Returns Pair(wasCreated: Boolean, file: File)
-     */
-    private fun createOrUpdateIconListFile(
-        targetDir: File, 
-        style: String, 
-        iconNames: List<String>
-    ): Pair<Boolean, File> {
+    private fun createOrUpdateIconListFile(targetDir: File, style: String, iconNames: List<String>): File {
         val styleCapitalized = style.replaceFirstChar { it.uppercase() }
         val styleLowercase = style.lowercase()
         val iconListFile = File(targetDir, "${styleCapitalized}IconList.kt")
-        
-        val wasCreated = !iconListFile.exists()
         
         val variableName = when (styleLowercase) {
             "filled" -> "filledIcons"
@@ -154,12 +106,10 @@ abstract class UpdateIconListsTask : DefaultTask() {
             else -> "${styleLowercase}Icons"
         }
         
-        // Build imports
         val imports = iconNames.joinToString("\n") { iconName ->
             "import fluent.ui.system.icons.$styleLowercase.$iconName"
         }
         
-        // Build icon references
         val iconReferences = iconNames.joinToString(",\n") { iconName ->
             "            FluentIcons.$styleCapitalized.$iconName"
         }
@@ -211,22 +161,15 @@ private var $variableName: List<ImageVector>? = null
         """.trimIndent()
         
         iconListFile.writeText(content)
-        return Pair(wasCreated, iconListFile)
+        return iconListFile
     }
     
-    /**
-     * Removes an IconList file if it exists (when no icons are present)
-     */
     private fun removeIconListFile(targetDir: File, style: String) {
         val styleCapitalized = style.replaceFirstChar { it.uppercase() }
         val iconListFile = File(targetDir, "${styleCapitalized}IconList.kt")
         
-        if (iconListFile.exists()) {
-            if (iconListFile.delete()) {
-                println("  🗑️  Removed empty ${styleCapitalized}IconList.kt")
-            } else {
-                println("  ❌ Failed to remove ${styleCapitalized}IconList.kt")
-            }
+        if (iconListFile.exists() && iconListFile.delete()) {
+            println("🗑️ Removed empty ${styleCapitalized}IconList.kt")
         }
     }
 }
