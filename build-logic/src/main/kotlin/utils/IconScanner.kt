@@ -206,17 +206,24 @@ class IconScanner {
                     files?.forEach { file ->
                         try {
                             val fileName = file.nameWithoutExtension
-
-                            // CRITICAL FIX: Convert Pascal case filename back to normalized name
-                            val normalizedName = fileName.fromPascalCaseToNormalized()
-                            val variantKey = "${normalizedName}_${style}"
-
-                            existingVariants[variantKey] = ExistingIconInfo(
-                                normalizedName = normalizedName,
-                                fileName = fileName,
-                                file = file,
-                                style = style,
-                            )
+                            
+                            // Extract ImageVector property name from file content to ensure accuracy
+                            val actualPropertyName = extractImageVectorPropertyName(file, style)
+                            if (actualPropertyName != null) {
+                                // Convert property name back to normalized form for comparison
+                                val normalizedName = actualPropertyName.fromPascalCaseToNormalized()
+                                val variantKey = "${normalizedName}_${style}"
+                                
+                                existingVariants[variantKey] = ExistingIconInfo(
+                                    normalizedName = normalizedName,
+                                    propertyName = actualPropertyName,
+                                    fileName = fileName,
+                                    file = file,
+                                    style = style
+                                )
+                            } else {
+                                println("  Warning: Could not extract ImageVector property from ${file.name}")
+                            }
                         } catch (e: Exception) {
                             println("  Warning: Failed to process file ${file.name}: ${e.message}")
                         }
@@ -230,6 +237,27 @@ class IconScanner {
         }
 
         return existingVariants
+    }
+
+    /**
+     * Extracts the actual ImageVector property name from a Kotlin file
+     * This ensures we know exactly what property names are in use
+     */
+    private fun extractImageVectorPropertyName(file: File, style: String): String? {
+        try {
+            val content = file.readText()
+            val styleCapitalized = style.replaceFirstChar { it.uppercase() }
+            
+            // Look for pattern: public val FluentIcons.StyleName.PropertyName: ImageVector
+            val pattern = Regex(
+                """public\s+val\s+FluentIcons\.$styleCapitalized\.([A-Za-z][A-Za-z0-9]*)\s*:\s*ImageVector""",
+                RegexOption.MULTILINE
+            )
+            
+            return pattern.find(content)?.groupValues?.get(1)
+        } catch (e: Exception) {
+            return null
+        }
     }
 
     fun buildIconFamiliesForSync(
@@ -274,26 +302,22 @@ class IconScanner {
                         if (bestVariant != null) {
                             val variantKey = "${bestVariant.name}_${bestVariant.style}"
 
-                            // Check if we need to sync this variant
+                            // CRITICAL: Only add if icon doesn't already exist
+                            // Existing icons are treated as the source of truth
                             val existingInfo = existingIcons[variantKey]
-
+                            
                             if (existingInfo == null) {
-                                // New icon - add for sync
+                                // Completely new icon - safe to add
                                 selectedVariants[style] = bestVariant
                             } else {
-                                // Icon exists but might have different Pascal case name
-                                val expectedPascalName = FileUtils.toPascalCase(bestVariant.name)
-                                if (existingInfo.fileName != expectedPascalName) {
-                                    // Name mismatch - needs update
-                                    selectedVariants[style] = bestVariant
-                                    println("  📝 Icon name change detected: ${existingInfo.fileName} → $expectedPascalName")
-                                }
+                                // Icon already exists - skip to avoid breaking changes
+                                println("  ⏩ Skipped ${existingInfo.propertyName} (already exists)")
                             }
                         }
                     }
                 }
 
-                // Only create family if we have at least one variant to sync
+                // Only create family if we have at least one new variant to sync
                 if (selectedVariants.isNotEmpty()) {
                     familiesToSync.add(
                         IconFamily(
@@ -334,10 +358,11 @@ class IconScanner {
  * Information about existing icon files
  */
 data class ExistingIconInfo(
-    val normalizedName: String,  // Normalized name (snake_case)
-    val fileName: String,        // Pascal case filename
-    val file: File,             // Actual file
-    val style: String,           // Icon style
+    val normalizedName: String,   // Normalized name (snake_case) for comparison
+    val propertyName: String,     // Actual ImageVector property name (e.g., "WiFi")
+    val fileName: String,         // Pascal case filename (e.g., "WiFi") 
+    val file: File,              // Actual file
+    val style: String            // Icon style
 )
 
 /**
@@ -357,7 +382,7 @@ fun String.normalizeIconName(): String {
         .replace(Regex("\\s+([0-9])"), "$1")
         // Handle letter followed by uppercase letter
         .replace(Regex("([a-z])([A-Z])"), "$1_$2")
-        // Handle uppercase letter followed by uppercase+lowercase
+        // Handle uppercase letter followed by uppercase+lowercase  
         .replace(Regex("([A-Z])([A-Z][a-z])"), "$1_$2")
         // Replace remaining spaces with underscores
         .replace(Regex("\\s+"), "_")
@@ -377,7 +402,7 @@ fun String.normalizeIconName(): String {
  */
 fun String.fromPascalCaseToNormalized(): String {
     if (isBlank()) return this
-
+    
     return this
         // Insert underscore before uppercase letters (except at start)
         .replace(Regex("(?<!^)([A-Z])"), "_$1")

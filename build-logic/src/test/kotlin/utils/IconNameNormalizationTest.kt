@@ -56,6 +56,33 @@ class IconNameNormalizationTest {
     }
 
     @Test
+    fun `test WiFi normalization consistency`() {
+        // This test specifically addresses the WiFi1/Wifi issue
+        val variants = listOf(
+            "WiFi",      // Existing icon
+            "WiFi1",     // New icon from source
+            "wifi",      // Edge case
+            "wifi1"      // Another edge case
+        )
+        
+        // All variants should normalize to the same base for comparison
+        val normalized = variants.map { it.normalizeIconName() }
+        
+        // WiFi and wifi should normalize to "wifi"
+        assertEquals("wifi", "WiFi".normalizeIconName())
+        assertEquals("wifi", "wifi".normalizeIconName())
+        
+        // WiFi1 and wifi1 should normalize to "wifi1"
+        assertEquals("wifi1", "WiFi1".normalizeIconName())
+        assertEquals("wifi1", "wifi1".normalizeIconName())
+        
+        // Different normalized forms should be treated as different icons
+        assertTrue(normalized.contains("wifi"))
+        assertTrue(normalized.contains("wifi1"))
+        assertNotEquals("wifi", "wifi1")
+    }
+
+    @Test
     fun `test round trip conversion consistency`() {
         val testCases = listOf(
             "WiFi1",

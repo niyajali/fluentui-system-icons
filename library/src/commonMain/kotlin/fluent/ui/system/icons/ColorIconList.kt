@@ -222,13 +222,13 @@ import fluent.ui.system.icons.color.WifiWarning
 import fluent.ui.system.icons.color.Wrench
 import fluent.ui.system.icons.color.WrenchScrewdriver
 
-public val FluentIcons.ColoredIconList: List<ImageVector>
+public val FluentIcons.ColorIconList: List<ImageVector>
     get() {
-        if (coloredIcons != null) {
-            return coloredIcons!!
+        if (colorIcons != null) {
+            return colorIcons!!
         }
 
-        coloredIcons = listOf(
+        colorIcons = listOf(
             FluentIcons.Color.AddCircle,
             FluentIcons.Color.AddStarburst,
             FluentIcons.Color.Agents,
@@ -427,7 +427,7 @@ public val FluentIcons.ColoredIconList: List<ImageVector>
             FluentIcons.Color.WrenchScrewdriver
         )
 
-        return coloredIcons!!
+        return colorIcons!!
     }
 
-private var coloredIcons: List<ImageVector>? = null
+private var colorIcons: List<ImageVector>? = null

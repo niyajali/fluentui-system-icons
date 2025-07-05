@@ -2,6 +2,8 @@
 
 A Gradle plugin for automatically syncing Microsoft FluentUI System Icons with Jetpack Compose projects. Converts SVG icons to ImageVectors with style-based organization.
 
+**🛡️ Library-Safe Approach**: This plugin is designed for library development and follows a **strictly additive strategy** - it only adds new icons and never modifies or deletes existing ones to avoid breaking changes in dependent projects.
+
 ## 🚀 Features
 
 - **Flexible Source**: Git integration OR local directory for development
@@ -10,9 +12,9 @@ A Gradle plugin for automatically syncing Microsoft FluentUI System Icons with J
 - **SVG to ImageVector**: Converts SVGs to Compose-ready ImageVectors
 - **Style Organization**: Organizes by filled, regular, light, and colored styles
 - **Smart Fallback**: Intelligent size selection (24px → 20px → 16px → 28px → 32px)
-- **Duplicate Prevention**: Skips existing icons automatically
+- **Additive Strategy**: Only adds new icons - existing icons are never modified or deleted
+- **Safe List Management**: Icon lists are rebuilt from actual files to ensure accuracy
 - **Directional Support**: Handles LTR/RTL variants correctly
-- **IconList Management**: Auto-updates style-specific icon collections
 - **Development Mode**: Use local directories for faster iteration
 
 ## 📋 Setup
@@ -134,7 +136,16 @@ fluentIcons {
 
 ## 🎮 Usage
 
-### Check for New Icons
+### Complete Workflow (Recommended)
+```bash
+./gradlew syncAndUpdateIcons --no-configuration-cache
+```
+
+This runs the complete workflow: syncs new icons and updates icon lists based on actual files.
+
+### Individual Tasks
+
+#### Check for New Icons
 ```bash
 ./gradlew checkNewIcons --no-configuration-cache
 ```
@@ -157,28 +168,80 @@ Found 3 new icon families that would be synced:
 Total variants to sync: 4
 ```
 
-### Sync New Icons
+#### Sync New Icons (SVG Conversion Only)
 ```bash
 ./gradlew syncNewIcons --no-configuration-cache
 ```
 
-Downloads and converts new icons:
+Downloads and converts **only new icons** (never modifies existing ones):
 ```
-🎨 FluentUI Icons Sync
-🔄 Cloning FluentUI repository (shallow clone)...
-✅ Repository cloned successfully
+🎨 FluentUI Icons Sync (Additive Mode)
+🛡️  Strategy: Only add NEW icons - never modify existing ones
+🔍 Found 125 existing icon variants (will be preserved)
 
 📁 Processing: access_time
-  ✅ Synced filled (24px) → filled/AccessTime.kt
-  ✅ Synced regular (24px) → regular/AccessTime.kt
+  ✅ Added filled/AccessTime.kt
+  ✅ Added regular/AccessTime.kt
+  ⏩ Skipped filled/ExistingIcon.kt (already exists)
 
-📊 FLUENT ICONS SYNC SUMMARY
-🏠 Icon families processed: 1
+📊 FLUENT ICONS SYNC SUMMARY (ADDITIVE MODE)
+🛡️  Existing variants preserved: 125
 ✅ New variants added: 2
-📈 Total processed: 2
+⏩ Duplicates skipped: 1
+
+💡 Next step: Run './gradlew updateIconLists' to update icon collection files
 ```
 
-### Analyze Coverage
+#### Update Icon Lists (Based on Actual Files)
+```bash
+./gradlew updateIconLists --no-configuration-cache
+```
+
+Reads actual ImageVector properties from generated files and rebuilds icon lists:
+```
+📝 Updating FluentUI Icon Lists
+🔍 Processing filled/ directory...
+    ✅ Found: FluentIcons.Filled.AccessTime in AccessTime.kt
+    ✅ Found: FluentIcons.Filled.TaskListLtr in TaskListLtr.kt
+  🔄 Updated FilledIconList.kt with 2 icons
+
+📝 ICON LISTS UPDATE SUMMARY
+📊 Total icons processed: 4
+🔄 Icon lists updated: 2
+✅ Update completed successfully
+```
+
+#### Analyze and Clean Up (Safe Mode)
+```bash
+./gradlew cleanupIcons --no-configuration-cache
+```
+
+Analyzes for potential issues but doesn't delete anything automatically:
+```
+🧹 FluentUI Icons Analysis & Safe Cleanup
+🛡️  Mode: Analysis only - manual review required for deletions
+
+🔍 Analyzing filled/ directory...
+  ⚠️  Found 1 potential duplicate icon families:
+    📁 wifi1 (2 files):
+      - Wifi.kt
+      - WiFi1.kt
+    💡 Suggestion: Keep the most appropriate version and manually remove others
+    💡 Check if any projects depend on these specific names before deleting
+  🔄 Rebuilding FilledIconList.kt to match actual files...
+
+🧹 CLEANUP ANALYSIS SUMMARY
+⚠️  Potential duplicates found: 1 groups
+💡 Manual review recommended before deletion
+💡 Check project dependencies before removing any files
+🔄 Icon lists updated: 1
+✅ Lists now match actual files
+
+🛡️  Note: This task only analyzes and fixes lists.
+🛡️  File deletions require manual review to avoid breaking changes.
+```
+
+#### Analyze Coverage
 ```bash
 ./gradlew analyzeIconCoverage --no-configuration-cache
 ```
@@ -303,13 +366,83 @@ The plugin automatically handles RefSpec formatting based on reference type, pre
 
 ## 🔧 Architecture
 
-The plugin follows SOLID principles with clean separation of concerns:
+The plugin follows SOLID principles with clean separation of concerns and a **library-safe, additive approach**:
 
 - **GitRepository**: Handles Git operations and repository management
-- **IconScanner**: Scans and compares icon metadata (unchanged logic)
+- **IconScanner**: Scans and compares icon metadata with enhanced duplicate detection
 - **SvgConverter**: Converts SVGs to ImageVectors
-- **IconListUpdater**: Manages icon collection files
+- **UpdateIconListsTask**: Reads actual ImageVector properties from generated files to rebuild icon lists
 - **FluentIconsConfig**: Immutable configuration data class
+
+### **🛡️ Library-Safe Strategy**
+
+**Phase 1: Additive Icon Syncing** (`syncNewIcons`)
+- Downloads and converts SVG files to ImageVector Kotlin files
+- **ONLY adds new icons** - never modifies or deletes existing files
+- Treats existing icons as the "source of truth" to avoid breaking changes
+- Skips any icons that would conflict with existing ones
+
+**Phase 2: Safe List Updating** (`updateIconLists`)
+- Reads actual generated Kotlin files from directories
+- Extracts ImageVector property names using regex parsing
+- Rebuilds icon lists based on what's actually present
+- Ensures 100% accuracy between files and lists
+
+**Combined Workflow** (`syncAndUpdateIcons`)
+- Runs both phases in sequence with proper task dependencies
+- Recommended for most users
+
+### **🛡️ Why This Approach?**
+
+1. **No Breaking Changes**: Existing icons are never modified, ensuring backward compatibility
+2. **Library Stability**: Safe for libraries used in production projects
+3. **Predictable Behavior**: Only additions, never deletions or modifications
+4. **Manual Control**: Users can review and manually handle any conflicts
+5. **Debugging Friendly**: Each phase can be run separately for troubleshooting
+
+### **🔄 Handling Conflicts**
+
+When the plugin encounters a potential conflict (e.g., source has `WiFi1` but target already has `Wifi`):
+
+1. **Preserves existing icon**: `Wifi.kt` remains unchanged
+2. **Skips new icon**: `WiFi1` is not added to avoid conflicts
+3. **Reports the skip**: User is informed about the decision
+4. **Manual resolution**: User can manually decide which version to keep
+
+This ensures that existing projects continue to work without any code changes.
+
+## 🛡️ **Conflict Resolution: WiFi1 vs Wifi Example**
+
+**Previous Behavior (Problematic):**
+```
+Source: WiFi1 folder → WiFi1.kt created
+Existing: Wifi.kt → content overwritten but filename kept
+Result: FilledIconList contains both "Wifi" and "WiFi1" entries (broken)
+```
+
+**New Behavior (Safe & Additive):**
+```bash
+./gradlew syncNewIcons
+# Detects existing Wifi.kt (normalized: "wifi")
+# Source WiFi1 would normalize to "wifi1" 
+# These are different → WiFi1.kt is safely added
+# Wifi.kt remains completely unchanged
+
+./gradlew updateIconLists
+# Scans actual files: [Wifi.kt, WiFi1.kt]
+# Rebuilds FilledIconList: [Wifi, WiFi1] (accurate)
+```
+
+**If there's an actual conflict (same normalized name):**
+```bash
+./gradlew syncNewIcons
+# Source: "wifi1" (normalized)
+# Existing: WiFi1.kt (normalized: "wifi1") 
+# Same normalized name → skip adding new one
+# ⏩ Skipped WiFi1 (already exists)
+```
+
+This ensures **zero breaking changes** while maintaining consistency.
 
 ## 🔄 Git Integration
 

@@ -43,16 +43,17 @@ abstract class CleanupIconsTask : DefaultTask() {
         val fluentConfig = config.get()
         val targetDir = File(project.projectDir, fluentConfig.targetIconsPath)
 
-        println("🧹 FluentUI Icons Cleanup")
+        println("🧹 FluentUI Icons Analysis & Safe Cleanup")
         println("📂 Target: ${targetDir.absolutePath}")
-        println("🎯 Purpose: Fix naming inconsistencies and rebuild icon lists")
+        println("🛡️  Mode: Analysis only - manual review required for deletions")
 
         if (!targetDir.exists()) {
             throw IllegalArgumentException("Target directory does not exist: ${targetDir.absolutePath}")
         }
 
         val listUpdater = IconListUpdater()
-        var totalCleaned = 0
+        var duplicatesFound = 0
+        var inconsistenciesFound = 0
 
         fluentConfig.supportedStyles.forEach { style ->
             val styleDir = File(targetDir, style.lowercase())
@@ -74,36 +75,50 @@ abstract class CleanupIconsTask : DefaultTask() {
                     file.nameWithoutExtension.fromPascalCaseToNormalized()
                 }
                 
-                // Find and report duplicates
+                // Find and report duplicates (but don't delete them)
                 val duplicateGroups = normalizedGroups.filter { it.value.size > 1 }
                 if (duplicateGroups.isNotEmpty()) {
-                    println("  ⚠️  Found ${duplicateGroups.size} duplicate icon families:")
+                    duplicatesFound += duplicateGroups.size
+                    println("  ⚠️  Found ${duplicateGroups.size} potential duplicate icon families:")
                     duplicateGroups.forEach { (normalizedName, files) ->
-                        println("    📁 $normalizedName:")
+                        println("    📁 $normalizedName (${files.size} files):")
                         files.forEach { file ->
                             println("      - ${file.name}")
                         }
-                        
-                        // Keep the lexicographically last file (usually the most recent)
-                        val filesToDelete = files.sortedBy { it.name }.dropLast(1)
-                        val fileToKeep = files.maxByOrNull { it.name }
-                        
-                        filesToDelete.forEach { file ->
-                            if (file.delete()) {
-                                println("      🗑️  Deleted duplicate: ${file.name}")
-                                totalCleaned++
-                            }
-                        }
-                        
-                        if (fileToKeep != null) {
-                            println("      ✅ Kept: ${fileToKeep.name}")
-                        }
+                        println("    💡 Suggestion: Keep the most appropriate version and manually remove others")
+                        println("    💡 Check if any projects depend on these specific names before deleting")
                     }
+                    inconsistenciesFound++
                 }
                 
-                // Rebuild the icon list file for consistency
-                println("  🔄 Rebuilding ${style}IconList.kt...")
-                listUpdater.rebuildIconListFile(targetDir, style)
+                // Check icon list consistency (and optionally rebuild)
+                val iconListFile = File(targetDir, "${style.replaceFirstChar { it.uppercase() }}IconList.kt")
+                if (iconListFile.exists()) {
+                    val listContent = iconListFile.readText()
+                    val actualFiles = iconFiles.map { it.nameWithoutExtension }.sorted()
+                    
+                    // Check if list matches actual files
+                    val missingFromList = actualFiles.filter { fileName ->
+                        !listContent.contains("FluentIcons.${style.replaceFirstChar { it.uppercase() }}.$fileName")
+                    }
+                    
+                    if (missingFromList.isNotEmpty()) {
+                        println("  📝 Icon list inconsistencies detected:")
+                        missingFromList.forEach { fileName ->
+                            println("    ❌ Missing from list: $fileName")
+                        }
+                        
+                        // Offer to rebuild the list
+                        println("  🔄 Rebuilding ${style}IconList.kt to match actual files...")
+                        listUpdater.rebuildIconListFile(targetDir, style)
+                        inconsistenciesFound++
+                    } else {
+                        println("  ✅ Icon list is consistent with actual files")
+                    }
+                } else {
+                    println("  🆕 Creating missing ${style}IconList.kt...")
+                    listUpdater.rebuildIconListFile(targetDir, style)
+                }
                 
                 // Final count
                 val remainingFiles = styleDir.listFiles { file ->
@@ -117,12 +132,27 @@ abstract class CleanupIconsTask : DefaultTask() {
             }
         }
 
-        println("\n" + "=".repeat(50))
-        println("🧹 CLEANUP SUMMARY")
-        println("=".repeat(50))
-        println("🗑️  Duplicate files removed: $totalCleaned")
-        println("🔄 Icon lists rebuilt: ${fluentConfig.supportedStyles.size}")
-        println("✅ Cleanup completed successfully")
-        println("=".repeat(50))
+        println("\n" + "=".repeat(60))
+        println("🧹 CLEANUP ANALYSIS SUMMARY")
+        println("=".repeat(60))
+        
+        if (duplicatesFound > 0) {
+            println("⚠️  Potential duplicates found: $duplicatesFound groups")
+            println("💡 Manual review recommended before deletion")
+            println("💡 Check project dependencies before removing any files")
+        } else {
+            println("✅ No duplicate icon groups detected")
+        }
+        
+        if (inconsistenciesFound > 0) {
+            println("🔄 Icon lists updated: $inconsistenciesFound")
+            println("✅ Lists now match actual files")
+        } else {
+            println("✅ All icon lists were already consistent")
+        }
+        
+        println("\n🛡️  Note: This task only analyzes and fixes lists.")
+        println("🛡️  File deletions require manual review to avoid breaking changes.")
+        println("=".repeat(60))
     }
 }
