@@ -24,12 +24,23 @@
 
 package models
 
+/**
+ * Represents the result of an icon synchronization operation
+ */
 data class IconSyncResult(
+    val totalExisting: Int,
     val newIconsAdded: Int,
-    val duplicatesSkipped: Int,
-    val totalProcessed: Int,
-    val syncedIcons: List<SyncedIconInfo>,
-    val iconFamiliesProcessed: Int,
-    val styleBreakdown: Map<String, Int>
+    val duplicatesSkipped: Int = 0,
+    val syncedIcons: List<SyncedIconInfo> = emptyList(),
+    val styleBreakdown: Map<String, Int> = emptyMap(),
+    val listsUpdated: Int = 0,
+    val totalIconsAfterSync: Int = totalExisting + newIconsAdded
 )
 
+/**
+ * Represents the result of updating icon lists
+ */
+data class IconListUpdateResult(
+    val updatedFiles: Int,
+    val totalIcons: Map<String, Int> = emptyMap()
+)

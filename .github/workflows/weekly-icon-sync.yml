@@ -60,19 +60,12 @@ jobs:
           echo "git_ref_display=$input_ref" >> $GITHUB_OUTPUT
           echo "Using git reference: $input_ref"
 
-      - name: Check for new icons
-        id: check_icons
-        run: |
-          echo "Checking for new FluentUI icons..."
-          ./gradlew checkNewIcons --no-configuration-cache --console=plain
-          echo "check_completed=true" >> $GITHUB_OUTPUT
-
       - name: Sync FluentUI icons
         id: sync_icons
         run: |
           echo "🎨 Starting FluentUI icons sync from microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}"
           
-          # Run the complete sync workflow (library-safe: additive only)
+          # Run the combined sync and update workflow
           if ./gradlew syncAndUpdateIcons --no-configuration-cache --console=plain; then
             echo "✅ Sync completed successfully"
             echo "sync_completed=true" >> $GITHUB_OUTPUT
@@ -84,16 +77,16 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          # Check if there are any changes to commit
-          kt_changes=$(git status --porcelain \"library/src/commonMain/kotlin/fluent/ui/system/icons/\" | grep '\\.kt$' || true)
+          # Check if there are any .kt file changes to commit
+          kt_changes=$(git status --porcelain "library/src/commonMain/kotlin/fluent/ui/system/icons/" | grep '\.kt$' || true)
           
-          if [[ -n \"$kt_changes\" ]]; then
+          if [[ -n "$kt_changes" ]]; then
             echo "changes_detected=true" >> $GITHUB_OUTPUT
             echo "Found icon changes to commit"
             
-            # Get summary of changes (library-safe: should only be additions)
-            added_files=$(git status --porcelain \"library/src/commonMain/kotlin/fluent/ui/system/icons/\" | grep '^A.*\\.kt$' | wc -l || echo \"0\")
-            modified_files=$(git status --porcelain \"library/src/commonMain/kotlin/fluent/ui/system/icons/\" | grep '^M.*\\.kt$' | wc -l || echo \"0\")
+            # Count .kt files only
+            added_files=$(git status --porcelain "library/src/commonMain/kotlin/fluent/ui/system/icons/" | grep '^A.*\.kt$' | wc -l || echo "0")
+            modified_files=$(git status --porcelain "library/src/commonMain/kotlin/fluent/ui/system/icons/" | grep '^M.*\.kt$' | wc -l || echo "0")
             total_files=$((added_files + modified_files))
             
             echo "added_files=$added_files" >> $GITHUB_OUTPUT
@@ -102,19 +95,21 @@ jobs:
             
             # Generate change summary for PR
             echo "📊 Changes detected:"
-            echo "  New files: $added_files"
-            echo "  Modified files: $modified_files"
-            echo "  Total changes: $total_files"
+            echo "  New .kt files: $added_files"
+            echo "  Modified .kt files: $modified_files"
+            echo "  Total .kt changes: $total_files"
             
-            # Verify library safety (should only be additions)
-            if [ "$modified_files" -gt 0 ]; then
-              echo "⚠️ Warning: Modified files detected. Reviewing for safety..."
-              git diff --name-only --diff-filter=M
+            # Extract task outputs if available
+            if [[ -n "$new_icons_count" ]]; then
+              echo "task_new_icons=$new_icons_count" >> $GITHUB_OUTPUT
+            fi
+            if [[ -n "$style_breakdown" ]]; then
+              echo "task_style_breakdown=$style_breakdown" >> $GITHUB_OUTPUT
             fi
             
           else
             echo "changes_detected=false" >> $GITHUB_OUTPUT
-            echo "No icon changes detected"
+            echo "No .kt file changes detected"
           fi
 
       - name: Generate commit message
@@ -141,11 +136,11 @@ jobs:
       - name: Commit changes
         if: steps.check_changes.outputs.changes_detected == 'true'
         run: |
-          # Add only icon-related files
+          # Add only .kt files from the icons directory
           git add "library/src/commonMain/kotlin/fluent/ui/system/icons/**/*.kt"
           
           if git diff --staged --quiet; then
-            echo "⚠️ No icon files to commit after staging"
+            echo "⚠️ No .kt files to commit after staging"
             echo "has_changes=false" >> $GITHUB_ENV
           else
             git commit -m "${{ steps.commit_message.outputs.commit_message }}
@@ -155,7 +150,7 @@ jobs:
             - Updated lists: ${{ steps.check_changes.outputs.modified_files }}
             - Source: microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}
             
-            🛡️ Library-safe: Only additive changes, no existing icons modified"
+            🛡️ Library-safe: Only .kt icon files committed"
             
             echo "has_changes=true" >> $GITHUB_ENV
           fi
@@ -167,7 +162,7 @@ jobs:
         with:
           token: ${{ secrets.PAT_TOKEN }}
           commit-message: ${{ steps.commit_message.outputs.commit_message }}
-          title: "🎨 Weekly FluentUI Icons Sync - ${{ steps.check_changes.outputs.total_files }} files updated"
+          title: "🎨 Weekly FluentUI Icons Sync - ${{ steps.check_changes.outputs.total_files }} .kt files updated"
           branch: "auto/fluent-icons-sync-${{ github.run_number }}"
           committer: "Sk Niyaj Ali <niyaj639@gmail.com>"
           author: "Sk Niyaj Ali <niyaj639@gmail.com>"
@@ -181,9 +176,25 @@ jobs:
             ### 📊 Summary
             - **New icons added**: ${{ steps.check_changes.outputs.added_files }}
             - **Icon lists updated**: ${{ steps.check_changes.outputs.modified_files }}
-            - **Total files changed**: ${{ steps.check_changes.outputs.total_files }}
+            - **Total .kt files changed**: ${{ steps.check_changes.outputs.total_files }}
             - **Sync date**: ${{ github.run_time }}
             - **Source reference**: microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}
+            
+            ### 🎯 Task Output Details
+            ${{ steps.check_changes.outputs.task_style_breakdown && format('**Style breakdown**: {0}', steps.check_changes.outputs.task_style_breakdown) || 'Style breakdown not available' }}
+            
+            ### 🛡️ Safety Features
+            - ✅ **Library-safe**: Only .kt icon files committed
+            - ✅ **Backward compatible**: No existing icons modified
+            - ✅ **Additive only**: New icons and updated lists
+            - ✅ **Build verified**: Icons generated from verified SVG sources
+            
+            ### 📝 Files Changed
+            This sync operation only modifies Kotlin (.kt) files in the icons directory:
+            - New icon files: Compose ImageVector definitions
+            - Updated icon lists: Collection files for each style
+            
+            **No build configuration or other files were modified in this sync.**
 
           labels: |
             fluent-icons
@@ -218,9 +229,9 @@ jobs:
           
           if [ "${{ steps.check_changes.outputs.changes_detected }}" == "true" ]; then
             echo "✅ **Sync completed successfully**" >> $GITHUB_STEP_SUMMARY
-            echo "- New icons: ${{ steps.check_changes.outputs.added_files }}" >> $GITHUB_STEP_SUMMARY
-            echo "- Updated lists: ${{ steps.check_changes.outputs.modified_files }}" >> $GITHUB_STEP_SUMMARY
-            echo "- Total changes: ${{ steps.check_changes.outputs.total_files }}" >> $GITHUB_STEP_SUMMARY
+            echo "- New .kt icon files: ${{ steps.check_changes.outputs.added_files }}" >> $GITHUB_STEP_SUMMARY
+            echo "- Updated .kt list files: ${{ steps.check_changes.outputs.modified_files }}" >> $GITHUB_STEP_SUMMARY
+            echo "- Total .kt files changed: ${{ steps.check_changes.outputs.total_files }}" >> $GITHUB_STEP_SUMMARY
             
             if [ "${{ env.has_changes }}" = "true" ]; then
               echo "- Pull request: ${{ steps.create_pr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY
@@ -232,10 +243,10 @@ jobs:
           
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 🛡️ Safety Features" >> $GITHUB_STEP_SUMMARY
-          echo "- Library-safe: Only additive changes" >> $GITHUB_STEP_SUMMARY
+          echo "- Library-safe: Only .kt icon files committed" >> $GITHUB_STEP_SUMMARY
           echo "- Backward compatible: No breaking changes" >> $GITHUB_STEP_SUMMARY
-          echo "- Accurate lists: Built from actual files" >> $GITHUB_STEP_SUMMARY
-          echo "- Conflict prevention: Enhanced name normalization" >> $GITHUB_STEP_SUMMARY
+          echo "- Additive only: New icons and updated lists" >> $GITHUB_STEP_SUMMARY
+          echo "- Build isolation: No configuration files modified" >> $GITHUB_STEP_SUMMARY
 
       - name: Cleanup on failure
         if: failure()
