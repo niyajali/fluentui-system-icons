@@ -60,13 +60,6 @@ jobs:
           echo "git_ref_display=$input_ref" >> $GITHUB_OUTPUT
           echo "Using git reference: $input_ref"
 
-      - name: Check for new icons
-        id: check_icons
-        run: |
-          echo "Checking for new FluentUI icons..."
-          ./gradlew checkNewIcons --no-configuration-cache --console=plain
-          echo "check_completed=true" >> $GITHUB_OUTPUT
-
       - name: Sync FluentUI icons
         id: sync_icons
         run: |
