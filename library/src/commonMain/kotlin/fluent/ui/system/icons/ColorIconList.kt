@@ -201,7 +201,6 @@ import fluent.ui.system.icons.color.SendClock
 import fluent.ui.system.icons.color.Settings
 import fluent.ui.system.icons.color.ShareAndroid
 import fluent.ui.system.icons.color.ShareIOs
-import fluent.ui.system.icons.color.ShareIOs
 import fluent.ui.system.icons.color.Shield
 import fluent.ui.system.icons.color.ShieldCheckmark
 import fluent.ui.system.icons.color.Shifts
@@ -222,7 +221,6 @@ import fluent.ui.system.icons.color.WeatherSnowflake
 import fluent.ui.system.icons.color.WeatherSunnyLow
 import fluent.ui.system.icons.color.WiFiWarning
 import fluent.ui.system.icons.color.Wifi
-import fluent.ui.system.icons.color.WiFiWarning
 import fluent.ui.system.icons.color.Wrench
 import fluent.ui.system.icons.color.WrenchScrewdriver
 

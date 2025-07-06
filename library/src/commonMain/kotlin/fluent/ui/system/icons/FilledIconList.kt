@@ -510,11 +510,8 @@ import fluent.ui.system.icons.filled.Cast
 import fluent.ui.system.icons.filled.CastMultiple
 import fluent.ui.system.icons.filled.CatchUp
 import fluent.ui.system.icons.filled.Cd
-import fluent.ui.system.icons.filled.Cellular3G
 import fluent.ui.system.icons.filled.Cellular3g
-import fluent.ui.system.icons.filled.Cellular4G
 import fluent.ui.system.icons.filled.Cellular4g
-import fluent.ui.system.icons.filled.Cellular5G
 import fluent.ui.system.icons.filled.Cellular5g
 import fluent.ui.system.icons.filled.CellularData1
 import fluent.ui.system.icons.filled.CellularData2
@@ -1602,17 +1599,11 @@ import fluent.ui.system.icons.filled.MountainLocationBottom
 import fluent.ui.system.icons.filled.MountainLocationTop
 import fluent.ui.system.icons.filled.MountainTrail
 import fluent.ui.system.icons.filled.MoviesAndTv
-import fluent.ui.system.icons.filled.Multiplier12X
 import fluent.ui.system.icons.filled.Multiplier12x
-import fluent.ui.system.icons.filled.Multiplier15X
 import fluent.ui.system.icons.filled.Multiplier15x
-import fluent.ui.system.icons.filled.Multiplier18X
 import fluent.ui.system.icons.filled.Multiplier18x
-import fluent.ui.system.icons.filled.Multiplier1X
 import fluent.ui.system.icons.filled.Multiplier1x
-import fluent.ui.system.icons.filled.Multiplier2X
 import fluent.ui.system.icons.filled.Multiplier2x
-import fluent.ui.system.icons.filled.Multiplier5X
 import fluent.ui.system.icons.filled.Multiplier5x
 import fluent.ui.system.icons.filled.MultiselectLtr
 import fluent.ui.system.icons.filled.MultiselectRtl
@@ -2167,7 +2158,6 @@ import fluent.ui.system.icons.filled.Snooze
 import fluent.ui.system.icons.filled.SoundSource
 import fluent.ui.system.icons.filled.SoundWaveCircle
 import fluent.ui.system.icons.filled.SoundWaveCircleSparkle
-import fluent.ui.system.icons.filled.Space3D
 import fluent.ui.system.icons.filled.Space3d
 import fluent.ui.system.icons.filled.Spacebar
 import fluent.ui.system.icons.filled.Sparkle
@@ -3312,11 +3302,8 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.CastMultiple,
             FluentIcons.Filled.CatchUp,
             FluentIcons.Filled.Cd,
-            FluentIcons.Filled.Cellular3G,
             FluentIcons.Filled.Cellular3g,
-            FluentIcons.Filled.Cellular4G,
             FluentIcons.Filled.Cellular4g,
-            FluentIcons.Filled.Cellular5G,
             FluentIcons.Filled.Cellular5g,
             FluentIcons.Filled.CellularData1,
             FluentIcons.Filled.CellularData2,
@@ -4404,17 +4391,11 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.MountainLocationTop,
             FluentIcons.Filled.MountainTrail,
             FluentIcons.Filled.MoviesAndTv,
-            FluentIcons.Filled.Multiplier12X,
             FluentIcons.Filled.Multiplier12x,
-            FluentIcons.Filled.Multiplier15X,
             FluentIcons.Filled.Multiplier15x,
-            FluentIcons.Filled.Multiplier18X,
             FluentIcons.Filled.Multiplier18x,
-            FluentIcons.Filled.Multiplier1X,
             FluentIcons.Filled.Multiplier1x,
-            FluentIcons.Filled.Multiplier2X,
             FluentIcons.Filled.Multiplier2x,
-            FluentIcons.Filled.Multiplier5X,
             FluentIcons.Filled.Multiplier5x,
             FluentIcons.Filled.MultiselectLtr,
             FluentIcons.Filled.MultiselectRtl,
@@ -4969,7 +4950,6 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.SoundSource,
             FluentIcons.Filled.SoundWaveCircle,
             FluentIcons.Filled.SoundWaveCircleSparkle,
-            FluentIcons.Filled.Space3D,
             FluentIcons.Filled.Space3d,
             FluentIcons.Filled.Spacebar,
             FluentIcons.Filled.Sparkle,
@@ -5571,13 +5551,6 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.WiFiLock,
             FluentIcons.Filled.WiFiOff,
             FluentIcons.Filled.WiFiSettings,
-            FluentIcons.Filled.WiFiWarning,
-            FluentIcons.Filled.WiFi1,
-            FluentIcons.Filled.WiFi2,
-            FluentIcons.Filled.WiFi3,
-            FluentIcons.Filled.WiFi4,
-            FluentIcons.Filled.WiFiLock,
-            FluentIcons.Filled.WiFiOff,
             FluentIcons.Filled.WiFiWarning,
             FluentIcons.Filled.Window,
             FluentIcons.Filled.WindowAd,
