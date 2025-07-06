@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,65 +30,77 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.TextboxAlignBottomLeft: ImageVector
+/**
+ * TextBoxAlignBottomLeft Icon (24dp)
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: fluent-icon
+ * - Description: Used to represent type layout within a container.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_textbox_align_bottom_left_24_filled.svg)
+ * 
+ * @return The [ImageVector] for the TextBoxAlignBottomLeft icon.
+ */
+public val FluentIcons.Filled.TextBoxAlignBottomLeft: ImageVector
     get() {
-        if (_TextboxAlignBottomLeft != null) {
-            return _TextboxAlignBottomLeft!!
+        if (_textBoxAlignBottomLeft != null) {
+            return _textBoxAlignBottomLeft!!
         }
-        _TextboxAlignBottomLeft = ImageVector.Builder(
-            name = "Filled.TextboxAlignBottomLeft",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
-                moveTo(5.75f, 3f)
-                curveTo(4.231f, 3f, 3f, 4.231f, 3f, 5.75f)
+        _textBoxAlignBottomLeft = Builder(name = "TextBoxAlignBottomLeft", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                moveTo(5.75f, 3.0f)
+                curveTo(4.231f, 3.0f, 3.0f, 4.231f, 3.0f, 5.75f)
                 verticalLineTo(18.25f)
-                curveTo(3f, 19.769f, 4.231f, 21f, 5.75f, 21f)
+                curveTo(3.0f, 19.769f, 4.231f, 21.0f, 5.75f, 21.0f)
                 horizontalLineTo(18.25f)
-                curveTo(19.769f, 21f, 21f, 19.769f, 21f, 18.25f)
+                curveTo(19.769f, 21.0f, 21.0f, 19.769f, 21.0f, 18.25f)
                 verticalLineTo(5.75f)
-                curveTo(21f, 4.231f, 19.769f, 3f, 18.25f, 3f)
+                curveTo(21.0f, 4.231f, 19.769f, 3.0f, 18.25f, 3.0f)
                 horizontalLineTo(5.75f)
                 close()
                 moveTo(7.25f, 11.5f)
                 horizontalLineTo(16.75f)
                 curveTo(17.164f, 11.5f, 17.5f, 11.836f, 17.5f, 12.25f)
-                curveTo(17.5f, 12.664f, 17.164f, 13f, 16.75f, 13f)
+                curveTo(17.5f, 12.664f, 17.164f, 13.0f, 16.75f, 13.0f)
                 horizontalLineTo(7.25f)
-                curveTo(6.836f, 13f, 6.5f, 12.664f, 6.5f, 12.25f)
+                curveTo(6.836f, 13.0f, 6.5f, 12.664f, 6.5f, 12.25f)
                 curveTo(6.5f, 11.836f, 6.836f, 11.5f, 7.25f, 11.5f)
                 close()
                 moveTo(7.25f, 15.5f)
                 horizontalLineTo(13.75f)
                 curveTo(14.164f, 15.5f, 14.5f, 15.836f, 14.5f, 16.25f)
-                curveTo(14.5f, 16.664f, 14.164f, 17f, 13.75f, 17f)
+                curveTo(14.5f, 16.664f, 14.164f, 17.0f, 13.75f, 17.0f)
                 horizontalLineTo(7.25f)
-                curveTo(6.836f, 17f, 6.5f, 16.664f, 6.5f, 16.25f)
+                curveTo(6.836f, 17.0f, 6.5f, 16.664f, 6.5f, 16.25f)
                 curveTo(6.5f, 15.836f, 6.836f, 15.5f, 7.25f, 15.5f)
                 close()
             }
-        }.build()
-
-        return _TextboxAlignBottomLeft!!
+        }
+        .build()
+        return _textBoxAlignBottomLeft!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _TextboxAlignBottomLeft: ImageVector? = null
+private var _textBoxAlignBottomLeft: ImageVector? = null
 
 @Preview
 @Composable
-private fun TextboxAlignBottomLeftPreview() {
+private fun TextBoxAlignBottomLeftPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.Filled.TextboxAlignBottomLeft, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextBoxAlignBottomLeft, contentDescription = "TextBoxAlignBottomLeft Icon")
     }
 }
+

@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,65 +30,77 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.TextboxAlignMiddleRotate90: ImageVector
+/**
+ * TextBoxAlignMiddleRotate90 Icon (24dp)
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: fluent-icon
+ * - Description: Used to represent type layout within a container.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_textbox_align_middle_rotate_90_24_filled.svg)
+ * 
+ * @return The [ImageVector] for the TextBoxAlignMiddleRotate90 icon.
+ */
+public val FluentIcons.Filled.TextBoxAlignMiddleRotate90: ImageVector
     get() {
-        if (_TextboxAlignMiddleRotate90 != null) {
-            return _TextboxAlignMiddleRotate90!!
+        if (_textBoxAlignMiddleRotate90 != null) {
+            return _textBoxAlignMiddleRotate90!!
         }
-        _TextboxAlignMiddleRotate90 = ImageVector.Builder(
-            name = "Filled.TextboxAlignMiddleRotate90",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
-                moveTo(21f, 5.75f)
-                curveTo(21f, 4.231f, 19.769f, 3f, 18.25f, 3f)
-                lineTo(5.75f, 3f)
-                curveTo(4.231f, 3f, 3f, 4.231f, 3f, 5.75f)
-                lineTo(3f, 18.25f)
-                curveTo(3f, 19.769f, 4.231f, 21f, 5.75f, 21f)
+        _textBoxAlignMiddleRotate90 = Builder(name = "TextBoxAlignMiddleRotate90", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                moveTo(21.0f, 5.75f)
+                curveTo(21.0f, 4.231f, 19.769f, 3.0f, 18.25f, 3.0f)
+                lineTo(5.75f, 3.0f)
+                curveTo(4.231f, 3.0f, 3.0f, 4.231f, 3.0f, 5.75f)
+                lineTo(3.0f, 18.25f)
+                curveTo(3.0f, 19.769f, 4.231f, 21.0f, 5.75f, 21.0f)
                 horizontalLineTo(18.25f)
-                curveTo(19.769f, 21f, 21f, 19.769f, 21f, 18.25f)
+                curveTo(19.769f, 21.0f, 21.0f, 19.769f, 21.0f, 18.25f)
                 verticalLineTo(5.75f)
                 close()
-                moveTo(15f, 7.25f)
-                lineTo(15f, 16.75f)
-                curveTo(15f, 17.164f, 14.664f, 17.5f, 14.25f, 17.5f)
+                moveTo(15.0f, 7.25f)
+                lineTo(15.0f, 16.75f)
+                curveTo(15.0f, 17.164f, 14.664f, 17.5f, 14.25f, 17.5f)
                 curveTo(13.836f, 17.5f, 13.5f, 17.164f, 13.5f, 16.75f)
                 lineTo(13.5f, 7.25f)
                 curveTo(13.5f, 6.836f, 13.836f, 6.5f, 14.25f, 6.5f)
-                curveTo(14.664f, 6.5f, 15f, 6.836f, 15f, 7.25f)
+                curveTo(14.664f, 6.5f, 15.0f, 6.836f, 15.0f, 7.25f)
                 close()
-                moveTo(11f, 7.25f)
-                lineTo(11f, 16.75f)
-                curveTo(11f, 17.164f, 10.664f, 17.5f, 10.25f, 17.5f)
+                moveTo(11.0f, 7.25f)
+                lineTo(11.0f, 16.75f)
+                curveTo(11.0f, 17.164f, 10.664f, 17.5f, 10.25f, 17.5f)
                 curveTo(9.836f, 17.5f, 9.5f, 17.164f, 9.5f, 16.75f)
                 lineTo(9.5f, 7.25f)
                 curveTo(9.5f, 6.836f, 9.836f, 6.5f, 10.25f, 6.5f)
-                curveTo(10.664f, 6.5f, 11f, 6.836f, 11f, 7.25f)
+                curveTo(10.664f, 6.5f, 11.0f, 6.836f, 11.0f, 7.25f)
                 close()
             }
-        }.build()
-
-        return _TextboxAlignMiddleRotate90!!
+        }
+        .build()
+        return _textBoxAlignMiddleRotate90!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _TextboxAlignMiddleRotate90: ImageVector? = null
+private var _textBoxAlignMiddleRotate90: ImageVector? = null
 
 @Preview
 @Composable
-private fun TextboxAlignMiddleRotate90Preview() {
+private fun TextBoxAlignMiddleRotate90Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.Filled.TextboxAlignMiddleRotate90, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextBoxAlignMiddleRotate90, contentDescription = "TextBoxAlignMiddleRotate90 Icon")
     }
 }
+

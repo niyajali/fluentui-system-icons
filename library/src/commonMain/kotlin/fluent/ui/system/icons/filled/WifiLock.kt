@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,26 +30,37 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.WifiLock: ImageVector
+/**
+ * WiFiLock Icon (24dp)
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: fluent-icon
+ * - Description: Used in wifi connection scenarios.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_wifi_lock_24_filled.svg)
+ * 
+ * @return The [ImageVector] for the WiFiLock icon.
+ */
+public val FluentIcons.Filled.WiFiLock: ImageVector
     get() {
-        if (_WifiLock != null) {
-            return _WifiLock!!
+        if (_wiFiLock != null) {
+            return _wiFiLock!!
         }
-        _WifiLock = ImageVector.Builder(
-            name = "Filled.WifiLock",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
+        _wiFiLock = Builder(name = "WiFiLock", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(17.784f, 10.708f)
                 curveTo(18.381f, 11.305f, 18.896f, 12.026f, 19.288f, 12.793f)
                 curveTo(19.539f, 13.285f, 19.344f, 13.887f, 18.853f, 14.139f)
@@ -77,58 +89,59 @@ public val FluentIcons.Filled.WifiLock: ImageVector
                 curveTo(15.816f, 16.863f, 15.226f, 16.633f, 15.005f, 16.127f)
                 curveTo(14.839f, 15.75f, 14.601f, 15.394f, 14.321f, 15.114f)
                 curveTo(13.587f, 14.38f, 12.587f, 14.073f, 11.631f, 14.192f)
-                curveTo(11.275f, 13.613f, 10.689f, 13.19f, 10f, 13.05f)
-                verticalLineTo(13f)
-                curveTo(10f, 12.861f, 9.992f, 12.723f, 9.976f, 12.588f)
+                curveTo(11.275f, 13.613f, 10.689f, 13.19f, 10.0f, 13.05f)
+                verticalLineTo(13.0f)
+                curveTo(10.0f, 12.861f, 9.992f, 12.723f, 9.976f, 12.588f)
                 curveTo(11.884f, 11.772f, 14.178f, 12.143f, 15.735f, 13.7f)
                 close()
                 moveTo(13.061f, 16.441f)
                 curveTo(13.648f, 17.027f, 13.648f, 17.978f, 13.061f, 18.564f)
-                curveTo(12.768f, 18.857f, 12.384f, 19.004f, 12f, 19.004f)
+                curveTo(12.768f, 18.857f, 12.384f, 19.004f, 12.0f, 19.004f)
                 verticalLineTo(16.001f)
                 curveTo(12.384f, 16.001f, 12.768f, 16.148f, 13.061f, 16.441f)
                 close()
-                moveTo(4f, 14f)
-                verticalLineTo(13f)
-                curveTo(4f, 11.619f, 5.119f, 10.5f, 6.5f, 10.5f)
-                curveTo(7.881f, 10.5f, 9f, 11.619f, 9f, 13f)
-                verticalLineTo(14f)
+                moveTo(4.0f, 14.0f)
+                verticalLineTo(13.0f)
+                curveTo(4.0f, 11.619f, 5.119f, 10.5f, 6.5f, 10.5f)
+                curveTo(7.881f, 10.5f, 9.0f, 11.619f, 9.0f, 13.0f)
+                verticalLineTo(14.0f)
                 horizontalLineTo(9.5f)
-                curveTo(10.328f, 14f, 11f, 14.672f, 11f, 15.5f)
+                curveTo(10.328f, 14.0f, 11.0f, 14.672f, 11.0f, 15.5f)
                 verticalLineTo(20.5f)
-                curveTo(11f, 21.328f, 10.328f, 22f, 9.5f, 22f)
+                curveTo(11.0f, 21.328f, 10.328f, 22.0f, 9.5f, 22.0f)
                 horizontalLineTo(3.5f)
-                curveTo(2.672f, 22f, 2f, 21.328f, 2f, 20.5f)
+                curveTo(2.672f, 22.0f, 2.0f, 21.328f, 2.0f, 20.5f)
                 verticalLineTo(15.5f)
-                curveTo(2f, 14.672f, 2.672f, 14f, 3.5f, 14f)
-                horizontalLineTo(4f)
+                curveTo(2.0f, 14.672f, 2.672f, 14.0f, 3.5f, 14.0f)
+                horizontalLineTo(4.0f)
                 close()
-                moveTo(5.5f, 13f)
-                verticalLineTo(14f)
+                moveTo(5.5f, 13.0f)
+                verticalLineTo(14.0f)
                 horizontalLineTo(7.5f)
-                verticalLineTo(13f)
-                curveTo(7.5f, 12.448f, 7.052f, 12f, 6.5f, 12f)
-                curveTo(5.948f, 12f, 5.5f, 12.448f, 5.5f, 13f)
+                verticalLineTo(13.0f)
+                curveTo(7.5f, 12.448f, 7.052f, 12.0f, 6.5f, 12.0f)
+                curveTo(5.948f, 12.0f, 5.5f, 12.448f, 5.5f, 13.0f)
                 close()
-                moveTo(7.5f, 18f)
-                curveTo(7.5f, 17.448f, 7.052f, 17f, 6.5f, 17f)
-                curveTo(5.948f, 17f, 5.5f, 17.448f, 5.5f, 18f)
-                curveTo(5.5f, 18.552f, 5.948f, 19f, 6.5f, 19f)
-                curveTo(7.052f, 19f, 7.5f, 18.552f, 7.5f, 18f)
+                moveTo(7.5f, 18.0f)
+                curveTo(7.5f, 17.448f, 7.052f, 17.0f, 6.5f, 17.0f)
+                curveTo(5.948f, 17.0f, 5.5f, 17.448f, 5.5f, 18.0f)
+                curveTo(5.5f, 18.552f, 5.948f, 19.0f, 6.5f, 19.0f)
+                curveTo(7.052f, 19.0f, 7.5f, 18.552f, 7.5f, 18.0f)
                 close()
             }
-        }.build()
-
-        return _WifiLock!!
+        }
+        .build()
+        return _wiFiLock!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _WifiLock: ImageVector? = null
+private var _wiFiLock: ImageVector? = null
 
 @Preview
 @Composable
-private fun WifiLockPreview() {
+private fun WiFiLockPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.Filled.WifiLock, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.WiFiLock, contentDescription = "WiFiLock Icon")
     }
 }
+

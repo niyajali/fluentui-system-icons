@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,26 +30,37 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.Wifi2: ImageVector
+/**
+ * WiFi2 Icon (24dp)
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: fluent-icon
+ * - Description: Used in wifi connection scenarios.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_wifi_2_24_filled.svg)
+ * 
+ * @return The [ImageVector] for the WiFi2 icon.
+ */
+public val FluentIcons.Filled.WiFi2: ImageVector
     get() {
-        if (_Wifi2 != null) {
-            return _Wifi2!!
+        if (_wiFi2 != null) {
+            return _wiFi2!!
         }
-        _Wifi2 = ImageVector.Builder(
-            name = "Filled.Wifi2",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
+        _wiFi2 = Builder(name = "WiFi2", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(10.96f, 16.44f)
                 curveTo(11.546f, 15.854f, 12.496f, 15.854f, 13.082f, 16.44f)
                 curveTo(13.668f, 17.026f, 13.668f, 17.976f, 13.082f, 18.563f)
@@ -80,18 +92,19 @@ public val FluentIcons.Filled.Wifi2: ImageVector
                 curveTo(5.193f, 12.017f, 5.695f, 11.322f, 6.31f, 10.707f)
                 close()
             }
-        }.build()
-
-        return _Wifi2!!
+        }
+        .build()
+        return _wiFi2!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _Wifi2: ImageVector? = null
+private var _wiFi2: ImageVector? = null
 
 @Preview
 @Composable
-private fun Wifi2Preview() {
+private fun WiFi2Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.Filled.Wifi2, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.WiFi2, contentDescription = "WiFi2 Icon")
     }
 }
+

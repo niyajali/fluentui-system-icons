@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,65 +30,77 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.TextboxAlignCenter: ImageVector
+/**
+ * TextBoxAlignCenter Icon (24dp)
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: fluent-icon
+ * - Description: Used to represent type layout within a container.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_textbox_align_center_24_filled.svg)
+ * 
+ * @return The [ImageVector] for the TextBoxAlignCenter icon.
+ */
+public val FluentIcons.Filled.TextBoxAlignCenter: ImageVector
     get() {
-        if (_TextboxAlignCenter != null) {
-            return _TextboxAlignCenter!!
+        if (_textBoxAlignCenter != null) {
+            return _textBoxAlignCenter!!
         }
-        _TextboxAlignCenter = ImageVector.Builder(
-            name = "Filled.TextboxAlignCenter",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
-                moveTo(5.75f, 3f)
-                curveTo(4.231f, 3f, 3f, 4.231f, 3f, 5.75f)
+        _textBoxAlignCenter = Builder(name = "TextBoxAlignCenter", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                moveTo(5.75f, 3.0f)
+                curveTo(4.231f, 3.0f, 3.0f, 4.231f, 3.0f, 5.75f)
                 verticalLineTo(18.25f)
-                curveTo(3f, 19.769f, 4.231f, 21f, 5.75f, 21f)
+                curveTo(3.0f, 19.769f, 4.231f, 21.0f, 5.75f, 21.0f)
                 horizontalLineTo(18.25f)
-                curveTo(19.769f, 21f, 21f, 19.769f, 21f, 18.25f)
+                curveTo(19.769f, 21.0f, 21.0f, 19.769f, 21.0f, 18.25f)
                 verticalLineTo(5.75f)
-                curveTo(21f, 4.231f, 19.769f, 3f, 18.25f, 3f)
+                curveTo(21.0f, 4.231f, 19.769f, 3.0f, 18.25f, 3.0f)
                 horizontalLineTo(5.75f)
                 close()
-                moveTo(7.25f, 9f)
+                moveTo(7.25f, 9.0f)
                 horizontalLineTo(16.75f)
-                curveTo(17.164f, 9f, 17.5f, 9.336f, 17.5f, 9.75f)
+                curveTo(17.164f, 9.0f, 17.5f, 9.336f, 17.5f, 9.75f)
                 curveTo(17.5f, 10.164f, 17.164f, 10.5f, 16.75f, 10.5f)
                 horizontalLineTo(7.25f)
                 curveTo(6.836f, 10.5f, 6.5f, 10.164f, 6.5f, 9.75f)
-                curveTo(6.5f, 9.336f, 6.836f, 9f, 7.25f, 9f)
+                curveTo(6.5f, 9.336f, 6.836f, 9.0f, 7.25f, 9.0f)
                 close()
-                moveTo(9.25f, 13f)
+                moveTo(9.25f, 13.0f)
                 horizontalLineTo(14.75f)
-                curveTo(15.164f, 13f, 15.5f, 13.336f, 15.5f, 13.75f)
+                curveTo(15.164f, 13.0f, 15.5f, 13.336f, 15.5f, 13.75f)
                 curveTo(15.5f, 14.164f, 15.164f, 14.5f, 14.75f, 14.5f)
                 horizontalLineTo(9.25f)
                 curveTo(8.836f, 14.5f, 8.5f, 14.164f, 8.5f, 13.75f)
-                curveTo(8.5f, 13.336f, 8.836f, 13f, 9.25f, 13f)
+                curveTo(8.5f, 13.336f, 8.836f, 13.0f, 9.25f, 13.0f)
                 close()
             }
-        }.build()
-
-        return _TextboxAlignCenter!!
+        }
+        .build()
+        return _textBoxAlignCenter!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _TextboxAlignCenter: ImageVector? = null
+private var _textBoxAlignCenter: ImageVector? = null
 
 @Preview
 @Composable
-private fun TextboxAlignCenterPreview() {
+private fun TextBoxAlignCenterPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.Filled.TextboxAlignCenter, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.TextBoxAlignCenter, contentDescription = "TextBoxAlignCenter Icon")
     }
 }
+

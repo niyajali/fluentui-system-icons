@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,26 +30,37 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.WifiOff: ImageVector
+/**
+ * WiFiOff Icon (24dp)
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: fluent-icon
+ * - Description: Used in wifi connection scenarios.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_wifi_off_24_filled.svg)
+ * 
+ * @return The [ImageVector] for the WiFiOff icon.
+ */
+public val FluentIcons.Filled.WiFiOff: ImageVector
     get() {
-        if (_WifiOff != null) {
-            return _WifiOff!!
+        if (_wiFiOff != null) {
+            return _wiFiOff!!
         }
-        _WifiOff = ImageVector.Builder(
-            name = "Filled.WifiOff",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
+        _wiFiOff = Builder(name = "WiFiOff", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(12.858f, 14.273f)
                 lineTo(20.292f, 21.707f)
                 curveTo(20.683f, 22.098f, 21.316f, 22.098f, 21.706f, 21.707f)
@@ -103,18 +115,19 @@ public val FluentIcons.Filled.WifiOff: ImageVector
                 curveTo(11.525f, 15.855f, 12.476f, 15.855f, 13.062f, 16.441f)
                 close()
             }
-        }.build()
-
-        return _WifiOff!!
+        }
+        .build()
+        return _wiFiOff!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _WifiOff: ImageVector? = null
+private var _wiFiOff: ImageVector? = null
 
 @Preview
 @Composable
-private fun WifiOffPreview() {
+private fun WiFiOffPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.Filled.WifiOff, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.WiFiOff, contentDescription = "WiFiOff Icon")
     }
 }
+

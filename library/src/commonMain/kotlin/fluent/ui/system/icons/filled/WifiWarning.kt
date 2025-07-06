@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,26 +30,37 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.WifiWarning: ImageVector
+/**
+ * WiFiWarning Icon (24dp)
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: fluent-icon
+ * - Description: Used in wifi connection scenarios.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_wifi_warning_24_filled.svg)
+ * 
+ * @return The [ImageVector] for the WiFiWarning icon.
+ */
+public val FluentIcons.Filled.WiFiWarning: ImageVector
     get() {
-        if (_WifiWarning != null) {
-            return _WifiWarning!!
+        if (_wiFiWarning != null) {
+            return _wiFiWarning!!
         }
-        _WifiWarning = ImageVector.Builder(
-            name = "Filled.WifiWarning",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
+        _wiFiWarning = Builder(name = "WiFiWarning", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(17.784f, 10.708f)
                 curveTo(17.903f, 10.827f, 18.018f, 10.951f, 18.131f, 11.079f)
                 curveTo(17.338f, 10.877f, 16.459f, 11.063f, 15.825f, 11.638f)
@@ -89,39 +101,40 @@ public val FluentIcons.Filled.WifiWarning: ImageVector
                 close()
                 moveTo(16.157f, 12.83f)
                 lineTo(12.16f, 20.828f)
-                curveTo(11.661f, 21.826f, 12.387f, 23f, 13.503f, 23f)
+                curveTo(11.661f, 21.826f, 12.387f, 23.0f, 13.503f, 23.0f)
                 horizontalLineTo(21.497f)
-                curveTo(22.613f, 23f, 23.338f, 21.826f, 22.84f, 20.828f)
+                curveTo(22.613f, 23.0f, 23.338f, 21.826f, 22.84f, 20.828f)
                 lineTo(18.843f, 12.83f)
                 curveTo(18.29f, 11.723f, 16.71f, 11.723f, 16.157f, 12.83f)
                 close()
-                moveTo(18f, 15.496f)
+                moveTo(18.0f, 15.496f)
                 verticalLineTo(18.497f)
-                curveTo(18f, 18.774f, 17.776f, 18.998f, 17.5f, 18.998f)
-                curveTo(17.224f, 18.998f, 17f, 18.774f, 17f, 18.497f)
+                curveTo(18.0f, 18.774f, 17.776f, 18.998f, 17.5f, 18.998f)
+                curveTo(17.224f, 18.998f, 17.0f, 18.774f, 17.0f, 18.497f)
                 verticalLineTo(15.496f)
-                curveTo(17f, 15.219f, 17.224f, 14.995f, 17.5f, 14.995f)
-                curveTo(17.776f, 14.995f, 18f, 15.219f, 18f, 15.496f)
+                curveTo(17.0f, 15.219f, 17.224f, 14.995f, 17.5f, 14.995f)
+                curveTo(17.776f, 14.995f, 18.0f, 15.219f, 18.0f, 15.496f)
                 close()
                 moveTo(17.5f, 20.999f)
-                curveTo(17.224f, 20.999f, 17f, 20.775f, 17f, 20.499f)
-                curveTo(17f, 20.222f, 17.224f, 19.998f, 17.5f, 19.998f)
-                curveTo(17.776f, 19.998f, 18f, 20.222f, 18f, 20.499f)
-                curveTo(18f, 20.775f, 17.776f, 20.999f, 17.5f, 20.999f)
+                curveTo(17.224f, 20.999f, 17.0f, 20.775f, 17.0f, 20.499f)
+                curveTo(17.0f, 20.222f, 17.224f, 19.998f, 17.5f, 19.998f)
+                curveTo(17.776f, 19.998f, 18.0f, 20.222f, 18.0f, 20.499f)
+                curveTo(18.0f, 20.775f, 17.776f, 20.999f, 17.5f, 20.999f)
                 close()
             }
-        }.build()
-
-        return _WifiWarning!!
+        }
+        .build()
+        return _wiFiWarning!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _WifiWarning: ImageVector? = null
+private var _wiFiWarning: ImageVector? = null
 
 @Preview
 @Composable
-private fun WifiWarningPreview() {
+private fun WiFiWarningPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.Filled.WifiWarning, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.WiFiWarning, contentDescription = "WiFiWarning Icon")
     }
 }
+

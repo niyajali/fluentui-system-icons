@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,29 +30,40 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.InprivateAccount: ImageVector
+/**
+ * InPrivateAccount Icon (24dp)
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: fluent-icon, edge
+ * - Description: Used to represent a private browsing account.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_inprivate_account_24_filled.svg)
+ * 
+ * @return The [ImageVector] for the InPrivateAccount icon.
+ */
+public val FluentIcons.Filled.InPrivateAccount: ImageVector
     get() {
-        if (_InprivateAccount != null) {
-            return _InprivateAccount!!
+        if (_inPrivateAccount != null) {
+            return _inPrivateAccount!!
         }
-        _InprivateAccount = ImageVector.Builder(
-            name = "Filled.InprivateAccount",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
-                moveTo(17.754f, 14f)
-                curveTo(18.962f, 14f, 19.948f, 14.953f, 20.001f, 16.147f)
-                lineTo(20f, 16.25f)
+        _inPrivateAccount = Builder(name = "InPrivateAccount", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                moveTo(17.754f, 14.0f)
+                curveTo(18.962f, 14.0f, 19.948f, 14.953f, 20.001f, 16.147f)
+                lineTo(20.0f, 16.25f)
                 lineTo(12.004f, 16.25f)
                 verticalLineTo(17.249f)
                 lineTo(19.979f, 17.25f)
@@ -59,43 +71,44 @@ public val FluentIcons.Filled.InprivateAccount: ImageVector
                 lineTo(12.004f, 18.749f)
                 verticalLineTo(19.75f)
                 lineTo(18.642f, 19.751f)
-                curveTo(17.081f, 21.257f, 14.852f, 22.001f, 12f, 22.001f)
+                curveTo(17.081f, 21.257f, 14.852f, 22.001f, 12.0f, 22.001f)
                 curveTo(8.854f, 22.001f, 6.468f, 21.096f, 4.902f, 19.262f)
                 curveTo(4.322f, 18.583f, 4.004f, 17.719f, 4.004f, 16.826f)
                 verticalLineTo(16.249f)
-                curveTo(4.004f, 15.007f, 5.011f, 14f, 6.253f, 14f)
+                curveTo(4.004f, 15.007f, 5.011f, 14.0f, 6.253f, 14.0f)
                 horizontalLineTo(17.754f)
                 close()
-                moveTo(12f, 2f)
-                curveTo(13.636f, 2f, 15.088f, 2.785f, 16f, 4f)
-                lineTo(12.003f, 4f)
+                moveTo(12.0f, 2.0f)
+                curveTo(13.636f, 2.0f, 15.088f, 2.785f, 16.0f, 4.0f)
+                lineTo(12.003f, 4.0f)
                 lineTo(12.003f, 4.999f)
-                lineTo(16.584f, 5f)
+                lineTo(16.584f, 5.0f)
                 curveTo(16.788f, 5.468f, 16.923f, 5.972f, 16.976f, 6.5f)
                 lineTo(12.003f, 6.499f)
                 verticalLineTo(7.499f)
                 lineTo(16.976f, 7.501f)
                 curveTo(16.923f, 8.029f, 16.788f, 8.533f, 16.584f, 9.001f)
                 lineTo(12.003f, 8.999f)
-                lineTo(12.003f, 10f)
-                lineTo(16f, 10.001f)
-                curveTo(15.087f, 11.215f, 13.635f, 12f, 12f, 12f)
-                curveTo(9.239f, 12f, 7f, 9.761f, 7f, 7f)
-                curveTo(7f, 4.239f, 9.239f, 2f, 12f, 2f)
+                lineTo(12.003f, 10.0f)
+                lineTo(16.0f, 10.001f)
+                curveTo(15.087f, 11.215f, 13.635f, 12.0f, 12.0f, 12.0f)
+                curveTo(9.239f, 12.0f, 7.0f, 9.761f, 7.0f, 7.0f)
+                curveTo(7.0f, 4.239f, 9.239f, 2.0f, 12.0f, 2.0f)
                 close()
             }
-        }.build()
-
-        return _InprivateAccount!!
+        }
+        .build()
+        return _inPrivateAccount!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _InprivateAccount: ImageVector? = null
+private var _inPrivateAccount: ImageVector? = null
 
 @Preview
 @Composable
-private fun InprivateAccountPreview() {
+private fun InPrivateAccountPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.Filled.InprivateAccount, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.InPrivateAccount, contentDescription = "InPrivateAccount Icon")
     }
 }
+

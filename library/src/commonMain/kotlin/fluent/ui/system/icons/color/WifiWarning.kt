@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.color
 
 import androidx.compose.foundation.Image
@@ -29,36 +30,39 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Brush.Companion.linearGradient
+import androidx.compose.ui.graphics.Brush.Companion.radialGradient
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Color.WifiWarning: ImageVector
+/**
+ * WiFiWarning Icon (24dp)
+ * 
+ * **Icon details:**
+ * - Style: Color
+ * - Size: 24dp
+ * - Keywords: fluent-icon
+ * - Description: Used in wifi connection scenarios.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_wifi_warning_24_color.svg)
+ * 
+ * @return The [ImageVector] for the WiFiWarning icon.
+ */
+public val FluentIcons.Color.WiFiWarning: ImageVector
     get() {
-        if (_WifiWarning != null) {
-            return _WifiWarning!!
+        if (_wiFiWarning != null) {
+            return _wiFiWarning!!
         }
-        _WifiWarning = ImageVector.Builder(
-            name = "Colored.WifiWarning",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(
-                fill = Brush.radialGradient(
-                    colorStops = arrayOf(
-                        0.114f to Color(0xFF8B52F4),
-                        1f to Color(0xFFEA71EF)
-                    ),
-                    center = Offset(12f, 17.3f),
-                    radius = 12.492f
-                )
-            ) {
+        _wiFiWarning = Builder(name = "WiFiWarning", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = radialGradient(0.114f to Color(0xFF8B52F4), 1.0f to Color(0xFFEA71EF), center = Offset(12.0f,17.3f), radius = 12.492f), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(17.784f, 10.708f)
                 curveTo(18.381f, 11.305f, 18.896f, 12.026f, 19.288f, 12.793f)
                 curveTo(19.539f, 13.285f, 19.344f, 13.887f, 18.853f, 14.139f)
@@ -102,35 +106,17 @@ public val FluentIcons.Color.WifiWarning: ImageVector
                 curveTo(11.525f, 15.855f, 12.475f, 15.855f, 13.061f, 16.441f)
                 close()
             }
-            path(
-                fill = Brush.linearGradient(
-                    colorStops = arrayOf(
-                        0f to Color(0xFFFFCD0F),
-                        1f to Color(0xFFFE8401)
-                    ),
-                    start = Offset(13.723f, 10.281f),
-                    end = Offset(20.941f, 24.031f)
-                )
-            ) {
+            path(fill = linearGradient(0.0f to Color(0xFFFFCD0F), 1.0f to Color(0xFFFE8401), start = Offset(13.723f,10.281f), end = Offset(20.941f,24.031f)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(16.161f, 12.83f)
                 lineTo(12.164f, 20.828f)
-                curveTo(11.665f, 21.826f, 12.391f, 23f, 13.507f, 23f)
+                curveTo(11.665f, 21.826f, 12.391f, 23.0f, 13.507f, 23.0f)
                 horizontalLineTo(21.501f)
-                curveTo(22.617f, 23f, 23.342f, 21.826f, 22.844f, 20.828f)
+                curveTo(22.617f, 23.0f, 23.342f, 21.826f, 22.844f, 20.828f)
                 lineTo(18.847f, 12.83f)
                 curveTo(18.294f, 11.723f, 16.714f, 11.723f, 16.161f, 12.83f)
                 close()
             }
-            path(
-                fill = Brush.linearGradient(
-                    colorStops = arrayOf(
-                        0f to Color(0xFF4A4A4A),
-                        1f to Color(0xFF212121)
-                    ),
-                    start = Offset(16.17f, 14.995f),
-                    end = Offset(19.376f, 20.696f)
-                )
-            ) {
+            path(fill = linearGradient(0.0f to Color(0xFF4A4A4A), 1.0f to Color(0xFF212121), start = Offset(16.17f,14.995f), end = Offset(19.376f,20.696f)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(18.005f, 15.495f)
                 verticalLineTo(18.497f)
                 curveTo(18.005f, 18.773f, 17.781f, 18.997f, 17.504f, 18.997f)
@@ -146,18 +132,19 @@ public val FluentIcons.Color.WifiWarning: ImageVector
                 curveTo(18.005f, 20.775f, 17.781f, 20.999f, 17.504f, 20.999f)
                 close()
             }
-        }.build()
-
-        return _WifiWarning!!
+        }
+        .build()
+        return _wiFiWarning!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _WifiWarning: ImageVector? = null
+private var _wiFiWarning: ImageVector? = null
 
 @Preview
 @Composable
-private fun WifiWarningPreview() {
+private fun WiFiWarningPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.Color.WifiWarning, contentDescription = null)
+        Image(imageVector = FluentIcons.Color.WiFiWarning, contentDescription = "WiFiWarning Icon")
     }
 }
+

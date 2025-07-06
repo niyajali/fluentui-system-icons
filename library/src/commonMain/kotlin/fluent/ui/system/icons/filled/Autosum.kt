@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package fluent.ui.system.icons.filled
 
 import androidx.compose.foundation.Image
@@ -29,31 +30,42 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-public val FluentIcons.Filled.Autosum: ImageVector
+/**
+ * AutoSum Icon (24dp)
+ * 
+ * **Icon details:**
+ * - Style: Filled
+ * - Size: 24dp
+ * - Keywords: fluent-icon
+ * - Description: Used to insert math formula into content.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_autosum_24_filled.svg)
+ * 
+ * @return The [ImageVector] for the AutoSum icon.
+ */
+public val FluentIcons.Filled.AutoSum: ImageVector
     get() {
-        if (_Autosum != null) {
-            return _Autosum!!
+        if (_autoSum != null) {
+            return _autoSum!!
         }
-        _Autosum = ImageVector.Builder(
-            name = "Filled.Autosum",
-            defaultWidth = 24.dp,
-            defaultHeight = 24.dp,
-            viewportWidth = 24f,
-            viewportHeight = 24f,
-        ).apply {
-            path(fill = SolidColor(Color(0xFF212121))) {
+        _autoSum = Builder(name = "AutoSum", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
                 moveTo(4.829f, 4.61f)
-                curveTo(4.986f, 4.24f, 5.349f, 4f, 5.75f, 4f)
+                curveTo(4.986f, 4.24f, 5.349f, 4.0f, 5.75f, 4.0f)
                 horizontalLineTo(18.25f)
-                curveTo(18.802f, 4f, 19.25f, 4.448f, 19.25f, 5f)
-                curveTo(19.25f, 5.552f, 18.802f, 6f, 18.25f, 6f)
+                curveTo(18.802f, 4.0f, 19.25f, 4.448f, 19.25f, 5.0f)
+                curveTo(19.25f, 5.552f, 18.802f, 6.0f, 18.25f, 6.0f)
                 horizontalLineTo(8.109f)
                 lineTo(13.059f, 11.115f)
                 curveTo(13.418f, 11.486f, 13.436f, 12.069f, 13.1f, 12.461f)
@@ -69,18 +81,19 @@ public val FluentIcons.Filled.Autosum: ImageVector
                 curveTo(4.752f, 5.407f, 4.673f, 4.979f, 4.829f, 4.61f)
                 close()
             }
-        }.build()
-
-        return _Autosum!!
+        }
+        .build()
+        return _autoSum!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _Autosum: ImageVector? = null
+private var _autoSum: ImageVector? = null
 
 @Preview
 @Composable
-private fun AutosumPreview() {
+private fun AutoSumPreview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = FluentIcons.Filled.Autosum, contentDescription = null)
+        Image(imageVector = FluentIcons.Filled.AutoSum, contentDescription = "AutoSum Icon")
     }
 }
+
