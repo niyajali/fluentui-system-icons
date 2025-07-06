@@ -407,6 +407,7 @@ public val FluentIcons.ColorIconList: List<ImageVector>
             FluentIcons.Color.Settings,
             FluentIcons.Color.ShareAndroid,
             FluentIcons.Color.ShareIOs,
+            FluentIcons.Color.ShareIOs,
             FluentIcons.Color.Shield,
             FluentIcons.Color.ShieldCheckmark,
             FluentIcons.Color.Shifts,
@@ -427,6 +428,7 @@ public val FluentIcons.ColorIconList: List<ImageVector>
             FluentIcons.Color.WeatherSunnyLow,
             FluentIcons.Color.WiFiWarning,
             FluentIcons.Color.Wifi,
+            FluentIcons.Color.WiFiWarning,
             FluentIcons.Color.Wrench,
             FluentIcons.Color.WrenchScrewdriver
         )
