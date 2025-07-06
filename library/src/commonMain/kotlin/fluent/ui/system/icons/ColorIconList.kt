@@ -118,6 +118,7 @@ import fluent.ui.system.icons.color.FastForwardCircle
 import fluent.ui.system.icons.color.Flag
 import fluent.ui.system.icons.color.Food
 import fluent.ui.system.icons.color.Form
+import fluent.ui.system.icons.color.GameChat
 import fluent.ui.system.icons.color.Gauge
 import fluent.ui.system.icons.color.Gift
 import fluent.ui.system.icons.color.GiftCard
@@ -171,6 +172,7 @@ import fluent.ui.system.icons.color.PeopleTeam
 import fluent.ui.system.icons.color.Person
 import fluent.ui.system.icons.color.PersonAdd
 import fluent.ui.system.icons.color.PersonAvailable
+import fluent.ui.system.icons.color.PersonEdit
 import fluent.ui.system.icons.color.PersonFeedback
 import fluent.ui.system.icons.color.PersonHeart
 import fluent.ui.system.icons.color.PersonKey
@@ -198,7 +200,7 @@ import fluent.ui.system.icons.color.Send
 import fluent.ui.system.icons.color.SendClock
 import fluent.ui.system.icons.color.Settings
 import fluent.ui.system.icons.color.ShareAndroid
-import fluent.ui.system.icons.color.ShareIos
+import fluent.ui.system.icons.color.ShareIOs
 import fluent.ui.system.icons.color.Shield
 import fluent.ui.system.icons.color.ShieldCheckmark
 import fluent.ui.system.icons.color.Shifts
@@ -217,8 +219,8 @@ import fluent.ui.system.icons.color.Video
 import fluent.ui.system.icons.color.Warning
 import fluent.ui.system.icons.color.WeatherSnowflake
 import fluent.ui.system.icons.color.WeatherSunnyLow
+import fluent.ui.system.icons.color.WiFiWarning
 import fluent.ui.system.icons.color.Wifi
-import fluent.ui.system.icons.color.WifiWarning
 import fluent.ui.system.icons.color.Wrench
 import fluent.ui.system.icons.color.WrenchScrewdriver
 
@@ -322,6 +324,7 @@ public val FluentIcons.ColorIconList: List<ImageVector>
             FluentIcons.Color.Flag,
             FluentIcons.Color.Food,
             FluentIcons.Color.Form,
+            FluentIcons.Color.GameChat,
             FluentIcons.Color.Gauge,
             FluentIcons.Color.Gift,
             FluentIcons.Color.GiftCard,
@@ -375,6 +378,7 @@ public val FluentIcons.ColorIconList: List<ImageVector>
             FluentIcons.Color.Person,
             FluentIcons.Color.PersonAdd,
             FluentIcons.Color.PersonAvailable,
+            FluentIcons.Color.PersonEdit,
             FluentIcons.Color.PersonFeedback,
             FluentIcons.Color.PersonHeart,
             FluentIcons.Color.PersonKey,
@@ -402,7 +406,7 @@ public val FluentIcons.ColorIconList: List<ImageVector>
             FluentIcons.Color.SendClock,
             FluentIcons.Color.Settings,
             FluentIcons.Color.ShareAndroid,
-            FluentIcons.Color.ShareIos,
+            FluentIcons.Color.ShareIOs,
             FluentIcons.Color.Shield,
             FluentIcons.Color.ShieldCheckmark,
             FluentIcons.Color.Shifts,
@@ -421,8 +425,8 @@ public val FluentIcons.ColorIconList: List<ImageVector>
             FluentIcons.Color.Warning,
             FluentIcons.Color.WeatherSnowflake,
             FluentIcons.Color.WeatherSunnyLow,
+            FluentIcons.Color.WiFiWarning,
             FluentIcons.Color.Wifi,
-            FluentIcons.Color.WifiWarning,
             FluentIcons.Color.Wrench,
             FluentIcons.Color.WrenchScrewdriver
         )

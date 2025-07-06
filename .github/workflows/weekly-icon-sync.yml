@@ -101,7 +101,6 @@ jobs:
             echo "total_files=$total_files" >> $GITHUB_OUTPUT
             
             # Generate change summary for PR
-            git status --short > changes_summary.txt
             echo "📊 Changes detected:"
             echo "  New files: $added_files"
             echo "  Modified files: $modified_files"
@@ -185,39 +184,7 @@ jobs:
             - **Total files changed**: ${{ steps.check_changes.outputs.total_files }}
             - **Sync date**: ${{ github.run_time }}
             - **Source reference**: microsoft/fluentui-system-icons@${{ steps.setup_config.outputs.git_ref_display }}
-            
-            ### 🛡️ Safety Guarantees
-            - ✅ **Library-safe**: Only new icons added, no existing icons modified
-            - ✅ **Backward compatible**: No breaking changes to existing APIs
-            - ✅ **Tested**: Automated sync with verification steps
-            - ✅ **Accurate lists**: Icon collections rebuilt from actual file contents
-            
-            ### 📁 Changes
-            ```
-            $(cat changes_summary.txt || echo "No detailed changes available")
-            ```
-            
-            ### 🔍 Verification
-            This sync was performed using the library-safe FluentUI icons plugin:
-            - Icons are only added, never modified or removed
-            - Icon lists are rebuilt from actual file contents  
-            - All existing icons remain unchanged
-            - Proper normalization prevents naming conflicts
-            
-            ### 🚀 What's Included
-            - ✅ Fresh icon definitions converted to Compose `ImageVector` format
-            - ✅ Style-based organization (filled, regular, light, color)
-            - ✅ Updated icon collection files
-            - ✅ Ready for Kotlin Multiplatform usage
-            
-            ### 🔄 Next Steps
-            1. Review the changes in this PR
-            2. Verify no existing icons were modified (should only see additions)
-            3. Test the new icons in your application
-            4. Merge when ready
-            
-            ---
-            *This PR was automatically created by the weekly FluentUI icons sync workflow using the library-safe plugin v2.1.0*
+
           labels: |
             fluent-icons
             enhancement
@@ -286,19 +253,3 @@ jobs:
           echo "- Network connectivity issues"
           echo "- Git repository access problems"  
           echo "- Build configuration errors"
-
-  notify-failure:
-    runs-on: ubuntu-latest
-    needs: sync-icons
-    if: failure()
-    
-    steps:
-      - name: Notify on failure
-        run: |
-          echo "::error::FluentUI Icons sync workflow failed"
-          echo "The automated icon sync encountered an error."
-          echo "Please check the workflow logs and investigate:"
-          echo "1. Network connectivity to GitHub/Microsoft repositories"
-          echo "2. Git repository access permissions"
-          echo "3. Gradle build configuration"
-          echo "4. Plugin compatibility issues"
