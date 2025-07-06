@@ -199,6 +199,7 @@ import fluent.ui.system.icons.light.TextCollapse
 import fluent.ui.system.icons.light.TextDensity
 import fluent.ui.system.icons.light.TextEditStyle
 import fluent.ui.system.icons.light.TextExpand
+import fluent.ui.system.icons.light.TextboxAlignTopLeft
 import fluent.ui.system.icons.light.Toolbox
 import fluent.ui.system.icons.light.Translate
 import fluent.ui.system.icons.light.Video
@@ -391,6 +392,7 @@ public val FluentIcons.LightIconList: List<ImageVector>
             FluentIcons.Light.TextDensity,
             FluentIcons.Light.TextEditStyle,
             FluentIcons.Light.TextExpand,
+            FluentIcons.Light.TextboxAlignTopLeft,
             FluentIcons.Light.Toolbox,
             FluentIcons.Light.Translate,
             FluentIcons.Light.Video,
