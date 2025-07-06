@@ -24,9 +24,39 @@
 
 package utils
 
+import models.IconListUpdateResult
 import java.io.File
 
 class IconListUpdater {
+
+    /**
+     * Updates all icon lists for supported styles and returns result
+     */
+    fun updateIconLists(targetDir: File, supportedStyles: List<String>): IconListUpdateResult {
+        var updatedFiles = 0
+        val totalIcons = mutableMapOf<String, Int>()
+
+        supportedStyles.forEach { style ->
+            val styleDir = File(targetDir, style.lowercase())
+            if (styleDir.exists()) {
+                val iconFiles = styleDir.listFiles { file ->
+                    file.extension == "kt" && !file.name.endsWith("IconList.kt")
+                }?.size ?: 0
+                
+                totalIcons[style] = iconFiles
+                
+                if (iconFiles > 0) {
+                    rebuildIconListFile(targetDir, style)
+                    updatedFiles++
+                }
+            }
+        }
+
+        return IconListUpdateResult(
+            updatedFiles = updatedFiles,
+            totalIcons = totalIcons
+        )
+    }
 
     fun updateIconListFile(targetDir: File, style: String, iconName: String, oldFileName: String? = null) {
         val styleCapitalized = style.replaceFirstChar { it.uppercase() }

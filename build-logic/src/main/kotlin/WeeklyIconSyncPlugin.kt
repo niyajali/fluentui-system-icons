@@ -30,6 +30,7 @@ import org.gradle.api.provider.Property
 import tasks.AnalyzeIconCoverageTask
 import tasks.CheckNewIconsTask
 import tasks.CleanupIconsTask
+import tasks.SyncAndUpdateIconsTask
 import tasks.SyncNewIconsTask
 import tasks.UpdateIconListsTask
 import utils.GitRefUtils
@@ -89,17 +90,10 @@ class WeeklyIconSyncPlugin : Plugin<Project> {
             config.set(extension.toConfig())
         }
         
-        project.tasks.register("syncAndUpdateIcons") {
+        project.tasks.register("syncAndUpdateIcons", SyncAndUpdateIconsTask::class.java) {
             group = "fluent icons"
-            description = "Syncs new icons and updates icon lists in sequence"
-            dependsOn("syncNewIcons", "updateIconLists")
-        }
-        
-        // Configure task ordering after all tasks are registered
-        project.afterEvaluate {
-            project.tasks.named("updateIconLists") {
-                mustRunAfter("syncNewIcons")
-            }
+            description = "Syncs new FluentUI icons and updates icon lists (combined operation)"
+            config.set(extension.toConfig())
         }
         
         project.tasks.register("analyzeIconCoverage", AnalyzeIconCoverageTask::class.java) {
