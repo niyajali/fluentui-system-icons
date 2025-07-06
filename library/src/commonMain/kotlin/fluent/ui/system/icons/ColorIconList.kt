@@ -201,6 +201,7 @@ import fluent.ui.system.icons.color.SendClock
 import fluent.ui.system.icons.color.Settings
 import fluent.ui.system.icons.color.ShareAndroid
 import fluent.ui.system.icons.color.ShareIOs
+import fluent.ui.system.icons.color.ShareIOs
 import fluent.ui.system.icons.color.Shield
 import fluent.ui.system.icons.color.ShieldCheckmark
 import fluent.ui.system.icons.color.Shifts
@@ -221,6 +222,7 @@ import fluent.ui.system.icons.color.WeatherSnowflake
 import fluent.ui.system.icons.color.WeatherSunnyLow
 import fluent.ui.system.icons.color.WiFiWarning
 import fluent.ui.system.icons.color.Wifi
+import fluent.ui.system.icons.color.WiFiWarning
 import fluent.ui.system.icons.color.Wrench
 import fluent.ui.system.icons.color.WrenchScrewdriver
 
@@ -407,6 +409,7 @@ public val FluentIcons.ColorIconList: List<ImageVector>
             FluentIcons.Color.Settings,
             FluentIcons.Color.ShareAndroid,
             FluentIcons.Color.ShareIOs,
+            FluentIcons.Color.ShareIOs,
             FluentIcons.Color.Shield,
             FluentIcons.Color.ShieldCheckmark,
             FluentIcons.Color.Shifts,
@@ -427,6 +430,7 @@ public val FluentIcons.ColorIconList: List<ImageVector>
             FluentIcons.Color.WeatherSunnyLow,
             FluentIcons.Color.WiFiWarning,
             FluentIcons.Color.Wifi,
+            FluentIcons.Color.WiFiWarning,
             FluentIcons.Color.Wrench,
             FluentIcons.Color.WrenchScrewdriver
         )

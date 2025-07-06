@@ -251,6 +251,7 @@ import fluent.ui.system.icons.filled.AutoFitHeight
 import fluent.ui.system.icons.filled.AutoFitWidth
 import fluent.ui.system.icons.filled.AutoSum
 import fluent.ui.system.icons.filled.Autocorrect
+import fluent.ui.system.icons.filled.AutoSum
 import fluent.ui.system.icons.filled.Backpack
 import fluent.ui.system.icons.filled.BackpackAdd
 import fluent.ui.system.icons.filled.Backspace
@@ -510,8 +511,11 @@ import fluent.ui.system.icons.filled.CastMultiple
 import fluent.ui.system.icons.filled.CatchUp
 import fluent.ui.system.icons.filled.Cd
 import fluent.ui.system.icons.filled.Cellular3G
+import fluent.ui.system.icons.filled.Cellular3g
 import fluent.ui.system.icons.filled.Cellular4G
+import fluent.ui.system.icons.filled.Cellular4g
 import fluent.ui.system.icons.filled.Cellular5G
+import fluent.ui.system.icons.filled.Cellular5g
 import fluent.ui.system.icons.filled.CellularData1
 import fluent.ui.system.icons.filled.CellularData2
 import fluent.ui.system.icons.filled.CellularData3
@@ -1347,11 +1351,16 @@ import fluent.ui.system.icons.filled.InkStrokeArrowDown
 import fluent.ui.system.icons.filled.InkStrokeArrowUpDown
 import fluent.ui.system.icons.filled.InkingTool
 import fluent.ui.system.icons.filled.InkingToolAccent
+import fluent.ui.system.icons.filled.InPrivateAccount
 import fluent.ui.system.icons.filled.Insert
 import fluent.ui.system.icons.filled.IoT
 import fluent.ui.system.icons.filled.IoTAlert
+import fluent.ui.system.icons.filled.IOsArrow
 import fluent.ui.system.icons.filled.IosArrowLtr
 import fluent.ui.system.icons.filled.IosArrowRtl
+import fluent.ui.system.icons.filled.IoT
+import fluent.ui.system.icons.filled.IoTAlert
+import fluent.ui.system.icons.filled.JavaScript
 import fluent.ui.system.icons.filled.JavaScript
 import fluent.ui.system.icons.filled.Joystick
 import fluent.ui.system.icons.filled.Key
@@ -1594,11 +1603,17 @@ import fluent.ui.system.icons.filled.MountainLocationTop
 import fluent.ui.system.icons.filled.MountainTrail
 import fluent.ui.system.icons.filled.MoviesAndTv
 import fluent.ui.system.icons.filled.Multiplier12X
+import fluent.ui.system.icons.filled.Multiplier12x
 import fluent.ui.system.icons.filled.Multiplier15X
+import fluent.ui.system.icons.filled.Multiplier15x
 import fluent.ui.system.icons.filled.Multiplier18X
+import fluent.ui.system.icons.filled.Multiplier18x
 import fluent.ui.system.icons.filled.Multiplier1X
+import fluent.ui.system.icons.filled.Multiplier1x
 import fluent.ui.system.icons.filled.Multiplier2X
+import fluent.ui.system.icons.filled.Multiplier2x
 import fluent.ui.system.icons.filled.Multiplier5X
+import fluent.ui.system.icons.filled.Multiplier5x
 import fluent.ui.system.icons.filled.MultiselectLtr
 import fluent.ui.system.icons.filled.MultiselectRtl
 import fluent.ui.system.icons.filled.MusicNote1
@@ -2057,6 +2072,7 @@ import fluent.ui.system.icons.filled.Share
 import fluent.ui.system.icons.filled.ShareAndroid
 import fluent.ui.system.icons.filled.ShareCloseTray
 import fluent.ui.system.icons.filled.ShareIOs
+import fluent.ui.system.icons.filled.ShareIOs
 import fluent.ui.system.icons.filled.ShareMultiple
 import fluent.ui.system.icons.filled.ShareScreenPerson
 import fluent.ui.system.icons.filled.ShareScreenPersonOverlay
@@ -2152,6 +2168,7 @@ import fluent.ui.system.icons.filled.SoundSource
 import fluent.ui.system.icons.filled.SoundWaveCircle
 import fluent.ui.system.icons.filled.SoundWaveCircleSparkle
 import fluent.ui.system.icons.filled.Space3D
+import fluent.ui.system.icons.filled.Space3d
 import fluent.ui.system.icons.filled.Spacebar
 import fluent.ui.system.icons.filled.Sparkle
 import fluent.ui.system.icons.filled.SparkleCircle
@@ -2268,6 +2285,7 @@ import fluent.ui.system.icons.filled.TabDesktopNewPage
 import fluent.ui.system.icons.filled.TabDesktopSearch
 import fluent.ui.system.icons.filled.TabGroup
 import fluent.ui.system.icons.filled.TabInPrivate
+import fluent.ui.system.icons.filled.TabInPrivateAccount
 import fluent.ui.system.icons.filled.TabInPrivateAccount
 import fluent.ui.system.icons.filled.TabProhibited
 import fluent.ui.system.icons.filled.TabShieldDismiss
@@ -2576,6 +2594,26 @@ import fluent.ui.system.icons.filled.TextWholeWord
 import fluent.ui.system.icons.filled.TextWordCount
 import fluent.ui.system.icons.filled.TextWrap
 import fluent.ui.system.icons.filled.TextWrapOff
+import fluent.ui.system.icons.filled.TextBox
+import fluent.ui.system.icons.filled.TextBoxAlignBottom
+import fluent.ui.system.icons.filled.TextBoxAlignBottomCenter
+import fluent.ui.system.icons.filled.TextBoxAlignBottomLeft
+import fluent.ui.system.icons.filled.TextBoxAlignBottomRight
+import fluent.ui.system.icons.filled.TextBoxAlignBottomRotate90
+import fluent.ui.system.icons.filled.TextBoxAlignCenter
+import fluent.ui.system.icons.filled.TextBoxAlignMiddle
+import fluent.ui.system.icons.filled.TextBoxAlignMiddleLeft
+import fluent.ui.system.icons.filled.TextBoxAlignMiddleRight
+import fluent.ui.system.icons.filled.TextBoxAlignMiddleRotate90
+import fluent.ui.system.icons.filled.TextBoxAlignTop
+import fluent.ui.system.icons.filled.TextBoxAlignTopCenter
+import fluent.ui.system.icons.filled.TextBoxAlignTopLeft
+import fluent.ui.system.icons.filled.TextBoxAlignTopRight
+import fluent.ui.system.icons.filled.TextBoxAlignTopRotate90
+import fluent.ui.system.icons.filled.TextBoxCheckmark
+import fluent.ui.system.icons.filled.TextBoxMore
+import fluent.ui.system.icons.filled.TextBoxRotate90
+import fluent.ui.system.icons.filled.TextBoxSettings
 import fluent.ui.system.icons.filled.Thinking
 import fluent.ui.system.icons.filled.ThumbDislike
 import fluent.ui.system.icons.filled.ThumbLike
@@ -2731,6 +2769,13 @@ import fluent.ui.system.icons.filled.WiFi4
 import fluent.ui.system.icons.filled.WiFiLock
 import fluent.ui.system.icons.filled.WiFiOff
 import fluent.ui.system.icons.filled.WiFiSettings
+import fluent.ui.system.icons.filled.WiFiWarning
+import fluent.ui.system.icons.filled.WiFi1
+import fluent.ui.system.icons.filled.WiFi2
+import fluent.ui.system.icons.filled.WiFi3
+import fluent.ui.system.icons.filled.WiFi4
+import fluent.ui.system.icons.filled.WiFiLock
+import fluent.ui.system.icons.filled.WiFiOff
 import fluent.ui.system.icons.filled.WiFiWarning
 import fluent.ui.system.icons.filled.Window
 import fluent.ui.system.icons.filled.WindowAd
@@ -3008,6 +3053,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.AutoFitWidth,
             FluentIcons.Filled.AutoSum,
             FluentIcons.Filled.Autocorrect,
+            FluentIcons.Filled.AutoSum,
             FluentIcons.Filled.Backpack,
             FluentIcons.Filled.BackpackAdd,
             FluentIcons.Filled.Backspace,
@@ -3267,8 +3313,11 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.CatchUp,
             FluentIcons.Filled.Cd,
             FluentIcons.Filled.Cellular3G,
+            FluentIcons.Filled.Cellular3g,
             FluentIcons.Filled.Cellular4G,
+            FluentIcons.Filled.Cellular4g,
             FluentIcons.Filled.Cellular5G,
+            FluentIcons.Filled.Cellular5g,
             FluentIcons.Filled.CellularData1,
             FluentIcons.Filled.CellularData2,
             FluentIcons.Filled.CellularData3,
@@ -4104,12 +4153,16 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.InkStrokeArrowUpDown,
             FluentIcons.Filled.InkingTool,
             FluentIcons.Filled.InkingToolAccent,
+            FluentIcons.Filled.InPrivateAccount,
             FluentIcons.Filled.Insert,
             FluentIcons.Filled.IoT,
             FluentIcons.Filled.IoTAlert,
             FluentIcons.Filled.IOsArrow,
             FluentIcons.Filled.IosArrowLtr,
             FluentIcons.Filled.IosArrowRtl,
+            FluentIcons.Filled.IoT,
+            FluentIcons.Filled.IoTAlert,
+            FluentIcons.Filled.JavaScript,
             FluentIcons.Filled.JavaScript,
             FluentIcons.Filled.Joystick,
             FluentIcons.Filled.Key,
@@ -4352,11 +4405,17 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.MountainTrail,
             FluentIcons.Filled.MoviesAndTv,
             FluentIcons.Filled.Multiplier12X,
+            FluentIcons.Filled.Multiplier12x,
             FluentIcons.Filled.Multiplier15X,
+            FluentIcons.Filled.Multiplier15x,
             FluentIcons.Filled.Multiplier18X,
+            FluentIcons.Filled.Multiplier18x,
             FluentIcons.Filled.Multiplier1X,
+            FluentIcons.Filled.Multiplier1x,
             FluentIcons.Filled.Multiplier2X,
+            FluentIcons.Filled.Multiplier2x,
             FluentIcons.Filled.Multiplier5X,
+            FluentIcons.Filled.Multiplier5x,
             FluentIcons.Filled.MultiselectLtr,
             FluentIcons.Filled.MultiselectRtl,
             FluentIcons.Filled.MusicNote1,
@@ -4815,6 +4874,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.ShareAndroid,
             FluentIcons.Filled.ShareCloseTray,
             FluentIcons.Filled.ShareIOs,
+            FluentIcons.Filled.ShareIOs,
             FluentIcons.Filled.ShareMultiple,
             FluentIcons.Filled.ShareScreenPerson,
             FluentIcons.Filled.ShareScreenPersonOverlay,
@@ -4910,6 +4970,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.SoundWaveCircle,
             FluentIcons.Filled.SoundWaveCircleSparkle,
             FluentIcons.Filled.Space3D,
+            FluentIcons.Filled.Space3d,
             FluentIcons.Filled.Spacebar,
             FluentIcons.Filled.Sparkle,
             FluentIcons.Filled.SparkleCircle,
@@ -5026,6 +5087,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.TabDesktopSearch,
             FluentIcons.Filled.TabGroup,
             FluentIcons.Filled.TabInPrivate,
+            FluentIcons.Filled.TabInPrivateAccount,
             FluentIcons.Filled.TabInPrivateAccount,
             FluentIcons.Filled.TabProhibited,
             FluentIcons.Filled.TabShieldDismiss,
@@ -5509,6 +5571,13 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.WiFiLock,
             FluentIcons.Filled.WiFiOff,
             FluentIcons.Filled.WiFiSettings,
+            FluentIcons.Filled.WiFiWarning,
+            FluentIcons.Filled.WiFi1,
+            FluentIcons.Filled.WiFi2,
+            FluentIcons.Filled.WiFi3,
+            FluentIcons.Filled.WiFi4,
+            FluentIcons.Filled.WiFiLock,
+            FluentIcons.Filled.WiFiOff,
             FluentIcons.Filled.WiFiWarning,
             FluentIcons.Filled.Window,
             FluentIcons.Filled.WindowAd,
