@@ -48,6 +48,7 @@ import fluent.ui.system.icons.light.Attach
 import fluent.ui.system.icons.light.AutoFit
 import fluent.ui.system.icons.light.AutoFitWidth
 import fluent.ui.system.icons.light.Autocorrect
+import fluent.ui.system.icons.light.BookContacts
 import fluent.ui.system.icons.light.BreakoutRoom
 import fluent.ui.system.icons.light.Broom
 import fluent.ui.system.icons.light.Calendar3Day
@@ -144,6 +145,7 @@ import fluent.ui.system.icons.light.PanelLeftFocusRight
 import fluent.ui.system.icons.light.PenSparkle
 import fluent.ui.system.icons.light.People
 import fluent.ui.system.icons.light.PeopleAdd
+import fluent.ui.system.icons.light.PeopleCheckmark
 import fluent.ui.system.icons.light.PeopleCommunity
 import fluent.ui.system.icons.light.PeopleEdit
 import fluent.ui.system.icons.light.PeopleList
@@ -241,6 +243,7 @@ public val FluentIcons.LightIconList: List<ImageVector>
             FluentIcons.Light.AutoFit,
             FluentIcons.Light.AutoFitWidth,
             FluentIcons.Light.Autocorrect,
+            FluentIcons.Light.BookContacts,
             FluentIcons.Light.BreakoutRoom,
             FluentIcons.Light.Broom,
             FluentIcons.Light.Calendar3Day,
@@ -337,6 +340,7 @@ public val FluentIcons.LightIconList: List<ImageVector>
             FluentIcons.Light.PenSparkle,
             FluentIcons.Light.People,
             FluentIcons.Light.PeopleAdd,
+            FluentIcons.Light.PeopleCheckmark,
             FluentIcons.Light.PeopleCommunity,
             FluentIcons.Light.PeopleEdit,
             FluentIcons.Light.PeopleList,
