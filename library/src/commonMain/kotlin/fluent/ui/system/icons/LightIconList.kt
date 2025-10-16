@@ -48,9 +48,11 @@ import fluent.ui.system.icons.light.Attach
 import fluent.ui.system.icons.light.AutoFit
 import fluent.ui.system.icons.light.AutoFitWidth
 import fluent.ui.system.icons.light.Autocorrect
+import fluent.ui.system.icons.light.BookContacts
 import fluent.ui.system.icons.light.BreakoutRoom
 import fluent.ui.system.icons.light.Broom
 import fluent.ui.system.icons.light.Calendar3Day
+import fluent.ui.system.icons.light.CalendarCheckmark
 import fluent.ui.system.icons.light.CalendarClock
 import fluent.ui.system.icons.light.CalendarDataBar
 import fluent.ui.system.icons.light.CalendarDay
@@ -134,6 +136,7 @@ import fluent.ui.system.icons.light.MailRewind
 import fluent.ui.system.icons.light.MailSettings
 import fluent.ui.system.icons.light.MailTemplate
 import fluent.ui.system.icons.light.MailUnread
+import fluent.ui.system.icons.light.MailWarning
 import fluent.ui.system.icons.light.Mic
 import fluent.ui.system.icons.light.Molecule
 import fluent.ui.system.icons.light.Note
@@ -144,9 +147,11 @@ import fluent.ui.system.icons.light.PanelLeftFocusRight
 import fluent.ui.system.icons.light.PenSparkle
 import fluent.ui.system.icons.light.People
 import fluent.ui.system.icons.light.PeopleAdd
+import fluent.ui.system.icons.light.PeopleCheckmark
 import fluent.ui.system.icons.light.PeopleCommunity
 import fluent.ui.system.icons.light.PeopleEdit
 import fluent.ui.system.icons.light.PeopleList
+import fluent.ui.system.icons.light.PeopleLock
 import fluent.ui.system.icons.light.PeopleSettings
 import fluent.ui.system.icons.light.PeopleSync
 import fluent.ui.system.icons.light.Person
@@ -241,9 +246,11 @@ public val FluentIcons.LightIconList: List<ImageVector>
             FluentIcons.Light.AutoFit,
             FluentIcons.Light.AutoFitWidth,
             FluentIcons.Light.Autocorrect,
+            FluentIcons.Light.BookContacts,
             FluentIcons.Light.BreakoutRoom,
             FluentIcons.Light.Broom,
             FluentIcons.Light.Calendar3Day,
+            FluentIcons.Light.CalendarCheckmark,
             FluentIcons.Light.CalendarClock,
             FluentIcons.Light.CalendarDataBar,
             FluentIcons.Light.CalendarDay,
@@ -327,6 +334,7 @@ public val FluentIcons.LightIconList: List<ImageVector>
             FluentIcons.Light.MailSettings,
             FluentIcons.Light.MailTemplate,
             FluentIcons.Light.MailUnread,
+            FluentIcons.Light.MailWarning,
             FluentIcons.Light.Mic,
             FluentIcons.Light.Molecule,
             FluentIcons.Light.Note,
@@ -337,9 +345,11 @@ public val FluentIcons.LightIconList: List<ImageVector>
             FluentIcons.Light.PenSparkle,
             FluentIcons.Light.People,
             FluentIcons.Light.PeopleAdd,
+            FluentIcons.Light.PeopleCheckmark,
             FluentIcons.Light.PeopleCommunity,
             FluentIcons.Light.PeopleEdit,
             FluentIcons.Light.PeopleList,
+            FluentIcons.Light.PeopleLock,
             FluentIcons.Light.PeopleSettings,
             FluentIcons.Light.PeopleSync,
             FluentIcons.Light.Person,

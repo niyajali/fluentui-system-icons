@@ -251,6 +251,7 @@ import fluent.ui.system.icons.regular.AutoFitHeight
 import fluent.ui.system.icons.regular.AutoFitWidth
 import fluent.ui.system.icons.regular.AutoSum
 import fluent.ui.system.icons.regular.Autocorrect
+import fluent.ui.system.icons.regular.AutoSum
 import fluent.ui.system.icons.regular.Backpack
 import fluent.ui.system.icons.regular.BackpackAdd
 import fluent.ui.system.icons.regular.Backspace
@@ -509,8 +510,11 @@ import fluent.ui.system.icons.regular.Cast
 import fluent.ui.system.icons.regular.CastMultiple
 import fluent.ui.system.icons.regular.CatchUp
 import fluent.ui.system.icons.regular.Cd
+import fluent.ui.system.icons.regular.Cellular3G
 import fluent.ui.system.icons.regular.Cellular3g
+import fluent.ui.system.icons.regular.Cellular4G
 import fluent.ui.system.icons.regular.Cellular4g
+import fluent.ui.system.icons.regular.Cellular5G
 import fluent.ui.system.icons.regular.Cellular5g
 import fluent.ui.system.icons.regular.CellularData1
 import fluent.ui.system.icons.regular.CellularData2
@@ -752,6 +756,7 @@ import fluent.ui.system.icons.regular.ConferenceRoom
 import fluent.ui.system.icons.regular.Connected
 import fluent.ui.system.icons.regular.Connector
 import fluent.ui.system.icons.regular.ContactCard
+import fluent.ui.system.icons.regular.ContactCardGeneric
 import fluent.ui.system.icons.regular.ContactCardGroup
 import fluent.ui.system.icons.regular.ContactCardLink
 import fluent.ui.system.icons.regular.ContactCardRibbon
@@ -1344,11 +1349,16 @@ import fluent.ui.system.icons.regular.InkStroke
 import fluent.ui.system.icons.regular.InkStrokeArrowDown
 import fluent.ui.system.icons.regular.InkStrokeArrowUpDown
 import fluent.ui.system.icons.regular.InkingTool
+import fluent.ui.system.icons.regular.InPrivateAccount
 import fluent.ui.system.icons.regular.Insert
 import fluent.ui.system.icons.regular.IoT
 import fluent.ui.system.icons.regular.IoTAlert
+import fluent.ui.system.icons.regular.IOsArrow
 import fluent.ui.system.icons.regular.IosArrowLtr
 import fluent.ui.system.icons.regular.IosArrowRtl
+import fluent.ui.system.icons.regular.IoT
+import fluent.ui.system.icons.regular.IoTAlert
+import fluent.ui.system.icons.regular.JavaScript
 import fluent.ui.system.icons.regular.JavaScript
 import fluent.ui.system.icons.regular.Joystick
 import fluent.ui.system.icons.regular.Key
@@ -1382,6 +1392,8 @@ import fluent.ui.system.icons.regular.LayerDiagonal
 import fluent.ui.system.icons.regular.LayerDiagonalAdd
 import fluent.ui.system.icons.regular.LayerDiagonalPerson
 import fluent.ui.system.icons.regular.LayerDiagonalSparkle
+import fluent.ui.system.icons.regular.LayoutAddAbove
+import fluent.ui.system.icons.regular.LayoutAddBelow
 import fluent.ui.system.icons.regular.LayoutCellFour
 import fluent.ui.system.icons.regular.LayoutColumnFour
 import fluent.ui.system.icons.regular.LayoutColumnOneThirdLeft
@@ -1389,6 +1401,7 @@ import fluent.ui.system.icons.regular.LayoutColumnOneThirdRight
 import fluent.ui.system.icons.regular.LayoutColumnOneThirdRightHint
 import fluent.ui.system.icons.regular.LayoutColumnThree
 import fluent.ui.system.icons.regular.LayoutColumnTwo
+import fluent.ui.system.icons.regular.LayoutColumnTwoEdit
 import fluent.ui.system.icons.regular.LayoutColumnTwoSplitLeft
 import fluent.ui.system.icons.regular.LayoutColumnTwoSplitRight
 import fluent.ui.system.icons.regular.LayoutRowFour
@@ -1555,11 +1568,17 @@ import fluent.ui.system.icons.regular.MountainLocationBottom
 import fluent.ui.system.icons.regular.MountainLocationTop
 import fluent.ui.system.icons.regular.MountainTrail
 import fluent.ui.system.icons.regular.MoviesAndTv
+import fluent.ui.system.icons.regular.Multiplier12X
 import fluent.ui.system.icons.regular.Multiplier12x
+import fluent.ui.system.icons.regular.Multiplier15X
 import fluent.ui.system.icons.regular.Multiplier15x
+import fluent.ui.system.icons.regular.Multiplier18X
 import fluent.ui.system.icons.regular.Multiplier18x
+import fluent.ui.system.icons.regular.Multiplier1X
 import fluent.ui.system.icons.regular.Multiplier1x
+import fluent.ui.system.icons.regular.Multiplier2X
 import fluent.ui.system.icons.regular.Multiplier2x
+import fluent.ui.system.icons.regular.Multiplier5X
 import fluent.ui.system.icons.regular.Multiplier5x
 import fluent.ui.system.icons.regular.MultiselectLtr
 import fluent.ui.system.icons.regular.MultiselectRtl
@@ -2022,6 +2041,7 @@ import fluent.ui.system.icons.regular.Share
 import fluent.ui.system.icons.regular.ShareAndroid
 import fluent.ui.system.icons.regular.ShareCloseTray
 import fluent.ui.system.icons.regular.ShareIOs
+import fluent.ui.system.icons.regular.ShareIOs
 import fluent.ui.system.icons.regular.ShareMultiple
 import fluent.ui.system.icons.regular.ShareScreenPerson
 import fluent.ui.system.icons.regular.ShareScreenPersonOverlay
@@ -2116,6 +2136,7 @@ import fluent.ui.system.icons.regular.Snooze
 import fluent.ui.system.icons.regular.SoundSource
 import fluent.ui.system.icons.regular.SoundWaveCircle
 import fluent.ui.system.icons.regular.SoundWaveCircleSparkle
+import fluent.ui.system.icons.regular.Space3D
 import fluent.ui.system.icons.regular.Space3d
 import fluent.ui.system.icons.regular.Spacebar
 import fluent.ui.system.icons.regular.Sparkle
@@ -2140,6 +2161,8 @@ import fluent.ui.system.icons.regular.Sport
 import fluent.ui.system.icons.regular.SportAmericanFootball
 import fluent.ui.system.icons.regular.SportBaseball
 import fluent.ui.system.icons.regular.SportBasketball
+import fluent.ui.system.icons.regular.SportCricketBall
+import fluent.ui.system.icons.regular.SportCricketBat
 import fluent.ui.system.icons.regular.SportHockey
 import fluent.ui.system.icons.regular.SportSoccer
 import fluent.ui.system.icons.regular.SprayCan
@@ -3168,8 +3191,11 @@ public val FluentIcons.RegularIconList: List<ImageVector>
             FluentIcons.Regular.CastMultiple,
             FluentIcons.Regular.CatchUp,
             FluentIcons.Regular.Cd,
+            FluentIcons.Regular.Cellular3G,
             FluentIcons.Regular.Cellular3g,
+            FluentIcons.Regular.Cellular4G,
             FluentIcons.Regular.Cellular4g,
+            FluentIcons.Regular.Cellular5G,
             FluentIcons.Regular.Cellular5g,
             FluentIcons.Regular.CellularData1,
             FluentIcons.Regular.CellularData2,
@@ -3411,6 +3437,7 @@ public val FluentIcons.RegularIconList: List<ImageVector>
             FluentIcons.Regular.Connected,
             FluentIcons.Regular.Connector,
             FluentIcons.Regular.ContactCard,
+            FluentIcons.Regular.ContactCardGeneric,
             FluentIcons.Regular.ContactCardGroup,
             FluentIcons.Regular.ContactCardLink,
             FluentIcons.Regular.ContactCardRibbon,
@@ -4046,6 +4073,8 @@ public val FluentIcons.RegularIconList: List<ImageVector>
             FluentIcons.Regular.LayerDiagonalAdd,
             FluentIcons.Regular.LayerDiagonalPerson,
             FluentIcons.Regular.LayerDiagonalSparkle,
+            FluentIcons.Regular.LayoutAddAbove,
+            FluentIcons.Regular.LayoutAddBelow,
             FluentIcons.Regular.LayoutCellFour,
             FluentIcons.Regular.LayoutColumnFour,
             FluentIcons.Regular.LayoutColumnOneThirdLeft,
@@ -4053,6 +4082,7 @@ public val FluentIcons.RegularIconList: List<ImageVector>
             FluentIcons.Regular.LayoutColumnOneThirdRightHint,
             FluentIcons.Regular.LayoutColumnThree,
             FluentIcons.Regular.LayoutColumnTwo,
+            FluentIcons.Regular.LayoutColumnTwoEdit,
             FluentIcons.Regular.LayoutColumnTwoSplitLeft,
             FluentIcons.Regular.LayoutColumnTwoSplitRight,
             FluentIcons.Regular.LayoutRowFour,
@@ -4219,11 +4249,17 @@ public val FluentIcons.RegularIconList: List<ImageVector>
             FluentIcons.Regular.MountainLocationTop,
             FluentIcons.Regular.MountainTrail,
             FluentIcons.Regular.MoviesAndTv,
+            FluentIcons.Regular.Multiplier12X,
             FluentIcons.Regular.Multiplier12x,
+            FluentIcons.Regular.Multiplier15X,
             FluentIcons.Regular.Multiplier15x,
+            FluentIcons.Regular.Multiplier18X,
             FluentIcons.Regular.Multiplier18x,
+            FluentIcons.Regular.Multiplier1X,
             FluentIcons.Regular.Multiplier1x,
+            FluentIcons.Regular.Multiplier2X,
             FluentIcons.Regular.Multiplier2x,
+            FluentIcons.Regular.Multiplier5X,
             FluentIcons.Regular.Multiplier5x,
             FluentIcons.Regular.MultiselectLtr,
             FluentIcons.Regular.MultiselectRtl,
@@ -4781,6 +4817,7 @@ public val FluentIcons.RegularIconList: List<ImageVector>
             FluentIcons.Regular.SoundSource,
             FluentIcons.Regular.SoundWaveCircle,
             FluentIcons.Regular.SoundWaveCircleSparkle,
+            FluentIcons.Regular.Space3D,
             FluentIcons.Regular.Space3d,
             FluentIcons.Regular.Spacebar,
             FluentIcons.Regular.Sparkle,
@@ -4805,6 +4842,8 @@ public val FluentIcons.RegularIconList: List<ImageVector>
             FluentIcons.Regular.SportAmericanFootball,
             FluentIcons.Regular.SportBaseball,
             FluentIcons.Regular.SportBasketball,
+            FluentIcons.Regular.SportCricketBall,
+            FluentIcons.Regular.SportCricketBat,
             FluentIcons.Regular.SportHockey,
             FluentIcons.Regular.SportSoccer,
             FluentIcons.Regular.SprayCan,
