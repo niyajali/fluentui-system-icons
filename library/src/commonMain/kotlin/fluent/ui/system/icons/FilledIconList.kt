@@ -151,6 +151,7 @@ import fluent.ui.system.icons.filled.ArrowExportUp
 import fluent.ui.system.icons.filled.ArrowFit
 import fluent.ui.system.icons.filled.ArrowFitIn
 import fluent.ui.system.icons.filled.ArrowFlowDiagonalUpRight
+import fluent.ui.system.icons.filled.ArrowFlowSquareMultiple
 import fluent.ui.system.icons.filled.ArrowFlowUpRight
 import fluent.ui.system.icons.filled.ArrowFlowUpRightRectangleMultiple
 import fluent.ui.system.icons.filled.ArrowForward
@@ -256,6 +257,7 @@ import fluent.ui.system.icons.filled.Backpack
 import fluent.ui.system.icons.filled.BackpackAdd
 import fluent.ui.system.icons.filled.Backspace
 import fluent.ui.system.icons.filled.Badge
+import fluent.ui.system.icons.filled.Balcony
 import fluent.ui.system.icons.filled.Balloon
 import fluent.ui.system.icons.filled.BarcodeScanner
 import fluent.ui.system.icons.filled.BarcodeScannerAdd
@@ -414,6 +416,7 @@ import fluent.ui.system.icons.filled.BuildingShop
 import fluent.ui.system.icons.filled.BuildingSkyscraper
 import fluent.ui.system.icons.filled.BuildingSwap
 import fluent.ui.system.icons.filled.BuildingTownhouse
+import fluent.ui.system.icons.filled.BuildingYurt
 import fluent.ui.system.icons.filled.Button
 import fluent.ui.system.icons.filled.Calculator
 import fluent.ui.system.icons.filled.CalculatorArrowClockwise
@@ -510,8 +513,11 @@ import fluent.ui.system.icons.filled.Cast
 import fluent.ui.system.icons.filled.CastMultiple
 import fluent.ui.system.icons.filled.CatchUp
 import fluent.ui.system.icons.filled.Cd
+import fluent.ui.system.icons.filled.Cellular3G
 import fluent.ui.system.icons.filled.Cellular3g
+import fluent.ui.system.icons.filled.Cellular4G
 import fluent.ui.system.icons.filled.Cellular4g
+import fluent.ui.system.icons.filled.Cellular5G
 import fluent.ui.system.icons.filled.Cellular5g
 import fluent.ui.system.icons.filled.CellularData1
 import fluent.ui.system.icons.filled.CellularData2
@@ -615,6 +621,7 @@ import fluent.ui.system.icons.filled.Clipboard3Day
 import fluent.ui.system.icons.filled.ClipboardArrowRight
 import fluent.ui.system.icons.filled.ClipboardBrush
 import fluent.ui.system.icons.filled.ClipboardBulletList
+import fluent.ui.system.icons.filled.ClipboardChatEmpty
 import fluent.ui.system.icons.filled.ClipboardCheckmark
 import fluent.ui.system.icons.filled.ClipboardClock
 import fluent.ui.system.icons.filled.ClipboardCode
@@ -750,6 +757,7 @@ import fluent.ui.system.icons.filled.ConferenceRoom
 import fluent.ui.system.icons.filled.Connected
 import fluent.ui.system.icons.filled.Connector
 import fluent.ui.system.icons.filled.ContactCard
+import fluent.ui.system.icons.filled.ContactCardGeneric
 import fluent.ui.system.icons.filled.ContactCardGroup
 import fluent.ui.system.icons.filled.ContactCardLink
 import fluent.ui.system.icons.filled.ContactCardRibbon
@@ -767,6 +775,7 @@ import fluent.ui.system.icons.filled.CopyAdd
 import fluent.ui.system.icons.filled.CopyArrowRight
 import fluent.ui.system.icons.filled.CopySelect
 import fluent.ui.system.icons.filled.Couch
+import fluent.ui.system.icons.filled.Counter
 import fluent.ui.system.icons.filled.CreditCardClock
 import fluent.ui.system.icons.filled.CreditCardPerson
 import fluent.ui.system.icons.filled.CreditCardToolbox
@@ -871,6 +880,8 @@ import fluent.ui.system.icons.filled.DeveloperBoardLightningToolbox
 import fluent.ui.system.icons.filled.DeveloperBoardSearch
 import fluent.ui.system.icons.filled.DeviceEq
 import fluent.ui.system.icons.filled.DeviceMeetingRoom
+import fluent.ui.system.icons.filled.DeviceMeetingRoomAllInOne
+import fluent.ui.system.icons.filled.DeviceMeetingRoomBar
 import fluent.ui.system.icons.filled.DeviceMeetingRoomRemote
 import fluent.ui.system.icons.filled.Diagram
 import fluent.ui.system.icons.filled.Dialpad
@@ -1203,6 +1214,7 @@ import fluent.ui.system.icons.filled.GameChat
 import fluent.ui.system.icons.filled.Games
 import fluent.ui.system.icons.filled.GanttChart
 import fluent.ui.system.icons.filled.Gas
+import fluent.ui.system.icons.filled.GasPropane
 import fluent.ui.system.icons.filled.GasPump
 import fluent.ui.system.icons.filled.Gather
 import fluent.ui.system.icons.filled.Gauge
@@ -1357,6 +1369,7 @@ import fluent.ui.system.icons.filled.IosArrowLtr
 import fluent.ui.system.icons.filled.IosArrowRtl
 import fluent.ui.system.icons.filled.IoT
 import fluent.ui.system.icons.filled.IoTAlert
+import fluent.ui.system.icons.filled.ItemCompare
 import fluent.ui.system.icons.filled.JavaScript
 import fluent.ui.system.icons.filled.JavaScript
 import fluent.ui.system.icons.filled.Joystick
@@ -1391,6 +1404,8 @@ import fluent.ui.system.icons.filled.LayerDiagonal
 import fluent.ui.system.icons.filled.LayerDiagonalAdd
 import fluent.ui.system.icons.filled.LayerDiagonalPerson
 import fluent.ui.system.icons.filled.LayerDiagonalSparkle
+import fluent.ui.system.icons.filled.LayoutAddAbove
+import fluent.ui.system.icons.filled.LayoutAddBelow
 import fluent.ui.system.icons.filled.LayoutCellFour
 import fluent.ui.system.icons.filled.LayoutCellFourFocusBottomLeft
 import fluent.ui.system.icons.filled.LayoutCellFourFocusBottomRight
@@ -1409,6 +1424,7 @@ import fluent.ui.system.icons.filled.LayoutColumnThreeFocusCenter
 import fluent.ui.system.icons.filled.LayoutColumnThreeFocusLeft
 import fluent.ui.system.icons.filled.LayoutColumnThreeFocusRight
 import fluent.ui.system.icons.filled.LayoutColumnTwo
+import fluent.ui.system.icons.filled.LayoutColumnTwoEdit
 import fluent.ui.system.icons.filled.LayoutColumnTwoFocusLeft
 import fluent.ui.system.icons.filled.LayoutColumnTwoFocusRight
 import fluent.ui.system.icons.filled.LayoutColumnTwoSplitLeft
@@ -1582,7 +1598,9 @@ import fluent.ui.system.icons.filled.MicSettings
 import fluent.ui.system.icons.filled.MicSparkle
 import fluent.ui.system.icons.filled.MicSync
 import fluent.ui.system.icons.filled.Microscope
+import fluent.ui.system.icons.filled.Microwave
 import fluent.ui.system.icons.filled.Midi
+import fluent.ui.system.icons.filled.MidiOff
 import fluent.ui.system.icons.filled.MobileOptimized
 import fluent.ui.system.icons.filled.Mold
 import fluent.ui.system.icons.filled.Molecule
@@ -1599,11 +1617,17 @@ import fluent.ui.system.icons.filled.MountainLocationBottom
 import fluent.ui.system.icons.filled.MountainLocationTop
 import fluent.ui.system.icons.filled.MountainTrail
 import fluent.ui.system.icons.filled.MoviesAndTv
+import fluent.ui.system.icons.filled.Multiplier12X
 import fluent.ui.system.icons.filled.Multiplier12x
+import fluent.ui.system.icons.filled.Multiplier15X
 import fluent.ui.system.icons.filled.Multiplier15x
+import fluent.ui.system.icons.filled.Multiplier18X
 import fluent.ui.system.icons.filled.Multiplier18x
+import fluent.ui.system.icons.filled.Multiplier1X
 import fluent.ui.system.icons.filled.Multiplier1x
+import fluent.ui.system.icons.filled.Multiplier2X
 import fluent.ui.system.icons.filled.Multiplier2x
+import fluent.ui.system.icons.filled.Multiplier5X
 import fluent.ui.system.icons.filled.Multiplier5x
 import fluent.ui.system.icons.filled.MultiselectLtr
 import fluent.ui.system.icons.filled.MultiselectRtl
@@ -1911,6 +1935,7 @@ import fluent.ui.system.icons.filled.ProductionCheckmark
 import fluent.ui.system.icons.filled.Prohibited
 import fluent.ui.system.icons.filled.ProhibitedMultiple
 import fluent.ui.system.icons.filled.ProhibitedNote
+import fluent.ui.system.icons.filled.ProhibitedSmoking
 import fluent.ui.system.icons.filled.ProjectionScreen
 import fluent.ui.system.icons.filled.ProjectionScreenDismiss
 import fluent.ui.system.icons.filled.ProjectionScreenText
@@ -1925,6 +1950,7 @@ import fluent.ui.system.icons.filled.PuzzlePieceShield
 import fluent.ui.system.icons.filled.QrCode
 import fluent.ui.system.icons.filled.Question
 import fluent.ui.system.icons.filled.QuestionCircle
+import fluent.ui.system.icons.filled.Quiz
 import fluent.ui.system.icons.filled.QuizNew
 import fluent.ui.system.icons.filled.Radar
 import fluent.ui.system.icons.filled.RadarCheckmark
@@ -1961,6 +1987,7 @@ import fluent.ui.system.icons.filled.RectangleLandscapeSyncOff
 import fluent.ui.system.icons.filled.RectanglePortrait
 import fluent.ui.system.icons.filled.RectanglePortraitLocationTarget
 import fluent.ui.system.icons.filled.Recycle
+import fluent.ui.system.icons.filled.Refrigerator
 import fluent.ui.system.icons.filled.RemixAdd
 import fluent.ui.system.icons.filled.Remote
 import fluent.ui.system.icons.filled.Rename
@@ -2031,6 +2058,7 @@ import fluent.ui.system.icons.filled.SearchSquare
 import fluent.ui.system.icons.filled.SearchVisual
 import fluent.ui.system.icons.filled.Seat
 import fluent.ui.system.icons.filled.SeatAdd
+import fluent.ui.system.icons.filled.SeatMultipleStadium
 import fluent.ui.system.icons.filled.SelectAllOff
 import fluent.ui.system.icons.filled.SelectAllOn
 import fluent.ui.system.icons.filled.SelectObject
@@ -2115,6 +2143,7 @@ import fluent.ui.system.icons.filled.SidebarSearchRtl
 import fluent.ui.system.icons.filled.SignOut
 import fluent.ui.system.icons.filled.Signature
 import fluent.ui.system.icons.filled.Sim
+import fluent.ui.system.icons.filled.SineWaveDots
 import fluent.ui.system.icons.filled.SkipBack10
 import fluent.ui.system.icons.filled.SkipBack15
 import fluent.ui.system.icons.filled.SkipForward10
@@ -2158,6 +2187,7 @@ import fluent.ui.system.icons.filled.Snooze
 import fluent.ui.system.icons.filled.SoundSource
 import fluent.ui.system.icons.filled.SoundWaveCircle
 import fluent.ui.system.icons.filled.SoundWaveCircleSparkle
+import fluent.ui.system.icons.filled.Space3D
 import fluent.ui.system.icons.filled.Space3d
 import fluent.ui.system.icons.filled.Spacebar
 import fluent.ui.system.icons.filled.Sparkle
@@ -2182,6 +2212,8 @@ import fluent.ui.system.icons.filled.Sport
 import fluent.ui.system.icons.filled.SportAmericanFootball
 import fluent.ui.system.icons.filled.SportBaseball
 import fluent.ui.system.icons.filled.SportBasketball
+import fluent.ui.system.icons.filled.SportCricketBall
+import fluent.ui.system.icons.filled.SportCricketBat
 import fluent.ui.system.icons.filled.SportHockey
 import fluent.ui.system.icons.filled.SportSoccer
 import fluent.ui.system.icons.filled.SprayCan
@@ -2231,6 +2263,7 @@ import fluent.ui.system.icons.filled.StickerAdd
 import fluent.ui.system.icons.filled.Stop
 import fluent.ui.system.icons.filled.Storage
 import fluent.ui.system.icons.filled.StoreMicrosoft
+import fluent.ui.system.icons.filled.Stove
 import fluent.ui.system.icons.filled.Stream
 import fluent.ui.system.icons.filled.StreamInput
 import fluent.ui.system.icons.filled.StreamInputOutput
@@ -2325,6 +2358,7 @@ import fluent.ui.system.icons.filled.TableOffset
 import fluent.ui.system.icons.filled.TableOffsetAdd
 import fluent.ui.system.icons.filled.TableOffsetLessThanOrEqualTo
 import fluent.ui.system.icons.filled.TableOffsetSettings
+import fluent.ui.system.icons.filled.TablePicnic
 import fluent.ui.system.icons.filled.TableResizeColumn
 import fluent.ui.system.icons.filled.TableResizeRow
 import fluent.ui.system.icons.filled.TableSearch
@@ -2621,6 +2655,7 @@ import fluent.ui.system.icons.filled.TimerOff
 import fluent.ui.system.icons.filled.ToggleLeft
 import fluent.ui.system.icons.filled.ToggleMultiple
 import fluent.ui.system.icons.filled.ToggleRight
+import fluent.ui.system.icons.filled.Toilet
 import fluent.ui.system.icons.filled.Toolbox
 import fluent.ui.system.icons.filled.TooltipQuote
 import fluent.ui.system.icons.filled.TooltipQuoteOff
@@ -2661,10 +2696,13 @@ import fluent.ui.system.icons.filled.VehicleCarProfileLtr
 import fluent.ui.system.icons.filled.VehicleCarProfileLtrClock
 import fluent.ui.system.icons.filled.VehicleCarProfileRtl
 import fluent.ui.system.icons.filled.VehicleMotorcycle
+import fluent.ui.system.icons.filled.VehicleRv
 import fluent.ui.system.icons.filled.VehicleShip
 import fluent.ui.system.icons.filled.VehicleSubway
 import fluent.ui.system.icons.filled.VehicleSubwayClock
 import fluent.ui.system.icons.filled.VehicleTractor
+import fluent.ui.system.icons.filled.VehicleTrailer
+import fluent.ui.system.icons.filled.VehicleTrailerArrowDown
 import fluent.ui.system.icons.filled.VehicleTruck
 import fluent.ui.system.icons.filled.VehicleTruckBag
 import fluent.ui.system.icons.filled.VehicleTruckCheckmark
@@ -2701,6 +2739,8 @@ import fluent.ui.system.icons.filled.VideoProhibited
 import fluent.ui.system.icons.filled.VideoRecording
 import fluent.ui.system.icons.filled.VideoSecurity
 import fluent.ui.system.icons.filled.VideoSettings
+import fluent.ui.system.icons.filled.VideoShort
+import fluent.ui.system.icons.filled.VideoShortMultiple
 import fluent.ui.system.icons.filled.VideoSwitch
 import fluent.ui.system.icons.filled.VideoSync
 import fluent.ui.system.icons.filled.VideoUsb
@@ -2943,6 +2983,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.ArrowFit,
             FluentIcons.Filled.ArrowFitIn,
             FluentIcons.Filled.ArrowFlowDiagonalUpRight,
+            FluentIcons.Filled.ArrowFlowSquareMultiple,
             FluentIcons.Filled.ArrowFlowUpRight,
             FluentIcons.Filled.ArrowFlowUpRightRectangleMultiple,
             FluentIcons.Filled.ArrowForward,
@@ -3048,6 +3089,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.BackpackAdd,
             FluentIcons.Filled.Backspace,
             FluentIcons.Filled.Badge,
+            FluentIcons.Filled.Balcony,
             FluentIcons.Filled.Balloon,
             FluentIcons.Filled.BarcodeScanner,
             FluentIcons.Filled.BarcodeScannerAdd,
@@ -3206,6 +3248,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.BuildingSkyscraper,
             FluentIcons.Filled.BuildingSwap,
             FluentIcons.Filled.BuildingTownhouse,
+            FluentIcons.Filled.BuildingYurt,
             FluentIcons.Filled.Button,
             FluentIcons.Filled.Calculator,
             FluentIcons.Filled.CalculatorArrowClockwise,
@@ -3302,8 +3345,11 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.CastMultiple,
             FluentIcons.Filled.CatchUp,
             FluentIcons.Filled.Cd,
+            FluentIcons.Filled.Cellular3G,
             FluentIcons.Filled.Cellular3g,
+            FluentIcons.Filled.Cellular4G,
             FluentIcons.Filled.Cellular4g,
+            FluentIcons.Filled.Cellular5G,
             FluentIcons.Filled.Cellular5g,
             FluentIcons.Filled.CellularData1,
             FluentIcons.Filled.CellularData2,
@@ -3407,6 +3453,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.ClipboardArrowRight,
             FluentIcons.Filled.ClipboardBrush,
             FluentIcons.Filled.ClipboardBulletList,
+            FluentIcons.Filled.ClipboardChatEmpty,
             FluentIcons.Filled.ClipboardCheckmark,
             FluentIcons.Filled.ClipboardClock,
             FluentIcons.Filled.ClipboardCode,
@@ -3542,6 +3589,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.Connected,
             FluentIcons.Filled.Connector,
             FluentIcons.Filled.ContactCard,
+            FluentIcons.Filled.ContactCardGeneric,
             FluentIcons.Filled.ContactCardGroup,
             FluentIcons.Filled.ContactCardLink,
             FluentIcons.Filled.ContactCardRibbon,
@@ -3559,6 +3607,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.CopyArrowRight,
             FluentIcons.Filled.CopySelect,
             FluentIcons.Filled.Couch,
+            FluentIcons.Filled.Counter,
             FluentIcons.Filled.CreditCardClock,
             FluentIcons.Filled.CreditCardPerson,
             FluentIcons.Filled.CreditCardToolbox,
@@ -3663,6 +3712,8 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.DeveloperBoardSearch,
             FluentIcons.Filled.DeviceEq,
             FluentIcons.Filled.DeviceMeetingRoom,
+            FluentIcons.Filled.DeviceMeetingRoomAllInOne,
+            FluentIcons.Filled.DeviceMeetingRoomBar,
             FluentIcons.Filled.DeviceMeetingRoomRemote,
             FluentIcons.Filled.Diagram,
             FluentIcons.Filled.Dialpad,
@@ -3995,6 +4046,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.Games,
             FluentIcons.Filled.GanttChart,
             FluentIcons.Filled.Gas,
+            FluentIcons.Filled.GasPropane,
             FluentIcons.Filled.GasPump,
             FluentIcons.Filled.Gather,
             FluentIcons.Filled.Gauge,
@@ -4149,6 +4201,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.IosArrowRtl,
             FluentIcons.Filled.IoT,
             FluentIcons.Filled.IoTAlert,
+            FluentIcons.Filled.ItemCompare,
             FluentIcons.Filled.JavaScript,
             FluentIcons.Filled.JavaScript,
             FluentIcons.Filled.Joystick,
@@ -4183,6 +4236,8 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.LayerDiagonalAdd,
             FluentIcons.Filled.LayerDiagonalPerson,
             FluentIcons.Filled.LayerDiagonalSparkle,
+            FluentIcons.Filled.LayoutAddAbove,
+            FluentIcons.Filled.LayoutAddBelow,
             FluentIcons.Filled.LayoutCellFour,
             FluentIcons.Filled.LayoutCellFourFocusBottomLeft,
             FluentIcons.Filled.LayoutCellFourFocusBottomRight,
@@ -4201,6 +4256,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.LayoutColumnThreeFocusLeft,
             FluentIcons.Filled.LayoutColumnThreeFocusRight,
             FluentIcons.Filled.LayoutColumnTwo,
+            FluentIcons.Filled.LayoutColumnTwoEdit,
             FluentIcons.Filled.LayoutColumnTwoFocusLeft,
             FluentIcons.Filled.LayoutColumnTwoFocusRight,
             FluentIcons.Filled.LayoutColumnTwoSplitLeft,
@@ -4374,7 +4430,9 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.MicSparkle,
             FluentIcons.Filled.MicSync,
             FluentIcons.Filled.Microscope,
+            FluentIcons.Filled.Microwave,
             FluentIcons.Filled.Midi,
+            FluentIcons.Filled.MidiOff,
             FluentIcons.Filled.MobileOptimized,
             FluentIcons.Filled.Mold,
             FluentIcons.Filled.Molecule,
@@ -4391,11 +4449,17 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.MountainLocationTop,
             FluentIcons.Filled.MountainTrail,
             FluentIcons.Filled.MoviesAndTv,
+            FluentIcons.Filled.Multiplier12X,
             FluentIcons.Filled.Multiplier12x,
+            FluentIcons.Filled.Multiplier15X,
             FluentIcons.Filled.Multiplier15x,
+            FluentIcons.Filled.Multiplier18X,
             FluentIcons.Filled.Multiplier18x,
+            FluentIcons.Filled.Multiplier1X,
             FluentIcons.Filled.Multiplier1x,
+            FluentIcons.Filled.Multiplier2X,
             FluentIcons.Filled.Multiplier2x,
+            FluentIcons.Filled.Multiplier5X,
             FluentIcons.Filled.Multiplier5x,
             FluentIcons.Filled.MultiselectLtr,
             FluentIcons.Filled.MultiselectRtl,
@@ -4703,6 +4767,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.Prohibited,
             FluentIcons.Filled.ProhibitedMultiple,
             FluentIcons.Filled.ProhibitedNote,
+            FluentIcons.Filled.ProhibitedSmoking,
             FluentIcons.Filled.ProjectionScreen,
             FluentIcons.Filled.ProjectionScreenDismiss,
             FluentIcons.Filled.ProjectionScreenText,
@@ -4717,6 +4782,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.QrCode,
             FluentIcons.Filled.Question,
             FluentIcons.Filled.QuestionCircle,
+            FluentIcons.Filled.Quiz,
             FluentIcons.Filled.QuizNew,
             FluentIcons.Filled.Radar,
             FluentIcons.Filled.RadarCheckmark,
@@ -4753,6 +4819,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.RectanglePortrait,
             FluentIcons.Filled.RectanglePortraitLocationTarget,
             FluentIcons.Filled.Recycle,
+            FluentIcons.Filled.Refrigerator,
             FluentIcons.Filled.RemixAdd,
             FluentIcons.Filled.Remote,
             FluentIcons.Filled.Rename,
@@ -4823,6 +4890,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.SearchVisual,
             FluentIcons.Filled.Seat,
             FluentIcons.Filled.SeatAdd,
+            FluentIcons.Filled.SeatMultipleStadium,
             FluentIcons.Filled.SelectAllOff,
             FluentIcons.Filled.SelectAllOn,
             FluentIcons.Filled.SelectObject,
@@ -4907,6 +4975,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.SignOut,
             FluentIcons.Filled.Signature,
             FluentIcons.Filled.Sim,
+            FluentIcons.Filled.SineWaveDots,
             FluentIcons.Filled.SkipBack10,
             FluentIcons.Filled.SkipBack15,
             FluentIcons.Filled.SkipForward10,
@@ -4950,6 +5019,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.SoundSource,
             FluentIcons.Filled.SoundWaveCircle,
             FluentIcons.Filled.SoundWaveCircleSparkle,
+            FluentIcons.Filled.Space3D,
             FluentIcons.Filled.Space3d,
             FluentIcons.Filled.Spacebar,
             FluentIcons.Filled.Sparkle,
@@ -4974,6 +5044,8 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.SportAmericanFootball,
             FluentIcons.Filled.SportBaseball,
             FluentIcons.Filled.SportBasketball,
+            FluentIcons.Filled.SportCricketBall,
+            FluentIcons.Filled.SportCricketBat,
             FluentIcons.Filled.SportHockey,
             FluentIcons.Filled.SportSoccer,
             FluentIcons.Filled.SprayCan,
@@ -5023,6 +5095,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.Stop,
             FluentIcons.Filled.Storage,
             FluentIcons.Filled.StoreMicrosoft,
+            FluentIcons.Filled.Stove,
             FluentIcons.Filled.Stream,
             FluentIcons.Filled.StreamInput,
             FluentIcons.Filled.StreamInputOutput,
@@ -5117,6 +5190,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.TableOffsetAdd,
             FluentIcons.Filled.TableOffsetLessThanOrEqualTo,
             FluentIcons.Filled.TableOffsetSettings,
+            FluentIcons.Filled.TablePicnic,
             FluentIcons.Filled.TableResizeColumn,
             FluentIcons.Filled.TableResizeRow,
             FluentIcons.Filled.TableSearch,
@@ -5413,6 +5487,7 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.ToggleLeft,
             FluentIcons.Filled.ToggleMultiple,
             FluentIcons.Filled.ToggleRight,
+            FluentIcons.Filled.Toilet,
             FluentIcons.Filled.Toolbox,
             FluentIcons.Filled.TooltipQuote,
             FluentIcons.Filled.TooltipQuoteOff,
@@ -5453,10 +5528,13 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.VehicleCarProfileLtrClock,
             FluentIcons.Filled.VehicleCarProfileRtl,
             FluentIcons.Filled.VehicleMotorcycle,
+            FluentIcons.Filled.VehicleRv,
             FluentIcons.Filled.VehicleShip,
             FluentIcons.Filled.VehicleSubway,
             FluentIcons.Filled.VehicleSubwayClock,
             FluentIcons.Filled.VehicleTractor,
+            FluentIcons.Filled.VehicleTrailer,
+            FluentIcons.Filled.VehicleTrailerArrowDown,
             FluentIcons.Filled.VehicleTruck,
             FluentIcons.Filled.VehicleTruckBag,
             FluentIcons.Filled.VehicleTruckCheckmark,
@@ -5493,6 +5571,8 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.VideoRecording,
             FluentIcons.Filled.VideoSecurity,
             FluentIcons.Filled.VideoSettings,
+            FluentIcons.Filled.VideoShort,
+            FluentIcons.Filled.VideoShortMultiple,
             FluentIcons.Filled.VideoSwitch,
             FluentIcons.Filled.VideoSync,
             FluentIcons.Filled.VideoUsb,
@@ -5551,6 +5631,13 @@ public val FluentIcons.FilledIconList: List<ImageVector>
             FluentIcons.Filled.WiFiLock,
             FluentIcons.Filled.WiFiOff,
             FluentIcons.Filled.WiFiSettings,
+            FluentIcons.Filled.WiFiWarning,
+            FluentIcons.Filled.WiFi1,
+            FluentIcons.Filled.WiFi2,
+            FluentIcons.Filled.WiFi3,
+            FluentIcons.Filled.WiFi4,
+            FluentIcons.Filled.WiFiLock,
+            FluentIcons.Filled.WiFiOff,
             FluentIcons.Filled.WiFiWarning,
             FluentIcons.Filled.Window,
             FluentIcons.Filled.WindowAd,
