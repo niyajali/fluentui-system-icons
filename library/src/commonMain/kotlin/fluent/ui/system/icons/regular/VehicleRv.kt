@@ -1,0 +1,163 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2020 Microsoft Corporation
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+package fluent.ui.system.icons.regular
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import fluent.ui.system.icons.FluentIcons
+import org.jetbrains.compose.ui.tooling.preview.Preview
+
+/**
+ * VehicleRv Icon (20dp)
+ * 
+ * **Icon details:**
+ * - Style: Regular
+ * - Size: 20dp
+ * - Keywords: fluent-icon
+ * - Description: Used to represent vehicle travel scenarios.
+ *
+ * - Source:  @see [link](https://github.com/microsoft/fluentui-system-icons/blob/main/assets/ic_fluent_vehicle_rv_20_regular.svg)
+ * 
+ * @return The [ImageVector] for the VehicleRv icon.
+ */
+public val FluentIcons.Regular.VehicleRv: ImageVector
+    get() {
+        if (_vehicleRv != null) {
+            return _vehicleRv!!
+        }
+        _vehicleRv = Builder(name = "VehicleRv", defaultWidth = 20.0.dp, defaultHeight = 20.0.dp, viewportWidth = 20.0f, viewportHeight = 20.0f).apply {
+            path(fill = SolidColor(Color(0xFF212121)), stroke = null, strokeLineWidth = 0.0f, strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                moveTo(16.0f, 3.0f)
+                curveTo(17.105f, 3.0f, 18.0f, 3.895f, 18.0f, 5.0f)
+                verticalLineTo(6.0f)
+                curveTo(18.0f, 6.552f, 17.552f, 7.0f, 17.0f, 7.0f)
+                horizontalLineTo(16.222f)
+                lineTo(17.358f, 10.034f)
+                curveTo(18.292f, 10.203f, 19.0f, 11.018f, 19.0f, 12.0f)
+                verticalLineTo(13.0f)
+                curveTo(19.0f, 14.105f, 18.105f, 15.0f, 17.0f, 15.0f)
+                horizontalLineTo(16.95f)
+                curveTo(16.719f, 16.141f, 15.71f, 17.0f, 14.5f, 17.0f)
+                curveTo(13.29f, 17.0f, 12.281f, 16.141f, 12.05f, 15.0f)
+                horizontalLineTo(8.95f)
+                curveTo(8.719f, 16.141f, 7.709f, 17.0f, 6.5f, 17.0f)
+                curveTo(5.291f, 17.0f, 4.281f, 16.141f, 4.05f, 15.0f)
+                horizontalLineTo(4.0f)
+                curveTo(2.895f, 15.0f, 2.0f, 14.105f, 2.0f, 13.0f)
+                verticalLineTo(5.0f)
+                curveTo(2.0f, 3.895f, 2.895f, 3.0f, 4.0f, 3.0f)
+                horizontalLineTo(16.0f)
+                close()
+                moveTo(6.5f, 13.0f)
+                curveTo(5.672f, 13.0f, 5.0f, 13.672f, 5.0f, 14.5f)
+                curveTo(5.0f, 15.328f, 5.672f, 16.0f, 6.5f, 16.0f)
+                curveTo(7.328f, 16.0f, 8.0f, 15.328f, 8.0f, 14.5f)
+                curveTo(8.0f, 13.672f, 7.328f, 13.0f, 6.5f, 13.0f)
+                close()
+                moveTo(14.5f, 13.0f)
+                curveTo(13.672f, 13.0f, 13.0f, 13.672f, 13.0f, 14.5f)
+                curveTo(13.0f, 15.328f, 13.672f, 16.0f, 14.5f, 16.0f)
+                curveTo(15.328f, 16.0f, 16.0f, 15.328f, 16.0f, 14.5f)
+                curveTo(16.0f, 13.672f, 15.328f, 13.0f, 14.5f, 13.0f)
+                close()
+                moveTo(3.0f, 13.0f)
+                curveTo(3.0f, 13.552f, 3.448f, 14.0f, 4.0f, 14.0f)
+                horizontalLineTo(4.05f)
+                curveTo(4.281f, 12.859f, 5.291f, 12.0f, 6.5f, 12.0f)
+                curveTo(7.709f, 12.0f, 8.719f, 12.859f, 8.95f, 14.0f)
+                horizontalLineTo(12.05f)
+                curveTo(12.281f, 12.859f, 13.29f, 12.0f, 14.5f, 12.0f)
+                curveTo(15.71f, 12.0f, 16.719f, 12.859f, 16.95f, 14.0f)
+                horizontalLineTo(17.0f)
+                curveTo(17.552f, 14.0f, 18.0f, 13.552f, 18.0f, 13.0f)
+                verticalLineTo(12.0f)
+                curveTo(18.0f, 11.448f, 17.552f, 11.0f, 17.0f, 11.0f)
+                horizontalLineTo(3.0f)
+                verticalLineTo(13.0f)
+                close()
+                moveTo(4.0f, 4.0f)
+                curveTo(3.448f, 4.0f, 3.0f, 4.448f, 3.0f, 5.0f)
+                verticalLineTo(10.0f)
+                horizontalLineTo(11.0f)
+                verticalLineTo(8.0f)
+                curveTo(11.0f, 6.895f, 11.895f, 6.0f, 13.0f, 6.0f)
+                horizontalLineTo(17.0f)
+                verticalLineTo(5.0f)
+                curveTo(17.0f, 4.448f, 16.552f, 4.0f, 16.0f, 4.0f)
+                horizontalLineTo(4.0f)
+                close()
+                moveTo(13.0f, 7.0f)
+                curveTo(12.448f, 7.0f, 12.0f, 7.448f, 12.0f, 8.0f)
+                verticalLineTo(10.0f)
+                horizontalLineTo(16.278f)
+                lineTo(15.153f, 7.0f)
+                horizontalLineTo(13.0f)
+                close()
+                moveTo(8.0f, 5.0f)
+                curveTo(8.552f, 5.0f, 9.0f, 5.448f, 9.0f, 6.0f)
+                verticalLineTo(8.0f)
+                curveTo(9.0f, 8.552f, 8.552f, 9.0f, 8.0f, 9.0f)
+                horizontalLineTo(5.0f)
+                curveTo(4.482f, 9.0f, 4.056f, 8.607f, 4.005f, 8.103f)
+                lineTo(4.0f, 8.0f)
+                verticalLineTo(6.0f)
+                curveTo(4.0f, 5.448f, 4.448f, 5.0f, 5.0f, 5.0f)
+                horizontalLineTo(8.0f)
+                close()
+                moveTo(5.0f, 8.0f)
+                horizontalLineTo(8.0f)
+                verticalLineTo(6.0f)
+                horizontalLineTo(5.0f)
+                verticalLineTo(8.0f)
+                close()
+            }
+        }
+        .build()
+        return _vehicleRv!!
+    }
+
+@Suppress("ObjectPropertyName")
+private var _vehicleRv: ImageVector? = null
+
+@Preview
+@Composable
+private fun VehicleRvPreview() {
+    Box(modifier = Modifier.padding(12.dp)) {
+        Image(imageVector = FluentIcons.Regular.VehicleRv, contentDescription = "VehicleRv Icon")
+    }
+}
+
